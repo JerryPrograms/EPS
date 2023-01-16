@@ -1,0 +1,262 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* header section start  */
+.Main_header {
+    background-color: #414141;
+    width: 100%;
+    height: auto;
+}
+
+/* header section end  */
+
+
+
+
+
+
+
+/* form section start  */
+.Main_form_section {
+    padding: 50px 0px 50px 0px;
+}
+
+.Main_form_section h3 {
+    font-family: Montserrat;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+
+.Main_form_section p {
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: rgba(156, 155, 155, 1);
+
+}
+
+
+
+.login_input_response {
+    padding: 0px;
+    border: 1px solid rgba(242, 240, 240, 1);
+    display: flex;
+    background-color: #FCFBFB;
+    border-radius: 8px;
+    margin-top: 80px;
+}
+
+.my_input {
+    position: absolute;
+    margin: -14px 0px 0px -6px;
+    font-weight: lighter;
+    z-index: 1;
+
+}
+
+.input_id {
+    color: rgba(149, 148, 148, 1);
+    font-weight: lighter;
+}
+
+.input_login::placeholder {
+    color: black;
+    font-family: Montserrat;
+}
+
+.input_login {
+    padding: 13px 0px 10px 0px;
+    border: none;
+    background-color: #FCFBFB;
+    margin: 0px 0px 0px -36px;
+    font-size: 16px;
+    font-weight: 400;
+    color: black;
+}
+
+.input_login_pass::placeholder {
+    color: black;
+    font-family: Montserrat;
+    font-size: 46px;
+
+}
+
+.input_login_pass {
+    padding: 13px 0px 10px 0px;
+    border: none;
+    background-color: #FCFBFB;
+    margin: 0px 0px 0px -75px;
+    font-size: 16px;
+    font-weight: 400;
+    color: black;
+}
+
+.login_input_response_pass {
+    padding: 0px;
+    border: 1px solid rgba(242, 240, 240, 1);
+    display: flex;
+    background-color: #FCFBFB;
+    border-radius: 8px;
+    margin-top: 35px;
+}
+
+
+.form_text {
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: right;
+    color: rgba(78, 80, 131, 1);
+    border-bottom: 1px solid rgba(78, 80, 131, 1);
+    text-decoration: none !important;
+}
+
+.custom_input {
+    display: flex;
+    align-items: center;
+    padding-right: 40px !important;
+    background: #FCFBFB;
+    border-radius: 12px;
+    border: 1px solid rgba(242, 240, 240, 1);
+}
+
+.Custom_icon {
+    right: 14px;
+    position: absolute;
+    top: 15px;
+
+}
+
+#Custom_lab {
+    margin-top: 100px;
+}
+
+
+
+
+.custom_color_theme {
+    color: rgba(149, 148, 148, 1) !important;
+}
+
+.floatingInput {
+    padding: 0px;
+    margin: -30px -2px;
+    color: rgba(149, 148, 148, 1);
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Montserrat';
+}
+
+.login_buton {
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 600;
+    width: 100%;
+    cursor: pointer;
+    height: 50px;
+    background: rgba(98, 129, 254, 1) !important;
+    border: none;
+    text-align: center;
+    color: #FFFFFF;
+    border-radius: 4px;
+}
+
+.form-container {
+    height: 84vh;
+    display: flex;
+    align-items: center;
+}
+
+.user_icon {
+    height: 27px;
+}
+
+.lock_icon{
+    height: 24px;
+}
+
+.form-floating > .form-control:focus, .form-floating > .form-control:not(:placeholder-shown){
+    padding-top: .625rem;
+    padding-bottom: .625rem;
+    box-shadow: none;
+}
+.form-floating > .form-control:focus ~ label, .form-floating > .form-control:not(:placeholder-shown) ~ label, .form-floating > .form-select ~ label{
+    opacity: .65;
+    transform: none;
+    top: -30px;
+    transition: all 0.3s;
+}
+
+.custom_lab {
+    font-size: 40px;
+    position: absolute !important;
+    top: -30px !important;
+}
+.custom_plac::placeholder
+{
+    color: black !important;
+    font-size: 14px;
+}
+
+/* form section end  */
+
+
+
+/* sign up page start  */
+.login_input_response_sign {
+    padding: 0px;
+    border: 1px solid rgba(242, 240, 240, 1);
+    display: flex;
+    background-color: #FCFBFB;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+
+.input_login_sign {
+    padding: 13px 0px 10px 0px;
+    border: none;
+    background-color: #FCFBFB;
+    margin: 0px 0px 0px -36px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+
+.input_login_sign::placeholder {
+    color: rgba(149, 148, 148, 1);
+}
+
+.form-check {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(128, 128, 128, 1);
+}
+
+input#exampleCheck1 {
+    width: 17px;
+    border: 1px solid rgba(229, 229, 229, 1) !important;
+    height: 17px;
+    margin-right: 10px;
+}
+
+.form-check_2 {
+    border-bottom: 1px solid rgba(229, 229, 229, 1);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    color: black;
+}
