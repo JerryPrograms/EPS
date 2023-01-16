@@ -14,3 +14,4 @@ use App\Http\Controllers\admin\BuildingInfoManagementController;
 |
 */
 
+Auth::routes();
