@@ -3,260 +3,199 @@ body {
     padding: 0;
 }
 
-/* header section start  */
-.Main_header {
-    background-color: #414141;
-    width: 100%;
-    height: auto;
+.profile_img {
+    vertical-align: top;
 }
 
-/* header section end  */
 
-
-
-
-
-
-
-/* form section start  */
-.Main_form_section {
-    padding: 50px 0px 50px 0px;
+li.page-item.custom_mar {
+    padding-left: 8px !important;
 }
 
-.Main_form_section h3 {
-    font-family: Montserrat;
-    font-size: 25px;
-    font-weight: 700;
-    line-height: 30px;
-    letter-spacing: 0em;
-    text-align: center;
+.drop_section_3 {
+    width: 140px;
+    background: white;
+    border: 1px solid rgba(223, 224, 235, 1);
+    color: black;
+    padding: 10px 20px;
 }
 
-.Main_form_section p {
+.drop_section_2 {
+    width: 86px;
+    background: white;
+    border: 1px solid rgba(223, 224, 235, 1);
+    color: black;
+    padding: 6px 20px;
+}
+
+.drop_section_2:hover {
+    width: 86px;
+    background: white;
+    border: 1px solid rgba(223, 224, 235, 1);
+    color: black;
+    padding: 6px 20px;
+}
+
+.bor_lef {
+    border-left: 5px solid rgba(98, 129, 254, 1);
+}
+
+
+
+.searchbar_main_section {
+    border: 1px solid rgba(225, 227, 236, 1);
+    padding: 30px 0px 170px 20px;
+    width: 98%;
+    margin-top: 20px;
+    margin-left: 12px;
+}
+
+.custom_bor_2 {
+    border: none !important;
+}
+
+.searchbar_main_section_2 {
+    padding: 30px 0px 170px 20px;
+    width: 98%;
+    margin-top: 20px;
+    margin-left: 12px;
+}
+
+.card_section_2 {
+    padding: 30px 0px 0px 0px;
+    border-bottom: 1px solid black;
+}
+
+.card_tittle_2 {
     font-family: Montserrat;
     font-size: 15px;
     font-weight: 600;
     line-height: 18px;
     letter-spacing: 0em;
-    text-align: center;
-    color: rgba(156, 155, 155, 1);
-
+    text-align: left;
 }
 
-
-
-.login_input_response {
-    padding: 0px;
-    border: 1px solid rgba(242, 240, 240, 1);
-    display: flex;
-    background-color: #FCFBFB;
-    border-radius: 8px;
-    margin-top: 80px;
-}
-
-.my_input {
-    position: absolute;
-    margin: -14px 0px 0px -6px;
-    font-weight: lighter;
-    z-index: 1;
-
-}
-
-.input_id {
-    color: rgba(149, 148, 148, 1);
-    font-weight: lighter;
-}
-
-.input_login::placeholder {
-    color: black;
+.searchbar_text {
     font-family: Montserrat;
-}
-
-.input_login {
-    padding: 13px 0px 10px 0px;
-    border: none;
-    background-color: #FCFBFB;
-    margin: 0px 0px 0px -36px;
-    font-size: 16px;
-    font-weight: 400;
-    color: black;
-}
-
-.input_login_pass::placeholder {
-    color: black;
-    font-family: Montserrat;
-    font-size: 46px;
-
-}
-
-.input_login_pass {
-    padding: 13px 0px 10px 0px;
-    border: none;
-    background-color: #FCFBFB;
-    margin: 0px 0px 0px -75px;
-    font-size: 16px;
-    font-weight: 400;
-    color: black;
-}
-
-.login_input_response_pass {
-    padding: 0px;
-    border: 1px solid rgba(242, 240, 240, 1);
-    display: flex;
-    background-color: #FCFBFB;
-    border-radius: 8px;
-    margin-top: 35px;
-}
-
-
-.form_text {
-    font-family: Montserrat;
-    font-size: 15px;
-    font-weight: 700;
-    line-height: 18px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 15px;
     letter-spacing: 0em;
-    text-align: right;
-    color: rgba(78, 80, 131, 1);
-    border-bottom: 1px solid rgba(78, 80, 131, 1);
-    text-decoration: none !important;
+    text-align: center;
+
+}
+
+.border_22 {
+    border: 1px solid #E1E3EC;
+    border-radius: 3px;
+}
+
+.dropdown-toggle::after {
+    margin-left: 16px;
+    display: inline-block;
+    /* margin-left: 0.255em; */
+    vertical-align: 0.255em;
+    content: "";
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left: 0.3em solid transparent;
+}
+
+.star_section {
+    color: rgba(255, 62, 29, 1);
+    font-size: 14px;
+    font-weight: 600;
 }
 
 .custom_input {
-    display: flex;
-    align-items: center;
-    padding-right: 40px !important;
-    background: #FCFBFB;
-    border-radius: 12px;
-    border: 1px solid rgba(242, 240, 240, 1);
+    width: 65% !important;
+    color: black !important;
+    border-bottom: 1px solid rgba(225, 227, 236, 1) !important;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-family: Montserrat !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
 }
 
-.Custom_icon {
-    right: 14px;
-    position: absolute;
-    top: 15px;
-
+.custom_input_2 {
+    width: 20% !important;
+    color: black !important;
+    border-bottom: 1px solid rgba(225, 227, 236, 1) !important;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-family: Montserrat !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
 }
 
-#Custom_lab {
-    margin-top: 100px;
+.custom_input_2::placeholder {
+    color: black !important;
 }
 
-
-
-
-.custom_color_theme {
-    color: rgba(149, 148, 148, 1) !important;
-}
-
-.floatingInput {
-    padding: 0px;
-    margin: -30px -2px;
-    color: rgba(149, 148, 148, 1);
-    font-size: 16px;
-    font-weight: 400;
-    font-family: 'Montserrat';
-}
-
-.login_buton {
-    font-family: Montserrat;
-    font-size: 18px;
-    font-weight: 600;
-    width: 100%;
-    cursor: pointer;
-    height: 50px;
-    background: rgba(98, 129, 254, 1) !important;
+.custom_input_3 {
+    width: 20% !important;
+    color: black !important;
     border: none;
-    text-align: center;
-    color: #FFFFFF;
-    border-radius: 4px;
+    font-family: Montserrat !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
 }
 
-.form-container {
-    height: 84vh;
-    display: flex;
-    align-items: center;
+
+.custom_input_3::placeholder {
+    color: black !important;
 }
 
-.user_icon {
-    height: 27px;
-}
-
-.lock_icon{
-    height: 24px;
-}
-
-.form-floating > .form-control:focus, .form-floating > .form-control:not(:placeholder-shown){
-    padding-top: .625rem;
-    padding-bottom: .625rem;
-    box-shadow: none;
-}
-.form-floating > .form-control:focus ~ label, .form-floating > .form-control:not(:placeholder-shown) ~ label, .form-floating > .form-select ~ label{
-    opacity: .65;
-    transform: none;
-    top: -30px;
-    transition: all 0.3s;
+.custom_input::placeholder {
+    color: black !important;
 }
 
 .custom_lab {
-    font-size: 40px;
-    position: absolute !important;
-    top: -30px !important;
-}
-.custom_plac::placeholder
-{
-    color: black !important;
-    font-size: 14px;
-}
-
-/* form section end  */
-
-
-
-/* sign up page start  */
-.login_input_response_sign {
-    padding: 0px;
-    border: 1px solid rgba(242, 240, 240, 1);
-    display: flex;
-    background-color: #FCFBFB;
-    border-radius: 8px;
-    margin-top: 15px;
-}
-
-
-.input_login_sign {
-    padding: 13px 0px 10px 0px;
-    border: none;
-    background-color: #FCFBFB;
-    margin: 0px 0px 0px -36px;
-    font-size: 16px;
-    font-weight: 400;
-}
-
-
-.input_login_sign::placeholder {
-    color: rgba(149, 148, 148, 1);
-}
-
-.form-check {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-size: 12px;
-    font-weight: 600;
-    color: rgba(128, 128, 128, 1);
-}
-
-input#exampleCheck1 {
-    width: 17px;
-    border: 1px solid rgba(229, 229, 229, 1) !important;
-    height: 17px;
-    margin-right: 10px;
-}
-
-.form-check_2 {
-    border-bottom: 1px solid rgba(229, 229, 229, 1);
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-size: 12px;
-    font-weight: 600;
     color: black;
+    margin-left: 10px;
+    font-weight: 600;
 }
+
+.form_button {
+    color: white;
+    background-color: #6281FE;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    width: 100%;
+    height: 35px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.form_button_2 {
+    color: rgba(153, 153, 153, 1);
+    background: #E0E2E6;
+    border: 1px solid rgba(153, 153, 153, 1);
+    border-radius: 3px;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 600;
+    width: 100%;
+    height: 35px;
+    text-align: center;
+}
+
+.main_profile_section {
+    text-align: end !important;
+}
+
+.logo_text {
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+
