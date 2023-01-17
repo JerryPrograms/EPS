@@ -17,7 +17,7 @@
                                     <h4 class="card-title mb-4">고객 정보</h4>
                                     <div class="row">
 
-                                        <div class="col-md-1">
+                                        <div class="col-md-1 col-6">
                                             <div class="dropdown align-self-start mt-3 mt-sm-0 mb-2">
                                                 <button id="dropdownMenu-calendarType" class="btn d-flex mt-4  btn_drop"
                                                         type="button" data-bs-toggle="dropdown" aria-haspopup="true"
@@ -26,7 +26,9 @@
                                                        style="margin-right: 4px;"></i>
                                                     <span id="calendarTypeName">Filter</span>
                                                     <span class="icon_img">
-                                                        <img src="{{asset('engineer_company/assets/images/Polygon 4.png')}}" alt="">
+                                                        <img
+                                                            src="{{asset('engineer_company/assets/images/Polygon 4.png')}}"
+                                                            alt="">
                                                     </span>
                                                 </button>
                                                 <ul class="dropdown-menu dropdown-menu-end" role="menu"
@@ -77,17 +79,24 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-md-3">
+                                        <div class="col-md-3 col-6">
                                             <div class="custom_search">
                                                 <div class="search mt-4">
                                                     <input type="text" class="form-control" placeholder="검색하기">
                                                     <button class="btn btn-primary searchbar_button">
                                                         <div class="search_img">
-                                                            <img src="{{asset('engineer_company/assets/images/search.png')}}"/>
+                                                            <img
+                                                                src="{{asset('engineer_company/assets/images/search.png')}}"/>
                                                         </div>
                                                     </button>
                                                 </div>
                                             </div>
+                                        </div>
+                                        <div class="col-md-8 col-12 text-end">
+                                            <button data-bs-toggle="modal" data-bs-target="#customerInfoModal"
+                                                    type="button" class="btn btn-primary waves-effect waves-light w-sm">
+                                                <i class="mdi mdi-plus d-block font-size-16"></i>
+                                            </button>
                                         </div>
                                     </div>
 
@@ -286,23 +295,8 @@
                                         </table>
 
 
-                                        <div class="col-lg-12">
-                                            <ul class="pagination mt-5">
-                                                <li class="left_icon"><img src="{{asset('engineer_company/assets/images/left.png')}}"/>
-                                                </li>
-                                                <li class="page-item active"><a class="page-link" href="#">1</a>
-                                                </li>
-                                                <li class="page-item custom_mar"><a class="page-link" href="#">2</a>
-                                                </li>
-                                                <li class="page-item custom_mar"><a class="page-link" href="#">3</a>
-                                                </li>
-                                                <li class="page-item custom_mar"><a class="page-link" href="#">4</a>
-                                                </li>
-                                                <li class="page-item custom_mar"><a class="page-link" href="#">5</a>
-                                                </li>
-                                                <li class="right_icon custom_mar"><img
-                                                        src="{{asset('engineer_company/assets/images/right.png')}}"/></li>
-                                            </ul>
+                                        <div class="col-lg-12 text-center">
+                                            {{$customer->links('common_files.paginate')}}
                                         </div>
 
 
@@ -323,4 +317,7 @@
 
 
     </div>
+@endsection
+@section('modal')
+    @include('common_files.customer_add_modal')
 @endsection

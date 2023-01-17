@@ -25,7 +25,9 @@
                                                        style="margin-right: 4px;"></i>
                                                     <span id="calendarTypeName">Filter</span>
                                                     <span class="icon_img">
-                                                        <img src="{{asset('engineer_company/assets/images/Polygon 4.png')}}" alt="">
+                                                        <img
+                                                            src="{{asset('engineer_company/assets/images/Polygon 4.png')}}"
+                                                            alt="">
                                                     </span>
                                                 </button>
                                                 <ul class="dropdown-menu dropdown-menu-end" role="menu"
@@ -82,7 +84,8 @@
                                                     <input type="text" class="form-control" placeholder="search">
                                                     <button class="btn btn-primary searchbar_button">
                                                         <div class="search_img">
-                                                            <img src="{{asset('engineer_company/assets/images/gray_searchbar.png')}}"/>
+                                                            <img
+                                                                src="{{asset('engineer_company/assets/images/gray_searchbar.png')}}"/>
                                                         </div>
                                                     </button>
                                                 </div>
@@ -404,4 +407,6 @@
 
         </div>
     </div>
+
 @endsection
+

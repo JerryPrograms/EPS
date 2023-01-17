@@ -76,7 +76,7 @@ class Authentication {
                 \DB::table('password_resets')->where([
                     'email' => $email
                 ])->delete();
-    
+
                 return true;
             }else{
                 return false;

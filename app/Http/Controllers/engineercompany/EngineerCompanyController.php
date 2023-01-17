@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\engineercompany;
 
 use App\Http\Controllers\Controller;
+use App\Models\CustomerInfo;
 use Illuminate\Http\Request;
 
 class EngineerCompanyController extends Controller
@@ -14,7 +15,9 @@ class EngineerCompanyController extends Controller
 
     public function GetCustomerInfoListing()
     {
-        return view('engineer_company.customer_list');
+        //TODO : Add where condition on engineer company logged in
+        $customer = CustomerInfo::latest()->paginate(1);
+        return view('engineer_company.customer_list',compact('customer'));
     }
 
     public function CreateBuildingInfo()
