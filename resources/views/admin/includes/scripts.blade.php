@@ -1,6 +1,15 @@
-<script src="{{asset('admin/assets/js/jquery-3.2.1.slim.min.js')}}"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-<script src="{{asset('admin/assets/js/bootstrap.bundle.min.js')}}"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+<!-- JAVASCRIPT -->
+<script src="{{asset('admin/assets/libs/jquery/jquery.min.js')}}"></script>
+<script src="{{asset('admin/assets/libs/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{asset('admin/assets/libs/metismenu/metisMenu.min.js')}}"></script>
+<script src="{{asset('admin/assets/libs/simplebar/simplebar.min.js')}}"></script>
+<script src="{{asset('admin/assets/libs/node-waves/waves.min.js')}}"></script>
+
+<!-- apexcharts -->
+<script src="{{asset('admin/assets/libs/apexcharts/apexcharts.min.js')}}"></script>
+
+<!-- file-manager js -->
+<script src="{{asset('admin/assets/js/pages/file-manager.init.js')}}"></script>
+
+<script src="{{asset('admin/assets/js/app.js')}}"></script>
+

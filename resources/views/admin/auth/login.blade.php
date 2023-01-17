@@ -1,7 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 
-@include('admin.includes.head')
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="{{asset('admin/assets/css/bootstrap.min.css')}}" rel="stylesheet">
+    <!--Font Awwesome file-->
+    <link rel="stylesheet" href="{{asset('admin/assets/css/all.min.css')}}"/>
+    <link href="{{asset('admin/assets/css/css2.css')}}" rel="stylesheet">
+    <link href="{{asset('admin/assets/css/css2.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('admin/assets/css/style.css')}}">
+</head>
+
 
 <body>
 
@@ -75,7 +87,12 @@
 <!-- /* form section end  */ -->
 
 
-@include('admin.includes.scripts')
+<script src="{{asset('admin/assets/js/jquery-3.2.1.slim.min.js')}}"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="{{asset('admin/assets/js/bootstrap.bundle.min.js')}}"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 
 
 </body>

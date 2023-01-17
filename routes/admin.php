@@ -19,5 +19,11 @@ use App\Http\Controllers\Admin\AdminController;
 Route::group(['prefix' => 'admin'], function () {
 
     Route::get('/login', [AdminController::class, 'GetAdminLogin'])->name('admin.AdminLogin');
-    Route::get('/listing', [BuildingInfoManagementController::class, 'GetBuildingInfoListing'])->name('admin.GetBuildingInfoListing');
+
+    Route::group(['prefix' => 'building-info'], function () {
+        Route::get('/listing', [BuildingInfoManagementController::class, 'GetBuildingInfoListing'])->name('admin.GetBuildingInfoListing');
+        Route::get('/details', [BuildingInfoManagementController::class, 'GetBuildingDetails'])->name('admin.GetBuildingDetails');
+        Route::get('/create-custom-info', [BuildingInfoManagementController::class, 'GetCreateCustomerInfo'])->name('admin.GetCreateCustomerInfo');
+    });
+
 });
