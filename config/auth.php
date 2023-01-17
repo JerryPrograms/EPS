@@ -40,6 +40,18 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
+        'engineer_company' => [
+            'driver' => 'session',
+            'provider' => 'engineer_companies',
+        ],
+        'engineer' => [
+            'driver' => 'session',
+            'provider' => 'engineers',
+        ],
     ],
 
     /*
@@ -65,10 +77,20 @@ return [
             'model' => App\Models\User::class,
         ],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Admin::class,
+        ],
+
+        'engineer_companies' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Engineer_company::class,
+        ],
+
+        'engineers' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Engineer::class,
+        ],
     ],
 
     /*
@@ -89,6 +111,24 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+        'admins' => [
+            'provider' => 'admins',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+        'engineer_companies' => [
+            'provider' => 'engineer_companies',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+        'engineers' => [
+            'provider' => 'engineers',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,
