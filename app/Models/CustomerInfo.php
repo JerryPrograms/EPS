@@ -15,4 +15,9 @@ class CustomerInfo extends Model
     {
         return $this->hasOne(BuildingInformation::class, 'customer_id', 'id');
     }
+
+    public function CompanyInformation()
+    {
+        return $this->hasOne(BuildingCompanyInformation::class, 'customer_id', 'id');
+    }
 }

@@ -21,7 +21,6 @@
 <script src="{{asset('engineer_company/assets/js/app.js')}}"></script>
 
 <!-- App js -->
-<script src="{{asset('engineer_company/assets/js/app.js')}}"></script>
 <script src="{{asset('engineer_company/assets/js/theme.js')}}"></script>
 <script>
     function HideShow(element) {

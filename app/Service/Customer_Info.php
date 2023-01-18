@@ -4,9 +4,8 @@ namespace App\Service;
 
 use App\Http\Requests\CustomerInfoRequest;
 use App\Models\CustomerInfo;
-use http\Env\Request;
+use Illuminate\Http\Request;
 use Illuminate\Support\Str;
-use Illuminate\Support\Facades\DB;
 
 class Customer_Info
 {
@@ -15,18 +14,11 @@ class Customer_Info
         try {
             $is_created = CustomerInfo::create([
                 'user_uid' => Str::uuid(),
-<<<<<<< Updated upstream
-                'building_name' => $data['building_name'],
-                'building_management_company' => $data['building_management_company'],
-                'maintenance_company' => $data['maintenance_company'],
-                'address' => $data['address'],
-                'customer_number' => Str::random(5),
-=======
                 'building_name' => $request['building_name'],
                 'building_management_company' => $request['building_management_company'],
                 'maintenance_company' => $request['maintenance_company'],
                 'address' => $request['address'],
->>>>>>> Stashed changes
+                'customer_number' => Str::random(10),
             ]);
             if ($is_created) {
                 return json_encode([
@@ -73,17 +65,17 @@ class Customer_Info
         }
     }
 
-    public static function SearchCustomerInfo($data)
+    public static function SearchCustomerInfo(Request $request)
     {
         try {
-            if ($data['filter'] == 'all') {
+            if ($request['filter'] == 'all') {
 
-                $customer = CustomerInfo::orWhere('building_name', 'like', '%' . $data['keyword'] . '%')
-                    ->orWhere('building_management_company', 'like', '%' . $data['keyword'] . '%')
-                    ->orWhere('maintenance_company', 'like', '%' . $data['keyword'] . '%')
-                    ->orWhere('address', 'like', '%' . $data['keyword'] . '%')
-                    ->orWhere('customer_number', 'like', '%' . $data['keyword'] . '%')
-                    ->orWhere('created_at', 'like', '%' . $data['keyword'] . '%')
+                $customer = CustomerInfo::orWhere('building_name', 'like', '%' . $request['keyword'] . '%')
+                    ->orWhere('building_management_company', 'like', '%' . $request['keyword'] . '%')
+                    ->orWhere('maintenance_company', 'like', '%' . $request['keyword'] . '%')
+                    ->orWhere('address', 'like', '%' . $request['keyword'] . '%')
+                    ->orWhere('customer_number', 'like', '%' . $request['keyword'] . '%')
+                    ->orWhere('created_at', 'like', '%' . $request['keyword'] . '%')
                     ->paginate(10);
                 $html = view('engineer_company.customer_list_template', compact('customer'))->render();
 
@@ -95,7 +87,7 @@ class Customer_Info
 
 
             } else {
-                $customer = CustomerInfo::where($data['filter'], 'like', '%' . $data['keyword'] . '%')->paginate(10);
+                $customer = CustomerInfo::where($request['filter'], 'like', '%' . $request['keyword'] . '%')->paginate(10);
                 $html = view('engineer_company.customer_list_template', compact('customer'))->render();
 
                 return json_encode([
