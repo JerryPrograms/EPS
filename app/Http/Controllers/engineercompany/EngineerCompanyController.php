@@ -16,7 +16,7 @@ class EngineerCompanyController extends Controller
     public function GetCustomerInfoListing()
     {
         //TODO : Add where condition on engineer company logged in
-        $customer = CustomerInfo::latest()->paginate(1);
+        $customer = CustomerInfo::latest()->paginate(10);
         return view('engineer_company.customer_list',compact('customer'));
     }
 

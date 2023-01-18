@@ -32,7 +32,9 @@ Route::group(['prefix' => 'engineer-company'], function () {
 
 
     //Route to create customer basic information by engineer company
+    Route::post('/post-customer-info', [CustomerInfoController::class, 'CreateCustomerInfo'])->name('CustomerInfo');
 
-    Route::post('/post-customer-info', [CustomerInfoController::class, 'CreateCustomerInfo'])->name('CreateCustomerInfo');
+    //Route to delete customer basic information by engineer company
+    Route::post('/delete-customer-info', [CustomerInfoController::class, 'DeleteCustomerInfo'])->name('DeleteCustomerInfo');
 
 });

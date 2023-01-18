@@ -102,7 +102,7 @@
 
 
                                     <div class="table-responsive mt-3">
-                                        <table class="table align-middle mb-0">
+                                        <table class="table align-middle mb-0 table-theme">
                                             <thead class="table-light">
                                             <tr>
 
@@ -118,179 +118,55 @@
                                                 </th>
                                                 <th class="text-center">maintenance company
                                                 </th>
+                                                <th class="text-center">action
+                                                </th>
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            <tr class="custom_bor mt-5">
-                                                <td class="custom_br_theme_clr"><a href="javascript: void(0);"
-                                                                                   class="text-body fw-bold">20</a></td>
-                                                <td class="custom_br_theme_clr_2">
-                                                    <input type="email"
-                                                           class="form-control col-lg-12 custom_input_tble"
-                                                           id="exampleInputEmail1" aria-describedby="emailHelp"
-                                                           placeholder="2022.11.01">
-                                                </td>
 
-                                                <td class="custom_br_theme_clr_2">
-                                                    <input type="email"
-                                                           class="form-control col-lg-12 custom_input_tble"
-                                                           id="exampleInputEmail1" aria-describedby="emailHelp"
-                                                           placeholder="223456-5032">
-                                                </td>
-                                                <td class="custom_br_theme_clr_2">
-                                                    <input type="email"
-                                                           class="form-control col-lg-12 custom_input_tble"
-                                                           id="exampleInputEmail1" aria-describedby="emailHelp"
-                                                           placeholder="Four Points ">
-                                                </td>
 
-                                                <td class="custom_br_theme_clr_2">
-                                                    <input type="email"
-                                                           class="form-control col-lg-12 custom_input_tble"
-                                                           id="exampleInputEmail1" aria-describedby="emailHelp"
-                                                           placeholder="168 Dosan-daero,
-                                                                ">
-                                                </td>
-
-                                                <td class="custom_br_theme_clr_2">
-                                                    <input type="email"
-                                                           class="form-control col-lg-2 custom_input_tble"
-                                                           id="exampleInputEmail1" aria-describedby="emailHelp"
-                                                           placeholder="Daekwang In                                                                ">
-                                                </td>
-
-                                                <td class="custom_br_theme_clr_3">
-                                                    <a href="{{route('ec.GetCustomerInfoDashboard')}}">
-                                                        <input type="email"
-                                                               class="form-control col-lg-2 custom_input_tble"
-                                                               id="exampleInputEmail1" aria-describedby="emailHelp"
-                                                               placeholder="EPS">
-                                                    </a>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td class="custom_br_theme_gray"><a href="javascript: void(0);"
-                                                                                    class="text-body fw-bold">19</a>
-                                                </td>
-                                                <td class="custom_br_theme_gray_2">
-                                                    <button class="date_button border-0">2022.11.01</button>
-                                                </td>
-                                                <td class="custom_br_theme_gray_2">
-                                                    <button class="date_button border-0">223456-5032</button>
-                                                </td>
-                                                <td class="custom_br_theme_gray_2">
-                                                    <button class="date_button_2 border-0">Four Points</button>
-                                                </td>
-                                                <td class="custom_br_theme_gray_2">
-                                                    <button class="date_button_2 border-0">168 Dosan</button>
-                                                </td>
-                                                <td class="custom_br_theme_gray_2">
-                                                    <button class="date_button_2 border-0">Daekwang In</button>
-                                                </td>
-                                                <td class="custom_br_theme_gray_3">
-                                                    <!-- Button trigger modal -->
-                                                    <button class="date_button_2 border-0">EPS</button>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td class="custom_br_theme_gray"><a href="javascript: void(0);"
-                                                                                    class="text-body fw-bold">18</a>
-                                                </td>
-                                                <td class="custom_br_theme_gray_2">
-                                                    <button class="date_button border-0">2022.11.01</button>
-                                                </td>
-                                                <td class="custom_br_theme_gray_2">
-                                                    <button class="date_button border-0">223456-5032</button>
-                                                </td>
-                                                <td class="custom_br_theme_gray_2">
-                                                    <button class="date_button_2 border-0">Four Points</button>
-                                                </td>
-                                                <td class="custom_br_theme_gray_2">
-                                                    <button class="date_button_2 border-0">168 Dosan</button>
-                                                </td>
-                                                <td class="custom_br_theme_gray_2">
-                                                    <button class="date_button_2 border-0">Daekwang In</button>
-                                                </td>
-                                                <td class="custom_br_theme_gray_3">
-                                                    <!-- Button trigger modal -->
-                                                    <button class="date_button_2 border-0">EPS</button>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td class="custom_br_theme_gray"><a href="javascript: void(0);"
-                                                                                    class="text-body fw-bold">17</a>
-                                                </td>
-                                                <td class="custom_br_theme_gray_2">
-                                                    <button class="date_button border-0">2022.11.01</button>
-                                                </td>
-                                                <td class="custom_br_theme_gray_2">
-                                                    <button class="date_button border-0">223456-5032</button>
-                                                </td>
-                                                <td class="custom_br_theme_gray_2">
-                                                    <button class="date_button_2 border-0">Four Points</button>
-                                                </td>
-                                                <td class="custom_br_theme_gray_2">
-                                                    <button class="date_button_2 border-0">168 Dosan</button>
-                                                </td>
-                                                <td class="custom_br_theme_gray_2">
-                                                    <button class="date_button_2 border-0">Daekwang In</button>
-                                                </td>
-                                                <td class="custom_br_theme_gray_3">
-                                                    <!-- Button trigger modal -->
-                                                    <button class="date_button_2 border-0">EPS</button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="custom_br_theme_gray"><a href="javascript: void(0);"
-                                                                                    class="text-body fw-bold">16</a>
-                                                </td>
-                                                <td class="custom_br_theme_gray_2">
-                                                    <button class="date_button border-0">2022.11.01</button>
-                                                </td>
-                                                <td class="custom_br_theme_gray_2">
-                                                    <button class="date_button border-0">223456-5032</button>
-                                                </td>
-                                                <td class="custom_br_theme_gray_2">
-                                                    <button class="date_button_2 border-0">Four Points</button>
-                                                </td>
-                                                <td class="custom_br_theme_gray_2">
-                                                    <button class="date_button_2 border-0">168 Dosan</button>
-                                                </td>
-                                                <td class="custom_br_theme_gray_2">
-                                                    <button class="date_button_2 border-0">Daekwang In</button>
-                                                </td>
-                                                <td class="custom_br_theme_gray_3">
-                                                    <!-- Button trigger modal -->
-                                                    <button class="date_button_2 border-0">EPS</button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="custom_br_theme_gray"><a href="javascript: void(0);"
-                                                                                    class="text-body fw-bold">15</a>
-                                                </td>
-                                                <td class="custom_br_theme_gray_2">
-                                                    <button class="date_button border-0">2022.11.01</button>
-                                                </td>
-                                                <td class="custom_br_theme_gray_2">
-                                                    <button class="date_button border-0">223456-5032</button>
-                                                </td>
-                                                <td class="custom_br_theme_gray_2">
-                                                    <button class="date_button_2 border-0">Four Points</button>
-                                                </td>
-                                                <td class="custom_br_theme_gray_2">
-                                                    <button class="date_button_2 border-0">168 Dosan</button>
-                                                </td>
-                                                <td class="custom_br_theme_gray_2">
-                                                    <button class="date_button_2 border-0">Daekwang In</button>
-                                                </td>
-                                                <td class="custom_br_theme_gray_3">
-                                                    <!-- Button trigger modal -->
-                                                    <button class="date_button_2 border-0">EPS</button>
-                                                </td>
-                                            </tr>
+                                            @foreach($customer as $c)
+                                                <tr @if($loop->index == 0) class="active" @endif>
+                                                    <td class=""><a href="javascript: void(0);"
+                                                                    class="text-body fw-bold">{{$loop->index +1}}</a>
+                                                    </td>
+                                                    <td class="">
+                                                        <button
+                                                            class="date_button border-0">{{$c->created_at->format('Y.d.m')}}</button>
+                                                    </td>
+                                                    <td class="">
+                                                        <button class="date_button border-0">{{$c->id}}</button>
+                                                    </td>
+                                                    <td class="">
+                                                        <button
+                                                            class="date_button_2 border-0">{{$c->building_name}}</button>
+                                                    </td>
+                                                    <td class="">
+                                                        <button title="{{$c->address    }}"
+                                                                class="date_button_2 border-0">{{substr($c->address,0,10)}}
+                                                            ....
+                                                        </button>
+                                                    </td>
+                                                    <td class="">
+                                                        <button
+                                                            class="date_button_2 border-0">{{$c->building_management_company}}</button>
+                                                    </td>
+                                                    <td class="">
+                                                        <!-- Button trigger modal -->
+                                                        <button
+                                                            class="date_button_2 border-0">{{$c->maintenance_company}}</button>
+                                                    </td>
+                                                    <td class="d-flex">
+                                                        <!-- Button trigger modal -->
+                                                        <a class="date_button_2 border-0"><i class="fa fa-edit"></i></a>
+                                                        <button onclick="$('#customerInfoID').val('{{$c->id}}')"
+                                                                data-bs-toggle="modal"
+                                                                data-bs-target="#customerDeleteModal"
+                                                                class="date_button_2 border-0"><i
+                                                                class="fa fa-trash-can"></i></button>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
                                             </tbody>
                                         </table>
 
@@ -320,4 +196,5 @@
 @endsection
 @section('modal')
     @include('common_files.customer_add_modal')
+    @include('common_files.customer_delete_modal')
 @endsection

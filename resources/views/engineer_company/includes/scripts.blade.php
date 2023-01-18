@@ -31,6 +31,8 @@
         }
     }
 
+
+    //ajax to create customer basic information
     $('#customerCreateForm').submit(function (e) {
         $('.submitbtn').html('<i class="fa fa-spinner fa-spin me-1"></i> Processing').attr('disabled', true);
         $('.submitbtn').prev().attr('disabled', true);
@@ -42,7 +44,98 @@
         $.ajax({
 
             type: "POST",
-            url: '{{route('CreateCustomerInfo')}}',
+            url: '{{route('CustomerInfo')}}',
+            dataType: 'json',
+            data: formData,
+            contentType: false,
+            processData: false,
+            cache: false,
+            mimeType: "multipart/form-data",
+            beforeSend: function () {
+
+            },
+            success: function (res) {
+
+                $('.submitbtn').html('Create').attr('disabled', false);
+                $('.submitbtn').prev().attr('disabled', false);
+
+                if (res.success == false) {
+
+
+                    prompt.html('<div class="alert alert-danger">' + res.message + '</div>');
+
+                    $("div.prompt").fadeIn();
+                    setTimeout(function () {
+                        $("div.prompt").fadeOut();
+                    }, 2000);
+
+                } else if (res.success == true) {
+
+                    prompt.html('<div class="alert alert-success">' + res.message + '</div>');
+
+                    $("div.prompt").fadeIn();
+                    setTimeout(function () {
+                        window.location.reload();
+                    }, 2000);
+
+                    setTimeout(function () {
+                        $("div.prompt").fadeOut();
+                        {
+                            {
+
+                            }
+                        }
+
+                    }, 2000);
+
+                }
+            },
+            error: function (e) {
+
+
+                $('.submitbtn').html('Create').attr('disabled', false);
+                $('.submitbtn').prev().attr('disabled', false);
+                var first_error = '';
+                $.each(e.responseJSON.errors, function (index, item) {
+
+                    first_error = item[0];
+
+                });
+                $("div.prompt").fadeIn();
+                {
+                    {
+                        $('.prompt').html('<div class="alert alert-danger">' + first_error + '</div>');
+                    }
+                }
+                setTimeout(function () {
+                    $("div.prompt").fadeOut();
+                    {
+                        {
+                            prompt.html('<div class="alert alert-danger">' + first_error + '</div>');
+                        }
+                    }
+
+                }, 2000);
+
+
+            }
+
+        });
+    });
+
+    //ajax to delete customer basic information
+    $('#customerDeleteForm').submit(function (e) {
+        $('.submitbtn').html('<i class="fa fa-spinner fa-spin me-1"></i> Processing').attr('disabled', true);
+        $('.submitbtn').prev().attr('disabled', true);
+        e.preventDefault();
+        var form = $('#customerDeleteModal')[0];
+        var formData = new FormData(form);
+        let prompt = $('.prompt');
+
+        $.ajax({
+
+            type: "POST",
+            url: '{{route('DeleteCustomerInfo')}}',
             dataType: 'json',
             data: formData,
             contentType: false,

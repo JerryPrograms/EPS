@@ -18,6 +18,7 @@ return new class extends Migration {
             $table->string('building_name');
             $table->string('building_management_company');
             $table->string('maintenance_company');
+            $table->string('address');
             $table->string('step')->default(0);
             $table->timestamps();
         });

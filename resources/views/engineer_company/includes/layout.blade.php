@@ -2,7 +2,9 @@
 <html lang="en">
 
 @include('engineer_company.includes.head')
+<style>
 
+</style>
 <body data-sidebar="dark" data-layout-mode="light">
 
 <!-- <body data-layout="horizontal" data-topbar="dark"> -->
