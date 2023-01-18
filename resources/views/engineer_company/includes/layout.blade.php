@@ -28,7 +28,7 @@
 
     <!-- Right bar overlay-->
     <div class="rightbar-overlay"></div>
-
+    @yield('modal')
     <!-- JAVASCRIPT -->
 @include('engineer_company.includes.scripts')
 @yield('custom-script')
