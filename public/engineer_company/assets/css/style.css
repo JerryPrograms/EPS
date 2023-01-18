@@ -1140,7 +1140,6 @@ table {
 
 .table-theme thead{
     padding: 5px 15px;
-    display: table-caption;
     background: rgba(252, 251, 251, 1);
 }
 .table-theme thead tr{
@@ -1151,8 +1150,6 @@ table {
 }
 
 .table-theme tbody{
-    padding: 15px;
-    display: table-caption;
     border: 1px solid #e1e3ec;
 }
 
