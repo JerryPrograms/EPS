@@ -47,7 +47,7 @@
                             </a>
 
                             <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="{{route('ec.CreateBuildingInfo')}}" key="t-default"
+                                <li><a key="t-default"
                                        class="list_menubar_text"
                                        title="Information & Building Management Company Information"><span
                                             class="custom_dot">.</span>Building Information & ...</a></li>

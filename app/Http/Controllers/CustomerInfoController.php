@@ -17,4 +17,9 @@ class CustomerInfoController extends Controller
     {
         return Customer_Info::DeleteCustomerInfo($request->all());
     }
+
+    public function SearchCustomerInfo(Request $request)
+    {
+        return Customer_Info::SearchCustomerInfo($request->all());
+    }
 }
