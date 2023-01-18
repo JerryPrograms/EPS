@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\engineercompany\AuthController;
 use App\Http\Controllers\engineercompany\EngineerCompanyController;
-use App\Http\Controllers\CustomerInfoController;
+use App\Service\Customer_Info;
+use App\Http\Controllers\BuildingAndCompanyController;
 
 
 /*
@@ -32,10 +33,13 @@ Route::group(['prefix' => 'engineer-company'], function () {
 
 
     //Route to create customer basic information by engineer company
-    Route::post('/post-customer-info', [CustomerInfoController::class, 'CreateCustomerInfo'])->name('CustomerInfo');
+    Route::post('/post-customer-info', [Customer_Info::class,'CreateCustomerInfo'])->name('CustomerInfo');
 
     //Route to delete customer basic information by engineer company
-    Route::post('/delete-customer-info', [CustomerInfoController::class, 'DeleteCustomerInfo'])->name('DeleteCustomerInfo');
+    Route::post('/delete-customer-info', [Customer_Info::class, 'DeleteCustomerInfo'])->name('DeleteCustomerInfo');
+
+    //Route to Create Building and Company Information by engineer company
+    Route::post('/create-building-and-company-information', [BuildingAndCompanyController::class, 'CreateBuilding'])->name('DeleteCustomerInfo');
 
     //Route to search customer basic information by engineer company
     Route::post('/search-customer-info', [CustomerInfoController::class, 'SearchCustomerInfo'])->name('SearchCustomerInfo');

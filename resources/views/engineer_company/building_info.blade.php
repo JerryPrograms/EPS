@@ -173,7 +173,12 @@
 
                                 <div class="card-body">
                                     <!-- end table-responsive -->
+<<<<<<< Updated upstream
                                     <form id="buildingInformationForm">
+=======
+
+                                    <form id="createBuildingInformation">
+>>>>>>> Stashed changes
                                         @csrf
                                         <div class="card_section_2">
                                             <div class="row align-items-baseline">
@@ -196,6 +201,7 @@
                                                     <h4 class="card-title border-bottom-0 mb-4 mt-3"> <span
                                                             class="bor_lef">&nbsp;</span> customer information
                                                     </h4>
+<<<<<<< Updated upstream
                                                 </div>
                                                 <div class="col-lg-1">
                                                     <div class="file_main_section">
@@ -203,6 +209,25 @@
                                                             <img src="{{asset('engineer_company/images/Vector.png')}}">
                                                         </button>
                                                     </div>
+=======
+                                                </div>
+                                                <div class="col-lg-1">
+                                                    <div class="file_main_section">
+                                                        <button class="file_button">
+                                                            <img src="{{asset('engineer_company/images/Vector.png')}}">
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex align-items-baseline">
+                                                    <label for="exampleInputEmail1"
+                                                           class="form-label custom_lab col-lg-4"> <span
+                                                            class="star_section">*</span> Building name
+                                                    </label>
+                                                    <input type="email" class="form-control col-lg-8 custom_input"
+                                                           id="exampleInputEmail1" aria-describedby="emailHelp"
+                                                           placeholder="aaaaa Tower
+                                                        ">
+>>>>>>> Stashed changes
                                                 </div>
                                                 <form>
                                                     <div class="d-flex align-items-baseline">
@@ -320,6 +345,40 @@
                                                            id="exampleInputEmail1" aria-describedby="emailHelp"
                                                            placeholder="Enter ceo name" required>
 
+<<<<<<< Updated upstream
+=======
+                                                <div class="d-flex align-items-baseline mt-4">
+                                                    <label for="exampleInputEmail1"
+                                                           class="form-label custom_lab col-lg-4"> <span
+                                                            class="star_section">&nbsp;</span> e-mail
+                                                    </label>
+                                                    <input type="email" class="form-control col-lg-8 custom_input"
+                                                           id="exampleInputEmail1" aria-describedby="emailHelp"
+                                                           placeholder="angelina@gmail.com">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- form row 1 end  -->
+
+                                        <!-- form row 2 start  -->
+                                        <div class="custom_padding_form">
+                                            <div class="row mt-5">
+                                                <div class="col-lg-12">
+                                                    <h4 class="card-title border-bottom-0 mb-4"> <span
+                                                            class="bor_lef">&nbsp;</span>Building management company
+                                                        information</h4>
+                                                </div>
+                                                <div class="d-flex align-items-baseline">
+                                                    <label for="exampleInputEmail1"
+                                                           class="form-label custom_lab col-lg-4"> <span
+                                                            class="star_section">*</span> Company Name
+                                                    </label>
+                                                    <input type="email" class="form-control col-lg-8 custom_input"
+                                                           id="exampleInputEmail1" aria-describedby="emailHelp"
+                                                           placeholder="Kyobo Life Insurance Co., Ltd.
+                                                        ">
+                                                </div>
+>>>>>>> Stashed changes
 
                                                 </div>
                                                 <div class="d-flex align-items-baseline mt-4">
@@ -388,7 +447,10 @@
                                                            id="exampleInputEmail1" aria-describedby="emailHelp"
                                                            placeholder="Enter email">
                                                 </div>
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
                                             </div>
                                         </div>
                                         <!-- form row 2 end  -->
@@ -397,6 +459,7 @@
                                         <!-- form row 4 start  -->
                                         <div class="row justify-content-end">
                                             <div class="col-lg-2">
+<<<<<<< Updated upstream
                                                 <button type="submit" class="form_button mb-5 mt-5">Save and Next
                                                 </button>
                                             </div>
@@ -404,6 +467,16 @@
                                         <!-- form row 4 end  -->
 
                                     </form>
+=======
+                                                <a href="AS-information.html">
+                                                    <button class="form_button mb-5 mt-5">Save and Next
+                                                    </button>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <!-- form row 4 end  -->
+>>>>>>> Stashed changes
                                 </div>
                             </div>
                         </div>
@@ -420,4 +493,13 @@
     </div>
 @endsection
 @section('custom-script')
+<<<<<<< Updated upstream
+=======
+    <script>
+        $('#createBuildingInformation').on('submit', function (e) {
+            e.preventDefault();
+            ajaxCall($('#createBuildingInformation'), "{{ route('engineer_signup_action') }}", $('.login_buton'), "{{ route('e.GetCustomerInfoDashboard') }}", onRequestSuccess);
+        });
+    </script>
+>>>>>>> Stashed changes
 @endsection

@@ -2,22 +2,31 @@
 
 namespace App\Service;
 
+use App\Http\Requests\CustomerInfoRequest;
 use App\Models\CustomerInfo;
+use http\Env\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
 
 class Customer_Info
 {
-    public static function CreateCustomerInfo($data)
+    public static function CreateCustomerInfo(CustomerInfoRequest $request)
     {
         try {
             $is_created = CustomerInfo::create([
                 'user_uid' => Str::uuid(),
+<<<<<<< Updated upstream
                 'building_name' => $data['building_name'],
                 'building_management_company' => $data['building_management_company'],
                 'maintenance_company' => $data['maintenance_company'],
                 'address' => $data['address'],
                 'customer_number' => Str::random(5),
+=======
+                'building_name' => $request['building_name'],
+                'building_management_company' => $request['building_management_company'],
+                'maintenance_company' => $request['maintenance_company'],
+                'address' => $request['address'],
+>>>>>>> Stashed changes
             ]);
             if ($is_created) {
                 return json_encode([
@@ -38,11 +47,11 @@ class Customer_Info
         }
     }
 
-    public static function DeleteCustomerInfo($data)
+    public static function DeleteCustomerInfo(Request $request)
     {
         try {
 
-            $is_deleted = CustomerInfo::where('id', $data['id'])->delete();
+            $is_deleted = CustomerInfo::where('id', $request['id'])->delete();
             if ($is_deleted) {
                 return json_encode([
                     'success' => true,
