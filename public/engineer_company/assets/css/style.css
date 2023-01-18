@@ -1133,3 +1133,33 @@ table {
 {
     width: 18%;
 }
+
+.table-theme{
+    border-collapse: collapse;
+}
+
+.table-theme thead{
+    padding: 5px 15px;
+    display: table-caption;
+    background: rgba(252, 251, 251, 1);
+}
+.table-theme thead tr{
+    border: none;
+}
+.table-theme thead tr th{
+    background-color: transparent;
+}
+
+.table-theme tbody{
+    padding: 15px;
+    display: table-caption;
+    border: 1px solid #e1e3ec;
+}
+
+.table-theme tbody tr{
+    border: 2px solid #f2f2f2;
+}
+
+.table-theme tbody tr.active{
+    border: 2px solid rgba(98, 129, 254, 1);
+}
