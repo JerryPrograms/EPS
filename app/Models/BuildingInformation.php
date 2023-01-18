@@ -5,14 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class CustomerInfo extends Model
+class BuildingInformation extends Model
 {
     use HasFactory;
 
     protected $guarded = [];
-
-    public function BuildingInformation()
-    {
-        return $this->hasOne(BuildingInformation::class, 'customer_id', 'id');
-    }
 }

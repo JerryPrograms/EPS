@@ -23,9 +23,9 @@ Route::group(['prefix' => 'engineer-company'], function () {
 
     Route::get('/login', [AuthController::class, 'GetECLogin'])->name('ec.GetECLogin');
     Route::get('/signup', [AuthController::class, 'GetECSignup'])->name('ec.GetECSignup');
-    Route::get('/customer-info-dashboard', [EngineerCompanyController::class, 'GetCustomerInfoDashboard'])->name('ec.GetCustomerInfoDashboard');
     Route::get('/customer-info-listing', [EngineerCompanyController::class, 'GetCustomerInfoListing'])->name('ec.GetCustomerInfoListing');
-    Route::get('/building-info', [EngineerCompanyController::class, 'CreateBuildingInfo'])->name('ec.CreateBuildingInfo');
+    Route::get('/customer-info-dashboard/{uid}', [EngineerCompanyController::class, 'GetCustomerInfoDashboard'])->name('ec.GetCustomerInfoDashboard');
+    Route::get('/building-info/{uid}', [EngineerCompanyController::class, 'CreateBuildingInfo'])->name('ec.CreateBuildingInfo');
     Route::get('/company-info', [EngineerCompanyController::class, 'CreateCompanyInfo'])->name('ec.CreateCompanyInfo');
     Route::get('/parking-facility', [EngineerCompanyController::class, 'CreateParkingFacility'])->name('ec.CreateParkingFacility');
     Route::get('/key-accessory-history', [EngineerCompanyController::class, 'CreateKeyAccessoryHistory'])->name('ec.CreateKeyAccessoryHistory');
@@ -36,5 +36,9 @@ Route::group(['prefix' => 'engineer-company'], function () {
 
     //Route to delete customer basic information by engineer company
     Route::post('/delete-customer-info', [CustomerInfoController::class, 'DeleteCustomerInfo'])->name('DeleteCustomerInfo');
+
+    //Route to search customer basic information by engineer company
+    Route::post('/search-customer-info', [CustomerInfoController::class, 'SearchCustomerInfo'])->name('SearchCustomerInfo');
+
 
 });
