@@ -4,7 +4,6 @@ namespace App\Http\Controllers\engineercompany;
 
 use App\Http\Controllers\Controller;
 use App\Models\CustomerInfo;
-use Illuminate\Http\Request;
 
 class EngineerCompanyController extends Controller
 {
@@ -33,18 +32,31 @@ class EngineerCompanyController extends Controller
         abort(404);
     }
 
-    public function CreateCompanyInfo()
+    public function CreateCompanyInfo($uid)
     {
-        return view('engineer_company.company_info');
+        $customer = CustomerInfo::where('user_uid', $uid)->first();
+        if ($customer) {
+            return view('engineer_company.company_info', compact('customer'));
+        }
+        abort(404);
     }
 
-    public function CreateParkingFacility()
+    public function CreateParkingFacility($uid)
     {
-        return view('engineer_company.parking_facility');
+        $customer = CustomerInfo::where('user_uid', $uid)->first();
+        if ($customer) {
+            return view('engineer_company.parking_facility', compact('customer'));
+        }
+        abort(404);
     }
 
-    public function CreateKeyAccessoryHistory()
+    public function CreateKeyAccessoryHistory($uid)
     {
-        return view('engineer_company.key_accessory');
+        $customer = CustomerInfo::where('user_uid', $uid)->first();
+        if ($customer) {
+            return view('engineer_company.key_accessory', compact('customer'));
+        }
+        abort(404);
+
     }
 }
