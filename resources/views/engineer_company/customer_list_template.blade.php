@@ -28,7 +28,7 @@
         </tr>
     @endif
     @foreach($customer as $c)
-        <tr onclick="makeRowActive()">
+        <tr>
             <td class=""><a href="javascript: void(0);"
                             class="text-body fw-bold">{{$loop->index +1}}</a>
             </td>

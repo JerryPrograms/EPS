@@ -15,4 +15,29 @@ class CustomerInfo extends Model
     {
         return $this->hasOne(BuildingInformation::class, 'customer_id', 'id');
     }
+
+    public function CompanyInformation()
+    {
+        return $this->hasOne(BuildingCompanyInformation::class, 'customer_id', 'id');
+    }
+
+    public function ASInformation()
+    {
+        return $this->hasOne(ASInformation::class, 'customer_id', 'id');
+    }
+
+    public function RepairCompanyInformation()
+    {
+        return $this->hasOne(RepairCompanyInformation::class, 'customer_id', 'id');
+    }
+
+    public function ParkingFacilityCertificate()
+    {
+        return $this->hasOne(ParkingFacilityCertificate::class, 'customer_id', 'id');
+    }
+
+    public function InspectionCertificate()
+    {
+        return $this->hasMany(InspectionCertificate::class, 'customer_id', 'id');
+    }
 }

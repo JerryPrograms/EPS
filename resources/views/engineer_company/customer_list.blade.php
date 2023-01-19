@@ -176,6 +176,7 @@
 
         //ajax to delete customer basic information
         $('#customerDeleteForm').submit(function (e) {
+
             $('.submitbtn').html('<i class="fa fa-spinner fa-spin me-1"></i> Processing').attr('disabled', true);
             $('.submitbtn').prev().attr('disabled', true);
             e.preventDefault();

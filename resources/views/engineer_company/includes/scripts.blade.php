@@ -21,8 +21,11 @@
 <script src="{{asset('engineer_company/assets/js/app.js')}}"></script>
 
 <!-- App js -->
-<script src="{{asset('engineer_company/assets/js/app.js')}}"></script>
 <script src="{{asset('engineer_company/assets/js/theme.js')}}"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.print/1.6.2/jQuery.print.min.js"
+        integrity="sha512-t3XNbzH2GEXeT9juLjifw/5ejswnjWWMMDxsdCg4+MmvrM+MwqGhxlWeFJ53xN/SBHPDnW0gXYvBx/afZZfGMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
     function HideShow(element) {
         if (element.hasClass('d-none')) {
@@ -32,6 +35,22 @@
         }
     }
 
+    function printForm(form) {
+        form.print({
+            globalStyles: true,
+            mediaPrint: false,
+            stylesheet: null,
+            noPrintSelector: ".no-print",
+            iframe: true,
+            append: null,
+            prepend: null,
+            manuallyCopyFormValues: true,
+            deferred: $.Deferred(),
+            timeout: 750,
+            title: null,
+            doctype: '<!doctype html>'
+        });
+    }
 </script>
 
 

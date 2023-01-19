@@ -24,7 +24,7 @@ function ajaxCall(form, action, btn, redirect, successCallback) {
     var formData = new FormData(form[0]);
     var btnText = btn.html();
     var button = btn;
-    var prompt = form.find('.prompt');
+    var prompt = $('body').find('.prompt');
     $.ajax({
         type: "POST",
         url: action,

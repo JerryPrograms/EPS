@@ -1,11 +1,12 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\engineercompany\AuthController;
 use App\Http\Controllers\engineercompany\EngineerCompanyController;
+use App\Service\ASAndRepairCompanyInformation;
+use App\Service\BuildingAndCompanyInformation;
 use App\Service\Customer_Info;
-use App\Http\Controllers\BuildingAndCompanyController;
-
+use App\Service\ParkingFacility;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,22 +28,28 @@ Route::group(['prefix' => 'engineer-company'], function () {
     Route::get('/customer-info-listing', [EngineerCompanyController::class, 'GetCustomerInfoListing'])->name('ec.GetCustomerInfoListing');
     Route::get('/customer-info-dashboard/{uid}', [EngineerCompanyController::class, 'GetCustomerInfoDashboard'])->name('ec.GetCustomerInfoDashboard');
     Route::get('/building-info/{uid}', [EngineerCompanyController::class, 'CreateBuildingInfo'])->name('ec.CreateBuildingInfo');
-    Route::get('/company-info', [EngineerCompanyController::class, 'CreateCompanyInfo'])->name('ec.CreateCompanyInfo');
-    Route::get('/parking-facility', [EngineerCompanyController::class, 'CreateParkingFacility'])->name('ec.CreateParkingFacility');
-    Route::get('/key-accessory-history', [EngineerCompanyController::class, 'CreateKeyAccessoryHistory'])->name('ec.CreateKeyAccessoryHistory');
+    Route::get('/as-and-engineer-company/{uid}', [EngineerCompanyController::class, 'CreateCompanyInfo'])->name('ec.CreateCompanyInfo');
+    Route::get('/parking-facility/{uid}', [EngineerCompanyController::class, 'CreateParkingFacility'])->name('ec.CreateParkingFacility');
+    Route::get('/key-accessory-history/{uid}', [EngineerCompanyController::class, 'CreateKeyAccessoryHistory'])->name('ec.CreateKeyAccessoryHistory');
 
 
     //Route to create customer basic information by engineer company
-    Route::post('/post-customer-info', [Customer_Info::class,'CreateCustomerInfo'])->name('CustomerInfo');
+    Route::post('/post-customer-info', [Customer_Info::class, 'CreateCustomerInfo'])->name('CustomerInfo');
 
     //Route to delete customer basic information by engineer company
     Route::post('/delete-customer-info', [Customer_Info::class, 'DeleteCustomerInfo'])->name('DeleteCustomerInfo');
 
-    //Route to Create Building and Company Information by engineer company
-    Route::post('/create-building-and-company-information', [BuildingAndCompanyController::class, 'CreateBuilding'])->name('DeleteCustomerInfo');
-
     //Route to search customer basic information by engineer company
-    Route::post('/search-customer-info', [CustomerInfoController::class, 'SearchCustomerInfo'])->name('SearchCustomerInfo');
+    Route::post('/search-customer-info', [Customer_Info::class, 'SearchCustomerInfo'])->name('SearchCustomerInfo');
 
+
+    //Route to Create Building and Company Information by engineer company
+    Route::post('/create-building-and-company-information', [BuildingAndCompanyInformation::class, 'CreateBuildingAndCompanyInformation'])->name('CreateBuildingAndCompanyInformation');
+
+    //Route to Create AS and Repair Company Information by engineer company
+    Route::post('/create-as-and-repair-company-information', [ASAndRepairCompanyInformation::class, 'CreateASAndRepairCompanyInformation'])->name('CreateASAndRepairCompanyInformation');
+
+    //Route to Create Parking Facility and Parking Facility Certificate Information by engineer company
+    Route::post('/create-parking-information-and-parking-certificate-information', [ParkingFacility::class, 'CreateParkingFacilityAndCertificate'])->name('CreateParkingFacilityAndCertificate');
 
 });

@@ -3,6 +3,11 @@
 
 @include('engineer_company.includes.head')
 <style>
+    @page {
+        size: auto;
+        margin: 10px;
+    }
+
 
 </style>
 <body data-sidebar="dark" data-layout-mode="light">
