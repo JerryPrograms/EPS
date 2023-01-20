@@ -266,7 +266,7 @@
                                                         <label for="formrow-firstname-input" class="form-label">
                                                             Enter Part Name
                                                         </label>
-                                                        <input type="text" name="building_name"
+                                                        <input id="form_part_name" type="text" name="building_name"
                                                                class="form-control part_name"
                                                                id="formrow-firstname-input"
                                                                placeholder="Enter part name" required>
@@ -326,7 +326,7 @@
                                                         </label>
                                                         <input type="text" name="building_name"
                                                                class="form-control part_name"
-                                                               id="formrow-firstname-input"
+                                                               id="sub_part_name"
                                                                placeholder="Enter sub-part name" required>
                                                     </div>
                                                 </div>
@@ -341,7 +341,8 @@
                                         data-bs-dismiss="modal">
                                     Close
                                 </button>
-                                <button type="button"
+                                <input type="text" id="selector_value" hidden>
+                                <button type="button" onclick="appendSubPart()"
                                         class="btn btn-primary waves-effect waves-light submitbtn">
                                     Create
                                 </button>
@@ -433,89 +434,104 @@
                         }
                         div_count++;
                     }
+                    $('#partAddModal').modal('hide');
+                    $('#form_part_name').val('');
+                    $('#form_tag_name').val('');
                 }
 
                 function AppendList(element) {
-                    // element.append(`<li onclick="HideShow($('#form_7'))" class="d-flex">
-                    //                                                     <div class="collapse-icon-section">
-                    //                                                     <p class="collape_list_text">
-                    //                                                         1) Jungang-ri
-                    //                                                     </p>
-                    //                                                     </div>
-                    //                                                     <span><i class="fa-solid fa-chevron-down"></i></span>
-                    //                                                 </li><div id="form_7" class="d-flex d-none custom_border">
-                    //                                                     <div class="col-lg-2">
-                    //                                                         <div class="colllap_section_11">
-                    //                                                             <ol class="collape_list_text">
-                    //                                                                 <li>
-                    //                                                                     <p class="collape_list_text">standard
-                    //                                                                     </p>
-                    //                                                                 </li>
-                    //
-                    //                                                                 <li>
-                    //                                                                     <p class="collape_list_text pt-2">Quantity</p>
-                    //                                                                 </li>
-                    //
-                    //                                                                 <li>
-                    //                                                                     <p class="collape_list_text mt-4">work history
-                    //                                                                     </p>
-                    //                                                                 </li>
-                    //
-                    //                                                                 <li>
-                    //                                                                     <p class="collape_list_text mt-4 pt-3">Picture
-                    //                                                                     </p>
-                    //                                                                 </li>
-                    //
-                    //
-                    //                                                             </ol>
-                    //                                                         </div>
-                    //                                                     </div>
-                    //                                                     <div class="col-lg-9">
-                    //                                                         <input type="email" class="form-control col-lg-12 custom_input_tble mt-3" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
-                    //
-                    //                                                         <input type="email" class="form-control col-lg-12 custom_input_tble mt-3" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
-                    //
-                    //
-                    //                                                         <input type="email" class="form-control col-lg-12 custom_input_tble mt-2" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
-                    //
-                    //                                                         <div class="row">
-                    //                                                             <div class="col-lg-6">
-                    //                                                                 <div class="mb-4 mt-2">
-                    //                                                                     <div class="input-group" id="datepicker1">
-                    //                                                                         <input type="text" class="form-control" placeholder="2022-12-09  replaced
-                    //                                                                         " data-date-format="dd M, yyyy" data-date-container="#datepicker1" data-provide="datepicker">
-                    //                                                                     </div>
-                    //                                                                     <!-- input-group -->
-                    //                                                                 </div>
-                    //                                                             </div>
-                    //
-                    //                                                             <div class="col-lg-6">
-                    //                                                                 <div class="mb-4 mt-2">
-                    //                                                                     <div class="input-group" id="datepicker1">
-                    //                                                                         <input type="text" class="form-control" placeholder="2022-12-09 replaced
-                    //                                                                         " data-date-format="dd M, yyyy" data-date-container="#datepicker1" data-provide="datepicker">
-                    //                                                                     </div>
-                    //                                                                     <!-- input-group -->
-                    //                                                                 </div>
-                    //                                                             </div>
-                    //                                                         </div>
-                    //
-                    //
-                    //                                                         <div class="row">
-                    //                                                             <div class="col-lg-9">
-                    //                                                             <button class="collape_button mb-3">Attachments
-                    //                                                                 upload</button>
-                    //                                                             </div>
-                    //                                                             <div class="col-lg-3" style="text-align: end;">
-                    //                                                                 <button class="collape_button_2 mb-3">Save</button>
-                    //
-                    //                                                             </div>
-                    //
-                    //                                                         </div>
-                    //                                                     </div>
-                    //                                                 </div>`);
-
                     $('#subPartModal').modal('show');
+                    $('#selector_value').val(element.attr('id'));
+                }
+
+                var li_count = 1;
+
+                function appendSubPart() {
+
+                    var counter = $('#' + $('#selector_value').val()).find('li.parent-li').length + 1;
+                    var main_part_name = $('#' + $('#selector_value').val()).parent().parent().parent().children().find('p,colllap_section_text').text();
+
+                    $('#' + $('#selector_value').val()).append(`<li onclick="HideShow($('#form_${li_count}'),$(this))" class="d-flex parent-li">
+                                                                        <div class="collapse-icon-section">
+                                                                        <p class="collape_list_text">
+                                                                            ${counter}) ${$('#sub_part_name').val()}
+                                                                        </p>
+                                                                        </div>
+                                                                        <span><i class="fa-solid fa-chevron-down"></i></span>
+                                                                    </li>
+                                                                    <div id="form_${li_count}" class="d-flex d-none custom_border">
+                                                                        <div class="col-lg-2">
+                                                                            <div class="colllap_section_11">
+                                                                                <ol class="collape_list_text">
+                                                                                    <li>
+                                                                                        <p class="collape_list_text">standard
+                                                                                        </p>
+                                                                                    </li>
+
+                                                                                    <li>
+                                                                                        <p class="collape_list_text pt-2">Quantity</p>
+                                                                                    </li>
+
+                                                                                    <li>
+                                                                                        <p class="collape_list_text mt-4">work history
+                                                                                        </p>
+                                                                                    </li>
+
+                                                                                    <li>
+                                                                                        <p class="collape_list_text mt-4 pt-3">Picture
+                                                                                        </p>
+                                                                                    </li>
+
+
+                                                                                </ol>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-9">
+<form id="parts_form_${li_count}">
+@csrf
+                    <input type="text" name="standard" required class="form-control col-lg-12 custom_input_tble mt-3" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+
+                    <input type="number" name="quantity" required class="form-control col-lg-12 custom_input_tble mt-3" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+
+
+                    <input type="text" class="form-control col-lg-12 custom_input_tble mt-2" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+
+                    <input name="title" value="${main_part_name}" hidden>
+
+                    <input name="customer_id" value="{{$customer->id}}" hidden>
+
+                                                                            <div class="row mt-3">
+                                                                                <div class="col-lg-9">
+                                                                                <button type="button" onclick="$(this).next().trigger('click')" class="collape_button mb-3">Attachments
+                                                                                    upload</button>
+
+                                                                                 <input type="file" name="picture" required hidden>
+                                                                                 <p id="file_name"></p>
+                                                                                </div>
+
+
+                                                                                <div class="col-lg-3" style="text-align: end;">
+                                                                                    <button onclick="submitFunction($('#parts_form_${li_count}'))" class="collape_button_2 mb-3">Save</button>
+
+                                                                                </div>
+
+                                                                            </div>
+</form>
+                                                                        </div>
+                                                                    </div>`);
+                    $('#subPartModal').modal('hide');
+                    $('#sub_part_name').val('');
+                    $('#selector_value').val('');
+                    li_count++;
+
+                }
+
+
+                function submitFunction(element, btn) {
+                    element.on('submit', function (e) {
+                        e.preventDefault();
+                        ajaxCall(element, "{{ route('CreateKeyAccessoryInformation') }}", element.find('button.collape_button_2'), "{{ route('ec.CreateCompanyInfo',request()->segment(3)) }}", onRequestSuccess);
+                    });
                 }
             </script>
 @endsection

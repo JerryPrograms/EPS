@@ -29,10 +29,12 @@
 <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify"></script>
 <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.polyfills.min.js"></script>
 <script>
-    function HideShow(element) {
+    function HideShow(element,current) {
         if (element.hasClass('d-none')) {
+            current.children().find('i').removeClass('fa-chevron-down').addClass('fa-chevron-up');
             element.removeClass('d-none');
         } else {
+            current.children().find('i').addClass('fa-chevron-down').removeClass('fa-chevron-up');
             element.addClass('d-none');
         }
     }

@@ -7,6 +7,7 @@ use App\Service\BuildingAndCompanyInformation;
 use App\Service\Customer_Info;
 use App\Service\ParkingFacility;
 use Illuminate\Support\Facades\Route;
+use App\Service\KeyAccessoryInformation;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,5 +52,8 @@ Route::group(['prefix' => 'engineer-company'], function () {
 
     //Route to Create Parking Facility and Parking Facility Certificate Information by engineer company
     Route::post('/create-parking-information-and-parking-certificate-information', [ParkingFacility::class, 'CreateParkingFacilityAndCertificate'])->name('CreateParkingFacilityAndCertificate');
+
+    //Route to Create Parking Facility and Parking Facility Certificate Information by engineer company
+    Route::post('/create-key-accessory-information', [KeyAccessoryInformation::class, 'CreateKeyAccessoryInformation'])->name('CreateKeyAccessoryInformation');
 
 });
