@@ -24,6 +24,6 @@
     <!-- App Css-->
     <link href="{{asset('engineer_company/assets/css/app.min.css')}}" id="app-style" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="{{asset('engineer_company/assets/css/style.css')}}">
-
+    <link href="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.css" rel="stylesheet" type="text/css"/>
 </head>
 
