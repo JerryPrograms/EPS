@@ -5,9 +5,10 @@ use App\Http\Controllers\engineercompany\EngineerCompanyController;
 use App\Service\ASAndRepairCompanyInformation;
 use App\Service\BuildingAndCompanyInformation;
 use App\Service\Customer_Info;
-use App\Service\ParkingFacility;
-use Illuminate\Support\Facades\Route;
 use App\Service\KeyAccessoryInformation;
+use App\Service\ParkingFacility;
+use App\Service\PartReplacement;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +33,7 @@ Route::group(['prefix' => 'engineer-company'], function () {
     Route::get('/as-and-engineer-company/{uid}', [EngineerCompanyController::class, 'CreateCompanyInfo'])->name('ec.CreateCompanyInfo');
     Route::get('/parking-facility/{uid}', [EngineerCompanyController::class, 'CreateParkingFacility'])->name('ec.CreateParkingFacility');
     Route::get('/key-accessory-history/{uid}', [EngineerCompanyController::class, 'CreateKeyAccessoryHistory'])->name('ec.CreateKeyAccessoryHistory');
+    Route::get('/parts-replacement-history/{uid}', [EngineerCompanyController::class, 'CreatePartsReplacementHistory'])->name('ec.CreatePartsReplacementHistory');
 
 
     //Route to create customer basic information by engineer company
@@ -54,6 +56,22 @@ Route::group(['prefix' => 'engineer-company'], function () {
     Route::post('/create-parking-information-and-parking-certificate-information', [ParkingFacility::class, 'CreateParkingFacilityAndCertificate'])->name('CreateParkingFacilityAndCertificate');
 
     //Route to Create Parking Facility and Parking Facility Certificate Information by engineer company
+    Route::post('/create-main-key-accessory-information', [KeyAccessoryInformation::class, 'CreateMainKeyAccessoryInformation'])->name('CreateMainKeyAccessoryInformation');
+
+
+    //Route to Create Parking Facility and Parking Facility Certificate Information by engineer company
+    Route::post('/create-sub-part-title', [KeyAccessoryInformation::class, 'CreateSubPartTitle'])->name('CreateSubPartTitle');
+
+    //Route to Create Parking Facility and Parking Facility Certificate Information by engineer company
     Route::post('/create-key-accessory-information', [KeyAccessoryInformation::class, 'CreateKeyAccessoryInformation'])->name('CreateKeyAccessoryInformation');
+
+    //Route to Create Parking Facility and Parking Facility Certificate Information by engineer company
+    Route::post('/create-part-replacement-information', [PartReplacement::class, 'CreatePartReplacementHistory'])->name('CreatePartReplacementHistory');
+
+    //Route to Create Parking Facility and Parking Facility Certificate Information by engineer company
+    Route::post('/filter-part-replacement-information', [PartReplacement::class, 'FilterPartReplacementHistory'])->name('FilterPartReplacementHistory');
+
+    //Route to Create Parking Facility and Parking Facility Certificate Information by engineer company
+    Route::post('/delete-part-replacement-information', [PartReplacement::class, 'DeletePartReplacementHistory'])->name('DeletePartReplacementHistory');
 
 });

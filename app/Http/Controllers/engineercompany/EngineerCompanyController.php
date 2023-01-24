@@ -59,4 +59,13 @@ class EngineerCompanyController extends Controller
         abort(404);
 
     }
+
+    public function CreatePartsReplacementHistory($uid)
+    {
+        $customer = CustomerInfo::where('user_uid', $uid)->first();
+        if ($customer) {
+            return view('engineer_company.parts_replacement_history', compact('customer'));
+        }
+        abort(404);
+    }
 }

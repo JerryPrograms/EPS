@@ -581,7 +581,6 @@ li.page-item.custom_mar {
     background: #DFE0EB;
     border: 1px solid rgba(161, 169, 208, 1);
     border-radius: 4px;
-    width: 90px;
     height: 35px;
     color: rgba(93, 93, 93, 1);
     font-family: Montserrat;
@@ -1143,4 +1142,17 @@ tbody, td, tfoot, th, thead, tr {
 
 .colllap_section_11 .collape_list_text li {
     margin-top: 22px;
+}
+
+<!--
+-->
+.history_add_btn {
+    border: 1px solid #b5d0fb;
+    background: transparent;
+    padding: 10px 20px 10px 20px;
+}
+
+.transparent-btn {
+    background-color: transparent;
+    border: none;
 }

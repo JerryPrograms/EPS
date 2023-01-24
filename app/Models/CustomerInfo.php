@@ -40,4 +40,19 @@ class CustomerInfo extends Model
     {
         return $this->hasMany(InspectionCertificate::class, 'customer_id', 'id');
     }
+
+    public function MainAccessory()
+    {
+        return $this->hasMany(MainPartModel::class, 'customer_id', 'id');
+    }
+
+    public function KeyAccessory()
+    {
+        return $this->hasMany(KeyAccessoryInformation::class, 'customer_id', 'id');
+    }
+
+    public function PartReplacementHistory()
+    {
+        return $this->hasMany(PartReplacementHistoryModel::class, 'customer_id', 'id');
+    }
 }

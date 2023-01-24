@@ -24,19 +24,15 @@ class KeyAccessoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'title'=>'required',
             'standard'=>'required',
             'quantity'=>'required',
-            'picture'=>'required',
         ];
     }
     function messages()
     {
         return [
-            'title.required'=>'title field is required',
             'standard.required'=>'standard field is required',
             'quantity.required'=>'quantity field is required',
-            'picture.required'=>'picture field is required',
         ];
     }
 }

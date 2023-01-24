@@ -13,14 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('key_accessory_information', function (Blueprint $table) {
+        Schema::create('main_part_models', function (Blueprint $table) {
             $table->id();
             $table->foreignId('customer_id')->constrained('customer_infos')->cascadeOnDelete();
             $table->string('title');
-            $table->string('standard');
-            $table->string('quantity');
-            $table->longText('work_history');
-            $table->string('picture');
+            $table->string('tag')->nullable();
+            $table->string('color')->nullable();
             $table->timestamps();
         });
     }
@@ -32,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('key_accessory_information');
+        Schema::dropIfExists('main_part_models');
     }
 };
