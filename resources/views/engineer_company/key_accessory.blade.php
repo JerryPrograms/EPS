@@ -397,7 +397,7 @@
                                                 <!-- form row 4 start  -->
                                                 <div class="row justify-content-end no-print">
                                                     <div class="col-lg-2 col-6">
-                                                        <a href="{{route('ec.CreateBuildingInfo',request()->segment(3))}}">
+                                                        <a href="{{route('ec.CreateParkingFacility',request()->segment(3))}}">
                                                             <button type="button" class="form_button_2 mb-5 mt-5">Back
                                                                 page
                                                             </button>
@@ -554,7 +554,7 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary waves-effect"
+                                    <button  type="button" class="btn btn-secondary waves-effect"
                                             data-bs-dismiss="modal">
                                         Close
                                     </button>

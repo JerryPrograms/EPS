@@ -4,6 +4,7 @@ namespace App\Service;
 
 use App\Http\Requests\CustomerInfoRequest;
 use App\Models\CustomerInfo;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -87,8 +88,28 @@ class Customer_Info
 
 
             } else {
-                $customer = CustomerInfo::where($request['filter'], 'like', '%' . $request['keyword'] . '%')->paginate(10);
-                $html = view('engineer_company.customer_list_template', compact('customer'))->render();
+
+                if ($request['filter'] == 'created_at') {
+
+                    try{
+
+                        $date = Carbon::parse($request['keyword'])->format('Y-d-m');
+                    }catch(\Exception $ex)
+                    {
+                        return json_encode([
+                           'success'=>false,
+                           'message'=>'Please enter date in the Year-day-month format'
+                        ]);
+                    }
+                    $customer = CustomerInfo::where($request['filter'], $date)->paginate(10);
+                    $html = view('engineer_company.customer_list_template', compact('customer'))->render();
+
+                } else {
+                    $customer = CustomerInfo::where($request['filter'], 'like', '%' . $request['keyword'] . '%')->paginate(10);
+                    $html = view('engineer_company.customer_list_template', compact('customer'))->render();
+
+                }
+
 
                 return json_encode([
                     'success' => true,

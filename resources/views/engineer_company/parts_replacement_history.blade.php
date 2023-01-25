@@ -387,7 +387,7 @@
                                     <div class="main_section_buttn">
                                         <div class="row justify-content-end">
                                             <div class="col-lg-2 col-6">
-                                                <button class="form_button_2 mb-5 mt-5">Back page
+                                                <button onclick="window.location.href='{{route("ec.CreateKeyAccessoryHistory",request()->segment(3))}}'" type="button" class="form_button_2 mb-5 mt-5">Back page
                                                 </button>
                                             </div>
                                             <div class="col-lg-2 col-6">

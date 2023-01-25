@@ -292,7 +292,12 @@
                     $('.searchbar_button').attr('disabled', false);
 
                     if (res.success == false) {
+                        prompt.html('<div class="alert alert-danger">' + res.message + '</div>');
 
+                        $("div.prompt").fadeIn();
+                        setTimeout(function () {
+                            $("div.prompt").fadeOut();
+                        }, 2000);
 
                     } else if (res.success == true) {
 

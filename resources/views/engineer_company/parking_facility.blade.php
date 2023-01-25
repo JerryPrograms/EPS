@@ -259,7 +259,7 @@
                                                        id="exampleInputEmail1" aria-describedby="emailHelp"
                                                        placeholder="Enter additional details"
                                                        @if(!empty($customer->ParkingFacilityCertificate)) value="{{$customer->ParkingFacilityCertificate->addition_information}}" @endif
-                                                >
+                                               required >
                                             </div>
 
                                         </div>
@@ -341,7 +341,7 @@
                                                                    style="width: 147px !important;"
                                                                    class="form-control col-lg-2 custom_input_tble_2 w-50"
                                                                    id="exampleInputEmail1" aria-describedby="emailHelp"
-                                                                   placeholder="From December 5, 2020 to August"
+                                                                   placeholder="From December 5, 2020 to August" onchange="RestrictNextDate($(this))"
                                                                    required
                                                                    @if(count($customer->InspectionCertificate) > 0) value="{{$customer->InspectionCertificate[0]->inspection_period_from}}" @endif
                                                             >
@@ -418,6 +418,7 @@
                                                                    aria-describedby="emailHelp"
                                                                    placeholder="From December 5, 2020 to August"
                                                                    required
+                                                                   onchange="RestrictNextDate($(this))"
                                                                    @if(count($customer->InspectionCertificate) > 0) value="{{$customer->InspectionCertificate[1]->inspection_period_from}}" @endif
                                                             >
                                                             <input type="date" name="inspection_period_to[]"
@@ -494,6 +495,7 @@
                                                                    id="exampleInputEmail1" aria-describedby="emailHelp"
                                                                    placeholder="From December 5, 2020 to August"
                                                                    required
+                                                                   onchange="RestrictNextDate($(this))"
                                                                    @if(count($customer->InspectionCertificate) > 0) value="{{$customer->InspectionCertificate[2]->inspection_period_from}}" @endif
                                                             >
                                                             <input type="date" name="inspection_period_to[]"
@@ -601,6 +603,12 @@
         function setImage(path) {
             $('#certificate_image').attr('src', path);
             $('.bs-example-modal-center').modal('show');
+        }
+
+        function RestrictNextDate(element)
+        {
+            console.log(element.val());
+            element.next().attr('min',element.val());
         }
     </script>
 @endsection

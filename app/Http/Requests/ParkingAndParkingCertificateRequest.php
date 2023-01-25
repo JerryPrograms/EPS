@@ -23,15 +23,29 @@ class ParkingAndParkingCertificateRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'certification_number' => 'required',
-            'type' => 'required',
-            'parking_space' => 'required',
-            'producer' => 'required',
-            'year_of_installation' => 'required',
-            'inspection_date' => 'required',
-            'addition_information' => 'required',
-        ];
+        if ($this->request->has('p_id')) {
+            return [
+                'certification_number' => 'required',
+                'type' => 'required',
+                'parking_space' => 'required',
+                'producer' => 'required',
+                'year_of_installation' => 'required',
+                'inspection_date' => 'required',
+                'addition_information' => 'required',
+            ];
+        } else {
+            return [
+                'certification_number' => 'required',
+                'type' => 'required',
+                'parking_space' => 'required',
+                'producer' => 'required',
+                'year_of_installation' => 'required',
+                'inspection_date' => 'required',
+                'addition_information' => 'required',
+                'inspection_certificate' => 'required|array|min:3|max:3',
+            ];
+        }
+
     }
 
     function messages()
@@ -44,6 +58,9 @@ class ParkingAndParkingCertificateRequest extends FormRequest
             'year_of_installation.required' => 'year of installation field is required',
             'inspection_date.required' => 'inspection date field is required',
             'addition_information.required' => 'addition information field is required',
+            'inspection_certificate.required' => 'Inspection certificate required',
+            'inspection_certificate.min' => 'All 3 Inspection certificate required',
+            'inspection_certificate.max' => 'All 3 Inspection certificate required',
         ];
     }
 }

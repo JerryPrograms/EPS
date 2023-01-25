@@ -14,6 +14,9 @@ function onRequestSuccess(response, button, buttonText, prompt, redirctUrl) {
             window.location.href = redirctUrl;
         }, 2000);
     } else {
+        $('html, body').animate({
+            scrollTop: $("body").offset().top
+        }, 500);
         prompt.html('<div class="alert alert-danger mb-3">' + response.message + '</div>');
         button.prop('disabled', false);
         button.html(buttonText);
@@ -44,6 +47,15 @@ function ajaxCall(form, action, btn, redirect, successCallback) {
             }
         },
         error: function (e) {
+
+            var btnText = btn.html();
+            var button = btn;
+            $('html, body').animate({
+                scrollTop: $("body").offset().top
+            }, 500);
+            prompt.html('<div class="alert alert-danger mb-3">' + e.responseJSON.message + '</div>');
+            button.prop('disabled', false);
+            button.html('Save and next');
         }
     });
 }

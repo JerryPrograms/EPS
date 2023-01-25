@@ -18,6 +18,9 @@ class ParkingFacility
 
         try {
 
+
+
+
             DB::beginTransaction();
 
 
