@@ -9,6 +9,7 @@ use App\Service\KeyAccessoryInformation;
 use App\Service\ParkingFacility;
 use App\Service\PartReplacement;
 use Illuminate\Support\Facades\Route;
+use App\Service\MonthlyRegularInspectionService;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +35,7 @@ Route::group(['prefix' => 'engineer-company'], function () {
     Route::get('/parking-facility/{uid}', [EngineerCompanyController::class, 'CreateParkingFacility'])->name('ec.CreateParkingFacility');
     Route::get('/key-accessory-history/{uid}', [EngineerCompanyController::class, 'CreateKeyAccessoryHistory'])->name('ec.CreateKeyAccessoryHistory');
     Route::get('/parts-replacement-history/{uid}', [EngineerCompanyController::class, 'CreatePartsReplacementHistory'])->name('ec.CreatePartsReplacementHistory');
+    Route::get('/monthly-regular-inspection/{uid}', [EngineerCompanyController::class, 'CreateMonthlyRegularInspection'])->name('ec.CreateMonthlyRegularInspection');
 
 
     //Route to create customer basic information by engineer company
@@ -73,5 +75,14 @@ Route::group(['prefix' => 'engineer-company'], function () {
 
     //Route to Create Parking Facility and Parking Facility Certificate Information by engineer company
     Route::post('/delete-part-replacement-information', [PartReplacement::class, 'DeletePartReplacementHistory'])->name('DeletePartReplacementHistory');
+
+    //Route to Create Parking Facility and Parking Facility Certificate Information by engineer company
+    Route::post('/create-monthly-regular-inspection-information', [MonthlyRegularInspectionService::class, 'CreateMonthlyRegularInspection'])->name('CreateMonthlyRegularInspection');
+
+    //Route to Create Parking Facility and Parking Facility Certificate Information by engineer company
+    Route::post('/filter-monthly-regular-inspection-information', [MonthlyRegularInspectionService::class, 'FilerMonthlyInspection'])->name('FilerMonthlyInspection');
+
+    //Route to Create Parking Facility and Parking Facility Certificate Information by engineer company
+    Route::post('/delete-monthly-regular-inspection-information', [MonthlyRegularInspectionService::class, 'DeleteMonthlyInspection'])->name('DeleteMonthlyInspection');
 
 });

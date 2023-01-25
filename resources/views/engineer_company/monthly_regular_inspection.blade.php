@@ -4,17 +4,16 @@
         <div class="page-content">
             <div class="container-fluid">
                 <div class="main_content_section">
-
-                    <!-- start page title -->
-                    <form id="add_part_replacement_form">
-                        <input name="customer_id" value="{{$customer->id}}" hidden>
+                    <form id="monthlyRegularInspectionForm">
                     @csrf
-                    <!-- end page title -->
+                    <!-- start page title -->
+
+                        <!-- end page title -->
                         <div class="row">
                             <div class="col-lg-12">
-                                <div class="prompt w-100"></div>
                                 <div class="card">
                                     <div class="card-body mb-4">
+                                        <div class="w-100 prompt"></div>
                                         <h4 class="card-title mb-4">Fill in customer information
                                         </h4>
                                         <div class="row">
@@ -27,8 +26,7 @@
                                                             aria-expanded="true">
                                                         <i id="calendarTypeIcon" class="calendar-icon ic_view_month"
                                                            style="margin-right: 4px;"></i>
-                                                        <span id="calendarTypeName">filter
-                                                            </span>
+                                                        <span id="calendarTypeName">filter</span>
                                                         <span class="icon_img">
                                                                 <img
                                                                     src="{{asset('engineer_company/assets/images/Polygon 4.png')}}"
@@ -84,9 +82,9 @@
                                             </div>
 
                                             <div class="col-md-8 col-9">
-                                                <div class="custom_search_2">
+                                                <div class="custom_search">
                                                     <div class="search mt-4">
-                                                        <input type="text" class="form-control" placeholder="search">
+                                                        <input type="text" class="form-control" placeholder="Search">
                                                         <button class="btn btn-primary searchbar_button">
                                                             <div class="search_img">
                                                                 <img
@@ -101,9 +99,7 @@
                                                 <div class="circle_main_section">
                                                     <button class="circle_img_section">
                                                         <img src="{{asset('engineer_company/images/user2.png')}}">
-                                                        <p class="circle_img_text mt-3">기사 홍길동
-
-                                                        </p>
+                                                        <p class="circle_img_text mt-3">홍길동 기사님</p>
                                                     </button>
                                                 </div>
                                             </div>
@@ -196,7 +192,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-1">
-                                                    <h4 class="card_tittle_2" style="text-align: end;">5 / 8</h4>
+                                                    <h4 class="card_tittle_2" style="text-align: end;">6 / 8</h4>
                                                 </div>
                                             </div>
                                         </div>
@@ -205,7 +201,7 @@
                                         <div class="row mt-4">
                                             <div class="col-lg-11">
                                                 <h4 class="card-title border-bottom-0"> <span
-                                                        class="bor_lef">&nbsp;</span> customer information
+                                                        class="bor_lef">&nbsp;</span>customer information
                                                 </h4>
                                             </div>
                                             <div class="col-lg-1">
@@ -220,33 +216,12 @@
                                         </div>
                                         <!-- form row 1 end  -->
 
-                                        <!-- row 2 start  -->
-                                        <div class="row">
-                                            <div class="col-lg-3">
-                                                <p class="circle_img_text mt-3">
-                                                    Initial installation date
-                                                </p>
-                                            </div>
-                                            <div class="col-lg-3 mt-2">
-                                                <div class="input-group" id="datepicker1">
-                                                    <input id="initial_date"
-                                                           type="date" name="initial_date"
-                                                           class="form-control frm_section_inp"
-                                                           placeholder="2022-12-06" data-date-format="dd M, yyyy"
-                                                           data-date-container='#datepicker1'
-                                                           data-provide="datepicker">
-                                                </div><!-- input-group -->
-                                            </div>
-
-                                        </div>
-                                        <!-- row 2 end  -->
-
 
                                         <!-- row 2 start  -->
-                                        <div class="row mt-4">
+                                        <div class="row mt-2">
                                             <div class="col-lg-3">
                                                 <p class="circle_img_text mt-3">
-                                                    <b>Failure and replacement history
+                                                    <b> Failure and replacement history
                                                     </b>
                                                 </p>
                                             </div>
@@ -259,14 +234,13 @@
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 text-end">
-                                                <button type="button" onclick="addReplacementHistoryRow()"
+                                                <button type="button" onclick="addMonthlyregularInspection()"
                                                         class="history_add_btn">Add
                                                 </button>
                                             </div>
+
                                         </div>
-                                        <!-- row 2 end----------------------------------------------------------------------------------------------------------------  -->
-
-
+                                        <!-- row -->
                                     </div>
 
                                     <!-- end row -->
@@ -276,92 +250,89 @@
 
                                     <!--- tabel 2 start--- -->
                                     <!-- end page title------------------------------- -->
-                                    <div class="table-responsive mt-3" style="margin: 0px 20px;">
-                                        <table class="table align-middle mb-0">
-                                            <thead class="table-light">
-                                            <tr>
-                                                <th>No.</th>
-                                                <th class="text-center custom_inp_widt_2">registration date
-                                                </th>
-                                                <th class="text-center custom_inp_widt_2">part
-                                                </th>
-                                                <th class="text-center custom_inp_widt_2 custom_wisth_input_2">manager
-                                                </th>
-                                                <th class="text-center">AS content
-                                                </th>
-                                                <th class="text-center">Action
-                                                </th>
-                                            </tr>
-                                            </thead>
-                                            <tbody id="partReplacemnetTbody">
-                                            @php
-                                                $PartsReplacementHistory = $customer->PartReplacementHistory()->paginate(5);
-                                            @endphp
-                                            @foreach($PartsReplacementHistory as $rh)
-                                                <tr>
-                                                    <td class="custom_br_theme_gray"><a href="javascript: void(0);"
-                                                                                        class="text-body fw-bold">{{$loop->index + 1}}</a>
-                                                    </td>
-                                                    <td class="custom_br_theme_gray_2">
-                                                        <button type="button"
-                                                                class="date_button border-0">{{$rh->created_at->format('Y.m.d')}}</button>
-                                                    </td>
+                                    @php
+                                        $MonthlyRegularInspections = $customer->MonthlyRegularInspection()->paginate(10);
+                                    @endphp
+                                    <div class="row justify-content-center">
+                                        <div class="col-lg-11 p-0">
+                                            <div class="table-responsive">
+                                                <table class="table align-middle table-nowrap mb-0">
+                                                    <thead class="table-light">
+                                                    <tr>
 
-                                                    <td class="custom_br_theme_gray_2">
-                                                        <button type="button"
-                                                                class="date_button_2 border-0">{{$rh->part}}
-                                                        </button>
-                                                    </td>
+                                                        <th class="align-middle border-0">No.</th>
+                                                        <th class="text-center custom_inp_widt  border-0">date
 
-                                                    <td class="custom_br_theme_gray_2">
-                                                        <button type="button"
-                                                                class="date_button_2 border-0">{{$rh->manager}}
-                                                        </button>
-                                                    </td>
-                                                    <td class="custom_br_theme_gray_3">
-                                                        <!-- Button trigger modal -->
-                                                        <button type="button"
-                                                                class="date_button_2 border-0">{{$rh->as_content}}
-                                                        </button>
-                                                    </td>
-                                                    <td class="custom_br_theme_gray_3">
-                                                        <!-- Button trigger modal -->
-                                                        <button onclick="$('#partReplacementID').val('{{$rh->id}}')"
-                                                                type="button" data-bs-toggle="modal"
-                                                                data-bs-target="#deleteReplacementHistory"
-                                                                class="date_button_2 border-0">
-                                                            <i class="fa fa-trash-can"></i>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                            @endforeach
-                                            </tbody>
-                                        </table>
+                                                        </th>
+                                                        <th class="custom_inp_widt  border-0">attached photo
+                                                        </th>
+                                                        <th class="custom_inp_widt  border-0 ">manager</th>
+                                                        <th class="text-center  border-0">Check contents
+                                                        </th>
+                                                        <th class="text-center  border-0">Action
+                                                        </th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody id="monthly_regular_inspection_tbody">
 
+                                                    @foreach($MonthlyRegularInspections as $mr)
+                                                        <tr class="custom_bor_clr">
+                                                            <td class="border-bottom-0"><a
+                                                                    href="javascript: void(0);"
+                                                                    class="text-body fw-bold">{{$loop->index + 1}}</a></td>
+                                                            <td class="border-bottom-0">
+                                                                <button
+                                                                    class="date_button border-0">{{$mr->date}}
+                                                                </button>
+                                                            </td>
+                                                            <td class="border-bottom-0">
+                                                                <img class="monthly-inspection-listing-img"
+                                                                    src="{{asset($mr->photo)}}"
+                                                                    class="gallery_img">
+                                                            </td>
+                                                            <td class="border-bottom-0">
+                                                                <button class="date_button_2 border-0">{{$mr->manager}}
+                                                                </button>
+                                                            </td>
+                                                            <td class="border-bottom-0">
+                                                                <button class="date_button_2 border-0">{{$mr->check_contents}}
+                                                                </button>
+                                                            </td>
 
-                                        <div id="PartsReplacementHistoryPagination" class="col-lg-12">
-                                            {!! $PartsReplacementHistory->links('common_files.paginate') !!}
+                                                            <td class="border-bottom-0 text-center">
+                                                                <button onclick="$('#partReplacementID').val('{{$mr->id}}')"
+                                                                        type="button" data-bs-toggle="modal"
+                                                                        data-bs-target="#deleteReplacementHistory"
+                                                                        class="date_button_2 border-0">
+                                                                    <i class="fa fa-trash-can"></i>
+                                                                </button>
+                                                            </td>
+                                                        </tr>
+                                                    @endforeach
+                                                    </tbody>
+                                                </table>
+                                            </div>
                                         </div>
-
-
-                                        <!-- end table-responsive -->
                                     </div>
-
                                     <!-- end table-responsive -->
-
+                                    <div id="monthlyInspectionListingPagination" class="row justify-content-center">
+                                        <div class="col-lg-12">
+                                            {!! $MonthlyRegularInspections->links('common_files.paginate') !!}
+                                        </div>
+                                    </div>
                                     <!-- end page title end---------------------  -->
                                     <!-- form row 4 start  -->
                                     <div class="main_section_buttn">
                                         <div class="row justify-content-end">
                                             <div class="col-lg-2 col-6">
-                                                <button
-                                                    onclick="window.location.href='{{route("ec.CreateKeyAccessoryHistory",request()->segment(3))}}'"
-                                                    type="button" class="form_button_2 mb-5 mt-5">Back page
+                                                <button class="form_button_2 mb-5 mt-5">Back page
                                                 </button>
                                             </div>
                                             <div class="col-lg-2 col-6">
-                                                <button class="form_button mb-5 mt-5 submitbtn">Save and Next
-                                                </button>
+                                                <a href="emergency-dispatch-check.html">
+                                                    <button class="form_button mb-5 mt-5">Save and Next
+                                                    </button>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -369,6 +340,7 @@
                                 </div>
                             </div>
                         </div>
+                        <input name="customer_id" hidden value="{{$customer->id}}">
                     </form>
                 </div>
                 <!-- container-fluid -->
@@ -384,12 +356,12 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="myModalLabel">Delete Parts history Replacement</h5>
+                    <h5 class="modal-title" id="myModalLabel">Delete Regular Inspection History</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                             aria-label="Close"></button>
                 </div>
 
-                <form id="deletePartsReplacementHistory">
+                <form id="deleteMonthlyInspectionModal">
                     @csrf
                     <div class="modal-body">
                         <div class="col-12">
@@ -419,80 +391,55 @@
 @endsection
 @section('custom-script')
     <script>
+        function addMonthlyregularInspection() {
+            $('#monthly_regular_inspection_tbody').prepend(`<tr class="custom_bor_3 border-top-0 mt-5">
+                                                        <td><a href="javascript: void(0);" class="text-body fw-bold">#</a>
+                                                        </td>
+                                                        <td>
+                                                            <input type="date" name="date[]" required class="form-control col-lg-12 custom_input_tble_5" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="2022.11.01">
+                                                        </td>
+
+                                                        <td>
+                                                             <input type="file" name="photo[]" required class="form-control col-lg-12 custom_input_tble_5" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="2022.11.01">
+                                                        </td>
 
 
-        var counter = 0;
+                                                        <td>
+                                                            <input type="text" name="manager[]" required class="form-control col-lg-12 custom_input_tble_6" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Hong Gil Dong
+                                                                        ">
+                                                        </td>
 
-        function addReplacementHistoryRow() {
-            counter++;
-            $('#initial_date').attr('required', true);
-            $('#partReplacemnetTbody').prepend(`
-                                            <tr class="mt-5">
-                                            <td class="custom_br_theme_gray"><a href="javascript: void(0);"
-                                                    class="text-body fw-bold">#</a> </td>
-                                            <td class="custom_br_theme_gray_2">
-                                                <input type="date" name="registration_date[]"
-                                                    class="form-control col-lg-12 custom_input_tble"
-                                                    id="exampleInputEmail1" aria-describedby="emailHelp"
-                                                    placeholder="2022.11.01" required>
-                                            </td>
+                                                        <td>
+                                                            <input type="text" name="check_contents[]" required class="form-control col-lg-2 custom_input_tble" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Center lift replacement
+                                                                        ">
+                                                        </td>
 
-
-                                            <td class="custom_br_theme_gray_2">
-                                                <input type="text" name="part[]"
-                                                    class="form-control col-lg-2 custom_input_tble"
-                                                    id="exampleInputEmail1" aria-describedby="emailHelp"
-                                                    placeholder="Part name"
-                                                     required>
-                                            </td>
-
-                                            <td class="custom_br_theme_gray_2">
-                                                <input type="text" name="manager[]"
-                                                    class="form-control col-lg-12 custom_input_tble"
-                                                    id="exampleInputEmail1" aria-describedby="emailHelp"
-                                                    placeholder="Manager Name
-                                                    " required>
-                                            </td>
-
-                                            <td class="custom_br_theme_gray_3">
-                                                <input type="text" name="as_content[]"
-                                                    class="form-control col-lg-2 custom_input_tble"
-                                                    id="exampleInputEmail1" aria-describedby="emailHelp"
-                                                    placeholder="AS content
-                                                    " required>
-                                            </td>
-
-                                 <td class="custom_br_theme_gray_3">
-                            <button type="button" onclick="removeRow($(this).parent().parent())" class="transparent-btn"><i class=" fa fa-trash-can"></i></button>
-                                 </td>
-                                        </tr>
-             `);
+                                                        <td class="text-center">
+                                                            <button type="button" onclick="removeMonthlyRegularInspection($(this))" class="search_button">
+                                                               <i class="fa fa-trash"></i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>`);
         }
 
-        function removeRow(element) {
-            element.remove();
-            counter--;
-            if (counter == 0) {
-                $('#initial_date').attr('required', false);
-            }
+        function removeMonthlyRegularInspection(element) {
+            element.parent().parent().remove();
         }
 
-        $('#add_part_replacement_form').on('submit', function (e) {
+        $('#monthlyRegularInspectionForm').on('submit', function (e) {
             e.preventDefault();
-            ajaxCall($('#add_part_replacement_form'), "{{ route('CreatePartReplacementHistory') }}", $('#add_part_replacement_form').find('.submitbtn'), "{{ route('ec.CreateMonthlyRegularInspection',request()->segment(3)) }}", onRequestSuccess);
+            ajaxCall($('#monthlyRegularInspectionForm'), "{{ route('CreateMonthlyRegularInspection') }}", $('#monthlyRegularInspectionForm').find('button.form_button'), "{{ route('ec.CreateKeyAccessoryHistory',request()->segment(3)) }}", onRequestSuccess);
         });
-
-        $('#deletePartsReplacementHistory').on('submit', function (e) {
+        $('#deleteMonthlyInspectionModal').on('submit', function (e) {
             e.preventDefault();
-            ajaxCall($('#deletePartsReplacementHistory'), "{{ route('DeletePartReplacementHistory') }}", $('#deletePartsReplacementHistory').find('.submitbtn'), "{{ route('ec.CreatePartsReplacementHistory',request()->segment(3)) }}", onRequestSuccess);
+            ajaxCall($('#deleteMonthlyInspectionModal'), "{{ route('DeleteMonthlyInspection') }}", $('#deleteMonthlyInspectionModal').find('button.form_button'), "{{ route('ec.CreateKeyAccessoryHistory',request()->segment(3)) }}", onRequestSuccess);
         });
-
 
         function FilterData(date) {
             console.log(date);
             $.ajax({
                 type: "POST",
-                url: '{{route('FilterPartReplacementHistory')}}',
+                url: '{{route('FilerMonthlyInspection')}}',
                 dataType: 'json',
                 cache: false,
                 data: {
@@ -504,9 +451,9 @@
 
                 },
                 success: function (res) {
-                    $('#partReplacemnetTbody').html('');
-                    $('#partReplacemnetTbody').html(res.html);
-                    $('#PartsReplacementHistoryPagination').remove();
+                    $('#monthly_regular_inspection_tbody').html('');
+                    $('#monthly_regular_inspection_tbody').html(res.html);
+                    $('#monthlyInspectionListingPagination').remove();
                 },
                 error: function (e) {
                 }

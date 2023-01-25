@@ -55,4 +55,9 @@ class CustomerInfo extends Model
     {
         return $this->hasMany(PartReplacementHistoryModel::class, 'customer_id', 'id');
     }
+
+    public function MonthlyRegularInspection()
+    {
+        return $this->hasMany(MonthlyRegularInspection::class, 'customer_id', 'id');
+    }
 }

@@ -8,6 +8,11 @@
         margin: 10px;
     }
 
+    .monthly-inspection-listing-img
+    {
+        width: 50px;
+        height: auto;
+    }
 
 </style>
 <body data-sidebar="dark" data-layout-mode="light">

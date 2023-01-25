@@ -297,9 +297,7 @@
                                                                                                         aria-describedby="emailHelp"
                                                                                                         placeholder=""
                                                                                                         name="work_history"
-                                                                                                    >@if(!empty($SubParts->work_history))
-                                                                                                            {{$SubParts->work_history}}
-                                                                                                        @endif</textarea>
+                                                                                                    >@if(!empty($SubParts->work_history)){{$SubParts->work_history}}@endif</textarea>
 
 
                                                                                                     <input

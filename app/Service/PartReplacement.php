@@ -57,11 +57,8 @@ class PartReplacement
 
         try {
 
-            $year = explode('-', $request->date)[0];
-            $month = explode('-', $request->date)[1];
 
-
-            $MainPart = PartReplacementHistoryModel::whereYear('registration_date', $year)->whereMonth('registration_date', $month)->get();
+            $MainPart = PartReplacementHistoryModel::where('registration_date', $request->date)->get();
 
             $html = view('engineer_company.part_replacement_history_listing_template', compact('MainPart'))->render();
 
@@ -84,7 +81,11 @@ class PartReplacement
     {
         try {
 
-//            $main_part_hstory_delete =
+            $main_part_hstory_delete = PartReplacementHistoryModel::where('id', $request->id)->delete();
+            return json_encode([
+                'success' => true,
+                'message' => 'Data deleted successfully',
+            ]);
 
         } catch (\Exception $ex) {
             return json_decode([
