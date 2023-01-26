@@ -68,11 +68,30 @@ class EngineerCompanyController extends Controller
         }
         abort(404);
     }
+
     public function CreateMonthlyRegularInspection($uid)
     {
         $customer = CustomerInfo::where('user_uid', $uid)->first();
         if ($customer) {
             return view('engineer_company.monthly_regular_inspection', compact('customer'));
+        }
+        abort(404);
+    }
+
+    public function CreateEmergencyDispatchChecklist($uid)
+    {
+        $customer = CustomerInfo::where('user_uid', $uid)->first();
+        if ($customer) {
+            return view('engineer_company.emergency_dispatch_check_list', compact('customer'));
+        }
+        abort(404);
+    }
+
+    public function CreateManageAttachments($uid)
+    {
+        $customer = CustomerInfo::where('user_uid', $uid)->first();
+        if ($customer) {
+            return view('engineer_company.manage_attachments', compact('customer'));
         }
         abort(404);
     }

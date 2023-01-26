@@ -2,28 +2,21 @@
 
 namespace App\Service;
 
-use App\Http\Requests\KeyAccessoryRequest;
-use App\Http\Requests\MonthlyRegularInspectionRequest;
-use App\Models\KeyAccessoryInformation as KeyAccessoryModel;
-use App\Models\MainPartModel;
-use App\Models\MonthlyRegularInspection;
-use App\Models\PartReplacementHistoryModel;
+use App\Http\Requests\EmergencyDispatchCheckListRequest;
+use App\Models\EmergencyDispatchCheckList;
 use Illuminate\Http\Request;
 
 
-class MonthlyRegularInspectionService
+class EmergencyDispatchCheckListService
 {
-
-    //Create Main Key Accessory Part
-    public static function CreateMonthlyRegularInspection(MonthlyRegularInspectionRequest $request)
+    public static function CreateEmergencyDispatchCheckList(EmergencyDispatchCheckListRequest $request)
     {
 
 
-        if(!$request->has('date'))
-        {
+        if (!$request->has('date')) {
             return json_encode([
-                'success'=>true,
-                'message'=>'Redirecting to next page...',
+                'success' => true,
+                'message' => 'Redirecting to next page',
             ]);
         }
 
@@ -32,15 +25,15 @@ class MonthlyRegularInspectionService
             for ($i = 0; $i < count($request->manager); $i++) {
                 $data = array();
                 $data['date'] = $request->date[$i];
-                $data['photo'] = saveFiles('', 'engineer_company/regular_inspection_history/', $request->photo[$i]);
+                $data['photo'] = saveFiles('', 'engineer_company/emergency_dispatch_checklist/', $request->photo[$i]);
                 $data['manager'] = $request->manager[$i];
                 $data['check_contents'] = $request->check_contents[$i];
                 $data['customer_id'] = $request->customer_id;
-                $MonthlyInspection = MonthlyRegularInspection::create($data);
+                $MonthlyInspection = EmergencyDispatchCheckList::create($data);
             }
             return json_encode([
                 'success' => true,
-                'message' => 'Monthly Regular Inspection added successfully',
+                'message' => 'Emergency Dispatch Checklist added successfully',
             ]);
 
 
@@ -52,16 +45,15 @@ class MonthlyRegularInspectionService
         }
     }
 
-
-    public static function FilerMonthlyInspection(Request $request)
+    public static function FilerEmergencyDispatchCheckList(Request $request)
     {
 
 
         try {
 
-            $MonthlyRegularInspections = MonthlyRegularInspection::where('date', $request->date)->where('customer_id',$request->id)->get();
+            $MonthlyRegularInspections = EmergencyDispatchCheckList::where('date', $request->date)->get();
 
-            $html = view('engineer_company.monthly_inspection_replacement_listing_template', compact('MonthlyRegularInspections'))->render();
+            $html = view('engineer_company.emergency_dispatch_checklist_listing_template', compact('MonthlyRegularInspections'))->render();
 
 
             return json_encode([
@@ -78,11 +70,11 @@ class MonthlyRegularInspectionService
         }
     }
 
-    public static function DeleteMonthlyInspection(Request $request)
+    public static function DeleteEmergencyDispatchCheckList(Request $request)
     {
         try {
 
-            $main_part_hstory_delete = MonthlyRegularInspection::where('id', $request->id)->delete();
+            $main_part_hstory_delete = EmergencyDispatchCheckList::where('id', $request->id)->delete();
             return json_encode([
                 'success' => true,
                 'message' => 'Data deleted successfully',

@@ -18,8 +18,84 @@
                                         </h4>
                                         <div class="row">
 
+                                            <div class="col-md-1 col-3">
+                                                <div class="dropdown align-self-start mt-3 mt-sm-0 mb-2">
+                                                    <button id="dropdownMenu-calendarType"
+                                                            class="btn d-flex mt-4  btn_drop" type="button"
+                                                            data-bs-toggle="dropdown" aria-haspopup="true"
+                                                            aria-expanded="true">
+                                                        <i id="calendarTypeIcon" class="calendar-icon ic_view_month"
+                                                           style="margin-right: 4px;"></i>
+                                                        <span id="calendarTypeName">filter</span>
+                                                        <span class="icon_img">
+                                                                <img
+                                                                    src="{{asset('engineer_company/assets/images/Polygon 4.png')}}"
+                                                                    alt="">
+                                                            </span>
+                                                    </button>
+                                                    <ul class="dropdown-menu dropdown-menu-end" role="menu"
+                                                        aria-labelledby="dropdownMenu-calendarType">
+                                                        <li role="presentation">
+                                                            <a class="dropdown-item" role="menuitem"
+                                                               data-action="toggle-daily">
+                                                                <i class="calendar-icon ic_view_day"></i>All
+                                                            </a>
+                                                        </li>
+                                                        <li role="presentation">
+                                                            <a class="dropdown-item" role="menuitem"
+                                                               data-action="toggle-daily">
+                                                                <i class="calendar-icon ic_view_day"></i>
+                                                                Registration Date
+                                                            </a>
+                                                        </li>
+                                                        <li role="presentation">
+                                                            <a class="dropdown-item" role="menuitem"
+                                                               data-action="toggle-daily">
+                                                                <i class="calendar-icon ic_view_day"></i>
+                                                                Building name
+                                                            </a>
+                                                        </li>
+                                                        <li role="presentation">
+                                                            <a class="dropdown-item" role="menuitem"
+                                                               data-action="toggle-daily">
+                                                                <i class="calendar-icon ic_view_day"></i>
+                                                                Customer number
+                                                            </a>
+                                                        </li>
+                                                        <li role="presentation">
+                                                            <a class="dropdown-item" role="menuitem"
+                                                               data-action="toggle-daily">
+                                                                <i class="calendar-icon ic_view_day"></i>
+                                                                Address
+                                                            </a>
+                                                        </li>
+                                                        <li role="presentation">
+                                                            <a class="dropdown-item" role="menuitem"
+                                                               data-action="toggle-daily">
+                                                                <i class="calendar-icon ic_view_day"></i>
+                                                                Building management company </a>
+                                                        </li>
 
-                                            <div class="col-md-12 text-end">
+
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-8 col-9">
+                                                <div class="custom_search">
+                                                    <div class="search mt-4">
+                                                        <input type="text" class="form-control" placeholder="Search">
+                                                        <button class="btn btn-primary searchbar_button">
+                                                            <div class="search_img">
+                                                                <img
+                                                                    src="{{asset('engineer_company/assets/images/gray_searchbar.png')}}"/>
+                                                            </div>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-3">
                                                 <div class="circle_main_section">
                                                     <button class="circle_img_section">
                                                         <img src="{{asset('engineer_company/images/user2.png')}}">
@@ -116,7 +192,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-1">
-                                                    <h4 class="card_tittle_2" style="text-align: end;">6 / 8</h4>
+                                                    <h4 class="card_tittle_2" style="text-align: end;">7 / 8</h4>
                                                 </div>
                                             </div>
                                         </div>
@@ -151,7 +227,7 @@
                                             </div>
                                             <div class="col-lg-3">
                                                 <div class="dropdown align-self-start mt-sm-0 mb-2">
-                                                    <input type="date" onchange="FilterData($(this).val(),'{{$customer->id}}')"
+                                                    <input type="date" onchange="FilterData($(this).val())"
                                                            class="form-control frm_section_inp"
                                                            data-date-container='#datepicker1'
                                                            data-provide="datepicker">
@@ -175,7 +251,7 @@
                                     <!--- tabel 2 start--- -->
                                     <!-- end page title------------------------------- -->
                                     @php
-                                        $MonthlyRegularInspections = $customer->MonthlyRegularInspection()->paginate(10);
+                                        $MonthlyRegularInspections = $customer->EmergencyDispatchCheckList()->paginate(10);
                                     @endphp
                                     <div class="row justify-content-center">
                                         <div class="col-lg-11 p-0">
@@ -252,16 +328,12 @@
                                     <div class="main_section_buttn">
                                         <div class="row justify-content-end">
                                             <div class="col-lg-2 col-6">
-                                                <button type="button"
-                                                    onclick="window.location.href='{{route("ec.CreatePartsReplacementHistory",$customer->user_uid)}}'"
-                                                    class="form_button_2 mb-5 mt-5">Back page
+                                                <button type="button" onclick="window.location.href='{{route("ec.CreateMonthlyRegularInspection",$customer->user_uid)}}'" class="form_button_2 mb-5 mt-5">Back page
                                                 </button>
                                             </div>
                                             <div class="col-lg-2 col-6">
-                                                <a href="#">
-                                                    <button class="form_button mb-5 mt-5">Save and Next
-                                                    </button>
-                                                </a>
+                                                <button class="form_button mb-5 mt-5">Save and Next
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -285,7 +357,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="myModalLabel">Delete Regular Inspection History</h5>
+                    <h5 class="modal-title" id="myModalLabel">Delete Emergency Dispatch Check List</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                             aria-label="Close"></button>
                 </div>
@@ -357,24 +429,24 @@
 
         $('#monthlyRegularInspectionForm').on('submit', function (e) {
             e.preventDefault();
-            ajaxCall($('#monthlyRegularInspectionForm'), "{{ route('CreateMonthlyRegularInspection') }}", $('#monthlyRegularInspectionForm').find('button.form_button'), "{{ route('ec.CreateEmergencyDispatchChecklist',request()->segment(3)) }}", onRequestSuccess);
-        });
-        $('#deleteMonthlyInspectionModal').on('submit', function (e) {
-            e.preventDefault();
-            ajaxCall($('#deleteMonthlyInspectionModal'), "{{ route('DeleteMonthlyInspection') }}", $('#deleteMonthlyInspectionModal').find('button.form_button'), "{{ route('ec.CreateEmergencyDispatchChecklist',request()->segment(3)) }}", onRequestSuccess);
+            ajaxCall($('#monthlyRegularInspectionForm'), "{{ route('CreateEmergencyDispatchCheckList') }}", $('#monthlyRegularInspectionForm').find('button.form_button'), "{{ route('ec.CreateManageAttachments',request()->segment(3)) }}", onRequestSuccess);
         });
 
-        function FilterData(date, id) {
+        $('#deleteMonthlyInspectionModal').on('submit', function (e) {
+            e.preventDefault();
+            ajaxCall($('#deleteMonthlyInspectionModal'), "{{ route('DeleteEmergencyDispatchCheckList') }}", $('#deleteMonthlyInspectionModal').find('button.submitbtn'), "{{ route('ec.CreateEmergencyDispatchChecklist',request()->segment(3)) }}", onRequestSuccess);
+        });
+
+        function FilterData(date) {
             console.log(date);
             $.ajax({
                 type: "POST",
-                url: '{{route('FilerMonthlyInspection')}}',
+                url: '{{route('FilerEmergencyDispatchCheckList')}}',
                 dataType: 'json',
                 cache: false,
                 data: {
                     '_token': '{{csrf_token()}}',
                     'date': date,
-                    'id': id,
                 },
                 beforeSend: function () {
 

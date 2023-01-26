@@ -60,4 +60,12 @@ class CustomerInfo extends Model
     {
         return $this->hasMany(MonthlyRegularInspection::class, 'customer_id', 'id');
     }
+    public function EmergencyDispatchCheckList()
+    {
+        return $this->hasMany(EmergencyDispatchCheckList::class, 'customer_id', 'id');
+    }
+    public function ManageAttachments()
+    {
+        return $this->hasMany(ManageAttachment::class, 'customer_id', 'id');
+    }
 }

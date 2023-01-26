@@ -18,7 +18,6 @@
                                         </h4>
                                         <div class="row">
 
-
                                             <div class="col-md-12 text-end">
                                                 <div class="circle_main_section">
                                                     <button class="circle_img_section">
@@ -111,12 +110,12 @@
                                             <div class="row align-items-baseline">
                                                 <div class="col-lg-11">
                                                     <div class="">
-                                                        <h4 class="card_tittle_2">Customer information creation page
+                                                        <h4 class="card_tittle_2">Manage Attachments
                                                         </h4>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-1">
-                                                    <h4 class="card_tittle_2" style="text-align: end;">6 / 8</h4>
+                                                    <h4 class="card_tittle_2" style="text-align: end;">8 / 8</h4>
                                                 </div>
                                             </div>
                                         </div>
@@ -125,7 +124,7 @@
                                         <div class="row mt-4">
                                             <div class="col-lg-11">
                                                 <h4 class="card-title border-bottom-0"> <span
-                                                        class="bor_lef">&nbsp;</span>customer information
+                                                        class="bor_lef">&nbsp;</span>Manage Attachments
                                                 </h4>
                                             </div>
                                             <div class="col-lg-1">
@@ -143,21 +142,7 @@
 
                                         <!-- row 2 start  -->
                                         <div class="row mt-2">
-                                            <div class="col-lg-3">
-                                                <p class="circle_img_text mt-3">
-                                                    <b> Failure and replacement history
-                                                    </b>
-                                                </p>
-                                            </div>
-                                            <div class="col-lg-3">
-                                                <div class="dropdown align-self-start mt-sm-0 mb-2">
-                                                    <input type="date" onchange="FilterData($(this).val(),'{{$customer->id}}')"
-                                                           class="form-control frm_section_inp"
-                                                           data-date-container='#datepicker1'
-                                                           data-provide="datepicker">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 text-end">
+                                            <div class="col-lg-12 text-end">
                                                 <button type="button" onclick="addMonthlyregularInspection()"
                                                         class="history_add_btn">Add
                                                 </button>
@@ -175,7 +160,7 @@
                                     <!--- tabel 2 start--- -->
                                     <!-- end page title------------------------------- -->
                                     @php
-                                        $MonthlyRegularInspections = $customer->MonthlyRegularInspection()->paginate(10);
+                                        $MonthlyRegularInspections = $customer->ManageAttachments()->paginate(10);
                                     @endphp
                                     <div class="row justify-content-center">
                                         <div class="col-lg-11 p-0">
@@ -185,13 +170,13 @@
                                                     <tr>
 
                                                         <th class="align-middle border-0">No.</th>
-                                                        <th class="text-center custom_inp_widt  border-0">date
+                                                        <th class="text-center custom_inp_widt  border-0">upload date
 
                                                         </th>
-                                                        <th class="custom_inp_widt  border-0">attached photo
+                                                        <th class="custom_inp_widt  border-0">file
                                                         </th>
-                                                        <th class="custom_inp_widt  border-0 ">manager</th>
-                                                        <th class="text-center  border-0">Check contents
+                                                        <th class="custom_inp_widt  border-0 ">name</th>
+                                                        <th class="text-center  border-0">title
                                                         </th>
                                                         <th class="text-center  border-0">Action
                                                         </th>
@@ -212,26 +197,34 @@
                                                             </td>
                                                             <td class="border-bottom-0">
                                                                 <img class="monthly-inspection-listing-img"
-                                                                     src="{{asset($mr->photo)}}"
+                                                                     src="{{asset($mr->file)}}"
                                                                      class="gallery_img">
                                                             </td>
                                                             <td class="border-bottom-0">
-                                                                <button class="date_button_2 border-0">{{$mr->manager}}
+                                                                <button class="date_button_2 border-0">{{$mr->name}}
                                                                 </button>
                                                             </td>
                                                             <td class="border-bottom-0">
                                                                 <button
-                                                                    class="date_button_2 border-0">{{$mr->check_contents}}
+                                                                    class="date_button_2 border-0">{{$mr->title}}
                                                                 </button>
                                                             </td>
 
                                                             <td class="border-bottom-0 text-center">
+                                                                <button type="button" data-bs-toggle="modal"
+                                                                         data-bs-target="#manageFileView"
+                                                                        onclick="$('#attachment_id').attr('src','{{asset($mr->file)}}')"
+                                                                        class="search_btn_attachments">
+                                                                    <img
+                                                                        src="{{asset('engineer_company/assets/images/bluebar.png')}}">
+                                                                </button>
                                                                 <button
                                                                     onclick="$('#partReplacementID').val('{{$mr->id}}')"
                                                                     type="button" data-bs-toggle="modal"
                                                                     data-bs-target="#deleteReplacementHistory"
-                                                                    class="date_button_2 border-0">
-                                                                    <i class="fa fa-trash-can"></i>
+                                                                    class="delete_btn_attachments">
+                                                                    <img
+                                                                        src="{{asset('engineer_company/assets/images/delete.png')}}">
                                                                 </button>
                                                             </td>
                                                         </tr>
@@ -253,15 +246,13 @@
                                         <div class="row justify-content-end">
                                             <div class="col-lg-2 col-6">
                                                 <button type="button"
-                                                    onclick="window.location.href='{{route("ec.CreatePartsReplacementHistory",$customer->user_uid)}}'"
-                                                    class="form_button_2 mb-5 mt-5">Back page
+                                                        onclick="window.location.href='{{route('ec.CreateEmergencyDispatchChecklist',$customer->user_uid)}}'"
+                                                        class="form_button_2 mb-5 mt-5">Back page
                                                 </button>
                                             </div>
                                             <div class="col-lg-2 col-6">
-                                                <a href="#">
-                                                    <button class="form_button mb-5 mt-5">Save and Next
-                                                    </button>
-                                                </a>
+                                                <button class="form_button mb-5 mt-5">Save and Next
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -285,7 +276,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="myModalLabel">Delete Regular Inspection History</h5>
+                    <h5 class="modal-title" id="myModalLabel">Delete Attachments</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                             aria-label="Close"></button>
                 </div>
@@ -317,6 +308,30 @@
             </div><!-- /.modal-dialog -->
         </div>
     </div>
+    <div id="manageFileView" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel1"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="myModalLabel">Attachment</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-12">
+                       <img class="img-fluid" id="attachment_id" alt="file">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary waves-effect"
+                                data-bs-dismiss="modal">
+                            Close
+                        </button>
+                    </div>
+
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div>
+    </div>
 @endsection
 @section('custom-script')
     <script>
@@ -329,17 +344,16 @@
                                                         </td>
 
                                                         <td>
-                                                             <input type="file" name="photo[]" required class="form-control col-lg-12 custom_input_tble_5" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="2022.11.01">
+                                                             <input type="file" name="file[]" required class="form-control col-lg-12 custom_input_tble_5" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="2022.11.01">
                                                         </td>
 
 
                                                         <td>
-                                                            <input type="text" name="manager[]" required class="form-control col-lg-12 custom_input_tble_6" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Hong Gil Dong
-                                                                        ">
+                                                            <input type="text" name="name[]" required class="form-control col-lg-12 custom_input_tble_6" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="name">
                                                         </td>
 
                                                         <td>
-                                                            <input type="text" name="check_contents[]" required class="form-control col-lg-2 custom_input_tble" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Center lift replacement
+                                                            <input type="text" name="title[]" required class="form-control col-lg-2 custom_input_tble" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Title
                                                                         ">
                                                         </td>
 
@@ -357,37 +371,13 @@
 
         $('#monthlyRegularInspectionForm').on('submit', function (e) {
             e.preventDefault();
-            ajaxCall($('#monthlyRegularInspectionForm'), "{{ route('CreateMonthlyRegularInspection') }}", $('#monthlyRegularInspectionForm').find('button.form_button'), "{{ route('ec.CreateEmergencyDispatchChecklist',request()->segment(3)) }}", onRequestSuccess);
+            ajaxCall($('#monthlyRegularInspectionForm'), "{{ route('CreateManageAttachments') }}", $('#monthlyRegularInspectionForm').find('button.form_button'), "{{ route('ec.CreateKeyAccessoryHistory',request()->segment(3)) }}", onRequestSuccess);
         });
+
         $('#deleteMonthlyInspectionModal').on('submit', function (e) {
             e.preventDefault();
-            ajaxCall($('#deleteMonthlyInspectionModal'), "{{ route('DeleteMonthlyInspection') }}", $('#deleteMonthlyInspectionModal').find('button.form_button'), "{{ route('ec.CreateEmergencyDispatchChecklist',request()->segment(3)) }}", onRequestSuccess);
+            ajaxCall($('#deleteMonthlyInspectionModal'), "{{ route('DeleteAttachments') }}", $('#deleteMonthlyInspectionModal').find('button.submitbtn'), "{{ route('ec.CreateManageAttachments',request()->segment(3)) }}", onRequestSuccess);
         });
 
-        function FilterData(date, id) {
-            console.log(date);
-            $.ajax({
-                type: "POST",
-                url: '{{route('FilerMonthlyInspection')}}',
-                dataType: 'json',
-                cache: false,
-                data: {
-                    '_token': '{{csrf_token()}}',
-                    'date': date,
-                    'id': id,
-                },
-                beforeSend: function () {
-
-
-                },
-                success: function (res) {
-                    $('#monthly_regular_inspection_tbody').html('');
-                    $('#monthly_regular_inspection_tbody').html(res.html);
-                    $('#monthlyInspectionListingPagination').remove();
-                },
-                error: function (e) {
-                }
-            });
-        }
     </script>
 @endsection
