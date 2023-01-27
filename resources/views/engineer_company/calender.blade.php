@@ -1,5 +1,27 @@
 @extends('engineer_company.includes.layout')
 @section('body')
+    <style>
+        .height-600-overflow-auto {
+            height: 600px;
+            overflow-y: scroll;
+            font-weight: normal;
+            min-width: 200px;
+            scrollbar-color: white white;
+            scrollbar-width: thin;
+        }
+
+        .height-600-overflow-auto::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .height-600-overflow-auto::-webkit-scrollbar-track {
+            background-color: white;
+        }
+
+        .height-600-overflow-auto::-webkit-scrollbar-thumb {
+            box-shadow: inset 0 0 6px white;
+        }
+    </style>
     <div class="main-content">
 
         <div class="page-content">
@@ -39,87 +61,91 @@
                                                     </div>
 
 
-                                                 <div class="height-600-overflow-auto">
-                                                     <div class="card border-black-1px">
-                                                         <div class="card-body card-body-left-border-week-duty">
-                                                             <div class="information">
-                                                                 <span>2022-12-07</span>
-                                                                 <h5 class="fw-bold">Title..</h5>
-                                                             </div>
-                                                             <div
-                                                                 class="d-flex justify-content-between align-items-center">
-                                                                 <h5>Writer:Jeongsu Park</h5>
-                                                                 <button class="calender_add_btn">Done</button>
-                                                             </div>
-                                                         </div>
-                                                     </div>
+                                                    <div class="height-600-overflow-auto">
+                                                        <div class="card border-black-1px">
+                                                            <div class="card-body card-body-left-border-week-duty">
+                                                                <div class="information">
+                                                                    <span>2022-12-07</span>
+                                                                    <h5 class="fw-bold">Title..</h5>
+                                                                </div>
+                                                                <div
+                                                                    class="d-flex justify-content-between align-items-center">
+                                                                    <h5>Writer:Jeongsu Park</h5>
+                                                                    <button class="calender_add_btn">Done</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
 
-                                                     <div class="card border-black-1px">
-                                                         <div class="card-body card-body-left-border-week-duty">
-                                                             <div class="information">
-                                                                 <span>2022-12-07</span>
-                                                                 <h5 class="fw-bold">Title..</h5>
-                                                             </div>
-                                                             <div
-                                                                 class="d-flex justify-content-between align-items-center">
-                                                                 <h5>Writer:Jeongsu Park</h5>
-                                                                 <button class="calender_add_btn">Done</button>
-                                                             </div>
-                                                         </div>
-                                                     </div>
+                                                        <div class="card border-black-1px">
+                                                            <div class="card-body card-body-left-border-week-duty">
+                                                                <div class="information">
+                                                                    <span>2022-12-07</span>
+                                                                    <h5 class="fw-bold">Title..</h5>
+                                                                </div>
+                                                                <div
+                                                                    class="d-flex justify-content-between align-items-center">
+                                                                    <h5>Writer:Jeongsu Park</h5>
+                                                                    <button class="calender_add_btn">Done</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
 
-                                                     <div class="card border-black-1px">
-                                                         <div class="card-body card-body-left-border-week-duty">
-                                                             <div class="information">
-                                                                 <span>2022-12-07</span>
-                                                                 <h5 class="fw-bold">Title..</h5>
-                                                             </div>
-                                                             <div class="d-flex justify-content-between align-items-center">
-                                                                 <h5>Writer:Jeongsu Park</h5>
-                                                                 <button class="calender_add_btn">Done</button>
-                                                             </div>
-                                                         </div>
-                                                     </div>
+                                                        <div class="card border-black-1px">
+                                                            <div class="card-body card-body-left-border-week-duty">
+                                                                <div class="information">
+                                                                    <span>2022-12-07</span>
+                                                                    <h5 class="fw-bold">Title..</h5>
+                                                                </div>
+                                                                <div
+                                                                    class="d-flex justify-content-between align-items-center">
+                                                                    <h5>Writer:Jeongsu Park</h5>
+                                                                    <button class="calender_add_btn">Done</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
 
-                                                     <div class="card border-black-1px">
-                                                         <div class="card-body card-body-left-border-week-duty">
-                                                             <div class="information">
-                                                                 <span>2022-12-07</span>
-                                                                 <h5 class="fw-bold">Title..</h5>
-                                                             </div>
-                                                             <div class="d-flex justify-content-between align-items-center">
-                                                                 <h5>Writer:Jeongsu Park</h5>
-                                                                 <button class="calender_add_btn">Done</button>
-                                                             </div>
-                                                         </div>
-                                                     </div>
+                                                        <div class="card border-black-1px">
+                                                            <div class="card-body card-body-left-border-week-duty">
+                                                                <div class="information">
+                                                                    <span>2022-12-07</span>
+                                                                    <h5 class="fw-bold">Title..</h5>
+                                                                </div>
+                                                                <div
+                                                                    class="d-flex justify-content-between align-items-center">
+                                                                    <h5>Writer:Jeongsu Park</h5>
+                                                                    <button class="calender_add_btn">Done</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
 
-                                                     <div class="card border-black-1px">
-                                                         <div class="card-body card-body-left-border-week-duty">
-                                                             <div class="information">
-                                                                 <span>2022-12-07</span>
-                                                                 <h5 class="fw-bold">Title..</h5>
-                                                             </div>
-                                                             <div class="d-flex justify-content-between align-items-center">
-                                                                 <h5>Writer:Jeongsu Park</h5>
-                                                                 <button class="calender_add_btn">Done</button>
-                                                             </div>
-                                                         </div>
-                                                     </div>
+                                                        <div class="card border-black-1px">
+                                                            <div class="card-body card-body-left-border-week-duty">
+                                                                <div class="information">
+                                                                    <span>2022-12-07</span>
+                                                                    <h5 class="fw-bold">Title..</h5>
+                                                                </div>
+                                                                <div
+                                                                    class="d-flex justify-content-between align-items-center">
+                                                                    <h5>Writer:Jeongsu Park</h5>
+                                                                    <button class="calender_add_btn">Done</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
 
-                                                     <div class="card border-black-1px">
-                                                         <div class="card-body card-body-left-border-week-duty">
-                                                             <div class="information">
-                                                                 <span>2022-12-07</span>
-                                                                 <h5 class="fw-bold">Title..</h5>
-                                                             </div>
-                                                             <div class="d-flex justify-content-between align-items-center">
-                                                                 <h5>Writer:Jeongsu Park</h5>
-                                                                 <button class="calender_add_btn">Done</button>
-                                                             </div>
-                                                         </div>
-                                                     </div>
-                                                 </div>
+                                                        <div class="card border-black-1px">
+                                                            <div class="card-body card-body-left-border-week-duty">
+                                                                <div class="information">
+                                                                    <span>2022-12-07</span>
+                                                                    <h5 class="fw-bold">Title..</h5>
+                                                                </div>
+                                                                <div
+                                                                    class="d-flex justify-content-between align-items-center">
+                                                                    <h5>Writer:Jeongsu Park</h5>
+                                                                    <button class="calender_add_btn">Done</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                     <div id="external-events" class="mt-2">
                                                         <br>
                                                         <p class="text-muted">Drag and drop your event or click in the
