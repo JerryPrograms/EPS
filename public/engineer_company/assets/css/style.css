@@ -152,7 +152,6 @@ li.page-item.custom_mar {
 }
 
 .custom_input {
-    width: 65% !important;
     color: black !important;
     border-bottom: 1px solid rgba(225, 227, 236, 1) !important;
     border-top: none;
@@ -164,7 +163,6 @@ li.page-item.custom_mar {
 }
 
 .custom_input_2 {
-    width: 20% !important;
     color: black !important;
     border-bottom: 1px solid rgba(225, 227, 236, 1) !important;
     border-top: none;

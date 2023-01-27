@@ -212,7 +212,7 @@
 
                                                             <td class="border-bottom-0 text-center">
                                                                 <button type="button" data-bs-toggle="modal"
-                                                                         data-bs-target="#manageFileView"
+                                                                        data-bs-target="#manageFileView"
                                                                         onclick="$('#attachment_id').attr('src','{{asset($mr->file)}}')"
                                                                         class="search_btn_attachments">
                                                                     <img
@@ -319,7 +319,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="col-12">
-                       <img class="img-fluid" id="attachment_id" alt="file">
+                        <img class="img-fluid" id="attachment_id" alt="file">
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary waves-effect"
@@ -340,20 +340,20 @@
                                                         <td><a href="javascript: void(0);" class="text-body fw-bold">#</a>
                                                         </td>
                                                         <td>
-                                                            <input type="date" name="date[]" required class="form-control col-lg-12 custom_input_tble_5" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="2022.11.01">
+                                                            <input type="date" name="date[]" required class="form-control col-lg-12 custom_input_tble_5"  aria-describedby="emailHelp" placeholder="2022.11.01">
                                                         </td>
 
                                                         <td>
-                                                             <input type="file" name="file[]" required class="form-control col-lg-12 custom_input_tble_5" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="2022.11.01">
+                                                             <input type="file" name="file[]" required class="form-control col-lg-12 custom_input_tble_5"  aria-describedby="emailHelp" placeholder="2022.11.01">
                                                         </td>
 
 
                                                         <td>
-                                                            <input type="text" name="name[]" required class="form-control col-lg-12 custom_input_tble_6" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="name">
+                                                            <input type="text" name="name[]" required class="form-control col-lg-12 custom_input_tble_6"  aria-describedby="emailHelp" placeholder="name">
                                                         </td>
 
                                                         <td>
-                                                            <input type="text" name="title[]" required class="form-control col-lg-2 custom_input_tble" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Title
+                                                            <input type="text" name="title[]" required class="form-control col-lg-2 custom_input_tble"  aria-describedby="emailHelp" placeholder="Enter Title
                                                                         ">
                                                         </td>
 
@@ -369,9 +369,10 @@
             element.parent().parent().remove();
         }
 
-        $('#monthlyRegularInspectionForm').on('submit', function (e) {
-            e.preventDefault();
-            ajaxCall($('#monthlyRegularInspectionForm'), "{{ route('CreateManageAttachments') }}", $('#monthlyRegularInspectionForm').find('button.form_button'), "{{ route('ec.CreateKeyAccessoryHistory',request()->segment(3)) }}", onRequestSuccess);
+        $('#monthlyRegularInspectionForm').validate({
+            submitHandler: function () {
+                ajaxCall($('#monthlyRegularInspectionForm'), "{{ route('CreateManageAttachments') }}", $('#monthlyRegularInspectionForm').find('button.form_button'), "{{ route('ec.CreateManageAttachments',request()->segment(3)) }}", onRequestSuccess);
+            }
         });
 
         $('#deleteMonthlyInspectionModal').on('submit', function (e) {

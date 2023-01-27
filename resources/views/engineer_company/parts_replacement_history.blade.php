@@ -149,11 +149,11 @@
                                                     Initial installation date
                                                 </p>
                                             </div>
-                                            <div class="col-lg-3 mt-2">
+                                            <div class="col-lg-3 mt-2" style="flex-direction: column">
                                                 <div class="input-group" id="datepicker1">
                                                     <input id="initial_date"
                                                            type="date" name="initial_date"
-                                                           class="form-control frm_section_inp"
+                                                           class="form-control frm_section_inp w-100"
                                                            placeholder="2022-12-06" data-date-format="dd M, yyyy"
                                                            data-date-container='#datepicker1'
                                                            data-provide="datepicker">
@@ -174,7 +174,8 @@
                                             </div>
                                             <div class="col-lg-3">
                                                 <div class="dropdown align-self-start mt-sm-0 mb-2">
-                                                    <input type="date" onchange="FilterData($(this).val(),'{{$customer->id}}')"
+                                                    <input type="date"
+                                                           onchange="FilterData($(this).val(),'{{$customer->id}}')"
                                                            class="form-control frm_section_inp"
                                                            data-date-container='#datepicker1'
                                                            data-provide="datepicker">
@@ -226,7 +227,7 @@
                                                     </td>
                                                     <td class="custom_br_theme_gray_2">
                                                         <button type="button"
-                                                                class="date_button border-0">{{$rh->created_at->format('Y.m.d')}}</button>
+                                                                class="date_button border-0">{{\Carbon\Carbon::parse($rh->registration_date)->format('Y.d.m')}}</button>
                                                     </td>
 
                                                     <td class="custom_br_theme_gray_2">
@@ -355,7 +356,7 @@
                                             <td class="custom_br_theme_gray_2">
                                                 <input type="date" name="registration_date[]"
                                                     class="form-control col-lg-12 custom_input_tble"
-                                                    id="exampleInputEmail1" aria-describedby="emailHelp"
+                                                     aria-describedby="emailHelp"
                                                     placeholder="2022.11.01" required>
                                             </td>
 
@@ -363,7 +364,7 @@
                                             <td class="custom_br_theme_gray_2">
                                                 <input type="text" name="part[]"
                                                     class="form-control col-lg-2 custom_input_tble"
-                                                    id="exampleInputEmail1" aria-describedby="emailHelp"
+                                                     aria-describedby="emailHelp"
                                                     placeholder="Part name"
                                                      required>
                                             </td>
@@ -371,7 +372,7 @@
                                             <td class="custom_br_theme_gray_2">
                                                 <input type="text" name="manager[]"
                                                     class="form-control col-lg-12 custom_input_tble"
-                                                    id="exampleInputEmail1" aria-describedby="emailHelp"
+                                                     aria-describedby="emailHelp"
                                                     placeholder="Manager Name
                                                     " required>
                                             </td>
@@ -379,7 +380,7 @@
                                             <td class="custom_br_theme_gray_3">
                                                 <input type="text" name="as_content[]"
                                                     class="form-control col-lg-2 custom_input_tble"
-                                                    id="exampleInputEmail1" aria-describedby="emailHelp"
+                                                     aria-describedby="emailHelp"
                                                     placeholder="AS content
                                                     " required>
                                             </td>
@@ -399,9 +400,10 @@
             }
         }
 
-        $('#add_part_replacement_form').on('submit', function (e) {
-            e.preventDefault();
-            ajaxCall($('#add_part_replacement_form'), "{{ route('CreatePartReplacementHistory') }}", $('#add_part_replacement_form').find('.submitbtn'), "{{ route('ec.CreateMonthlyRegularInspection',request()->segment(3)) }}", onRequestSuccess);
+        $('#add_part_replacement_form').validate({
+            submitHandler: function () {
+                ajaxCall($('#add_part_replacement_form'), "{{ route('CreatePartReplacementHistory') }}", $('#add_part_replacement_form').find('.submitbtn'), "{{ route('ec.CreateMonthlyRegularInspection',request()->segment(3)) }}", onRequestSuccess);
+            }
         });
 
         $('#deletePartsReplacementHistory').on('submit', function (e) {

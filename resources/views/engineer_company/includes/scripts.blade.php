@@ -28,6 +28,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify"></script>
 <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.polyfills.min.js"></script>
+<script src="{{asset('engineer_company/assets/js/validate.min.js')}}"></script>
 <script>
     function HideShow(element,current) {
         if (element.hasClass('d-none')) {

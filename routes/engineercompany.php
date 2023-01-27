@@ -51,6 +51,9 @@ Route::group(['prefix' => 'engineer-company'], function () {
     //Route to search customer basic information by engineer company
     Route::post('/search-customer-info', [Customer_Info::class, 'SearchCustomerInfo'])->name('SearchCustomerInfo');
 
+    //Route to search customer basic information by engineer company
+    Route::post('/clear-customer-info', [Customer_Info::class, 'ClearCustomerInfo'])->name('ClearCustomerInfo');
+
     //Route to Create Building and Company Information by engineer company
     Route::post('/create-building-and-company-information', [BuildingAndCompanyInformation::class, 'CreateBuildingAndCompanyInformation'])->name('CreateBuildingAndCompanyInformation');
 

@@ -4,8 +4,8 @@
                                         class="text-body fw-bold">{{$loop->index + 1}}</a>
     </td>
     <td class="custom_br_theme_gray_2">
-        <button
-            class="date_button border-0">{{$rh->created_at->format('Y.m.d')}}</button>
+        <button type="button"
+                class="date_button border-0">{{\Carbon\Carbon::parse($rh->registration_date)->format('Y.d.m')}}</button>
     </td>
 
     <td class="custom_br_theme_gray_2">

@@ -91,14 +91,13 @@ class Customer_Info
 
                 if ($request['filter'] == 'created_at') {
 
-                    try{
+                    try {
 
                         $date = Carbon::parse($request['keyword'])->format('Y-d-m');
-                    }catch(\Exception $ex)
-                    {
+                    } catch (\Exception $ex) {
                         return json_encode([
-                           'success'=>false,
-                           'message'=>'Please enter date in the Year-day-month format'
+                            'success' => false,
+                            'message' => 'Please enter date in the Year-day-month format'
                         ]);
                     }
                     $customer = CustomerInfo::where($request['filter'], $date)->paginate(10);
@@ -122,5 +121,17 @@ class Customer_Info
         } catch (\Exception $ex) {
             die($ex->getMessage());
         }
+    }
+
+    public static function ClearCustomerInfo(Request $request)
+    {
+        $customer = CustomerInfo::paginate(10);
+        $html = view('engineer_company.customer_list_template', compact('customer'))->render();
+
+        return json_encode([
+            'success' => true,
+            'message' => 'found',
+            'html' => $html,
+        ]);
     }
 }

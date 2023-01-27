@@ -57,8 +57,7 @@ class PartReplacement
 
         try {
 
-            $MainPart = PartReplacementHistoryModel::where('registration_date', $request->date)->where('customer_id',$request->id)->get();
-
+            $MainPart = PartReplacementHistoryModel::where('registration_date', $request->date)->where('customer_id', $request->id)->get();
             $html = view('engineer_company.part_replacement_history_listing_template', compact('MainPart'))->render();
 
 

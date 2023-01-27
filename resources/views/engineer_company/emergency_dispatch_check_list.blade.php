@@ -328,7 +328,9 @@
                                     <div class="main_section_buttn">
                                         <div class="row justify-content-end">
                                             <div class="col-lg-2 col-6">
-                                                <button type="button" onclick="window.location.href='{{route("ec.CreateMonthlyRegularInspection",$customer->user_uid)}}'" class="form_button_2 mb-5 mt-5">Back page
+                                                <button type="button"
+                                                        onclick="window.location.href='{{route("ec.CreateMonthlyRegularInspection",$customer->user_uid)}}'"
+                                                        class="form_button_2 mb-5 mt-5">Back page
                                                 </button>
                                             </div>
                                             <div class="col-lg-2 col-6">
@@ -397,21 +399,21 @@
                                                         <td><a href="javascript: void(0);" class="text-body fw-bold">#</a>
                                                         </td>
                                                         <td>
-                                                            <input type="date" name="date[]" required class="form-control col-lg-12 custom_input_tble_5" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="2022.11.01">
+                                                            <input type="date" name="date[]" required class="form-control col-lg-12 custom_input_tble_5"  aria-describedby="emailHelp" placeholder="2022.11.01">
                                                         </td>
 
                                                         <td>
-                                                             <input type="file" name="photo[]" required class="form-control col-lg-12 custom_input_tble_5" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="2022.11.01">
+                                                             <input type="file" name="photo[]" required class="form-control col-lg-12 custom_input_tble_5"  aria-describedby="emailHelp" placeholder="2022.11.01">
                                                         </td>
 
 
                                                         <td>
-                                                            <input type="text" name="manager[]" required class="form-control col-lg-12 custom_input_tble_6" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Hong Gil Dong
+                                                            <input type="text" name="manager[]" required class="form-control col-lg-12 custom_input_tble_6"  aria-describedby="emailHelp" placeholder="Hong Gil Dong
                                                                         ">
                                                         </td>
 
                                                         <td>
-                                                            <input type="text" name="check_contents[]" required class="form-control col-lg-2 custom_input_tble" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Center lift replacement
+                                                            <input type="text" name="check_contents[]" required class="form-control col-lg-2 custom_input_tble"  aria-describedby="emailHelp" placeholder="Center lift replacement
                                                                         ">
                                                         </td>
 
@@ -427,9 +429,10 @@
             element.parent().parent().remove();
         }
 
-        $('#monthlyRegularInspectionForm').on('submit', function (e) {
-            e.preventDefault();
-            ajaxCall($('#monthlyRegularInspectionForm'), "{{ route('CreateEmergencyDispatchCheckList') }}", $('#monthlyRegularInspectionForm').find('button.form_button'), "{{ route('ec.CreateManageAttachments',request()->segment(3)) }}", onRequestSuccess);
+        $('#monthlyRegularInspectionForm').validate({
+            submitHandler: function () {
+                ajaxCall($('#monthlyRegularInspectionForm'), "{{ route('CreateEmergencyDispatchCheckList') }}", $('#monthlyRegularInspectionForm').find('button.form_button'), "{{ route('ec.CreateManageAttachments',request()->segment(3)) }}", onRequestSuccess);
+            }
         });
 
         $('#deleteMonthlyInspectionModal').on('submit', function (e) {

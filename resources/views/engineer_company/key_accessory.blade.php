@@ -198,7 +198,8 @@
 
                                                                                 @if(!empty($main_accessory->tag))
                                                                                     <button
-                                                                                        class="collap_yello_section" style="background: {{!empty($main_accessory->color) ? $main_accessory->color : ''}}">
+                                                                                        class="collap_yello_section"
+                                                                                        style="background: {{!empty($main_accessory->color) ? $main_accessory->color : ''}}">
                                                                                         <p id="part_tag_name">
                                                                                             {{ $main_accessory->tag}}</p>
                                                                                     </button>
@@ -275,7 +276,7 @@
                                                                                                            name="standard"
                                                                                                            required
                                                                                                            class="form-control col-lg-12 custom_input_tble mt-3"
-                                                                                                           id="exampleInputEmail1"
+
                                                                                                            aria-describedby="emailHelp"
                                                                                                            placeholder=""
                                                                                                            @if(!empty($SubParts->standard))  value="{{$SubParts->standard}}" @endif>
@@ -284,7 +285,7 @@
                                                                                                            name="quantity"
                                                                                                            required
                                                                                                            class="form-control col-lg-12 custom_input_tble mt-3"
-                                                                                                           id="exampleInputEmail1"
+
                                                                                                            aria-describedby="emailHelp"
                                                                                                            placeholder=""
                                                                                                            @if(!empty($SubParts->quantity))  value="{{$SubParts->quantity}}" @endif
@@ -293,7 +294,7 @@
                                                                                                     <textarea
                                                                                                         type="text"
                                                                                                         class="form-control col-lg-12 custom_input_tble mt-2"
-                                                                                                        id="exampleInputEmail1"
+                                                                                                        required
                                                                                                         aria-describedby="emailHelp"
                                                                                                         placeholder=""
                                                                                                         name="work_history"
@@ -402,7 +403,9 @@
                                                         </a>
                                                     </div>
                                                     <div class="col-lg-2 col-6">
-                                                        <button onclick="window.location.href = '{{route("ec.CreatePartsReplacementHistory",$customer->user_uid)}}'" class="form_button mb-5 mt-5">Save and Next
+                                                        <button
+                                                            onclick="window.location.href = '{{route("ec.CreatePartsReplacementHistory",$customer->user_uid)}}'"
+                                                            class="form_button mb-5 mt-5">Save and Next
                                                         </button>
                                                     </div>
                                                 </div>
@@ -459,17 +462,17 @@
                                                     <div class="col-md-12">
                                                         <div class="prompt w-100"></div>
                                                         <div class="mb-3">
-                                                            <label for="formrow-firstname-input" class="form-label">
+                                                            <label class="form-label">
                                                                 Enter Part Name
                                                             </label>
                                                             <input id="form_part_name" type="text" name="title"
                                                                    class="form-control part_name"
-                                                                   id="formrow-firstname-input"
+
                                                                    placeholder="Enter part name" required>
                                                         </div>
                                                         <input name="customer_id" value="{{$customer->id}}" hidden>
                                                         <div class="mb-3">
-                                                            <label for="formrow-firstname-input" class="form-label">
+                                                            <label class="form-label">
                                                                 Enter Tag Name
                                                             </label>
                                                             <input id="form_tag_name" type="text" maxlength="100"
@@ -478,10 +481,10 @@
                                                                    placeholder="Enter tag name">
                                                         </div>
                                                         <div class="mb-3">
-                                                            <label for="formrow-firstname-input" class="form-label">
+                                                            <label class="form-label">
                                                                 Enter Tag Color
                                                             </label>
-                                                            <input id="form_tag_name" type="color" maxlength="100"
+                                                            <input id="form_tag_name1" type="color" maxlength="100"
                                                                    class="form-control part_name"
                                                                    name="color"
                                                                    placeholder="Enter tag name">
@@ -535,7 +538,7 @@
                                                     <div class="col-md-12">
                                                         <div class="prompt w-100"></div>
                                                         <div class="mb-3">
-                                                            <label for="formrow-firstname-input" class="form-label">
+                                                            <label class="form-label">
                                                                 Enter Sub Part Name
                                                             </label>
                                                             <input type="text" name="title"
@@ -552,7 +555,7 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button  type="button" class="btn btn-secondary waves-effect"
+                                    <button type="button" class="btn btn-secondary waves-effect"
                                             data-bs-dismiss="modal">
                                         Close
                                     </button>
@@ -588,23 +591,28 @@
 
 
                 //create main accessory part modal
-                $('#add_main_part_form').on('submit', function (e) {
-                    e.preventDefault();
-                    ajaxCall($('#add_main_part_form'), "{{ route('CreateMainKeyAccessoryInformation') }}", $('#add_main_part_form').find('.submitbtn'), "{{ route('ec.CreateKeyAccessoryHistory',request()->segment(3)) }}", onRequestSuccess);
+                $('#add_main_part_form').validate({
+                    submitHandler: function () {
+                        ajaxCall($('#add_main_part_form'), "{{ route('CreateMainKeyAccessoryInformation') }}", $('#add_main_part_form').find('.submitbtn'), "{{ route('ec.CreateKeyAccessoryHistory',request()->segment(3)) }}", onRequestSuccess);
+                    }
                 });
 
 
                 //create sub part
-                $('#sub_part_form').on('submit', function (e) {
-                    e.preventDefault();
-                    ajaxCall($('#sub_part_form'), "{{ route('CreateSubPartTitle') }}", $('#sub_part_form').find('.submitbtn'), "{{ route('ec.CreateKeyAccessoryHistory',request()->segment(3)) }}", onRequestSuccess);
+                $('#sub_part_form').validate({
+                    submitHandler: function () {
+                        ajaxCall($('#sub_part_form'), "{{ route('CreateSubPartTitle') }}", $('#sub_part_form').find('.submitbtn'), "{{ route('ec.CreateKeyAccessoryHistory',request()->segment(3)) }}", onRequestSuccess);
+                    }
                 });
 
                 function submitFunction(element, btn) {
-                    element.on('submit', function (e) {
-                        e.preventDefault();
-                        ajaxCall(element, "{{ route('CreateKeyAccessoryInformation') }}", element.find('button.collape_button_2'), "{{ route('ec.CreateKeyAccessoryHistory',request()->segment(3)) }}", onRequestSuccess);
+
+                    element.validate({
+                        submitHandler: function () {
+                            ajaxCall(element, "{{ route('CreateKeyAccessoryInformation') }}", element.find('button.collape_button_2'), "{{ route('ec.CreateKeyAccessoryHistory',request()->segment(3)) }}", onRequestSuccess);
+                        }
                     });
+
                 }
 
                 $(document).on("change", ".sub_part_image", function (e) {

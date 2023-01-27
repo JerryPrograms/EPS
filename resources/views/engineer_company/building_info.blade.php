@@ -5,7 +5,6 @@
             <div class="container-fluid">
 
                 <!-- start page title -->
-
                 <!-- end page title -->
                 <div class="main_content_section">
                     <div class="row">
@@ -137,100 +136,113 @@
                                                 </div>
 
 
-                                                <div class="d-flex align-items-baseline">
-                                                    <label for="exampleInputEmail1"
-                                                           class="form-label custom_lab col-lg-4"> <span
-                                                            class="star_section">*</span> Building name
-                                                    </label>
-                                                    <input type="text" name="building_name"
-                                                           class="form-control col-lg-8 custom_input"
-                                                           id="exampleInputEmail1" aria-describedby="emailHelp"
-                                                           placeholder="Enter building Name
+                                                <div class="row align-items-center">
+                                                    <div class="col-lg-4 col-12">
+                                                        <label
+                                                            class="form-label custom_lab mb-0"> <span
+                                                                class="star_section">*</span> Building name
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-lg-8 col-12">
+                                                        <input type="text" name="building_name"
+                                                               class="form-control custom_input w-100"
+                                                               aria-describedby="emailHelp"
+                                                               placeholder="Enter building Name
                                                         " value="{{$customer->building_name}}" required>
+                                                    </div>
                                                 </div>
 
-                                                <div class="d-flex align-items-baseline mt-4">
-                                                    <label for="exampleInputEmail1"
-                                                           class="form-label custom_lab col-lg-4"> <span
-                                                            class="star_section">*</span> Building Manager
-                                                        Name</label>
-                                                    <input type="text" name="building_manager_name"
-                                                           class="form-control col-lg-8 custom_input"
-                                                           id="exampleInputEmail1" aria-describedby="emailHelp"
-                                                           placeholder="Enter building manager name
+                                                <div class="row align-items-center mt-4">
+                                                    <div class="col-lg-4 col-12">
+                                                        <label
+                                                            class="form-label custom_lab mb-0"> <span
+                                                                class="star_section">*</span> Building Manager
+                                                            Name</label>
+                                                    </div>
+                                                    <div class="col-lg-8 col-12">
+                                                        <input type="text" name="building_manager_name"
+                                                               class="form-control w-100 custom_input"
+                                                               aria-describedby="emailHelp"
+                                                               placeholder="Enter building manager name
                                                         "
-                                                           @if(!empty($customer->BuildingInformation))  value="{{$customer->BuildingInformation->building_manager_name}}"
-                                                           @endif required>
+                                                               @if(!empty($customer->BuildingInformation))  value="{{$customer->BuildingInformation->building_manager_name}}"
+                                                               @endif required>
+                                                    </div>
                                                 </div>
 
 
-                                                <div class="d-flex align-items-baseline mt-4">
-                                                    <label for="exampleInputEmail1"
-                                                           class="form-label custom_lab col-lg-4"> <span
-                                                            class="star_section">*</span> Building Manager
-                                                        Contact</label>
-                                                    <input type="number" min="0" name="building_manager_contact"
-                                                           class="form-control col-lg-8 custom_input"
-                                                           id="exampleInputEmail1" aria-describedby="emailHelp"
-                                                           placeholder="Enter contact (010-8021-5235)" required
-                                                           @if(!empty($customer->BuildingInformation))  value="{{$customer->BuildingInformation->building_manager_contact}}"
-                                                        @endif>
+                                                <div class="row align-items-center mt-4">
+                                                    <div class="col-lg-4 col-12"><label
+                                                            class="form-label custom_lab mb-0"> <span
+                                                                class="star_section">*</span> Building Manager
+                                                            Contact</label></div>
+                                                    <div class="col-lg-8 col-12">
+                                                        <input type="number" min="0"
+                                                               name="building_manager_contact"
+                                                               class="form-control w-100 custom_input"
+                                                               aria-describedby="emailHelp"
+                                                               placeholder="Enter contact (010-8021-5235)"
+                                                               @if(!empty($customer->BuildingInformation))  value="{{$customer->BuildingInformation->building_manager_contact}}"
+                                                               @endif required>
+                                                    </div>
                                                 </div>
 
 
-                                                <div class="d-flex align-items-baseline mt-4">
-                                                    <label for="exampleInputEmail1"
-                                                           class="form-label custom_lab col-lg-4"> <span
-                                                            class="star_section">*</span>Address
-                                                    </label>
-                                                    <input type="text" name="address"
-                                                           class="form-control col-lg-8 custom_input"
-                                                           id="exampleInputEmail1" aria-describedby="emailHelp"
-                                                           placeholder="Enter address" required
-                                                           @if(!empty($customer->BuildingInformation))  value="{{$customer->BuildingInformation->address}}"
-                                                        @endif
-                                                    >
+                                                <div class="row align-items-center mt-4">
+                                                    <div class="col-lg-4 col-12"><label
+                                                            class="form-label custom_lab mb-0"> <span
+                                                                class="star_section">*</span>Address
+                                                        </label></div>
+                                                    <div class="col-lg-8 col-12"><input type="text" name="address"
+                                                                                        class="form-control w-100 custom_input"
+                                                                                        aria-describedby="emailHelp"
+                                                                                        placeholder="Enter address"
+                                                                                        @if(!empty($customer->BuildingInformation))  value="{{$customer->BuildingInformation->address}}"
+                                                                                        @endif
+                                                                                        required></div>
                                                 </div>
 
-                                                <div class="d-flex align-items-baseline mt-4">
-                                                    <label for="exampleInputEmail1"
-                                                           class="form-label custom_lab col-lg-4"> <span
-                                                            class="star_section">*</span>Contract Manager /
-                                                        contact</label>
-                                                    <input type="text" name="manager_contact"
-                                                           class="form-control col-lg-8 custom_input"
-                                                           id="exampleInputEmail1" aria-describedby="emailHelp"
-                                                           placeholder="Enter manager contact number" required
-                                                           @if(!empty($customer->BuildingInformation))  value="{{$customer->BuildingInformation->manager_contact}}"
-                                                        @endif
-                                                    >
+                                                <div class="row align-items-center mt-4">
+                                                    <div class="col-lg-4 col-12"><label
+                                                            class="form-label custom_lab mb-0"> <span
+                                                                class="star_section">*</span>Contract Manager /
+                                                            contact</label></div>
+                                                    <div class="col-lg-8 col-12"><input type="text"
+                                                                                        name="manager_contact"
+                                                                                        class="form-control w-100 custom_input"
+                                                                                        aria-describedby="emailHelp"
+                                                                                        placeholder="Enter manager contact number"
+                                                                                        @if(!empty($customer->BuildingInformation))  value="{{$customer->BuildingInformation->manager_contact}}"
+                                                                                        @endif
+                                                                                        required></div>
                                                 </div>
 
 
-                                                <div class="d-flex align-items-baseline mt-4">
-                                                    <label for="exampleInputEmail1"
-                                                           class="form-label custom_lab col-lg-4"> <span
-                                                            class="star_section">&nbsp;</span> fax</label>
-                                                    <input type="text" name="bi_tax"
-                                                           class="form-control col-lg-8 custom_input"
-                                                           id="exampleInputEmail1" aria-describedby="emailHelp"
-                                                           placeholder="Enter fax"
-                                                           @if(!empty($customer->BuildingInformation) && !empty($customer->BuildingInformation->fax))  value="{{$customer->BuildingInformation->fax}}"
-                                                        @endif>
+                                                <div class="row align-items-center mt-4">
+                                                    <div class="col-lg-4 col-12"><label
+                                                            class="form-label custom_lab mb-0"> <span
+                                                                class="star_section">&nbsp;</span> fax</label></div>
+                                                    <div class="col-lg-8 col-12"><input type="text" name="bi_tax"
+                                                                                        class="form-control w-100 custom_input"
+                                                                                        aria-describedby="emailHelp"
+                                                                                        placeholder="Enter fax"
+                                                                                        @if(!empty($customer->BuildingInformation) && !empty($customer->BuildingInformation->fax))  value="{{$customer->BuildingInformation->fax}}"
+                                                            @endif></div>
                                                 </div>
 
-                                                <div class="d-flex align-items-baseline mt-4">
-                                                    <label for="exampleInputEmail1"
-                                                           class="form-label custom_lab col-lg-4"> <span
-                                                            class="star_section">&nbsp;</span> e-mail
-                                                    </label>
-                                                    <input type="email" name="bi_email"
-                                                           class="form-control col-lg-8 custom_input"
-                                                           id="exampleInputEmail1" aria-describedby="emailHelp"
-                                                           placeholder="Enter email"
-                                                           @if(!empty($customer->BuildingInformation) && !empty($customer->BuildingInformation->email))  value="{{$customer->BuildingInformation->email}}"
-                                                        @endif
-                                                    >
+                                                <div class="row align-items-center mt-4">
+                                                    <div class="col-lg-4 col-12">
+                                                        <label
+                                                            class="form-label custom_lab mb-0"> <span
+                                                                class="star_section">&nbsp;</span> e-mail
+                                                        </label></div>
+                                                    <div class="col-lg-8 col-12"><input type="email" name="bi_email"
+                                                                                        class="form-control w-100 custom_input"
+                                                                                        aria-describedby="emailHelp"
+                                                                                        placeholder="Enter email"
+                                                                                        @if(!empty($customer->BuildingInformation) && !empty($customer->BuildingInformation->email))  value="{{$customer->BuildingInformation->email}}"
+                                                            @endif
+                                                        ></div>
                                                 </div>
 
                                             </div>
@@ -246,114 +258,124 @@
                                                             class="bor_lef">&nbsp;</span>Building management company
                                                         information</h4>
                                                 </div>
-                                                <div class="d-flex align-items-baseline">
-                                                    <label for="exampleInputEmail1"
-                                                           class="form-label custom_lab col-lg-4"> <span
-                                                            class="star_section">*</span> Company Name
-                                                    </label>
-                                                    <input type="text" name="company_name"
-                                                           class="form-control col-lg-8 custom_input"
-                                                           id="exampleInputEmail1" aria-describedby="emailHelp"
-                                                           placeholder="Enter company name
+                                                <div class="row align-items-center">
+                                                    <div class="col-lg-4 col-12"><label
+                                                            class="form-label custom_lab mb-0"> <span
+                                                                class="star_section">*</span> Company Name
+                                                        </label></div>
+                                                    <div class="col-lg-8 col-12"><input type="text" name="company_name"
+                                                                                        class="form-control w-100 custom_input"
+                                                                                        aria-describedby="emailHelp"
+                                                                                        placeholder="Enter company name
                                                         " required
-                                                           @if(!empty($customer->CompanyInformation))  value="{{$customer->CompanyInformation->company_name}}"
-                                                        @endif
-                                                    >
+                                                                                        @if(!empty($customer->CompanyInformation))  value="{{$customer->CompanyInformation->company_name}}"
+                                                            @endif
+                                                        ></div>
                                                 </div>
 
-                                                <div class="d-flex align-items-baseline mt-4">
-                                                    <label for="exampleInputEmail1"
-                                                           class="form-label custom_lab col-lg-4"> <span
-                                                            class="star_section">*</span> Ceo Name
-                                                    </label>
-                                                    <input type="text" name="ceo_name"
-                                                           class="form-control col-lg-8 custom_input"
-                                                           id="exampleInputEmail1" aria-describedby="emailHelp"
-                                                           placeholder="Enter ceo name
+                                                <div class="row align-items-center mt-4">
+                                                    <div class="col-lg-4 col-12"><label
+                                                            class="form-label custom_lab mb-0"> <span
+                                                                class="star_section">*</span> Ceo Name
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-lg-8 col-12">
+                                                        <input type="text" name="ceo_name"
+                                                               class="form-control w-100 custom_input"
+                                                               aria-describedby="emailHelp"
+                                                               placeholder="Enter ceo name
                                                         " required
-                                                           @if(!empty($customer->CompanyInformation))  value="{{$customer->CompanyInformation->ceo_name}}"
+                                                               @if(!empty($customer->CompanyInformation))  value="{{$customer->CompanyInformation->ceo_name}}"
+                                                            @endif>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row align-items-center mt-4">
+                                                    <div class="col-lg-4 col-12">
+                                                        <label
+                                                            class="form-label custom_lab mb-0"> <span
+                                                                class="star_section">*</span>Company Registration
+                                                            Number</label></div>
+
+                                                    <div class="col-lg-8 col-12">
+                                                        <input type="text" name="company_reg_number"
+                                                               class="form-control w-100 custom_input_2"
+                                                               aria-describedby="emailHelp"
+                                                               placeholder="Enter registration number" required
+                                                               @if(!empty($customer->CompanyInformation))  value="{{$customer->CompanyInformation->company_reg_number}}"
+                                                            @endif>
+                                                    </div>
+
+
+                                                </div>
+
+
+                                                <div class="row align-items-center mt-4">
+                                                  <div class="col-lg-4 col-12">   <label
+                                                        class="form-label custom_lab mb-0"> <span
+                                                            class="star_section">*</span>Address</label>  </div>
+                                                  <div class="col-lg-8 col-12">
+                                                      <input type="text" name="ci_address"
+                                                           class="form-control w-100 custom_input"
+                                                           aria-describedby="emailHelp"
+                                                           placeholder="Enter address" required
+                                                           @if(!empty($customer->CompanyInformation))  value="{{$customer->CompanyInformation->address}}"
                                                         @endif>
+                                                  </div>
                                                 </div>
 
 
-                                            </div>
-                                            <div class="d-flex align-items-baseline mt-4">
-                                                <label for="exampleInputEmail1"
-                                                       class="form-label custom_lab col-lg-4"> <span
-                                                        class="star_section">*</span>Company Registration
-                                                    Number</label>
+                                                <div class="row align-items-center mt-4">
+                                                   <div class="col-lg-4 col-12">  <label
+                                                        class="form-label custom_lab mb-0"> <span
+                                                            class="star_section">*</span> Industry Category</label>  </div>
+                                                  <div class="col-lg-8 col-12">   <input type="text" name="industry_category"
+                                                           class="form-control w-100   custom_input"
+                                                           aria-describedby="emailHelp"
+                                                           placeholder="Industry Category" required
+                                                           @if(!empty($customer->CompanyInformation))  value="{{$customer->CompanyInformation->industry_category}}"
+                                                        @endif>  </div>
+                                                </div>
 
-                                                <input type="text" name="company_reg_number"
-                                                       class="form-control col-lg-3 custom_input_2  custom_widt_inp"
-                                                       id="exampleInputEmail1" aria-describedby="emailHelp"
-                                                       placeholder="Enter registration number" required
-                                                       @if(!empty($customer->CompanyInformation))  value="{{$customer->CompanyInformation->company_reg_number}}"
-                                                    @endif>
-
-                                            </div>
-
-
-                                            <div class="d-flex align-items-baseline mt-4">
-                                                <label for="exampleInputEmail1"
-                                                       class="form-label custom_lab col-lg-4"> <span
-                                                        class="star_section">*</span>Address</label>
-                                                <input type="text" name="ci_address"
-                                                       class="form-control col-lg-8 custom_input"
-                                                       id="exampleInputEmail1" aria-describedby="emailHelp"
-                                                       placeholder="Enter address" required
-                                                       @if(!empty($customer->CompanyInformation))  value="{{$customer->CompanyInformation->address}}"
-                                                    @endif>
-                                            </div>
+                                                <div class="row align-items-center mt-4">
+                                                   <div class="col-lg-4 col-12">   <label
+                                                        class="form-label custom_lab mb-0"> <span
+                                                            class="star_section">*</span>Contact 1, 2
+                                                    </label></div>
+                                                     <div class="col-lg-8 col-12"> <input type="text" name="ci_contacts"
+                                                           class="form-control w-100   custom_input"
+                                                           aria-describedby="emailHelp"
+                                                           placeholder="Contact 1/Contact 2"
+                                                           @if(!empty($customer->CompanyInformation))  value="{{$customer->CompanyInformation->contacts}}"
+                                                           @endif
+                                                           required
+                                                    ></div>
+                                                </div>
 
 
-                                            <div class="d-flex align-items-baseline mt-4">
-                                                <label for="exampleInputEmail1"
-                                                       class="form-label custom_lab col-lg-4"> <span
-                                                        class="star_section">*</span> Industry Category</label>
-                                                <input type="text" name="industry_category"
-                                                       class="form-control col-lg-8 custom_input"
-                                                       id="exampleInputEmail1" aria-describedby="emailHelp"
-                                                       placeholder="Industry Category" required
-                                                       @if(!empty($customer->CompanyInformation))  value="{{$customer->CompanyInformation->industry_category}}"
-                                                    @endif>
-                                            </div>
+                                                <div class="row align-items-center mt-4">
+                                                   <div class="col-lg-4 col-12">   <label
+                                                        class="form-label custom_lab mb-0"> <span
+                                                            class="star_section">&nbsp;</span> fax</label></div>
+                                                   <div class="col-lg-8 col-12">   <input type="text" name="ci_fax"
+                                                           class="form-control w-100   custom_input"
+                                                           aria-describedby="emailHelp"
+                                                           placeholder="02-4347-4893"
+                                                           @if(!empty($customer->CompanyInformation) && !empty($customer->CompanyInformation->fax))  value="{{$customer->CompanyInformation->fax}}"
+                                                        @endif></div>
+                                                </div>
 
-                                            <div class="d-flex align-items-baseline mt-4">
-                                                <label for="exampleInputEmail1"
-                                                       class="form-label custom_lab col-lg-4"> <span
-                                                        class="star_section">*</span>Contact 1, 2
-                                                </label>
-                                                <input type="text" name="ci_contacts"
-                                                       class="form-control col-lg-8 custom_input"
-                                                       id="exampleInputEmail1" aria-describedby="emailHelp"
-                                                       placeholder="Contact 1/Contact 2"
-                                                       @if(!empty($customer->CompanyInformation))  value="{{$customer->CompanyInformation->contacts}}"
-                                                    @endif>
-                                            </div>
-
-
-                                            <div class="d-flex align-items-baseline mt-4">
-                                                <label for="exampleInputEmail1"
-                                                       class="form-label custom_lab col-lg-4"> <span
-                                                        class="star_section">&nbsp;</span> fax</label>
-                                                <input type="text" name="ci_fax"
-                                                       class="form-control col-lg-8 custom_input"
-                                                       id="exampleInputEmail1" aria-describedby="emailHelp"
-                                                       placeholder="02-4347-4893"
-                                                       @if(!empty($customer->CompanyInformation) && !empty($customer->CompanyInformation->fax))  value="{{$customer->CompanyInformation->fax}}"
-                                                    @endif>
-                                            </div>
-
-                                            <div class="d-flex align-items-baseline mt-4">
-                                                <label for="exampleInputEmail1"
-                                                       class="form-label custom_lab col-lg-4"> <span
-                                                        class="star_section">&nbsp;</span> Email</label>
-                                                <input type="email" name="ci_email"
-                                                       class="form-control col-lg-8 custom_input"
-                                                       id="exampleInputEmail1" aria-describedby="emailHelp"
-                                                       placeholder="Enter email"
-                                                       @if(!empty($customer->CompanyInformation) && !empty($customer->CompanyInformation->email)) value="{{$customer->CompanyInformation->email}}"
-                                                    @endif>
+                                                <div class="row align-items-center mt-4">
+                                                   <div class="col-lg-4 col-12">   <label
+                                                        class="form-label custom_lab mb-0"> <span
+                                                            class="star_section">&nbsp;</span> Email</label></div>
+                                                   <div class="col-lg-8 col-12">   <input type="email" name="ci_email"
+                                                           class="form-control w-100   custom_input"
+                                                           aria-describedby="emailHelp"
+                                                           placeholder="Enter email"
+                                                           @if(!empty($customer->CompanyInformation) && !empty($customer->CompanyInformation->email)) value="{{$customer->CompanyInformation->email}}"
+                                                        @endif></div>
+                                                </div>
                                             </div>
 
 
@@ -392,9 +414,12 @@
 @endsection
 @section('custom-script')
     <script>
-        $('#createBuildingInformation').on('submit', function (e) {
-            e.preventDefault();
-            ajaxCall($('#createBuildingInformation'), "{{ route('CreateBuildingAndCompanyInformation') }}", $('.form_button'), "{{ route('ec.CreateCompanyInfo',request()->segment(3)) }}", onRequestSuccess);
+        $('#createBuildingInformation').validate({
+            submitHandler: function () {
+
+                ajaxCall($('#createBuildingInformation'), "{{ route('CreateBuildingAndCompanyInformation') }}", $('.form_button'), "{{ route('ec.CreateCompanyInfo',request()->segment(3)) }}", onRequestSuccess);
+
+            }
         });
     </script>
 @endsection
