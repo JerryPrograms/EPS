@@ -218,52 +218,58 @@
                                             </thead>
                                             <tbody id="partReplacemnetTbody">
                                             @php
-                                                $PartsReplacementHistory = $customer->PartReplacementHistory()->paginate(5);
+                                                $MainPart = $customer->PartReplacementHistory()->paginate(1);
                                             @endphp
-                                            @foreach($PartsReplacementHistory as $rh)
-                                                <tr>
-                                                    <td class="custom_br_theme_gray"><a href="javascript: void(0);"
-                                                                                        class="text-body fw-bold">{{$loop->index + 1}}</a>
-                                                    </td>
-                                                    <td class="custom_br_theme_gray_2">
-                                                        <button type="button"
-                                                                class="date_button border-0">{{\Carbon\Carbon::parse($rh->registration_date)->format('Y.d.m')}}</button>
-                                                    </td>
 
-                                                    <td class="custom_br_theme_gray_2">
-                                                        <button type="button"
-                                                                class="date_button_2 border-0">{{$rh->part}}
-                                                        </button>
-                                                    </td>
+                                            @include('engineer_company.part_replacement_history_listing_template',compact('MainPart'))
+{{--                                            @if(count($PartsReplacementHistory) > 0)--}}
+{{--                                            @foreach($PartsReplacementHistory as $rh)--}}
+{{--                                                <tr>--}}
+{{--                                                    <td class="custom_br_theme_gray"><a href="javascript: void(0);"--}}
+{{--                                                                                        class="text-body fw-bold">{{$loop->index + 1}}</a>--}}
+{{--                                                    </td>--}}
+{{--                                                    <td class="custom_br_theme_gray_2">--}}
+{{--                                                        <button type="button"--}}
+{{--                                                                class="date_button border-0">{{\Carbon\Carbon::parse($rh->registration_date)->format('Y.d.m')}}</button>--}}
+{{--                                                    </td>--}}
 
-                                                    <td class="custom_br_theme_gray_2">
-                                                        <button type="button"
-                                                                class="date_button_2 border-0">{{$rh->manager}}
-                                                        </button>
-                                                    </td>
-                                                    <td class="custom_br_theme_gray_3">
-                                                        <!-- Button trigger modal -->
-                                                        <button type="button"
-                                                                class="date_button_2 border-0">{{$rh->as_content}}
-                                                        </button>
-                                                    </td>
-                                                    <td class="custom_br_theme_gray_3">
-                                                        <!-- Button trigger modal -->
-                                                        <button onclick="$('#partReplacementID').val('{{$rh->id}}')"
-                                                                type="button" data-bs-toggle="modal"
-                                                                data-bs-target="#deleteReplacementHistory"
-                                                                class="date_button_2 border-0">
-                                                            <i class="fa fa-trash-can"></i>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                            @endforeach
+{{--                                                    <td class="custom_br_theme_gray_2">--}}
+{{--                                                        <button type="button"--}}
+{{--                                                                class="date_button_2 border-0">{{$rh->part}}--}}
+{{--                                                        </button>--}}
+{{--                                                    </td>--}}
+
+{{--                                                    <td class="custom_br_theme_gray_2">--}}
+{{--                                                        <button type="button"--}}
+{{--                                                                class="date_button_2 border-0">{{$rh->manager}}--}}
+{{--                                                        </button>--}}
+{{--                                                    </td>--}}
+{{--                                                    <td class="custom_br_theme_gray_3">--}}
+{{--                                                        <!-- Button trigger modal -->--}}
+{{--                                                        <button type="button"--}}
+{{--                                                                class="date_button_2 border-0">{{$rh->as_content}}--}}
+{{--                                                        </button>--}}
+{{--                                                    </td>--}}
+{{--                                                    <td class="custom_br_theme_gray_3">--}}
+{{--                                                        <!-- Button trigger modal -->--}}
+{{--                                                        <button onclick="$('#partReplacementID').val('{{$rh->id}}')"--}}
+{{--                                                                type="button" data-bs-toggle="modal"--}}
+{{--                                                                data-bs-target="#deleteReplacementHistory"--}}
+{{--                                                                class="date_button_2 border-0">--}}
+{{--                                                            <i class="fa fa-trash-can"></i>--}}
+{{--                                                        </button>--}}
+{{--                                                    </td>--}}
+{{--                                                </tr>--}}
+{{--                                            @endforeach--}}
+{{--                                            @else--}}
+{{--                                                --}}
+{{--                                            @endif--}}
                                             </tbody>
                                         </table>
 
 
                                         <div id="PartsReplacementHistoryPagination" class="col-lg-12">
-                                            {!! $PartsReplacementHistory->links('common_files.paginate') !!}
+                                            {!! $MainPart->links('common_files.paginate') !!}
                                         </div>
 
 

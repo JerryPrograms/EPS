@@ -90,7 +90,7 @@
                                                         Create Customer Info
                                                     </p>
                                                 </button>
-                                                <button class="searchbar_img border-0">
+                                                <button onclick="window.location.href= '{{route('ec.CreateDispatchInformation',$customer->user_uid)}}'" class="searchbar_img border-0">
                                                     <img
                                                         src="{{asset('engineer_company/assets/images/searchbar.png')}}">
                                                     <p class="searchbar_text mt-3">

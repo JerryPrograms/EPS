@@ -95,4 +95,13 @@ class EngineerCompanyController extends Controller
         }
         abort(404);
     }
+
+    public function CreateDispatchInformation($uid)
+    {
+        $customer = CustomerInfo::where('user_uid', $uid)->first();
+        if ($customer) {
+            return view('engineer_company.dispatch_information', compact('customer'));
+        }
+        abort(404);
+    }
 }
