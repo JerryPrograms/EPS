@@ -104,4 +104,9 @@ class EngineerCompanyController extends Controller
         }
         abort(404);
     }
+
+    public function GetCalender()
+    {
+        return view('engineer_company.calender');
+    }
 }

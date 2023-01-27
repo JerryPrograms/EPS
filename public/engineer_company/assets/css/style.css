@@ -1154,3 +1154,26 @@ tbody, td, tfoot, th, thead, tr {
     background-color: transparent;
     border: none;
 }
+
+.calender_add_btn {
+    border: 1px solid rgba(98, 129, 254, 1);
+    padding: 6px 13px;
+    border-radius: 3px;
+    background: transparent;
+}
+
+.card-body-left-border-week-duty
+{
+    border-left: 8px solid #FFAB00;
+}
+
+.border-black-1px
+{
+    border: 1px solid;
+}
+
+.height-600-overflow-auto
+{
+    height: 600px;
+    overflow: auto;
+}

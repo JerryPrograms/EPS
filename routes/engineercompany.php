@@ -41,6 +41,7 @@ Route::group(['prefix' => 'engineer-company'], function () {
     Route::get('/emergency-dispatch-checklist/{uid}', [EngineerCompanyController::class, 'CreateEmergencyDispatchChecklist'])->name('ec.CreateEmergencyDispatchChecklist');
     Route::get('/manage-attachments/{uid}', [EngineerCompanyController::class, 'CreateManageAttachments'])->name('ec.CreateManageAttachments');
     Route::get('/dispatch-information-listing/{uid}', [EngineerCompanyController::class, 'CreateDispatchInformation'])->name('ec.CreateDispatchInformation');
+    Route::get('/calender', [EngineerCompanyController::class, 'GetCalender'])->name('ec.GetCalender');
 
 
     //Route to create customer basic information by engineer company

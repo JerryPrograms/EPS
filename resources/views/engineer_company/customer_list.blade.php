@@ -97,7 +97,6 @@
             submitHandler: function () {
                 $('.submitbtn').html('<i class="fa fa-spinner fa-spin me-1"></i> Processing').attr('disabled', true);
                 $('.submitbtn').prev().attr('disabled', true);
-                e.preventDefault();
                 var form = $('#customerCreateForm')[0];
                 var formData = new FormData(form);
                 let prompt = $('.prompt');

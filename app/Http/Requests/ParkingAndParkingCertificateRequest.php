@@ -32,6 +32,10 @@ class ParkingAndParkingCertificateRequest extends FormRequest
                 'year_of_installation' => 'required',
                 'inspection_date' => 'required',
                 'addition_information' => 'required',
+                'manager_name' => 'required|array|min:3|max:3',
+                'installation_place' => 'required|array|min:3|max:3',
+                'inspection_period_from' => 'required|array|min:3|max:3',
+                'inspection_period_to' => 'required|array|min:3|max:3',
             ];
         } else {
             return [
@@ -43,6 +47,10 @@ class ParkingAndParkingCertificateRequest extends FormRequest
                 'inspection_date' => 'required',
                 'addition_information' => 'required',
                 'inspection_certificate' => 'required|array|min:3|max:3',
+                'manager_name' => 'required|array|min:3|max:3',
+                'installation_place' => 'required|array|min:3|max:3',
+                'inspection_period_from' => 'required|array|min:3|max:3',
+                'inspection_period_to' => 'required|array|min:3|max:3',
             ];
         }
 
@@ -61,6 +69,18 @@ class ParkingAndParkingCertificateRequest extends FormRequest
             'inspection_certificate.required' => 'Inspection certificate required',
             'inspection_certificate.min' => 'All 3 Inspection certificate required',
             'inspection_certificate.max' => 'All 3 Inspection certificate required',
+            'manager_name.required' => 'Manager Name required',
+            'installation_place.required' => 'Installation Place required',
+            'inspection_period_from.required' => 'Date required',
+            'inspection_period_to.required' => 'Date required',
+            'manager_name.min' => 'All 3 Manager Name required',
+            'installation_place.min' => 'All 3 Installation Place required',
+            'inspection_period_from.min' => 'All 3 Date required',
+            'inspection_period_to.min' => 'All 3 Date required',
+            'manager_name.max' => 'All 3 Manager Name required',
+            'installation_place.max' => 'All 3 Installation Place required',
+            'inspection_period_from.max' => 'All 3 Date required',
+            'inspection_period_to.max' => 'All 3 Date required',
         ];
     }
 }
