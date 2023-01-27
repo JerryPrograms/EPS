@@ -24,8 +24,8 @@
 
                                                 <th class="align-middle">No.</th>
                                                 <th class="text-center">Registraion Date</th>
-                                                <th class="text-center">Customer number</th>
-                                                <th class="text-center">Building name</th>
+                                                <th class="text-center">Customer Number</th>
+                                                <th class="text-center">Building Name</th>
                                                 <th class="text-center">Address</th>
                                                 <th class="text-center">Building Management Company</th>
                                                 <th class="text-center">Engineer

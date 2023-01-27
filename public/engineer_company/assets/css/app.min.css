@@ -5809,7 +5809,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
 
    .search input{
 
-    height: 34px;
+    height: 38px;
     border: 1px solid rgba(223, 224, 235, 1);
     padding: 3px 0px 0px 7px;
    }
@@ -5826,7 +5826,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
    }
    .search_img
    {
-    margin-top: -9px;
+    margin-top: -5px;
    }
 
 
@@ -5834,7 +5834,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
     position: absolute;
     top: 0px;
     right: 0px;
-    height: 33px;
+    height: 37px;
     width: 55px;
     background: #E0E2E6;
     border: 1px solid rgba(223, 224, 235, 1);

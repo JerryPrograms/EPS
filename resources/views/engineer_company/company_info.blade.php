@@ -22,17 +22,17 @@
                                             <tr>
 
                                                 <th class="">No.</th>
-                                                <th class="text-center">registration date
+                                                <th class="text-center">Registration Date
                                                 </th>
-                                                <th class="text-center">customer number
+                                                <th class="text-center">Customer Number
                                                 </th>
-                                                <th class="text-center">building name
+                                                <th class="text-center">Building Name
                                                 </th>
-                                                <th class="text-center">address
+                                                <th class="text-center">Address
                                                 </th>
-                                                <th class="text-center">building management company
+                                                <th class="text-center">Building Management Company
                                                 </th>
-                                                <th class="text-center">maintenance company
+                                                <th class="text-center">Maintenance Company
                                                 </th>
                                             </tr>
                                             </thead>
