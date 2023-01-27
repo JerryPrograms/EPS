@@ -23,6 +23,7 @@ class ParkingAndParkingCertificateRequest extends FormRequest
      */
     public function rules()
     {
+
         if ($this->request->has('p_id')) {
             return [
                 'certification_number' => 'required',
@@ -33,9 +34,13 @@ class ParkingAndParkingCertificateRequest extends FormRequest
                 'inspection_date' => 'required',
                 'addition_information' => 'required',
                 'manager_name' => 'required|array|min:3|max:3',
+                'manager_name.*' => 'required',
                 'installation_place' => 'required|array|min:3|max:3',
+                'installation_place.*' => 'required',
                 'inspection_period_from' => 'required|array|min:3|max:3',
+                'inspection_period_from.*' => 'required',
                 'inspection_period_to' => 'required|array|min:3|max:3',
+                'inspection_period_to.*' => 'required',
             ];
         } else {
             return [
@@ -48,9 +53,13 @@ class ParkingAndParkingCertificateRequest extends FormRequest
                 'addition_information' => 'required',
                 'inspection_certificate' => 'required|array|min:3|max:3',
                 'manager_name' => 'required|array|min:3|max:3',
+                'manager_name.*' => 'required',
                 'installation_place' => 'required|array|min:3|max:3',
+                'installation_place.*' => 'required',
                 'inspection_period_from' => 'required|array|min:3|max:3',
+                'inspection_period_from.*' => 'required',
                 'inspection_period_to' => 'required|array|min:3|max:3',
+                'inspection_period_to.*' => 'required',
             ];
         }
 
@@ -81,6 +90,14 @@ class ParkingAndParkingCertificateRequest extends FormRequest
             'installation_place.max' => 'All 3 Installation Place required',
             'inspection_period_from.max' => 'All 3 Date required',
             'inspection_period_to.max' => 'All 3 Date required',
+            'manager_name.*.required' => 'All 3 Manager Name required',
+            'installation_place.*.required' => 'All 3 Installation Place required',
+            'inspection_period_from.*.required' => 'All 3 Date required',
+            'inspection_period_to.*.required' => 'All 3 Date required',
+            'manager_name.*.required' => 'All 3 Manager Name required',
+            'installation_place.*.required' => 'All 3 Installation Place required',
+            'inspection_period_from.*.required' => 'All 3 Date required',
+            'inspection_period_to.*.required' => 'All 3 Date required',
         ];
     }
 }
