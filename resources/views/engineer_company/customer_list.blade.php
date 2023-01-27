@@ -24,11 +24,11 @@
                                                     <option selected value="" disabled>Filter</option>
                                                     <option value="all">All</option>
                                                     <option value="created_at">Registration Date</option>
-                                                    <option value="building_name">Building name</option>
-                                                    <option value="customer_number">Customer number</option>
+                                                    <option value="building_name">Building Name</option>
+                                                    <option value="customer_number">Customer Number</option>
                                                     <option value="address">Address</option>
-                                                    <option value="building_management_company">Building management
-                                                        company
+                                                    <option value="building_management_company">Building Management
+                                                        Company
                                                     </option>
                                                 </select>
                                             </div>
@@ -45,7 +45,7 @@
                                                         </button>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div>  
                                             <div class="col-md-3 col-6">
                                                 <button id="clearFilter"
                                                         onclick="ClearFilter()"
@@ -58,7 +58,7 @@
                                             <div class="col-md-4 col-12 text-end">
                                                 <button data-bs-toggle="modal" data-bs-target="#customerInfoModal"
                                                         type="button"
-                                                        class="btn btn-primary waves-effect waves-light w-sm">
+                                                        class="btn btn-primary waves-effect waves-light w-sm mt-3">
                                                     <i class="mdi mdi-plus d-block font-size-16"></i>
                                                 </button>
                                             </div>
