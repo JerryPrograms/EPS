@@ -1132,6 +1132,13 @@ tbody, td, tfoot, th, thead, tr {
     border: 2px solid rgba(98, 129, 254, 1);
 }
 
+.btn-theme-auth{
+    background-color: #6281fe;
+    border-color: #6281fe;
+}
+.btn-theme-auth:hover{
+    background-color: #5d76de;
+    border-color: #5d76de;
 
 .collapse-icon-section {
     width: 31%;
@@ -1142,8 +1149,6 @@ tbody, td, tfoot, th, thead, tr {
     margin-top: 22px;
 }
 
-<!--
--->
 .history_add_btn {
     border: 1px solid #b5d0fb;
     background: transparent;

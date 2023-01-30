@@ -9,11 +9,18 @@ class AuthController extends Controller
 {
     public function GetECLogin()
     {
-        return view('engineer_company.auth.login');
+        return view('engineer.auth.login');
     }
 
     public function GetECSignup()
     {
-        return view('engineer_company.auth.signup');
+        return view('engineer.auth.signup');
+    }
+
+    public function engineer_signup_action(Request $request){
+        return json_encode([
+            'success' => true,
+            'message' => 'Login successfull'
+        ]);
     }
 }

@@ -18,15 +18,14 @@ use \App\Http\Controllers\engineer\EngineerController;
 
 
 Route::group(['prefix' => 'engineer'], function () {
-
     Route::get('/login', [AuthController::class, 'GetECLogin'])->name('e.GetECLogin');
     Route::get('/signup', [AuthController::class, 'GetECSignup'])->name('e.GetECSignup');
+    Route::post('/engineer-signup-action', [AuthController::class, 'engineer_signup_action'])->name('engineer_signup_action');
+
     Route::get('/customer-info-dashboard', [EngineerController::class, 'GetCustomerInfoDashboard'])->name('e.GetCustomerInfoDashboard');
     Route::get('/customer-info-listing', [EngineerController::class, 'GetCustomerInfoListing'])->name('e.GetCustomerInfoListing');
     Route::get('/building-info', [EngineerController::class, 'CreateBuildingInfo'])->name('e.CreateBuildingInfo');
     Route::get('/company-info', [EngineerController::class, 'CreateCompanyInfo'])->name('e.CreateCompanyInfo');
     Route::get('/parking-facility', [EngineerController::class, 'CreateParkingFacility'])->name('e.CreateParkingFacility');
     Route::get('/key-accessory-history', [EngineerController::class, 'CreateKeyAccessoryHistory'])->name('e.CreateKeyAccessoryHistory');
-
-
 });
