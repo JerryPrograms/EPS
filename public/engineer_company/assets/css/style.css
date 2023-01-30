@@ -1177,3 +1177,8 @@ tbody, td, tfoot, th, thead, tr {
     height: 600px;
     overflow: auto;
 }
+
+.custom-trash-padding
+{
+    padding-top: 14px;
+}
