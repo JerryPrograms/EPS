@@ -1173,11 +1173,12 @@ tbody, td, tfoot, th, thead, tr {
 }
 
 .border-black-1px {
-    border: 1px solid;
+    border: 1px solid #cdc6c6;
+    border-radius: 0px;
 }
 
 .height-600-overflow-auto {
-    max-height: 600px;
+    max-height: 1000px;
     overflow: auto;
 }
 

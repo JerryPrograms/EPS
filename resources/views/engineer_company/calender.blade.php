@@ -2,7 +2,7 @@
 @section('body')
     <style>
         .height-600-overflow-auto {
-            max-height: 413px;
+            max-height: 1000px;
             overflow-y: scroll;
             font-weight: normal;
             min-width: 200px;
@@ -25,6 +25,25 @@
         .w-24 {
             width: 24px !important;
         }
+
+        .fc-scrollgrid-sync-inner {
+            color: black !important;
+        }
+
+        th {
+            background-color: white !important;
+        }
+
+        tbody, td, tfoot, th, thead, tr {
+            border-bottom: 1px solid #cac6c6 !important;
+        }
+
+        .calender_add_btn {
+            border: 1px solid rgba(98, 129, 254, 1);
+            padding: 4px 11px;
+            border-radius: 3px;
+            background: transparent;
+        }
     </style>
     <div class="main-content">
 
@@ -37,90 +56,107 @@
 
                     <!-- end page title -->
 
-                    <div class="row">
-                        <div class="col-12">
+                    <div class="d-flex">
+                        <div class="pe-1" style="width: 70%">
 
                             <div class="card">
 
                                 <div class="card-body">
                                     <h4 class="card-title mb-4">Calender</h4>
-                                    <div class="row">
-
-                                        <div class="col-lg-8">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <div id="calendar"></div>
-                                                </div>
-                                            </div>
-                                        </div> <!-- end col -->
-                                        <div class="col-lg-4">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <div class="d-flex justify-content-between align-items-center mb-3">
-                                                        <h5 class="fw-bold mb-0"><img class="me-1 w-24"
-                                                                                      src="{{asset('engineer_company/assets/images/rect.png')}}">To
-                                                            do list</h5>
-                                                        <button id="btn-new-event" data-bs-toggle="modal"
-                                                                data-bs-target="#addEventCompleteModal"
-                                                                class="calender_add_btn">+Add
-                                                        </button>
-                                                    </div>
-                                                    <div class="height-600-overflow-auto mb-5">
-                                                        @foreach($events as $ev)
-                                                            <div class="card border-black-1px">
-                                                                <div class="card-body"
-                                                                     style="border-left: 8px solid {{$ev->color}};">
-                                                                    <div class="information">
-                                                                        <span>{{$ev->start_date}}</span>
-                                                                        <h5 class="fw-bold">{{$ev->title}}</h5>
-                                                                    </div>
-                                                                    <div
-                                                                        class="d-flex justify-content-between align-items-center">
-                                                                        <h5>Writer:{{$ev->assigned_by_id}}</h5>
-                                                                        <button
-                                                                            onclick="ChangeEventStatus('{{$ev->id}}')"
-                                                                            class="calender_add_btn">Done
-                                                                        </button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        @endforeach
-                                                    </div>
-                                                    <div class="d-flex justify-content-between align-items-center mb-3">
-                                                        <h5 class="fw-bold mb-0"><img class="me-1 w-24"
-                                                                                      src="{{asset('engineer_company/images/Check_ring.png')}}">Completed
-                                                            list</h5>
-                                                    </div>
-                                                    <div class="height-600-overflow-auto">
-                                                        @foreach($completed_events as $ev)
-                                                            <div class="card border-black-1px">
-                                                                <div class="card-body"
-                                                                     style="border-left: 8px solid {{$ev->color}};">
-                                                                    <div class="information">
-                                                                        <span>{{$ev->start_date}}</span>
-                                                                        <h5 class="fw-bold">{{$ev->title}}</h5>
-                                                                    </div>
-                                                                    <div
-                                                                        class="d-flex justify-content-between align-items-center">
-                                                                        <h5>Writer:{{$ev->assigned_by_id}}</h5>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        @endforeach
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div> <!-- end col-->
-
-
-                                    </div>
+                                    <div id="calendar"></div>
 
                                     <div style='clear:both'></div>
 
                                 </div>
                             </div>
 
+                        </div>
+                        <div class="ps-1" style="width: 30%">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="card">
+                                        <div class="card-body height-600-overflow-auto">
+                                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                                <h6 class="fw-bold mb-0"><img class="me-1"
+                                                                              src="{{asset('engineer_company/assets/images/rect.png')}}">To
+                                                    do list</h6>
+                                                <button id="btn-new-event" data-bs-toggle="modal"
+                                                        data-bs-target="#addEventCompleteModal"
+                                                        class="calender_add_btn">+Add
+                                                </button>
+                                            </div>
+                                            <div class="mb-3">
+                                                @foreach($events as $ev)
+                                                    <div class="card border-black-1px">
+                                                        <div class="card-body"
+                                                             style="border-left: 10px solid {{$ev->color}};padding: 6px 13px;">
+                                                            <div class="information">
+                                                                <span>{{$ev->start_date}}</span>
+                                                                <h6 class="fw-bold">{{$ev->title}}</h6>
+                                                            </div>
+                                                            <div
+                                                                class="d-flex justify-content-between align-items-center">
+                                                                <h6>Writer:{{$ev->assigned_by_id}}</h6>
+                                                                <button
+                                                                    onclick="ChangeEventStatus('{{$ev->id}}')"
+                                                                    class="calender_add_btn">Done
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @endforeach
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                                <h6 class="fw-bold mb-0"><img class="me-1"
+                                                                              src="{{asset('engineer_company/images/Check_ring.png')}}">Completed
+                                                    list</h6>
+                                            </div>
+                                            <div class="">
+                                                @foreach($completed_events as $ev)
+                                                    <div class="card border-black-1px">
+                                                        <div class="card-body"
+                                                             style="border-left: 10px solid {{$ev->color}};padding: 6px 15px;">
+                                                            <div class="information">
+                                                                <span>{{$ev->start_date}}</span>
+                                                                <h6 class="fw-bold">{{$ev->title}}</h6>
+                                                            </div>
+                                                            <div
+                                                                class="d-flex justify-content-between align-items-center">
+                                                                <h6>Writer:{{$ev->assigned_by_id}}</h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @endforeach
+                                            </div>
+                                            <div id="external-events" class="mt-2">
+                                                <div id="external-events" class="mt-2">
+                                                    <br>
+                                                    <p class="text-muted">Drag and drop your event or click in the
+                                                        calendar</p>
+                                                    <div data-event="{'color':'#8fdf82'}" class="external-event fc-event bg-success"
+                                                         data-class="bg-success">
+                                                        <i class="mdi mdi-checkbox-blank-circle font-size-11 me-2"></i>New
+                                                        Event Planning
+                                                    </div>
+                                                    <div class="external-event fc-event bg-info" data-class="bg-info">
+                                                        <i class="mdi mdi-checkbox-blank-circle font-size-11 me-2"></i>Meeting
+                                                    </div>
+                                                    <div class="external-event fc-event bg-warning"
+                                                         data-class="bg-warning">
+                                                        <i class="mdi mdi-checkbox-blank-circle font-size-11 me-2"></i>Generating
+                                                        Reports
+                                                    </div>
+                                                    <div class="external-event fc-event bg-danger"
+                                                         data-class="bg-danger">
+                                                        <i class="mdi mdi-checkbox-blank-circle font-size-11 me-2"></i>Create
+                                                        New theme
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- end col-->
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -349,12 +385,36 @@
 @section('custom-script')
     <script>
 
+
         document.addEventListener('DOMContentLoaded', function () {
+
+
+            var Calendar = FullCalendar.Calendar;
+            var Draggable = FullCalendar.Draggable;
+
+            var containerEl = document.getElementById('external-events');
             var calendarEl = document.getElementById('calendar');
+            var checkbox = document.getElementById('drop-remove');
+            new Draggable(containerEl, {
+                itemSelector: '.fc-event',
+                eventData: function (eventEl) {
+                    return {
+                        title: eventEl.innerText
+                    };
+                }
+            });
+
+
             var calendar = new FullCalendar.Calendar(calendarEl, {
                 themeSystem: 'bootstrap5',
+                headerToolbar: {
+                    start: 'today prev,next', // will normally be on the left. if RTL, will be on the right
+                    center: 'title',
+                    right: 'dayGridMonth,timeGridWeek,timeGridDay',// will normally be on the right. if RTL, will be on the left
+                },
                 selectable: true,
                 selectHelper: true,
+                droppable: true,
                 select: function (start, end, allDays) {
                     $('#addEventModal').modal('show');
                     $('#start_date').val(start.startStr);
