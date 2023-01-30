@@ -28,8 +28,7 @@
 </head>
 
 <body>
-
-
+<div class="loading-bar" style="width: 0;"></div>
 <!-- /* header section start  */ -->
 <div>
     <div class="Main_header">
@@ -59,7 +58,7 @@
                             <p>EVERY PARKING SOLUTION</p>
 
                             <div class="form-floating mt-5 d-flex">
-                                <input type="email" class="form-control custom_input" id="floatingInput"
+                                <input type="email" class="form-control custom_input" name="email" id="floatingInput"
                                        placeholder="Email Email Address">
                                 <label for="floatingInput">ID</label>
                                 <span class="Custom_icon">

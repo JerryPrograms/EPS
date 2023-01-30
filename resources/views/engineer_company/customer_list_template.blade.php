@@ -60,12 +60,12 @@
             </td>
             <td class="d-flex">
                 <!-- Button trigger modal -->
-                <a href="{{route('ec.GetCustomerInfoDashboard',$c->user_uid)}}" class="date_button_2 border-0"><i class="fa fa-edit"></i></a>
+                <a href="{{route('ec.GetCustomerInfoDashboard',$c->user_uid)}}" class="date_button_2 border-0"><i class="fa fa-edit custom-trash-padding"></i></a>
                 <button onclick="$('#customerInfoID').val('{{$c->id}}')"
                         data-bs-toggle="modal"
                         data-bs-target="#customerDeleteModal"
                         class="date_button_2 border-0"><i
-                        class="fa fa-trash-can"></i></button>
+                        class="fa fa-trash-can custom-trash-padding"></i></button>
             </td>
         </tr>
     @endforeach
