@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 
-@include('engineer_company.includes.head')
+@include('engineer.includes.head')
 
 <body data-sidebar="dark" data-layout-mode="light">
 
@@ -10,12 +10,12 @@
 <!-- Begin page -->
 <div id="layout-wrapper">
 
-    @include('engineer_company.includes.header')
+    @include('engineer.includes.header')
 
 
     <div class="main_container">
         <!-- ========== Left Sidebar Start ========== -->
-        @include('engineer_company.includes.sidebar')
+        @include('engineer.includes.sidebar')
         <!-- Left Sidebar End -->
 
         <!-- ============================================================== -->
@@ -30,7 +30,7 @@
     <div class="rightbar-overlay"></div>
 
     <!-- JAVASCRIPT -->
-@include('engineer_company.includes.scripts')
+@include('engineer.includes.scripts')
 @yield('custom-script')
 
 </body>

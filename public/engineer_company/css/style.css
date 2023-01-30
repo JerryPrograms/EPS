@@ -260,3 +260,12 @@ input#exampleCheck1 {
     font-weight: 600;
     color: black;
 }
+
+.btn-theme-auth{
+    background-color: #6281fe;
+    border-color: #6281fe;
+}
+.btn-theme-auth:hover{
+    background-color: #5d76de;
+    border-color: #5d76de;
+}
