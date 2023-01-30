@@ -9,13 +9,16 @@
                 @csrf
                 <div class="modal-body">
                     <div class="col-12">
+                        <div class="col-md-12">
+                            <div class="prompt w-100"></div>
+                        </div>
                         <p>Are you sure you want to delete this customer?</p>
-                        <input name="id" id="customerInfoID">
+                        <input name="id" id="customerInfoID" hidden>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary waves-effect waves-light submitbtn">Create</button>
+                    <button type="submit" class="btn btn-primary waves-effect waves-light submitbtn">Delete</button>
                 </div>
             </form>
         </div><!-- /.modal-content -->

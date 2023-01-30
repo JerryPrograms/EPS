@@ -21,197 +21,51 @@
 <script src="{{asset('engineer_company/assets/js/app.js')}}"></script>
 
 <!-- App js -->
-<script src="{{asset('engineer_company/assets/js/app.js')}}"></script>
+<script src="{{asset('engineer_company/assets/js/theme.js')}}"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.print/1.6.2/jQuery.print.min.js"
+        integrity="sha512-t3XNbzH2GEXeT9juLjifw/5ejswnjWWMMDxsdCg4+MmvrM+MwqGhxlWeFJ53xN/SBHPDnW0gXYvBx/afZZfGMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify"></script>
+<script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.polyfills.min.js"></script>
+<script src="{{asset('engineer_company/assets/js/validate.min.js')}}"></script>
+
+<script src="{{asset('engineer_company/assets/libs/moment/min/moment.min.js')}}"></script>
+<script src="{{asset('engineer_company/assets/libs/jquery-ui-dist/jquery-ui.min.js')}}"></script>
+<script src="{{asset('engineer_company/assets/libs/fullcalendar/core/main.min.js')}}"></script>
+<script src="{{asset('engineer_company/assets/libs/fullcalendar/bootstrap/main.min.js')}}"></script>
+<script src="{{asset('engineer_company/assets/libs/fullcalendar/daygrid/main.min.js')}}"></script>
+<script src="{{asset('engineer_company/assets/libs/fullcalendar/timegrid/main.min.js')}}"></script>
+<script src="{{asset('engineer_company/assets/libs/fullcalendar/interaction/main.min.js')}}"></script>
+<script src="{{asset('engineer_company/assets/js/pages/calendars-full.init.js')}}"></script>
 <script>
-    function HideShow(element) {
+    function HideShow(element,current) {
         if (element.hasClass('d-none')) {
+            current.children().find('i').removeClass('fa-chevron-down').addClass('fa-chevron-up');
             element.removeClass('d-none');
         } else {
+            current.children().find('i').addClass('fa-chevron-down').removeClass('fa-chevron-up');
             element.addClass('d-none');
         }
     }
 
-
-    //ajax to create customer basic information
-    $('#customerCreateForm').submit(function (e) {
-        $('.submitbtn').html('<i class="fa fa-spinner fa-spin me-1"></i> Processing').attr('disabled', true);
-        $('.submitbtn').prev().attr('disabled', true);
-        e.preventDefault();
-        var form = $('#customerCreateForm')[0];
-        var formData = new FormData(form);
-        let prompt = $('.prompt');
-
-        $.ajax({
-
-            type: "POST",
-            url: '{{route('CustomerInfo')}}',
-            dataType: 'json',
-            data: formData,
-            contentType: false,
-            processData: false,
-            cache: false,
-            mimeType: "multipart/form-data",
-            beforeSend: function () {
-
-            },
-            success: function (res) {
-
-                $('.submitbtn').html('Create').attr('disabled', false);
-                $('.submitbtn').prev().attr('disabled', false);
-
-                if (res.success == false) {
-
-
-                    prompt.html('<div class="alert alert-danger">' + res.message + '</div>');
-
-                    $("div.prompt").fadeIn();
-                    setTimeout(function () {
-                        $("div.prompt").fadeOut();
-                    }, 2000);
-
-                } else if (res.success == true) {
-
-                    prompt.html('<div class="alert alert-success">' + res.message + '</div>');
-
-                    $("div.prompt").fadeIn();
-                    setTimeout(function () {
-                        window.location.reload();
-                    }, 2000);
-
-                    setTimeout(function () {
-                        $("div.prompt").fadeOut();
-                        {
-                            {
-
-                            }
-                        }
-
-                    }, 2000);
-
-                }
-            },
-            error: function (e) {
-
-
-                $('.submitbtn').html('Create').attr('disabled', false);
-                $('.submitbtn').prev().attr('disabled', false);
-                var first_error = '';
-                $.each(e.responseJSON.errors, function (index, item) {
-
-                    first_error = item[0];
-
-                });
-                $("div.prompt").fadeIn();
-                {
-                    {
-                        $('.prompt').html('<div class="alert alert-danger">' + first_error + '</div>');
-                    }
-                }
-                setTimeout(function () {
-                    $("div.prompt").fadeOut();
-                    {
-                        {
-                            prompt.html('<div class="alert alert-danger">' + first_error + '</div>');
-                        }
-                    }
-
-                }, 2000);
-
-
-            }
-
+    function printForm(form) {
+        form.print({
+            globalStyles: true,
+            mediaPrint: false,
+            stylesheet: null,
+            noPrintSelector: ".no-print",
+            iframe: true,
+            append: null,
+            prepend: null,
+            manuallyCopyFormValues: true,
+            deferred: $.Deferred(),
+            timeout: 750,
+            title: null,
+            doctype: '<!doctype html>'
         });
-    });
-
-    //ajax to delete customer basic information
-    $('#customerDeleteForm').submit(function (e) {
-        $('.submitbtn').html('<i class="fa fa-spinner fa-spin me-1"></i> Processing').attr('disabled', true);
-        $('.submitbtn').prev().attr('disabled', true);
-        e.preventDefault();
-        var form = $('#customerDeleteModal')[0];
-        var formData = new FormData(form);
-        let prompt = $('.prompt');
-
-        $.ajax({
-
-            type: "POST",
-            url: '{{route('DeleteCustomerInfo')}}',
-            dataType: 'json',
-            data: formData,
-            contentType: false,
-            processData: false,
-            cache: false,
-            mimeType: "multipart/form-data",
-            beforeSend: function () {
-
-            },
-            success: function (res) {
-
-                $('.submitbtn').html('Create').attr('disabled', false);
-                $('.submitbtn').prev().attr('disabled', false);
-
-                if (res.success == false) {
-
-
-                    prompt.html('<div class="alert alert-danger">' + res.message + '</div>');
-
-                    $("div.prompt").fadeIn();
-                    setTimeout(function () {
-                        $("div.prompt").fadeOut();
-                    }, 2000);
-
-                } else if (res.success == true) {
-
-                    prompt.html('<div class="alert alert-success">' + res.message + '</div>');
-
-                    $("div.prompt").fadeIn();
-                    setTimeout(function () {
-                        window.location.reload();
-                    }, 2000);
-
-                    setTimeout(function () {
-                        $("div.prompt").fadeOut();
-                        {
-                            {
-
-                            }
-                        }
-
-                    }, 2000);
-
-                }
-            },
-            error: function (e) {
-
-
-                $('.submitbtn').html('Create').attr('disabled', false);
-                $('.submitbtn').prev().attr('disabled', false);
-                var first_error = '';
-                $.each(e.responseJSON.errors, function (index, item) {
-
-                    first_error = item[0];
-
-                });
-                $("div.prompt").fadeIn();
-                {
-                    {
-                        $('.prompt').html('<div class="alert alert-danger">' + first_error + '</div>');
-                    }
-                }
-                setTimeout(function () {
-                    $("div.prompt").fadeOut();
-                    {
-                        {
-                            prompt.html('<div class="alert alert-danger">' + first_error + '</div>');
-                        }
-                    }
-
-                }, 2000);
-
-
-            }
-
-        });
-    });
-
+    }
 </script>
+
+
+

@@ -47,22 +47,22 @@
                             </a>
 
                             <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="{{route('ec.CreateBuildingInfo')}}" key="t-default"
+                                <li><a  key="t-default"
                                        class="list_menubar_text"
                                        title="Information & Building Management Company Information"><span
                                             class="custom_dot">.</span>Building Information & ...</a></li>
 
-                                <li><a href="{{route('ec.CreateCompanyInfo')}}" key="t-saas" class="list_menubar_text"
+                                <li><a  key="t-saas" class="list_menubar_text"
                                        title="AS Info & Engineer company Info"><span class="custom_dot">.</span>AS
                                         Info & Engineer...</a></li>
 
-                                <li><a href="{{route('ec.CreateParkingFacility')}}" key="t-crypto"
+                                <li><a  key="t-crypto"
                                        class="list_menubar_text"
                                        title="Parking facility certification information & inspection certificate
                                 "><span class="custom_dot">.</span>Parking facility certification..
                                     </a></li>
 
-                                <li><a href="{{route('ec.CreateKeyAccessoryHistory')}}" key="t-blog" class="list_menubar_text"
+                                <li><a  key="t-blog" class="list_menubar_text"
                                        title="Key Accessories History"><span class="custom_dot">.</span>Key
                                         Accessories History..</a></li>
 

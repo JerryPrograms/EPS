@@ -874,7 +874,7 @@ body[data-sidebar=dark] #sidebar-menu ul li a i {
     padding: 4px 5px;
     border-radius: 10px;
 }
-body[data-sidebar=dark] #sidebar-menu ul li a:active 
+body[data-sidebar=dark] #sidebar-menu ul li a:active
 {
     background-color: #6281FE !important;
     color: white !important;
@@ -884,11 +884,11 @@ body[data-sidebar=dark] #sidebar-menu ul li a:active
     background-color: #6281FE !important;
     color: white !important;
 }
-#sidebar-menu .mm-active .dropdown_toggle span 
+#sidebar-menu .mm-active .dropdown_toggle span
 {
     color: white !important;
 }
-#sidebar-menu .mm-active .dropdown_toggle i 
+#sidebar-menu .mm-active .dropdown_toggle i
 {
     color: white !important;
 }
@@ -965,7 +965,7 @@ body[data-sidebar=dark] .mm-active .active {
 }
 
 body[data-sidebar=dark] .mm-active .active i {
-    color: #fff !important
+    color: #748ffd !important;
 }
 
 body[data-sidebar=dark] .menu-title {
@@ -1468,10 +1468,10 @@ body[data-layout=horizontal][data-layout-size=boxed] .navbar-header {
 
 /*!
  * Waves v0.7.6
- * http://fian.my.id/Waves 
- * 
- * Copyright 2014-2018 Alfiana E. Sibuea and other contributors 
- * Released under the MIT license 
+ * http://fian.my.id/Waves
+ *
+ * Copyright 2014-2018 Alfiana E. Sibuea and other contributors
+ * Released under the MIT license
  * https://github.com/fians/Waves/blob/master/LICENSE */
 .waves-effect {
     position: relative;
@@ -5721,7 +5721,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
 .plus_section_4 {
     padding-left: 75px;
 }
-.plus_icon 
+.plus_icon
 {
     font-size: 12px !important;
     background: none !important;
@@ -5750,14 +5750,14 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
     height: 17px;
     margin-top: 12px;
 }
-.dot_text 
+.dot_text
 {
     font-size: 12px;
     color: #6281FE;
     margin: 16px;
 }
 
-.edit_text 
+.edit_text
 {
     font-size: 12px;
     color: black;
@@ -5777,7 +5777,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
     margin-top: 10px;
 }
 
-.profile_section 
+.profile_section
 {
     display: flex;
     justify-content: right;
@@ -5800,20 +5800,20 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
 .height{
     height: 100vh;
    }
-   
+
 
    .search{
    position: relative;
-     
+
    }
 
    .search input{
 
-    height: 34px;
+    height: 38px;
     border: 1px solid rgba(223, 224, 235, 1);
     padding: 3px 0px 0px 7px;
    }
-   .searchbar_button:hover 
+   .searchbar_button:hover
    {
 
     height: 33px;
@@ -5826,7 +5826,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
    }
    .search_img
    {
-    margin-top: -9px;
+    margin-top: -5px;
    }
 
 
@@ -5834,7 +5834,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
     position: absolute;
     top: 0px;
     right: 0px;
-    height: 33px;
+    height: 37px;
     width: 55px;
     background: #E0E2E6;
     border: 1px solid rgba(223, 224, 235, 1);
@@ -5873,7 +5873,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
     color: grey;
     background-color: #fff;
     border: none;
-    font-size: 15px; 
+    font-size: 15px;
     font-weight: 400;
 }
 .page-link:hover {

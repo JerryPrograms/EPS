@@ -4,39 +4,109 @@ namespace App\Http\Controllers\engineercompany;
 
 use App\Http\Controllers\Controller;
 use App\Models\CustomerInfo;
-use Illuminate\Http\Request;
 
 class EngineerCompanyController extends Controller
 {
-    public function GetCustomerInfoDashboard()
+    public function GetCustomerInfoDashboard($uid)
     {
-        return view('engineer_company.customer_info_dashboard');
+        $customer = CustomerInfo::where('user_uid', $uid)->first();
+        if ($customer) {
+            return view('engineer_company.customer_info_dashboard', compact('customer'));
+        }
+        abort(404);
     }
 
     public function GetCustomerInfoListing()
     {
         //TODO : Add where condition on engineer company logged in
         $customer = CustomerInfo::latest()->paginate(10);
-        return view('engineer_company.customer_list',compact('customer'));
+        return view('engineer_company.customer_list', compact('customer'));
     }
 
-    public function CreateBuildingInfo()
+    public function CreateBuildingInfo($uid)
     {
-        return view('engineer_company.building_info');
+        $customer = CustomerInfo::where('user_uid', $uid)->first();
+        if ($customer) {
+            return view('engineer_company.building_info', compact('customer'));
+        }
+        abort(404);
     }
 
-    public function CreateCompanyInfo()
+    public function CreateCompanyInfo($uid)
     {
-        return view('engineer_company.company_info');
+        $customer = CustomerInfo::where('user_uid', $uid)->first();
+        if ($customer) {
+            return view('engineer_company.company_info', compact('customer'));
+        }
+        abort(404);
     }
 
-    public function CreateParkingFacility()
+    public function CreateParkingFacility($uid)
     {
-        return view('engineer_company.parking_facility');
+        $customer = CustomerInfo::where('user_uid', $uid)->first();
+        if ($customer) {
+            return view('engineer_company.parking_facility', compact('customer'));
+        }
+        abort(404);
     }
 
-    public function CreateKeyAccessoryHistory()
+    public function CreateKeyAccessoryHistory($uid)
     {
-        return view('engineer_company.key_accessory');
+        $customer = CustomerInfo::where('user_uid', $uid)->first();
+        if ($customer) {
+            return view('engineer_company.key_accessory', compact('customer'));
+        }
+        abort(404);
+
+    }
+
+    public function CreatePartsReplacementHistory($uid)
+    {
+        $customer = CustomerInfo::where('user_uid', $uid)->first();
+        if ($customer) {
+            return view('engineer_company.parts_replacement_history', compact('customer'));
+        }
+        abort(404);
+    }
+
+    public function CreateMonthlyRegularInspection($uid)
+    {
+        $customer = CustomerInfo::where('user_uid', $uid)->first();
+        if ($customer) {
+            return view('engineer_company.monthly_regular_inspection', compact('customer'));
+        }
+        abort(404);
+    }
+
+    public function CreateEmergencyDispatchChecklist($uid)
+    {
+        $customer = CustomerInfo::where('user_uid', $uid)->first();
+        if ($customer) {
+            return view('engineer_company.emergency_dispatch_check_list', compact('customer'));
+        }
+        abort(404);
+    }
+
+    public function CreateManageAttachments($uid)
+    {
+        $customer = CustomerInfo::where('user_uid', $uid)->first();
+        if ($customer) {
+            return view('engineer_company.manage_attachments', compact('customer'));
+        }
+        abort(404);
+    }
+
+    public function CreateDispatchInformation($uid)
+    {
+        $customer = CustomerInfo::where('user_uid', $uid)->first();
+        if ($customer) {
+            return view('engineer_company.dispatch_information', compact('customer'));
+        }
+        abort(404);
+    }
+
+    public function GetCalender()
+    {
+        return view('engineer_company.calender');
     }
 }
