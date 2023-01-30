@@ -336,7 +336,7 @@
                             </button>
                             <button type="submit"
                                     class="btn btn-primary waves-effect waves-light submitbtn">
-                                Create
+                                Delete
                             </button>
                         </div>
 

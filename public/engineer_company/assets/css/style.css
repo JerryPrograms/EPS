@@ -1177,7 +1177,7 @@ tbody, td, tfoot, th, thead, tr {
 }
 
 .height-600-overflow-auto {
-    height: 600px;
+    max-height: 600px;
     overflow: auto;
 }
 

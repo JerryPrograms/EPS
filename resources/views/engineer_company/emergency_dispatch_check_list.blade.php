@@ -18,84 +18,9 @@
                                         </h4>
                                         <div class="row">
 
-                                            <div class="col-md-1 col-3">
-                                                <div class="dropdown align-self-start mt-3 mt-sm-0 mb-2">
-                                                    <button id="dropdownMenu-calendarType"
-                                                            class="btn d-flex mt-4  btn_drop" type="button"
-                                                            data-bs-toggle="dropdown" aria-haspopup="true"
-                                                            aria-expanded="true">
-                                                        <i id="calendarTypeIcon" class="calendar-icon ic_view_month"
-                                                           style="margin-right: 4px;"></i>
-                                                        <span id="calendarTypeName">filter</span>
-                                                        <span class="icon_img">
-                                                                <img
-                                                                    src="{{asset('engineer_company/assets/images/Polygon 4.png')}}"
-                                                                    alt="">
-                                                            </span>
-                                                    </button>
-                                                    <ul class="dropdown-menu dropdown-menu-end" role="menu"
-                                                        aria-labelledby="dropdownMenu-calendarType">
-                                                        <li role="presentation">
-                                                            <a class="dropdown-item" role="menuitem"
-                                                               data-action="toggle-daily">
-                                                                <i class="calendar-icon ic_view_day"></i>All
-                                                            </a>
-                                                        </li>
-                                                        <li role="presentation">
-                                                            <a class="dropdown-item" role="menuitem"
-                                                               data-action="toggle-daily">
-                                                                <i class="calendar-icon ic_view_day"></i>
-                                                                Registration Date
-                                                            </a>
-                                                        </li>
-                                                        <li role="presentation">
-                                                            <a class="dropdown-item" role="menuitem"
-                                                               data-action="toggle-daily">
-                                                                <i class="calendar-icon ic_view_day"></i>
-                                                                Building name
-                                                            </a>
-                                                        </li>
-                                                        <li role="presentation">
-                                                            <a class="dropdown-item" role="menuitem"
-                                                               data-action="toggle-daily">
-                                                                <i class="calendar-icon ic_view_day"></i>
-                                                                Customer number
-                                                            </a>
-                                                        </li>
-                                                        <li role="presentation">
-                                                            <a class="dropdown-item" role="menuitem"
-                                                               data-action="toggle-daily">
-                                                                <i class="calendar-icon ic_view_day"></i>
-                                                                Address
-                                                            </a>
-                                                        </li>
-                                                        <li role="presentation">
-                                                            <a class="dropdown-item" role="menuitem"
-                                                               data-action="toggle-daily">
-                                                                <i class="calendar-icon ic_view_day"></i>
-                                                                Building management company </a>
-                                                        </li>
 
 
-                                                    </ul>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-8 col-9">
-                                                <div class="custom_search">
-                                                    <div class="search mt-4">
-                                                        <input type="text" class="form-control" placeholder="Search">
-                                                        <button class="btn btn-primary searchbar_button">
-                                                            <div class="search_img">
-                                                                <img
-                                                                    src="{{asset('engineer_company/assets/images/gray_searchbar.png')}}"/>
-                                                            </div>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-3">
+                                            <div class="col-md-12 text-end">
                                                 <div class="circle_main_section">
                                                     <button class="circle_img_section">
                                                         <img src="{{asset('engineer_company/images/user2.png')}}">

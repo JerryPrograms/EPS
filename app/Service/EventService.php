@@ -78,4 +78,73 @@ class EventService
         }
     }
 
+    public static function GetEventDate(Request $request)
+    {
+
+        $event = Events::where('id', $request->id)->first();
+        return json_encode([
+            'success' => true,
+            'data' => $event
+        ]);
+    }
+
+    public static function EditEventDate(CalenderRequest $request)
+    {
+        $color = '';
+        if ($request->type == 'weekday duty') {
+            $color = '#DBA15D';
+        } elseif ($request->type == 'weekend shift') {
+            $color = '#DC2626';
+        } elseif ($request->type == 'night shift') {
+            $color = '#CA8A04';
+        } elseif ($request->type == 'holiday duty') {
+            $color = '#FF60DC';
+        } elseif ($request->type == 'construction') {
+            $color = '#00DF67';
+        } else {
+            $color = '#2563EB';
+        }
+
+        $date = $request->except('_token');
+        $date['color'] = $color;
+
+        try {
+
+            $event = Events::where('id', $request->id)->update($date);
+            if ($event) {
+                return json_encode([
+                    'success' => true,
+                    'message' => 'Event Created',
+                ]);
+            }
+
+        } catch (\Exception $ex) {
+            return json_encode([
+                'success' => false,
+                'message' => $ex->getMessage(),
+            ]);
+        }
+    }
+
+    public static function DeleteEventDate(Request $request)
+    {
+
+        $event = Events::where('id', $request->id)->delete();
+        return json_encode([
+            'success' => true,
+            'data' => $event
+        ]);
+    }
+
+    public static function ChangeEventStatus(Request $request)
+    {
+        $event = Events::where('id', $request->id)->update([
+            'status' => 1,
+        ]);
+        return json_encode([
+            'success' => true,
+            'data' => $event
+        ]);
+    }
+
 }

@@ -2,7 +2,7 @@
 @section('body')
     <style>
         .height-600-overflow-auto {
-            height: 600px;
+            max-height: 413px;
             overflow-y: scroll;
             font-weight: normal;
             min-width: 200px;
@@ -20,6 +20,10 @@
 
         .height-600-overflow-auto::-webkit-scrollbar-thumb {
             box-shadow: inset 0 0 6px white;
+        }
+
+        .w-24 {
+            width: 24px !important;
         }
     </style>
     <div class="main-content">
@@ -53,7 +57,7 @@
                                             <div class="card">
                                                 <div class="card-body">
                                                     <div class="d-flex justify-content-between align-items-center mb-3">
-                                                        <h5 class="fw-bold mb-0"><img class="me-1"
+                                                        <h5 class="fw-bold mb-0"><img class="me-1 w-24"
                                                                                       src="{{asset('engineer_company/assets/images/rect.png')}}">To
                                                             do list</h5>
                                                         <button id="btn-new-event" data-bs-toggle="modal"
@@ -61,9 +65,7 @@
                                                                 class="calender_add_btn">+Add
                                                         </button>
                                                     </div>
-
-
-                                                    <div class="height-600-overflow-auto">
+                                                    <div class="height-600-overflow-auto mb-5">
                                                         @foreach($events as $ev)
                                                             <div class="card border-black-1px">
                                                                 <div class="card-body"
@@ -75,42 +77,38 @@
                                                                     <div
                                                                         class="d-flex justify-content-between align-items-center">
                                                                         <h5>Writer:{{$ev->assigned_by_id}}</h5>
-                                                                        <button class="calender_add_btn">Done</button>
+                                                                        <button
+                                                                            onclick="ChangeEventStatus('{{$ev->id}}')"
+                                                                            class="calender_add_btn">Done
+                                                                        </button>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         @endforeach
                                                     </div>
-                                                    <div id="external-events" class="mt-2">
-                                                        <br>
-                                                        <p class="text-muted">Drag and drop your event or click in the
-                                                            calendar</p>
-                                                        <div class="external-event fc-event bg-success"
-                                                             data-class="bg-success">
-                                                            <i class="mdi mdi-checkbox-blank-circle font-size-11 me-2"></i>New
-                                                            Event
-                                                            Planning
-                                                        </div>
-                                                        <div class="external-event fc-event bg-info"
-                                                             data-class="bg-info">
-                                                            <i class="mdi mdi-checkbox-blank-circle font-size-11 me-2"></i>Meeting
-                                                        </div>
-                                                        <div class="external-event fc-event bg-warning"
-                                                             data-class="bg-warning">
-                                                            <i class="mdi mdi-checkbox-blank-circle font-size-11 me-2"></i>Generating
-                                                            Reports
-                                                        </div>
-                                                        <div class="external-event fc-event bg-danger"
-                                                             data-class="bg-danger">
-                                                            <i class="mdi mdi-checkbox-blank-circle font-size-11 me-2"></i>Create
-                                                            New theme
-                                                        </div>
+                                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                                        <h5 class="fw-bold mb-0"><img class="me-1 w-24"
+                                                                                      src="{{asset('engineer_company/images/Check_ring.png')}}">Completed
+                                                            list</h5>
+                                                    </div>
+                                                    <div class="height-600-overflow-auto">
+                                                        @foreach($completed_events as $ev)
+                                                            <div class="card border-black-1px">
+                                                                <div class="card-body"
+                                                                     style="border-left: 8px solid {{$ev->color}};">
+                                                                    <div class="information">
+                                                                        <span>{{$ev->start_date}}</span>
+                                                                        <h5 class="fw-bold">{{$ev->title}}</h5>
+                                                                    </div>
+                                                                    <div
+                                                                        class="d-flex justify-content-between align-items-center">
+                                                                        <h5>Writer:{{$ev->assigned_by_id}}</h5>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        @endforeach
                                                     </div>
 
-                                                    <div class="row justify-content-center mt-5">
-                                                        <img src="assets/images/verification-img.png" alt=""
-                                                             class="img-fluid d-block">
-                                                    </div>
                                                 </div>
                                             </div>
                                         </div> <!-- end col-->
@@ -270,36 +268,41 @@
         </div>
     </div>
 
-    <div class="modal fade" id="EditAndDeleteEventCompleteModal" tabindex="-1" aria-labelledby="addEventCompleteModalLabel"
+    <div class="modal fade" id="EditAndDeleteEventCompleteModal" tabindex="-1"
+         aria-labelledby="EditAndDeleteEventCompleteModalLabel"
          aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="addEventCompleteModalLabel">Add Event</h1>
+                    <h1 class="modal-title fs-5" id="EditAndDeleteEventCompleteModalLabel">Edit Event</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form id="addCompleteEventForm">
+                <form id="EditEventForm">
                     <div class="modal-body">
 
                         @csrf
                         <div class="prompt w-100"></div>
                         <div class="mb-3">
+                            <input id="edit_id" name="id" hidden>
                             <label for="formrow-firstname-input" class="form-label">Title</label>
-                            <input type="text" class="form-control" name="title" id="formrow-firstname-input"
+                            <input type="text" id="a_title" class="form-control" name="title"
+                                   id="formrow-firstname-input"
                                    placeholder="Enter Your First Name" required>
                         </div>
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="mb-3">
                                     <label for="formrow-email-input" class="form-label">Start Date</label>
-                                    <input type="date" class="form-control" name="start_date" id="formrow-email-input"
+                                    <input id="a_start_date" type="date" class="form-control" name="start_date"
+                                           id="formrow-email-input"
                                            placeholder="Enter Your Email ID" required>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="mb-3">
                                     <label for="formrow-email-input" class="form-label">End Date</label>
-                                    <input type="date" class="form-control" name="end_date" id="formrow-email-input"
+                                    <input id="a_end_date" type="date" class="form-control" name="end_date"
+                                           id="formrow-email-input"
                                            placeholder="Enter Your Email ID">
                                 </div>
                             </div>
@@ -308,7 +311,7 @@
                                 <div class="mb-3">
                                     <label for="formrow-password-input" class="form-label">Assigned to</label>
                                     <input type="text" class="form-control" name="assigned_to_id"
-                                           id="formrow-password-input"
+                                           id="a_assigned_to_id"
                                            placeholder="Select Engineer" required>
                                 </div>
                             </div>
@@ -318,7 +321,7 @@
                             <div class="col-md-12">
                                 <div class="mb-3">
                                     <label for="formrow-inputCity" class="form-label">Select Type</label>
-                                    <select class="form-select" name="type" required>
+                                    <select id="a_type" class="form-select" name="type" required>
                                         <option value="" selected disabled>Select</option>
                                         <option value="weekday duty">weekday duty</option>
                                         <option value="weekend shift">weekend shift</option>
@@ -334,6 +337,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" onclick="DeleteEventid()" class="btn btn-danger">Delete</button>
                         <button type="submit" class="btn btn-primary submitbtn">Save changes</button>
                     </div>
                 </form>
@@ -390,6 +394,32 @@
 
                 eventClick: function (event) {
 
+                    $.ajax({
+                        type: "POST",
+                        url: '{{route('GetEventDate')}}',
+                        dataType: 'json',
+                        data: {
+                            '_token': '{{csrf_token()}}',
+                            'id': event.event.id,
+                        },
+                        beforeSend: function () {
+
+                        },
+                        success: function (res) {
+                            $('#EditAndDeleteEventCompleteModal').modal('show');
+                            $('#a_title').val(res.data.title);
+                            $('#a_start_date').val(res.data.start_date);
+                            $('#a_end_date').val(res.data.start_date);
+                            $('#a_assigned_to_id').val(res.data.assigned_to_id);
+                            $('#a_type').val(res.data.type);
+                            $('#edit_id').val(res.data.id);
+                        },
+                        error: function (e) {
+
+                        }
+                    });
+
+
                 }
             });
             calendar.render();
@@ -407,6 +437,55 @@
                 ajaxCall($('#addCompleteEventForm'), "{{ route('CreateEvent') }}", $('#addCompleteEventForm').find('.submitbtn'), "{{ route('ec.GetCalender')}}", onRequestSuccess);
             }
         });
+
+        $('#EditEventForm').validate({
+            submitHandler: function () {
+                ajaxCall($('#EditEventForm'), "{{ route('EditEventDate') }}", $('#EditEventForm').find('.submitbtn'), "{{ route('ec.GetCalender')}}", onRequestSuccess);
+            }
+        });
+
+        function DeleteEventid() {
+            $.ajax({
+                type: "POST",
+                url: '{{route('DeleteEventDate')}}',
+                dataType: 'json',
+                data: {
+                    '_token': '{{csrf_token()}}',
+                    'id': $('#edit_id').val(),
+                },
+                beforeSend: function () {
+
+                },
+                success: function (res) {
+                    window.location.reload();
+                },
+                error: function (e) {
+
+                }
+            });
+        }
+
+        function ChangeEventStatus(id) {
+            $.ajax({
+                type: "POST",
+                url: '{{route('ChangeEventStatus')}}',
+                dataType: 'json',
+                data: {
+                    '_token': '{{csrf_token()}}',
+                    'id': id,
+                },
+                beforeSend: function () {
+
+                },
+                success: function (res) {
+                    window.location.reload();
+                },
+                error: function (e) {
+
+                }
+            });
+        }
+
 
     </script>
 @endsection

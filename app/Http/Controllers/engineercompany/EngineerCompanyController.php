@@ -108,7 +108,8 @@ class EngineerCompanyController extends Controller
 
     public function GetCalender()
     {
-        $events = Events::latest()->get();
+        $events = Events::where('status', 0)->latest()->get();
+        $completed_events = Events::where('status', 1)->latest()->get();
         $data = array();
 
         if (count($events) > 0) {
@@ -134,6 +135,6 @@ class EngineerCompanyController extends Controller
             }
         }
 
-        return view('engineer_company.calender', compact('data','events'));
+        return view('engineer_company.calender', compact('data', 'events','completed_events'));
     }
 }

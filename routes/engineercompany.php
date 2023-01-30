@@ -6,12 +6,12 @@ use App\Service\ASAndRepairCompanyInformation;
 use App\Service\BuildingAndCompanyInformation;
 use App\Service\Customer_Info;
 use App\Service\EmergencyDispatchCheckListService;
+use App\Service\EventService;
 use App\Service\KeyAccessoryInformation;
 use App\Service\ManageAttachmentsService;
 use App\Service\MonthlyRegularInspectionService;
 use App\Service\ParkingFacility;
 use App\Service\PartReplacement;
-use App\Service\EventService;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -114,5 +114,16 @@ Route::group(['prefix' => 'engineer-company'], function () {
     //Route to Change event date in calendar
     Route::post('/change-event-date', [EventService::class, 'ChangeEventDate'])->name('ChangeEventDate');
 
+    //Route to get event date in calendar
+    Route::post('/get-event-date', [EventService::class, 'GetEventDate'])->name('GetEventDate');
+
+    //Route to get event date in calendar
+    Route::post('/edit-event-date', [EventService::class, 'EditEventDate'])->name('EditEventDate');
+
+    //Route to get event date in calendar
+    Route::post('/delete-event-date', [EventService::class, 'DeleteEventDate'])->name('DeleteEventDate');
+
+    //Route to get event date in calendar
+    Route::post('/change-event-status', [EventService::class, 'ChangeEventStatus'])->name('ChangeEventStatus');
 
 });

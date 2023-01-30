@@ -299,7 +299,7 @@
                             </button>
                             <button type="submit"
                                     class="btn btn-primary waves-effect waves-light submitbtn">
-                                Create
+                                Delete
                             </button>
                         </div>
 
@@ -324,7 +324,7 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary waves-effect"
                                 data-bs-dismiss="modal">
-                            Delete
+                            Cancel
                         </button>
                     </div>
 
