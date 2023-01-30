@@ -1132,14 +1132,15 @@ tbody, td, tfoot, th, thead, tr {
     border: 2px solid rgba(98, 129, 254, 1);
 }
 
-.btn-theme-auth{
+.btn-theme-auth {
     background-color: #6281fe;
     border-color: #6281fe;
 }
-.btn-theme-auth:hover{
+
+.btn-theme-auth:hover {
     background-color: #5d76de;
     border-color: #5d76de;
-
+}
 .collapse-icon-section {
     width: 31%;
 }
@@ -1167,23 +1168,30 @@ tbody, td, tfoot, th, thead, tr {
     background: transparent;
 }
 
-.card-body-left-border-week-duty
-{
+.card-body-left-border-week-duty {
     border-left: 8px solid #FFAB00;
 }
 
-.border-black-1px
-{
+.border-black-1px {
     border: 1px solid;
 }
 
-.height-600-overflow-auto
-{
+.height-600-overflow-auto {
     height: 600px;
     overflow: auto;
 }
 
-.custom-trash-padding
-{
+.custom-trash-padding {
     padding-top: 14px;
+}
+
+.history_add_btn {
+    padding: 7px 21px;
+    background: transparent;
+    border: 1px solid;
+}
+.fc .fc-col-header-cell-cushion {
+    display: inline-block;
+    padding: 2px 4px;
+    color: #fff;
 }

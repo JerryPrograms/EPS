@@ -65,19 +65,20 @@
 
                                                     <div class="height-600-overflow-auto">
                                                         @foreach($events as $ev)
-                                                        <div class="card border-black-1px">
-                                                            <div class="card-body" style="border-left: 8px solid {{$ev->color}};">
-                                                                <div class="information">
-                                                                    <span>{{$ev->start_date}}</span>
-                                                                    <h5 class="fw-bold">{{$ev->title}}</h5>
-                                                                </div>
-                                                                <div
-                                                                    class="d-flex justify-content-between align-items-center">
-                                                                    <h5>Writer:{{$ev->assigned_by_id}}</h5>
-                                                                    <button class="calender_add_btn">Done</button>
+                                                            <div class="card border-black-1px">
+                                                                <div class="card-body"
+                                                                     style="border-left: 8px solid {{$ev->color}};">
+                                                                    <div class="information">
+                                                                        <span>{{$ev->start_date}}</span>
+                                                                        <h5 class="fw-bold">{{$ev->title}}</h5>
+                                                                    </div>
+                                                                    <div
+                                                                        class="d-flex justify-content-between align-items-center">
+                                                                        <h5>Writer:{{$ev->assigned_by_id}}</h5>
+                                                                        <button class="calender_add_btn">Done</button>
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
                                                         @endforeach
                                                     </div>
                                                     <div id="external-events" class="mt-2">
@@ -269,6 +270,77 @@
         </div>
     </div>
 
+    <div class="modal fade" id="EditAndDeleteEventCompleteModal" tabindex="-1" aria-labelledby="addEventCompleteModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="addEventCompleteModalLabel">Add Event</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form id="addCompleteEventForm">
+                    <div class="modal-body">
+
+                        @csrf
+                        <div class="prompt w-100"></div>
+                        <div class="mb-3">
+                            <label for="formrow-firstname-input" class="form-label">Title</label>
+                            <input type="text" class="form-control" name="title" id="formrow-firstname-input"
+                                   placeholder="Enter Your First Name" required>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <label for="formrow-email-input" class="form-label">Start Date</label>
+                                    <input type="date" class="form-control" name="start_date" id="formrow-email-input"
+                                           placeholder="Enter Your Email ID" required>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <label for="formrow-email-input" class="form-label">End Date</label>
+                                    <input type="date" class="form-control" name="end_date" id="formrow-email-input"
+                                           placeholder="Enter Your Email ID">
+                                </div>
+                            </div>
+                            <input name="assigned_by_id" value="1" hidden>
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <label for="formrow-password-input" class="form-label">Assigned to</label>
+                                    <input type="text" class="form-control" name="assigned_to_id"
+                                           id="formrow-password-input"
+                                           placeholder="Select Engineer" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <label for="formrow-inputCity" class="form-label">Select Type</label>
+                                    <select class="form-select" name="type" required>
+                                        <option value="" selected disabled>Select</option>
+                                        <option value="weekday duty">weekday duty</option>
+                                        <option value="weekend shift">weekend shift</option>
+                                        <option value="night shift">night shift</option>
+                                        <option value="holiday duty">holiday duty</option>
+                                        <option value="construction">construction</option>
+                                        <option value="Periodic inspection">Periodic inspection</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary submitbtn">Save changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
 @endsection
 @section('custom-script')
     <script>
@@ -314,6 +386,10 @@
 
                         }
                     });
+                },
+
+                eventClick: function (event) {
+
                 }
             });
             calendar.render();
