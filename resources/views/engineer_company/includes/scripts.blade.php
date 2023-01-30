@@ -29,17 +29,10 @@
 <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify"></script>
 <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.polyfills.min.js"></script>
 <script src="{{asset('engineer_company/assets/js/validate.min.js')}}"></script>
+<script src="{{asset('engineer_company/assets/js/index.global.js')}}"></script>
 
-<script src="{{asset('engineer_company/assets/libs/moment/min/moment.min.js')}}"></script>
-<script src="{{asset('engineer_company/assets/libs/jquery-ui-dist/jquery-ui.min.js')}}"></script>
-<script src="{{asset('engineer_company/assets/libs/fullcalendar/core/main.min.js')}}"></script>
-<script src="{{asset('engineer_company/assets/libs/fullcalendar/bootstrap/main.min.js')}}"></script>
-<script src="{{asset('engineer_company/assets/libs/fullcalendar/daygrid/main.min.js')}}"></script>
-<script src="{{asset('engineer_company/assets/libs/fullcalendar/timegrid/main.min.js')}}"></script>
-<script src="{{asset('engineer_company/assets/libs/fullcalendar/interaction/main.min.js')}}"></script>
-<script src="{{asset('engineer_company/assets/js/pages/calendars-full.init.js')}}"></script>
 <script>
-    function HideShow(element,current) {
+    function HideShow(element, current) {
         if (element.hasClass('d-none')) {
             current.children().find('i').removeClass('fa-chevron-down').addClass('fa-chevron-up');
             element.removeClass('d-none');

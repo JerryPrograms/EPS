@@ -11,6 +11,7 @@ use App\Service\ManageAttachmentsService;
 use App\Service\MonthlyRegularInspectionService;
 use App\Service\ParkingFacility;
 use App\Service\PartReplacement;
+use App\Service\EventService;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -106,5 +107,12 @@ Route::group(['prefix' => 'engineer-company'], function () {
 
     //Route to Delete Manage Attachments Information by engineer company
     Route::post('/delete-manage-attachments', [ManageAttachmentsService::class, 'DeleteAttachments'])->name('DeleteAttachments');
+
+    //Route to Create event in calendar
+    Route::post('/create-event', [EventService::class, 'CreateEvent'])->name('CreateEvent');
+
+    //Route to Change event date in calendar
+    Route::post('/change-event-date', [EventService::class, 'ChangeEventDate'])->name('ChangeEventDate');
+
 
 });

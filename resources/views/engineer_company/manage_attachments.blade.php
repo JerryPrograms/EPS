@@ -324,7 +324,7 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary waves-effect"
                                 data-bs-dismiss="modal">
-                            Close
+                            Delete
                         </button>
                     </div>
 

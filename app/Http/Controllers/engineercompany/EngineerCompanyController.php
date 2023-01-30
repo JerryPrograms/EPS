@@ -4,6 +4,7 @@ namespace App\Http\Controllers\engineercompany;
 
 use App\Http\Controllers\Controller;
 use App\Models\CustomerInfo;
+use App\Models\Events;
 
 class EngineerCompanyController extends Controller
 {
@@ -107,6 +108,32 @@ class EngineerCompanyController extends Controller
 
     public function GetCalender()
     {
-        return view('engineer_company.calender');
+        $events = Events::latest()->get();
+        $data = array();
+
+        if (count($events) > 0) {
+            foreach ($events as $ev) {
+                if (!empty($ev->end_date)) {
+                    $data[] = [
+                        'id' => $ev->id,
+                        'title' => $ev->title,
+                        'start' => $ev->start_date,
+                        'end' => $ev->end_date,
+                        'color' => $ev->color,
+                    ];
+                } else {
+                    $data[] = [
+                        'id' => $ev->id,
+                        'title' => $ev->title,
+                        'start' => $ev->start_date,
+                        'end' => $ev->start_date,
+                        'color' => $ev->color,
+                    ];
+                }
+
+            }
+        }
+
+        return view('engineer_company.calender', compact('data','events'));
     }
 }

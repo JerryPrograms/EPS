@@ -27,11 +27,6 @@
     <link href="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.css" rel="stylesheet" type="text/css"/>
 
 
-    <link href="{{asset('engineer_company/assets/libs/fullcalendar/core/main.min.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('engineer_company/assets/libs/fullcalendar/daygrid/main.min.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('engineer_company/assets/libs/fullcalendar/bootstrap/main.min.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('engineer_company/assets/libs/fullcalendar/timegrid/main.min.css')}}" rel="stylesheet" type="text/css" />
-
 
 </head>
 

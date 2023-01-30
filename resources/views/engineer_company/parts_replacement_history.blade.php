@@ -218,7 +218,7 @@
                                             </thead>
                                             <tbody id="partReplacemnetTbody">
                                             @php
-                                                $MainPart = $customer->PartReplacementHistory()->paginate(1);
+                                                $MainPart = $customer->PartReplacementHistory()->paginate(10);
                                             @endphp
 
                                             @include('engineer_company.part_replacement_history_listing_template',compact('MainPart'))
