@@ -28,6 +28,11 @@
 
                                 <!-- table info start  -->
                                 <div class="info-table-padding">
+                                    <div class="row">
+                                        <div class="col-12 text-end">
+                                            <a href="{{route('ec.CreateDispatchInformation',$customer->user_uid)}}" class="history_add_btn">Add</a>
+                                        </div>
+                                    </div>
                                     <table class="table align-middle custom_mrg_2">
                                         <thead class="table-light">
                                         <tr>
@@ -53,7 +58,8 @@
 
                                             <th class="text-center"> Building Management.
                                                 <br>
-                                                <div class="custom_info_text_2">{{$customer->building_management_company}}
+                                                <div
+                                                    class="custom_info_text_2">{{$customer->building_management_company}}
                                                 </div>
                                             </th>
                                             <th class="text-center">Maintenance Company
@@ -83,27 +89,23 @@
                                                 <table class="table align-middle table-nowrap mb-0">
                                                     <thead class="table-light">
                                                     <tr>
-                                                        <th class="align-middle">No.</th>
-                                                        <th class="text-center custom_inp_widt">Date
+                                                        <th class="align-middle max-width-5">No.</th>
+                                                        <th class="text-center custom_inp_widt">Inspection Date
                                                         </th>
-                                                        <th class="custom_inp_widt">Attached photo
+                                                        <th class="custom_inp_widt">Emphysema
                                                         </th>
-                                                        <th class="custom_inp_widt">Manager
+                                                        <th class="custom_inp_widt">Site Name
                                                         </th>
-                                                        <th class="custom_inp_widt">Manager
+                                                        <th class="custom_inp_widt">Installation Place
                                                         </th>
-                                                        <th class="custom_inp_widt">Customer Name</th>
-                                                        <th class="text-center">Installation Place
-                                                        </th>
-                                                        <th class="text-center">View More
-                                                        </th>
+                                                        <th class="custom_inp_widt">View more</th>
                                                     </tr>
                                                     </thead>
                                                     <tbody>
                                                     <tr class="custom_bor_clr">
                                                         <td class="border-bottom-0 border-start"><a
                                                                 href="javascript: void(0);"
-                                                                class="text-body fw-bold"></a></td>
+                                                                class="text-body fw-bold">01</a></td>
                                                         <td>
                                                             <p class="date_button">2022.11.01</p>
                                                         </td>
@@ -111,30 +113,24 @@
                                                             <p class="date_button">14:00</p>
                                                         </td>
                                                         <td>
-                                                            <p class="date_button_3">Hong Gil..
-                                                            </p>
-                                                        </td>
-                                                        <td>
-                                                            <p class="date_button_3">Model name
-                                                            </p>
-                                                        </td>
-                                                        <td>
                                                             <p class="date_button_3">Hong Gil.
                                                             </p>
                                                         </td>
                                                         <td>
                                                             <p class="date_button_2">
-                                                                electrical part..</p>
+                                                                158 Dosan-daero..</p>
                                                         </td>
 
                                                         <td class="text-center border-end">
                                                             <div class="aroow_main_section">
 
                                                                 <button class="green_edit_button">
-                                                                    <img src="{{asset('engineer_company/assets/images/green-edit.png')}}">
+                                                                    <img
+                                                                        src="{{asset('engineer_company/assets/images/green-edit.png')}}">
                                                                 </button>
                                                                 <button class="aroow_button_2">
-                                                                    <img src="{{asset('engineer_company/assets/images/red-search.png')}}">
+                                                                    <img
+                                                                        src="{{asset('engineer_company/assets/images/red-search.png')}}">
                                                                 </button>
 
                                                                 <div class="bluebar_img_section"></div>

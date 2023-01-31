@@ -44,6 +44,74 @@
             border-radius: 3px;
             background: transparent;
         }
+
+        .fc-weekendDuty-button {
+            background-color: #DBA15D;
+            color: #000000 !important;
+            border: none;
+            font-size: 10px;
+            padding: 10px;
+        }
+
+
+        .fc-weekendShift-button {
+            background-color: #FEE2E2;
+            color: #DC2626 !important;
+            border: none;
+            font-size: 10px;
+            padding: 10px;
+        }
+
+
+        .fc-nightShift-button {
+            background-color: #FEF9C3;
+            color: #CA8A04 !important;
+            border: none;
+            font-size: 10px;
+            padding: 10px;
+        }
+
+
+        .fc-holidayDuty-button {
+            background-color: #FF60DC;
+            color: #ffffff !important;
+            border: none;
+            font-size: 10px;
+            padding: 10px;
+        }
+
+
+        .fc-construction-button {
+            background-color: #00DF67;
+            color: #000000 !important;
+            border: none;
+            font-size: 10px;
+            padding: 10px;
+        }
+
+
+        .fc-periodicInspection-button {
+            background-color: #DBEAFE;
+            color: #2563EB !important;
+            border: none;
+            font-size: 10px;
+            padding: 10px;
+        }
+
+        .border-blue-2px {
+            border: 3px solid #6281FE;
+            padding: 4px;
+            font-size: 13px;
+        }
+
+        .border-blue-2px::placeholder {
+            font-weight: bold;
+        }
+
+        .border-none {
+            border: none;
+        }
+
     </style>
     <div class="main-content">
 
@@ -86,10 +154,21 @@
                                                 </button>
                                             </div>
                                             <div class="mb-3">
-                                                @foreach($events as $ev)
+                                                @foreach($todos_pending as $ev)
+                                                    @php
+                                                        $color = '';
+                                                            if($ev->status == 0){
+                                                                    $color = '#FFAB00';
+                                                            }
+                                                            elseif ($ev->status == 2){
+                                                                $color = '#696CFF';
+                                                            }else{
+                                                                $color = '#00DF67';
+                                                            }
+                                                    @endphp
                                                     <div class="card border-black-1px">
                                                         <div class="card-body"
-                                                             style="border-left: 10px solid {{$ev->color}};padding: 6px 13px;">
+                                                             style="border-left: 10px solid {{$color}};padding: 6px 13px;">
                                                             <div class="information">
                                                                 <span>{{$ev->start_date}}</span>
                                                                 <h6 class="fw-bold">{{$ev->title}}</h6>
@@ -112,10 +191,24 @@
                                                     list</h6>
                                             </div>
                                             <div class="">
-                                                @foreach($completed_events as $ev)
+                                                @foreach($todos_completed as $ev)
+                                                    @php
+                                                    $color = '';
+                                                        if($ev->status == 0){
+                                                                $color = '#FFAB00';
+                                                        }
+                                                        elseif ($ev->status == 2){
+                                                            $color = '#696CFF';
+                                                        }else{
+                                                            $color = '#00DF67';
+                                                        }
+                                                    @endphp
+
+
+
                                                     <div class="card border-black-1px">
                                                         <div class="card-body"
-                                                             style="border-left: 10px solid {{$ev->color}};padding: 6px 15px;">
+                                                             style="border-left: 10px solid {{$color}};padding: 6px 15px;">
                                                             <div class="information">
                                                                 <span>{{$ev->start_date}}</span>
                                                                 <h6 class="fw-bold">{{$ev->title}}</h6>
@@ -127,31 +220,6 @@
                                                         </div>
                                                     </div>
                                                 @endforeach
-                                            </div>
-                                            <div id="external-events" class="mt-2">
-                                                <div id="external-events" class="mt-2">
-                                                    <br>
-                                                    <p class="text-muted">Drag and drop your event or click in the
-                                                        calendar</p>
-                                                    <div data-event="{'color':'#8fdf82'}" class="external-event fc-event bg-success"
-                                                         data-class="bg-success">
-                                                        <i class="mdi mdi-checkbox-blank-circle font-size-11 me-2"></i>New
-                                                        Event Planning
-                                                    </div>
-                                                    <div class="external-event fc-event bg-info" data-class="bg-info">
-                                                        <i class="mdi mdi-checkbox-blank-circle font-size-11 me-2"></i>Meeting
-                                                    </div>
-                                                    <div class="external-event fc-event bg-warning"
-                                                         data-class="bg-warning">
-                                                        <i class="mdi mdi-checkbox-blank-circle font-size-11 me-2"></i>Generating
-                                                        Reports
-                                                    </div>
-                                                    <div class="external-event fc-event bg-danger"
-                                                         data-class="bg-danger">
-                                                        <i class="mdi mdi-checkbox-blank-circle font-size-11 me-2"></i>Create
-                                                        New theme
-                                                    </div>
-                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -172,61 +240,36 @@
     <div class="modal fade" id="addEventModal" tabindex="-1" aria-labelledby="addEventModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="addEventModalLabel">Add Event</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
+
                 <form id="addEventForm">
                     <div class="modal-body">
-
+                        <div class="row">
+                            <div class="col-4 mt-4">
+                                <input type="date" class="form-control border-none" name="start_date"
+                                       required>
+                            </div>
+                            <input name="type" id="add_event_type" hidden>
+                            <div class="col-4 text-end mt-4">
+                                <button id="type_btn" disabled>Weekend Duty</button>
+                            </div>
+                            <div class="col-4 text-end">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                            </div>
+                            <div class="col-12 mt-3">
+                                <input type="text" class="form-control w-50 border-blue-2px" name="title"
+                                       placeholder="Enter Name" required>
+                            </div>
+                            <div class="col-12 mt-2">
+                                <input type="text" class="form-control border-blue-2px" name="memo"
+                                       placeholder="Enter Memo" required>
+                            </div>
+                            <div class="col-12 mt-3 text-center">
+                                <button type="submit" class="btn btn-primary submitbtn">Save changes</button>
+                            </div>
+                            <input name="assigned_by_id" value="123" hidden>
+                        </div>
                         @csrf
-                        <div class="prompt w-100"></div>
-                        <div class="mb-3">
-                            <label for="formrow-firstname-input" class="form-label">Title</label>
-                            <input type="text" class="form-control" name="title" id="formrow-firstname-input"
-                                   placeholder="Enter Your First Name" required>
-                        </div>
-                        <div class="row">
-                            <input id="start_date" name="start_date" value="" type="date" hidden>
-                            <div class="col-md-12">
-                                <div class="mb-3">
-                                    <label for="formrow-email-input" class="form-label">End Date</label>
-                                    <input type="date" class="form-control" name="end_date" id="formrow-email-input"
-                                           placeholder="Enter Your Email ID">
-                                </div>
-                            </div>
-                            <input name="assigned_by_id" value="1" hidden>
-                            <div class="col-md-12">
-                                <div class="mb-3">
-                                    <label for="formrow-password-input" class="form-label">Assigned to</label>
-                                    <input type="text" class="form-control" name="assigned_to_id"
-                                           id="formrow-password-input"
-                                           placeholder="Select Engineer" required>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="mb-3">
-                                    <label for="formrow-inputCity" class="form-label">Select Type</label>
-                                    <select class="form-select" name="type" required>
-                                        <option value="" selected disabled>Select</option>
-                                        <option value="weekday duty">weekday duty</option>
-                                        <option value="weekend shift">weekend shift</option>
-                                        <option value="night shift">night shift</option>
-                                        <option value="holiday duty">holiday duty</option>
-                                        <option value="construction">construction</option>
-                                        <option value="Periodic inspection">Periodic inspection</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary submitbtn">Save changes</button>
                     </div>
                 </form>
             </div>
@@ -237,67 +280,32 @@
          aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="addEventCompleteModalLabel">Add Event</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
                 <form id="addCompleteEventForm">
                     <div class="modal-body">
-
+                        <div class="row">
+                            <div class="prompt w-100"></div>
+                            <div class="col-6 mt-4">
+                                <input type="date" class="form-control border-none" name="start_date"
+                                       required>
+                            </div>
+                            <div class="col-6 text-end">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                            </div>
+                            <div class="col-12 mt-3">
+                                <input type="text" class="form-control w-50 border-blue-2px" name="title"
+                                       placeholder="Enter Name" required>
+                            </div>
+                            <div class="col-12 mt-2">
+                                <input type="text" class="form-control border-blue-2px" name="memo"
+                                       placeholder="Enter Memo" required>
+                            </div>
+                            <div class="col-12 mt-3 text-center">
+                                <button type="submit" class="btn btn-primary submitbtn">Save changes</button>
+                            </div>
+                            <input name="user_id" value="123" hidden>
+                        </div>
                         @csrf
-                        <div class="prompt w-100"></div>
-                        <div class="mb-3">
-                            <label for="formrow-firstname-input" class="form-label">Title</label>
-                            <input type="text" class="form-control" name="title" id="formrow-firstname-input"
-                                   placeholder="Enter Your First Name" required>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="mb-3">
-                                    <label for="formrow-email-input" class="form-label">Start Date</label>
-                                    <input type="date" class="form-control" name="start_date" id="formrow-email-input"
-                                           placeholder="Enter Your Email ID" required>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="mb-3">
-                                    <label for="formrow-email-input" class="form-label">End Date</label>
-                                    <input type="date" class="form-control" name="end_date" id="formrow-email-input"
-                                           placeholder="Enter Your Email ID">
-                                </div>
-                            </div>
-                            <input name="assigned_by_id" value="1" hidden>
-                            <div class="col-md-12">
-                                <div class="mb-3">
-                                    <label for="formrow-password-input" class="form-label">Assigned to</label>
-                                    <input type="text" class="form-control" name="assigned_to_id"
-                                           id="formrow-password-input"
-                                           placeholder="Select Engineer" required>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="mb-3">
-                                    <label for="formrow-inputCity" class="form-label">Select Type</label>
-                                    <select class="form-select" name="type" required>
-                                        <option value="" selected disabled>Select</option>
-                                        <option value="weekday duty">weekday duty</option>
-                                        <option value="weekend shift">weekend shift</option>
-                                        <option value="night shift">night shift</option>
-                                        <option value="holiday duty">holiday duty</option>
-                                        <option value="construction">construction</option>
-                                        <option value="Periodic inspection">Periodic inspection</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary submitbtn">Save changes</button>
                     </div>
                 </form>
             </div>
@@ -322,35 +330,27 @@
                             <input id="edit_id" name="id" hidden>
                             <label for="formrow-firstname-input" class="form-label">Title</label>
                             <input type="text" id="a_title" class="form-control" name="title"
-                                   id="formrow-firstname-input"
+
                                    placeholder="Enter Your First Name" required>
                         </div>
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="mb-3">
-                                    <label for="formrow-email-input" class="form-label">Start Date</label>
+                                    <label for="formrow-email-input" class="form-label">Date</label>
                                     <input id="a_start_date" type="date" class="form-control" name="start_date"
-                                           id="formrow-email-input"
+
                                            placeholder="Enter Your Email ID" required>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="mb-3">
-                                    <label for="formrow-email-input" class="form-label">End Date</label>
-                                    <input id="a_end_date" type="date" class="form-control" name="end_date"
-                                           id="formrow-email-input"
-                                           placeholder="Enter Your Email ID">
+                                    <label for="formrow-email-input" class="form-label">Memo</label>
+                                    <input id="a_memo" type="text" class="form-control" name="memo"
+
+                                           placeholder="Enter memo" required>
                                 </div>
                             </div>
                             <input name="assigned_by_id" value="1" hidden>
-                            <div class="col-md-12">
-                                <div class="mb-3">
-                                    <label for="formrow-password-input" class="form-label">Assigned to</label>
-                                    <input type="text" class="form-control" name="assigned_to_id"
-                                           id="a_assigned_to_id"
-                                           placeholder="Select Engineer" required>
-                                </div>
-                            </div>
                         </div>
 
                         <div class="row">
@@ -359,7 +359,7 @@
                                     <label for="formrow-inputCity" class="form-label">Select Type</label>
                                     <select id="a_type" class="form-select" name="type" required>
                                         <option value="" selected disabled>Select</option>
-                                        <option value="weekday duty">weekday duty</option>
+                                        <option value="weekend duty">weekend duty</option>
                                         <option value="weekend shift">weekend shift</option>
                                         <option value="night shift">night shift</option>
                                         <option value="holiday duty">holiday duty</option>
@@ -389,46 +389,79 @@
         document.addEventListener('DOMContentLoaded', function () {
 
 
-            var Calendar = FullCalendar.Calendar;
-            var Draggable = FullCalendar.Draggable;
-
-            var containerEl = document.getElementById('external-events');
             var calendarEl = document.getElementById('calendar');
-            var checkbox = document.getElementById('drop-remove');
-            new Draggable(containerEl, {
-                itemSelector: '.fc-event',
-                eventData: function (eventEl) {
-                    return {
-                        title: eventEl.innerText
-                    };
-                }
-            });
-
-
             var calendar = new FullCalendar.Calendar(calendarEl, {
                 themeSystem: 'bootstrap5',
-                headerToolbar: {
-                    start: 'today prev,next', // will normally be on the left. if RTL, will be on the right
-                    center: 'title',
-                    right: 'dayGridMonth,timeGridWeek,timeGridDay',// will normally be on the right. if RTL, will be on the left
+                customButtons: {
+                    weekendDuty: {
+                        text: 'Weekend Duty',
+                        click: function () {
+                            $('#addEventModal').modal('show');
+                            $('#type_btn').addClass('fc-weekendDuty-button');
+                            $('#type_btn').text('weekend duty')
+                            $('#add_event_type').val('weekend duty')
+                        }
+                    },
+                    weekendShift: {
+                        text: 'Weekend Shift',
+                        click: function () {
+                            $('#addEventModal').modal('show');
+                            $('#type_btn').addClass('fc-weekendShift-button');
+                            $('#type_btn').text('weekend shift')
+                            $('#add_event_type').val('weekend shift')
+                        }
+                    },
+                    nightShift: {
+                        text: 'Night Shift',
+                        click: function () {
+                            $('#addEventModal').modal('show');
+                            $('#type_btn').addClass('fc-nightShift-button');
+                            $('#type_btn').text('night shift')
+                            $('#add_event_type').val('night shift')
+                        }
+                    },
+                    holidayDuty: {
+                        text: 'Holiday Duty',
+                        click: function () {
+                            $('#addEventModal').modal('show');
+                            $('#type_btn').addClass('fc-holidayDuty-button');
+                            $('#type_btn').text('holiday duty')
+                            $('#add_event_type').val('holiday duty')
+                        }
+                    },
+                    construction: {
+                        text: 'Construction',
+                        click: function () {
+                            $('#addEventModal').modal('show');
+                            $('#type_btn').addClass('fc-construction-button');
+                            $('#type_btn').text('construction')
+                            $('#add_event_type').val('construction button')
+                        }
+                    },
+                    periodicInspection: {
+                        text: 'Periodic Inspection',
+                        click: function () {
+                            $('#addEventModal').modal('show');
+                            $('#type_btn').addClass('fc-periodicInspection-button');
+                            $('#type_btn').text('periodic inspection')
+                            $('#add_event_type').val('periodic inspection')
+                        }
+                    },
                 },
-                selectable: true,
+                headerToolbar: {
+                    start: 'prev,next weekendDuty,weekendShift,nightShift,holidayDuty,construction,periodicInspection', // will normally be on the left. if RTL, will be on the right
+                    center: '',
+                    right: '',// will normally be on the right. if RTL, will be on the left
+                },
+                selectable: false,
                 selectHelper: true,
                 droppable: true,
-                select: function (start, end, allDays) {
-                    $('#addEventModal').modal('show');
-                    $('#start_date').val(start.startStr);
-
-                },
                 events:@json($data),
                 editable: true,
 
 
                 eventDrop: function (event) {
 
-
-                    console.log(event.event.start);
-                    console.log(event.event.start.toLocaleString());
 
                     $.ajax({
                         type: "POST",
@@ -454,6 +487,9 @@
 
                 eventClick: function (event) {
 
+
+                    console.log(event);
+
                     $.ajax({
                         type: "POST",
                         url: '{{route('GetEventDate')}}',
@@ -473,6 +509,7 @@
                             $('#a_assigned_to_id').val(res.data.assigned_to_id);
                             $('#a_type').val(res.data.type);
                             $('#edit_id').val(res.data.id);
+                            $('#a_memo').val(res.data.memo);
                         },
                         error: function (e) {
 
@@ -494,7 +531,7 @@
 
         $('#addCompleteEventForm').validate({
             submitHandler: function () {
-                ajaxCall($('#addCompleteEventForm'), "{{ route('CreateEvent') }}", $('#addCompleteEventForm').find('.submitbtn'), "{{ route('ec.GetCalender')}}", onRequestSuccess);
+                ajaxCall($('#addCompleteEventForm'), "{{ route('CreateTodo') }}", $('#addCompleteEventForm').find('.submitbtn'), "{{ route('ec.GetCalender')}}", onRequestSuccess);
             }
         });
 
