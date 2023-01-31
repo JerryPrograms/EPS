@@ -60,33 +60,33 @@
                                 <h3>Sign up</h3>
                                 <p>EVERY PARKING SOLUTION</p>
                                 <div class="prompt"></div>
-                                <div class="form-floating mt-5 d-flex">
-                                    <input type="text" name="name" class="form-control custom_input" id="floatingInput"
-                                        placeholder="Enter your username">
-                                    <label for="floatingInput" class="custom_color_theme">Name</label>
+                                <div class="form-floating mt-5 d-flex flex-column">
+                                    <input type="text" name="name" class="form-control custom_input" id="name"
+                                        placeholder="Enter your username" required>
+                                    <label for="name" class="custom_color_theme">Name</label>
 
                                 </div>
-                                <div class="form-floating mt-3 d-flex">
-                                    <input type="email" name="email" class="form-control custom_input" id="floatingInput"
-                                        placeholder="Enter your email address">
-                                    <label for="floatingInput" class="custom_color_theme">Email (ID)</label>
+                                <div class="form-floating mt-3 d-flex flex-column">
+                                    <input type="email" name="email" class="form-control custom_input" id="email"
+                                        placeholder="Enter your email address" required>
+                                    <label for="email" class="custom_color_theme">Email (ID)</label>
                                     <span class="Custom_icon">
                                         <img src="{{ asset('engineer_company/images/profile_gray.png') }}"
                                             class="user_icon">
                                     </span>
                                 </div>
-                                <div class="form-floating mt-3 d-flex">
-                                    <input type="password" name="password" class="form-control custom_input" id="floatingInput"
-                                        placeholder="Enter a strong password">
-                                    <label for="floatingInput" class="custom_color_theme">Password</label>
+                                <div class="form-floating mt-3 d-flex flex-column">
+                                    <input type="password" name="password" min="6" class="form-control custom_input" id="password"
+                                        placeholder="Enter a strong password" required>
+                                    <label for="password" class="custom_color_theme">Password</label>
                                     <span class="Custom_icon">
                                         <img src="{{ asset('engineer_company/images/lock.png') }}" class="lock_icon">
                                     </span>
                                 </div>
-                                <div class="form-floating mt-3 d-flex">
-                                    <input type="number" name="phone" class="form-control custom_input" id="floatingInput"
-                                        placeholder="Enter your phone number">
-                                    <label for="floatingInput" class="custom_color_theme">Phone number</label>
+                                <div class="form-floating mt-3 d-flex flex-column">
+                                    <input type="number" name="phone" class="form-control custom_input" id="phone"
+                                        placeholder="Enter your phone number" required>
+                                    <label for="phone" class="custom_color_theme">Phone number</label>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-check_2 d-flex align-items-center gap-2 mt-4">
@@ -141,6 +141,7 @@
     </script>
 
     <script src="{{ asset('engineer/assets/js/theme.js') }}"></script>
+    <script src="{{asset('engineer_company/assets/js/validate.min.js')}}"></script>
 
     <script>
         // Handling button on terms check
@@ -171,10 +172,13 @@
             }
         });
 
-        $('#loginForm').on('submit',function(e){
-            e.preventDefault();
-            ajaxCall($('#loginForm'), "{{ route('engineer_signup_action') }}", $('#login_btn'), "{{ route('e.GetCustomerInfoDashboard') }}", onRequestSuccess);
-        });
+
+        $( '#loginForm' ).validate( {
+            submitHandler: function () {
+                'use strict';
+                ajaxCall($('#loginForm'), "{{ route('engineer_signup_action') }}", $('#login_btn'), "{{ route('e.GetECLogin') }}", onRequestSuccess);
+            }
+        } );
         
     </script>
 </body>

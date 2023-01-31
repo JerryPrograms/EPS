@@ -20,6 +20,7 @@ class Engineer extends Authenticatable
         'name',
         'email',
         'password',
+        'phone'
     ];
 
     /**

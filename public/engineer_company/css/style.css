@@ -269,3 +269,14 @@ input#exampleCheck1 {
     background-color: #5d76de;
     border-color: #5d76de;
 }
+.form-floating > .error{
+    position: static;
+    padding: 0 0 0 2px;
+    font-size: 12px;
+    color: #db0000;
+}
+.form-floating > .form-control{
+    color: #4f5256;
+    padding-left: 15px;
+    font-size: 15px;
+}
