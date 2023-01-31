@@ -20,6 +20,7 @@ class Engineer_company extends Authenticatable
         'name',
         'email',
         'password',
+        'phone'
     ];
 
     /**

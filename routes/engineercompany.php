@@ -25,12 +25,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-Route::group(['prefix' => 'engineer-company'], function () {
-
-
+Route::group(['prefix' => 'engineer-company'],function(){
     Route::get('/login', [AuthController::class, 'GetECLogin'])->name('ec.GetECLogin');
     Route::get('/signup', [AuthController::class, 'GetECSignup'])->name('ec.GetECSignup');
+    Route::post('/ec-signup-action', [AuthController::class, 'ec_signup_action'])->name('ec_signup_action');
+    Route::post('/ec-login-action', [AuthController::class, 'ec_login_action'])->name('ec_login_action');
+});
+
+Route::group(['prefix' => 'eps-panel'], function () {
+
     Route::get('/customer-info-listing', [EngineerCompanyController::class, 'GetCustomerInfoListing'])->name('ec.GetCustomerInfoListing');
     Route::get('/customer-info-dashboard/{uid}', [EngineerCompanyController::class, 'GetCustomerInfoDashboard'])->name('ec.GetCustomerInfoDashboard');
     Route::get('/building-info/{uid}', [EngineerCompanyController::class, 'CreateBuildingInfo'])->name('ec.CreateBuildingInfo');

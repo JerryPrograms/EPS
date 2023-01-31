@@ -21,6 +21,7 @@ Route::group(['prefix' => 'engineer'], function () {
     Route::get('/login', [AuthController::class, 'GetECLogin'])->name('e.GetECLogin');
     Route::get('/signup', [AuthController::class, 'GetECSignup'])->name('e.GetECSignup');
     Route::post('/engineer-signup-action', [AuthController::class, 'engineer_signup_action'])->name('engineer_signup_action');
+    Route::post('/engineer-login-action', [AuthController::class, 'engineer_login_action'])->name('engineer_login_action');
 
     Route::get('/customer-info-dashboard', [EngineerController::class, 'GetCustomerInfoDashboard'])->name('e.GetCustomerInfoDashboard');
     Route::get('/customer-info-listing', [EngineerController::class, 'GetCustomerInfoListing'])->name('e.GetCustomerInfoListing');

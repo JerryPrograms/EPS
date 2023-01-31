@@ -9,21 +9,17 @@ class Authentication {
     // Login function
     public static function login($email, $password , $guard = 'web'){
         try {
-            $attempLogin = Auth::guard($guard)->attempt(['email' => $email, 'password' => $password]);
-            if($attempLogin){
-                return true;
-            }else{
-                return false;
-            }
+            $attempLogin = \Auth::guard($guard)->attempt(['email' => $email, 'password' => $password]);
+            return $attempLogin;
         } catch (\Throwable $th) {
-            return $th->getMessage();
+            return false;
         }
     }
 
     // Logout function
     public static function logout($guard = 'web'){
         try {
-            $logout = Auth::guard($guard)->logout();
+            $logout = \Auth::guard($guard)->logout();
             if($logout){
                 return true;
             }else{
