@@ -41,7 +41,8 @@ Route::group(['prefix' => 'engineer-company'], function () {
     Route::get('/monthly-regular-inspection/{uid}', [EngineerCompanyController::class, 'CreateMonthlyRegularInspection'])->name('ec.CreateMonthlyRegularInspection');
     Route::get('/emergency-dispatch-checklist/{uid}', [EngineerCompanyController::class, 'CreateEmergencyDispatchChecklist'])->name('ec.CreateEmergencyDispatchChecklist');
     Route::get('/manage-attachments/{uid}', [EngineerCompanyController::class, 'CreateManageAttachments'])->name('ec.CreateManageAttachments');
-    Route::get('/dispatch-information-listing/{uid}', [EngineerCompanyController::class, 'CreateDispatchInformation'])->name('ec.CreateDispatchInformation');
+    Route::get('/dispatch-information-listing/{uid}', [EngineerCompanyController::class, 'ListDispatchInformation'])->name('ec.ListDispatchInformation');
+    Route::get('/dispatch-information-add/{uid}', [EngineerCompanyController::class, 'CreateDispatchInformation'])->name('ec.CreateDispatchInformation');
     Route::get('/calender', [EngineerCompanyController::class, 'GetCalender'])->name('ec.GetCalender');
 
 
@@ -125,5 +126,12 @@ Route::group(['prefix' => 'engineer-company'], function () {
 
     //Route to get event date in calendar
     Route::post('/change-event-status', [EventService::class, 'ChangeEventStatus'])->name('ChangeEventStatus');
+
+    //Route to Create todoEvent in calendar
+    Route::post('/create-todo-event', [EventService::class, 'CreateTodo'])->name('CreateTodo');
+
+    //Route to Create dispatch Information
+    Route::post('/create-dispatch-information', [EventService::class, 'CreateDispatchInformation'])->name('CreateDispatchInformation');
+
 
 });

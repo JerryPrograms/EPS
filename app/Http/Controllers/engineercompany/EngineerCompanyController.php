@@ -5,6 +5,7 @@ namespace App\Http\Controllers\engineercompany;
 use App\Http\Controllers\Controller;
 use App\Models\CustomerInfo;
 use App\Models\Events;
+use App\Models\Todo;
 
 class EngineerCompanyController extends Controller
 {
@@ -97,7 +98,7 @@ class EngineerCompanyController extends Controller
         abort(404);
     }
 
-    public function CreateDispatchInformation($uid)
+    public function ListDispatchInformation($uid)
     {
         $customer = CustomerInfo::where('user_uid', $uid)->first();
         if ($customer) {
@@ -106,10 +107,20 @@ class EngineerCompanyController extends Controller
         abort(404);
     }
 
+    public function CreateDispatchInformation($uid)
+    {
+        $customer = CustomerInfo::where('user_uid', $uid)->first();
+        if ($customer) {
+            return view('engineer_company.create_dispatch_information', compact('customer'));
+        }
+        abort(404);
+    }
+
     public function GetCalender()
     {
         $events = Events::where('status', 0)->latest()->get();
-        $completed_events = Events::where('status', 1)->latest()->get();
+        $todos_pending = Todo::where('status', 0)->latest()->get();
+        $todos_completed = Todo::where('status', 1)->latest()->get();
         $data = array();
 
         if (count($events) > 0) {
@@ -121,6 +132,7 @@ class EngineerCompanyController extends Controller
                         'start' => $ev->start_date,
                         'end' => $ev->end_date,
                         'color' => $ev->color,
+                        'textColor' => $ev->text_color,
                     ];
                 } else {
                     $data[] = [
@@ -129,12 +141,13 @@ class EngineerCompanyController extends Controller
                         'start' => $ev->start_date,
                         'end' => $ev->start_date,
                         'color' => $ev->color,
+                        'textColor' => $ev->text_color,
                     ];
                 }
 
             }
         }
 
-        return view('engineer_company.calender', compact('data', 'events','completed_events'));
+        return view('engineer_company.calender', compact('data', 'events', 'todos_pending', 'todos_completed'));
     }
 }
