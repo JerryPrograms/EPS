@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      *
@@ -16,6 +15,15 @@ return new class extends Migration
         Schema::create('dispatch_information_data', function (Blueprint $table) {
             $table->id();
             $table->string('customer_id');
+            $table->string('site_name');
+            $table->dateTime('reception_date_and_time');
+            $table->string('model_and_type');
+            $table->string('submission_details');
+            $table->string('failure_cause');
+            $table->string('measures');
+            $table->string('undecided');
+            $table->string('dispatcher');
+            $table->string('output');
             $table->timestamps();
         });
     }

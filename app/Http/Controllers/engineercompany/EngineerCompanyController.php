@@ -4,8 +4,10 @@ namespace App\Http\Controllers\engineercompany;
 
 use App\Http\Controllers\Controller;
 use App\Models\CustomerInfo;
+use App\Models\DispatchInformationData;
 use App\Models\Events;
 use App\Models\Todo;
+use App\Service\Authentication;
 
 class EngineerCompanyController extends Controller
 {
@@ -116,6 +118,24 @@ class EngineerCompanyController extends Controller
         abort(404);
     }
 
+    public function EditDispatchInformation($id)
+    {
+        $dispatch = DispatchInformationData::where('id', $id)->first();
+        if ($dispatch) {
+            return view('engineer_company.edit_dispatch_information', compact('dispatch'));
+        }
+        abort(404);
+    }
+
+    public function ViewDispatchInformation($id)
+    {
+        $dispatch = DispatchInformationData::where('id', $id)->first();
+        if ($dispatch) {
+            return view('engineer_company.view_dispatch_information', compact('dispatch'));
+        }
+        abort(404);
+    }
+
     public function GetCalender()
     {
         $events = Events::where('status', 0)->latest()->get();
@@ -149,5 +169,14 @@ class EngineerCompanyController extends Controller
         }
 
         return view('engineer_company.calender', compact('data', 'events', 'todos_pending', 'todos_completed'));
+    }
+
+
+    public function EngineerCompanyLogout()
+    {
+
+        Authentication::logout('engineer_company');
+        return redirect()->route('ec.GetECLogin');
+
     }
 }

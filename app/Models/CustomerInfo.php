@@ -68,4 +68,8 @@ class CustomerInfo extends Model
     {
         return $this->hasMany(ManageAttachment::class, 'customer_id', 'id');
     }
+    public function DispatchInformation()
+    {
+        return $this->hasMany(DispatchInformationData::class, 'customer_id', 'id');
+    }
 }

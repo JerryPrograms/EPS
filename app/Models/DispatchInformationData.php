@@ -10,4 +10,9 @@ class DispatchInformationData extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+    public function GetCustomer()
+    {
+        return $this->hasOne(CustomerInfo::class,'id','customer_id');
+    }
 }

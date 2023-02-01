@@ -83,12 +83,24 @@
                                 <div class="mt-4 pt-3">
                                     <a href="#" class="form_text">find password
                                     </a>
+
                                 </div>
+
+                            </div>
+                            <div class="col-lg-12" style="text-align: end;">
+                                <div class="">
+                                    <a href="#" class="form_text">New to EPS? Signup here!
+                                    </a>
+
+                                </div>
+
                             </div>
 
                             <div class="col-lg-12 pl-2 pr-2">
                                 <div class="buton_sett mt-5">
-                                    <button type="submit" id="login_btn" class="btn btn-primary btn-theme-auth w-100">Login</button>
+                                    <button type="submit" id="login_btn" class="btn btn-primary btn-theme-auth w-100">
+                                        Login
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -101,19 +113,20 @@
 <!-- /* form section end  */ -->
 
 
-<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 <script src="{{ asset('engineer/assets/js/theme.js') }}"></script>
 <script src="{{asset('engineer_company/assets/js/validate.min.js')}}"></script>
 <script>
-    $( '#loginForm' ).validate( {
-            submitHandler: function () {
-                'use strict';
-                ajaxCall($('#loginForm'), "{{ route('ec_login_action') }}", $('#login_btn'), "{{ route('ec.GetCustomerInfoListing') }}", onRequestSuccess);
-            }
-        } );
+    $('#loginForm').validate({
+        submitHandler: function () {
+            'use strict';
+            ajaxCall($('#loginForm'), "{{ route('ec_login_action') }}", $('#login_btn'), "{{ route('ec.GetCustomerInfoListing') }}", onRequestSuccess);
+        }
+    });
 </script>
 
 
