@@ -112,6 +112,46 @@
             border: none;
         }
 
+
+        @media only screen and (max-width: 767px) {
+            .calender-container {
+                flex-direction: column !important;
+            }
+
+            .calender-view {
+                width: 100% !important;
+            }
+
+            .todo-view {
+                width: 100% !important;
+            }
+
+            .fc-toolbar-chunk .btn-group:nth-child(2) {
+                display: flex;
+                flex-wrap: wrap;
+                margin-left: 0 !important;
+            }
+
+            .fc-toolbar-chunk .btn-group:nth-child(2) button {
+                margin-top: 10px !important;
+            }
+
+        }
+
+        @media only screen and (max-width: 1261px) {
+
+
+            .fc-toolbar-chunk .btn-group:nth-child(2) {
+                display: flex;
+                flex-wrap: wrap;
+                margin-left: 0 !important;
+            }
+            .fc-toolbar-chunk .btn-group:nth-child(2) button {
+                margin-top: 10px !important;
+            }
+
+        }
+
     </style>
     <div class="main-content">
 
@@ -124,8 +164,8 @@
 
                     <!-- end page title -->
 
-                    <div class="d-flex">
-                        <div class="pe-1" style="width: 70%">
+                    <div class="d-flex calender-container">
+                        <div class="pe-1 calender-view" style="width: 70%">
 
                             <div class="card">
 
@@ -139,7 +179,7 @@
                             </div>
 
                         </div>
-                        <div class="ps-1" style="width: 30%">
+                        <div class="ps-1 todo-view" style="width: 30%">
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="card">
@@ -193,15 +233,15 @@
                                             <div class="">
                                                 @foreach($todos_completed as $ev)
                                                     @php
-                                                    $color = '';
-                                                        if($ev->status == 0){
-                                                                $color = '#FFAB00';
-                                                        }
-                                                        elseif ($ev->status == 2){
-                                                            $color = '#696CFF';
-                                                        }else{
-                                                            $color = '#00DF67';
-                                                        }
+                                                        $color = '';
+                                                            if($ev->status == 0){
+                                                                    $color = '#FFAB00';
+                                                            }
+                                                            elseif ($ev->status == 2){
+                                                                $color = '#696CFF';
+                                                            }else{
+                                                                $color = '#00DF67';
+                                                            }
                                                     @endphp
 
 
