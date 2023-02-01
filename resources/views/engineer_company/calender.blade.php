@@ -343,7 +343,7 @@
                             <div class="col-12 mt-3 text-center">
                                 <button type="submit" class="btn btn-primary submitbtn">Save changes</button>
                             </div>
-                            <input name="user_id" value="123" hidden>
+                            <input name="user_id" value="{{auth('engineer_company')->user()->id}}" hidden>
                         </div>
                         @csrf
                     </div>

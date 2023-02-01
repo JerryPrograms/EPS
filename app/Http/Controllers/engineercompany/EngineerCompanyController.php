@@ -138,9 +138,9 @@ class EngineerCompanyController extends Controller
 
     public function GetCalender()
     {
-        $events = Events::where('status', 0)->latest()->get();
-        $todos_pending = Todo::where('status', 0)->latest()->get();
-        $todos_completed = Todo::where('status', 1)->latest()->get();
+        $events = Events::where('status', 0)->where('user_id',auth('engineer_company')->user()->id)->latest()->get();
+        $todos_pending = Todo::where('status', 0)->where('user_id',auth('engineer_company')->user()->id)->latest()->get();
+        $todos_completed = Todo::where('status', 1)->where('user_id',auth('engineer_company')->user()->id)->latest()->get();
         $data = array();
 
         if (count($events) > 0) {

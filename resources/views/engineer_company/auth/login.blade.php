@@ -89,7 +89,7 @@
                             </div>
                             <div class="col-lg-12" style="text-align: end;">
                                 <div class="">
-                                    <a href="#" class="form_text">New to EPS? Signup here!
+                                    <a href="{{route('ec.GetECSignup')}}" class="form_text">New to EPS? Signup here!
                                     </a>
 
                                 </div>

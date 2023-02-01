@@ -76,7 +76,7 @@
                                     </span>
                                 </div>
                                 <div class="form-floating mt-3 d-flex flex-column">
-                                    <input type="password" name="password" min="6" class="form-control custom_input" id="password"
+                                    <input type="password" name="password" minlength="6" class="form-control custom_input" id="password"
                                         placeholder="Enter a strong password" required>
                                     <label for="password" class="custom_color_theme">Password</label>
                                     <span class="Custom_icon">
@@ -178,7 +178,7 @@
                 ajaxCall($('#loginForm'), "{{ route('ec_signup_action') }}", $('#login_btn'), "{{ route('ec.GetECLogin') }}", onRequestSuccess);
             }
         } );
-        
+
     </script>
 </body>
 
