@@ -185,7 +185,7 @@
                                     <div class="card">
                                         <div class="card-body height-600-overflow-auto">
                                             <div class="d-flex justify-content-between align-items-center mb-3">
-                                                <h6 class="fw-bold mb-0"><img class="me-1"
+                                                <h6 class="fw-bold mb-0"><img class="me-1" style="width: 20px"
                                                                               src="{{asset('engineer_company/assets/images/rect.png')}}">To
                                                     do list</h6>
                                                 <button id="btn-new-event" data-bs-toggle="modal"
@@ -215,7 +215,7 @@
                                                             </div>
                                                             <div
                                                                 class="d-flex justify-content-between align-items-center">
-                                                                <h6>Writer:{{$ev->assigned_by_id}}</h6>
+                                                                <h6 data-toggle="tooltip" data-placement="bottom" title="{{$ev->memo}}">{{strlen($ev->memo) > 15 ? substr($ev->memo,0,15).'...' : $ev->memo}}</h6>
                                                                 <button
                                                                     onclick="ChangeEventStatus('{{$ev->id}}')"
                                                                     class="calender_add_btn">Done
@@ -226,8 +226,8 @@
                                                 @endforeach
                                             </div>
                                             <div class="d-flex justify-content-between align-items-center mb-3">
-                                                <h6 class="fw-bold mb-0"><img class="me-1"
-                                                                              src="{{asset('engineer_company/images/Check_ring.png')}}">Completed
+                                                <h6 class="fw-bold mb-0"><img class="me-1" style="width: 25px"
+                                                                              src="{{asset('engineer_company/assets/images/check.png')}}">Completed
                                                     list</h6>
                                             </div>
                                             <div class="">
@@ -255,7 +255,7 @@
                                                             </div>
                                                             <div
                                                                 class="d-flex justify-content-between align-items-center">
-                                                                <h6>Writer:{{$ev->assigned_by_id}}</h6>
+                                                                <h6 data-toggle="tooltip" data-placement="bottom" title="{{$ev->memo}}">{{strlen($ev->memo) > 15 ? substr($ev->memo,0,15).'...' : $ev->memo}}</h6>
                                                             </div>
                                                         </div>
                                                     </div>

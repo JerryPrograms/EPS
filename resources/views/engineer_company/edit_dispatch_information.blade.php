@@ -64,7 +64,9 @@
                                                            required name="site_name"
                                                            class=" custom_input w-100 custom_color_gray"
                                                            aria-describedby="emailHelp"
-                                                           placeholder="site name">
+                                                           placeholder="site name"
+                                                           value="{{$dispatch->site_name}}"
+                                                    >
                                                 </div>
                                             </div>
 
@@ -79,7 +81,9 @@
                                                     <input type="datetime-local" required name="reception_date_and_time"
                                                            class=" custom_input w-100"
                                                            aria-describedby="emailHelp"
-                                                           placeholder="2022-05-30 5 PM ">
+                                                           placeholder="2022-05-30 5 PM "
+                                                           value="{{$dispatch->reception_date_and_time}}"
+                                                    >
                                                 </div>
                                             </div>
 
@@ -95,7 +99,9 @@
                                                            required name="model_and_type"
                                                            class=" custom_input w-100 custom_color_gray"
                                                            aria-describedby="emailHelp"
-                                                           placeholder="type and number">
+                                                           placeholder="type and number"
+                                                           value="{{$dispatch->model_and_type}}"
+                                                    >
                                                 </div>
                                             </div>
 
@@ -110,7 +116,7 @@
                                                     <textarea required name="submission_details"
                                                               class="form-control custom_color_gray_2"
                                                               placeholder="Receipt details: Receipt received.."
-                                                              rows="10"></textarea>
+                                                              rows="10">{{$dispatch->submission_details}}</textarea>
                                                 </div>
                                             </div>
 
@@ -146,7 +152,7 @@
                                                     <textarea required name="failure_cause"
                                                               class="form-control custom_color_gray_2"
                                                               placeholder="Write the cause of failure"
-                                                              rows="7"></textarea>
+                                                              rows="7">{{$dispatch->failure_cause}}</textarea>
                                                 </div>
                                             </div>
                                             <div class="row mt-4">
@@ -159,7 +165,7 @@
                                                     <textarea required name="measures"
                                                               class="form-control custom_color_gray_2"
                                                               placeholder="Write action details"
-                                                              rows="7"></textarea>
+                                                              rows="7">{{$dispatch->measures}}</textarea>
                                                 </div>
                                             </div>
                                             <div class="row mt-4">
@@ -171,8 +177,8 @@
                                                 <div class="col-lg-8 col-12">
                                                     <textarea required name="undecided"
                                                               class="form-control custom_color_gray_2"
-                                                              placeholder="고장원인 작성"
-                                                              rows="7"></textarea>
+                                                              placeholder="undecided"
+                                                              rows="7">{{$dispatch->undecided}}</textarea>
                                                 </div>
                                             </div>
                                             <div class="row mt-4">
@@ -185,7 +191,9 @@
                                                     <input type="text" required name="dispatcher"
                                                            class=" custom_input w-100 custom_color_gray"
                                                            aria-describedby="emailHelp"
-                                                           placeholder="Fill in pending issues">
+                                                           placeholder="Fill in pending issues"
+                                                           value="{{$dispatch->dispatcher}}"
+                                                    >
                                                 </div>
                                             </div>
                                             <div class="row mt-4">
@@ -195,7 +203,7 @@
                                                             class="star_section">*</span>Customer Confirmation</label>
                                                 </div>
                                                 <div class="col-lg-8 col-12">
-                                                    <div class="w-100">
+                                                    <div id="canvas_image" class="w-100 ">
                                                         <label
                                                             class="form-label ">Contact Person /
                                                             Signature</label>
@@ -204,9 +212,20 @@
                                                     height: 223px;
                                                     border: 1px solid;
                                                     padding: 10px;"></canvas>
+                                                        <span id="canvas_error" class="error d-none">Please add
+                                                            signature</span>
                                                         <input type="hidden" name="output" class="output">
                                                         <button class="btn btn-danger" type="button" id="clear"><i
                                                                 class="fa fa-remove"></i></button>
+                                                    </div>
+                                                    <div id="previous_image" class="w-100">
+                                                        <label
+                                                            class="form-label ">Contact Person /
+                                                            Signature</label>
+                                                        <img class="w-100" src="{{asset($dispatch->output)}}">
+                                                        <button onclick="ChangeSignature()" class="btn btn-primary"
+                                                                type="button" id="clear"><i
+                                                                class="fa fa-edit"></i></button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -225,8 +244,9 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <input name="customer_id" value="{{$customer->id}}" hidden>
                                         <!-- form row 4 end  -->
+                                        <input name="dispatch_id" value="{{$dispatch->id}}" hidden>
+                                        <input name="customer_id" value="{{$dispatch->customer_id}}" hidden>
                                     </form>
                                 </div>
                             </div>
@@ -244,6 +264,7 @@
 @endsection
 @section('custom-script')
     <script>
+
         var canvas = document.getElementById('signature-pad');
 
         // Adjust canvas coordinate space taking into account pixel ratio,
@@ -269,6 +290,13 @@
         document.getElementById('clear').addEventListener('click', function () {
             signaturePad.clear();
         });
+
+        $('#canvas_image').addClass('d-none');
+
+        function ChangeSignature() {
+            $('#canvas_image').removeClass('d-none');
+            $('#previous_image').addClass('d-none');
+        }
     </script>
     <script src="{{asset('signature_plugin/assets/json2.min.js')}}"></script>
     <script>
@@ -279,11 +307,14 @@
                 var imageData = signaturePad.toDataURL();
                 document.getElementsByName("output")[0].setAttribute("value", imageData);
                 if (signaturePad.isEmpty()) {
-                    $('#canvas_error').removeClass('d-none');
-                } else {
-                    ajaxCall($('#createDispatchConfirmation'), "{{ route('CreateDispatchInformation') }}", $('#createDispatchConfirmation').find('.submitbtn'), "{{ route('ec.ListDispatchInformation',request()->segment(3)) }}", onRequestSuccess);
+                    document.getElementsByName("output")[0].setAttribute("value", '1');
                 }
+
+                ajaxCall($('#createDispatchConfirmation'), "{{ route('CreateDispatchInformation') }}", $('#createDispatchConfirmation').find('.submitbtn'), "{{ route('ec.EditDispatchInformation',request()->segment(3)) }}", onRequestSuccess);
+
             }
         });
+
+
     </script>
 @endsection
