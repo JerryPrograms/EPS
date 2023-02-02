@@ -20,6 +20,8 @@ return new class extends Migration {
             $table->string('maintenance_company');
             $table->string('address');
             $table->string('customer_number');
+            $table->string('added_by');
+            $table->string('added_by_id');
             $table->string('step')->default(0);
             $table->timestamps();
         });

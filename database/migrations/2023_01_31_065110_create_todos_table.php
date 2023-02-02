@@ -13,19 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('events', function (Blueprint $table) {
+        Schema::create('todos', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('engineer_companies')->cascadeOnDelete();
             $table->string('title');
             $table->string('memo');
             $table->string('start_date');
-            $table->string('end_date')->nullable();
-            $table->string('type');
-            $table->string('color');
-            $table->string('text_color');
             $table->string('status')->default(0);
-            $table->string('assigned_by_id')->nullable();
-            $table->string('assigned_to_id')->nullable();
+            $table->string('completed_by')->nullable();
             $table->timestamps();
         });
     }
@@ -37,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('events');
+        Schema::dropIfExists('todos');
     }
 };

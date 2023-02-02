@@ -25,8 +25,9 @@ class CalenderRequest extends FormRequest
     {
         return [
             'start_date' => 'required',
+            'title' => 'required',
+            'memo' => 'required',
             'assigned_by_id' => 'required',
-            'assigned_to_id' => 'required',
             'type' => 'required',
         ];
     }
@@ -35,9 +36,10 @@ class CalenderRequest extends FormRequest
     {
         return [
             'start_date.required' => 'Start Date field is required',
-            'assigned_by_id.required' => 'field is required',
-            'assigned_to_id.required' => 'Engineer field is required',
+            'title.required' => 'title is required',
+            'memo.required' => 'memo field is required',
             'type.required' => 'Type field is required',
+            'assigned_by_id.required' => 'Assigned by id is required',
         ];
     }
 }

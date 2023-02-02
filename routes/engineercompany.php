@@ -5,6 +5,7 @@ use App\Http\Controllers\engineercompany\EngineerCompanyController;
 use App\Service\ASAndRepairCompanyInformation;
 use App\Service\BuildingAndCompanyInformation;
 use App\Service\Customer_Info;
+use App\Service\DispatchInformationService;
 use App\Service\EmergencyDispatchCheckListService;
 use App\Service\EventService;
 use App\Service\KeyAccessoryInformation;
@@ -26,15 +27,17 @@ use App\Http\Controllers\engineercompany\ContractController;
 |
 */
 
-Route::group(['prefix' => 'engineer-company'],function(){
+Route::group(['prefix' => 'engineer-company'], function () {
     Route::get('/login', [AuthController::class, 'GetECLogin'])->name('ec.GetECLogin');
     Route::get('/signup', [AuthController::class, 'GetECSignup'])->name('ec.GetECSignup');
     Route::post('/ec-signup-action', [AuthController::class, 'ec_signup_action'])->name('ec_signup_action');
     Route::post('/ec-login-action', [AuthController::class, 'ec_login_action'])->name('ec_login_action');
 });
 
-Route::group(['prefix' => 'eps-panel'], function () {
 
+Route::group(['prefix' => 'eps-panel', 'middleware' => 'CommonRoutes'], function () {
+
+    Route::get('logout', [EngineerCompanyController::class, 'EngineerCompanyLogout'])->name('ec.EngineerCompanyLogout');
     Route::get('/customer-info-listing', [EngineerCompanyController::class, 'GetCustomerInfoListing'])->name('ec.GetCustomerInfoListing');
     Route::get('/customer-info-dashboard/{uid}', [EngineerCompanyController::class, 'GetCustomerInfoDashboard'])->name('ec.GetCustomerInfoDashboard');
     Route::get('/building-info/{uid}', [EngineerCompanyController::class, 'CreateBuildingInfo'])->name('ec.CreateBuildingInfo');
@@ -45,7 +48,10 @@ Route::group(['prefix' => 'eps-panel'], function () {
     Route::get('/monthly-regular-inspection/{uid}', [EngineerCompanyController::class, 'CreateMonthlyRegularInspection'])->name('ec.CreateMonthlyRegularInspection');
     Route::get('/emergency-dispatch-checklist/{uid}', [EngineerCompanyController::class, 'CreateEmergencyDispatchChecklist'])->name('ec.CreateEmergencyDispatchChecklist');
     Route::get('/manage-attachments/{uid}', [EngineerCompanyController::class, 'CreateManageAttachments'])->name('ec.CreateManageAttachments');
-    Route::get('/dispatch-information-listing/{uid}', [EngineerCompanyController::class, 'CreateDispatchInformation'])->name('ec.CreateDispatchInformation');
+    Route::get('/dispatch-information-listing/{uid}', [EngineerCompanyController::class, 'ListDispatchInformation'])->name('ec.ListDispatchInformation');
+    Route::get('/dispatch-information-add/{uid}', [EngineerCompanyController::class, 'CreateDispatchInformation'])->name('ec.CreateDispatchInformation');
+    Route::get('/dispatch-information-edit/{id}', [EngineerCompanyController::class, 'EditDispatchInformation'])->name('ec.EditDispatchInformation');
+    Route::get('/dispatch-information-view/{id}', [EngineerCompanyController::class, 'ViewDispatchInformation'])->name('ec.ViewDispatchInformation');
     Route::get('/calender', [EngineerCompanyController::class, 'GetCalender'])->name('ec.GetCalender');
 
 
@@ -137,4 +143,14 @@ Route::group(['prefix' => 'eps-panel'], function () {
 
     Route::get('/contract-view', [ContractController::class, 'contract_view'])->name('contract_view');
 
+    //Route to Create todoEvent in calendar
+    Route::post('/create-todo-event', [EventService::class, 'CreateTodo'])->name('CreateTodo');
+
+    //Route to Create dispatch Information
+    Route::post('/create-dispatch-information', [DispatchInformationService::class, 'CreateDispatchInformation'])->name('CreateDispatchInformation');
+
+
 });
+
+
+
