@@ -31,6 +31,7 @@
 <script src="{{asset('engineer_company/assets/js/validate.min.js')}}"></script>
 <script src="{{asset('engineer_company/assets/js/index.global.js')}}"></script>
 <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/bootstrap5@6.1.0/index.global.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 
 
 {{--<script src="{{asset('engineer_company/assets/libs/moment/min/moment.min.js')}}"></script>--}}
