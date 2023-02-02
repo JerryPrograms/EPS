@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained('engineer_companies')->cascadeOnDelete();
             $table->string('title');
             $table->string('memo');
             $table->string('start_date');

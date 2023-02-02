@@ -185,8 +185,12 @@
                                     <div class="card">
                                         <div class="card-body height-600-overflow-auto">
                                             <div class="d-flex justify-content-between align-items-center mb-3">
+
                                                 <h6 class="fw-bold mb-0"><img class="me-1"
-  src="{{asset('engineer_company/assets/images/rect.png')}}">{{ __('translation.To_do_list') }}</h6>
+  src="{{asset('engineer_company/assets/images/rect.png')}}">{{ __('translation.To_do_list') }}<img class="me-1" style="width: 20px"
+                                                                              src="{{asset('engineer_company/assets/images/rect.png')}}">
+                                                    </h6>
+
                                                 <button id="btn-new-event" data-bs-toggle="modal"
                                                         data-bs-target="#addEventCompleteModal"
                                                         class="calender_add_btn">
@@ -215,7 +219,7 @@
                                                             </div>
                                                             <div
                                                                 class="d-flex justify-content-between align-items-center">
-                                                                <h6>Writer:{{$ev->assigned_by_id}}</h6>
+                                                                <h6 data-toggle="tooltip" data-placement="bottom" title="{{$ev->memo}}">{{strlen($ev->memo) > 15 ? substr($ev->memo,0,15).'...' : $ev->memo}}</h6>
                                                                 <button
                                                                     onclick="ChangeEventStatus('{{$ev->id}}')"
                                                                     class="calender_add_btn">
@@ -227,8 +231,11 @@
                                                 @endforeach
                                             </div>
                                             <div class="d-flex justify-content-between align-items-center mb-3">
+
                                                 <h6 class="fw-bold mb-0"><img class="me-1"
-                              src="{{asset('engineer_company/images/Check_ring.png')}}">{{ __('translation.Completed_list') }}</h6>
+                              src="{{asset('engineer_company/images/Check_ring.png')}}">{{ __('translation.Completed_list') }}<<img class="me-1" style="width: 25px"
+                                                                              src="{{asset('engineer_company/assets/images/check.png')}}"></h6>
+
                                             </div>
                                             <div class="">
                                                 @foreach($todos_completed as $ev)
@@ -255,7 +262,7 @@
                                                             </div>
                                                             <div
                                                                 class="d-flex justify-content-between align-items-center">
-                                                                <h6>Writer:{{$ev->assigned_by_id}}</h6>
+                                                                <h6 data-toggle="tooltip" data-placement="bottom" title="{{$ev->memo}}">{{strlen($ev->memo) > 15 ? substr($ev->memo,0,15).'...' : $ev->memo}}</h6>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -349,7 +356,7 @@
                                 {{ __('translation.Save_changes') }}
                                 </button>
                             </div>
-                            <input name="user_id" value="123" hidden>
+                            <input name="user_id" value="{{auth('engineer_company')->user()->id}}" hidden>
                         </div>
                         @csrf
                     </div>

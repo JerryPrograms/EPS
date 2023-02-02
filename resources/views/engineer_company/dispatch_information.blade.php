@@ -31,9 +31,11 @@
                                 <div class="info-table-padding">
                                     <div class="row">
                                         <div class="col-12 text-end">
+
                                             <a href="{{route('ec.CreateDispatchInformation',$customer->user_uid)}}" class="history_add_btn">
                                                 {{ __('translation.add') }}
                                             </a>
+
                                         </div>
                                     </div>
                                     <table class="table align-middle custom_mrg_2">
@@ -94,54 +96,76 @@
                                                 <table class="table align-middle table-nowrap mb-0">
                                                     <thead class="table-light">
                                                     <tr>
-                                                        <th class="align-middle max-width-5">No.</th>
-                                                        <th class="text-center custom_inp_widt">Inspection Date
+                                                        <th class="custom_inp_widt">No.</th>
+                                                        <th class="custom_inp_widt">Date of receipt</th>
+                                                        <th class="custom_inp_widt">Reception hours</th>
+                                                        <th class="custom_inp_widt">Receptionist
                                                         </th>
-                                                        <th class="custom_inp_widt">Emphysema
+                                                        <th class="custom_inp_widt">Model and number
                                                         </th>
-                                                        <th class="custom_inp_widt">Site Name
+                                                        <th class="custom_inp_widt">Site name
                                                         </th>
-                                                        <th class="custom_inp_widt">Installation Place
+                                                        <th class="custom_inp_widt">Installation place
                                                         </th>
                                                         <th class="custom_inp_widt">View more</th>
                                                     </tr>
                                                     </thead>
                                                     <tbody>
-                                                    <tr class="custom_bor_clr">
-                                                        <td class="border-bottom-0 border-start"><a
-                                                                href="javascript: void(0);"
-                                                                class="text-body fw-bold">01</a></td>
-                                                        <td>
-                                                            <p class="date_button">2022.11.01</p>
-                                                        </td>
-                                                        <td>
-                                                            <p class="date_button">14:00</p>
-                                                        </td>
-                                                        <td>
-                                                            <p class="date_button_3">Hong Gil.
-                                                            </p>
-                                                        </td>
-                                                        <td>
-                                                            <p class="date_button_2">
-                                                                158 Dosan-daero..</p>
-                                                        </td>
+                                                    @if(count($customer->DispatchInformation) > 0)
+                                                        @foreach($customer->DispatchInformation as $dispatch)
+                                                            <tr class="custom_bor_clr">
+                                                                <td class="border-bottom-0 border-start"><a
+                                                                        href="javascript: void(0);"
+                                                                        class="text-body fw-bold">{{$loop->index + 1}}</a>
+                                                                </td>
+                                                                <td>
+                                                                    <p class="date_button">{{explode(' ',$dispatch->reception_date_and_time)[0]}}</p>
+                                                                </td>
 
-                                                        <td class="text-center border-end">
-                                                            <div class="aroow_main_section">
+                                                                <td>
+                                                                    <p class="date_button">{{date('h:i:s a', strtotime(explode(' ',$dispatch->reception_date_and_time)[1]))}}</p>
+                                                                </td>
+                                                                <td>
+                                                                    <p class="date_button_3">{{auth('engineer_company')->user()->name}}
+                                                                    </p>
+                                                                </td>
+                                                               <td>
+                                                                    <p class="date_button_3">{{$dispatch->model_and_type}}
+                                                                    </p>
+                                                                </td>
+                                                                <td>
+                                                                    <p class="date_button_3">{{$dispatch->site_name}}
+                                                                    </p>
+                                                                </td>
+                                                                <td>
+                                                                    <p class="date_button_2">
+                                                                       {{$customer->address}}</p>
+                                                                </td>
 
-                                                                <button class="green_edit_button">
-                                                                    <img
-                                                                        src="{{asset('engineer_company/assets/images/green-edit.png')}}">
-                                                                </button>
-                                                                <button class="aroow_button_2">
-                                                                    <img
-                                                                        src="{{asset('engineer_company/assets/images/red-search.png')}}">
-                                                                </button>
+                                                                <td class="text-center border-end">
+                                                                    <div class="aroow_main_section">
 
-                                                                <div class="bluebar_img_section"></div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
+                                                                        <button onclick="window.location.href='{{route("ec.EditDispatchInformation",$dispatch->id)}}'" class="green_edit_button">
+                                                                            <img
+                                                                                src="{{asset('engineer_company/assets/images/green-edit.png')}}">
+                                                                        </button>
+                                                                        <button onclick="window.location.href='{{route("ec.ViewDispatchInformation",$dispatch->id)}}'" class="aroow_button_2">
+                                                                            <img
+                                                                                src="{{asset('engineer_company/assets/images/red-search.png')}}">
+                                                                        </button>
+
+                                                                        <div class="bluebar_img_section"></div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        @endforeach
+                                                    @else
+                                                        <tr>
+                                                            <td colspan="6"><img style="width: 50%; height: 50%"
+                                                                                 src="{{asset('engineer_company/images/no-data-found.png')}}">
+                                                            </td>
+                                                        </tr>
+                                                    @endif
                                                     </tbody>
                                                 </table>
                                                 <div class="custom_br_2 mb-5"></div>

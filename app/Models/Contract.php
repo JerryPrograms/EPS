@@ -5,14 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class DispatchInformationData extends Model
+class Contract extends Model
 {
     use HasFactory;
 
     protected $guarded = [];
-
-    public function GetCustomer()
-    {
-        return $this->hasOne(CustomerInfo::class,'id','customer_id');
-    }
 }

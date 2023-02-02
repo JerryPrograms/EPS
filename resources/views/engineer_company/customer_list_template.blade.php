@@ -70,7 +70,6 @@
             </td>
             <td class="d-flex">
                 <!-- Button trigger modal -->
-                <a href="{{route('ec.ListDispatchInformation',$c->user_uid)}}" class="date_button_2 border-0"><i class="fa fa-edit custom-trash-padding"></i></a>
                 <a href="{{route('ec.GetCustomerInfoDashboard',$c->user_uid)}}" class="date_button_2 border-0"><i class="fa fa-edit custom-trash-padding"></i></a>
                 <button onclick="$('#customerInfoID').val('{{$c->id}}')"
                         data-bs-toggle="modal"

@@ -34,8 +34,7 @@
                                                 <div class="prompt w-100"></div>
                                                 <div class="col-lg-11">
                                                     <div class="">
-                                                        <h4 class="card_tittle_2">
-                                                            {{ __('translation.Dispatch_Confirmation') }}
+                                                        <h4 class="card_tittle_2">Dispatch Confirmation
                                                         </h4>
                                                     </div>
                                                 </div>
@@ -49,8 +48,7 @@
                                         <div class="row mt-5">
                                             <div class="col-lg-11">
                                                 <h4 class="card-title border-bottom-0 mb-4"> <span
-                                                        class="bor_lef">&nbsp;</span>
-                                                        {{ __('translation.Reception_Information') }}
+                                                        class="bor_lef">&nbsp;</span> Reception Information
                                                 </h4>
                                             </div>
 
@@ -59,32 +57,33 @@
                                                 <div class="col-lg-4 col-12">
                                                     <label
                                                         class="form-label "> <span
-                                                            class="star_section">*</span>
-                                                            {{ __('translation.site_name') }}
-                                                        </label>
+                                                            class="star_section">*</span> Site name</label>
                                                 </div>
                                                 <div class="col-lg-8 col-12">
-                                                    <input type="text"
+                                                    <input disabled type="text"
                                                            required name="site_name"
                                                            class=" custom_input w-100 custom_color_gray"
                                                            aria-describedby="emailHelp"
-                                                           placeholder="{{ __('translation.site_name') }}">
+                                                           placeholder="site name"
+                                                           value="{{$dispatch->site_name}}"
+                                                    >
                                                 </div>
                                             </div>
 
                                             <div class="row mt-4">
                                                 <div class="col-lg-4 col-12">
-                                            <label
-                                                class="form-label "> <span
-                                                    class="star_section">*</span>
-                                                    {{ __('translation.Reception date and time') }}
-                                                </label>
+                                                    <label
+                                                        class="form-label "> <span
+                                                            class="star_section">*</span> Reception date and
+                                                        time</label>
                                                 </div>
                                                 <div class="col-lg-8 col-12">
-                                                    <input type="datetime-local" required name="reception_date_and_time"
+                                                    <input disabled type="datetime-local" required name="reception_date_and_time"
                                                            class=" custom_input w-100"
                                                            aria-describedby="emailHelp"
-                                                           placeholder="2022-05-30 5 PM ">
+                                                           placeholder="2022-05-30 5 PM "
+                                                           value="{{$dispatch->reception_date_and_time}}"
+                                                    >
                                                 </div>
                                             </div>
 
@@ -93,16 +92,16 @@
                                                 <div class="col-lg-4 col-12">
                                                     <label
                                                         class="form-label "> <span
-                                                            class="star_section">*</span>
-                                                            {{ __('translation.Model_and_number') }}
-                                                        </label>
+                                                            class="star_section">*</span> Model and number</label>
                                                 </div>
                                                 <div class="col-lg-8 col-12">
-                                                    <input type="text"
+                                                    <input disabled type="text"
                                                            required name="model_and_type"
                                                            class=" custom_input w-100 custom_color_gray"
                                                            aria-describedby="emailHelp"
-                                                           placeholder="{{ __('translation.type_and_number') }}">
+                                                           placeholder="type and number"
+                                                           value="{{$dispatch->model_and_type}}"
+                                                    >
                                                 </div>
                                             </div>
 
@@ -111,15 +110,13 @@
                                                 <div class="col-lg-4 col-12">
                                                     <label
                                                         class="form-label "> <span
-                                                            class="star_section">*</span>
-                                                            {{ __('translation.Submission_details') }}
-                                                        </label>
+                                                            class="star_section">*</span>Submission details</label>
                                                 </div>
                                                 <div class="col-lg-8 col-12">
-                                                    <textarea required name="submission_details"
+                                                    <textarea disabled required name="submission_details"
                                                               class="form-control custom_color_gray_2"
-                                                              placeholder="{{ __('translation.Receipt_details:_Receipt_received..') }}"
-                                                              rows="10"></textarea>
+                                                              placeholder="Receipt details: Receipt received.."
+                                                              rows="10">{{$dispatch->submission_details}}</textarea>
                                                 </div>
                                             </div>
 
@@ -141,8 +138,7 @@
                                         <div class="row mt-5">
                                             <div class="col-lg-11">
                                                 <h4 class="card-title border-bottom-0 mb-4"> <span
-                                                        class="bor_lef">&nbsp;</span>
-                                                        {{ __('translation.Dispatch_Information') }}
+                                                        class="bor_lef">&nbsp;</span> Dispatch Information
                                                 </h4>
                                             </div>
 
@@ -150,87 +146,68 @@
                                                 <div class="col-lg-4 col-12">
                                                     <label
                                                         class="form-label "> <span
-                                                            class="star_section">*</span>
-                                                            {{ __('translation.Failure_cause') }}
-                                                        </label>
+                                                            class="star_section">*</span>Failure cause</label>
                                                 </div>
                                                 <div class="col-lg-8 col-12">
-                                                    <textarea required name="failure_cause"
+                                                    <textarea disabled required name="failure_cause"
                                                               class="form-control custom_color_gray_2"
-                                                              placeholder="{{ __('translation.Write_the_cause_of_failure') }}"
-                                                              rows="7"></textarea>
+                                                              placeholder="Write the cause of failure"
+                                                              rows="7">{{$dispatch->failure_cause}}</textarea>
                                                 </div>
                                             </div>
                                             <div class="row mt-4">
                                                 <div class="col-lg-4 col-12">
                                                     <label
                                                         class="form-label "> <span
-                                                            class="star_section">*</span>
-                                                            {{ __('translation.measures') }}
-                                                        </label>
+                                                            class="star_section">*</span>Measures</label>
                                                 </div>
                                                 <div class="col-lg-8 col-12">
-                                                    <textarea required name="measures"
+                                                    <textarea disabled required name="measures"
                                                               class="form-control custom_color_gray_2"
-                                                              placeholder="{{ __('translation.Write_action_details') }}"
-                                                              rows="7"></textarea>
+                                                              placeholder="Write action details"
+                                                              rows="7">{{$dispatch->measures}}</textarea>
                                                 </div>
                                             </div>
                                             <div class="row mt-4">
                                                 <div class="col-lg-4 col-12">
                                                     <label
                                                         class="form-label "> <span
-                                                            class="star_section">*</span>
-                                                            {{ __('translation.undecided') }}
-                                                        </label>
+                                                            class="star_section">*</span>Undecided</label>
                                                 </div>
                                                 <div class="col-lg-8 col-12">
-                                                    <textarea required name="undecided"
+                                                    <textarea disabled required name="undecided"
                                                               class="form-control custom_color_gray_2"
-                                                              placeholder="고장원인 작성"
-                                                              rows="7"></textarea>
+                                                              placeholder="undecided"
+                                                              rows="7">{{$dispatch->undecided}}</textarea>
                                                 </div>
                                             </div>
                                             <div class="row mt-4">
                                                 <div class="col-lg-4 col-12">
                                                     <label
                                                         class="form-label "> <span
-                                                            class="star_section">*</span>
-                                                            {{ __('translation.dispatcher') }}
-                                                        </label>
+                                                            class="star_section">*</span>Dispatcher</label>
                                                 </div>
                                                 <div class="col-lg-8 col-12">
-                                                    <input type="text" required name="dispatcher"
+                                                    <input disabled type="text" required name="dispatcher"
                                                            class=" custom_input w-100 custom_color_gray"
                                                            aria-describedby="emailHelp"
-                                                           placeholder="{{ __('translation.Fill_in_pending_issues') }}">
+                                                           placeholder="Fill in pending issues"
+                                                           value="{{$dispatch->dispatcher}}"
+                                                    >
                                                 </div>
                                             </div>
                                             <div class="row mt-4">
                                                 <div class="col-lg-4 col-12">
                                                     <label
                                                         class="form-label "> <span
-                                                            class="star_section">*</span>
-                                                            {{ __('translation.Customer_Information') }}
-                                                        </label>
+                                                            class="star_section">*</span>Customer Confirmation</label>
                                                 </div>
                                                 <div class="col-lg-8 col-12">
-                                                    <div class="w-100">
+                                                    <div id="previous_image" class="w-100">
                                                         <label
-
-                                                            class="form-label ">
-                                                            {{ __('translation.Contact_Person_/_Signature') }}
-                                                        </label>
-                                           
-                                                        <canvas id="signature-pad" name="signature"
-                                                                class="signature-pad w-100" style="touch-action: none;
-
-                                                    height: 223px;
-                                                    border: 1px solid;
-                                                    padding: 10px;"></canvas>
-                                                        <input type="hidden" name="output" class="output">
-                                                        <button class="btn btn-danger" type="button" id="clear"><i
-                                                                class="fa fa-remove"></i></button>
+                                                            class="form-label ">Contact Person /
+                                                            Signature</label>
+                                                        <img class="w-100" src="{{asset($dispatch->output)}}">
                                                     </div>
                                                 </div>
                                             </div>
@@ -244,13 +221,11 @@
                                         <div class="">
                                             <div class="row justify-content-end">
                                                 <div class="col-lg-2">
-                                                    <button class="confirm_button_2 mb-5 mt-5 submitbtn">
-                                                        {{ __('translation.confirm') }}
+                                                    <button onclick="window.location.href='{{route("ec.ListDispatchInformation",$dispatch->getCustomer->user_uid)}}'" type="button" class="confirm_button_2 mb-5 mt-5 submitbtn">Back
                                                     </button>
                                                 </div>
                                             </div>
                                         </div>
-                                        <input name="customer_id" value="{{$customer->id}}" hidden>
                                         <!-- form row 4 end  -->
                                     </form>
                                 </div>
@@ -266,49 +241,4 @@
 
         </div>
     </div>
-@endsection
-@section('custom-script')
-    <script>
-        var canvas = document.getElementById('signature-pad');
-
-        // Adjust canvas coordinate space taking into account pixel ratio,
-        // to make it look crisp on mobile devices.
-        // This also causes canvas to be cleared.
-        function resizeCanvas() {
-            // When zoomed out to less than 100%, for some very strange reason,
-            // some browsers report devicePixelRatio as less than 1
-            // and only part of the canvas is cleared then.
-            var ratio = Math.max(window.devicePixelRatio || 1, 1);
-            canvas.width = canvas.offsetWidth * ratio;
-            canvas.height = canvas.offsetHeight * ratio;
-            canvas.getContext("2d").scale(ratio, ratio);
-        }
-
-        window.onresize = resizeCanvas;
-        resizeCanvas();
-
-        var signaturePad = new SignaturePad(canvas, {
-            backgroundColor: 'rgb(255, 255, 255)' // necessary for saving image as JPEG; can be removed is only saving as PNG or SVG
-        });
-
-        document.getElementById('clear').addEventListener('click', function () {
-            signaturePad.clear();
-        });
-    </script>
-    <script src="{{asset('signature_plugin/assets/json2.min.js')}}"></script>
-    <script>
-        //create sub part
-        $('#createDispatchConfirmation').validate({
-
-            submitHandler: function () {
-                var imageData = signaturePad.toDataURL();
-                document.getElementsByName("output")[0].setAttribute("value", imageData);
-                if (signaturePad.isEmpty()) {
-                    $('#canvas_error').removeClass('d-none');
-                } else {
-                    ajaxCall($('#createDispatchConfirmation'), "{{ route('CreateDispatchInformation') }}", $('#createDispatchConfirmation').find('.submitbtn'), "{{ route('ec.ListDispatchInformation',request()->segment(3)) }}", onRequestSuccess);
-                }
-            }
-        });
-    </script>
 @endsection
