@@ -14,6 +14,7 @@ use App\Service\MonthlyRegularInspectionService;
 use App\Service\ParkingFacility;
 use App\Service\PartReplacement;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\engineercompany\ContractController;
 
 /*
 |--------------------------------------------------------------------------
@@ -134,6 +135,13 @@ Route::group(['prefix' => 'eps-panel', 'middleware' => 'CommonRoutes'], function
 
     //Route to get event date in calendar
     Route::post('/change-event-status', [EventService::class, 'ChangeEventStatus'])->name('ChangeEventStatus');
+
+    // Contract Management
+    Route::get('/contract-management-list', [ContractController::class, 'contract_management_list'])->name('contract_management_list');
+
+    Route::get('/add-contract', [ContractController::class, 'add_contract'])->name('add_contract');
+
+    Route::get('/contract-view', [ContractController::class, 'contract_view'])->name('contract_view');
 
     //Route to Create todoEvent in calendar
     Route::post('/create-todo-event', [EventService::class, 'CreateTodo'])->name('CreateTodo');
