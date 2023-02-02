@@ -56,8 +56,8 @@ class BuildingAndCompanyInformation
                 $building_information = BuildingInformation::where('id', $request->building_id)->update($building_data);
                 $company_information = BuildingCompanyInformation::where('id', $request->company_id)->update($company_data);
             } else {
-                $building_information = BuildingInformation::where('id', $request->building_id)->create($building_data);
-                $company_information = BuildingCompanyInformation::where('id', $request->company_id)->create($company_data);
+                $building_information = BuildingInformation::create($building_data);
+                $company_information = BuildingCompanyInformation::create($company_data);
             }
             DB::commit();
             return json_encode([

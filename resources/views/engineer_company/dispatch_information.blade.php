@@ -144,7 +144,7 @@
                                                                                 src="{{asset('engineer_company/assets/images/green-edit.png')}}">
                                                                         </button>
                                                                         <button onclick="window.location.href='{{route("ec.ViewDispatchInformation",$dispatch->id)}}'" class="aroow_button_2">
-                                                                            <img
+                                                                            <img style="width: 20px;"
                                                                                 src="{{asset('engineer_company/assets/images/red-search.png')}}">
                                                                         </button>
 

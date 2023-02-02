@@ -6,8 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Models\CustomerInfo;
 use App\Models\DispatchInformationData;
 use App\Models\Events;
+use App\Models\Quotation;
 use App\Models\Todo;
 use App\Service\Authentication;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class EngineerCompanyController extends Controller
 {
@@ -22,8 +24,8 @@ class EngineerCompanyController extends Controller
 
     public function GetCustomerInfoListing()
     {
-        //TODO : Add where condition on engineer company logged in
-        $customer = CustomerInfo::latest()->paginate(10);
+
+        $customer = CustomerInfo::where('added_by_id', auth('engineer_company')->id())->latest()->paginate(10);
         return view('engineer_company.customer_list', compact('customer'));
     }
 
@@ -138,9 +140,9 @@ class EngineerCompanyController extends Controller
 
     public function GetCalender()
     {
-        $events = Events::where('status', 0)->where('user_id',auth('engineer_company')->user()->id)->latest()->get();
-        $todos_pending = Todo::where('status', 0)->where('user_id',auth('engineer_company')->user()->id)->latest()->get();
-        $todos_completed = Todo::where('status', 1)->where('user_id',auth('engineer_company')->user()->id)->latest()->get();
+        $events = Events::where('status', 0)->where('user_id', auth('engineer_company')->user()->id)->latest()->get();
+        $todos_pending = Todo::where('status', 0)->where('user_id', auth('engineer_company')->user()->id)->latest()->get();
+        $todos_completed = Todo::where('status', 1)->where('user_id', auth('engineer_company')->user()->id)->latest()->get();
         $data = array();
 
         if (count($events) > 0) {
@@ -178,5 +180,48 @@ class EngineerCompanyController extends Controller
         Authentication::logout('engineer_company');
         return redirect()->route('ec.GetECLogin');
 
+    }
+
+    public function GetQuoteManagement($uid)
+    {
+        $customer = CustomerInfo::where('user_uid', $uid)->first();
+        if ($customer) {
+            return view('engineer_company.quote_management', compact('customer'));
+        }
+        abort(404);
+
+    }
+
+    public function AddQuote($uid)
+    {
+        $customer = CustomerInfo::where('user_uid', $uid)->first();
+        if ($customer) {
+            return view('engineer_company.add_quotation', compact('customer'));
+        }
+        abort(404);
+    }
+
+    function ViewQuote($id)
+    {
+        $quote = Quotation::where('id', $id)->first();
+        if ($quote) {
+            return view('engineer_company.view_quote_management', compact('quote'));
+        }
+        abort(404);
+    }
+
+    public function PDFQuote($id)
+    {
+        $quote = Quotation::where('id', $id)->first();
+
+//        $html = view('engineer_company.templates.quote_view_template',compact('quote'))->render();
+//
+//        $pdf = PDF::loadHTML($html);
+//        return $pdf->stream('resume.pdf');
+
+        if ($quote) {
+            return view('engineer_company.templates.quote_view_template', compact('quote'));
+        }
+        abort(404);
     }
 }
