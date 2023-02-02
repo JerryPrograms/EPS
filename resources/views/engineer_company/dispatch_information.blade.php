@@ -18,7 +18,8 @@
                                     <div class="row justify-content-center align-items-baseline">
                                         <div class="col-lg-11 p-0">
                                             <div class="card_section_3">
-                                                <h4 class="card_tittle_2">Dispatch Confirmation
+                                                <h4 class="card_tittle_2">
+                                                    {{ __('translation.Dispatch_Confirmation') }}
                                                 </h4>
                                             </div>
                                         </div>
@@ -30,16 +31,20 @@
                                 <div class="info-table-padding">
                                     <div class="row">
                                         <div class="col-12 text-end">
-                                            <a href="{{route('ec.CreateDispatchInformation',$customer->user_uid)}}" class="history_add_btn">Add</a>
+                                            <a href="{{route('ec.CreateDispatchInformation',$customer->user_uid)}}" class="history_add_btn">
+                                                {{ __('translation.add') }}
+                                            </a>
                                         </div>
                                     </div>
                                     <table class="table align-middle custom_mrg_2">
                                         <thead class="table-light">
                                         <tr>
 
-                                            <th class="align-middle custom_info_text">Info</th>
-                                            <th class="text-center max-width-18">Customer Number
-
+                                            <th class="align-middle custom_info_text">
+                                                {{ __('translation.info') }}
+                                            </th>
+                                            <th class="text-center max-width-18">
+                                                {{ __('translation.Customer_Number') }}
                                                 <br>
                                                 <div class="custom_info_text_2">{{$customer->customer_number}}</div>
                                             </th>
