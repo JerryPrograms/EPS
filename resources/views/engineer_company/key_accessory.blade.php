@@ -21,7 +21,8 @@
                                         <div class="w-100 prompt"></div>
                                         <div class="card">
                                             <div class="card-body mb-4">
-                                                <h4 class="card-title mb-4">Fill in customer information
+                                                <h4 class="card-title mb-4">
+                                                    {{ __('translation.Fill_in_customer_information') }}
                                                 </h4>
                                                 <div class="row">
                                                     <div class="col-md-12 col-2 text-end">
@@ -39,18 +40,26 @@
                                                         <thead class="table-light">
                                                         <tr>
 
-                                                            <th class="">No.</th>
-                                                            <th class="text-center">Registration Date
+                                                            <th class="">
+                                                                {{ __('translation.no.') }}
                                                             </th>
-                                                            <th class="text-center">Customer Number
+                                                            <th class="text-center">
+                                                                {{ __('translation.Registration_Date') }}
                                                             </th>
-                                                            <th class="text-center">Building Name
+                                                            <th class="text-center">
+                                                                {{ __('translation.Customer_Number') }}
                                                             </th>
-                                                            <th class="text-center">Address
+                                                            <th class="text-center">
+                                                                {{ __('translation.Building_Name') }}
                                                             </th>
-                                                            <th class="text-center">Building Management Company
+                                                            <th class="text-center">
+                                                                {{ __('translation.address') }}
                                                             </th>
-                                                            <th class="text-center">Maintenance Company
+                                                            <th class="text-center">
+                                                                {{ __('translation.Building_Management_Company') }}
+                                                            </th>
+                                                            <th class="text-center">
+                                                                {{ __('translation.Maintenance_Company') }}
                                                             </th>
                                                         </tr>
                                                         </thead>
@@ -116,8 +125,8 @@
                                                     <div class="row align-items-baseline">
                                                         <div class="col-lg-11">
                                                             <div>
-                                                                <h4 class="card_tittle_2">Customer information creation
-                                                                    page
+                                                                <h4 class="card_tittle_2">
+                                                                    {{ __('translation.Customer_information_creation_page') }}
                                                                 </h4>
                                                             </div>
                                                         </div>
@@ -211,25 +220,25 @@
                                                                                                     <ol class="collape_list_text">
                                                                                                         <li>
                                                                                                             <p class="collape_list_text">
-                                                                                                                standard
+                                                                                                                {{ __('translation.standard') }}
                                                                                                             </p>
                                                                                                         </li>
 
                                                                                                         <li>
                                                                                                             <p class="collape_list_text pt-2">
-                                                                                                                Quantity</p>
+                                                                                                                {{ __('translation.Quantity') }}
+                                                                                                            </p>
                                                                                                         </li>
 
                                                                                                         <li>
                                                                                                             <p class="collape_list_text mt-4">
-                                                                                                                work
-                                                                                                                history
+                                                                                                                {{ __('translation.work_history') }}
                                                                                                             </p>
                                                                                                         </li>
 
                                                                                                         <li>
                                                                                                             <p class="collape_list_text mt-4 pt-3">
-                                                                                                                Picture
+                                                                                                                {{ __('translation.picture') }}
                                                                                                             </p>
                                                                                                         </li>
 
@@ -355,7 +364,7 @@
                                                     <div class="col-lg-8">
                                                         <div class="collap_section_lst">
                                                             <p class="collap_section_lst_text">
-                                                                + Add
+                                                                {{ __('translation.+add') }}
                                                             </p>
                                                         </div>
                                                     </div>
@@ -367,14 +376,15 @@
                                                     <div class="col-lg-2 col-6">
                                                         <a href="{{route('ec.CreateParkingFacility',request()->segment(3))}}">
                                                             <button type="button" class="form_button_2 mb-5 mt-5">Back
-                                                                page
+                                                                {{ __('translation.page') }}
                                                             </button>
                                                         </a>
                                                     </div>
                                                     <div class="col-lg-2 col-6">
                                                         <button
                                                             onclick="window.location.href = '{{route("ec.CreatePartsReplacementHistory",$customer->user_uid)}}'"
-                                                            class="form_button mb-5 mt-5">Save and Next
+                                                            class="form_button mb-5 mt-5">
+                                                            {{ __('translation.Save_and_Next') }}
                                                         </button>
                                                     </div>
                                                 </div>
@@ -413,7 +423,9 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="myModalLabel">Add Part</h5>
+                            <h5 class="modal-title" id="myModalLabel">
+                                {{ __('translation.Add_Part') }}
+                            </h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
 
@@ -432,31 +444,30 @@
                                                         <div class="prompt w-100"></div>
                                                         <div class="mb-3">
                                                             <label class="form-label">
-                                                                Enter Part Name
+                                                                {{ __('translation.Contract_Date') }}
                                                             </label>
                                                             <input id="form_part_name" type="text" name="title"
-                                                                   class="form-control part_name"
-
-                                                                   placeholder="Enter part name" required>
+                                                class="form-control part_name"
+                                                placeholder="{{ __('translation.Contract_Date') }}" required>
                                                         </div>
                                                         <input name="customer_id" value="{{$customer->id}}" hidden>
                                                         <div class="mb-3">
                                                             <label class="form-label">
-                                                                Enter Tag Name
+                                                                {{ __('translation.Enter_Tag_Name') }}
                                                             </label>
                                                             <input id="form_tag_name" type="text" maxlength="100"
-                                                                   class="form-control part_name"
-                                                                   name="tag"
-                                                                   placeholder="Enter tag name">
+                                                    class="form-control part_name"
+                                                    name="tag"
+                                                    placeholder="{{ __('translation.Enter_tag_name') }}">
                                                         </div>
                                                         <div class="mb-3">
                                                             <label class="form-label">
-                                                                Enter Tag Color
+                                                                {{ __('translation.Enter_Tag_Color') }}
                                                             </label>
                                                             <input id="form_tag_name1" type="color" maxlength="100"
-                                                                   class="form-control part_name"
-                                                                   name="color"
-                                                                   placeholder="Enter tag name">
+                                                class="form-control part_name"
+                                                name="color"
+                                                placeholder="{{ __('translation.Enter_tag_name') }}">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -468,11 +479,11 @@
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary waves-effect"
                                             data-bs-dismiss="modal">
-                                        Close
+                                            {{ __('translation.close') }}
                                     </button>
                                     <button type="submit"
                                             class="btn btn-primary waves-effect waves-light submitbtn">
-                                        Create
+                                            {{ __('translation.create') }}
                                     </button>
                                 </div>
 
@@ -489,7 +500,9 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="myModalLabel">Add Part</h5>
+                            <h5 class="modal-title" id="myModalLabel">
+                                {{ __('translation.Add_Part') }}
+                            </h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                         </div>
@@ -508,12 +521,12 @@
                                                         <div class="prompt w-100"></div>
                                                         <div class="mb-3">
                                                             <label class="form-label">
-                                                                Enter Sub Part Name
+                                                                {{ __('translation.Enter_Sub_Part_Name') }}
                                                             </label>
                                                             <input type="text" name="title"
-                                                                   class="form-control part_name"
-                                                                   id="sub_part_name"
-                                                                   placeholder="Enter sub-part name" required>
+                                                    class="form-control part_name"
+                                                    id="sub_part_name"
+                                                    placeholder="{{ __('translation.Enter_sub-part_name') }}" required>
                                                             <input name="main_part_id" id="main_part_id" hidden>
                                                         </div>
                                                     </div>
@@ -526,12 +539,12 @@
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary waves-effect"
                                             data-bs-dismiss="modal">
-                                        Close
+                                            {{ __('translation.close') }}
                                     </button>
                                     <input type="text" id="selector_value" hidden>
                                     <button type="submit"
                                             class="btn btn-primary waves-effect waves-light submitbtn">
-                                        Create
+                                            {{ __('translation.create') }}
                                     </button>
                                 </div>
 
