@@ -188,9 +188,8 @@
                                         <div class="card-body height-600-overflow-auto">
                                             <div class="d-flex justify-content-between align-items-center mb-3">
 
-                                                <h6 class="fw-bold mb-0"><img class="me-1"
-  src="{{asset('engineer_company/assets/images/rect.png')}}">{{ __('translation.To_do_list') }}<img class="me-1" style="width: 20px"
-                                                                              src="{{asset('engineer_company/assets/images/rect.png')}}">
+                                                <h6 class="fw-bold mb-0"><img class="me-1" style="width: 20px"
+                                                                              src="{{asset('engineer_company/assets/images/rect.png')}}">{{ __('translation.To_do_list') }}
                                                     </h6>
 
                                                 <button id="btn-new-event" data-bs-toggle="modal"
@@ -234,9 +233,8 @@
                                             </div>
                                             <div class="d-flex justify-content-between align-items-center mb-3">
 
-                                                <h6 class="fw-bold mb-0"><img class="me-1"
-                              src="{{asset('engineer_company/images/Check_ring.png')}}">{{ __('translation.Completed_list') }}<<img class="me-1" style="width: 25px"
-                                                                              src="{{asset('engineer_company/assets/images/check.png')}}"></h6>
+                                                <h6 class="fw-bold mb-0"><img class="me-1" style="width: 25px"
+                                                                              src="{{asset('engineer_company/assets/images/check.png')}}">{{ __('translation.Completed_list') }}</h6>
 
                                             </div>
                                             <div class="">

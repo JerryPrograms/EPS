@@ -15,7 +15,9 @@
                                     <div class="card-body mb-4">
                                         <div class="w-100 prompt"></div>
                                         <h4 class="card-title mb-4">
+
                                             {{ __('translation.Fill in customer information') }}
+
                                         </h4>
                                         <div class="row">
                                             <div class="col-md-12 text-end">
@@ -38,6 +40,7 @@
                                                         {{ __('translation.no.') }}
                                                     </th>
                                                     <th class="text-center">
+
                                                         {{ __('translation.Registration Date') }}
                                                     </th>
                                                     <th class="text-center">
@@ -45,15 +48,18 @@
                                                     </th>
                                                     <th class="text-center">
                                                         {{ __('translation.Building Name') }}
+
                                                     </th>
                                                     <th class="text-center">
                                                         {{ __('translation.address') }}
                                                     </th>
                                                     <th class="text-center">
+
                                                         {{ __('translation.Building Management Company') }}
                                                     </th>
                                                     <th class="text-center">
                                                         {{ __('translation.Maintenance Company') }}
+
                                                     </th>
                                                 </tr>
                                                 </thead>
@@ -119,7 +125,9 @@
                                                 <div class="col-lg-11">
                                                     <div class="">
                                                         <h4 class="card_tittle_2">
+
                                                     {{ __('translation.Customer information creation page') }}
+
                                                         </h4>
                                                     </div>
                                                 </div>
@@ -134,7 +142,9 @@
                                             <div class="col-lg-11">
                                                 <h4 class="card-title border-bottom-0"> <span
                                                         class="bor_lef">&nbsp;</span>
+
                                                         {{ __('translation.Customer Information') }}
+
                                                 </h4>
                                             </div>
                                             <div class="col-lg-1">
@@ -155,7 +165,9 @@
                                             <div class="col-lg-3">
                                                 <p class="circle_img_text mt-3">
                                                     <b>
+
                                                         {{ __('translation.Failure and replacement history') }}
+
                                                     </b>
                                                 </p>
                                             </div>
@@ -200,6 +212,7 @@
                                                         </th>
                                                         <th class="text-center custom_inp_widt  border-0">
                                                             {{ __('translation.date') }}
+
                                                         </th>
                                                         <th class="custom_inp_widt  border-0">
                                                             {{ __('translation.attached photo') }}
@@ -211,6 +224,7 @@
                                                             {{ __('translation.Check contents') }}
                                                         </th>
                                                         <th class="text-center  border-0">
+
                                                             {{ __('translation.action') }}
                                                         </th>
                                                     </tr>
@@ -273,12 +287,16 @@
                                                 <button type="button"
                                                         onclick="window.location.href='{{route("ec.CreateMonthlyRegularInspection",$customer->user_uid)}}'"
                                                         class="form_button_2 mb-5 mt-5">
+
                                                         {{ __('translation.Back page') }}
+
                                                 </button>
                                             </div>
                                             <div class="col-lg-2 col-6">
                                                 <button class="form_button mb-5 mt-5">
+
                                                     {{ __('translation.Save and Next') }}
+
                                                 </button>
                                             </div>
                                         </div>
@@ -303,7 +321,9 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
+
     <h5 class="modal-title" id="myModalLabel">{{ __('translation.Delete_Emergency Dispatch Check List') }}</h5>
+
                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                             aria-label="Close"></button>
                 </div>
@@ -313,7 +333,9 @@
                     <div class="modal-body">
                         <div class="col-12">
                             <div class="prompt w-100"></div>
+
                             <p>{{ __('translation.Are you sure you want to delete this data?') }}</p>
+
                             <div class="mb-3">
 
                                 <input name="id" id="partReplacementID" hidden>

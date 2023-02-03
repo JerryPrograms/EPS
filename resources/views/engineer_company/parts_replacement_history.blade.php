@@ -16,7 +16,9 @@
                                 <div class="card">
                                     <div class="card-body mb-4">
                                         <h4 class="card-title mb-4">
+
                                             {{ __('translation.Fill in customer information') }}
+
                                         </h4>
                                         <div class="row">
 
@@ -39,6 +41,7 @@
 
                                                     <th class="">
                                                         {{ __('translation.no.') }}
+
                                                     </th>
                                                     <th class="text-center">
                                                         {{ __('translation.Registration Date') }}
@@ -57,6 +60,7 @@
                                                     </th>
                                                     <th class="text-center">
                                                         {{ __('translation.Maintenance Company') }}
+
                                                     </th>
                                                 </tr>
                                                 </thead>
@@ -122,7 +126,9 @@
                                                 <div class="col-lg-11">
                                                     <div class="">
                                                         <h4 class="card_tittle_2">
+
                                                             {{ __('translation.Customer information creation page') }}
+
                                                         </h4>
                                                     </div>
                                                 </div>
@@ -137,7 +143,9 @@
                                             <div class="col-lg-11">
                                                 <h4 class="card-title border-bottom-0"> <span
                                                         class="bor_lef">&nbsp;</span>
+
                                                         {{ __('translation.Customer Information') }}
+
                                                 </h4>
                                             </div>
                                             <div class="col-lg-1">
@@ -156,7 +164,9 @@
                                         <div class="row">
                                             <div class="col-lg-3">
                                                 <p class="circle_img_text mt-3">
+
                                                     {{ __('translation.Initial installation date') }}
+
                                                 </p>
                                             </div>
                                             <div class="col-lg-3 mt-2" style="flex-direction: column">
@@ -179,7 +189,9 @@
                                             <div class="col-lg-3">
                                                 <p class="circle_img_text mt-3">
                                                     <b>
+
                                                         {{ __('translation.Failure and replacement history') }}
+
                                                     </b>
                                                 </p>
                                             </div>
@@ -215,6 +227,7 @@
                                         <table class="table align-middle mb-0">
                                             <thead class="table-light">
                                             <tr>
+
                                                 <th>
                                                     {{ __('translation.no.') }}
                                                 </th>
@@ -231,6 +244,7 @@
                                                     {{ __('translation.AS content') }}
                                                 </th>
                                                 <th class="text-center">
+
                                                     {{ __('translation.action') }}
                                                 </th>
                                             </tr>
@@ -305,12 +319,16 @@
                                                 <button
                                                     onclick="window.location.href='{{route("ec.CreateKeyAccessoryHistory",request()->segment(3))}}'"
                                                     type="button" class="form_button_2 mb-5 mt-5">
+
                                                     {{ __('translation.Back page') }}
+
                                                 </button>
                                             </div>
                                             <div class="col-lg-2 col-6">
                                                 <button class="form_button mb-5 mt-5 submitbtn">
+
                                                     {{ __('translation.Save and Next') }}
+
                                                 </button>
                                             </div>
                                         </div>
@@ -335,7 +353,9 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="myModalLabel">
+
                         {{ __('translation.Delete Parts history Replacement') }}
+
                     </h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                             aria-label="Close"></button>
@@ -347,7 +367,9 @@
                         <div class="col-12">
                             <div class="prompt w-100"></div>
                             <p>
+
                                 {{ __('translation.Are you sure you want to delete this data?') }}
+
                             </p>
                             <div class="mb-3">
 

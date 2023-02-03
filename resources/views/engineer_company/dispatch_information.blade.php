@@ -51,7 +51,9 @@
                                                 <div class="custom_info_text_2">{{$customer->customer_number}}</div>
                                             </th>
                                             <th class="text-center max-width-18">
+
                                                 {{ __('translation.Building Name') }}
+
 
                                                 <br>
                                                 <div class="custom_info_text_2">{{$customer->building_name}}
@@ -66,14 +68,18 @@
                                             </th>
 
                                             <th class="text-center">
+
                                                 {{ __('translation.Building Management') }}
+
                                                 <br>
                                                 <div
                                                     class="custom_info_text_2">{{$customer->building_management_company}}
                                                 </div>
                                             </th>
                                             <th class="text-center">
+
                                                 {{ __('translation.Maintenance Company') }}
+
 
                                                 <br>
                                                 <div class="custom_info_text_2">{{$customer->maintenance_company}}
@@ -101,6 +107,7 @@
                                                     <thead class="table-light">
                                                     <tr>
                                                         <th class="custom_inp_widt">
+
                                                             {{ __('translation.no.') }}
                                                         </th>
                                                         <th class="custom_inp_widt">
@@ -123,6 +130,7 @@
                                                         </th>
                                                         <th class="custom_inp_widt">
                                                             {{ __('translation.View more') }}
+
                                                         </th>
                                                     </tr>
                                                     </thead>
@@ -166,7 +174,7 @@
                                                                                 src="{{asset('engineer_company/assets/images/green-edit.png')}}">
                                                                         </button>
                                                                         <button onclick="window.location.href='{{route("ec.ViewDispatchInformation",$dispatch->id)}}'" class="aroow_button_2">
-                                                                            <img
+                                                                            <img style="width: 20px;"
                                                                                 src="{{asset('engineer_company/assets/images/red-search.png')}}">
                                                                         </button>
 

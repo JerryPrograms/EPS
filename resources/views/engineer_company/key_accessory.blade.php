@@ -22,7 +22,9 @@
                                         <div class="card">
                                             <div class="card-body mb-4">
                                                 <h4 class="card-title mb-4">
+
                                                     {{ __('translation.Fill in customer information') }}
+
                                                 </h4>
                                                 <div class="row">
                                                     <div class="col-md-12 col-2 text-end">
@@ -44,6 +46,7 @@
                                                                 {{ __('translation.no.') }}
                                                             </th>
                                                             <th class="text-center">
+
                                                                 {{ __('translation.Registration Date') }}
                                                             </th>
                                                             <th class="text-center">
@@ -51,15 +54,18 @@
                                                             </th>
                                                             <th class="text-center">
                                                                 {{ __('translation.Building Name') }}
+
                                                             </th>
                                                             <th class="text-center">
                                                                 {{ __('translation.address') }}
                                                             </th>
                                                             <th class="text-center">
+
                                                                 {{ __('translation.Building Management Company') }}
                                                             </th>
                                                             <th class="text-center">
                                                                 {{ __('translation.Maintenance Company') }}
+
                                                             </th>
                                                         </tr>
                                                         </thead>
@@ -126,7 +132,9 @@
                                                         <div class="col-lg-11">
                                                             <div>
                                                                 <h4 class="card_tittle_2">
+
                                                                     {{ __('translation.Customer information creation page') }}
+
                                                                 </h4>
                                                             </div>
                                                         </div>
@@ -211,6 +219,7 @@
                                                                                             <span><i
                                                                                                     class="fa-solid fa-chevron-down"></i></span>
                                                                                         </li>
+
                             <div id="form_{{$SubParts->id}}"
                                     class="d-flex d-none custom_border">
 
@@ -321,6 +330,7 @@
                                     </form>
                                 </div>
                             </div>
+
                                                                                     @endforeach
                                                                                 @endif
 
@@ -383,7 +393,9 @@
                                                         <button
                                                             onclick="window.location.href = '{{route("ec.CreatePartsReplacementHistory",$customer->user_uid)}}'"
                                                             class="form_button mb-5 mt-5">
+
                                                             {{ __('translation.Save and Next') }}
+
                                                         </button>
                                                     </div>
                                                 </div>
@@ -423,7 +435,9 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="myModalLabel">
+
                                 {{ __('translation.Add Part') }}
+
                             </h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
@@ -443,16 +457,19 @@
                                                         <div class="prompt w-100"></div>
                                                         <div class="mb-3">
                                                             <label class="form-label">
+
                                                                 {{ __('translation.Enter Part Name') }}
                                                             </label>
                                                             <input id="form_part_name" type="text" name="title"
                                                                    class="form-control part_name"
 
                                                         placeholder="{{ __('translation.Enter Part Name') }}" required>
+
                                                         </div>
                                                         <input name="customer_id" value="{{$customer->id}}" hidden>
                                                         <div class="mb-3">
                                                             <label class="form-label">
+
                                                                 {{ __('translation.Enter Tag Name') }}
                                                             </label>
                                                             <input id="form_tag_name" type="text" maxlength="100"
@@ -468,6 +485,7 @@
                                                                    class="form-control part_name"
                                                                    name="color"
                                                     placeholder="{{ __('translation.Enter tag name') }}">
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -501,7 +519,9 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="myModalLabel">
+
                                 {{ __('translation.Add Part') }}
+
                             </h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
@@ -521,12 +541,14 @@
                                                         <div class="prompt w-100"></div>
                                                         <div class="mb-3">
                                                             <label class="form-label">
+
                                                                 {{ __('translation.Enter Sub Part Name') }}
                                                             </label>
                                                             <input type="text" name="title"
                                         class="form-control part_name"
                                         id="sub_part_name"
                                         placeholder="{{ __('translation.Enter sub-part name') }}" required>
+
                                                             <input name="main_part_id" id="main_part_id" hidden>
                                                         </div>
                                                     </div>

@@ -98,23 +98,44 @@
                                             </div>
 
                                             <div class="button_section">
-                                                <button onclick="window.location.href= '{{route('ec.CreateBuildingInfo',$customer->user_uid)}}'" class="searchbar_img border-0">
+                                                <button
+                                                    onclick="window.location.href= '{{route('ec.CreateBuildingInfo',$customer->user_uid)}}'"
+                                                    class="searchbar_img border-0">
                                                     <img
-                                                        src="{{asset('engineer_company/assets/images/searchbar.png')}}">
+                                                        src="{{asset('engineer_company/assets/images/Group.png')}}">
                                                     <p class="searchbar_text mt-3">
                                                         {{ __('translation.Create Customer Info') }}
                                                     </p>
                                                 </button>
-                                                <button onclick="window.location.href= '{{route('ec.CreateDispatchInformation',$customer->user_uid)}}'" class="searchbar_img border-0">
-                                                    <img
-                                                        src="{{asset('engineer_company/assets/images/searchbar.png')}}">
-                                                    <p class="searchbar_text mt-3">
-                                                        {{ __('translation.Fill Dispatch Confirmation') }}
-                                                    </p>
-                                                </button>
+
+
+                                                @if(count($customer->DispatchInformation) > 0)
+                                                    <button
+                                                        onclick="window.location.href= '{{route('ec.ListDispatchInformation',$customer->user_uid)}}'"
+                                                        class="searchbar_img border-0">
+                                                        <img
+                                                            src="{{asset('engineer_company/assets/images/Book_check.png')}}">
+                                                        <p class="searchbar_text mt-3">
+                                                            {{ __('translation.Fill Dispatch Confirmation') }}
+                                                        </p>
+                                                    </button>
+                                                @else
+                                                    <button
+                                                        onclick="window.location.href= '{{route('ec.CreateDispatchInformation',$customer->user_uid)}}'"
+                                                        class="searchbar_img border-0">
+                                                        <img
+                                                            src="{{asset('engineer_company/assets/images/Book_check.png')}}">
+                                                        <p class="searchbar_text mt-3">
+                                                          {{ __('translation.Fill Dispatch Confirmation') }}
+                                                        </p>
+                                                    </button>
+                                                @endif
+
+
+
                                                 <button class="searchbar_img border-0">
                                                     <img
-                                                        src="{{asset('engineer_company/assets/images/searchbar.png')}}">
+                                                        src="{{asset('engineer_company/assets/images/Date_range.png')}}">
                                                     <p class="searchbar_text mt-3">
                                                         {{ __('translation.Fill Regular Inspection Log') }}
                                                     </p>
@@ -126,7 +147,7 @@
                                                         {{ __('translation.Contract Managment') }}
                                                     </p>
                                                 </button>
-                                                <button class="searchbar_img border-0">
+                                                <button  onclick="window.location.href= '{{route('ec.GetQuoteManagement',$customer->user_uid)}}'" class="searchbar_img border-0">
                                                     <img
                                                         src="{{asset('engineer_company/assets/images/searchbar.png')}}">
                                                     <p class="searchbar_text mt-3">

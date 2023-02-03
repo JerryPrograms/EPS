@@ -64,6 +64,7 @@ return [
     'construction'=>'construction',
     'Periodic inspection'=>'Periodic inspection',
     'close'=>'Close',
+    'create'=>'Create',
     'delete'=>'Delete',
     'Fill in customer information'=>'Fill in customer information',
     'Customer information creation page'=>'Customer information creation page',
@@ -230,8 +231,5 @@ return [
     'Information Uploaded Successfully'=>'Information Uploaded Successfully',
     'Something went wrong.....'=>'Something went wrong.....',
     'Customer Deleted Successfully'=>'Customer Deleted Successfully',
-
-
-
 
 ];

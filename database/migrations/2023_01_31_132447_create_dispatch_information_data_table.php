@@ -14,7 +14,7 @@ return new class extends Migration {
     {
         Schema::create('dispatch_information_data', function (Blueprint $table) {
             $table->id();
-            $table->string('customer_id');
+            $table->foreignId('customer_id')->constrained('customer_infos')->cascadeOnDelete();
             $table->string('site_name');
             $table->dateTime('reception_date_and_time');
             $table->string('model_and_type');

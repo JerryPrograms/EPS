@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\engineercompany\AuthController;
+use App\Http\Controllers\engineercompany\ContractController;
 use App\Http\Controllers\engineercompany\EngineerCompanyController;
 use App\Service\ASAndRepairCompanyInformation;
 use App\Service\BuildingAndCompanyInformation;
@@ -13,8 +14,8 @@ use App\Service\ManageAttachmentsService;
 use App\Service\MonthlyRegularInspectionService;
 use App\Service\ParkingFacility;
 use App\Service\PartReplacement;
+use App\Service\QuoteService;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\engineercompany\ContractController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +39,9 @@ Route::group(['prefix' => 'engineer-company'], function () {
 Route::group(['prefix' => 'eps-panel', 'middleware' => 'CommonRoutes'], function () {
 
     Route::get('logout', [EngineerCompanyController::class, 'EngineerCompanyLogout'])->name('ec.EngineerCompanyLogout');
+
+
+    //Customer info
     Route::get('/customer-info-listing', [EngineerCompanyController::class, 'GetCustomerInfoListing'])->name('ec.GetCustomerInfoListing');
     Route::get('/customer-info-dashboard/{uid}', [EngineerCompanyController::class, 'GetCustomerInfoDashboard'])->name('ec.GetCustomerInfoDashboard');
     Route::get('/building-info/{uid}', [EngineerCompanyController::class, 'CreateBuildingInfo'])->name('ec.CreateBuildingInfo');
@@ -48,12 +52,23 @@ Route::group(['prefix' => 'eps-panel', 'middleware' => 'CommonRoutes'], function
     Route::get('/monthly-regular-inspection/{uid}', [EngineerCompanyController::class, 'CreateMonthlyRegularInspection'])->name('ec.CreateMonthlyRegularInspection');
     Route::get('/emergency-dispatch-checklist/{uid}', [EngineerCompanyController::class, 'CreateEmergencyDispatchChecklist'])->name('ec.CreateEmergencyDispatchChecklist');
     Route::get('/manage-attachments/{uid}', [EngineerCompanyController::class, 'CreateManageAttachments'])->name('ec.CreateManageAttachments');
+
+
+    //Dispatch Information management
     Route::get('/dispatch-information-listing/{uid}', [EngineerCompanyController::class, 'ListDispatchInformation'])->name('ec.ListDispatchInformation');
     Route::get('/dispatch-information-add/{uid}', [EngineerCompanyController::class, 'CreateDispatchInformation'])->name('ec.CreateDispatchInformation');
     Route::get('/dispatch-information-edit/{id}', [EngineerCompanyController::class, 'EditDispatchInformation'])->name('ec.EditDispatchInformation');
     Route::get('/dispatch-information-view/{id}', [EngineerCompanyController::class, 'ViewDispatchInformation'])->name('ec.ViewDispatchInformation');
+
+
+    //Calender
     Route::get('/calender', [EngineerCompanyController::class, 'GetCalender'])->name('ec.GetCalender');
 
+    //Quote Management
+    Route::get('/quote-management/{uid}', [EngineerCompanyController::class, 'GetQuoteManagement'])->name('ec.GetQuoteManagement');
+    Route::get('/add-quotation/{uid}', [EngineerCompanyController::class, 'AddQuote'])->name('ec.AddQuote');
+    Route::get('/view-quotation/{uid}', [EngineerCompanyController::class, 'ViewQuote'])->name('ec.ViewQuote');
+    Route::get('/pdf-quotation/{uid}', [EngineerCompanyController::class, 'PDFQuote'])->name('ec.PDFQuote');
 
     //Route to create customer basic information by engineer company
     Route::post('/post-customer-info', [Customer_Info::class, 'CreateCustomerInfo'])->name('CustomerInfo');
@@ -149,6 +164,8 @@ Route::group(['prefix' => 'eps-panel', 'middleware' => 'CommonRoutes'], function
     //Route to Create dispatch Information
     Route::post('/create-dispatch-information', [DispatchInformationService::class, 'CreateDispatchInformation'])->name('CreateDispatchInformation');
 
+    //Route to Create Quote
+    Route::post('/create-quote', [QuoteService::class, 'CreateQuote'])->name('CreateQuote');
 
 });
 
