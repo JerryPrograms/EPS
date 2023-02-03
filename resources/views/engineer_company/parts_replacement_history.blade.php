@@ -15,7 +15,8 @@
                                 <div class="prompt w-100"></div>
                                 <div class="card">
                                     <div class="card-body mb-4">
-                                        <h4 class="card-title mb-4">Fill in customer information
+                                        <h4 class="card-title mb-4">
+                                            {{ __('translation.Fill in customer information') }}
                                         </h4>
                                         <div class="row">
 
@@ -24,7 +25,6 @@
                                                     <button class="circle_img_section">
                                                         <img src="{{asset('engineer_company/images/user2.png')}}">
                                                         <p class="circle_img_text mt-3">기사 홍길동
-
                                                         </p>
                                                     </button>
                                                 </div>
@@ -37,18 +37,26 @@
                                                 <thead class="table-light">
                                                 <tr>
 
-                                                    <th class="">No.</th>
-                                                    <th class="text-center">Registration Date
+                                                    <th class="">
+                                                        {{ __('translation.no.') }}
                                                     </th>
-                                                    <th class="text-center">Customer Number
+                                                    <th class="text-center">
+                                                        {{ __('translation.Registration Date') }}
                                                     </th>
-                                                    <th class="text-center">Building Name
+                                                    <th class="text-center">
+                                                        {{ __('translation.Customer Number') }}
                                                     </th>
-                                                    <th class="text-center">Address
+                                                    <th class="text-center">
+                                                        {{ __('translation.Building Name') }}
                                                     </th>
-                                                    <th class="text-center">Building Management Company
+                                                    <th class="text-center">
+                                                        {{ __('translation.address') }}
                                                     </th>
-                                                    <th class="text-center">Maintenance Company
+                                                    <th class="text-center">
+                                                        {{ __('translation.Building Management Company') }}
+                                                    </th>
+                                                    <th class="text-center">
+                                                        {{ __('translation.Maintenance Company') }}
                                                     </th>
                                                 </tr>
                                                 </thead>
@@ -113,7 +121,8 @@
                                             <div class="row align-items-baseline">
                                                 <div class="col-lg-11">
                                                     <div class="">
-                                                        <h4 class="card_tittle_2">Customer information creation page
+                                                        <h4 class="card_tittle_2">
+                                                            {{ __('translation.Customer information creation page') }}
                                                         </h4>
                                                     </div>
                                                 </div>
@@ -127,7 +136,8 @@
                                         <div class="row mt-4">
                                             <div class="col-lg-11">
                                                 <h4 class="card-title border-bottom-0"> <span
-                                                        class="bor_lef">&nbsp;</span> customer information
+                                                        class="bor_lef">&nbsp;</span>
+                                                        {{ __('translation.Customer Information') }}
                                                 </h4>
                                             </div>
                                             <div class="col-lg-1">
@@ -146,7 +156,7 @@
                                         <div class="row">
                                             <div class="col-lg-3">
                                                 <p class="circle_img_text mt-3">
-                                                    Initial installation date
+                                                    {{ __('translation.Initial installation date') }}
                                                 </p>
                                             </div>
                                             <div class="col-lg-3 mt-2" style="flex-direction: column">
@@ -168,7 +178,8 @@
                                         <div class="row mt-4">
                                             <div class="col-lg-3">
                                                 <p class="circle_img_text mt-3">
-                                                    <b>Failure and replacement history
+                                                    <b>
+                                                        {{ __('translation.Failure and replacement history') }}
                                                     </b>
                                                 </p>
                                             </div>
@@ -183,7 +194,8 @@
                                             </div>
                                             <div class="col-lg-6 text-end">
                                                 <button type="button" onclick="addReplacementHistoryRow()"
-                                                        class="history_add_btn">Add
+                                                        class="history_add_btn">
+                                                        {{ __('translation.add') }}
                                                 </button>
                                             </div>
                                         </div>
@@ -203,16 +215,23 @@
                                         <table class="table align-middle mb-0">
                                             <thead class="table-light">
                                             <tr>
-                                                <th>No.</th>
-                                                <th class="text-center custom_inp_widt_2">registration date
+                                                <th>
+                                                    {{ __('translation.no.') }}
                                                 </th>
-                                                <th class="text-center custom_inp_widt_2">part
+                                                <th class="text-center custom_inp_widt_2">
+                                                    {{ __('translation.Registration Date') }}
                                                 </th>
-                                                <th class="text-center custom_inp_widt_2 custom_wisth_input_2">manager
+                                                <th class="text-center custom_inp_widt_2">
+                                                    {{ __('translation.part') }}
                                                 </th>
-                                                <th class="text-center">AS content
+                                                <th class="text-center custom_inp_widt_2 custom_wisth_input_2">
+                                                    {{ __('translation.manager') }}
                                                 </th>
-                                                <th class="text-center">Action
+                                                <th class="text-center">
+                                                    {{ __('translation.AS content') }}
+                                                </th>
+                                                <th class="text-center">
+                                                    {{ __('translation.action') }}
                                                 </th>
                                             </tr>
                                             </thead>
@@ -285,11 +304,13 @@
                                             <div class="col-lg-2 col-6">
                                                 <button
                                                     onclick="window.location.href='{{route("ec.CreateKeyAccessoryHistory",request()->segment(3))}}'"
-                                                    type="button" class="form_button_2 mb-5 mt-5">Back page
+                                                    type="button" class="form_button_2 mb-5 mt-5">
+                                                    {{ __('translation.Back page') }}
                                                 </button>
                                             </div>
                                             <div class="col-lg-2 col-6">
-                                                <button class="form_button mb-5 mt-5 submitbtn">Save and Next
+                                                <button class="form_button mb-5 mt-5 submitbtn">
+                                                    {{ __('translation.Save and Next') }}
                                                 </button>
                                             </div>
                                         </div>
@@ -313,7 +334,9 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="myModalLabel">Delete Parts history Replacement</h5>
+                    <h5 class="modal-title" id="myModalLabel">
+                        {{ __('translation.Delete Parts history Replacement') }}
+                    </h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                             aria-label="Close"></button>
                 </div>
@@ -323,7 +346,9 @@
                     <div class="modal-body">
                         <div class="col-12">
                             <div class="prompt w-100"></div>
-                            <p>Are you sure you want to delete this data?</p>
+                            <p>
+                                {{ __('translation.Are you sure you want to delete this data?') }}
+                            </p>
                             <div class="mb-3">
 
                                 <input name="id" id="partReplacementID" hidden>
@@ -332,11 +357,11 @@
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary waves-effect"
                                     data-bs-dismiss="modal">
-                                Close
+                                    {{ __('translation.close') }}
                             </button>
                             <button type="submit"
                                     class="btn btn-primary waves-effect waves-light submitbtn">
-                                Delete
+                                    {{ __('translation.delete') }}
                             </button>
                         </div>
 
@@ -371,7 +396,7 @@
                                                 <input type="text" name="part[]"
                                                     class="form-control col-lg-2 custom_input_tble"
                                                      aria-describedby="emailHelp"
-                                                    placeholder="Part name"
+                                                    placeholder="{{ __('translation.Part name') }}"
                                                      required>
                                             </td>
 
@@ -379,7 +404,7 @@
                                                 <input type="text" name="manager[]"
                                                     class="form-control col-lg-12 custom_input_tble"
                                                      aria-describedby="emailHelp"
-                                                    placeholder="Manager Name
+                                                    placeholder="{{ __('translation.Manager Name') }}
                                                     " required>
                                             </td>
 
@@ -387,8 +412,7 @@
                                                 <input type="text" name="as_content[]"
                                                     class="form-control col-lg-2 custom_input_tble"
                                                      aria-describedby="emailHelp"
-                                                    placeholder="AS content
-                                                    " required>
+                                                    placeholder="{{ __('translation.AS content') }}" required>
                                             </td>
 
                                  <td class="custom_br_theme_gray_3">

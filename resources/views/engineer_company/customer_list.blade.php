@@ -15,7 +15,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="card-title mb-4">
-                                        {{ __('translation.Customer_Information') }}
+                                        {{ __('translation.Customer Information') }}
                                     </h4>
                                     <form id="customerSearchForm">
                                         <div class="row">
@@ -30,19 +30,19 @@
                                         {{ __('translation.all') }}
                                                     </option>
                                                     <option value="created_at">
-                                                        {{ __('translation.Registration_Date') }}
+                                                        {{ __('translation.Registration Date') }}
                                                     </option>
                                                     <option value="building_name">
-                                                        {{ __('translation.Building_Name') }}
+                                                        {{ __('translation.Building Name') }}
                                                     </option>
                                                     <option value="customer_number">
-                                                        {{ __('translation.Customer_Number') }}
+                                                        {{ __('translation.Customer Number') }}
                                                     </option>
                                                     <option value="address">
                                                         {{ __('translation.address') }}
                                                     </option>
                                                     <option value="building_management_company">
-                                                        {{ __('translation.Building_Management_Company') }}
+                                                        {{ __('translation.Building Management Company') }}
                                                     </option>
                                                 </select>
                                             </div>
@@ -66,7 +66,7 @@
                                                         type="button"
                                                         class="d-none btn btn-primary waves-effect waves-light w-sm mt-4"
                                                         >
-                                                        {{ __('translation.Clear_Filter') }}
+                                                        {{ __('translation.Clear Filter') }}
                                                 </button>
                                             </div>
                                             <div class="col-md-4 col-12 text-end">

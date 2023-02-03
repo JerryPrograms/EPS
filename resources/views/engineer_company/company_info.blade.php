@@ -14,7 +14,7 @@
                                 <div class="card-body mb-4">
                                     <div class="prompt w-100"></div>
                                     <h4 class="card-title mb-4">
-                                        {{ __('translation.Fill_in_customer_information') }}
+                                        {{ __('translation.Fill in customer information') }}
                                     </h4>
 
                                     <div class="table-responsive mt-3">
@@ -25,22 +25,22 @@
                                                         {{ __('translation.no.') }}
                                                     </th>
                                                     <th class="text-center">
-                                                        {{ __('translation.Registration_Date') }}
+                                                        {{ __('translation.Registration Date') }}
                                                     </th>
                                                     <th class="text-center">
-                                                        {{ __('translation.Customer_Number') }}
+                                                        {{ __('translation.Customer Number') }}
                                                     </th>
                                                     <th class="text-center">
-                                                        {{ __('translation.Building_Name') }}
+                                                        {{ __('translation.Building Name') }}
                                                     </th>
                                                     <th class="text-center">
                                                         {{ __('translation.address') }}
                                                     </th>
                                                     <th class="text-center">
-                                                        {{ __('translation.Building_Management_Company') }}
+                                                        {{ __('translation.Building Management Company') }}
                                                     </th>
                                                     <th class="text-center">
-                                                        {{ __('translation.Maintenance_Company') }}
+                                                        {{ __('translation.Maintenance Company') }}
                                                     </th>
                                                 </tr>
                                             </thead>
@@ -113,7 +113,7 @@
                                                 <div class="col-lg-11">
                                                     <div class="">
                                                         <h4 class="card_tittle_2">
-                                                        {{ __('translation.Customer_information_creation_page') }}
+                                                        {{ __('translation.Customer information creation page') }}
                                                         </h4>
                                                     </div>
                                                 </div>
@@ -129,7 +129,7 @@
                                                 <div class="col-lg-11">
                                                     <h4 class="card-title border-bottom-0 mb-4 mt-3"> <span
                                                             class="bor_lef">&nbsp;</span>
-                                                        {{ __('translation.AS_Information') }}
+                                                        {{ __('translation.AS Information') }}
                                                     </h4>
                                                 </div>
                                                 <div class="col-lg-1 no-print">
@@ -145,15 +145,15 @@
                                                     <div class="col-md-4 col-12">
                                                         <label class="form-label custom_lab mb-0"> <span
                                                                 class="star_section">*</span>
-                                                                {{ __('translation.Repair_Company_Name') }}
+                                                                {{ __('translation.Repair Company Name') }}
                                                         </label>
                                                     </div>
                                                     <div class="col-md-8 col-12">
                                                         <input type="text" name="repair_company_name"
                                                             class="form-control w-100 custom_input"
                                                             aria-describedby="emailHelp"
-                                                            placeholder="{{ __('translation.Enter_company_name') }}"
-                                                            required
+                                                    placeholder="{{ __('translation.Enter company name') }}"
+                                                    required
                                                             @if (!empty($customer->ASInformation)) value="{{ $customer->ASInformation->repair_company_name }}" @endif>
                                                     </div>
                                                 </div>
@@ -164,7 +164,7 @@
                                                     <div class="col-md-8 col-12"><input type="date" name="contract_date"
                                                             class="form-control w-100 custom_input"
                                                             aria-describedby="emailHelp"
-                                                            placeholder="{{ __('translation.Jewon_Lee') }}"
+                                                            placeholder="{{ __('translation.Jewon Lee') }}"
                                                             required
                                                             @if (!empty($customer->ASInformation)) value="{{ $customer->ASInformation->contract_date }}" @endif>
                                                     </div>
@@ -187,7 +187,7 @@
                                                 <div class="row align-items-center mt-4">
                                                     <div class="col-md-4 col-12"><label class="form-label custom_lab mb-0">
                                                             <span class="star_section">*</span>
-                                                            {{ __('translation.Tax_invoice_issue_date') }}
+                                                            {{ __('translation.Tax invoice issue date') }}
                                                         </label></div>
                                                     <div class="col-md-8 col-12"><input type="date"
                                                             name="invoice_issue_date"
@@ -201,7 +201,7 @@
                                                     <div class="col-md-4 col-12"><label
                                                             class="form-label custom_lab mb-0">
                                                             <span class="star_section">*</span>
-                                                            {{ __('translation.Payment_Date') }}
+                                                            {{ __('translation.Payment Date') }}
                                                         </label>
                                                     </div>
                                                     <div class="col-md-8 col-12"><input type="date"
@@ -216,7 +216,7 @@
                                                     <div class="col-md-4 col-12"><label
                                                             class="form-label custom_lab mb-0"> <span
                                                                 class="star_section">&nbsp;</span>
-                                                                {{ __('translation.Payment_method') }}
+                                                                {{ __('translation.Payment method') }}
                                                                 </label></div>
                                                     <div class="col-md-8 col-12"><select
                                                             class="form-select w-100 custom_input" name="payment_method"
@@ -244,19 +244,19 @@
                                                 <div class="col-lg-12">
                                                     <h4 class="card-title border-bottom-0 mb-4"> <span
                                                             class="bor_lef">&nbsp;</span>
-                                                            {{ __('translation.Repair_Company_Information') }}
+                                                            {{ __('translation.Repair Company Information') }}
                                                     </h4>
                                                 </div>
                                                 <div class="row align-items-center">
                                                     <div class="col-md-4 col-12"><label
                                                             class="form-label custom_lab mb-0"> <span
                                                                 class="star_section">*</span>
-                                                                {{ __('translation.Company_Name') }}
+                                                                {{ __('translation.Company Name') }}
                                                         </label></div>
                                                     <div class="col-md-8 col-12"><input type="text"
                                                             name="company_name" class="form-control w-100 custom_input"
                                                             aria-describedby="emailHelp"
-                                                            placeholder="{{ __('translation.Enter_company_name') }}"
+                                                            placeholder="{{ __('translation.Enter company name') }}"
                                                             required
                                                             @if (!empty($customer->RepairCompanyInformation)) value="{{ $customer->RepairCompanyInformation->company_name }}" @endif>
                                                     </div>
@@ -266,14 +266,14 @@
                                                     <div class="col-md-4 col-12"><label
                                                             class="form-label custom_lab mb-0"> <span
                                                                 class="star_section">*</span>
-                                                                {{ __('translation.Ceo_Name') }}
+                                                                {{ __('translation.Ceo Name') }}
                                                             </label>
                                                     </div>
                                                     <div class="col-md-8 col-12">
                                                         <input type="text" name="ceo_name"
                                                             class="form-control col-lg-3 custom_input_2  w-100"
-                                                            aria-describedby="emailHelp" placeholder="{{ __('translation.Enter_ceo_name') }}"
-                                                            required
+                        aria-describedby="emailHelp" placeholder="{{ __('translation.Enter ceo name') }}"
+                        required
                                                             @if (!empty($customer->RepairCompanyInformation)) value="{{ $customer->RepairCompanyInformation->ceo_name }}" @endif>
                                                     </div>
                                                 </div>
@@ -287,7 +287,7 @@
                                                             </label></div>
                                                     <div class="col-md-8 col-12"><input type="text" name="address"
                                                             class="form-control w-100 custom_input"
-                                                            aria-describedby="emailHelp" placeholder="{{ __('translation.Enter_address') }}"
+                                                            aria-describedby="emailHelp" placeholder="{{ __('translation.Enter address') }}"
                                                             required
                                                             @if (!empty($customer->RepairCompanyInformation)) value="{{ $customer->RepairCompanyInformation->address }}" @endif>
                                                     </div>
@@ -298,14 +298,14 @@
                                                     <div class="col-md-4 col-12"><label
                                                             class="form-label custom_lab mb-0"> <span
                                                                 class="star_section">*</span>
-                                                                {{ __('translation.Industry_Category') }}
+                                                                {{ __('translation.Industry Category') }}
                                                             </label>
                                                     </div>
                                                     <div class="col-md-8 col-12"><input type="text"
                                                             name="industry_category"
                                                             class="form-control w-100 custom_input"
                                                             aria-describedby="emailHelp"
-                                                            placeholder="{{ __('translation.Enter_industry_category') }}"
+                                                            placeholder="{{ __('translation.Enter industry category') }}"
                                                             required
                                                             @if (!empty($customer->RepairCompanyInformation)) value="{{ $customer->RepairCompanyInformation->industry_category }}" @endif>
                                                     </div>
@@ -362,13 +362,13 @@
                                             <div class="col-lg-2 col-6">
                                                 <a href="{{ route('ec.CreateBuildingInfo', request()->segment(3)) }}">
                                                     <button type="button" class="form_button_2 mb-5 mt-5">
-                                                        {{ __('translation.Back_page') }}
+                                                        {{ __('translation.Back page') }}
                                                     </button>
                                                 </a>
                                             </div>
                                             <div class="col-lg-2 col-6">
                                                 <button class="form_button mb-5 mt-5">
-                                                    {{ __('translation.Save_and_Next') }}
+                                                    {{ __('translation.Save and Next') }}
                                                 </button>
                                             </div>
                                         </div>

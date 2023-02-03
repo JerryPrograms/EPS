@@ -19,7 +19,7 @@
                                         <div class="col-lg-11 p-0">
                                             <div class="card_section_3">
                                                 <h4 class="card_tittle_2">
-                                                    {{ __('translation.Dispatch_Confirmation') }}
+                                                    {{ __('translation.Dispatch Confirmation') }}
                                                 </h4>
                                             </div>
                                         </div>
@@ -46,30 +46,34 @@
                                                 {{ __('translation.info') }}
                                             </th>
                                             <th class="text-center max-width-18">
-                                                {{ __('translation.Customer_Number') }}
+                                                {{ __('translation.Customer Number') }}
                                                 <br>
                                                 <div class="custom_info_text_2">{{$customer->customer_number}}</div>
                                             </th>
-                                            <th class="text-center max-width-18">Building Name
+                                            <th class="text-center max-width-18">
+                                                {{ __('translation.Building Name') }}
 
                                                 <br>
                                                 <div class="custom_info_text_2">{{$customer->building_name}}
                                                 </div>
                                             </th>
-                                            <th class="text-center max-width-20">Address
+                                            <th class="text-center max-width-20">
+                                                {{ __('translation.address') }}
 
                                                 <br>
                                                 <div class="custom_info_text_2">{{$customer->address}}
                                                 </div>
                                             </th>
 
-                                            <th class="text-center"> Building Management.
+                                            <th class="text-center">
+                                                {{ __('translation.Building Management') }}
                                                 <br>
                                                 <div
                                                     class="custom_info_text_2">{{$customer->building_management_company}}
                                                 </div>
                                             </th>
-                                            <th class="text-center">Maintenance Company
+                                            <th class="text-center">
+                                                {{ __('translation.Maintenance Company') }}
 
                                                 <br>
                                                 <div class="custom_info_text_2">{{$customer->maintenance_company}}
@@ -96,18 +100,30 @@
                                                 <table class="table align-middle table-nowrap mb-0">
                                                     <thead class="table-light">
                                                     <tr>
-                                                        <th class="custom_inp_widt">No.</th>
-                                                        <th class="custom_inp_widt">Date of receipt</th>
-                                                        <th class="custom_inp_widt">Reception hours</th>
-                                                        <th class="custom_inp_widt">Receptionist
+                                                        <th class="custom_inp_widt">
+                                                            {{ __('translation.no.') }}
                                                         </th>
-                                                        <th class="custom_inp_widt">Model and number
+                                                        <th class="custom_inp_widt">
+                                                            {{ __('translation.Date of receipt') }}
                                                         </th>
-                                                        <th class="custom_inp_widt">Site name
+                                                        <th class="custom_inp_widt">
+                                                            {{ __('translation.Reception hours') }}
                                                         </th>
-                                                        <th class="custom_inp_widt">Installation place
+                                                        <th class="custom_inp_widt">
+                                                            {{ __('translation.receptionist') }}
                                                         </th>
-                                                        <th class="custom_inp_widt">View more</th>
+                                                        <th class="custom_inp_widt">
+                                                            {{ __('translation.Model and number') }}
+                                                        </th>
+                                                        <th class="custom_inp_widt">
+                                                            {{ __('translation.site name') }}
+                                                        </th>
+                                                        <th class="custom_inp_widt">
+                                                            {{ __('translation.Installation place') }}
+                                                        </th>
+                                                        <th class="custom_inp_widt">
+                                                            {{ __('translation.View more') }}
+                                                        </th>
                                                     </tr>
                                                     </thead>
                                                     <tbody>

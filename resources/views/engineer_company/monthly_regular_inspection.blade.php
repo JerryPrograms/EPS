@@ -14,7 +14,8 @@
                                 <div class="card">
                                     <div class="card-body mb-4">
                                         <div class="w-100 prompt"></div>
-                                        <h4 class="card-title mb-4">Fill in customer information
+                                        <h4 class="card-title mb-4">
+                                            {{ __('translation.Fill in customer information') }}
                                         </h4>
                                         <div class="row">
 
@@ -35,18 +36,26 @@
                                                 <thead class="table-light">
                                                 <tr>
 
-                                                    <th class="">No.</th>
-                                                    <th class="text-center">Registration Date
+                                                    <th class="">
+                                                        {{ __('translation.no.') }}
                                                     </th>
-                                                    <th class="text-center">Customer Number
+                                                    <th class="text-center">
+                                                        {{ __('translation.Registration Date') }}
                                                     </th>
-                                                    <th class="text-center">Building Name
+                                                    <th class="text-center">
+                                                        {{ __('translation.Customer Number') }}
                                                     </th>
-                                                    <th class="text-center">Address
+                                                    <th class="text-center">
+                                                        {{ __('translation.Customer Number') }}
                                                     </th>
-                                                    <th class="text-center">Building Management Company
+                                                    <th class="text-center">
+                                                        {{ __('translation.address') }}
                                                     </th>
-                                                    <th class="text-center">Maintenance Company
+                                                    <th class="text-center">
+                                                        {{ __('translation.Building Management Company') }}
+                                                    </th>
+                                                    <th class="text-center">
+                                                        {{ __('translation.Maintenance Company') }}
                                                     </th>
                                                 </tr>
                                                 </thead>
@@ -111,7 +120,8 @@
                                             <div class="row align-items-baseline">
                                                 <div class="col-lg-11">
                                                     <div class="">
-                                                        <h4 class="card_tittle_2">Customer information creation page
+                                                        <h4 class="card_tittle_2">
+                                                    {{ __('translation.Customer information creation page') }}
                                                         </h4>
                                                     </div>
                                                 </div>
@@ -125,7 +135,8 @@
                                         <div class="row mt-4">
                                             <div class="col-lg-11">
                                                 <h4 class="card-title border-bottom-0"> <span
-                                                        class="bor_lef">&nbsp;</span>customer information
+                                                        class="bor_lef">&nbsp;</span>
+                                                        {{ __('translation.Customer Information') }}
                                                 </h4>
                                             </div>
                                             <div class="col-lg-1">
@@ -145,7 +156,8 @@
                                         <div class="row mt-2">
                                             <div class="col-lg-3">
                                                 <p class="circle_img_text mt-3">
-                                                    <b> Failure and replacement history
+                                                    <b>
+                                                        {{ __('translation.Failure and replacement history') }}
                                                     </b>
                                                 </p>
                                             </div>
@@ -160,7 +172,8 @@
                                             </div>
                                             <div class="col-lg-6 text-end">
                                                 <button type="button" onclick="addMonthlyregularInspection()"
-                                                        class="history_add_btn">Add
+                                                        class="history_add_btn">
+                                                        {{ __('translation.add') }}
                                                 </button>
                                             </div>
 
@@ -185,16 +198,23 @@
                                                     <thead class="table-light">
                                                     <tr>
 
-                                                        <th class="align-middle border-0">No.</th>
-                                                        <th class="text-center custom_inp_widt  border-0">date
-
+                                                        <th class="align-middle border-0">
+                                                            {{ __('translation.no.') }}
                                                         </th>
-                                                        <th class="custom_inp_widt  border-0">attached photo
+                                                        <th class="text-center custom_inp_widt  border-0">
+                                                            {{ __('translation.date') }}
                                                         </th>
-                                                        <th class="custom_inp_widt  border-0 ">manager</th>
-                                                        <th class="text-center  border-0">Check contents
+                                                        <th class="custom_inp_widt  border-0">
+                                                            {{ __('translation.attached photo') }}
                                                         </th>
-                                                        <th class="text-center  border-0">Action
+                                                        <th class="custom_inp_widt  border-0">
+                                                            {{ __('translation.manager') }}
+                                                        </th>
+                                                        <th class="text-center  border-0">
+                                                            {{ __('translation.Check contents') }}
+                                                        </th>
+                                                        <th class="text-center  border-0">
+                                                            {{ __('translation.action') }}
                                                         </th>
                                                     </tr>
                                                     </thead>
@@ -218,12 +238,14 @@
                                             <div class="col-lg-2 col-6">
                                                 <button type="button"
                                                         onclick="window.location.href='{{route("ec.CreatePartsReplacementHistory",$customer->user_uid)}}'"
-                                                        class="form_button_2 mb-5 mt-5">Back page
+                                                        class="form_button_2 mb-5 mt-5">
+                                                        {{ __('translation.Back page') }}
                                                 </button>
                                             </div>
                                             <div class="col-lg-2 col-6">
                                                 <a href="#">
-                                                    <button class="form_button mb-5 mt-5">Save and Next
+                                                    <button class="form_button mb-5 mt-5">
+                                                        {{ __('translation.Save and Next') }}
                                                     </button>
                                                 </a>
                                             </div>
@@ -249,7 +271,9 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="myModalLabel">Delete Regular Inspection History</h5>
+                    <h5 class="modal-title" id="myModalLabel">
+                        {{ __('translation.Delete Regular Inspection History') }}
+                    </h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                             aria-label="Close"></button>
                 </div>
@@ -259,7 +283,7 @@
                     <div class="modal-body">
                         <div class="col-12">
                             <div class="prompt w-100"></div>
-                            <p>Are you sure you want to delete this data?</p>
+                            <p>{{ __('translation.Are you sure you want to delete this data?') }}</p>
                             <div class="mb-3">
 
                                 <input name="id" id="partReplacementID" hidden>
@@ -268,11 +292,12 @@
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary waves-effect"
                                     data-bs-dismiss="modal">
-                                Close
+                                    {{ __('translation.close') }}
                             </button>
                             <button type="submit"
                                     class="btn btn-primary waves-effect waves-light submitbtn">
-                                Delete
+
+                                    {{ __('translation.delete') }}
                             </button>
                         </div>
 
@@ -298,13 +323,11 @@
 
 
                                                         <td>
-                                                            <input type="text" name="manager[]" required class="form-control col-lg-12 custom_input_tble_6"  aria-describedby="emailHelp" placeholder="Hong Gil Dong
-                                                                        ">
+                                                            <input type="text" name="manager[]" required class="form-control col-lg-12 custom_input_tble_6"  aria-describedby="emailHelp" placeholder="{{ __('translation.Hong Gil Dong') }}">
                                                         </td>
 
                                                         <td>
-                                                            <input type="text" name="check_contents[]" required class="form-control col-lg-2 custom_input_tble"  aria-describedby="emailHelp" placeholder="Center lift replacement
-                                                                        ">
+                                                <input type="text" name="check_contents[]" required class="form-control col-lg-2 custom_input_tble"  aria-describedby="emailHelp" placeholder="{{ __('translation.Center lift replacement') }">
                                                         </td>
 
                                                         <td class="text-center">

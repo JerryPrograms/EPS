@@ -15,7 +15,7 @@
                             <div class="card">
                                 <div class="card-body" style="padding-bottom: 50px;">
                                     <h4 class="card-title mb-4">
-                                        {{ __('translation.Customer_Information') }}
+                                        {{ __('translation.Customer Information') }}
                                     </h4>
 
 
@@ -27,22 +27,22 @@
                                                     {{ __('translation.no.') }}
                                                 </th>
                                                 <th class="text-center">
-                                                    {{ __('translation.Registration_Date') }}
+                                                    {{ __('translation.Registration Date') }}
                                                 </th>
                                                 <th class="text-center">
-                                                    {{ __('translation.Customer_Number') }}
+                                                    {{ __('translation.Customer Number') }}
                                                 </th>
                                                 <th class="text-center">
-                                                    {{ __('translation.Building_Name') }}
+                                                    {{ __('translation.Building Name') }}
                                                 </th>
                                                 <th class="text-center">
                                                     {{ __('translation.address') }}
                                                 </th>
                                                 <th class="text-center">
-                                                    {{ __('translation.Building_Management_Company') }}
+                                                    {{ __('translation.Building Management Company') }}
                                                 </th>
                                                 <th class="text-center">
-                                                    {{ __('translation.Engineer_company') }}
+                                                    {{ __('translation.Engineer company') }}
                                                 </th>
                                             </tr>
                                             </thead>
@@ -93,7 +93,7 @@
                                             <div class="col-lg-12">
                                                 <h4 class="card-title mt-5 border-bottom-0 mb-4"> <span
                                                         class="bor_lef">&nbsp;</span>
-                                                        {{ __('translation.Input_Customer_Information') }}
+                                                        {{ __('translation.Input Customer Information') }}
                                                         </h4>
                                             </div>
 
@@ -102,35 +102,35 @@
                                                     <img
                                                         src="{{asset('engineer_company/assets/images/searchbar.png')}}">
                                                     <p class="searchbar_text mt-3">
-                                                        {{ __('translation.Create_Customer_Info') }}
+                                                        {{ __('translation.Create Customer Info') }}
                                                     </p>
                                                 </button>
                                                 <button onclick="window.location.href= '{{route('ec.CreateDispatchInformation',$customer->user_uid)}}'" class="searchbar_img border-0">
                                                     <img
                                                         src="{{asset('engineer_company/assets/images/searchbar.png')}}">
                                                     <p class="searchbar_text mt-3">
-                                                        {{ __('translation.Fill_Dispatch_Confirmation') }}
+                                                        {{ __('translation.Fill Dispatch Confirmation') }}
                                                     </p>
                                                 </button>
                                                 <button class="searchbar_img border-0">
                                                     <img
                                                         src="{{asset('engineer_company/assets/images/searchbar.png')}}">
                                                     <p class="searchbar_text mt-3">
-                                                        {{ __('translation.Fill_Regular_Inspection_Log') }}
+                                                        {{ __('translation.Fill Regular Inspection Log') }}
                                                     </p>
                                                 </button>
                                                 <button class="searchbar_img border-0">
                                                     <img
                                                         src="{{asset('engineer_company/assets/images/searchbar.png')}}">
                                                     <p class="searchbar_text mt-3">
-                                                        {{ __('translation.Contract_Managment') }}
+                                                        {{ __('translation.Contract Managment') }}
                                                     </p>
                                                 </button>
                                                 <button class="searchbar_img border-0">
                                                     <img
                                                         src="{{asset('engineer_company/assets/images/searchbar.png')}}">
                                                     <p class="searchbar_text mt-3">
-                                                        {{ __('translation.Quote_Management') }}
+                                                        {{ __('translation.Quote Management') }}
                                                     </p>
                                                 </button>
                                                 <button class="searchbar_img_2 border-0 mt-2">
@@ -139,7 +139,7 @@
                                                     <p class="searchbar_text mt-3">
                                                         {{ __('translation.construction') }} <br>
 
-                                                        {{ __('translation.Completion_Report') }}
+                                                        {{ __('translation.Completion Report') }}
                                                     </p>
                                                 </button>
                                             </div>
