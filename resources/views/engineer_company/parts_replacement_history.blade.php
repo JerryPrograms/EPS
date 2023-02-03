@@ -16,7 +16,7 @@
                                 <div class="card">
                                     <div class="card-body mb-4">
                                         <h4 class="card-title mb-4">
-                                            {{ __('translation.Fill_in_customer_information') }}
+                                            {{ __('translation.Fill in customer information') }}
                                         </h4>
                                         <div class="row">
 
@@ -42,10 +42,10 @@
                                                         {{ __('translation.no.') }}
                                                     </th>
                                                     <th class="text-center">
-                                                        {{ __('translation.Registration_Date') }}
+                                                        {{ __('translation.Registration Date') }}
                                                     </th>
                                                     <th class="text-center">
-                                                        {{ __('translation.Customer_Number') }}
+                                                        {{ __('translation.Customer Number') }}
                                                     </th>
                                                     <th class="text-center">
                                                         {{ __('translation.Building_Name') }}
@@ -54,10 +54,10 @@
                                                         {{ __('translation.address') }}
                                                     </th>
                                                     <th class="text-center">
-                                                        {{ __('translation.Building_Management_Company') }}
+                                                        {{ __('translation.Building Management Company') }}
                                                     </th>
                                                     <th class="text-center">
-                                                        {{ __('translation.Maintenance_Company') }}
+                                                        {{ __('translation.Maintenance Company') }}
                                                     </th>
                                                 </tr>
                                                 </thead>
@@ -123,7 +123,7 @@
                                                 <div class="col-lg-11">
                                                     <div class="">
                                                         <h4 class="card_tittle_2">
-                                                            {{ __('translation.Customer_information_creation_page') }}
+                                                            {{ __('translation.Customer information creation page') }}
                                                         </h4>
                                                     </div>
                                                 </div>
@@ -138,7 +138,7 @@
                                             <div class="col-lg-11">
                                                 <h4 class="card-title border-bottom-0"> <span
                                                         class="bor_lef">&nbsp;</span>
-                                                        {{ __('translation.Customer_Information') }}
+                                                        {{ __('translation.Customer Information') }}
                                                 </h4>
                                             </div>
                                             <div class="col-lg-1">
@@ -157,7 +157,7 @@
                                         <div class="row">
                                             <div class="col-lg-3">
                                                 <p class="circle_img_text mt-3">
-                                                    {{ __('translation.Initial_installation_date') }}
+                                                    {{ __('translation.Initial installation date') }}
                                                 </p>
                                             </div>
                                             <div class="col-lg-3 mt-2" style="flex-direction: column">

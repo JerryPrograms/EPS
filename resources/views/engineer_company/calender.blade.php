@@ -296,7 +296,7 @@
                             <input name="type" id="add_event_type" hidden>
                             <div class="col-4 text-end mt-4">
                                 <button id="type_btn" disabled>
-                                {{ __('translation.Week_end_Duty') }}
+                                {{ __('translation.Week end Duty') }}
                                 </button>
                             </div>
                             <div class="col-4 text-end">
@@ -305,18 +305,18 @@
                             </div>
                             <div class="col-12 mt-3">
                                 <input type="text" class="form-control w-50 border-blue-2px" name="title"
-                                       placeholder="{{ __('translation.Enter_Name') }}" required>
+                                       placeholder="{{ __('translation.Enter Name') }}" required>
                             </div>
                             <div class="col-12 mt-2">
                                 <input type="text" class="form-control border-blue-2px" name="memo"
-                                       placeholder="{{ __('translation.Enter_Memo') }}" required>
+                                       placeholder="{{ __('translation.Enter Memo') }}" required>
                             </div>
                             <div class="col-12 mt-3 text-center">
                                 <button type="submit" class="btn btn-primary submitbtn">
-                                {{ __('translation.Save_changes') }}
+                                {{ __('translation.Save changes') }}
                                 </button>
                             </div>
-                            <input name="assigned_by_id" value="123" hidden>
+                            <input name="assigned by id" value="123" hidden>
                         </div>
                         @csrf
                     </div>
@@ -343,15 +343,15 @@
                             </div>
                             <div class="col-12 mt-3">
                                 <input type="text" class="form-control w-50 border-blue-2px" name="title"
-                                       placeholder="{{ __('translation.Enter_Name') }}" required>
+                                       placeholder="{{ __('translation.Enter Name') }}" required>
                             </div>
                             <div class="col-12 mt-2">
                                 <input type="text" class="form-control border-blue-2px" name="memo"
-                                       placeholder="{{ __('translation.Enter_Memo') }}" required>
+                                       placeholder="{{ __('translation.Enter Memo') }}" required>
                             </div>
                             <div class="col-12 mt-3 text-center">
                                 <button type="submit" class="btn btn-primary submitbtn">
-                                {{ __('translation.Save_changes') }}
+                                {{ __('translation.Save changes') }}
                                 </button>
                             </div>
                             <input name="user_id" value="{{auth('engineer_company')->user()->id}}" hidden>
@@ -370,7 +370,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="EditAndDeleteEventCompleteModalLabel">
-                    {{ __('translation.Edit_Event') }}
+                    {{ __('translation.Edit Event') }}
                     </h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -384,7 +384,7 @@
                             <label for="formrow-firstname-input" class="form-label">Title</label>
                             <input type="text" id="a_title" class="form-control" name="title"
 
-                                   placeholder="{{ __('translation.Enter_Your_First_Name') }}" required>
+                                   placeholder="{{ __('translation.Enter Your First Name') }}" required>
                         </div>
                         <div class="row">
                             <div class="col-md-12">
@@ -394,7 +394,7 @@
                                     </label>
                                     <input id="a_start_date" type="date" class="form-control" name="start_date"
 
-                                           placeholder="{{ __('translation.Enter_Your_Email_ID') }}"required>
+                                           placeholder="{{ __('translation.Enter Your Email ID') }}"required>
                                 </div>
                             </div>
                             <div class="col-md-12">
@@ -414,29 +414,29 @@
                             <div class="col-md-12">
                                 <div class="mb-3">
                                     <label for="formrow-inputCity" class="form-label">
-                                    {{ __('translation.Select_Type') }}
+                                    {{ __('translation.Select Type') }}
                                     </label>
                                     <select id="a_type" class="form-select" name="type" required>
                                         <option value="" selected disabled>
                                         {{ __('translation.select') }}
                                         </option>
                                         <option value="weekend duty">
-                                        {{ __('translation.weekend_duty') }}
+                                        {{ __('translation.weekend duty') }}
                                         </option>
                                         <option value="weekend shift">
-                                        {{ __('translation.weekend_shift') }}
+                                        {{ __('translation.weekend shift') }}
                                         </option>
                                         <option value="night shift">
-                                        {{ __('translation.night_shift') }}
+                                        {{ __('translation.night shift') }}
                                         </option>
                                         <option value="holiday duty">
-                                        {{ __('translation.holiday_duty') }}
+                                        {{ __('translation.holiday duty') }}
                                         </option>
                                         <option value="construction">
                                         {{ __('translation.construction') }}
                                         </option>
                                         <option value="Periodic inspection">
-                                        {{ __('translation.Periodic_inspection') }}
+                                        {{ __('translation.Periodic inspection') }}
                                         </option>
                                     </select>
                                 </div>
@@ -452,7 +452,7 @@
                         {{ __('translation.delete') }}
                     </button>
                         <button type="submit" class="btn btn-primary submitbtn">
-                        {{ __('translation.Save_changes') }}
+                        {{ __('translation.Save changes') }}
                         </button>
                     </div>
                 </form>
