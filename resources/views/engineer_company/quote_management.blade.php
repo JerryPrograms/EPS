@@ -16,10 +16,13 @@
                                     <h4 class="card-title mb-4">Quote Managemnet List</h4>
                                     <div class="d-flex align-items-center table-top-actions gap-1">
                                         <div class="buttons d-flex align-items-center justify-content-between gap-1">
-                                            <div class="position-relative">
-                                                <input class="form-control" placeholder="Search here">
+                                            <div class="d-flex">
+                                                <form class="d-flex">
+                                                    <input class="form-control me-2" placeholder="Search here" required type="text">
+                                                    <a href="javascript:void(0)" class="btn btn-primary">Search</a>
+                                                </form>
                                             </div>
-                                            <a href="javascript:void(0)" class="btn btn-primary">Search</a>
+
                                             <a href="{{route('ec.AddQuote',$customer->user_uid)}}"
                                                class="btn btn-primary">Add</a>
                                             <a onclick="OpenModal()" href="javascript:void(0)" class="btn btn-primary">Delete</a>
@@ -496,6 +499,53 @@
             submitHandler: function () {
                 ajaxCall($('#deleteQuoteForm'), "{{ route('DeleteQuote') }}", $('.submitbtn'), "{{ route('ec.GetQuoteManagement',request()->segment(3)) }}", onRequestSuccess);
             }
+        });
+
+
+        $('#customerSearchForm').submit(function (e) {
+
+            $('.searchbar_button').attr('disabled', true);
+            e.preventDefault();
+            var form = $('#customerSearchForm')[0];
+            var formData = new FormData(form);
+            let prompt = $('.prompt');
+
+            $.ajax({
+
+                type: "POST",
+                url: '{{route('SearchCustomerInfo')}}',
+                dataType: 'json',
+                data: formData,
+                contentType: false,
+                processData: false,
+                cache: false,
+                mimeType: "multipart/form-data",
+                beforeSend: function () {
+                    $('#clearFilter').removeClass('d-none');
+                },
+                success: function (res) {
+
+                    $('.searchbar_button').attr('disabled', false);
+
+                    if (res.success == false) {
+                        prompt.html('<div class="alert alert-danger">' + res.message + '</div>');
+
+                        $("div.prompt").fadeIn();
+                        setTimeout(function () {
+                            $("div.prompt").fadeOut();
+                        }, 2000);
+
+                    } else if (res.success == true) {
+
+                        $('#customer_list_table').html('');
+                        $('#customer_list_table').append(res.html);
+                    }
+                },
+                error: function (e) {
+
+
+                }
+            });
         });
 
     </script>

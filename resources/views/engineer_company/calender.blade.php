@@ -189,7 +189,7 @@
                                             <div class="d-flex justify-content-between align-items-center mb-3">
 
                                                 <h6 class="fw-bold mb-0"><img class="me-1" style="width: 20px"
-                                                                              src="{{asset('engineer_company/assets/images/rect.png')}}">{{ __('translation.To_do_list') }}
+                                                                              src="{{asset('engineer_company/assets/images/rect.png')}}">{{ __('translation.To do list') }}
                                                     </h6>
 
                                                 <button id="btn-new-event" data-bs-toggle="modal"
@@ -234,7 +234,7 @@
                                             <div class="d-flex justify-content-between align-items-center mb-3">
 
                                                 <h6 class="fw-bold mb-0"><img class="me-1" style="width: 25px"
-                                                                              src="{{asset('engineer_company/assets/images/check.png')}}">{{ __('translation.Completed_list') }}</h6>
+                                                                              src="{{asset('engineer_company/assets/images/check.png')}}">{{ __('translation.Completed list') }}</h6>
 
                                             </div>
                                             <div class="">
@@ -475,7 +475,7 @@
                 themeSystem: 'bootstrap5',
                 customButtons: {
                     weekendDuty: {
-                        text: '{{ __('translation.Weekend_Duty') }}',
+                        text: '{{ __('translation.Weekend Duty') }}',
                         click: function () {
                             $('#addEventModal').modal('show');
                             $('#type_btn').addClass('fc-weekendDuty-button');
@@ -484,7 +484,7 @@
                         }
                     },
                     weekendShift: {
-                        text: '{{ __('translation.Weekend_Shift') }}',
+                        text: '{{ __('translation.Weekend Shift') }}',
                         click: function () {
                             $('#addEventModal').modal('show');
                             $('#type_btn').addClass('fc-weekendShift-button');
@@ -493,7 +493,7 @@
                         }
                     },
                     nightShift: {
-                        text: '{{ __('translation.Night_Shift') }}',
+                        text: '{{ __('translation.Night Shift') }}',
                         click: function () {
                             $('#addEventModal').modal('show');
                             $('#type_btn').addClass('fc-nightShift-button');
@@ -502,7 +502,7 @@
                         }
                     },
                     holidayDuty: {
-                        text: '{{ __('translation.Holiday_Duty') }}',
+                        text: '{{ __('translation.Holiday Duty') }}',
                         click: function () {
                             $('#addEventModal').modal('show');
                             $('#type_btn').addClass('fc-holidayDuty-button');
@@ -520,7 +520,7 @@
                         }
                     },
                     periodicInspection: {
-                        text: '{{ __('translation.Periodic_Inspection') }}',
+                        text: '{{ __('translation.Periodic Inspection') }}',
                         click: function () {
                             $('#addEventModal').modal('show');
                             $('#type_btn').addClass('fc-periodicInspection-button');
