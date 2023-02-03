@@ -29,7 +29,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet"
           type="text/css"/>
 
-
+    <link rel="stylesheet" type="text/css" href="{{asset('engineer_company/assets/libs/toastr/build/toastr.min.css')}}">
 
 </head>
 

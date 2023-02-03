@@ -1,5 +1,10 @@
 @extends('engineer_company.includes.layout')
 @section('body')
+    <style>
+        .selected-row {
+            border: 3px solid #6281FE !important;
+        }
+    </style>
     <div class="main-content">
         <div class="page-content">
             <div class="container-fluid">
@@ -11,10 +16,13 @@
                                     <h4 class="card-title mb-4">Quote Managemnet List</h4>
                                     <div class="d-flex align-items-center table-top-actions gap-1">
                                         <div class="buttons d-flex align-items-center justify-content-between gap-1">
+                                            <div class="position-relative">
+                                                <input class="form-control" placeholder="Search here">
+                                            </div>
                                             <a href="javascript:void(0)" class="btn btn-primary">Search</a>
                                             <a href="{{route('ec.AddQuote',$customer->user_uid)}}"
                                                class="btn btn-primary">Add</a>
-                                            <a href="javascript:void(0)" class="btn btn-primary">Delete</a>
+                                            <a onclick="OpenModal()" href="javascript:void(0)" class="btn btn-primary">Delete</a>
                                         </div>
                                     </div>
                                     <div id="customer_list_table" class="table-responsive mt-3">
@@ -34,6 +42,8 @@
     </div>
 @endsection
 @section('modal')
+
+    <!-- view modal -->
     <div class="modal fade" id="exampleModal0" tabindex="-1"
          aria-labelledby="exampleModalLabel"
          aria-hidden="true">
@@ -400,11 +410,93 @@
             </div>
         </div>
     </div>
+    <!-- delete modal -->
+    <div id="deleteQuoteModal" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel112"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="myModalLabel112">
+                        {{ __('translation.Delete_Parts_history_Replacement') }}
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+
+                <form id="deleteQuoteForm">
+                    @csrf
+                    <div class="modal-body">
+                        <div class="col-12">
+                            <div class="prompt w-100"></div>
+                            <p>
+                                {{ __('translation.Are_you_sure_you_want_to_delete_this_data?') }}
+                            </p>
+                            <div class="mb-3">
+
+                                <input name="id" id="quoteId" hidden autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary waves-effect"
+                                    data-bs-dismiss="modal">
+                                {{ __('translation.close') }}
+                            </button>
+                            <button type="submit"
+                                    class="btn btn-primary waves-effect waves-light submitbtn ">
+                                {{ __('translation.delete') }}
+                            </button>
+                        </div>
+
+                    </div><!-- /.modal-content -->
+                </form>
+            </div><!-- /.modal-dialog -->
+        </div>
+    </div>
 @endsection
 @section('custom-script')
 
     <script>
 
+        function SelectRow(row, id) {
+            $('tr').each(function () {
+                $(this).removeClass('selected-row');
+            });
+            row.addClass('selected-row');
+            $('#quoteId').val(id);
+        }
+
+        function OpenModal() {
+            if ($('#quoteId').val() == '') {
+                Command: toastr["error"]("You need to select row first")
+
+                toastr.options = {
+                    "closeButton": false,
+                    "debug": false,
+                    "newestOnTop": false,
+                    "progressBar": true,
+                    "positionClass": "toast-top-right",
+                    "preventDuplicates": true,
+                    "onclick": null,
+                    "showDuration": 300,
+                    "hideDuration": 1000,
+                    "timeOut": 2000,
+                    "extendedTimeOut": 1000,
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                }
+            } else {
+                $('#deleteQuoteModal').modal('show');
+
+            }
+        }
+
+        $('#deleteQuoteForm').validate({
+            submitHandler: function () {
+                ajaxCall($('#deleteQuoteForm'), "{{ route('DeleteQuote') }}", $('.submitbtn'), "{{ route('ec.GetQuoteManagement',request()->segment(3)) }}", onRequestSuccess);
+            }
+        });
 
     </script>
 @endsection

@@ -35,6 +35,12 @@
 
 <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.0.0/dist/signature_pad.umd.min.js"></script>
 
+<!-- toastr plugin -->
+<script src="{{asset('engineer_company/assets/libs/toastr/build/toastr.min.js')}}"></script>
+
+<!-- toastr init -->
+<script src="{{asset('engineer_company/assets/js/pages/toastr.init.js')}}"></script>
+
 <script>
     function HideShow(element, current) {
         if (element.hasClass('d-none')) {

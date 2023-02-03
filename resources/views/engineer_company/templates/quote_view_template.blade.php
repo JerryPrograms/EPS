@@ -260,7 +260,7 @@
                     @endphp
                     @foreach($quote->GetQuoteContent as $content)
                         @php
-                            $sum = $sum + $content->price;
+                            $sum = $sum + $content->price*$content->quantity;
                         @endphp
                         <tr>
                             <th class="custom-table-pdf">{{$content->content}}</th>
@@ -273,18 +273,8 @@
 
                     @endforeach
                     <tr>
-                        <th class="custom-table-pdf"></th>
-                        <td class="custom-table-pdf"></td>
-                        <td class="custom-table-pdf"></td>
-                        <td class="custom-table-pdf"></td>
-                        <td class="custom-table-pdf"></td>
-                        <td class="custom-table-pdf">{{$quote->total_amount}}</td>
-                    </tr>
-
-
-                    <tr>
                         <th class="custom-table-pdf-2"></th>
-                        <td class="custom-table-pdf-2">Public company Gun Shop</td>
+                        <td class="custom-table-pdf-2"></td>
                         <td class="custom-table-pdf-2"></td>
                         <td class="custom-table-pdf-2"></td>
                         <td class="custom-table-pdf-2"></td>

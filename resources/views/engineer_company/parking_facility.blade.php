@@ -650,7 +650,7 @@
 
         function RestrictNextDate(element) {
             console.log(element.val());
-            element.next().attr('min', element.val());
+            element.parent().next().children('input').attr('min', element.val());
         }
     </script>
 @endsection

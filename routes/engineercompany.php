@@ -167,6 +167,9 @@ Route::group(['prefix' => 'eps-panel', 'middleware' => 'CommonRoutes'], function
     //Route to Create Quote
     Route::post('/create-quote', [QuoteService::class, 'CreateQuote'])->name('CreateQuote');
 
+    //Route to Delete Quote
+    Route::post('/delete-quote', [QuoteService::class, 'DeleteQuote'])->name('DeleteQuote');
+
 });
 
 

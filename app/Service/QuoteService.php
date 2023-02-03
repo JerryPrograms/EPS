@@ -6,6 +6,7 @@ namespace App\Service;
 use App\Http\Requests\QuoteRequest;
 use App\Models\Quotation;
 use App\Models\QuotationContent;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class QuoteService
@@ -43,6 +44,23 @@ class QuoteService
 
             DB::rollBack();
 
+            return json_encode([
+                'success' => false,
+                'message' => $ex->getMessage(),
+            ]);
+        }
+    }
+
+    public static function DeleteQuote(Request $request)
+    {
+
+        try {
+            $quote = Quotation::where('id', $request->id)->delete();
+            return json_encode([
+                'success' => true,
+                'message' => 'Quote deleted successfully',
+            ]);
+        } catch (\Exception $ex) {
             return json_encode([
                 'success' => false,
                 'message' => $ex->getMessage(),
