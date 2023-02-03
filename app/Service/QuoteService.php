@@ -67,4 +67,12 @@ class QuoteService
             ]);
         }
     }
+
+    public static function GetQuote(Request $request)
+    {
+//        try {
+//            $getQuote = Quotation::where('id', $request->id)->first();
+//        }
+    }
+
 }

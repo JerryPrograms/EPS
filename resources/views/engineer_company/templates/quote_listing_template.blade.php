@@ -1,4 +1,4 @@
-<table class="table align-middle mb-0 table-theme">
+<table id="level1_listin_table_old" class="table align-middle mb-0 table-theme">
     <thead class="table-light">
     <tr>
 
@@ -44,7 +44,7 @@
                 일반유지보수
             </td>
             <td class="d-flex gap-1">
-                <button data-bs-toggle="modal" data-bs-target="#exampleModal0"
+                <button onclick="GetQuoteData('{{$q->id}}')" data-bs-toggle="modal" data-bs-target="#exampleModal0"
                         class="btn btn-outline-danger btn-theme-danger-outline btn-outline btn-sm">
                     <img src="{{ asset('engineer_company/assets/images/red-search.png') }}">
                 </button>

@@ -345,11 +345,11 @@
                             </div>
                             <div class="col-12 mt-3">
                                 <input type="text" class="form-control w-50 border-blue-2px" name="title"
-                                       placeholder="{{ __('translation.Enter Name') }}" required>
+                                       placeholder="{{ __('translation.Enter Title') }}" required>
                             </div>
                             <div class="col-12 mt-2">
                                 <input type="text" class="form-control border-blue-2px" name="memo"
-                                       placeholder="{{ __('translation.Enter Memo') }}" required>
+                                       placeholder="{{ __('translation.Enter Content') }}" required>
                             </div>
                             <div class="col-12 mt-3 text-center">
                                 <button type="submit" class="btn btn-primary submitbtn">

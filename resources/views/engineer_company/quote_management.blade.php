@@ -4,6 +4,17 @@
         .selected-row {
             border: 3px solid #6281FE !important;
         }
+
+        .modal-body-2 {
+            height: auto;
+            padding: 20px 20px 0px 40px;
+            border-top: 1px solid #000000;
+        }
+
+        .custom-modal-width {
+            width: 600px;
+            padding: 0px 10px 0px 10px;
+        }
     </style>
     <div class="main-content">
         <div class="page-content">
@@ -17,10 +28,11 @@
                                     <div class="d-flex align-items-center table-top-actions gap-1">
                                         <div class="buttons d-flex align-items-center justify-content-between gap-1">
                                             <div class="d-flex">
-                                                <form class="d-flex">
-                                                    <input class="form-control me-2" placeholder="Search here" required type="text">
-                                                    <a href="javascript:void(0)" class="btn btn-primary">Search</a>
-                                                </form>
+                                                <input id="search" class="form-control me-2" name="keyword"
+                                                       placeholder="Search here" required
+                                                       type="text"
+                                                       autocomplete="off">
+
                                             </div>
 
                                             <a href="{{route('ec.AddQuote',$customer->user_uid)}}"
@@ -47,7 +59,7 @@
 @section('modal')
 
     <!-- view modal -->
-    <div class="modal fade" id="exampleModal0" tabindex="-1"
+    <div class="modal fade " id="exampleModal0" tabindex="-1"
          aria-labelledby="exampleModalLabel"
          aria-hidden="true">
         <div class="modal-dialog">
@@ -55,7 +67,7 @@
                 <div class="modal-header">
                     <h5 class="modal-title"
                         id="exampleModalLabel">
-                        View Quoatation
+                        View Quotation
                     </h5>
                     <button type="button" class="btn-close"
                             data-bs-dismiss="modal"
@@ -86,7 +98,7 @@
                                                 <button
                                                     class="file_button">
                                                     <img
-                                                        src="images/Vector.png">
+                                                        src="{{asset('engineer_company/images/Vector.png')}}">
                                                 </button>
                                             </div>
                                         </div>
@@ -502,51 +514,37 @@
         });
 
 
-        $('#customerSearchForm').submit(function (e) {
+        var $rows = $('#level1_listin_table_old tr');
+        $('#search').keyup(function () {
+            var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
 
-            $('.searchbar_button').attr('disabled', true);
-            e.preventDefault();
-            var form = $('#customerSearchForm')[0];
-            var formData = new FormData(form);
-            let prompt = $('.prompt');
+            $rows.show().filter(function () {
+                var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+                return !~text.indexOf(val);
+            }).hide();
+        });
 
+
+        function GetQuoteData(id) {
             $.ajax({
 
                 type: "POST",
-                url: '{{route('SearchCustomerInfo')}}',
+                url: '{{route('GetQuote')}}',
                 dataType: 'json',
-                data: formData,
-                contentType: false,
-                processData: false,
-                cache: false,
-                mimeType: "multipart/form-data",
+                data: {
+                    'id': id,
+                    '_token': '{{csrf_token()}}',
+                },
                 beforeSend: function () {
-                    $('#clearFilter').removeClass('d-none');
                 },
                 success: function (res) {
-
-                    $('.searchbar_button').attr('disabled', false);
-
-                    if (res.success == false) {
-                        prompt.html('<div class="alert alert-danger">' + res.message + '</div>');
-
-                        $("div.prompt").fadeIn();
-                        setTimeout(function () {
-                            $("div.prompt").fadeOut();
-                        }, 2000);
-
-                    } else if (res.success == true) {
-
-                        $('#customer_list_table').html('');
-                        $('#customer_list_table').append(res.html);
-                    }
                 },
                 error: function (e) {
 
 
                 }
             });
-        });
+        }
 
     </script>
 @endsection
