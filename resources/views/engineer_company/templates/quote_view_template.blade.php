@@ -176,17 +176,25 @@
 
         <div class="row justify-content-center">
             <div class="col-lg-8">
-                <h4  class="text-center Opinions-text">Contract</h4>
-                <p class="bill-section">Company Name: <span
+                <h4  class="text-center Opinions-text">
+                    {{ __('translation.Contract') }}
+                </h4>
+                <p class="bill-section">
+                    {{ __('translation.Company Name:') }}
+                    <span
                         class="fnc-section">{{$quote->GetCustomer->maintenance_company}}</span></p>
-                <h4 class="page1-section">Page 1</h4>
+                <h4 class="page1-section">{{ __('translation.Page 1') }}</h4>
                 <h4 class="aAJ-Auto-section"> <span><img
                             src="{{asset('engineer_company/assets/images/screenshot.png')}}" height="20"
-                            alt=""></span> aAJ Auto Parking Systems</h4>
+                            alt=""></span>
+                            {{ __('translation.aAJ Auto Parking Systems') }}
+                        </h4>
             </div>
 
             <div>
-                <h4 style="padding-bottom: 250px" class="text-center fnc-entertainment-section">Contract</h4>
+                <h4 style="padding-bottom: 250px" class="text-center fnc-entertainment-section">
+                    {{ __('translation.Contract') }}
+                </h4>
                 <h4>&nbsp;</h4>
                 <div class="d-flex justify-content-center">
                     <p class="count-section">Company Name: {{$quote->GetCustomer->maintenance_company}}</p>
@@ -194,18 +202,19 @@
                         &nbsp;
                     </h4>
                 </div>
-                <p class="wish-section">We wish you the prosperity of your ear building and submit a quote as
-                    follows.
+                <p class="wish-section">
+                    {{ __('translation.We wish you the prosperity of your ear building and submit a quote as
+                    follows.') }}
                 </p>
                 <div class="d-flex justify-content-center">
-                    <p class="count-section">Construction Name: {{$quote->GetCustomer->building_management_company}}</p>
+                    <p class="count-section">{{ __('translation.Construction Name :') }} {{$quote->GetCustomer->building_management_company}}</p>
                     <h4 class="tel-text"><img src="{{asset('engineer_company/assets/images/screenshot2.png')}}"
                                               height="40" class="px-5">
                     </h4>
                 </div>
                 <div class="d-flex justify-content-center">
-                    <p class="count-section">Price:<span class="price-text">{{$quote->total_amount}} V.A.T</span></p>
-                    <h4 class="tel-text-2"> My Client Address info : {{$quote->GetCustomer->address}}</h4>
+                    <p class="count-section">{{ __('translation.Price') }}:<span class="price-text">{{$quote->total_amount}} V.A.T</span></p>
+                    <h4 class="tel-text-2"> {{ __('translation.My Client Address info') }}: {{$quote->GetCustomer->address}}</h4>
                 </div>
                 <div class="d-flex justify-content-center">
                     @php
@@ -216,42 +225,60 @@
                         @else
                             Date not expired yet
                         @endif</p>
-                    <h4 class="tel-text-2">Company Phone number : {{auth('engineer_company')->user()->phone}}</h4>
+                    <h4 class="tel-text-2">{{ __('translation.Company Phone number :') }}{{auth('engineer_company')->user()->phone}}</h4>
                 </div>
                 <div class="d-flex justify-content-center">
                     @php
                         $date = \Carbon\Carbon::parse($quote->contract_date);
                     @endphp
-                    <p class="count-section">Contract Date : {{$date->format('Y.m.d')}}</p>
+                    <p class="count-section">{{ __('translation.Contract Date : ') }} {{$date->format('Y.m.d')}}</p>
                     <h4 class="tel-text-2"></h4>
                 </div>
                 <div class="d-flex justify-content-center">
-                    <p class="count-section">Payment Condition : 100% Cash</p>
-                    <h4 class="tel-text-5">Fax Numer: {{$quote->GetCustomer->BuildingInformation->fax}} /
+                    <p class="count-section">{{ __('translation.Payment Condition : 100% Cash') }}</p>
+                    <h4 class="tel-text-5">{{ __('translation.Fax Numer:') }} {{$quote->GetCustomer->BuildingInformation->fax}} /
                         <span
-                            class="mx-1">Manager Phone : {{$quote->GetCustomer->BuildingInformation->manager_contact}}</span>
+                            class="mx-1">{{ __('translation.Manager Phone :') }} {{$quote->GetCustomer->BuildingInformation->manager_contact}}</span>
                     </h4>
                     <!-- <h4 class="tel-text-4">Manager Phone :  010-9902</h4> -->
                 </div>
                 <div class="d-flex justify-content-center">
                     <p class="count-section border-0">&nbsp;</p>
-                    <h4 class="tel-text-4">Ceo</h4>
-                    <h4 class="tel-text-4">Singature ommision</h4>
+                    <h4 class="tel-text-4">
+                        {{ __('translation.Ceo') }}
+                    </h4>
+                    <h4 class="tel-text-4">
+                        {{ __('translation.Singature ommision') }}
+                    </h4>
                 </div>
             </div>
 
 
             <div class="main-section">
-                <h1 class="page-text">Page</h1>
+                <h1 class="page-text">
+                    {{ __('translation.Page') }}
+                </h1>
                 <table class="table table-bordered custom-table-pdf">
                     <thead>
                     <tr>
-                        <th class="custom-table-pdf-3">Contents</th>
-                        <th class="custom-table-pdf-3">size</th>
-                        <th class="custom-table-pdf-3">unit</th>
-                        <th class="custom-table-pdf-3">Qty</th>
-                        <th class="custom-table-pdf-3">Unite Price</th>
-                        <th class="custom-table-pdf-3">Total Price</th>
+                        <th class="custom-table-pdf-3">
+                            {{ __('translation.Contents') }}
+                        </th>
+                        <th class="custom-table-pdf-3">
+                            {{ __('translation.size') }}
+                        </th>
+                        <th class="custom-table-pdf-3">
+                            {{ __('translation.unit') }}
+                        </th>
+                        <th class="custom-table-pdf-3">
+                            {{ __('translation.Qty') }}
+                        </th>
+                        <th class="custom-table-pdf-3">
+                            {{ __('translation.Unite Price') }}
+                        </th>
+                        <th class="custom-table-pdf-3">
+                            {{ __('translation.Total Price') }}
+                        </th>
                     </tr>
                     </thead>
                     <tbody>
@@ -286,8 +313,8 @@
                 </table>
             </div>
 
-            <p>NOTE : 1 Public company Gun Shop</p>
-            <p>2 VAT :</p>
+            <p>{{ __('translation.NOTE : 1 Public company Gun Shop') }}</p>
+            <p>{{ __('translation.2 VAT :') }}</p>
 
         </div>
     </div>

@@ -265,7 +265,7 @@
                                                     <div id="previous_image" class="w-100">
                                                         <label
                                                             class="form-label ">
-                                                            {{ __('translation.Contact_Person / Signature') }}</label>
+                                                            {{ __('translation.Contact Person / Signature') }}</label>
 
                                                         <img class="w-100" src="{{asset($dispatch->output)}}">
                                                         <button onclick="ChangeSignature()" class="btn btn-primary"
