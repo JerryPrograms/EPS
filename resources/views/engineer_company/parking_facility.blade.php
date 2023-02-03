@@ -20,7 +20,9 @@
                                     <div class="card-body mb-4">
                                         <div class="prompt w-100"></div>
                                         <h4 class="card-title mb-4">
-                                            {{ __('translation.Fill_in_customer_information') }}
+
+                                            {{ __('translation.Fill in customer information') }}
+
                                         </h4>
                                         <div class="row">
 
@@ -39,24 +41,28 @@
                                                 <thead class="table-light">
                                                 <tr>
 
-                                                    <th class="">{{ __('translation.no.') }}</th>
-                                                    <th class="text-center">
-                                                        {{ __('translation.Registration_Date') }}
+
+                                                    <th class="">
+                                                        {{ __('translation.no.') }}
                                                     </th>
                                                     <th class="text-center">
-                                                        {{ __('translation.Customer_Number') }}
+                                                        {{ __('translation.Registration Date') }}
                                                     </th>
                                                     <th class="text-center">
-                                                        {{ __('translation.Building_Name') }}
+                                                        {{ __('translation.Customer Number') }}
+                                                    </th>
+                                                    <th class="text-center">
+                                                        {{ __('translation.Building Name') }}
                                                     </th>
                                                     <th class="text-center">
                                                         {{ __('translation.address') }}
                                                     </th>
                                                     <th class="text-center">
-                                                        {{ __('translation.Building_Management_Company') }}
+                                                        {{ __('translation.Building Management Company') }}
                                                     </th>
                                                     <th class="text-center">
-                                                        {{ __('translation.Maintenance_Company') }}
+                                                        {{ __('translation.Maintenance Company') }}
+
                                                     </th>
                                                 </tr>
                                                 </thead>
@@ -122,7 +128,9 @@
 
                                                     <div class="">
                                                         <h4 class="card_tittle_2">
-                                                            {{ __('translation.customer_info') }}
+
+                                                            {{ __('translation.customer info') }}
+
                                                         </h4>
                                                     </div>
                                                 </div>
@@ -136,7 +144,9 @@
                                         <div class="row mt-3">
                                             <div class="col-lg-11 col-6">
                                                 <h4 class="card-title mt-2 border-bottom-0 mb-4"><span class="bor_lef">&nbsp;</span>Parking
-                                                    {{ __('translation.facility_certification_information') }}
+
+                                                    {{ __('translation.facility certification information') }}
+
                                                 </h4>
                                             </div>
                                             <div class="col-lg-1 col-6 no-print">
@@ -154,13 +164,19 @@
                                                     <label
                                                         class="form-label custom_lab mb-0 "> <span
                                                             class="star_section">*</span>
-                                                            {{ __('translation.Certification_Number') }}
+
+                                                            {{ __('translation.Certification Number') }}
+
                                                         </label>
                                                 </div>
                                                 <div class="col-md-8 col-12"><input type="text"
                                                                                     name="certification_number"
                                                                                     class="form-control w-100 custom_input"
-                                                                                    placeholder="{{ __('translation.Enter_certification_number') }}
+
+
+
+                                                    placeholder="{{ __('translation.Enter certification number') }}
+
                                                         " required
                                                                                     @if(!empty($customer->ParkingFacilityCertificate)) value="{{$customer->ParkingFacilityCertificate->certification_number}}" @endif>
                                                 </div>
@@ -215,13 +231,18 @@
                                                 <div class="col-md-4 col-12"><label
                                                         class="form-label custom_lab mb-0 "> <span
                                                             class="star_section">*</span>
-                                                            {{ __('translation.Number_of_parking_spaces') }}
+
+                                                            {{ __('translation.Number of parking spaces') }}
+
                                                     </label></div>
                                                 <div class="col-md-8 col-12"><input type="number" min="1"
                                                                                     name="parking_space"
                                                                                     class="form-control w-100  custom_input"
-                                                                                    placeholder="{{ __('translation.Enter_number_of_parking_space') }}"
-                                                                                    required
+
+
+                                            placeholder="{{ __('translation.Enter number of parking space') }}"
+                                            required
+
                                                                                     @if(!empty($customer->ParkingFacilityCertificate)) value="{{$customer->ParkingFacilityCertificate->parking_space}}" @endif
                                                     ></div>
                                             </div>
@@ -237,8 +258,9 @@
                                                                                     class="form-control w-100  custom_input"
 
 
-                                          placeholder="{{ __('translation.Enter_producer_name') }}
-                                                        " required
+
+                         placeholder="{{ __('translation.Enter producer name') }}" required
+
                                                                                     @if(!empty($customer->ParkingFacilityCertificate)) value="{{$customer->ParkingFacilityCertificate->producer}}" @endif
                                                     ></div>
                                             </div>
@@ -247,7 +269,9 @@
                                                 <div class="col-md-4 col-12"><label
                                                         class="form-label custom_lab mb-0 "> <span
                                                             class="star_section">*</span>
-                                                            {{ __('translation.year_of_installation') }}
+
+                                                            {{ __('translation.year of installation') }}
+
                                                     </label></div>
                                                 <div class="col-md-8 col-12"><input type="date"
                                                                                     name="year_of_installation"
@@ -261,7 +285,8 @@
                                             <div class="row align-items-center mt-4">
                                                 <div class="col-md-4 col-12"><label
                                                         class="form-label custom_lab mb-0 "> <span
-                                                            class="star_section">*</span> Inspection date
+                                                            class="star_section">*</span>
+                                                            {{ __('translation.Inspection date') }}
                                                     </label></div>
                                                 <div class="col-md-8 col-12"><input type="date" name="inspection_date"
                                                                                     class="form-control w-100  custom_input"
@@ -276,15 +301,19 @@
                                                 <div class="col-md-4 col-12"><label
                                                         class="form-label custom_lab mb-0 "> <span
                                                             class="star_section">*</span>
-                                                            {{ __('translation.Additional_Information') }}
+
+                                                            {{ __('translation.Additional Information') }}
                                                     </label></div>
                                                 <div class="col-md-8 col-12"><input type="text"
-                                                                                    name="addition_information"
-                                                                                    class="form-control w-100  custom_input"
-                                                                                    placeholder="{{ __('translation.Enter_additional_details') }}"
-                                                                                    @if(!empty($customer->ParkingFacilityCertificate)) value="{{$customer->ParkingFacilityCertificate->addition_information}}"
-                                                                                    @endif
-                                                                                    required></div>
+                                        name="addition_information"
+                                        class="form-control w-100  custom_input"
+
+
+                                        placeholder="{{ __('translation.Enter additional details') }}"
+                                        @if(!empty($customer->ParkingFacilityCertificate)) value="{{$customer->ParkingFacilityCertificate->addition_information}}"
+                                        @endif
+                                        required></div>
+
                                             </div>
 
                                         </div>
@@ -306,29 +335,33 @@
                                     <div class="card-body mb-4">
                                         <h4 class="card-title mt-2 border-bottom-0 mb-4"><span
                                                 class="bor_lef">&nbsp;</span>
-                                                {{ __('translation.Inspection_confirmation_certificate_(latest version)') }}
+
+                                                {{ __('translation.Inspection confirmation certificate (latest version)') }}
+
                                         </h4>
                                         <div class="table-responsive">
                                             <table class="table align-middle table-nowrap mb-0">
                                                 <thead class="table-light custom_bor_2">
-                            <tr>
 
-                                <th class="align-middle custom_heading custom_br_rd">
-                                    {{ __('translation.Inspection_Classification') }}
-                                </th>
-                                <th class="text-center align-middle custom_heading_2 custom_br_rd">
-                                    {{ __('translation.manager_name') }}
-                                </th>
-                                <th class="text-center custom_heading_2 align-middle  custom_br_rd">
-                                    {{ __('translation.Installation_place') }}
-                                </th>
-                                <th class="text-center custom_br_rd">
-                                    {{ __('translation.Periodic inspection (validity period)') }}
-                                </th>
-                                <th class="text-center custom_br_rd">
-                                    {{ __('translation.confirmation') }}
-                                </th>
-                            </tr>
+                                                <tr>
+
+                                                    <th class="align-middle custom_heading custom_br_rd">
+                                                        {{ __('translation.Inspection Classification') }}
+                                                    </th>
+                                                    <th class="text-center align-middle custom_heading_2 custom_br_rd">
+                                                        {{ __('translation.Manager Name') }}
+                                                    </th>
+                                                    <th class="text-center custom_heading_2 align-middle  custom_br_rd">
+                                                        {{ __('translation.Installation place') }}
+                                                    </th>
+                                                    <th class="text-center custom_br_rd">
+                                                        {{ __('translation.Periodic inspection (validity period)') }}
+                                                    </th>
+                                                    <th class="text-center custom_br_rd">
+                                                        {{ __('translation.confirmation') }}
+                                                    </th>
+                                                </tr>
+
                                                 </thead>
                                                 <tbody>
                                                 <tr class="tb_bor mt-5">
@@ -340,7 +373,9 @@
                                                     @endif
                                                     <td class="custom_br_rd">
                                                         <button class="chines_button">
-                                                            {{ __('translation.Precision_safety_inspection') }}
+
+                                                            {{ __('translation.Precision safety inspection') }}
+
                                                         </button>
                                                         <input id="1sad" name="inspection_type[]"
                                                                value="Precision safety inspection"
@@ -350,7 +385,7 @@
                                                         <input id="2adsdas" type="text" name="manager_name[]"
                                                                class="form-control col-lg-2 custom_input_tble_4"
 
-                                                               placeholder="Manager Name" required
+                                                               placeholder="{{ __('translation.Manager Name') }}" required
                                                                @if(count($customer->InspectionCertificate) > 0) value="{{$customer->InspectionCertificate[0]->manager_name}}" @endif
                                                         >
                                                     </td>
@@ -358,7 +393,8 @@
                                                         <input id="d1d21" type="text" name="installation_place[]"
                                                                class="form-control col-lg-2 custom_input_tble_3"
 
-                                                               placeholder="{{ __('translation.Enter_Place') }}" required
+                                                               placeholder="{{ __('translation.Enter Place') }}" required
+
                                                                @if(count($customer->InspectionCertificate) > 0) value="{{$customer->InspectionCertificate[0]->installation_place}}" @endif
                                                         >
                                                     </td>
@@ -380,7 +416,9 @@
                                                                        style="width: 147px !important;"
                                                                        class="form-control col-lg-2 custom_input_tble_2 w-50"
 
-                                                                       placeholder="{{ __('translation.From December 5, 2020 to August') }}"
+
+                                                                       placeholder="{{ __('translation.Regular Inspection inspection') }}"
+
                                                                        required
                                                                        @if(count($customer->InspectionCertificate) > 0) value="{{$customer->InspectionCertificate[0]->inspection_period_to}}" @endif
                                                                 >
@@ -419,7 +457,9 @@
                                                     @endif
                                                     <td class="custom_br_rd">
                                                         <button class="chines_button">
-                                                            {{ __('translation.Regular_Inspection_inspection') }}
+
+                                                            {{ __('translation.Regular Inspection inspection') }}
+
                                                         </button>
                                                         <input id="1d2dcas" name="inspection_type[]"
                                                                value="Regular Inspection inspection"
@@ -429,7 +469,9 @@
                                                         <input id="asdqwqwc" type="text" name="manager_name[]"
                                                                class="form-control col-lg-2 custom_input_tble_4"
 
-                                                               placeholder="{{ __('translation.manager_name') }}" required
+
+                                                               placeholder="{{ __('translation.Manager Name') }}" required
+
                                                                @if(count($customer->InspectionCertificate) > 0) value="{{$customer->InspectionCertificate[1]->manager_name}}" @endif
                                                         >
 
@@ -438,8 +480,9 @@
                                                         <input id="d11111cc" type="text" name="installation_place[]"
                                                                class="form-control col-lg-2 custom_input_tble_3"
 
-                                                               placeholder="{{ __('translation.Enter_Place') }}
-                                                                " required
+
+                                                               placeholder="{{ __('translation.Enter Place') }}" required
+
                                                                @if(count($customer->InspectionCertificate) > 0) value="{{$customer->InspectionCertificate[1]->installation_place}}" @endif
                                                         >
                                                     </td>
@@ -449,6 +492,7 @@
                                                                <input id="dq1i9hvubhkj" type="date" name="inspection_period_from[]"
                                                                       style="width: 147px !important;"
                                                                       class="form-control col-lg-2 custom_input_tble_2 w-50"
+
 
                                                                       placeholder="{{ __('translation.From December 5, 2020 to August') }}"
                                                                       required
@@ -460,6 +504,7 @@
                                                                 <input id="cqqew211223f" type="date" name="inspection_period_to[]"
                                                                        style="width: 147px !important;"
                                                                        class="form-control col-lg-2 custom_input_tble_2 w-50"
+
                                                                        placeholder="{{ __('translation.From December 5, 2020 to August') }}"
                                                                        required
                                                                        @if(count($customer->InspectionCertificate) > 0) value="{{$customer->InspectionCertificate[1]->inspection_period_to}}" @endif
@@ -500,7 +545,11 @@
                                                                hidden>
                                                     @endif
                                                     <td class="custom_br_rd">
-                                                        <button class="chines_button">{{ __('translation.Inspection_of_Use') }}</button>
+
+                                                        <button class="chines_button">
+                                                            {{ __('translation.Inspection of Use') }}
+                                                        </button>
+
                                                         <input name="inspection_type[]" value="Inspection of Use"
                                                                hidden>
                                                     </td>
@@ -508,7 +557,9 @@
                                                         <input id="ffrtyhjh" type="text" name="manager_name[]"
                                                                class="form-control col-lg-2 custom_input_tble_4"
 
-                                                               placeholder="{{ __('translation.manager_name') }}" required
+
+                                                               placeholder="{{ __('translation.Manager_Name') }}" required
+
                                                                @if(count($customer->InspectionCertificate) > 0) value="{{$customer->InspectionCertificate[2]->manager_name}}" @endif
                                                         >
                                                     </td>
@@ -516,8 +567,9 @@
                                                         <input id="pppodi1k" type="text" name="installation_place[]"
                                                                class="form-control col-lg-2 custom_input_tble_3"
 
-                                                               placeholder="{{ __('translation.Enter_Place') }}
-                                                                " required
+
+                                                               placeholder="{{ __('translation.Enter Place') }}" required
+
                                                                @if(count($customer->InspectionCertificate) > 0) value="{{$customer->InspectionCertificate[2]->installation_place}}" @endif
                                                         >
                                                     </td>
@@ -539,6 +591,7 @@
                                                                 <input id="d11d2d12d1d2" type="date" name="inspection_period_to[]"
                                                                        style="width: 147px !important;"
                                                                        class="form-control col-lg-2 custom_input_tble_2 w-50"
+
                                                                        placeholder="{{ __('translation.From December 5, 2020 to August') }}"
                                                                        required
                                                                        @if(count($customer->InspectionCertificate) > 0) value="{{$customer->InspectionCertificate[2]->inspection_period_to}}" @endif
@@ -581,11 +634,15 @@
                                             <div class="col-lg-2 col-6">
                                                 <button
                                                     onclick="window.location.href = '{{route("ec.CreateCompanyInfo",request()->segment(3))}}'"
-                                                    type="button" class="form_button_2 mb-5 mt-5">{{ __('translation.Back_page') }}
+
+                                                    type="button" class="form_button_2 mb-5 mt-5">
+                                                    {{ __('translation.Back_page') }}
                                                 </button>
                                             </div>
                                             <div class="col-lg-2 col-6">
-                                                <button class="form_button mb-5 mt-5">{{ __('translation.Save_and_Next') }}
+                                                <button class="form_button mb-5 mt-5">
+                                                    {{ __('translation.Save and Next') }}
+
                                                 </button>
                                             </div>
                                         </div>
@@ -612,7 +669,11 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">{{ __('translation.Parking_Facility_Certification') }}</h5>
+
+                    <h5 class="modal-title">
+                        {{ __('translation.Parking Facility Certification') }}
+                    </h5>
+
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">

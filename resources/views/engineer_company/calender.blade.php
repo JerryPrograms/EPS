@@ -170,7 +170,9 @@
                             <div class="card">
 
                                 <div class="card-body">
-                                    <h4 class="card-title mb-4">Calender</h4>
+                                    <h4 class="card-title mb-4">
+                                        {{ __('translation.calender') }}
+                                    </h4>
                                     <div id="calendar"></div>
 
                                     <div style='clear:both'></div>
@@ -305,15 +307,15 @@
                             </div>
                             <div class="col-12 mt-3">
                                 <input type="text" class="form-control w-50 border-blue-2px" name="title"
-                                       placeholder="{{ __('translation.Enter_Name') }}" required>
+                                       placeholder="{{ __('translation.Enter Name') }}" required>
                             </div>
                             <div class="col-12 mt-2">
                                 <input type="text" class="form-control border-blue-2px" name="memo"
-                                       placeholder="{{ __('translation.Enter_Memo') }}" required>
+                                       placeholder="{{ __('translation.Enter Memo') }}" required>
                             </div>
                             <div class="col-12 mt-3 text-center">
                                 <button type="submit" class="btn btn-primary submitbtn">
-                                {{ __('translation.Save_changes') }}
+                                {{ __('translation.Save changes') }}
                                 </button>
                             </div>
                             <input name="assigned_by_id" value="123" hidden>
@@ -343,15 +345,15 @@
                             </div>
                             <div class="col-12 mt-3">
                                 <input type="text" class="form-control w-50 border-blue-2px" name="title"
-                                       placeholder="{{ __('translation.Enter_Name') }}" required>
+                                       placeholder="{{ __('translation.Enter Name') }}" required>
                             </div>
                             <div class="col-12 mt-2">
                                 <input type="text" class="form-control border-blue-2px" name="memo"
-                                       placeholder="{{ __('translation.Enter_Memo') }}" required>
+                                       placeholder="{{ __('translation.Enter Memo') }}" required>
                             </div>
                             <div class="col-12 mt-3 text-center">
                                 <button type="submit" class="btn btn-primary submitbtn">
-                                {{ __('translation.Save_changes') }}
+                                {{ __('translation.Save changes') }}
                                 </button>
                             </div>
                             <input name="user_id" value="{{auth('engineer_company')->user()->id}}" hidden>
@@ -384,7 +386,7 @@
                             <label for="formrow-firstname-input" class="form-label">Title</label>
                             <input type="text" id="a_title" class="form-control" name="title"
 
-                                   placeholder="{{ __('translation.Enter_Your_First_Name') }}" required>
+                                   placeholder="{{ __('translation.Enter Your First Name') }}" required>
                         </div>
                         <div class="row">
                             <div class="col-md-12">
@@ -394,7 +396,7 @@
                                     </label>
                                     <input id="a_start_date" type="date" class="form-control" name="start_date"
 
-                                           placeholder="{{ __('translation.Enter_Your_Email_ID') }}"required>
+                                           placeholder="{{ __('translation.Enter Your Email ID') }}"required>
                                 </div>
                             </div>
                             <div class="col-md-12">
@@ -404,7 +406,7 @@
                                     </label>
                                     <input id="a_memo" type="text" class="form-control" name="memo"
 
-                                           placeholder="Enter memo" required>
+                                           placeholder="{{ __('translation.Enter memo') }}" required>
                                 </div>
                             </div>
                             <input name="assigned_by_id" value="1" hidden>
@@ -421,22 +423,22 @@
                                         {{ __('translation.select') }}
                                         </option>
                                         <option value="weekend duty">
-                                        {{ __('translation.weekend_duty') }}
+                                        {{ __('translation.weekend duty') }}
                                         </option>
                                         <option value="weekend shift">
-                                        {{ __('translation.weekend_shift') }}
+                                        {{ __('translation.weekend shift') }}
                                         </option>
                                         <option value="night shift">
-                                        {{ __('translation.night_shift') }}
+                                        {{ __('translation.night shift') }}
                                         </option>
                                         <option value="holiday duty">
-                                        {{ __('translation.holiday_duty') }}
+                                        {{ __('translation.holiday duty') }}
                                         </option>
                                         <option value="construction">
                                         {{ __('translation.construction') }}
                                         </option>
                                         <option value="Periodic inspection">
-                                        {{ __('translation.Periodic_inspection') }}
+                                        {{ __('translation.Periodic inspection') }}
                                         </option>
                                     </select>
                                 </div>
@@ -452,7 +454,7 @@
                         {{ __('translation.delete') }}
                     </button>
                         <button type="submit" class="btn btn-primary submitbtn">
-                        {{ __('translation.Save_changes') }}
+                        {{ __('translation.Save changes') }}
                         </button>
                     </div>
                 </form>

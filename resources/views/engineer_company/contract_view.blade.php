@@ -8,26 +8,37 @@
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title mb-4">Contract Managemnet List</h4>
+                                    <h4 class="card-title mb-4">
+                                        {{ __('translation.Contract Managemnet List') }}
+                                    </h4>
                                     <div id="customer_list_table" class="table-responsive mt-3">
                                         <table class="table align-middle mb-0 table-theme">
                                             <thead class="table-light">
                                                 <tr>
-                                        
-                                                    <th class="">No.</th>
-                                                    <th class="text-center">Contract Date
+                                                    <th class="">
+                                                        {{ __('translation.no.') }}
                                                     </th>
-                                                    <th class="text-center">Customer No
+                                                    <th class="text-center">
+                                                        {{ __('translation.Contract Date') }}
                                                     </th>
-                                                    <th class="text-center">Building Name
+                                                    <th class="text-center">
+                                                        {{ __('translation.Customer No') }}
                                                     </th>
-                                                    <th class="text-center">Address</th>
-                                        
-                                                    <th class="text-center">Building Management Company
+                                                    <th class="text-center">
+                                                        {{ __('translation.Building Name') }}
                                                     </th>
-                                                    <th class="text-center">Contents
+                                                    <th class="text-center">
+                                                        {{ __('translation.address') }}
                                                     </th>
-                                                    <th class="text-center">Actions
+
+                                                    <th class="text-center">
+                                                        {{ __('translation.Building Management Company') }}
+                                                    </th>
+                                                    <th class="text-center">
+                                                        {{ __('translation.contents') }}
+                                                    </th>
+                                                    <th class="text-center">
+                                                        {{ __('translation.actions') }}
                                                     </th>
                                                 </tr>
                                             </thead>
@@ -78,8 +89,10 @@
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title mb-4">Contract Management List</h4>
-                                    
+                                    <h4 class="card-title mb-4">
+                                        {{ __('translation.Contract Management List') }}
+                                    </h4>
+
                                 </div>
                             </div>
                         </div>
