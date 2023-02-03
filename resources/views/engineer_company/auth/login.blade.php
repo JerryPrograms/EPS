@@ -55,13 +55,15 @@
                     <form class="card-body p-lg-5" method="POST" id="loginForm">
                         @csrf
                         <div>
-                            <h3>Login</h3>
-                            <p>EVERY PARKING SOLUTION</p>
+                            <h3>{{ __('translation.login') }}</h3>
+                            <p>{{ __('translation.EVERY PARKING SOLUTION') }}</p>
                             <div class="prompt"></div>
                             <div class="form-floating mt-5 d-flex flex-column">
                                 <input type="email" class="form-control custom_input" name="email" id="email"
-                                       placeholder="Email Email Address" required>
-                                <label for="email">ID</label>
+                                       placeholder="{{ __('translation.Email Email Address') }}" required>
+                                <label for="email">
+                                    {{ __('translation.Id') }}
+                                </label>
                                 <span class="Custom_icon">
                                         <img src="{{asset('engineer_company/images/profile_gray.png')}}"
                                              class="user_icon">
@@ -70,8 +72,9 @@
 
                             <div class="form-floating mt-4 d-flex flex-column">
                                 <input type="password" class="form-control custom_input" id="password"
-                                       placeholder="Enter your password" name="password" required>
-                                <label for="password">password
+                                       placeholder="{{ __('translation.Enter your password') }}" name="password" required>
+                                <label for="password">
+                                    {{ __('translation.password') }}
                                 </label>
                                 <span class="Custom_icon">
                                         <img src="{{asset('engineer_company/images/lock.png')}}" class="lock_icon">
@@ -81,7 +84,8 @@
 
                             <div class="col-lg-12" style="text-align: end;">
                                 <div class="mt-4 pt-3">
-                                    <a href="#" class="form_text">find password
+                                    <a href="#" class="form_text">
+                                        {{ __('translation.find password') }}
                                     </a>
 
                                 </div>
@@ -89,7 +93,8 @@
                             </div>
                             <div class="col-lg-12" style="text-align: end;">
                                 <div class="">
-                                    <a href="{{route('ec.GetECSignup')}}" class="form_text">New to EPS? Signup here!
+                                    <a href="{{route('ec.GetECSignup')}}" class="form_text">
+                                        {{ __('translation.New to EPS? Signup here!') }}
                                     </a>
 
                                 </div>
@@ -99,7 +104,7 @@
                             <div class="col-lg-12 pl-2 pr-2">
                                 <div class="buton_sett mt-5">
                                     <button type="submit" id="login_btn" class="btn btn-primary btn-theme-auth w-100">
-                                        Login
+                                        {{ __('translation.login') }}
                                     </button>
                                 </div>
                             </div>

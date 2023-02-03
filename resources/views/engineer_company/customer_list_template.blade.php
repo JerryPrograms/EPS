@@ -6,22 +6,22 @@
             {{ __('translation.no.') }}
         </th>
         <th class="text-center">
-            {{ __('translation.Registration_Date') }}
+            {{ __('translation.Registration Date') }}
         </th>
         <th class="text-center">
-            {{ __('translation.Customer_Number') }}
+            {{ __('translation.Customer Number') }}
         </th>
         <th class="text-center">
-            {{ __('translation.Building_Name') }}
+            {{ __('translation.Building Name') }}
         </th>
         <th class="text-center">
             {{ __('translation.address') }}
         </th>
         <th class="text-center">
-            {{ __('translation.Building_Management_Company') }}
+            {{ __('translation.Building Management Company') }}
         </th>
         <th class="text-center">
-            {{ __('translation.Maintenance_Company') }}
+            {{ __('translation.Maintenance Company') }}
         </th>
         <th class="text-center">
             {{ __('translation.action') }}

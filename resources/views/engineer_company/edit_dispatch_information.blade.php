@@ -35,7 +35,9 @@
                                                 <div class="col-lg-11">
                                                     <div class="">
                                                         <h4 class="card_tittle_2">
-                                                            {{ __('translation.Dispatch_Confirmation') }}
+
+                                                            {{ __('translation.Dispatch Confirmation') }}
+
                                                         </h4>
                                                     </div>
                                                 </div>
@@ -50,7 +52,9 @@
                                             <div class="col-lg-11">
                                                 <h4 class="card-title border-bottom-0 mb-4"> <span
                                                         class="bor_lef">&nbsp;</span>
-                                                        {{ __('translation.Reception_Information') }}
+
+                                                        {{ __('translation.Reception Information') }}
+
                                                 </h4>
                                             </div>
 
@@ -60,7 +64,8 @@
                                                     <label
                                                         class="form-label "> <span
                                                             class="star_section">*</span>
-                                                            {{ __('translation.site_name') }}
+                                                            {{ __('translation.site name') }}
+
                                                         </label>
                                                 </div>
                                                 <div class="col-lg-8 col-12">
@@ -80,7 +85,9 @@
                                                         class="form-label "> <span
                                                             class="star_section">*</span>
                                                             {{ __('translation.Reception date and time') }}
-                                                        </label>
+
+                                                            </label>
+
                                                 </div>
                                                 <div class="col-lg-8 col-12">
                                                     <input type="datetime-local" required name="reception_date_and_time"
@@ -98,7 +105,9 @@
                                                     <label
                                                         class="form-label "> <span
                                                             class="star_section">*</span>
-                                                            {{ __('translation.Model_and_number') }}
+
+                                                            {{ __('translation.Model and number') }}
+
                                                         </label>
                                                 </div>
                                                 <div class="col-lg-8 col-12">
@@ -118,7 +127,11 @@
                                                     <label
                                                         class="form-label "> <span
                                                             class="star_section">*</span>
-                                                            {{ __('translation.Submission_details') }}</label>
+
+                                                            {{ __('translation.Submission details') }}
+                                                        </label>
+
+
                                                 </div>
                                                 <div class="col-lg-8 col-12">
                                                     <textarea required name="submission_details"
@@ -147,7 +160,9 @@
                                             <div class="col-lg-11">
                                                 <h4 class="card-title border-bottom-0 mb-4"> <span
                                                         class="bor_lef">&nbsp;</span>
-                                                        {{ __('translation.Dispatch_Information') }}
+
+                                                        {{ __('translation.Dispatch Information') }}
+
                                                 </h4>
                                             </div>
 
@@ -156,7 +171,9 @@
                                                     <label
                                                         class="form-label "> <span
                                                             class="star_section">*</span>
-                                                            {{ __('translation.Failure_cause') }}
+
+                                                            {{ __('translation.Failure cause') }}
+
                                                         </label>
                                                 </div>
                                                 <div class="col-lg-8 col-12">
@@ -188,6 +205,7 @@
                                                             class="star_section">*</span>
                                                             {{ __('translation.undecided') }}
                                                         </label>
+
                                                 </div>
                                                 <div class="col-lg-8 col-12">
                                                     <textarea required name="undecided"
@@ -206,10 +224,10 @@
                                                 </div>
                                                 <div class="col-lg-8 col-12">
                                                     <input type="text" required name="dispatcher"
-                                                           class=" custom_input w-100 custom_color_gray"
-                                                           aria-describedby="emailHelp"
-                                                           placeholder="Fill in pending issues"
-                                                           value="{{$dispatch->dispatcher}}"
+                                                class=" custom_input w-100 custom_color_gray"
+                                                aria-describedby="emailHelp"
+                                                placeholder="{{ __('translation.Fill in pending issues') }}"
+                                                value="{{$dispatch->dispatcher}}"
                                                     >
                                                 </div>
                                             </div>
@@ -218,32 +236,37 @@
                                                     <label
                                                         class="form-label "> <span
                                                             class="star_section">*</span>
-                                                            {{ __('translation.Customer_Confirmation') }}
+
+                                                            {{ __('translation.Customer Confirmation') }}
+
                                                         </label>
                                                 </div>
                                                 <div class="col-lg-8 col-12">
                                                     <div id="canvas_image" class="w-100 ">
                                                         <label
                                                             class="form-label ">
-                                                            {{ __('translation.Contact_Person_/_Signature') }}
+
+                                                            {{ __('translation.Contact Person / Signature') }}
+
                                                         </label>
                                                         <canvas id="signature-pad" name="signature"
                                                                 class="signature-pad w-100" style="touch-action: none;
                                                     height: 223px;
                                                     border: 1px solid;
                                                     padding: 10px;"></canvas>
-                                            <span id="canvas_error" class="error d-none">
-                                                {{ __('translation.Please_add_signature') }}
-                                            </span>
-                                            <input type="hidden" name="output" class="output">
-                                            <button class="btn btn-danger" type="button" id="clear"><i
-                                                    class="fa fa-remove"></i></button>
-                                        </div>
+
+                                                        <span id="canvas_error" class="error d-none">
+                                                            {{ __('translation.Please add signature') }}
+                                                        </span>
+                                                        <input type="hidden" name="output" class="output">
+                                                        <button class="btn btn-danger" type="button" id="clear"><i
+                                                                class="fa fa-remove"></i></button>
+                                                    </div>
                                                     <div id="previous_image" class="w-100">
                                                         <label
                                                             class="form-label ">
-                                                            {{ __('translation.Contact_Person_/_Signature') }}
-                                                        </label>
+                                                            {{ __('translation.Contact_Person / Signature') }}</label>
+
                                                         <img class="w-100" src="{{asset($dispatch->output)}}">
                                                         <button onclick="ChangeSignature()" class="btn btn-primary"
                                                                 type="button" id="clear"><i
@@ -251,7 +274,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-
 
                                         </div>
                                         <!-- form row 2 end  -->
@@ -262,7 +284,9 @@
                                             <div class="row justify-content-end">
                                                 <div class="col-lg-2">
                                                     <button class="confirm_button_2 mb-5 mt-5 submitbtn">
-                                                        {{ __('translation.Contract_Date') }}
+
+                                                        {{ __('translation.confirm') }}
+
                                                     </button>
                                                 </div>
                                             </div>

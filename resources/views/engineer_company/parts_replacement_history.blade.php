@@ -16,7 +16,9 @@
                                 <div class="card">
                                     <div class="card-body mb-4">
                                         <h4 class="card-title mb-4">
-                                            {{ __('translation.Fill_in_customer_information') }}
+
+                                            {{ __('translation.Fill in customer information') }}
+
                                         </h4>
                                         <div class="row">
 
@@ -25,7 +27,6 @@
                                                     <button class="circle_img_section">
                                                         <img src="{{asset('engineer_company/images/user2.png')}}">
                                                         <p class="circle_img_text mt-3">기사 홍길동
-
                                                         </p>
                                                     </button>
                                                 </div>
@@ -40,24 +41,26 @@
 
                                                     <th class="">
                                                         {{ __('translation.no.') }}
+
                                                     </th>
                                                     <th class="text-center">
-                                                        {{ __('translation.Registration_Date') }}
+                                                        {{ __('translation.Registration Date') }}
                                                     </th>
                                                     <th class="text-center">
-                                                        {{ __('translation.Customer_Number') }}
+                                                        {{ __('translation.Customer Number') }}
                                                     </th>
                                                     <th class="text-center">
-                                                        {{ __('translation.Building_Name') }}
+                                                        {{ __('translation.Building Name') }}
                                                     </th>
                                                     <th class="text-center">
                                                         {{ __('translation.address') }}
                                                     </th>
                                                     <th class="text-center">
-                                                        {{ __('translation.Building_Management_Company') }}
+                                                        {{ __('translation.Building Management Company') }}
                                                     </th>
                                                     <th class="text-center">
-                                                        {{ __('translation.Maintenance_Company') }}
+                                                        {{ __('translation.Maintenance Company') }}
+
                                                     </th>
                                                 </tr>
                                                 </thead>
@@ -123,7 +126,9 @@
                                                 <div class="col-lg-11">
                                                     <div class="">
                                                         <h4 class="card_tittle_2">
-                                                            {{ __('translation.Customer_information_creation_page') }}
+
+                                                            {{ __('translation.Customer information creation page') }}
+
                                                         </h4>
                                                     </div>
                                                 </div>
@@ -138,7 +143,9 @@
                                             <div class="col-lg-11">
                                                 <h4 class="card-title border-bottom-0"> <span
                                                         class="bor_lef">&nbsp;</span>
-                                                        {{ __('translation.Customer_Information') }}
+
+                                                        {{ __('translation.Customer Information') }}
+
                                                 </h4>
                                             </div>
                                             <div class="col-lg-1">
@@ -157,7 +164,9 @@
                                         <div class="row">
                                             <div class="col-lg-3">
                                                 <p class="circle_img_text mt-3">
-                                                    {{ __('translation.Initial_installation_date') }}
+
+                                                    {{ __('translation.Initial installation date') }}
+
                                                 </p>
                                             </div>
                                             <div class="col-lg-3 mt-2" style="flex-direction: column">
@@ -180,7 +189,9 @@
                                             <div class="col-lg-3">
                                                 <p class="circle_img_text mt-3">
                                                     <b>
-                                                        {{ __('translation.Failure_and_replacement_history') }}
+
+                                                        {{ __('translation.Failure and replacement history') }}
+
                                                     </b>
                                                 </p>
                                             </div>
@@ -195,7 +206,8 @@
                                             </div>
                                             <div class="col-lg-6 text-end">
                                                 <button type="button" onclick="addReplacementHistoryRow()"
-                                                        class="history_add_btn">Add
+                                                        class="history_add_btn">
+                                                        {{ __('translation.add') }}
                                                 </button>
                                             </div>
                                         </div>
@@ -215,9 +227,12 @@
                                         <table class="table align-middle mb-0">
                                             <thead class="table-light">
                                             <tr>
-                                                <th>{{ __('translation.no.') }}</th>
+
+                                                <th>
+                                                    {{ __('translation.no.') }}
+                                                </th>
                                                 <th class="text-center custom_inp_widt_2">
-                                                <th>{{ __('translation.Registration_Date') }}</th>
+                                                    {{ __('translation.Registration Date') }}
                                                 </th>
                                                 <th class="text-center custom_inp_widt_2">
                                                     {{ __('translation.part') }}
@@ -226,9 +241,10 @@
                                                     {{ __('translation.manager') }}
                                                 </th>
                                                 <th class="text-center">
-                                                    {{ __('translation.AS_content') }}
+                                                    {{ __('translation.AS content') }}
                                                 </th>
                                                 <th class="text-center">
+
                                                     {{ __('translation.action') }}
                                                 </th>
                                             </tr>
@@ -303,12 +319,16 @@
                                                 <button
                                                     onclick="window.location.href='{{route("ec.CreateKeyAccessoryHistory",request()->segment(3))}}'"
                                                     type="button" class="form_button_2 mb-5 mt-5">
-                                                    {{ __('translation.Back_page') }}
+
+                                                    {{ __('translation.Back page') }}
+
                                                 </button>
                                             </div>
                                             <div class="col-lg-2 col-6">
                                                 <button class="form_button mb-5 mt-5 submitbtn">
-                                                    {{ __('translation.Save_and_Next') }}
+
+                                                    {{ __('translation.Save and Next') }}
+
                                                 </button>
                                             </div>
                                         </div>
@@ -333,7 +353,9 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="myModalLabel">
-                        {{ __('translation.Delete_Parts_history_Replacement') }}
+
+                        {{ __('translation.Delete Parts history Replacement') }}
+
                     </h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                             aria-label="Close"></button>
@@ -345,7 +367,9 @@
                         <div class="col-12">
                             <div class="prompt w-100"></div>
                             <p>
-                                {{ __('translation.Are_you_sure_you_want_to_delete_this_data?') }}
+
+                                {{ __('translation.Are you sure you want to delete this data?') }}
+
                             </p>
                             <div class="mb-3">
 
@@ -394,7 +418,7 @@
                                                 <input type="text" name="part[]"
                                                     class="form-control col-lg-2 custom_input_tble"
                                                      aria-describedby="emailHelp"
-                                                    placeholder="Part name"
+                                                    placeholder="{{ __('translation.Part name') }}"
                                                      required>
                                             </td>
 
@@ -402,7 +426,7 @@
                                                 <input type="text" name="manager[]"
                                                     class="form-control col-lg-12 custom_input_tble"
                                                      aria-describedby="emailHelp"
-                                                    placeholder="Manager Name
+                                                    placeholder="{{ __('translation.Manager Name') }}
                                                     " required>
                                             </td>
 
@@ -410,8 +434,7 @@
                                                 <input type="text" name="as_content[]"
                                                     class="form-control col-lg-2 custom_input_tble"
                                                      aria-describedby="emailHelp"
-                                                    placeholder="AS content
-                                                    " required>
+                                                    placeholder="{{ __('translation.AS content') }}" required>
                                             </td>
 
                                  <td class="custom_br_theme_gray_3">
