@@ -347,7 +347,7 @@
                                                         </td>
 
                                                         <td>
-                                                <input type="text" name="check_contents[]" required class="form-control col-lg-2 custom_input_tble"  aria-describedby="emailHelp" placeholder="{{ __('translation.Center lift replacement') }">
+                                                <input type="text" name="check_contents[]" required class="form-control col-lg-2 custom_input_tble"  aria-describedby="emailHelp" placeholder="{{ __('translation.Center lift replacement') }}">
                                                         </td>
 
                                                         <td class="text-center">
