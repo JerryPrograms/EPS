@@ -15,10 +15,13 @@ return new class extends Migration {
         Schema::create('monthly_regular_inspections', function (Blueprint $table) {
             $table->id();
             $table->foreignId('customer_id')->constrained('customer_infos')->cascadeOnDelete();
-            $table->date('date');
-            $table->string('photo');
-            $table->string('manager');
-            $table->string('check_contents');
+            $table->date('inspection_date');
+            $table->dateTime('arrival_time');
+            $table->dateTime('completion_time');
+            $table->string('inspection_manager');
+            $table->longText('check_contents');
+            $table->longText('special_notes')->nullable();
+            $table->longText('signature')->nullable();
             $table->timestamps();
         });
     }

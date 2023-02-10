@@ -168,33 +168,25 @@
                                                                 @if(empty($customer->ParkingFacilityCertificate)) selected
                                                                 @endif disabled>--Select Type--
                                                         </option>
-                                                        <option
+                                                        {{-- <option
                                                             @if(!empty($customer->ParkingFacilityCertificate) && $customer->ParkingFacilityCertificate->type == 'Multilayer Circulation') selected
                                                             @endif value="Multilayer Circulation">Multilayer Circulation
+                                                        </option> --}}
+                                                        <option
+                                                            @if(!empty($customer->ParkingFacilityCertificate) && $customer->ParkingFacilityCertificate->type == 'elevator_type') selected
+                                                            @endif value="elevator_type">Elevator Type
                                                         </option>
                                                         <option
-                                                            @if(!empty($customer->ParkingFacilityCertificate) && $customer->ParkingFacilityCertificate->type == 'Elevator type') selected
-                                                            @endif value="Elevator type">Elevator type
+                                                            @if(!empty($customer->ParkingFacilityCertificate) && $customer->ParkingFacilityCertificate->type == 'flat_reciprocating_type') selected
+                                                            @endif value="flat_reciprocating_type">Flat Reciprocating Type
                                                         </option>
                                                         <option
-                                                            @if(!empty($customer->ParkingFacilityCertificate) && $customer->ParkingFacilityCertificate->type == 'Plane Reciprocating') selected
-                                                            @endif value="Plane Reciprocating">Plane Reciprocating
+                                                            @if(!empty($customer->ParkingFacilityCertificate) && $customer->ParkingFacilityCertificate->type == 'multi_floor_circulation') selected
+                                                            @endif value="multi_floor_circulation">Multi Floor Circulation
                                                         </option>
                                                         <option
-                                                            @if(!empty($customer->ParkingFacilityCertificate) && $customer->ParkingFacilityCertificate->type == 'Rotary system') selected
-                                                            @endif value="Rotary system">Rotary system
-                                                        </option>
-                                                        <option
-                                                            @if(!empty($customer->ParkingFacilityCertificate) && $customer->ParkingFacilityCertificate->type == 'Multilayer Circulation') selected
-                                                            @endif value="Multilayer Circulation">Multilayer Circulation
-                                                        </option>
-                                                        <option
-                                                            @if(!empty($customer->ParkingFacilityCertificate) && $customer->ParkingFacilityCertificate->type == 'Stacca') selected
-                                                            @endif value="Stacca">Stacca
-                                                        </option>
-                                                        <option
-                                                            @if(!empty($customer->ParkingFacilityCertificate) && $customer->ParkingFacilityCertificate->type == 'Puzzle') selected
-                                                            @endif value="Puzzle">Puzzle
+                                                            @if(!empty($customer->ParkingFacilityCertificate) && $customer->ParkingFacilityCertificate->type == 'vertical_circulation') selected
+                                                            @endif value="vertical_circulation">Vertical Circulation
                                                         </option>
                                                     </select>
                                                 </div>

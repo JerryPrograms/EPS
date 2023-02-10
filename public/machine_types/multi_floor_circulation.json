@@ -1,0 +1,391 @@
+[
+    {
+        "elevation": [
+            {
+                "control_panel_and_operation_panel": [
+                    {
+                        "question_title": "Operation panel touch screen operation status",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "operation_panel_touch_screen_operation_status"
+                    },
+                    {
+                        "question_title": "Emergency S/W and various S/W operation status",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "emergency_s_w_and_various_s_w_operation_status"
+                    },
+                    {
+                        "question_title": "Inverter, braking resistor operation status",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "inverter_braking_resistor_operation_status"
+                    },
+                    {
+                        "question_title": "Control panel interior cleanliness",
+                        "situation": "B",
+                        "inspection_duration": "3, 9",
+                        "input_name": "control_panel_interior_cleanliness"
+                    },
+                    {
+                        "question_title": "Operation status of various parts [magnet, relay, etc.]",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "operation_status_of_various_parts_magnet_relay_etc"
+                    },
+                    {
+                        "question_title": "PLC input, output signal and communication operation status",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "PLC_input_output_signal_and_communication_operation_status"
+                    },
+                    {
+                        "question_title": "Terminal block bolt tightening condition",
+                        "situation": "B",
+                        "inspection_duration": "3, 6, 9",
+                        "input_name": "terminal_block_bolt_tightening_condition"
+                    }
+                ]
+            },
+            {
+                "entrance": [
+                    {
+                        "question_title": "Door operation and parts [S/W, Shoe, Rope] status",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "door_operation_and_parts_S_W_shoe_rope_status"
+                    },
+                    {
+                        "question_title": "Guidance light, indicator operation status",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "guidance_light_indicator_operation_status"
+                    },
+                    {
+                        "question_title": "Various nameplates attached, guide mirror condition",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "various_nameplates_attached_guide_mirror_condition"
+                    }
+                ]
+            },
+            {
+                "platform": [
+                    {
+                        "question_title": "Fixed and operating status of various sensors",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "fixed_and_operating_status_of_various_sensors"
+                    },
+                    {
+                        "question_title": "Anti-skid stopper status",
+                        "situation": "B",
+                        "inspection_duration": "3, 6, 9",
+                        "input_name": "anti_skid_stopper_status"
+                    },
+                    {
+                        "question_title": "Guidance light, warning light, buzzer status",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "guidance_light_warning_light_buzzer_status"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "built_in_turntable": [
+            {
+                "built_in_turntable": [
+                    {
+                        "question_title": "Driving motor fixed and noise condition",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "driving_motor_fixed_and_noise_condition"
+                    },
+                    {
+                        "question_title": "State of rollers (drive, bottom, side)",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "state_of_rollers_drive_bottom_side"
+                    },
+                    {
+                        "question_title": "Swing gear, chain lubrication and noise condition",
+                        "situation": "B",
+                        "inspection_duration": "2, 5, 8, 11",
+                        "input_name": "swing_gear_chain_lubrication_and_noise_condition"
+                    },
+                    {
+                        "question_title": "Position and sensor operation status",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "position_and_sensor_operation_status"
+                    },
+                    {
+                        "question_title": "Position motor as state",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "position_motor_as_state"
+                    },
+                    {
+                        "question_title": "Condition of Dust Collector & Transfer Cable",
+                        "situation": "B",
+                        "inspection_duration": "2, 5, 8, 11",
+                        "input_name": "condition_of_dust_collector_and_transfer_cable"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "hoistway": [
+            {
+                "main_lift": [
+                    {
+                        "question_title": "Motor, reducer fixed and noise condition",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "motor_reducer_fixed_and_noise_condition"
+                    },
+                    {
+                        "question_title": "Motor brake operation and lining wear, gap condition",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "motor_brake_operation_and_lining_wear_gap_condition"
+                    },
+                    {
+                        "question_title": "Reducer oil leakage and oil level condition",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "reducer_oil_leakage_and_oil_level_condition"
+                    },
+                    {
+                        "question_title": "Lift chain tension and lubrication",
+                        "situation": "B",
+                        "inspection_duration": "2, 5, 8, 11",
+                        "input_name": "lift_chain_tension_and_lubrication"
+                    },
+                    {
+                        "question_title": "Chain wear and connecting pin condition (split pin)",
+                        "situation": "B",
+                        "inspection_duration": "2, 5, 8, 11",
+                        "input_name": "chain_wear_and_connecting_pin_condition_split pin"
+                    },
+                    {
+                        "question_title": "Pallet position (circulation rail) level and sensor operation status",
+                        "situation": "B",
+                        "inspection_duration": "2, 5, 8, 11",
+                        "input_name": "pallet_position_circulation rail_level_and_sensor_operation_status"
+                    },
+                    {
+                        "question_title": "Take-Up Tension and Srocker State",
+                        "situation": "B",
+                        "inspection_duration": "2, 5, 8, 11",
+                        "input_name": "take_up_tension_and_srocker_state"
+                    },
+                    {
+                        "question_title": "Circulation Rail Camfollow Bearing Condition",
+                        "situation": "B",
+                        "inspection_duration": "2, 5, 8, 11",
+                        "input_name": "circulation_rail_camfollow_bearing_condition"
+                    },
+                    {
+                        "question_title": "Upper UCP, UCFL lower UCT bearing fixed and lubricated",
+                        "situation": "B",
+                        "inspection_duration": "2, 5, 8, 11",
+                        "input_name": "upper_UCP_UCFL_lower_UCT_bearing_fixed_and_lubricated"
+                    },
+                    {
+                        "question_title": "Chain cut detection switch (upper/lower limit overrun, deceleration) operation status",
+                        "situation": "B",
+                        "inspection_duration": "3, 9",
+                        "input_name": "chain_cut_detection_switch_upper_lower_limit_overrun_deceleration_operation_status"
+                    },
+                    {
+                        "question_title": "Limit switch (upper/lower limit overrun, deceleration) operation status",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "limit_switch_upper_lower_limit_overrun_deceleration_operation_status"
+                    },
+                    {
+                        "question_title": "Circulation rail, guide rail fixed deformed state",
+                        "situation": "B",
+                        "inspection_duration": "3, 9",
+                        "input_name": "circulation_rail_guid_rail_fixed_deformed_state"
+                    }
+                ]
+            },
+            {
+                "auxiliary_lift_L2_L3": [
+                    {
+                        "question_title": "Motor, reducer, drive shaft fixed and noise condition",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "motor_reducer_drive_shaft_fixed_and_noise_condition"
+                    },
+                    {
+                        "question_title": "Motor brake operation and lining wear, gap condition",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "motor_brake_operation_and_lining_wear_gap_condition"
+                    },
+                    {
+                        "question_title": "Reducer oil leakage and oil level condition",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "reducer_oil_leakage_and_oil_level_condition"
+                    },
+                    {
+                        "question_title": "Lift chain tension and lubrication",
+                        "situation": "B",
+                        "inspection_duration": "2, 5, 8, 11",
+                        "input_name": "lift_chain_tension_and_lubrication"
+                    },
+                    {
+                        "question_title": "Chain wear and connecting pin condition (split pin)",
+                        "situation": "B",
+                        "inspection_duration": "2, 5, 8, 11",
+                        "input_name": "chain_wear_and_connecting_pin_condition_split pin"
+                    },
+                    {
+                        "question_title": "Pallet position (circulation rail) level and sensor operation status",
+                        "situation": "B",
+                        "inspection_duration": "2, 5, 8, 11",
+                        "input_name": "pallet_position_circulation rail_level_and_sensor_operation_status"
+                    },
+                    {
+                        "question_title": "Take-Up Tension and Srocker State",
+                        "situation": "B",
+                        "inspection_duration": "2, 5, 8, 11",
+                        "input_name": "take_up_tension_and_srocker_state"
+                    },
+                    {
+                        "question_title": "Circulation Rail Camfollow Bearing Condition",
+                        "situation": "B",
+                        "inspection_duration": "2, 5, 8, 11",
+                        "input_name": "circulation_rail_camfollow_bearing_condition"
+                    },
+                    {
+                        "question_title": "Upper UCP, UCFL lower UCT bearing fixed and lubricated",
+                        "situation": "B",
+                        "inspection_duration": "2, 5, 8, 11",
+                        "input_name": "upper_UCP_UCFL_lower_UCT_bearing_fixed_and_lubricated"
+                    },
+                    {
+                        "question_title": "Chain break detection switch interval and operation status",
+                        "situation": "B",
+                        "inspection_duration": "3, 9",
+                        "input_name": "chain_break_detection_switch_interval_and_operation_status"
+                    },
+                    {
+                        "question_title": "Limit switch (upper/lower limit overrun, deceleration) operation status",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "limit_switch_upper_lower_limit_overrun_deceleration_operation_status"
+                    },
+                    {
+                        "question_title": "Circulation rail, guide rail fixed deformed state",
+                        "situation": "B",
+                        "inspection_duration": "3, 9",
+                        "input_name": "circulation_rail_guid_rail_fixed_deformed_state"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "hoistway": [
+            {
+                "main_lift": [
+                    {
+                        "question_title": "Motor, reducer fixed and noise condition",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "motor_reducer_fixed_and_noise_condition"
+                    },
+                    {
+                        "question_title": "Motor brake operation and lining wear, gap condition",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "motor_brake_operation_and_lining_wear_gap_condition"
+                    },
+                    {
+                        "question_title": "Reducer oil leakage and oil level condition",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "reducer_oil_leakage_and_oil_level_condition"
+                    },
+                    {
+                        "question_title": "Traverse chain tension and lubrication condition",
+                        "situation": "B",
+                        "inspection_duration": "2, 5, 8, 11",
+                        "input_name": "traverse_chain_tension_and_lubrication_condition"
+                    },
+                    {
+                        "question_title": "Traverse drive shaft and pinion gear fixed, wear condition",
+                        "situation": "B",
+                        "inspection_duration": "2, 5, 8, 11",
+                        "input_name": "traverse_drive_shaft_and_pinion_gear_fixed_wear_condition"
+                    },
+                    {
+                        "question_title": "Position, wheel detection sensor operation status",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "position_wheel_detection_sensor_operation_status"
+                    },
+                    {
+                        "question_title": "Pallet roller status",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "pallet_roller_status"
+                    },
+                    {
+                        "question_title": "Pallet Link(LUG) & Camfollow Bearing Status",
+                        "situation": "B",
+                        "inspection_duration": "2, 5, 8, 11",
+                        "input_name": "pallet_link_LUG_and_camfollow_bearing_status"
+                    },
+                    {
+                        "question_title": "Pallet Shaft Pin wear and lubrication condition",
+                        "situation": "B",
+                        "inspection_duration": "2, 5, 8, 11",
+                        "input_name": "pallet_shaft_pin_wear_and_lubrication_condition"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "etc": [
+            {
+                "etc": [
+                    {
+                        "question_title": "Steel vertical, horizontal & pallet deformation status",
+                        "situation": "B",
+                        "inspection_duration": "3, 9",
+                        "input_name": "steel_vertical_horizontal_and_pallet_deformation_status"
+                    },
+                    {
+                        "question_title": "Bolt tightening condition",
+                        "situation": "B",
+                        "inspection_duration": "3, 9",
+                        "input_name": "bolt_tightening_condition"
+                    },
+                    {
+                        "question_title": "External turntable condition (drive motor, roller operation and noise condition, deformation and damage of frame)",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "external_turntable_condition_drive_motor,_roller_operation_and_noise_condition_deformation_and_damage_of_frame"
+                    },
+                    {
+                        "question_title": "Paint corrosion condition",
+                        "situation": "B",
+                        "inspection_duration": "3, 9",
+                        "input_name": "paint_corrosion_condition"
+                    }
+                ]
+            }
+        ]
+    }
+
+]

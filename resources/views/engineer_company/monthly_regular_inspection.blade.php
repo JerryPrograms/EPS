@@ -216,10 +216,7 @@
                                     <div class="main_section_buttn">
                                         <div class="row justify-content-end">
                                             <div class="col-lg-2 col-6">
-                                                <button type="button"
-                                                        onclick="window.location.href='{{route("ec.CreatePartsReplacementHistory",$customer->user_uid)}}'"
-                                                        class="form_button_2 mb-5 mt-5">Back page
-                                                </button>
+                                                <button type="button" onclick="window.location.href='{{route("ec.CreatePartsReplacementHistory",$customer->user_uid)}}'" class="form_button_2 mb-5 mt-5">Back page</button>
                                             </div>
                                             <div class="col-lg-2 col-6">
                                                 <a href="#">

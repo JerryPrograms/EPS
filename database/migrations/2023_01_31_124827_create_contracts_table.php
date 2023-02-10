@@ -17,11 +17,9 @@ return new class extends Migration
             $table->id();
             $table->foreignId('customer_id')->constrained('customer_infos')->cascadeOnDelete();
             $table->string('type', 100);
-            $table->date('contract_date')->default(new DateTime());
-            $table->text('building_name');
-            $table->longText('building_address');
+            $table->date('contract_date');
             $table->longText('contract_file');
-            $table->longText('contract_description');
+            $table->longText('contract_description')->nullable();
             $table->timestamps();
         });
     }

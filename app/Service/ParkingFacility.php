@@ -18,11 +18,7 @@ class ParkingFacility
 
         try {
 
-
-
-
             DB::beginTransaction();
-
 
             $parking_facility = array();
             $parking_facility['customer_id'] = $request->customer_id;

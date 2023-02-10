@@ -78,8 +78,7 @@
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title mb-4">Contract Management List</h4>
-                                    
+                                    <h4 class="card-title mb-4">Contract Details</h4>
                                 </div>
                             </div>
                         </div>
