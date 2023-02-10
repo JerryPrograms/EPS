@@ -76,7 +76,7 @@
                                                             <td>{{ $customer->building_name }}</td>
                                                             <td>{{ $customer->building_name }}</td>
                                                             <td class="d-flex gap-1 justify-content-center">
-                                                                <a href="javascript:void(0)"
+                                                                <a href="{{ route('edit_regular_inspection_log',$v->id) }}"
                                                                     class="btn btn-outline-success btn-theme-success-outline btn-outline btn-sm">
                                                                     <img
                                                                         src="{{ asset('engineer_company/images/edit_icon.png') }}">
