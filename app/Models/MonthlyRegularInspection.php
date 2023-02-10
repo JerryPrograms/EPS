@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\CustomerInfo;
 
 class MonthlyRegularInspection extends Model
 {
@@ -12,4 +13,9 @@ class MonthlyRegularInspection extends Model
     protected $guarded = [];
 
     protected $casts = ['arrival_time'=>'datetime','completion_time'=>'datetime','inspection_date'=>'datetime'];
+
+    public function getCustomer()
+    {
+        return $this->hasOne(CustomerInfo::class, 'id', 'customer_id')->with(['BuildingInformation','ParkingFacilityCertificate']);
+    }
 }

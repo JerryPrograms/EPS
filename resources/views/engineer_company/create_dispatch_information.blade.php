@@ -222,12 +222,7 @@
                                                             {{ __('translation.Contact Person / Signature') }}
                                                         </label>
 
-                                                        <canvas id="signature-pad" name="signature"
-                                                                class="signature-pad w-100" style="touch-action: none;
-
-                                                    height: 223px;
-                                                    border: 1px solid;
-                                                    padding: 10px;"></canvas>
+                                                        <canvas id="signature-pad" name="signature" class="signature-pad w-100" style="touch-action: none;height: 223px;border: 1px solid;padding: 10px;"></canvas>
                                                         <input type="hidden" name="output" class="output">
                                                         <button class="btn btn-danger" type="button" id="clear"><i
                                                                 class="fa fa-remove"></i></button>

@@ -55,12 +55,18 @@ class InspectionController extends Controller
 	        'inspection_manager' => 'required',
             'inspection' => 'required',
             'special_notes' => 'required',
-            'signature' => 'required'
+            'output' => 'required'
 	    ]);
 	    if($validate->fails())
 	    {
 	    	return response()->json(["success" => false , 'message' => $validate->errors()->first()]);
 	    }
+
+        $base64_str = substr($request->output, strpos($request->output, ",") + 1);
+        $image = base64_decode($base64_str);
+        $safeName = \Str::random(10) . '.' . 'png';
+        \Storage::disk('public')->put('engineer_company/inspection/' . $safeName, $image);
+        $signature = 'storage/engineer_company/inspection/' . $safeName;
         
         $inspectionSave = MonthlyRegularInspection::create([
             'customer_id' => $request->user_uid,
@@ -70,11 +76,71 @@ class InspectionController extends Controller
             'inspection_manager' => $request->inspection_manager,
             'check_contents' => json_encode($request->inspection),
             'special_notes' => $request->special_notes,
-            'signature' => $request->signature
+            'signature' => $signature
         ]);
 
         if($inspectionSave){
             return json_encode(['success' => true, 'message' => 'Inspection saved successfuly']);
+        }else{
+            return json_encode(['success' => false, 'message' => 'Error : Please try again']);
+        }
+    }
+
+    public function edit_regular_inspection_log($id){
+        $customer = MonthlyRegularInspection::with('getCustomer')->where('id',$id)->first();
+        // dd($customer);
+        if(!empty($customer->getCustomer->ParkingFacilityCertificate)){
+            if($customer->getCustomer->ParkingFacilityCertificate->type == 'flat_reciprocating_type'){
+
+                $file_content = file_get_contents(public_path('machine_types/flat_reciprocating_type.json'));
+
+            }else if($customer->getCustomer->ParkingFacilityCertificate->type == 'elevator_type'){
+
+                $file_content = file_get_contents(public_path('machine_types/elevator_type.json'));
+
+            }else if($customer->getCustomer->ParkingFacilityCertificate->type == 'vertical_circulation'){
+
+                $file_content = file_get_contents(public_path('machine_types/vertical_circulation.json'));
+
+            }else if($customer->getCustomer->ParkingFacilityCertificate->type == 'multi_floor_circulation'){
+
+                $file_content = file_get_contents(public_path('machine_types/multi_floor_circulation.json'));
+            }
+        }else{
+
+            $file_content = null;
+
+        }
+        if(!empty($file_content)){
+            $file_content = json_decode($file_content);
+        }
+        return view('engineer_company.edit_regular_inspection_log',compact('customer','file_content'));
+    }
+
+    public function edit_inspection_action(Request $request){
+        $validate = \Validator::make($request->all(),[
+	        'inspection_date' => 'required',
+	        'arrival_time' => 'required',
+	        'completion_time' => 'required',
+	        'inspection_manager' => 'required',
+            'inspection' => 'required',
+            'special_notes' => 'required',
+	    ]);
+	    if($validate->fails())
+	    {
+	    	return response()->json(["success" => false , 'message' => $validate->errors()->first()]);
+	    }
+        $inspectionEdit = MonthlyRegularInspection::where('id',$request->inspection_id)->update([
+            'inspection_date' => $request->inspection_date,
+            'arrival_time' => $request->arrival_time,
+            'completion_time' => $request->completion_time,
+            'inspection_manager' => $request->inspection_manager,
+            'check_contents' => json_encode($request->inspection),
+            'special_notes' => $request->special_notes,
+        ]);
+
+        if($inspectionEdit){
+            return json_encode(['success' => true, 'message' => 'Inspection edited successfuly']);
         }else{
             return json_encode(['success' => false, 'message' => 'Error : Please try again']);
         }

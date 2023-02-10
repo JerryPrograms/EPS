@@ -1,13 +1,17 @@
 @extends('engineer_company.includes.layout')
 @section('body')
+@php 
+$check_content = json_decode($customer->check_contents,true);
+@endphp
     <div class="main-content">
         <div class="page-content">
             <div class="container-fluid">
                 <div class="main_content_section">
-                    @if (!empty($customer->BuildingInformation) && !empty($customer->ParkingFacilityCertificate))
+                    @if (!empty($customer->getCustomer->BuildingInformation) && !empty($customer->getCustomer->ParkingFacilityCertificate))
                         <form id="inspectionForm">
                             @csrf
-                            <input type="hidden" name="user_uid" value="{{ $customer->id }}">
+                            <input type="hidden" name="user_uid" value="{{ $customer->getCustomer->id }}">
+                            <input type="hidden" name="inspection_id" value="{{ $customer->id }}">
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="card">
@@ -32,7 +36,7 @@
                                                     </div>
                                                     <div class="col-lg-10 col-md-6 col-12">
                                                         <input type="text" class="form-control form-theme-input"
-                                                            id="building_name" value="{{ $customer->building_name }}"
+                                                            id="building_name" value="{{ $customer->getCustomer->building_name }}"
                                                             disabled placeholder="Site name is displayed automatically">
                                                     </div>
                                                 </div>
@@ -44,7 +48,7 @@
                                                     </div>
                                                     <div class="col-lg-10 col-md-6 col-12">
                                                         <input type="date" class="form-control form-theme-input"
-                                                            name="inspection_date" id="inspection_date"
+                                                            name="inspection_date" value="{{ $customer->inspection_date->format('Y-m-d') }}" id="inspection_date"
                                                             placeholder="Come out automatically" required>
                                                     </div>
                                                 </div>
@@ -58,7 +62,7 @@
                                                         <input type="text" class="form-control form-theme-input"
                                                             id="type_and_number"
                                                             placeholder="Come out automatically"
-                                                            value="{{ str_replace('_', ' ', $customer->ParkingFacilityCertificate->type) }}"
+                                                            value="{{ str_replace('_', ' ', $customer->getCustomer->ParkingFacilityCertificate->type) }}"
                                                             disabled>
                                                     </div>
                                                 </div>
@@ -70,7 +74,7 @@
                                                     </div>
                                                     <div class="col-lg-10 col-md-6 col-12">
                                                         <input type="date" class="form-control form-theme-input"
-                                                            id="arrival_time" name="arrival_time" required>
+                                                            id="arrival_time" value="{{ $customer->arrival_time->format('Y-m-d') }}" name="arrival_time" required>
                                                     </div>
                                                 </div>
                                             </div>
@@ -81,7 +85,7 @@
                                                     </div>
                                                     <div class="col-lg-10 col-md-6 col-12">
                                                         <input type="date" class="form-control form-theme-input"
-                                                            id="completion_time" name="completion_time" required>
+                                                            id="completion_time" value="{{ $customer->completion_time->format('Y-m-d') }}" name="completion_time" required>
                                                     </div>
                                                 </div>
                                             </div>
@@ -94,7 +98,7 @@
                                                         <input type="text" class="form-control form-theme-input"
                                                             id="checker" name="inspection_manager"
                                                             placeholder="Come out automatically"
-                                                            value="{{ $customer->ParkingFacilityCertificate->producer }}"
+                                                            value="{{ $customer->getCustomer->ParkingFacilityCertificate->producer }}"
                                                             required>
                                                     </div>
                                                 </div>
@@ -116,7 +120,7 @@
                                                             <h4
                                                                 class="card_tittle_2 d-flex align-items-center mb-2 text-capitalize">
                                                                 Parking Facility Periodic Inspection Table -
-                                                                {{ str_replace('_', ' ', $customer->ParkingFacilityCertificate->type) }}
+                                                                {{ str_replace('_', ' ', $customer->getCustomer->ParkingFacilityCertificate->type) }}
                                                             </h4>
                                                         </div>
                                                     </div>
@@ -212,15 +216,15 @@
                                                                                     <input type="radio"
                                                                                         class="inspection-grade"
                                                                                         name="inspection[{{ $main_category }}][{{ $sub_category_accordion }}][{{ $v3->input_name }}]"
-                                                                                        value="A" {{ $v3->situation == 'A' ? 'checked' : '' }}>
+                                                                                        value="A" {{ $check_content[$main_category][$sub_category_accordion][$v3->input_name] == 'A' ? 'checked' : '' }}>
                                                                                     <input type="radio"
                                                                                         class="inspection-grade"
                                                                                         name="inspection[{{ $main_category }}][{{ $sub_category_accordion }}][{{ $v3->input_name }}]"
-                                                                                        value="B" {{ $v3->situation == 'B' ? 'checked' : '' }}>
+                                                                                        value="B" {{ $check_content[$main_category][$sub_category_accordion][$v3->input_name] == 'B' ? 'checked' : '' }}>
                                                                                     <input type="radio"
                                                                                         class="inspection-grade"
                                                                                         name="inspection[{{ $main_category }}][{{ $sub_category_accordion }}][{{ $v3->input_name }}]"
-                                                                                        value="C" {{ $v3->situation == 'C' ? 'checked' : '' }}>
+                                                                                        value="C" {{ $check_content[$main_category][$sub_category_accordion][$v3->input_name] == 'C' ? 'checked' : '' }}>
                                                                                 </div>
                                                                             </td>
                                                                             <td class="text-black">{{  $v3->inspection_duration }}</td>
@@ -254,7 +258,7 @@
                                                                 <tbody>
                                                                     <tr>
                                                                         <td>
-                                                                            <textarea name="special_notes" id="special_notes" rows="5" class="form-control" style="border-radius: 0;"></textarea>
+                                                                            <textarea name="special_notes" id="special_notes" rows="5" class="form-control" style="border-radius: 0;">{{ $customer->special_notes }}</textarea>
                                                                         </td>
                                                                     </tr>
                                                                 </tbody>
@@ -263,18 +267,10 @@
                                                     </div>
                                                 </div>
                                                 {{-- accordion item end --}}
-                                                <div class="form-group mt-3" style="padding: 12px 20px;border: 1px solid #E1E3EC;">
-                                                    <div class="d-flex align-items-center justify-content-between pb-2">
-                                                        <h4 class="mb-0" style="font-size: 14px;">8. Customer side verifier</h4>
-                                                        <button class="btn btn-danger btn-sm" type="button" id="clear">clear</button>
-                                                    </div>
-                                                    <canvas id="signature-pad" name="signature" class="signature-pad w-100" style="touch-action: none;height: 180px;padding: 10px;border: 1px solid #E1E3EC;"></canvas>
-                                                        <input type="hidden" name="output" class="output">
-                                                </div>
                                             </div>
                                             {{-- accordion end --}}
                                             <div class="form-action mt-3 text-right">
-                                                <button type="submit" id="formBtn" class="btn btn-primary">Save Inspection</button>
+                                                <button type="submit" id="formBtn" class="btn btn-primary">Edit Inspection</button>
                                             </div>
                                         </div>
                                     </div>
@@ -290,7 +286,7 @@
                                         <div class="alert alert-danger mb-0">Please enter Building information & Parking
                                             facility
                                             certification information. <a
-                                                href="{{ route('regular_inspection_log', $customer->user_uid) }}"
+                                                href="{{ route('regular_inspection_log', $customer->getCustomer->user_uid) }}"
                                                 class="text-primary mx-2 text-decoration-underline">Back</a></div>
                                     </div>
                                 </div>
@@ -346,10 +342,8 @@
         });
         $('#inspectionForm').validate({
             submitHandler: function() {
-                var imageData = signaturePad.toDataURL();
-                document.getElementsByName("output")[0].setAttribute("value", imageData);
-                ajaxCall($('#inspectionForm'), "{{ route('save_inspection_action') }}", $('#formBtn'),
-                    "{{ route('regular_inspection_log',$customer->user_uid) }}", onRequestSuccess);
+                ajaxCall($('#inspectionForm'), "{{ route('edit_inspection_action') }}", $('#formBtn'),
+                    "{{ route('regular_inspection_log',$customer->getCustomer->user_uid) }}", onRequestSuccess);
             }
         });
     </script>
