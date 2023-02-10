@@ -1,0 +1,543 @@
+[
+    {
+        "elevation": [
+            {
+                "control_panel_and_operation_panel": [
+                    {
+                        "question_title": "Operation panel touch screen operation status",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "operation_panel_touch_screen_operation_status"
+                    },
+                    {
+                        "question_title": "Emergency S/W and various S/W operation status",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "emergency_S_W_and_various_S_W_operation_status"
+                    },
+                    {
+                        "question_title": "Inverter, braking resistor operation status",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "inverter_braking_resistor_operation_status"
+                    },
+                    {
+                        "question_title": "Control panel interior cleanliness",
+                        "situation": "B",
+                        "inspection_duration": "3, 6, 9",
+                        "input_name": "control_panel_interior_cleanliness"
+                    },
+                    {
+                        "question_title": "Operation status of various parts [magnet, relay, etc.]",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "operation_status_of_various_parts_magnet_relay_etc"
+                    },
+                    {
+                        "question_title": "PLC input, output signal and communication operation status",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "PLC_input_output_signal_and_communication_operation_status"
+                    },
+                    {
+                        "question_title": "Terminal block bolt tightening condition",
+                        "situation": "B",
+                        "inspection_duration": "3, 6, 9",
+                        "input_name": "terminal_block_bolt_tightening_condition"
+                    }
+                ]
+            },
+            {
+                "entrance": [
+                    {
+                        "question_title": "Door operation and parts [S/W, Shoe, Rope] status",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "door_operation_and_parts_S_W_shoe_rope_status"
+                    },
+                    {
+                        "question_title": "Guidance light, indicator operation status",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "guidance_light_indicator_operation_status"
+                    },
+                    {
+                        "question_title": "Various nameplates attached, guide mirror condition",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "various_nameplates_attached_guide_mirror_condition"
+                    }
+                ]
+            },
+            {
+                "platform": [
+                    {
+                        "question_title": "Fixed and operating status of various sensors",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "fixed_and_operating_status_of_various_sensors"
+                    },
+                    {
+                        "question_title": "Anti-skid stopper status",
+                        "situation": "B",
+                        "inspection_duration": "3, 6, 9",
+                        "input_name": "anti_skid_stopper_status"
+                    },
+                    {
+                        "question_title": "Guidance light, warning light, buzzer status",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "guidance_light_warning_light_buzzer_status"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "hoistway": [
+            {
+                "driving_part": [
+                    {
+                        "question_title": "Main motor fixed and noise condition",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "main_motor_fixed_and_noise_condition"
+                    },
+                    {
+                        "question_title": "Motor brake operation and lining wear, gap condition",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "motor_brake_operation_and_lining_wear_gap_condition"
+                    },
+                    {
+                        "question_title": "Drive unit reducer oil leakage and noise condition",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "drive_unit_reducer_oil_leakage_and_noise_condition"
+                    },
+                    {
+                        "question_title": "Wear condition of each sheave",
+                        "situation": "B",
+                        "inspection_duration": "3, 6, 9",
+                        "input_name": "wear_condition_of_each_sheave"
+                    },
+                    {
+                        "question_title": "Bearing noise condition",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "bearing_noise_condition"
+                    },
+                    {
+                        "question_title": "Wire Rope (Chain) Cutting S/W Operation Status",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "wire_rope_cutting_s_w_operation_status"
+                    },
+                    {
+                        "question_title": "Driving part coupling, encoder fixation, noise condition",
+                        "situation": "B",
+                        "inspection_duration": "2, 5, 8, 11",
+                        "input_name": "driving_part_coupling_encoder_fixation_noise_condition"
+                    }
+                ]
+            },
+            {
+                "hoistway": [
+                    {
+                        "question_title": "Sensor (fixed position, upper/lower limit deceleration, emergency) fixed and operating status",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "sensor_fixed_position_upper_lower_limit_deceleration_emergency_fixed_and_operating_status"
+                    },
+                    {
+                        "question_title": "Elevation guide rail status (deformation, bolt tightening)",
+                        "situation": "B",
+                        "inspection_duration": "3, 6, 9",
+                        "input_name": "elevation_guide_rail_status_deformation_bolt_tightening)"
+                    },
+                    {
+                        "question_title": "Each end position LEVEL, detecting plate fixed state",
+                        "situation": "B",
+                        "inspection_duration": "2, 5, 8, 11",
+                        "input_name": "each_end_position_LEVEL_detecting_plate_fixed_state"
+                    },
+                    {
+                        "question_title": "Hoistway lighting status",
+                        "situation": "B",
+                        "inspection_duration": "3, 6, 9",
+                        "input_name": "hoistway_lighting_status"
+                    },
+                    {
+                        "question_title": "Feet status",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "feet_status"
+                    }
+                ]
+            },
+            {
+                "count_weight": [
+                    {
+                        "question_title": "Counterweight deformation and damage condition",
+                        "situation": "B",
+                        "inspection_duration": "3, 6, 9",
+                        "input_name": "counterweight_deformation_and_damage_condition"
+                    },
+                    {
+                        "question_title": "Counterweight roller/guide shoe wear and noise condition",
+                        "situation": "B",
+                        "inspection_duration": "3, 6, 9",
+                        "input_name": "counterweight_roller_guide_shoe wear_and_noise_condition"
+                    },
+                    {
+                        "question_title": "Guide rail condition (deformation, bolt tightening)",
+                        "situation": "B",
+                        "inspection_duration": "3, 6, 9",
+                        "input_name": "guide_rail_condition_deformation_bolt_tightening"
+                    },
+                    {
+                        "question_title": "Gap state at the bottom of the counterweight",
+                        "situation": "B",
+                        "inspection_duration": "3, 6, 9",
+                        "input_name": "gap_state_at_the_bottom_of_the_counterweight"
+                    }
+                ]
+            },
+            {
+                "Wire_rope_chain": [
+                    {
+                        "question_title": "Wire Rope (Chain) Abrasion and Corrosion",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "wire_rope_chain_abrasion_and_corrosion"
+                    },
+                    {
+                        "question_title": "Wire Rope (Chain) wire disconnection, kink state",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "wire_rope_chain_wire_disconnection_kink_state"
+                    },
+                    {
+                        "question_title": "Wire Rope (Chain) Tension, Socket State",
+                        "situation": "B",
+                        "inspection_duration": "3, 6, 9",
+                        "input_name": "wire_rope_chain_tension_socket_state"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "lift_cage": [
+            {
+                "cage": [
+                    {
+                        "question_title": "Deformation and damage condition of frame",
+                        "situation": "B",
+                        "inspection_duration": "3, 6, 9",
+                        "input_name": "deformation_and_damage_condition_of_frame"
+                    },
+                    {
+                        "question_title": "Sensor operation status of each part in the cage",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "sensor_operation_status_of_each_part_in_the_cage"
+                    },
+                    {
+                        "question_title": "State of the manual control panel (connection part)",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "state_of_the_manual_control_panel_connection_part"
+                    },
+                    {
+                        "question_title": "Fixation of pulley sheave and rope",
+                        "situation": "B",
+                        "inspection_duration": "3, 6, 9",
+                        "input_name": "fixation_of_pulley_sheave_and_rope"
+                    },
+                    {
+                        "question_title": "Picking motor, speed reducer fixed and noise condition",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "picking_motor_speed_reducer_fixed_and_noise_condition"
+                    },
+                    {
+                        "question_title": "Picking motor brake operation and lining wear, gap condition",
+                        "situation": "B",
+                        "inspection_duration": "2, 5, 8, 11",
+                        "input_name": "picking_motor_brake_operation_and_lining_wear_gap_condition"
+                    },
+                    {
+                        "question_title": "Picking drive chain tension and sprocket wear",
+                        "situation": "B",
+                        "inspection_duration": "3, 6, 9",
+                        "input_name": "picking_drive_chain_tension_and_sprocket_wear"
+                    },
+                    {
+                        "question_title": "Pallet in place",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "pallet_in_place"
+                    },
+                    {
+                        "question_title": "Guide roller wear and noise condition",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "guide_roller_wear_and_noise_condition"
+                    },
+                    {
+                        "question_title": "Moving cable status",
+                        "situation": "B",
+                        "inspection_duration": "3, 6, 9",
+                        "input_name": "moving_cable_status"
+                    }
+                ]
+            },
+            {
+                "turntable": [
+                    {
+                        "question_title": "Drive motor, turn lifting motor fixed and noise condition",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "drive_motor_turn_lifting_motor_fixed_and_noise_condition"
+                    },
+                    {
+                        "question_title": "Motor brake operation and lining wear, gap condition",
+                        "situation": "B",
+                        "inspection_duration": "2, 5, 8, 11",
+                        "input_name": "motor_brake_operation_and_lining_wear_gap_condition"
+                    },
+                    {
+                        "question_title": "Swing gear, chain lubrication and noise condition",
+                        "situation": "B",
+                        "inspection_duration": "2, 5, 8, 11",
+                        "input_name": "swing_gear_chain_lubrication_and_noise_condition"
+                    },
+                    {
+                        "question_title": "Position and sensor operation status",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "position_and_sensor_operation_status"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "cart": [
+            {
+                "driving_part": [
+                    {
+                        "question_title": "Main motor fixed and noise condition",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "main_motor_fixed_and_noise_condition"
+                    },
+                    {
+                        "question_title": "Motor brake operation and lining wear, gap condition",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "motor_brake_operation_and_lining_wear_gap_condition"
+                    },
+                    {
+                        "question_title": "Drive unit reducer oil leakage and noise condition",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "drive_unit_reducer_oil_leakage_and_noise_condition"
+                    },
+                    {
+                        "question_title": "Wear condition of each sheave",
+                        "situation": "B",
+                        "inspection_duration": "3, 6, 9",
+                        "input_name": "wear_condition_of_each_sheave"
+                    }
+                ]
+            },
+            {
+                "picking_department": [
+                    {
+                        "question_title": "Sensor (fixed position, upper/lower limit deceleration, emergency) fixed and operating status",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "sensor_fixed_position_upper_lower_limit_deceleration_emergency_fixed_and_operating_status"
+                    },
+                    {
+                        "question_title": "Elevation guide rail status (deformation, bolt tightening)",
+                        "situation": "B",
+                        "inspection_duration": "3, 6, 9",
+                        "input_name": "elevation_guide_rail_status_deformation_bolt_tightening)"
+                    },
+                    {
+                        "question_title": "Each end position LEVEL, detecting plate fixed state",
+                        "situation": "B",
+                        "inspection_duration": "2, 5, 8, 11",
+                        "input_name": "each_end_position_LEVEL_detecting_plate_fixed_state"
+                    },
+                    {
+                        "question_title": "Hoistway lighting status",
+                        "situation": "B",
+                        "inspection_duration": "3, 6, 9",
+                        "input_name": "hoistway_lighting_status"
+                    }
+                ]
+            },
+            {
+                "shifting_part": [
+                    {
+                        "question_title": "Counterweight deformation and damage condition",
+                        "situation": "B",
+                        "inspection_duration": "3, 6, 9",
+                        "input_name": "counterweight_deformation_and_damage_condition"
+                    },
+                    {
+                        "question_title": "Counterweight roller/guide shoe wear and noise condition",
+                        "situation": "B",
+                        "inspection_duration": "3, 6, 9",
+                        "input_name": "counterweight_roller_guide_shoe wear_and_noise_condition"
+                    },
+                    {
+                        "question_title": "Guide rail condition (deformation, bolt tightening)",
+                        "situation": "B",
+                        "inspection_duration": "3, 6, 9",
+                        "input_name": "guide_rail_condition_deformation_bolt_tightening"
+                    }
+                ]
+            },
+            {
+                "outside_the_control_panel": [
+                    {
+                        "question_title": "Manual operation panel emergency S/W and various S/W operation status",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "manual_operation_panel_emergency_S_W_and_various_S_W_operation_status"
+                    },
+                    {
+                        "question_title": "Inverter, braking resistor operation status",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "inverter_braking_resistor_operation_status"
+                    },
+                    {
+                        "question_title": "Control panel interior cleanliness",
+                        "situation": "B",
+                        "inspection_duration": "3, 6, 9",
+                        "input_name": "control_panel_interior_cleanliness"
+                    },
+                    {
+                        "question_title": "Operation status of various parts (magnet, relay, etc.)",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "operation_status_of_various_parts_magnet_relay_etc"
+                    },
+                    {
+                        "question_title": "PLC input, output signal and communication status",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "PLC_input_output_signal_and_communication_status"
+                    },
+                    {
+                        "question_title": "Terminal block bolt tightening condition",
+                        "situation": "B",
+                        "inspection_duration": "3, 6, 9",
+                        "input_name": "terminal_block_bolt_tightening_condition"
+                    },
+                    {
+                        "question_title": "Fixed and operating status of various fixed position sensors",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "fixed_and_operating_status_of_various_fixed_position_sensors"
+                    },
+                    {
+                        "question_title": "Proper location in the storage room, fixed state of the detection plate",
+                        "situation": "B",
+                        "inspection_duration": "2, 5, 8, 11",
+                        "input_name": "proper_location_in_the_storage_room_fixed_state_of_the_detection_plate"
+                    },
+                    {
+                        "question_title": "Various auxiliary rollers fixed and worn",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "various_auxiliary_rollers_fixed_and_worn"
+                    },
+                    {
+                        "question_title": "Dust Collector (Bus bar, Brush, Collector Arm) Status",
+                        "situation": "B",
+                        "inspection_duration": "3, 6, 9",
+                        "input_name": "dust_Collector_bus_bar_brush_collector_arm_Status"
+                    },
+                    {
+                        "question_title": "CableVeyor noise/disconnection/operation status",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "cableveyor_noise_disconnection_operation_status"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "palette": [
+            {
+                "palette": [
+                    {
+                        "question_title": "Optical modem, encoder fixed & operating status",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "optical_modem_encoder_fixed_and_operating_status"
+                    },
+                    {
+                        "question_title": "Condition of the containment anti-meander roller and containment stopper",
+                        "situation": "B",
+                        "inspection_duration": "3, 6, 9",
+                        "input_name": "condition_of_the_containment_anti_meander_roller_and_containment_stopper"
+                    },
+                    {
+                        "question_title": "Pallet deformation and corrosion condition",
+                        "situation": "B",
+                        "inspection_duration": "3, 6, 9",
+                        "input_name": "pallet_deformation_and_corrosion_condition"
+                    },
+                    {
+                        "question_title": "Pallet roller burnout condition",
+                        "situation": "B",
+                        "inspection_duration": "2, 5, 8, 11",
+                        "input_name": "pallet_roller_burnout_condition"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "etc": [
+            {
+                "etc": [
+                    {
+                        "question_title": "Steel frame vertical and horizontal deformation",
+                        "situation": "B",
+                        "inspection_duration": "3, 6, 9",
+                        "input_name": "steel_frame_vertical_and_horizontal_deformation"
+                    },
+                    {
+                        "question_title": "Bolt tightening condition",
+                        "situation": "B",
+                        "inspection_duration": "3, 6, 9",
+                        "input_name": "bolt_tightening_condition"
+                    },
+                    {
+                        "question_title": "External turntable condition (drive motor, roller operation and noise condition, deformation and damage of frame)",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "external_turntable_condition_drive_motor,_roller_operation_and_noise_condition_deformation_and_damage_of_frame"
+                    },
+                    {
+                        "question_title": "Paint corrosion condition",
+                        "situation": "B",
+                        "inspection_duration": "3, 6, 9",
+                        "input_name": "paint_corrosion_condition"
+                    }
+                ]
+            }
+        ]
+    }
+
+]

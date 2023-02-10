@@ -12,3 +12,8 @@ function saveFiles($key, $path, $file)
     }
     return $mainImageName;
 }
+
+function string_capitalize($string){
+    $stringify = str_replace('_',' ',$string);
+    return ucwords($stringify);
+}

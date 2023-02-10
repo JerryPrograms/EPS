@@ -21,160 +21,44 @@
             <th class="text-center">
                 {{ __('translation.Building Management Company') }}
             </th>
-            <th class="text-center">{{ __('translation.contents') }}
-            </th>
-            <th class="text-center">
-                {{ __('translation.actions') }}
-            </th>
+            <th class="text-center">Actions</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>
-                1
-            </td>
-            <td>
-                2022.11.01
-            </td>
-            <td>
-                223456-5032
-            </td>
-            <td>
-                강남을지병원
-            </td>
-            <td>
-                서울시 서초구 남부순환로 158
-            </td>
-            <td>
-                이병로
-            </td>
-            <td>
-                일반유지보수
-            </td>
-            <td class="d-flex gap-1">
-                <button class="btn btn-outline-danger btn-theme-danger-outline btn-outline btn-sm">
-                    <img src="{{ asset('engineer_company/assets/images/red-search.png') }}">
-                </button>
-                <button class="btn btn-outline-primary btn-theme-primary-outline btn-outline btn-sm">
-                    <img src="{{ asset('engineer_company/assets/images/Arhive_fill.png') }}">
-                </button>
-                <button class="btn btn-outline-light btn-theme-light-outline btn-outline btn-sm">
-                    <img src="{{ asset('engineer_company/assets/images/archive_icon.png') }}">
-                </button>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                2
-            </td>
-            <td>
-                2022.11.01
-            </td>
-            <td>
-                223456-5032
-            </td>
-            <td>
-                강남을지병원
-            </td>
-            <td>
-                서울시 서초구 남부순환로 158
-            </td>
-            <td>
-                이병로
-            </td>
-            <td>
-                일반유지보수
-            </td>
-            <td class="d-flex gap-1">
-                <button class="btn btn-outline-danger btn-theme-danger-outline btn-outline btn-sm">
-                    <img src="{{ asset('engineer_company/assets/images/red-search.png') }}">
-                </button>
-                <button class="btn btn-outline-primary btn-theme-primary-outline btn-outline btn-sm">
-                    <img src="{{ asset('engineer_company/assets/images/Arhive_fill.png') }}">
-                </button>
-                <button class="btn btn-outline-light btn-theme-light-outline btn-outline btn-sm">
-                    <img src="{{ asset('engineer_company/assets/images/archive_icon.png') }}">
-                </button>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                3
-            </td>
-            <td>
-                2022.11.01
-            </td>
-            <td>
-                223456-5032
-            </td>
-            <td>
-                강남을지병원
-            </td>
-            <td>
-                서울시 서초구 남부순환로 158
-            </td>
-            <td>
-                이병로
-            </td>
-            <td>
-                일반유지보수
-            </td>
-            <td class="d-flex gap-1">
-                <button class="btn btn-outline-danger btn-theme-danger-outline btn-outline btn-sm">
-                    <img src="{{ asset('engineer_company/assets/images/red-search.png') }}">
-                </button>
-                <button class="btn btn-outline-primary btn-theme-primary-outline btn-outline btn-sm">
-                    <img src="{{ asset('engineer_company/assets/images/Arhive_fill.png') }}">
-                </button>
-                <button class="btn btn-outline-light btn-theme-light-outline btn-outline btn-sm">
-                    <img src="{{ asset('engineer_company/assets/images/archive_icon.png') }}">
-                </button>
-            </td>
-        </tr>
-        {{-- @if (count($customer) == 0)
+        @foreach ($contracts as $v)
             <tr>
-                <td colspan="8"><img style="width: 50%; height: 50%"
-                        src="{{ asset('engineer_company/images/no-data-found.png') }}">
+                <td>
+                    {{ $loop->index + 1 }}
                 </td>
-            </tr>
-        @endif
-        @foreach ($customer as $c)
-            <tr>
-                <td class=""><a href="javascript: void(0);" class="text-body fw-bold">{{ $loop->index + 1 }}</a>
+                <td>
+                    {{ $v->contract_date }}
                 </td>
-                <td class="">
-                    <button class="date_button border-0">{{ $c->created_at->format('Y.d.m') }}</button>
+                <td>
+                    {{ $v->get_customer->customer_number }}
                 </td>
-                <td class="">
-                    <button class="date_button border-0">{{ $c->customer_number }}</button>
+                <td>
+                    {{ $v->get_customer->building_name }}
                 </td>
-                <td class="">
-                    <button class="date_button_2 border-0">{{ $c->building_name }}</button>
+                <td>
+                    <p class="mb-0" title="{{ $v->get_customer->BuildingInformation->address }}">{{ Str::limit($v->get_customer->BuildingInformation->address, 50, '...') }}</p>   
                 </td>
-                <td class="">
-                    <button title="{{ $c->address }}" class="date_button_2 border-0">{{ substr($c->address, 0, 10) }}
-                        ....
+                <td>
+                    {{ $v->get_customer->building_management_company }}
+                </td>
+                <td class="d-flex gap-1">
+                    <button class="btn btn-outline-danger btn-theme-danger-outline btn-outline btn-sm">
+                        <img src="{{ asset('engineer_company/assets/images/red-search.png') }}">
+                    </button>
+                    <button class="btn btn-outline-primary btn-theme-primary-outline btn-outline btn-sm">
+                        <img src="{{ asset('engineer_company/assets/images/Arhive_fill.png') }}">
+                    </button>
+                    <button class="btn btn-outline-light btn-theme-light-outline btn-outline btn-sm">
+                        <img src="{{ asset('engineer_company/assets/images/archive_icon.png') }}">
                     </button>
                 </td>
-                <td class="">
-                    <button class="date_button_2 border-0">{{ $c->building_management_company }}</button>
-                </td>
-                <td class="">
-                    <!-- Button trigger modal -->
-                    <button class="date_button_2 border-0">{{ $c->maintenance_company }}</button>
-                </td>
-                <td class="d-flex">
-                    <!-- Button trigger modal -->
-                    <a href="{{ route('ec.GetCustomerInfoDashboard', $c->user_uid) }}" class="date_button_2 border-0"><i
-                            class="fa fa-edit custom-trash-padding"></i></a>
-                    <button onclick="$('#customerInfoID').val('{{ $c->id }}')" data-bs-toggle="modal"
-                        data-bs-target="#customerDeleteModal" class="date_button_2 border-0"><i
-                            class="fa fa-trash-can custom-trash-padding"></i></button>
-                </td>
             </tr>
-        @endforeach --}}
+        @endforeach
     </tbody>
 </table>
-{{-- <div class="col-lg-12 text-center">
-    {!! $customer->links('common_files.paginate') !!}
-</div> --}}
+
+

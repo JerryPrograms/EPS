@@ -45,14 +45,16 @@
                                             </div>
                                         </div>
                                         <div class="buttons d-flex align-items-center justify-content-between gap-1">
-                                            <a href="javascript:void(0)" class="btn btn-primary">{{ __('translation.add') }}</a>
-                                            <a href="javascript:void(0)" class="btn btn-primary">
-                                                {{ __('translation.delete') }}
-                                            </a>
+                                            <a href="{{ route('add_contract',$customer->user_uid) }}" class="btn btn-primary">Add</a>
                                         </div>
                                     </div>
                                     <div id="customer_list_table" class="table-responsive mt-3">
-                                        @include('engineer_company.templates.contract_listing')
+                                        @include('engineer_company.templates.contract_listing',['contracts' => $contracts])
+                                    </div>
+                                    <div class="w-100 mt-4">
+                                        <div class="text-center">
+                                            {{ $contracts->links('common_files.paginate') }}
+                                        </div>
                                     </div>
                                     <!-- end table-responsive -->
                                 </div>

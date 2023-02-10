@@ -16,6 +16,8 @@ use App\Service\ParkingFacility;
 use App\Service\PartReplacement;
 use App\Service\QuoteService;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\engineercompany\ContractController;
+use App\Http\Controllers\engineercompany\InspectionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -152,11 +154,16 @@ Route::group(['prefix' => 'eps-panel', 'middleware' => 'CommonRoutes'], function
     Route::post('/change-event-status', [EventService::class, 'ChangeEventStatus'])->name('ChangeEventStatus');
 
     // Contract Management
-    Route::get('/contract-management-list', [ContractController::class, 'contract_management_list'])->name('contract_management_list');
-
-    Route::get('/add-contract', [ContractController::class, 'add_contract'])->name('add_contract');
-
+    Route::get('/contract-management-list/{id}', [ContractController::class, 'contract_management_list'])->name('contract_management_list');
+    Route::get('/add-contract/{uid}', [ContractController::class, 'add_contract'])->name('add_contract');
+    Route::post('/add-contract-action', [ContractController::class, 'add_contract_action'])->name('add_contract_action');
     Route::get('/contract-view', [ContractController::class, 'contract_view'])->name('contract_view');
+
+
+    // Regular Inspection Log
+    Route::get('/regular-inspection-log/{id}', [InspectionController::class, 'regular_inspection_log'])->name('regular_inspection_log');
+    Route::get('/write-regular-inspection-log/{id}', [InspectionController::class, 'write_regular_inspection_log'])->name('write_regular_inspection_log');
+    Route::post('/save-inspection-action', [InspectionController::class, 'save_inspection_action'])->name('save_inspection_action');
 
     //Route to Create todoEvent in calendar
     Route::post('/create-todo-event', [EventService::class, 'CreateTodo'])->name('CreateTodo');
