@@ -11,7 +11,7 @@ class ContractController extends Controller
 {
     public function contract_management_list($id){
         $contracts = Contract::with('get_customer')->where('customer_id',$id)->paginate(10);
-        $customer = CustomerInfo::where('id',$id)->first();
+        $customer = CustomerInfo::where('user_uid',$id)->first();
         return view('engineer_company.contract_management_list',compact('contracts','customer'));
     }
 
