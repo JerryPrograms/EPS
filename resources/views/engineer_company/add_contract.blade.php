@@ -14,7 +14,8 @@
                                                 <div class="d-flex align-items-center gap-2">
                                                     <span class="fw-bold mb-2 ms-1">.</span>
                                                     <h4 class="card_tittle_2 d-flex align-items-center mb-0">
-                                                        Add Contract
+
+                                                        {{ __('translation.Add Contract') }}
                                                     </h4>
                                                 </div>
                                             </div>
@@ -84,6 +85,109 @@
                                                             placeholder="Enter building address"
                                                             value="{{ $customer->BuildingInformation->address }}" disabled>
                                                     </div>
+                                    <form id="createBuildingInformation">
+                                        @csrf
+                                        <div class="form-group mb-4">
+                                            <select name="contract_type" class="form-control">
+
+                                                <option value="">
+                                                    {{ __('translation.Contract Type') }}
+                                                </option>
+                                                <option value="daily">
+                                                    {{ __('translation.daily') }}
+                                                </option>
+                                                <option value="monthly">{{ __('translation.monthly') }}</option>
+                                                <option value="yearly">{{ __('translation.yearly') }}</option>
+
+                                            </select>
+                                        </div>
+                                        <div class="form-group mb-4">
+                                            <div class="row align-items-center">
+                                                <div class="col-lg-2 col-md-6 col-12">
+                                                    <label for="customer_number" class="mb-0">
+
+                                                        {{ __('translation.Customer Number') }}
+
+                                                    </label>
+                                                </div>
+                                                <div class="col-lg-10 col-md-6 col-12">
+                                                    <select name="customer_number" id="customer_number"
+                                                        class="form-control form-theme-input">
+                                                        <option value="">
+
+                                                            {{ __('translation.Select Customer') }}
+                                                        </option>
+                                                        <option name="john_doe">
+                                                            {{ __('translation.John Doe') }}
+                                                        </option>
+                                                        <option name="kate_wilson">
+                                                            {{ __('translation.Kate Wilson') }}
+
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group mb-4">
+                                            <div class="row align-items-center">
+                                                <div class="col-lg-2 col-md-6 col-12">
+                                                    <label for="contract_date" class="mb-0">
+
+                                                        {{ __('translation.Contract Date') }}
+
+                                                    </label>
+                                                </div>
+                                                <div class="col-lg-10 col-md-6 col-12">
+                                                    <input type="date" class="form-control form-theme-input"
+
+                                                name="contract_date" id="contract_date"
+                                                placeholder="{{ __('translation.Enter contract date') }}">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group mb-4">
+                                            <div class="row align-items-center">
+                                                <div class="col-lg-2 col-md-6 col-12">
+                                                    <label for="building_name" class="mb-0">
+
+                                                        {{ __('translation.Building Name') }}
+
+                                                    </label>
+                                                </div>
+                                                <div class="col-lg-10 col-md-6 col-12">
+                                                    <input type="text" class="form-control form-theme-input"
+
+                                                name="building_name" id="building_name"
+                                                placeholder="{{ __('translation.Enter building Name') }}">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group mb-4">
+                                            <div class="row align-items-center">
+                                                <div class="col-lg-2 col-md-6 col-12">
+                                                    <label for="building_address" class="mb-0">
+
+                                                        {{ __('translation.Enter building ddress') }}
+                                                    </label>
+
+                                                </div>
+                                                <div class="col-lg-10 col-md-6 col-12">
+                                                    <input type="text" class="form-control form-theme-input"
+                                                    name="building_address" id="building_address"
+                                                    placeholder="{{ __('translation.Enter building address') }}">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group mb-4">
+                                            <div class="row align-items-center">
+                                                <div class="col-lg-2 col-md-6 col-12">
+
+                                                    <label for="contract_file" class="mb-0">
+                                                        {{ __('translation.Upload Contract') }}
+                                                    </label>
                                                 </div>
                                             </div>
                                             <div class="form-group mb-4">
@@ -114,6 +218,13 @@
                                                         <textarea class="form-control" id="contract_description" rows="10" placeholder="Enter Contract Description"
                                                             name="contract_description" required></textarea>
                                                     </div>
+                                        </div>
+                                        <div class="form-group mb-4">
+                                            <div class="row align-items-center">
+                                                <div class="col-12">
+
+                                <textarea class="form-control" id="contract_description" rows="10" placeholder="{{ __('translation.Enter_Contract_Description') }}" name="contract_description">
+                                                    </textarea>
                                                 </div>
                                             </div>
                                             <div class="form-btn">
@@ -149,6 +260,14 @@
             var file = $('#contract_file')[0].files[0].name;
             $(this).prev('.position-absolute').find('.contract-file-name').text(file);
         });
+    </script>
+
+    {{-- <script>
+        $('#createBuildingInformation').validate({
+            submitHandler: function () {
+
+                ajaxCall($('#createBuildingInformation'), "{{ route('CreateBuildingAndCompanyInformation') }}", $('.form_button'), "{{ route('ec.CreateCompanyInfo', request()->segment(3)) }}", onRequestSuccess);
+
 
         $('#addContractForm').validate({
             submitHandler: function() {

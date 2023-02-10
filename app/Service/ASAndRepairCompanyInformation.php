@@ -54,7 +54,7 @@ class ASAndRepairCompanyInformation
             DB::commit();
             return json_encode([
                 'success' => true,
-                'message' => 'Information Uploaded Successfully',
+                'message' => __('Information Uploaded Successfully'),
             ]);
 
         } catch (\Exception $ex) {

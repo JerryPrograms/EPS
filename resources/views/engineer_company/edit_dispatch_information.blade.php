@@ -34,7 +34,10 @@
                                                 <div class="prompt w-100"></div>
                                                 <div class="col-lg-11">
                                                     <div class="">
-                                                        <h4 class="card_tittle_2">Dispatch Confirmation
+                                                        <h4 class="card_tittle_2">
+
+                                                            {{ __('translation.Dispatch Confirmation') }}
+
                                                         </h4>
                                                     </div>
                                                 </div>
@@ -48,7 +51,10 @@
                                         <div class="row mt-5">
                                             <div class="col-lg-11">
                                                 <h4 class="card-title border-bottom-0 mb-4"> <span
-                                                        class="bor_lef">&nbsp;</span> Reception Information
+                                                        class="bor_lef">&nbsp;</span>
+
+                                                        {{ __('translation.Reception Information') }}
+
                                                 </h4>
                                             </div>
 
@@ -57,7 +63,10 @@
                                                 <div class="col-lg-4 col-12">
                                                     <label
                                                         class="form-label "> <span
-                                                            class="star_section">*</span> Site name</label>
+                                                            class="star_section">*</span>
+                                                            {{ __('translation.site name') }}
+
+                                                        </label>
                                                 </div>
                                                 <div class="col-lg-8 col-12">
                                                     <input type="text"
@@ -74,8 +83,11 @@
                                                 <div class="col-lg-4 col-12">
                                                     <label
                                                         class="form-label "> <span
-                                                            class="star_section">*</span> Reception date and
-                                                        time</label>
+                                                            class="star_section">*</span>
+                                                            {{ __('translation.Reception date and time') }}
+
+                                                            </label>
+
                                                 </div>
                                                 <div class="col-lg-8 col-12">
                                                     <input type="datetime-local" required name="reception_date_and_time"
@@ -92,7 +104,11 @@
                                                 <div class="col-lg-4 col-12">
                                                     <label
                                                         class="form-label "> <span
-                                                            class="star_section">*</span> Model and number</label>
+                                                            class="star_section">*</span>
+
+                                                            {{ __('translation.Model and number') }}
+
+                                                        </label>
                                                 </div>
                                                 <div class="col-lg-8 col-12">
                                                     <input type="text"
@@ -110,7 +126,12 @@
                                                 <div class="col-lg-4 col-12">
                                                     <label
                                                         class="form-label "> <span
-                                                            class="star_section">*</span>Submission details</label>
+                                                            class="star_section">*</span>
+
+                                                            {{ __('translation.Submission details') }}
+                                                        </label>
+
+
                                                 </div>
                                                 <div class="col-lg-8 col-12">
                                                     <textarea required name="submission_details"
@@ -138,7 +159,10 @@
                                         <div class="row mt-5">
                                             <div class="col-lg-11">
                                                 <h4 class="card-title border-bottom-0 mb-4"> <span
-                                                        class="bor_lef">&nbsp;</span> Dispatch Information
+                                                        class="bor_lef">&nbsp;</span>
+
+                                                        {{ __('translation.Dispatch Information') }}
+
                                                 </h4>
                                             </div>
 
@@ -146,7 +170,11 @@
                                                 <div class="col-lg-4 col-12">
                                                     <label
                                                         class="form-label "> <span
-                                                            class="star_section">*</span>Failure cause</label>
+                                                            class="star_section">*</span>
+
+                                                            {{ __('translation.Failure cause') }}
+
+                                                        </label>
                                                 </div>
                                                 <div class="col-lg-8 col-12">
                                                     <textarea required name="failure_cause"
@@ -159,7 +187,9 @@
                                                 <div class="col-lg-4 col-12">
                                                     <label
                                                         class="form-label "> <span
-                                                            class="star_section">*</span>Measures</label>
+                                                            class="star_section">*</span>
+                                                            {{ __('translation.measures') }}
+                                                        </label>
                                                 </div>
                                                 <div class="col-lg-8 col-12">
                                                     <textarea required name="measures"
@@ -172,7 +202,10 @@
                                                 <div class="col-lg-4 col-12">
                                                     <label
                                                         class="form-label "> <span
-                                                            class="star_section">*</span>Undecided</label>
+                                                            class="star_section">*</span>
+                                                            {{ __('translation.undecided') }}
+                                                        </label>
+
                                                 </div>
                                                 <div class="col-lg-8 col-12">
                                                     <textarea required name="undecided"
@@ -185,14 +218,16 @@
                                                 <div class="col-lg-4 col-12">
                                                     <label
                                                         class="form-label "> <span
-                                                            class="star_section">*</span>Dispatcher</label>
+                                                            class="star_section">*</span>
+                                                            {{ __('translation.dispatcher') }}
+                                                        </label>
                                                 </div>
                                                 <div class="col-lg-8 col-12">
                                                     <input type="text" required name="dispatcher"
-                                                           class=" custom_input w-100 custom_color_gray"
-                                                           aria-describedby="emailHelp"
-                                                           placeholder="Fill in pending issues"
-                                                           value="{{$dispatch->dispatcher}}"
+                                                class=" custom_input w-100 custom_color_gray"
+                                                aria-describedby="emailHelp"
+                                                placeholder="{{ __('translation.Fill in pending issues') }}"
+                                                value="{{$dispatch->dispatcher}}"
                                                     >
                                                 </div>
                                             </div>
@@ -200,28 +235,38 @@
                                                 <div class="col-lg-4 col-12">
                                                     <label
                                                         class="form-label "> <span
-                                                            class="star_section">*</span>Customer Confirmation</label>
+                                                            class="star_section">*</span>
+
+                                                            {{ __('translation.Customer Confirmation') }}
+
+                                                        </label>
                                                 </div>
                                                 <div class="col-lg-8 col-12">
                                                     <div id="canvas_image" class="w-100 ">
                                                         <label
-                                                            class="form-label ">Contact Person /
-                                                            Signature</label>
+                                                            class="form-label ">
+
+                                                            {{ __('translation.Contact Person / Signature') }}
+
+                                                        </label>
                                                         <canvas id="signature-pad" name="signature"
                                                                 class="signature-pad w-100" style="touch-action: none;
                                                     height: 223px;
                                                     border: 1px solid;
                                                     padding: 10px;"></canvas>
-                                                        <span id="canvas_error" class="error d-none">Please add
-                                                            signature</span>
+
+                                                        <span id="canvas_error" class="error d-none">
+                                                            {{ __('translation.Please add signature') }}
+                                                        </span>
                                                         <input type="hidden" name="output" class="output">
                                                         <button class="btn btn-danger" type="button" id="clear"><i
                                                                 class="fa fa-remove"></i></button>
                                                     </div>
                                                     <div id="previous_image" class="w-100">
                                                         <label
-                                                            class="form-label ">Contact Person /
-                                                            Signature</label>
+                                                            class="form-label ">
+                                                            {{ __('translation.Contact_Person / Signature') }}</label>
+
                                                         <img class="w-100" src="{{asset($dispatch->output)}}">
                                                         <button onclick="ChangeSignature()" class="btn btn-primary"
                                                                 type="button" id="clear"><i
@@ -229,7 +274,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-
 
                                         </div>
                                         <!-- form row 2 end  -->
@@ -239,7 +283,10 @@
                                         <div class="">
                                             <div class="row justify-content-end">
                                                 <div class="col-lg-2">
-                                                    <button class="confirm_button_2 mb-5 mt-5 submitbtn">Confirm
+                                                    <button class="confirm_button_2 mb-5 mt-5 submitbtn">
+
+                                                        {{ __('translation.confirm') }}
+
                                                     </button>
                                                 </div>
                                             </div>

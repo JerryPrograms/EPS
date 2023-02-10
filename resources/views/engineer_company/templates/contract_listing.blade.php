@@ -2,19 +2,26 @@
     <thead class="table-light">
         <tr>
 
-            <th class="">No.</th>
-            <th class="text-center">Contract Date
+            <th class="">
+                {{ __('translation.no.') }}
             </th>
-            <th class="text-center">Customer No
+            <th class="text-center">
+                {{ __('translation.Contract Date') }}
             </th>
-            <th class="text-center">Building Name
+            <th class="text-center">
+                {{ __('translation.Customer No') }}
             </th>
-            <th class="text-center">Address</th>
+            <th class="text-center">
+                {{ __('translation.Building Name') }}
+            </th>
+            <th class="text-center">
+                {{ __('translation.address') }}
+            </th>
 
-            <th class="text-center">Building Management Company
+            <th class="text-center">
+                {{ __('translation.Building Management Company') }}
             </th>
-            <th class="text-center">Actions
-            </th>
+            <th class="text-center">Actions</th>
         </tr>
     </thead>
     <tbody>

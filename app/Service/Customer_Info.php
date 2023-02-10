@@ -50,12 +50,14 @@ class Customer_Info
             if ($is_deleted) {
                 return json_encode([
                     'success' => true,
-                    'message' => 'Customer Deleted Successfully',
+                    'message' => __('Customer Deleted Successfully'),
                 ]);
             } else {
                 return json_encode([
                     'success' => true,
-                    'message' => 'Something went wrong.....',
+                    'message' => __('Something went wrong.....'),
+
+
                 ]);
             }
 

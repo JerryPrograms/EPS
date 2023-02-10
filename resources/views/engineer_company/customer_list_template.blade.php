@@ -1,20 +1,30 @@
-<table class="table align-middle mb-0 table-theme">
+                                                                                                                                                                                                            <table class="table align-middle mb-0 table-theme">
     <thead class="table-light">
     <tr>
 
-        <th class="">No.</th>
-        <th class="text-center">Registration Date
+        <th class="">
+            {{ __('translation.no.') }}
         </th>
-        <th class="text-center">Customer Number
+        <th class="text-center">
+            {{ __('translation.Registration Date') }}
         </th>
-        <th class="text-center">Building Name
+        <th class="text-center">
+            {{ __('translation.Customer Number') }}
         </th>
-        <th class="text-center">Address</th>
-        <th class="text-center">Building Management Company
+        <th class="text-center">
+            {{ __('translation.Building Name') }}
         </th>
-        <th class="text-center">Maintenance Company
+        <th class="text-center">
+            {{ __('translation.address') }}
         </th>
-        <th class="text-center">Action
+        <th class="text-center">
+            {{ __('translation.Building Management Company') }}
+        </th>
+        <th class="text-center">
+            {{ __('translation.Maintenance Company') }}
+        </th>
+        <th class="text-center">
+            {{ __('translation.action') }}
         </th>
     </tr>
     </thead>

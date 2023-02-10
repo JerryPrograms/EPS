@@ -14,21 +14,35 @@
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title mb-4">Customer Information</h4>
+                                    <h4 class="card-title mb-4">
+                                        {{ __('translation.Customer Information') }}
+                                    </h4>
                                     <form id="customerSearchForm">
                                         <div class="row">
                                             @csrf
                                             <div class="col-md-2 col-6">
                                                 <select class="form-select mt-4" name="filter" autocomplete="off"
                                                         required>
-                                                    <option selected value="" disabled>Filter</option>
-                                                    <option value="all">All</option>
-                                                    <option value="created_at">Registration Date</option>
-                                                    <option value="building_name">Building Name</option>
-                                                    <option value="customer_number">Customer Number</option>
-                                                    <option value="address">Address</option>
-                                                    <option value="building_management_company">Building Management
-                                                        Company
+                                                    <option selected value="" disabled>
+                                        {{ __('translation.filter') }}
+                                                    </option>
+                                                    <option value="all">
+                                        {{ __('translation.all') }}
+                                                    </option>
+                                                    <option value="created_at">
+                                                        {{ __('translation.Registration Date') }}
+                                                    </option>
+                                                    <option value="building_name">
+                                                        {{ __('translation.Building Name') }}
+                                                    </option>
+                                                    <option value="customer_number">
+                                                        {{ __('translation.Customer Number') }}
+                                                    </option>
+                                                    <option value="address">
+                                                        {{ __('translation.address') }}
+                                                    </option>
+                                                    <option value="building_management_company">
+                                                        {{ __('translation.Building Management Company') }}
                                                     </option>
                                                 </select>
                                             </div>
@@ -45,14 +59,14 @@
                                                         </button>
                                                     </div>
                                                 </div>
-                                            </div>  
+                                            </div>
                                             <div class="col-md-3 col-6">
                                                 <button id="clearFilter"
                                                         onclick="ClearFilter()"
                                                         type="button"
                                                         class="d-none btn btn-primary waves-effect waves-light w-sm mt-4"
                                                         >
-                                                    Clear Filter
+                                                        {{ __('translation.Clear Filter') }}
                                                 </button>
                                             </div>
                                             <div class="col-md-4 col-12 text-end">

@@ -8,22 +8,35 @@
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title mb-4">Contract Managemnet List</h4>
+                                    <h4 class="card-title mb-4">
+                                        {{ __('translation.Contract Managemnet List') }}
+                                    </h4>
                                     <div class="d-flex align-items-center table-top-actions gap-1">
                                         <select class="form-select select_filter" name="filter" autocomplete="off" required>
                                             <option selected="" value="" disabled="">Filter</option>
-                                            <option value="all">All</option>
-                                            <option value="created_at">Registration Date</option>
-                                            <option value="building_name">Building Name</option>
-                                            <option value="customer_number">Customer Number</option>
-                                            <option value="address">Address</option>
-                                            <option value="building_management_company">Building Management
-                                                Company
+                                            <option value="all">
+                                                {{ __('translation.all') }}
+                                            </option>
+                                            <option value="created_at">
+                                                {{ __('translation.Registration Date') }}
+                                            </option>
+                                            <option value="building_name">
+                                                {{ __('translation.Building Name') }}
+                                            </option>
+                                            <option value="customer_number">
+                                                {{ __('translation.Customer Number') }}
+                                            </option>
+                                            <option value="address">
+                                                {{ __('translation.address') }}
+                                            </option>
+                                            <option value="building_management company">
+                                                {{ __('translation.Building Management Company') }}
                                             </option>
                                         </select>
                                         <div class="custom_search">
                                             <div class="search">
-                                                <input type="text" class="form-control" name="keyword" placeholder="search" autocomplete="off" required="">
+                                                <input type="text" class="form-control" name="keyword"
+                                                placeholder="{{ __('translation.search') }}" autocomplete="off" required="">
                                                 <button type="submit" class="btn btn-primary searchbar_button">
                                                     <div class="search_img">
                                                         <img src="http://127.0.0.1:8000/engineer_company/assets/images/search.png">
@@ -57,7 +70,7 @@
     </div>
 @endsection
 @section('modal')
-   
+
 @endsection
 @section('custom-script')
     <script>

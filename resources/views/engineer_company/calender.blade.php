@@ -170,7 +170,9 @@
                             <div class="card">
 
                                 <div class="card-body">
-                                    <h4 class="card-title mb-4">Calender</h4>
+                                    <h4 class="card-title mb-4">
+                                        {{ __('translation.calender') }}
+                                    </h4>
                                     <div id="calendar"></div>
 
                                     <div style='clear:both'></div>
@@ -185,12 +187,15 @@
                                     <div class="card">
                                         <div class="card-body height-600-overflow-auto">
                                             <div class="d-flex justify-content-between align-items-center mb-3">
+
                                                 <h6 class="fw-bold mb-0"><img class="me-1" style="width: 20px"
-                                                                              src="{{asset('engineer_company/assets/images/rect.png')}}">To
-                                                    do list</h6>
+                                                                              src="{{asset('engineer_company/assets/images/rect.png')}}">{{ __('translation.To do list') }}
+                                                    </h6>
+
                                                 <button id="btn-new-event" data-bs-toggle="modal"
                                                         data-bs-target="#addEventCompleteModal"
-                                                        class="calender_add_btn">+Add
+                                                        class="calender_add_btn">
+                                                        {{ __('translation.+add') }}
                                                 </button>
                                             </div>
                                             <div class="mb-3">
@@ -218,7 +223,8 @@
                                                                 <h6 data-toggle="tooltip" data-placement="bottom" title="{{$ev->memo}}">{{strlen($ev->memo) > 15 ? substr($ev->memo,0,15).'...' : $ev->memo}}</h6>
                                                                 <button
                                                                     onclick="ChangeEventStatus('{{$ev->id}}')"
-                                                                    class="calender_add_btn">Done
+                                                                    class="calender_add_btn">
+                                                                    {{ __('translation.done') }}
                                                                 </button>
                                                             </div>
                                                         </div>
@@ -226,9 +232,10 @@
                                                 @endforeach
                                             </div>
                                             <div class="d-flex justify-content-between align-items-center mb-3">
+
                                                 <h6 class="fw-bold mb-0"><img class="me-1" style="width: 25px"
-                                                                              src="{{asset('engineer_company/assets/images/check.png')}}">Completed
-                                                    list</h6>
+                                                                              src="{{asset('engineer_company/assets/images/check.png')}}">{{ __('translation.Completed list') }}</h6>
+
                                             </div>
                                             <div class="">
                                                 @foreach($todos_completed as $ev)
@@ -290,7 +297,9 @@
                             </div>
                             <input name="type" id="add_event_type" hidden>
                             <div class="col-4 text-end mt-4">
-                                <button id="type_btn" disabled>Weekend Duty</button>
+                                <button id="type_btn" disabled>
+                                {{ __('translation.Week_end_Duty') }}
+                                </button>
                             </div>
                             <div class="col-4 text-end">
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
@@ -298,14 +307,16 @@
                             </div>
                             <div class="col-12 mt-3">
                                 <input type="text" class="form-control w-50 border-blue-2px" name="title"
-                                       placeholder="Enter Name" required>
+                                       placeholder="{{ __('translation.Enter Name') }}" required>
                             </div>
                             <div class="col-12 mt-2">
                                 <input type="text" class="form-control border-blue-2px" name="memo"
-                                       placeholder="Enter Memo" required>
+                                       placeholder="{{ __('translation.Enter Memo') }}" required>
                             </div>
                             <div class="col-12 mt-3 text-center">
-                                <button type="submit" class="btn btn-primary submitbtn">Save changes</button>
+                                <button type="submit" class="btn btn-primary submitbtn">
+                                {{ __('translation.Save changes') }}
+                                </button>
                             </div>
                             <input name="assigned_by_id" value="123" hidden>
                         </div>
@@ -334,14 +345,16 @@
                             </div>
                             <div class="col-12 mt-3">
                                 <input type="text" class="form-control w-50 border-blue-2px" name="title"
-                                       placeholder="Enter Name" required>
+                                       placeholder="{{ __('translation.Enter Title') }}" required>
                             </div>
                             <div class="col-12 mt-2">
                                 <input type="text" class="form-control border-blue-2px" name="memo"
-                                       placeholder="Enter Memo" required>
+                                       placeholder="{{ __('translation.Enter Content') }}" required>
                             </div>
                             <div class="col-12 mt-3 text-center">
-                                <button type="submit" class="btn btn-primary submitbtn">Save changes</button>
+                                <button type="submit" class="btn btn-primary submitbtn">
+                                {{ __('translation.Save changes') }}
+                                </button>
                             </div>
                             <input name="user_id" value="{{auth('engineer_company')->user()->id}}" hidden>
                         </div>
@@ -358,7 +371,9 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="EditAndDeleteEventCompleteModalLabel">Edit Event</h1>
+                    <h1 class="modal-title fs-5" id="EditAndDeleteEventCompleteModalLabel">
+                    {{ __('translation.Edit_Event') }}
+                    </h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form id="EditEventForm">
@@ -371,23 +386,27 @@
                             <label for="formrow-firstname-input" class="form-label">Title</label>
                             <input type="text" id="a_title" class="form-control" name="title"
 
-                                   placeholder="Enter Your First Name" required>
+                                   placeholder="{{ __('translation.Enter Your First Name') }}" required>
                         </div>
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="mb-3">
-                                    <label for="formrow-email-input" class="form-label">Date</label>
+                                    <label for="formrow-email-input" class="form-label">
+                                    {{ __('translation.date') }}
+                                    </label>
                                     <input id="a_start_date" type="date" class="form-control" name="start_date"
 
-                                           placeholder="Enter Your Email ID" required>
+                                           placeholder="{{ __('translation.Enter Your Email ID') }}"required>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="mb-3">
-                                    <label for="formrow-email-input" class="form-label">Memo</label>
+                                    <label for="formrow-email-input" class="form-label">
+                                    {{ __('translation.memo') }}
+                                    </label>
                                     <input id="a_memo" type="text" class="form-control" name="memo"
 
-                                           placeholder="Enter memo" required>
+                                           placeholder="{{ __('translation.Enter memo') }}" required>
                                 </div>
                             </div>
                             <input name="assigned_by_id" value="1" hidden>
@@ -396,15 +415,31 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="mb-3">
-                                    <label for="formrow-inputCity" class="form-label">Select Type</label>
+                                    <label for="formrow-inputCity" class="form-label">
+                                    {{ __('translation.Select_Type') }}
+                                    </label>
                                     <select id="a_type" class="form-select" name="type" required>
-                                        <option value="" selected disabled>Select</option>
-                                        <option value="weekend duty">weekend duty</option>
-                                        <option value="weekend shift">weekend shift</option>
-                                        <option value="night shift">night shift</option>
-                                        <option value="holiday duty">holiday duty</option>
-                                        <option value="construction">construction</option>
-                                        <option value="Periodic inspection">Periodic inspection</option>
+                                        <option value="" selected disabled>
+                                        {{ __('translation.select') }}
+                                        </option>
+                                        <option value="weekend duty">
+                                        {{ __('translation.weekend duty') }}
+                                        </option>
+                                        <option value="weekend shift">
+                                        {{ __('translation.weekend shift') }}
+                                        </option>
+                                        <option value="night shift">
+                                        {{ __('translation.night shift') }}
+                                        </option>
+                                        <option value="holiday duty">
+                                        {{ __('translation.holiday duty') }}
+                                        </option>
+                                        <option value="construction">
+                                        {{ __('translation.construction') }}
+                                        </option>
+                                        <option value="Periodic inspection">
+                                        {{ __('translation.Periodic inspection') }}
+                                        </option>
                                     </select>
                                 </div>
                             </div>
@@ -412,9 +447,15 @@
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" onclick="DeleteEventid()" class="btn btn-danger">Delete</button>
-                        <button type="submit" class="btn btn-primary submitbtn">Save changes</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        {{ __('translation.close') }}
+                        </button>
+                        <button type="button" onclick="DeleteEventid()" class="btn btn-danger">
+                        {{ __('translation.delete') }}
+                    </button>
+                        <button type="submit" class="btn btn-primary submitbtn">
+                        {{ __('translation.Save changes') }}
+                        </button>
                     </div>
                 </form>
             </div>
@@ -434,7 +475,7 @@
                 themeSystem: 'bootstrap5',
                 customButtons: {
                     weekendDuty: {
-                        text: 'Weekend Duty',
+                        text: '{{ __('translation.Weekend Duty') }}',
                         click: function () {
                             $('#addEventModal').modal('show');
                             $('#type_btn').addClass('fc-weekendDuty-button');
@@ -443,7 +484,7 @@
                         }
                     },
                     weekendShift: {
-                        text: 'Weekend Shift',
+                        text: '{{ __('translation.Weekend Shift') }}',
                         click: function () {
                             $('#addEventModal').modal('show');
                             $('#type_btn').addClass('fc-weekendShift-button');
@@ -452,7 +493,7 @@
                         }
                     },
                     nightShift: {
-                        text: 'Night Shift',
+                        text: '{{ __('translation.Night Shift') }}',
                         click: function () {
                             $('#addEventModal').modal('show');
                             $('#type_btn').addClass('fc-nightShift-button');
@@ -461,7 +502,7 @@
                         }
                     },
                     holidayDuty: {
-                        text: 'Holiday Duty',
+                        text: '{{ __('translation.Holiday Duty') }}',
                         click: function () {
                             $('#addEventModal').modal('show');
                             $('#type_btn').addClass('fc-holidayDuty-button');
@@ -470,7 +511,7 @@
                         }
                     },
                     construction: {
-                        text: 'Construction',
+                        text: '{{ __('translation.construction') }}',
                         click: function () {
                             $('#addEventModal').modal('show');
                             $('#type_btn').addClass('fc-construction-button');
@@ -479,7 +520,7 @@
                         }
                     },
                     periodicInspection: {
-                        text: 'Periodic Inspection',
+                        text: '{{ __('translation.Periodic Inspection') }}',
                         click: function () {
                             $('#addEventModal').modal('show');
                             $('#type_btn').addClass('fc-periodicInspection-button');
