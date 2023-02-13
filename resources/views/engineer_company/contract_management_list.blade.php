@@ -12,7 +12,8 @@
                                         {{ __('translation.Contract Managemnet List') }}
                                     </h4>
                                     <div class="d-flex align-items-center table-top-actions gap-1">
-                                        <select class="form-select select_filter" name="filter" autocomplete="off" required>
+                                        <select class="form-select select_filter" name="filter" autocomplete="off"
+                                            required>
                                             <option selected="" value="" disabled="">Filter</option>
                                             <option value="all">
                                                 {{ __('translation.all') }}
@@ -36,27 +37,37 @@
                                         <div class="custom_search">
                                             <div class="search">
                                                 <input type="text" class="form-control" name="keyword"
-                                                placeholder="{{ __('translation.search') }}" autocomplete="off" required="">
+                                                    placeholder="{{ __('translation.search') }}" autocomplete="off"
+                                                    required="">
                                                 <button type="submit" class="btn btn-primary searchbar_button">
                                                     <div class="search_img">
-                                                        <img src="http://127.0.0.1:8000/engineer_company/assets/images/search.png">
+                                                        <img
+                                                            src="http://127.0.0.1:8000/engineer_company/assets/images/search.png">
                                                     </div>
                                                 </button>
                                             </div>
                                         </div>
                                         <div class="buttons d-flex align-items-center justify-content-between gap-1">
-                                            <a href="{{ route('add_contract',$customer->user_uid) }}" class="btn btn-primary">Add</a>
+                                            <a href="{{ route('add_contract', $customer->user_uid) }}"
+                                                class="btn btn-primary">Add</a>
                                         </div>
                                     </div>
-                                    <div id="customer_list_table" class="table-responsive mt-3">
-                                        @include('engineer_company.templates.contract_listing',['contracts' => $contracts])
-                                    </div>
-                                    <div class="w-100 mt-4">
+                                    @if (count($contracts) > 0)
+                                        <div id="customer_list_table" class="table-responsive mt-3 data-set-list">
+                                            @include('engineer_company.templates.contract_listing', [
+                                                'contracts' => $contracts,
+                                            ])
+                                        </div>
+                                        <div class="w-100 mt-4">
+                                            <div class="text-center">
+                                                {{ $contracts->links('common_files.paginate') }}
+                                            </div>
+                                        </div>
+                                    @else
                                         <div class="text-center">
-                                            {{ $contracts->links('common_files.paginate') }}
+                                            <img src="{{ asset('engineer_company/images/no-data-found.png') }}" style="height:250px;" class="img-fluid" alt="No Record Found">
                                         </div>
-                                    </div>
-                                    <!-- end table-responsive -->
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -70,12 +81,11 @@
     </div>
 @endsection
 @section('modal')
-
 @endsection
 @section('custom-script')
     <script>
         //ajax to search customer basic information
-        $('#customerSearchForm').submit(function (e) {
+        $('#customerSearchForm').submit(function(e) {
 
             $('.searchbar_button').attr('disabled', true);
             e.preventDefault();
@@ -86,17 +96,17 @@
             $.ajax({
 
                 type: "POST",
-                url: '{{route('SearchCustomerInfo')}}',
+                url: '{{ route('SearchCustomerInfo') }}',
                 dataType: 'json',
                 data: formData,
                 contentType: false,
                 processData: false,
                 cache: false,
                 mimeType: "multipart/form-data",
-                beforeSend: function () {
+                beforeSend: function() {
                     $('#clearFilter').removeClass('d-none');
                 },
-                success: function (res) {
+                success: function(res) {
 
                     $('.searchbar_button').attr('disabled', false);
 
@@ -104,7 +114,7 @@
                         prompt.html('<div class="alert alert-danger">' + res.message + '</div>');
 
                         $("div.prompt").fadeIn();
-                        setTimeout(function () {
+                        setTimeout(function() {
                             $("div.prompt").fadeOut();
                         }, 2000);
 
@@ -114,7 +124,7 @@
                         $('#customer_list_table').append(res.html);
                     }
                 },
-                error: function (e) {
+                error: function(e) {
 
 
                 }
@@ -126,15 +136,15 @@
             $.ajax({
 
                 type: "POST",
-                url: '{{route('ClearCustomerInfo')}}',
+                url: '{{ route('ClearCustomerInfo') }}',
                 dataType: 'json',
                 data: {
-                    '_token': '{{csrf_token()}}',
+                    '_token': '{{ csrf_token() }}',
                 },
-                beforeSend: function () {
+                beforeSend: function() {
                     $('#clearFilter').addClass('d-none');
                 },
-                success: function (res) {
+                success: function(res) {
 
 
                     if (res.success == false) {
@@ -146,7 +156,7 @@
                         $('#customer_list_table').append(res.html);
                     }
                 },
-                error: function (e) {
+                error: function(e) {
 
 
                 }
