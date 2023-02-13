@@ -98,7 +98,7 @@
                                         @endif
                                     @else
                                         <div class="alert alert-danger">Please enter Building information & Parking facility
-                                            certification information</div>
+                                            certification information.<a href="{{ route('ec.CreateBuildingInfo',$customer->user_uid) }}" class="mx-2 text-decoration-underline">Continue</a></div>
                                     @endif
                                 </div>
                             </div>
