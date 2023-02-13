@@ -145,4 +145,35 @@ class InspectionController extends Controller
             return json_encode(['success' => false, 'message' => 'Error : Please try again']);
         }
     }
+
+    public function view_regular_inspection_log($id){
+        $customer = MonthlyRegularInspection::with('getCustomer')->where('id',$id)->first();
+        // dd($customer);
+        if(!empty($customer->getCustomer->ParkingFacilityCertificate)){
+            if($customer->getCustomer->ParkingFacilityCertificate->type == 'flat_reciprocating_type'){
+
+                $file_content = file_get_contents(public_path('machine_types/flat_reciprocating_type.json'));
+
+            }else if($customer->getCustomer->ParkingFacilityCertificate->type == 'elevator_type'){
+
+                $file_content = file_get_contents(public_path('machine_types/elevator_type.json'));
+
+            }else if($customer->getCustomer->ParkingFacilityCertificate->type == 'vertical_circulation'){
+
+                $file_content = file_get_contents(public_path('machine_types/vertical_circulation.json'));
+
+            }else if($customer->getCustomer->ParkingFacilityCertificate->type == 'multi_floor_circulation'){
+
+                $file_content = file_get_contents(public_path('machine_types/multi_floor_circulation.json'));
+            }
+        }else{
+
+            $file_content = null;
+
+        }
+        if(!empty($file_content)){
+            $file_content = json_decode($file_content);
+        }
+        return view('engineer_company.view_regular_inspection_log',compact('customer','file_content'));
+    }
 }

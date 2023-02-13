@@ -165,6 +165,7 @@ Route::group(['prefix' => 'eps-panel', 'middleware' => 'CommonRoutes'], function
     Route::post('/save-inspection-action', [InspectionController::class, 'save_inspection_action'])->name('save_inspection_action');
     Route::get('/edit-regular-inspection-log/{id}', [InspectionController::class, 'edit_regular_inspection_log'])->name('edit_regular_inspection_log');
     Route::post('/edit-inspection-action', [InspectionController::class, 'edit_inspection_action'])->name('edit_inspection_action');
+    Route::get('/view-regular-inspection-log/{id}', [InspectionController::class, 'view_regular_inspection_log'])->name('view_regular_inspection_log');
 
     //Route to Create todoEvent in calendar
     Route::post('/create-todo-event', [EventService::class, 'CreateTodo'])->name('CreateTodo');

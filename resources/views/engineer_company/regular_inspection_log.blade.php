@@ -13,7 +13,8 @@
                                         class="card-title mb-4 d-flex align-items-center justify-content-between mobile-flex-column">
                                         <h5 class="mb-0">Regular inspection logs</h5>
                                         @if (!empty($customer->BuildingInformation))
-                                            <a href="{{ route('write_regular_inspection_log',$customer->user_uid) }}" class="btn btn-primary">Add Inspection</a>
+                                            <a href="{{ route('write_regular_inspection_log', $customer->user_uid) }}"
+                                                class="btn btn-primary">Add Inspection</a>
                                         @endif
                                     </div>
                                     @if (!empty($customer->BuildingInformation))
@@ -69,25 +70,25 @@
                                                     </thead>
                                                     <tbody>
                                                         @foreach ($customer->MonthlyRegularInspection as $v)
-                                                        <tr>
-                                                            <td>{{ $loop->index+1 }}</td>
-                                                            <td>{{ $v->inspection_date->format('d-m-Y') }}</td>
-                                                            <td>{{ $v->arrival_time->format('d-m-Y') }}</td>
-                                                            <td>{{ $customer->building_name }}</td>
-                                                            <td>{{ $customer->building_name }}</td>
-                                                            <td class="d-flex gap-1 justify-content-center">
-                                                                <a href="{{ route('edit_regular_inspection_log',$v->id) }}"
-                                                                    class="btn btn-outline-success btn-theme-success-outline btn-outline btn-sm">
-                                                                    <img
-                                                                        src="{{ asset('engineer_company/images/edit_icon.png') }}">
-                                                                </button>
-                                                                <a href="javascript:void(0)"
-                                                                    class="btn btn-outline-danger btn-theme-danger-outline btn-outline btn-sm">
-                                                                    <img
-                                                                        src="{{ asset('engineer_company/assets/images/red-search.png') }}">
-                                                                </a>
-                                                            </td>
-                                                        </tr>
+                                                            <tr>
+                                                                <td>{{ $loop->index + 1 }}</td>
+                                                                <td>{{ $v->inspection_date->format('d-m-Y') }}</td>
+                                                                <td>{{ $v->arrival_time->format('d-m-Y') }}</td>
+                                                                <td>{{ $customer->building_name }}</td>
+                                                                <td>{{ $customer->building_name }}</td>
+                                                                <td class="d-flex gap-1 justify-content-center">
+                                                                    <a href="{{ route('edit_regular_inspection_log', $v->id) }}"
+                                                                        class="btn btn-outline-success btn-theme-success-outline btn-outline btn-sm">
+                                                                        <img
+                                                                            src="{{ asset('engineer_company/images/edit_icon.png') }}">
+                                                                        </button>
+                                                                        <a href="{{ route('view_regular_inspection_log', $v->id) }}"
+                                                                            class="btn btn-outline-danger btn-theme-danger-outline btn-outline btn-sm">
+                                                                            <img
+                                                                                src="{{ asset('engineer_company/assets/images/red-search.png') }}">
+                                                                        </a>
+                                                                </td>
+                                                            </tr>
                                                         @endforeach
                                                     </tbody>
                                                 </table>
@@ -110,8 +111,6 @@
         </div>
         <!-- End Page-content -->
     </div>
-@endsection
-@section('modal')
 @endsection
 @section('custom-script')
 @endsection
