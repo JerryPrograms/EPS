@@ -128,6 +128,9 @@ $check_content = json_decode($customer->check_contents,true);
                                             </div>
                                             {{-- accordion start --}}
                                             <div class="custom-accordion">
+                                                @php
+                                                    $loopContent = 0;
+                                                @endphp
                                                 @foreach ($file_content as $key => $item)
                                                     @php
                                                         $obj1 = new ArrayIterator($item);
@@ -238,6 +241,9 @@ $check_content = json_decode($customer->check_contents,true);
                                                         </div>
                                                     </div>
                                                     {{-- accordion item end --}}
+                                                    @php
+                                                        $loopContent++;
+                                                    @endphp
                                                 @endforeach
 
                                                 {{-- accordion item start --}}
@@ -245,7 +251,7 @@ $check_content = json_decode($customer->check_contents,true);
                                                     <div class="ca-action gap-2">
                                                         <div class="ca-action-left-content gap-2">
                                                             <div class="heading-text">
-                                                                <h4 class="mb-0">7. Special notes</h4>
+                                                                <h4 class="mb-0">{{ $loopContent + 1 }}. Special notes</h4>
                                                             </div>
                                                         </div>
                                                         <div class="ca-action-right-content">

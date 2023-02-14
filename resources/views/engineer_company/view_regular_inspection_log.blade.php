@@ -79,6 +79,9 @@
                                         </div>
                                         {{-- accordion start --}}
                                         <div class="custom-accordion">
+                                            @php
+                                                $loopCount = 0;
+                                            @endphp
                                             @foreach ($file_content as $key => $item)
                                                 @php
                                                     $obj1 = new ArrayIterator($item);
@@ -158,6 +161,9 @@
                                                     </div>
                                                 </div>
                                                 {{-- accordion item end --}}
+                                                @php
+                                                    $loopCount++;
+                                                @endphp
                                             @endforeach
 
                                             {{-- accordion item start --}}
@@ -165,7 +171,7 @@
                                                 <div class="ca-action gap-2">
                                                     <div class="ca-action-left-content gap-2">
                                                         <div class="heading-text">
-                                                            <h4 class="mb-0">7. Special notes</h4>
+                                                            <h4 class="mb-0">{{ $loopCount + 1 }}. Special notes</h4>
                                                         </div>
                                                     </div>
                                                     <div class="ca-action-right-content">
@@ -192,7 +198,7 @@
                                                 <div class="ca-action gap-2">
                                                     <div class="ca-action-left-content gap-2">
                                                         <div class="heading-text">
-                                                            <h4 class="mb-0">8. Customer side verifier</h4>
+                                                            <h4 class="mb-0">{{ $loopCount + 2 }}. Customer side verifier</h4>
                                                         </div>
                                                     </div>
                                                     <div class="ca-action-right-content">
