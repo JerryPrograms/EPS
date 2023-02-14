@@ -81,7 +81,7 @@
                                                                         class="btn btn-outline-success btn-theme-success-outline btn-outline btn-sm">
                                                                         <img
                                                                             src="{{ asset('engineer_company/images/edit_icon.png') }}">
-                                                                        </button>
+                                                                    </a>
                                                                         <a href="{{ route('view_regular_inspection_log', $v->id) }}"
                                                                             class="btn btn-outline-danger btn-theme-danger-outline btn-outline btn-sm">
                                                                             <img

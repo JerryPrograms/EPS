@@ -1,43 +1,28 @@
-@if(count($MonthlyRegularInspections) > 0)
-    @foreach($MonthlyRegularInspections as $mr)
-
+@if (count($MonthlyRegularInspections) > 0)
+    @foreach ($MonthlyRegularInspections as $mr)
         <tr class="custom_bor_clr">
-            <td class="border-bottom-0"><a
-                    href="javascript: void(0);"
-                    class="text-body fw-bold">{{$loop->index + 1}}</a></td>
+            <td class="border-bottom-0">{{ $loop->index + 1 }}</td>
             <td class="border-bottom-0">
-                <button
-                    class="date_button border-0">{{$mr->date}}
-                </button>
+                {{ $mr->inspection_date->format('d-m-Y') }}
             </td>
             <td class="border-bottom-0">
-                <img class="monthly-inspection-listing-img"
-                     src="{{asset($mr->photo)}}"
-                     class="gallery_img">
+                {{ $mr->completion_time->format('d-m-Y') }}
             </td>
             <td class="border-bottom-0">
-                <button class="date_button_2 border-0">{{$mr->manager}}
-                </button>
+                {{ $mr->arrival_time->format('d-m-Y') }}
             </td>
             <td class="border-bottom-0">
-                <button class="date_button_2 border-0">{{$mr->check_contents}}
-                </button>
+                {{ $mr->inspection_manager }}
             </td>
-
-            <td class="border-bottom-0 text-center">
-                <button onclick="$('#partReplacementID').val('{{$mr->id}}')"
-                        type="button" data-bs-toggle="modal"
-                        data-bs-target="#deleteReplacementHistory"
-                        class="date_button_2 border-0">
-                    <i class="fa fa-trash-can"></i>
-                </button>
+            <td>
+                <a href="{{ route('view_regular_inspection_log', $mr->id) }}" class="btn btn-primary btn-sm">Details</a>
             </td>
         </tr>
     @endforeach
 @else
     <tr>
-        <td colspan="8"><img style="width: 50%; height: 50%"
-                             src="{{asset('engineer_company/images/no-data-found.png')}}">
+        <td colspan="6">
+            <img style="width: 50%; height: 50%" src="{{ asset('engineer_company/images/no-data-found.png') }}">
         </td>
     </tr>
 @endif

@@ -142,35 +142,31 @@
                                         <!-- form row 1 start  -->
                                         <div class="row mt-4">
                                             <div class="col-lg-11">
-                                                <h4 class="card-title border-bottom-0"> <span
+                                                <h4 class="card-title border-bottom-0 mb-0 pb-0"> <span
                                                         class="bor_lef">&nbsp;</span>
 
-                                                        {{ __('translation.Customer Information') }}
+                                                        Last monthly maintenance
 
                                                 </h4>
                                             </div>
-                                            <div class="col-lg-1">
+                                            {{-- <div class="col-lg-1">
 
                                                 <div class="file_main_section">
                                                     <button class="file_button">
                                                         <img src="{{asset('engineer_company/images/Vector.png')}}">
                                                     </button>
                                                 </div>
-                                            </div>
+                                            </div> --}}
 
                                         </div>
                                         <!-- form row 1 end  -->
 
 
                                         <!-- row 2 start  -->
-                                        <div class="row mt-2">
+                                        {{-- <div class="row mt-2">
                                             <div class="col-lg-3">
-                                                <p class="circle_img_text mt-3">
-                                                    <b>
-
-                                                        {{ __('translation.Failure and replacement history') }}
-
-                                                    </b>
+                                                <p class="circle_img_text fw-bold mt-3">
+                                                    
                                                 </p>
                                             </div>
                                             <div class="col-lg-3">
@@ -189,7 +185,7 @@
                                                 </button>
                                             </div>
 
-                                        </div>
+                                        </div> --}}
                                         <!-- row -->
                                     </div>
 
@@ -209,26 +205,21 @@
                                                 <table class="table align-middle table-nowrap mb-0">
                                                     <thead class="table-light">
                                                     <tr>
-
                                                         <th class="align-middle border-0">
                                                             {{ __('translation.no.') }}
                                                         </th>
-                                                        <th class="text-center custom_inp_widt  border-0">
-                                                            {{ __('translation.date') }}
-
+                                                        <th class="text-center custom_inp_widt  border-0">Inspection Date</th>
+                                                        <th class="custom_inp_widt  border-0">
+                                                            Completion Time
                                                         </th>
                                                         <th class="custom_inp_widt  border-0">
-                                                            {{ __('translation.attached photo') }}
-                                                        </th>
-                                                        <th class="custom_inp_widt  border-0">
-                                                            {{ __('translation.manager') }}
+                                                            Arrival Time
                                                         </th>
                                                         <th class="text-center  border-0">
-                                                            {{ __('translation.Check contents') }}
+                                                            Manager
                                                         </th>
-                                                        <th class="text-center  border-0">
-
-                                                            {{ __('translation.action') }}
+                                                        <th class="text-center border-0">
+                                                            Details
                                                         </th>
                                                     </tr>
                                                     </thead>
