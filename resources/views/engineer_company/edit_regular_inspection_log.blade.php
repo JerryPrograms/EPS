@@ -62,7 +62,7 @@ $check_content = json_decode($customer->check_contents,true);
                                                         <input type="text" class="form-control form-theme-input"
                                                             id="type_and_number"
                                                             placeholder="Come out automatically"
-                                                            value="{{ str_replace('_', ' ', $customer->getCustomer->ParkingFacilityCertificate->type) }}"
+                                                            value="{{ str_replace('_', ' ', $customer->type) }}"
                                                             disabled>
                                                     </div>
                                                 </div>

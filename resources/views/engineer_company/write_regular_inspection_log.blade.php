@@ -8,6 +8,7 @@
                         <form id="inspectionForm">
                             @csrf
                             <input type="hidden" name="user_uid" value="{{ $customer->id }}">
+                            <input type="hidden" name="machine_type" value="{{ $customer->ParkingFacilityCertificate->type }}">
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="card">

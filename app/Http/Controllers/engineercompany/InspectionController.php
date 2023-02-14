@@ -76,7 +76,8 @@ class InspectionController extends Controller
             'inspection_manager' => $request->inspection_manager,
             'check_contents' => json_encode($request->inspection),
             'special_notes' => $request->special_notes,
-            'signature' => $signature
+            'signature' => $signature,
+            'type' => $request->machine_type
         ]);
 
         if($inspectionSave){
@@ -88,21 +89,20 @@ class InspectionController extends Controller
 
     public function edit_regular_inspection_log($id){
         $customer = MonthlyRegularInspection::with('getCustomer')->where('id',$id)->first();
-        // dd($customer);
-        if(!empty($customer->getCustomer->ParkingFacilityCertificate)){
-            if($customer->getCustomer->ParkingFacilityCertificate->type == 'flat_reciprocating_type'){
+        if(!empty($customer->type)){
+            if($customer->type == 'flat_reciprocating_type'){
 
                 $file_content = file_get_contents(public_path('machine_types/flat_reciprocating_type.json'));
 
-            }else if($customer->getCustomer->ParkingFacilityCertificate->type == 'elevator_type'){
+            }else if($customer->type == 'elevator_type'){
 
                 $file_content = file_get_contents(public_path('machine_types/elevator_type.json'));
 
-            }else if($customer->getCustomer->ParkingFacilityCertificate->type == 'vertical_circulation'){
+            }else if($customer->type == 'vertical_circulation'){
 
                 $file_content = file_get_contents(public_path('machine_types/vertical_circulation.json'));
 
-            }else if($customer->getCustomer->ParkingFacilityCertificate->type == 'multi_floor_circulation'){
+            }else if($customer->type == 'multi_floor_circulation'){
 
                 $file_content = file_get_contents(public_path('machine_types/multi_floor_circulation.json'));
             }
