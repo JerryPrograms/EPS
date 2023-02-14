@@ -294,68 +294,6 @@
         ]
     },
     {
-        "hoistway": [
-            {
-                "main_lift": [
-                    {
-                        "question_title": "Motor, reducer fixed and noise condition",
-                        "situation": "B",
-                        "inspection_duration": "Monthly",
-                        "input_name": "motor_reducer_fixed_and_noise_condition"
-                    },
-                    {
-                        "question_title": "Motor brake operation and lining wear, gap condition",
-                        "situation": "B",
-                        "inspection_duration": "Monthly",
-                        "input_name": "motor_brake_operation_and_lining_wear_gap_condition"
-                    },
-                    {
-                        "question_title": "Reducer oil leakage and oil level condition",
-                        "situation": "B",
-                        "inspection_duration": "Monthly",
-                        "input_name": "reducer_oil_leakage_and_oil_level_condition"
-                    },
-                    {
-                        "question_title": "Traverse chain tension and lubrication condition",
-                        "situation": "B",
-                        "inspection_duration": "2, 5, 8, 11",
-                        "input_name": "traverse_chain_tension_and_lubrication_condition"
-                    },
-                    {
-                        "question_title": "Traverse drive shaft and pinion gear fixed, wear condition",
-                        "situation": "B",
-                        "inspection_duration": "2, 5, 8, 11",
-                        "input_name": "traverse_drive_shaft_and_pinion_gear_fixed_wear_condition"
-                    },
-                    {
-                        "question_title": "Position, wheel detection sensor operation status",
-                        "situation": "B",
-                        "inspection_duration": "Monthly",
-                        "input_name": "position_wheel_detection_sensor_operation_status"
-                    },
-                    {
-                        "question_title": "Pallet roller status",
-                        "situation": "B",
-                        "inspection_duration": "Monthly",
-                        "input_name": "pallet_roller_status"
-                    },
-                    {
-                        "question_title": "Pallet Link(LUG) & Camfollow Bearing Status",
-                        "situation": "B",
-                        "inspection_duration": "2, 5, 8, 11",
-                        "input_name": "pallet_link_LUG_and_camfollow_bearing_status"
-                    },
-                    {
-                        "question_title": "Pallet Shaft Pin wear and lubrication condition",
-                        "situation": "B",
-                        "inspection_duration": "2, 5, 8, 11",
-                        "input_name": "pallet_shaft_pin_wear_and_lubrication_condition"
-                    }
-                ]
-            }
-        ]
-    },
-    {
         "etc": [
             {
                 "etc": [

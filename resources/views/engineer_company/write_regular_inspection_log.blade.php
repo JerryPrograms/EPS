@@ -124,6 +124,9 @@
                                             </div>
                                             {{-- accordion start --}}
                                             <div class="custom-accordion">
+                                                @php
+                                                    $loopCount = 0    
+                                                @endphp
                                                 @foreach ($file_content as $key => $item)
                                                     @php
                                                         $obj1 = new ArrayIterator($item);
@@ -234,14 +237,16 @@
                                                         </div>
                                                     </div>
                                                     {{-- accordion item end --}}
+                                                    @php
+                                                        $loopCount++;
+                                                    @endphp
                                                 @endforeach
-
                                                 {{-- accordion item start --}}
                                                 <div class="custom-accordion-item">
                                                     <div class="ca-action gap-2">
                                                         <div class="ca-action-left-content gap-2">
                                                             <div class="heading-text">
-                                                                <h4 class="mb-0">7. Special notes</h4>
+                                                                <h4 class="mb-0">{{ $loopCount + 1 }}. Special notes</h4>
                                                             </div>
                                                         </div>
                                                         <div class="ca-action-right-content">
@@ -265,11 +270,12 @@
                                                 {{-- accordion item end --}}
                                                 <div class="form-group mt-3" style="padding: 12px 20px;border: 1px solid #E1E3EC;">
                                                     <div class="d-flex align-items-center justify-content-between pb-2">
-                                                        <h4 class="mb-0" style="font-size: 14px;">8. Customer side verifier</h4>
+                                                        <h4 class="mb-0" style="font-size: 14px;">{{ $loopCount + 2 }}. Customer side verifier</h4>
                                                         <button class="btn btn-danger btn-sm" type="button" id="clear">clear</button>
                                                     </div>
                                                     <canvas id="signature-pad" name="signature" class="signature-pad w-100" style="touch-action: none;height: 180px;padding: 10px;border: 1px solid #E1E3EC;"></canvas>
                                                         <input type="hidden" name="output" class="output">
+                                                        <small id="canvas_error" class="text-danger d-none">Signature is required</small>
                                                 </div>
                                             </div>
                                             {{-- accordion end --}}
@@ -348,8 +354,12 @@
             submitHandler: function() {
                 var imageData = signaturePad.toDataURL();
                 document.getElementsByName("output")[0].setAttribute("value", imageData);
+                if (signaturePad.isEmpty()){
+                    $('#canvas_error').removeClass('d-none');
+                }else{
                 ajaxCall($('#inspectionForm'), "{{ route('save_inspection_action') }}", $('#formBtn'),
                     "{{ route('regular_inspection_log',$customer->user_uid) }}", onRequestSuccess);
+                }
             }
         });
     </script>
