@@ -33,6 +33,14 @@ class InspectionController extends Controller
 
                 $file_content = file_get_contents(public_path('machine_types/multi_floor_circulation.json'));
             }
+            else if($customer->ParkingFacilityCertificate->type == 'multistage'){
+
+                $file_content = file_get_contents(public_path('machine_types/multistage.json'));
+            }
+            else if($customer->ParkingFacilityCertificate->type == 'sliding'){
+
+                $file_content = file_get_contents(public_path('machine_types/sliding.json'));
+            }
         }else{
 
             $file_content = null;
@@ -105,6 +113,14 @@ class InspectionController extends Controller
             }else if($customer->type == 'multi_floor_circulation'){
 
                 $file_content = file_get_contents(public_path('machine_types/multi_floor_circulation.json'));
+
+            }else if($customer->ParkingFacilityCertificate->type == 'multistage'){
+
+                $file_content = file_get_contents(public_path('machine_types/multistage.json'));
+            }
+            else if($customer->ParkingFacilityCertificate->type == 'sliding'){
+
+                $file_content = file_get_contents(public_path('machine_types/sliding.json'));
             }
         }else{
 
@@ -165,6 +181,14 @@ class InspectionController extends Controller
             }else if($customer->getCustomer->ParkingFacilityCertificate->type == 'multi_floor_circulation'){
 
                 $file_content = file_get_contents(public_path('machine_types/multi_floor_circulation.json'));
+
+            }else if($customer->ParkingFacilityCertificate->type == 'multistage'){
+
+                $file_content = file_get_contents(public_path('machine_types/multistage.json'));
+            }
+            else if($customer->ParkingFacilityCertificate->type == 'sliding'){
+
+                $file_content = file_get_contents(public_path('machine_types/sliding.json'));
             }
         }else{
 

@@ -212,6 +212,16 @@
                                                                 $customer->ParkingFacilityCertificate->type == 'vertical_circulation') selected @endif
                                                             value="vertical_circulation">Vertical Circulation
                                                         </option>
+                                                        <option @if (
+                                                            !empty($customer->ParkingFacilityCertificate) &&
+                                                                $customer->ParkingFacilityCertificate->type == 'multistage') selected @endif
+                                                            value="multistage">Multistage
+                                                        </option>
+                                                        <option @if (
+                                                            !empty($customer->ParkingFacilityCertificate) &&
+                                                                $customer->ParkingFacilityCertificate->type == 'sliding') selected @endif
+                                                            value="sliding">Sliding
+                                                        </option>
                                                     </select>
                                                 </div>
                                             </div>

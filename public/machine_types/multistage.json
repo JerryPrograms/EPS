@@ -1,0 +1,305 @@
+[
+    {
+        "oiling": [
+            {
+                "oiling": [
+                    {
+                        "question_title": "Lifting motor oil condition",
+                        "situation": "B",
+                        "inspection_duration": "3,6,9,12",
+                        "input_name": "lifting_motor_oil_condition"
+                    },
+                    {
+                        "question_title": "Transverse motor oiling condition",
+                        "situation": "B",
+                        "inspection_duration": "3,6,9,12",
+                        "input_name": "transverse_motor_oiling_condition"
+                    },
+                    {
+                        "question_title": "Chain oiling status",
+                        "situation": "B",
+                        "inspection_duration": "3,6,9,12",
+                        "input_name": "chain_oiling_status"
+                    },
+                    {
+                        "question_title": "Various bearing oil condition",
+                        "situation": "B",
+                        "inspection_duration": "3,6,9,12",
+                        "input_name": "various_bearing_oil_condition"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "upper_part": [
+            {
+                "upper_part": [
+                    {
+                        "question_title": "MOTOR mounting condition",
+                        "situation": "B",
+                        "inspection_duration": "3,6,9,12",
+                        "input_name": "MOTOR_mounting_condition"
+                    },
+                    {
+                        "question_title": "MOTOR noise condition",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "MOTOR_noise_condition"
+                    },
+                    {
+                        "question_title": "MOTOR BRAKE manual open state",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "MOTOR_BRAKE_manual_open_state"
+                    },
+                    {
+                        "question_title": "MOTOR SPROCKET wear condition",
+                        "situation": "B",
+                        "inspection_duration": "3,6,9,12",
+                        "input_name": "MOTOR_SPROCKET_wear_condition"
+                    },
+                    {
+                        "question_title": "Boarding LAMP operating state",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "Boarding_LAMP_operating_state"
+                    },
+                    {
+                        "question_title": "LAMP SENSOR operating state",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "LAMP_SENSOR_operating_state"
+                    },
+                    {
+                        "question_title": "CHAIN wear condition",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "CHAIN_wear_condition"
+                    },
+                    {
+                        "question_title": "CHAIN twisted state",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "CHAIN_twisted_state"
+                    },
+                    {
+                        "question_title": "CHAIN tension status",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "CHAIN_tension_status"
+                    },
+                    {
+                        "question_title": "IDLE ROLLER adjustment status",
+                        "situation": "B",
+                        "inspection_duration": "3,6,9,12",
+                        "input_name": "IDLE_ROLLER_adjustment_status"
+                    },
+                    {
+                        "question_title": "CAM SWITCH operation status",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "CAM_SWITCH_operation_status"
+                    },
+                    {
+                        "question_title": "Driving chain tension status",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "driving_chain_tension_status"
+                    },
+                    {
+                        "question_title": "HOOK operation status",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "HOOK_operation_status"
+                    },
+                    {
+                        "question_title": "HOOK assembly status",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "HOOK_assembly_status"
+                    },
+                    {
+                        "question_title": "SOLENOIDE operating status",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "SOLENOIDE_operating_status"
+                    },
+                    {
+                        "question_title": "HOOK LIMIT S/W Operation Status",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "HOOK_LIMIT_S_W_Operation_status"
+                    },
+                    {
+                        "question_title": "OVER RUN operation status",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "OVER_RUN_operation_status"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "transverse_part": [
+            {
+                "transverse_part": [
+                    {
+                        "question_title": "MOTOR mounting condition",
+                        "situation": "B",
+                        "inspection_duration": "3, 6, 9, 12",
+                        "input_name": "MOTOR_mounting_condition"
+                    },
+                    {
+                        "question_title": "Motor noise condition",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "motor_noise_condition"
+                    },
+                    {
+                        "question_title": "MOTOR operating status",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "MOTOR_operating_status"
+                    },
+                    {
+                        "question_title": "MOTOR BRAKE manual open state",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "MOTOR_BRAKE_manual_open_state"
+                    },
+                    {
+                        "question_title": "MOTOR SPROCKET WEAR",
+                        "situation": "B",
+                        "inspection_duration": "3, 6, 9, 12",
+                        "input_name": "MOTOR_SPROCKET_WEAR"
+                    },
+                    {
+                        "question_title": "Driving chain tension status",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "driving_chain_tension_status"
+                    },
+                    {
+                        "question_title": "Driving chain wear condition",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "driving_chain_wear_condition"
+                    },
+                    {
+                        "question_title": "SIDE SKIRT ASSEMBLY",
+                        "situation": "B",
+                        "inspection_duration": "3, 6, 9, 12",
+                        "input_name": "SIDE_SKIRT_ASSEMBLY"
+                    },
+                    {
+                        "question_title": "SKIRT LIMIT S/W operation status",
+                        "situation": "B",
+                        "inspection_duration": "3, 6, 9, 12",
+                        "input_name": "SKIRT_LIMIT_S_W_operation_status"
+                    },
+                    {
+                        "question_title": "Entering LAMP operation status",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "entering_LAMP_operation_status"
+                    },
+                    {
+                        "question_title": "SENSOR operation status for LAMP",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "SENSOR_operation_status_for_LAMP"
+                    },
+                    {
+                        "question_title": "Position LIMIT S/W operation status",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "Position_LIMIT_S_W_operation_status"
+                    },
+                    {
+                        "question_title": "LIMIT S/W operation status for left and right movement",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "LIMIT_S_W_operation_status_for_left_and_right_movement"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "UNIT": [
+            {
+                "UNIT": [
+                    {
+                        "question_title": "Entry SENSOR operation status",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "entry_SENSOR_operation_status"
+                    },
+                    {
+                        "question_title": "Buzzer operation status",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "buzzer_operation_status"
+                    },
+                    {
+                        "question_title": "Operation PANNEL status",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "operation_PANNEL_status"
+                    },
+                    {
+                        "question_title": "PANNEL regular position LAMP operation status",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "PANNEL_regular_position_LAMP_operation_status"
+                    },
+                    {
+                        "question_title": "OVER RUN LAMP Operation Status",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "OVER_RUN_LAMP_Operation_Status_pin"
+                    },
+                    {
+                        "question_title": "CONTROL PANNEL cleaning status",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "CONTROL_PANNEL_cleaning_status"
+                    },
+                    {
+                        "question_title": "RAIL ambient conditions",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "RAIL_ambient_conditions"
+                    },
+                    {
+                        "question_title": "Floor condition",
+                        "situation": "B",
+                        "inspection_duration": "Monthly",
+                        "input_name": "floor_condition"
+                    },
+                    {
+                        "question_title": "Steel frame bolt tightening state",
+                        "situation": "B",
+                        "inspection_duration": "3, 6, 9, 12",
+                        "input_name": "steel_frame_bolt_tightening_state"
+                    },
+                    {
+                        "question_title": "SEGMENT operating status",
+                        "situation": "B",
+                        "inspection_duration": "3, 6, 9, 12",
+                        "input_name": "SEGMENT_operating_status"
+                    },
+                    {
+                        "question_title": "TRAY Corrosion and paint condition",
+                        "situation": "B",
+                        "inspection_duration": "3, 6, 9, 12",
+                        "input_name": "TRAY_Corrosion_and_paint_condition"
+                    }
+                ]
+            }
+        ]
+    }
+
+]
