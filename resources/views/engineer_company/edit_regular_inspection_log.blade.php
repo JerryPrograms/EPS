@@ -22,7 +22,7 @@ $check_content = json_decode($customer->check_contents,true);
                                                         <div class="d-flex align-items-center gap-2">
                                                             <span class="fw-bold mb-2 ms-1">.</span>
                                                             <h4 class="card_tittle_2 d-flex align-items-center mb-0">
-                                                                Parking Facility Periodic Inspection Table
+                                                                {{ __('translation.Parking Facility Periodic Inspection Table') }}
                                                             </h4>
                                                         </div>
                                                     </div>
@@ -32,36 +32,34 @@ $check_content = json_decode($customer->check_contents,true);
                                             <div class="form-group mb-4">
                                                 <div class="row align-items-center">
                                                     <div class="col-lg-2 col-md-6 col-12">
-                                                        <label for="building_name" class="mb-0">Building Name</label>
+                                                        <label for="building_name" class="mb-0">{{ __('translation.Building Name') }}</label>
                                                     </div>
                                                     <div class="col-lg-10 col-md-6 col-12">
                                                         <input type="text" class="form-control form-theme-input"
                                                             id="building_name" value="{{ $customer->getCustomer->building_name }}"
-                                                            disabled placeholder="Site name is displayed automatically">
+                                                            disabled>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group mb-4">
                                                 <div class="row align-items-center">
                                                     <div class="col-lg-2 col-md-6 col-12">
-                                                        <label for="inspection_date" class="mb-0">Inspection Date</label>
+                                                        <label for="inspection_date" class="mb-0">{{ __('translation.Inspection date') }}</label>
                                                     </div>
                                                     <div class="col-lg-10 col-md-6 col-12">
                                                         <input type="date" class="form-control form-theme-input"
-                                                            name="inspection_date" value="{{ $customer->inspection_date->format('Y-m-d') }}" id="inspection_date"
-                                                            placeholder="Come out automatically" required>
+                                                            name="inspection_date" value="{{ $customer->inspection_date->format('Y-m-d') }}" id="inspection_date" required>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group mb-4">
                                                 <div class="row align-items-center">
                                                     <div class="col-lg-2 col-md-6 col-12">
-                                                        <label for="type_and_number" class="mb-0">Type and number</label>
+                                                        <label for="type_and_number" class="mb-0">{{ __('translation.Type and number') }}</label>
                                                     </div>
                                                     <div class="col-lg-10 col-md-6 col-12">
                                                         <input type="text" class="form-control form-theme-input"
                                                             id="type_and_number"
-                                                            placeholder="Come out automatically"
                                                             value="{{ str_replace('_', ' ', $customer->type) }}"
                                                             disabled>
                                                     </div>
@@ -70,7 +68,7 @@ $check_content = json_decode($customer->check_contents,true);
                                             <div class="form-group mb-4">
                                                 <div class="row align-items-center">
                                                     <div class="col-lg-2 col-md-6 col-12">
-                                                        <label for="arrival_time" class="mb-0">Arrival time</label>
+                                                        <label for="arrival_time" class="mb-0">{{ __('translation.Arrival time') }}</label>
                                                     </div>
                                                     <div class="col-lg-10 col-md-6 col-12">
                                                         <input type="date" class="form-control form-theme-input"
@@ -81,7 +79,7 @@ $check_content = json_decode($customer->check_contents,true);
                                             <div class="form-group mb-4">
                                                 <div class="row align-items-center">
                                                     <div class="col-lg-2 col-md-6 col-12">
-                                                        <label for="completion_time" class="mb-0">Completion time</label>
+                                                        <label for="completion_time" class="mb-0">{{ __('translation.Completion time') }}</label>
                                                     </div>
                                                     <div class="col-lg-10 col-md-6 col-12">
                                                         <input type="date" class="form-control form-theme-input"
@@ -92,12 +90,11 @@ $check_content = json_decode($customer->check_contents,true);
                                             <div class="form-group">
                                                 <div class="row align-items-center">
                                                     <div class="col-lg-2 col-md-6 col-12">
-                                                        <label for="checker" class="mb-0">Checker</label>
+                                                        <label for="checker" class="mb-0">{{ __('translation.Checker') }}</label>
                                                     </div>
                                                     <div class="col-lg-10 col-md-6 col-12">
                                                         <input type="text" class="form-control form-theme-input"
                                                             id="checker" name="inspection_manager"
-                                                            placeholder="Come out automatically"
                                                             value="{{ $customer->getCustomer->ParkingFacilityCertificate->producer }}"
                                                             required>
                                                     </div>
@@ -119,7 +116,7 @@ $check_content = json_decode($customer->check_contents,true);
                                                             <span class="fw-bold mb-2 ms-1">.</span>
                                                             <h4
                                                                 class="card_tittle_2 d-flex align-items-center mb-2 text-capitalize">
-                                                                Parking Facility Periodic Inspection Table -
+                                                                {{ __('translation.Parking Facility Periodic Inspection Table') }} -
                                                                 {{ str_replace('_', ' ', $customer->getCustomer->ParkingFacilityCertificate->type) }}
                                                             </h4>
                                                         </div>
@@ -166,14 +163,12 @@ $check_content = json_decode($customer->check_contents,true);
                                                                         <tr class="bg-light">
                                                                             <th
                                                                                 class="text-center text-theme-dark min-width-600">
-                                                                                Check
-                                                                                contents</th>
+                                                                                {{ __('translation.Check contents') }}</th>
                                                                             <th class="text-center text-theme-dark">
-                                                                                Situation
+                                                                                {{ __('translation.Situation') }}
                                                                             </th>
                                                                             <th class="text-center text-theme-dark">
-                                                                                Inspection
-                                                                                month
+                                                                                {{ __('translation.Inspection month') }}
                                                                             </th>
                                                                         </tr>
                                                                     </thead>
@@ -185,15 +180,15 @@ $check_content = json_decode($customer->check_contents,true);
                                                                                     class="d-flex align-items-center justify-content-center gap-4">
                                                                                     <p
                                                                                         class="mb-0 text-black inspection-grade">
-                                                                                        A
+                                                                                        {{ __('translation.A') }}
                                                                                     </p>
                                                                                     <p
                                                                                         class="mb-0 text-black inspection-grade">
-                                                                                        B
+                                                                                        {{ __('translation.B') }}
                                                                                     </p>
                                                                                     <p
                                                                                         class="mb-0 text-black inspection-grade">
-                                                                                        C
+                                                                                        {{ __('translation.C') }}
                                                                                     </p>
                                                                                 </div>
                                                                             </th>
@@ -251,7 +246,7 @@ $check_content = json_decode($customer->check_contents,true);
                                                     <div class="ca-action gap-2">
                                                         <div class="ca-action-left-content gap-2">
                                                             <div class="heading-text">
-                                                                <h4 class="mb-0">{{ $loopContent + 1 }}. Special notes</h4>
+                                                                <h4 class="mb-0">{{ $loopContent + 1 }}. {{ __('translation.Special notes') }}</h4>
                                                             </div>
                                                         </div>
                                                         <div class="ca-action-right-content">
@@ -276,7 +271,7 @@ $check_content = json_decode($customer->check_contents,true);
                                             </div>
                                             {{-- accordion end --}}
                                             <div class="form-action mt-3 text-right">
-                                                <button type="submit" id="formBtn" class="btn btn-primary">Edit Inspection</button>
+                                                <button type="submit" id="formBtn" class="btn btn-primary">{{ __('translation.Edit Inspection') }}</button>
                                             </div>
                                         </div>
                                     </div>
@@ -289,11 +284,9 @@ $check_content = json_decode($customer->check_contents,true);
                             <div class="col-lg-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <div class="alert alert-danger mb-0">Please enter Building information & Parking
-                                            facility
-                                            certification information. <a
+                                        <div class="alert alert-danger mb-0">{{ __('translation.Please enter Building information & Parking facility certification information') }}.<a
                                                 href="{{ route('regular_inspection_log', $customer->getCustomer->user_uid) }}"
-                                                class="text-primary mx-2 text-decoration-underline">Back</a></div>
+                                                class="text-primary mx-2 text-decoration-underline">{{ __('translation.Back') }}</a></div>
                                     </div>
                                 </div>
                             </div>

@@ -18,7 +18,7 @@
                                                     <div class="d-flex align-items-center gap-2">
                                                         <span class="fw-bold mb-2 ms-1">.</span>
                                                         <h4 class="card_tittle_2 d-flex align-items-center mb-0">
-                                                            Parking Facility Periodic Inspection Table
+                                                            {{ __('translation.Parking Facility Periodic Inspection Table') }}
                                                         </h4>
                                                     </div>
                                                 </div>
@@ -28,27 +28,27 @@
                                             <table class="table mb-0 table-bordered table-striped table-inspection">
                                                 <tbody>
                                                     <tr>
-                                                        <th class="text-left">Building Name</th>
+                                                        <th class="text-left">{{ __('translation.Building Name') }}</th>
                                                         <td class="text-left">{{ $customer->getCustomer->building_name }}</td>
                                                     </tr>
                                                     <tr>
-                                                        <th class="text-left">Inspection Date</th>
+                                                        <th class="text-left">{{ __('translation.Inspection Date') }}</th>
                                                         <td class="text-left">{{ $customer->inspection_date->format('Y-m-d') }}</td>
                                                     </tr>
                                                     <tr>
-                                                        <th class="text-left">Type and number</th>
+                                                        <th class="text-left">{{ __('translation.Type and number') }}</th>
                                                         <td class="text-left">{{ str_replace('_', ' ', $customer->getCustomer->ParkingFacilityCertificate->type) }}</td>
                                                     </tr>
                                                     <tr>
-                                                        <th class="text-left">Arrival time</th>
+                                                        <th class="text-left">{{ __('translation.Arrival time') }}</th>
                                                         <td class="text-left">{{ $customer->arrival_time->format('Y-m-d') }}</td>
                                                     </tr>
                                                     <tr>
-                                                        <th class="text-left">Completion time</th>
+                                                        <th class="text-left">{{ __('translation.Completion time') }}</th>
                                                         <td class="text-left">{{ $customer->completion_time->format('Y-m-d') }}</td>
                                                     </tr>
                                                     <tr>
-                                                        <th class="text-left">Checker</th>
+                                                        <th class="text-left">{{ __('translation.Checker') }}</th>
                                                         <td class="text-left">{{ $customer->getCustomer->ParkingFacilityCertificate->producer }}</td>
                                                     </tr>
                                                 </tbody>
@@ -70,7 +70,7 @@
                                                         <span class="fw-bold mb-2 ms-1">.</span>
                                                         <h4
                                                             class="card_tittle_2 d-flex align-items-center mb-2 text-capitalize">
-                                                            Parking Facility Periodic Inspection Table -
+                                                            {{ __('translation.Parking Facility Periodic Inspection Table') }} -
                                                             {{ str_replace('_', ' ', $customer->getCustomer->ParkingFacilityCertificate->type) }}
                                                         </h4>
                                                     </div>
@@ -118,14 +118,12 @@
                                                                     <tr class="bg-light">
                                                                         <th
                                                                             class="text-center text-theme-dark min-width-600">
-                                                                            Check
-                                                                            contents</th>
+                                                                            {{ __('translation.Check contents') }}</th>
                                                                         <th class="text-center text-theme-dark">
-                                                                            Situation
+                                                                            {{ __('translation.Situation') }}
                                                                         </th>
                                                                         <th class="text-center text-theme-dark">
-                                                                            Inspection
-                                                                            month
+                                                                            {{ __('translation.Inspection month') }}
                                                                         </th>
                                                                     </tr>
                                                                 </thead>
@@ -171,7 +169,7 @@
                                                 <div class="ca-action gap-2">
                                                     <div class="ca-action-left-content gap-2">
                                                         <div class="heading-text">
-                                                            <h4 class="mb-0">{{ $loopCount + 1 }}. Special notes</h4>
+                                                            <h4 class="mb-0">{{ $loopCount + 1 }}. {{ __('translation.Special notes') }}</h4>
                                                         </div>
                                                     </div>
                                                     <div class="ca-action-right-content">
@@ -198,7 +196,7 @@
                                                 <div class="ca-action gap-2">
                                                     <div class="ca-action-left-content gap-2">
                                                         <div class="heading-text">
-                                                            <h4 class="mb-0">{{ $loopCount + 2 }}. Customer side verifier</h4>
+                                                            <h4 class="mb-0">{{ $loopCount + 2 }}. {{ __('translation.Customer side verifier') }}</h4>
                                                         </div>
                                                     </div>
                                                     <div class="ca-action-right-content">
@@ -223,7 +221,7 @@
                                         </div>
                                         {{-- accordion end --}}
                                         <div class="form-action mt-3 text-right">
-                                            <a href="{{ route('regular_inspection_log',$customer->getCustomer->user_uid) }}" class="btn btn-primary">Back</a>
+                                            <a href="{{ route('regular_inspection_log',$customer->getCustomer->user_uid) }}" class="btn btn-primary">{{ __('translation.Back') }}</a>
                                         </div>
                                     </div>
                                 </div>
@@ -235,9 +233,7 @@
                             <div class="col-lg-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <div class="alert alert-danger mb-0">Please enter Building information & Parking
-                                            facility
-                                            certification information. <a
+                                        <div class="alert alert-danger mb-0">{{ __('translation.Please enter Building information & Parking facility certification information') }}. <a
                                                 href="{{ route('regular_inspection_log', $customer->getCustomer->user_uid) }}"
                                                 class="text-primary mx-2 text-decoration-underline">Back</a></div>
                                     </div>

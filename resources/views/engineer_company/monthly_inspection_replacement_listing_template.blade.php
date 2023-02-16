@@ -15,7 +15,7 @@
                 {{ $mr->inspection_manager }}
             </td>
             <td>
-                <a href="{{ route('view_regular_inspection_log', $mr->id) }}" class="btn btn-primary btn-sm">Details</a>
+                <a href="{{ route('view_regular_inspection_log', $mr->id) }}" class="btn btn-primary btn-sm">{{ __('translation.Details') }}</a>
             </td>
         </tr>
     @endforeach

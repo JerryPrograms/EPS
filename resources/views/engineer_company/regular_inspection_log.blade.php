@@ -11,10 +11,10 @@
                                 <div class="card-body">
                                     <div
                                         class="card-title mb-4 d-flex align-items-center justify-content-between mobile-flex-column">
-                                        <h5 class="mb-0">Regular inspection logs</h5>
+                                        <h5 class="mb-0">{{ __('translation.Regular inspection logs') }}</h5>
                                         @if (!empty($customer->BuildingInformation))
                                             <a href="{{ route('write_regular_inspection_log', $customer->user_uid) }}"
-                                                class="btn btn-primary">Add Inspection</a>
+                                                class="btn btn-primary">{{ __('translation.Add Inspection') }}</a>
                                         @endif
                                     </div>
                                     @if (!empty($customer->BuildingInformation))
@@ -23,11 +23,11 @@
                                                 <thead>
                                                     <tr>
                                                         <th>Info</th>
-                                                        <th style="min-width:180px;">Customer number</th>
-                                                        <th style="min-width:180px;">Building name</th>
-                                                        <th style="min-width:180px;">Address</th>
-                                                        <th style="min-width:250px;">Building management company</th>
-                                                        <th style="min-width:180px;">Maintenance company</th>
+                                                        <th style="min-width:180px;">{{ __('translation.Customer number') }}</th>
+                                                        <th style="min-width:180px;">{{ __('translation.Building name') }}</th>
+                                                        <th style="min-width:180px;">{{ __('translation.address') }}</th>
+                                                        <th style="min-width:250px;">{{ __('translation.Building management company') }}</th>
+                                                        <th style="min-width:180px;">{{ __('translation.Maintenance Company') }}</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -59,13 +59,12 @@
                                                 <table class="table align-middle mb-0 table-theme">
                                                     <thead class="table-light">
                                                         <tr>
-                                                            <th>No.</th>
-                                                            <th>Inspection date</th>
-                                                            <th>Emphysema</th>
-                                                            <th>Site name</th>
-                                                            <th>Installation place</th>
-                                                            <th>View more
-                                                            </th>
+                                                            <th>{{ __('translation.No') }}.</th>
+                                                            <th>{{ __('translation.Inspection date') }}</th>
+                                                            <th>{{ __('translation.Emphysema') }}</th>
+                                                            <th>{{ __('translation.Site name') }}</th>
+                                                            <th>{{ __('translation.Installation place') }}</th>
+                                                            <th>{{ __('translation.View more') }}</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -94,11 +93,10 @@
                                                 </table>
                                             </div>
                                         @else
-                                            <p class="text-center mb-0 mt-4">No Logs Found</p>
+                                            <p class="text-center mb-0 mt-4">{{ __('translation.No Logs Found') }}</p>
                                         @endif
                                     @else
-                                        <div class="alert alert-danger">Please enter Building information & Parking facility
-                                            certification information.<a href="{{ route('ec.CreateBuildingInfo',$customer->user_uid) }}" class="mx-2 text-decoration-underline">Continue</a></div>
+                                        <div class="alert alert-danger">{{ __('translation.Please enter Building information & Parking facility certification information') }}.<a href="{{ route('ec.CreateBuildingInfo',$customer->user_uid) }}" class="mx-2 text-decoration-underline">{{ __('translation.Continue') }}</a></div>
                                     @endif
                                 </div>
                             </div>

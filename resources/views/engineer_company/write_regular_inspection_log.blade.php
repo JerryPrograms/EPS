@@ -19,7 +19,7 @@
                                                         <div class="d-flex align-items-center gap-2">
                                                             <span class="fw-bold mb-2 ms-1">.</span>
                                                             <h4 class="card_tittle_2 d-flex align-items-center mb-0">
-                                                                Parking Facility Periodic Inspection Table
+                                                                {{ __('translation.Parking Facility Periodic Inspection Table') }}
                                                             </h4>
                                                         </div>
                                                     </div>
@@ -29,36 +29,34 @@
                                             <div class="form-group mb-4">
                                                 <div class="row align-items-center">
                                                     <div class="col-lg-2 col-md-6 col-12">
-                                                        <label for="building_name" class="mb-0">Building Name</label>
+                                                        <label for="building_name" class="mb-0">{{ __('translation.Building Name') }}</label>
                                                     </div>
                                                     <div class="col-lg-10 col-md-6 col-12">
                                                         <input type="text" class="form-control form-theme-input"
                                                             id="building_name" value="{{ $customer->building_name }}"
-                                                            disabled placeholder="Site name is displayed automatically">
+                                                            disabled>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group mb-4">
                                                 <div class="row align-items-center">
                                                     <div class="col-lg-2 col-md-6 col-12">
-                                                        <label for="inspection_date" class="mb-0">Inspection Date</label>
+                                                        <label for="inspection_date" class="mb-0">{{ __('translation.Inspection Date') }}</label>
                                                     </div>
                                                     <div class="col-lg-10 col-md-6 col-12">
                                                         <input type="date" class="form-control form-theme-input"
-                                                            name="inspection_date" id="inspection_date"
-                                                            placeholder="Come out automatically" required>
+                                                            name="inspection_date" id="inspection_date" required>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group mb-4">
                                                 <div class="row align-items-center">
                                                     <div class="col-lg-2 col-md-6 col-12">
-                                                        <label for="type_and_number" class="mb-0">Type and number</label>
+                                                        <label for="type_and_number" class="mb-0">{{ __('translation.Type and number') }}</label>
                                                     </div>
                                                     <div class="col-lg-10 col-md-6 col-12">
                                                         <input type="text" class="form-control form-theme-input"
                                                             id="type_and_number"
-                                                            placeholder="Come out automatically"
                                                             value="{{ str_replace('_', ' ', $customer->ParkingFacilityCertificate->type) }}"
                                                             disabled>
                                                     </div>
@@ -67,7 +65,7 @@
                                             <div class="form-group mb-4">
                                                 <div class="row align-items-center">
                                                     <div class="col-lg-2 col-md-6 col-12">
-                                                        <label for="arrival_time" class="mb-0">Arrival time</label>
+                                                        <label for="arrival_time" class="mb-0">{{ __('translation.Arrival time') }}</label>
                                                     </div>
                                                     <div class="col-lg-10 col-md-6 col-12">
                                                         <input type="date" class="form-control form-theme-input"
@@ -78,7 +76,7 @@
                                             <div class="form-group mb-4">
                                                 <div class="row align-items-center">
                                                     <div class="col-lg-2 col-md-6 col-12">
-                                                        <label for="completion_time" class="mb-0">Completion time</label>
+                                                        <label for="completion_time" class="mb-0">{{ __('translation.Completion time') }}</label>
                                                     </div>
                                                     <div class="col-lg-10 col-md-6 col-12">
                                                         <input type="date" class="form-control form-theme-input"
@@ -89,12 +87,11 @@
                                             <div class="form-group">
                                                 <div class="row align-items-center">
                                                     <div class="col-lg-2 col-md-6 col-12">
-                                                        <label for="checker" class="mb-0">Checker</label>
+                                                        <label for="checker" class="mb-0">{{ __('translation.Checker') }}</label>
                                                     </div>
                                                     <div class="col-lg-10 col-md-6 col-12">
                                                         <input type="text" class="form-control form-theme-input"
                                                             id="checker" name="inspection_manager"
-                                                            placeholder="Come out automatically"
                                                             value="{{ $customer->ParkingFacilityCertificate->producer }}"
                                                             required>
                                                     </div>
@@ -116,7 +113,7 @@
                                                             <span class="fw-bold mb-2 ms-1">.</span>
                                                             <h4
                                                                 class="card_tittle_2 d-flex align-items-center mb-2 text-capitalize">
-                                                                Parking Facility Periodic Inspection Table -
+                                                                {{ __('translation.Parking Facility Periodic Inspection Table') }} -
                                                                 {{ str_replace('_', ' ', $customer->ParkingFacilityCertificate->type) }}
                                                             </h4>
                                                         </div>
@@ -163,14 +160,12 @@
                                                                         <tr class="bg-light">
                                                                             <th
                                                                                 class="text-center text-theme-dark min-width-600">
-                                                                                Check
-                                                                                contents</th>
+                                                                                {{ __('translation.Check contents') }}</th>
                                                                             <th class="text-center text-theme-dark">
-                                                                                Situation
+                                                                                {{ __('translation.Situation') }}
                                                                             </th>
                                                                             <th class="text-center text-theme-dark">
-                                                                                Inspection
-                                                                                month
+                                                                                {{ __('translation.Inspection month') }}
                                                                             </th>
                                                                         </tr>
                                                                     </thead>
@@ -182,15 +177,15 @@
                                                                                     class="d-flex align-items-center justify-content-center gap-4">
                                                                                     <p
                                                                                         class="mb-0 text-black inspection-grade">
-                                                                                        A
+                                                                                        {{ __('translation.A') }}
                                                                                     </p>
                                                                                     <p
                                                                                         class="mb-0 text-black inspection-grade">
-                                                                                        B
+                                                                                        {{ __('translation.B') }}
                                                                                     </p>
                                                                                     <p
                                                                                         class="mb-0 text-black inspection-grade">
-                                                                                        C
+                                                                                        {{ __('translation.C') }}
                                                                                     </p>
                                                                                 </div>
                                                                             </th>
@@ -247,7 +242,7 @@
                                                     <div class="ca-action gap-2">
                                                         <div class="ca-action-left-content gap-2">
                                                             <div class="heading-text">
-                                                                <h4 class="mb-0">{{ $loopCount + 1 }}. Special notes</h4>
+                                                                <h4 class="mb-0">{{ $loopCount + 1 }}. {{ __('translation.Special notes') }}</h4>
                                                             </div>
                                                         </div>
                                                         <div class="ca-action-right-content">
@@ -271,17 +266,17 @@
                                                 {{-- accordion item end --}}
                                                 <div class="form-group mt-3" style="padding: 12px 20px;border: 1px solid #E1E3EC;">
                                                     <div class="d-flex align-items-center justify-content-between pb-2">
-                                                        <h4 class="mb-0" style="font-size: 14px;">{{ $loopCount + 2 }}. Customer side verifier</h4>
-                                                        <button class="btn btn-danger btn-sm" type="button" id="clear">clear</button>
+                                                        <h4 class="mb-0" style="font-size: 14px;">{{ $loopCount + 2 }}. {{ __('translation.Customer side verifier') }}</h4>
+                                                        <button class="btn btn-danger btn-sm" type="button" id="clear">{{ __('translation.clear') }}</button>
                                                     </div>
                                                     <canvas id="signature-pad" name="signature" class="signature-pad w-100" style="touch-action: none;height: 180px;padding: 10px;border: 1px solid #E1E3EC;"></canvas>
                                                         <input type="hidden" name="output" class="output">
-                                                        <small id="canvas_error" class="text-danger d-none">Signature is required</small>
+                                                        <small id="canvas_error" class="text-danger d-none">{{ __('translation.Signature is required') }}</small>
                                                 </div>
                                             </div>
                                             {{-- accordion end --}}
                                             <div class="form-action mt-3 text-right">
-                                                <button type="submit" id="formBtn" class="btn btn-primary">Save Inspection</button>
+                                                <button type="submit" id="formBtn" class="btn btn-primary">{{ __('translation.Save Inspection') }}</button>
                                             </div>
                                         </div>
                                     </div>

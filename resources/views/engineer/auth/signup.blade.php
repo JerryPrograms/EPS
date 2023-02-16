@@ -57,19 +57,19 @@
                         <form class="card-body p-lg-5" id="loginForm">
                             @csrf
                             <div>
-                                <h3>Sign up</h3>
-                                <p>EVERY PARKING SOLUTION</p>
+                                <h3>{{ __('translation.Sign up') }}</h3>
+                                <p>{{ __('translation.EVERY PARKING SOLUTION') }}</p>
                                 <div class="prompt"></div>
                                 <div class="form-floating mt-5 d-flex flex-column">
                                     <input type="text" name="name" class="form-control custom_input" id="name"
-                                        placeholder="Enter your username" required>
-                                    <label for="name" class="custom_color_theme">Name</label>
+                                        placeholder="{{ __('translation.Enter your username') }}" required>
+                                    <label for="name" class="custom_color_theme">{{ __('translation.Name') }}</label>
 
                                 </div>
                                 <div class="form-floating mt-3 d-flex flex-column">
                                     <input type="email" name="email" class="form-control custom_input" id="email"
-                                        placeholder="Enter your email address" required>
-                                    <label for="email" class="custom_color_theme">Email (ID)</label>
+                                        placeholder="{{ __('translation.Enter your email address') }}" required>
+                                    <label for="email" class="custom_color_theme">{{ __('translation.Email (ID)') }}</label>
                                     <span class="Custom_icon">
                                         <img src="{{ asset('engineer_company/images/profile_gray.png') }}"
                                             class="user_icon">
@@ -77,29 +77,29 @@
                                 </div>
                                 <div class="form-floating mt-3 d-flex flex-column">
                                     <input type="password" name="password" min="6" class="form-control custom_input" id="password"
-                                        placeholder="Enter a strong password" required>
-                                    <label for="password" class="custom_color_theme">Password</label>
+                                        placeholder="{{ __('translation.Enter a strong password') }}" required>
+                                    <label for="password" class="custom_color_theme">{{ __('translation.Password') }}</label>
                                     <span class="Custom_icon">
                                         <img src="{{ asset('engineer_company/images/lock.png') }}" class="lock_icon">
                                     </span>
                                 </div>
                                 <div class="form-floating mt-3 d-flex flex-column">
                                     <input type="number" name="phone" class="form-control custom_input" id="phone"
-                                        placeholder="Enter your phone number" required>
-                                    <label for="phone" class="custom_color_theme">Phone number</label>
+                                        placeholder="{{ __('translationEnter your phone number') }}" required>
+                                    <label for="phone" class="custom_color_theme">{{ __('translation.Phone number') }}</label>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-check_2 d-flex align-items-center gap-2 mt-4">
                                         <input type="checkbox" class="form-check-input mt-0" id="AllTermsConditions" id="allterms">
                                         <label class="form-check-label mt-0 ml-2" for="termsCheck1">
-                                            I agree to all the terms and conditions.</label>
+                                            {{ __('translation.I agree to all the terms and conditions') }}</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-check d-flex align-items-center gap-2">
                                         <input type="checkbox" class="form-check-input mt-0 termsCheck" id="termsCheck2">
                                         <label class="form-check-label mt-0" for="termsCheck2">
-                                            [Essential] Personal Information Handling Policy
+                                            {{ __('translation.[Essential] Personal Information Handling Policy') }}
                                         </label>
                                     </div>
                                 </div>
@@ -107,7 +107,7 @@
                                     <div class="form-check d-flex align-items-center gap-2">
                                         <input type="checkbox" class="form-check-input mt-0 termsCheck" id="termsCheck3">
                                         <label class="form-check-label mt-0 ml-1" for="termsCheck3">
-                                            [Essential] Terms and Conditions of Service
+                                            {{ __('translation.[Essential] Terms and Conditions of Service') }}
                                         </label>
                                     </div>
                                 </div>
@@ -115,13 +115,13 @@
                                     <div class="form-check d-flex align-items-center gap-2">
                                         <input type="checkbox" class="form-check-input mt-0 termsCheck" id="termsCheck4">
                                         <label class="form-check-label mt-0 ml-1" for="termsCheck4">
-                                            [Choice] Accept receiving marketing information
+                                            {{ __('translation.[Choice] Accept receiving marketing information') }}
                                         </label>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 pl-2 pr-2">
                                     <div class="buton_sett mt-5">
-                                        <button type="submit" id="login_btn" class="btn btn-primary btn-theme-auth w-100" disabled>Sign up</button>
+                                        <button type="submit" id="login_btn" class="btn btn-primary btn-theme-auth w-100" disabled>{{ __('translation.Sign up') }}</button>
                                     </div>
                                 </div>
                             </div>

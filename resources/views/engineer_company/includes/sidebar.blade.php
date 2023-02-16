@@ -12,7 +12,7 @@
                         <img src="{{asset('engineer_company/assets/images/blue-profile.png')}}"
                              class="double_ring_img p-0"
                              style="margin-left: -1px;">
-                        <span key="t-dashboards" class="dropdown_text">Customer List</span>
+                        <span key="t-dashboards" class="dropdown_text">{{ __('translation.Customer List') }}</span>
                         <div class="plus_section_5">
                             <!-- <img src="{{asset('engineer_company/assets/images/gray-plus.png')}}" alt=""> -->
                             <i class="fa-solid fa-plus plus_icon"></i>
@@ -23,7 +23,7 @@
                             <a key="t-level-1-1" href="{{route('ec.GetCustomerInfoListing')}}"
                                class="waves-effect  dropdown_toggle_2">
                                 <i class="fa-solid fa-list list_icon"></i>
-                                <span key="t-dashboards" class="dropdown_text_2">Customer Info
+                                <span key="t-dashboards" class="dropdown_text_2">{{ __('translation.Customer info') }}
                             </span>
 
                             </a>
@@ -37,7 +37,7 @@
                                 <i class="fa-sharp fa-solid fa-pen list_icon"></i>
 
                                 <span key="t-dashboards" class="dropdown_text_2">
-                                Create Customer Information
+                                {{ __('translation.Create Customer Information') }}
                             </span>
 
                             </a>
@@ -45,38 +45,37 @@
                                 <li><a key="t-default"
                                        class="list_menubar_text"
                                        title="Information & Building Management Company Information"><span
-                                            class="custom_dot">.</span>Building Information & ...</a></li>
+                                            class="custom_dot">.</span>{{ __('translation.Building Information') }} {{ __('translation.&') }} ...</a></li>
 
                                 <li><a key="t-saas" class="list_menubar_text"
                                        title="AS Info & Engineer company Info"><span class="custom_dot">.</span>AS
-                                        Info & Engineer...</a></li>
+                                        {{ __('translation.Info & Engineer') }}...</a></li>
 
                                 <li><a key="t-crypto"
                                        class="list_menubar_text"
                                        title="Parking facility certification information & inspection certificate
-                                "><span class="custom_dot">.</span>Parking facility certification..
+                                "><span class="custom_dot">.</span>{{ __('translation.Parking facility certification') }}..
                                     </a></li>
 
                                 <li><a key="t-blog" class="list_menubar_text"
-                                       title="Key Accessories History"><span class="custom_dot">.</span>Key
-                                        Accessories History..</a></li>
+                                       title="Key Accessories History"><span class="custom_dot">.</span>{{ __('translation.Key Accessories History') }}..</a></li>
 
                                 <li><a href="dashboard-blog.html" key="t-blog" class="list_menubar_text"
                                        title="Component replacement history">
-                                        <span class="custom_dot">.</span>Component replacement ..</a></li>
+                                        <span class="custom_dot">.</span>{{ __('translation.Component replacement') }} ..</a></li>
 
                                 <li><a href="dashboard-blog.html" key="t-blog" class="list_menubar_text" title="Monthly Inspection list
                                 ">
-                                        <span class="custom_dot">.</span>Monthly Inspection list
+                                        <span class="custom_dot">.</span>{{ __('translation.Monthly Inspection list') }}
                                     </a></li>
 
                                 <li><a href="dashboard-blog.html" key="t-blog" class="list_menubar_text" title="Emergency dispatch confirmation list
                                 ">
-                                        <span class="custom_dot">.</span>Emergency dispatch...</a></li>
+                                        <span class="custom_dot">.</span>{{ __('translation.Emergency dispatch') }}...</a></li>
 
                                 <li><a href="dashboard-blog.html" key="t-blog" class="list_menubar_text"
                                        title="Manage attachments">
-                                        <span class="custom_dot">.</span>Manage attachments...</a></li>
+                                        <span class="custom_dot">.</span>{{ __('translation.Manage attachments') }}...</a></li>
                             </ul>
 
                         </li>
@@ -172,7 +171,7 @@
                         <img src="{{asset('engineer_company/assets/images/Done_ring_round.png')}}"
                              class="double_ring_img p-0"
                              style="margin-left: -1px;">
-                        <span key="t-dashboards" class="dropdown_text">Dispatch Confirmation</span>
+                        <span key="t-dashboards" class="dropdown_text">{{ __('translation.Dispatch Confirmation') }}</span>
                         <div class="plus_section_6">
                             <!-- <img src="{{asset('engineer_company/assets/images/gray-plus.png')}}" alt=""> -->
                             <i class="fa-solid fa-plus plus_icon"></i>
@@ -266,7 +265,7 @@
                         <img src="{{asset('engineer_company/assets/images/gray-calender.png')}}"
                              class="double_ring_img p-0"
                              style="margin-left: -1px;">
-                        <span key="t-dashboards" class="dropdown_text">Regular inspection log</span>
+                        <span key="t-dashboards" class="dropdown_text">{{ __('translation.Regular inspection log') }}</span>
                         <div class="plus_section_6">
                             <!-- <img src="{{asset('engineer_company/assets/images/gray-plus.png')}}" alt=""> -->
                             <i class="fa-solid fa-plus plus_icon"></i>
@@ -360,7 +359,7 @@
                         <img src="{{asset('engineer_company/assets/images/gray-calender.png')}}"
                              class="double_ring_img p-0"
                              style="margin-left: -1px;">
-                        <span key="t-dashboards" class="dropdown_text">Contract Management</span>
+                        <span key="t-dashboards" class="dropdown_text">{{ __('translation.Contract Management') }}</span>
                         <div class="plus_section_8">
                             <!-- <img src="{{asset('engineer_company/assets/images/gray-plus.png')}}" alt=""> -->
                             <i class="fa-solid fa-plus plus_icon"></i>
@@ -453,7 +452,7 @@
                         <img src="{{asset('engineer_company/assets/images/gray-calender.png')}}"
                              class="double_ring_img p-0"
                              style="margin-left: -1px;">
-                        <span key="t-dashboards" class="dropdown_text">Quote Management</span>
+                        <span key="t-dashboards" class="dropdown_text">{{ __('translation.Quote Management') }}</span>
                         <div class="plus_section_9">
                             <!-- <img src="{{asset('engineer_company/assets/images/gray-plus.png')}}" alt=""> -->
                             <i class="fa-solid fa-plus plus_icon"></i>
@@ -546,7 +545,7 @@
                         <img src="{{asset('engineer_company/assets/images/gray-calender.png')}}"
                              class="double_ring_img p-0"
                              style="margin-left: -1px;">
-                        <span key="t-dashboards" class="dropdown_text">Construction Completion </span>
+                        <span key="t-dashboards" class="dropdown_text">{{ __('translation.Construction Completion') }} </span>
                         <div class="plus_section_10">
                             <!-- <img src="{{asset('engineer_company/assets/images/gray-plus.png')}}" alt=""> -->
                             <i class="fa-solid fa-plus plus_icon"></i>
@@ -639,7 +638,7 @@
                         <img src="{{asset('engineer_company/assets/images/gray-calender.png')}}"
                              class="double_ring_img p-0"
                              style="margin-left: -1px;">
-                        <span key="t-dashboards" class="dropdown_text">Calendar</span>
+                        <span key="t-dashboards" class="dropdown_text">{{ __('translation.Calendar') }}</span>
                         <div class="plus_section_7">
                             <!-- <img src="{{asset('engineer_company/assets/images/gray-plus.png')}}" alt=""> -->
                             <i class="fa-solid fa-plus plus_icon"></i>

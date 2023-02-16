@@ -383,7 +383,7 @@
                         <div class="prompt w-100"></div>
                         <div class="mb-3">
                             <input id="edit_id" name="id" hidden>
-                            <label for="formrow-firstname-input" class="form-label">Title</label>
+                            <label for="formrow-firstname-input" class="form-label">{{ __('translation.Title') }}</label>
                             <input type="text" id="a_title" class="form-control" name="title"
 
                                    placeholder="{{ __('translation.Enter Your First Name') }}" required>

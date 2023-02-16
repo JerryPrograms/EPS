@@ -24,12 +24,12 @@
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title mb-4">Quote Managemnet List</h4>
+                                    <h4 class="card-title mb-4">{{ __('translation.Quote Managemnet List') }}</h4>
                                     <div class="d-flex align-items-center table-top-actions gap-1">
                                         <div class="buttons d-flex align-items-center justify-content-between gap-1">
                                             <div class="d-flex">
                                                 <input id="search" class="form-control me-2" name="keyword"
-                                                       placeholder="Search here" required
+                                                       placeholder="{{ __('translation.Search here') }}" required
                                                        type="text"
                                                        autocomplete="off">
 
@@ -37,7 +37,7 @@
 
                                             <a href="{{route('ec.AddQuote',$customer->user_uid)}}"
                                                class="btn btn-primary">Add</a>
-                                            <a onclick="OpenModal()" href="javascript:void(0)" class="btn btn-primary">Delete</a>
+                                            <a onclick="OpenModal()" href="javascript:void(0)" class="btn btn-primary">{{ __('transtion.delete') }}</a>
                                         </div>
                                     </div>
                                     <div id="customer_list_table" class="table-responsive mt-3">
@@ -67,7 +67,7 @@
                 <div class="modal-header">
                     <h5 class="modal-title"
                         id="exampleModalLabel">
-                        View Quotation
+                        {{ __('translation.View Quotation') }}
                     </h5>
                     <button type="button" class="btn-close"
                             data-bs-dismiss="modal"
@@ -85,10 +85,8 @@
                                             class="col-lg-5 col-9 p-0">
                                             <h4
                                                 class="card-title mt-2 border-bottom-0 mb-4 custom_margin_2">
-                                                                                                            <span
-                                                                                                                class="bor_lef">&nbsp;</span>
-                                                Provider
-                                                Info
+                                                <span class="bor_lef">&nbsp;</span>
+                                                {{ __('translation.Provider Info') }}
                                             </h4>
                                         </div>
                                         <div class="col-lg-7 col-3"
@@ -113,7 +111,7 @@
                                                            class="form-label custom-lab-2 mb-0">
                                                 <span
                                                     class="star_section">*</span>
-                                                        Provider
+                                                        {{ __('translation.Provider') }}
                                                     </label>
                                                 </div>
                                                 <div class="col-lg-9 col-md-12">
@@ -122,7 +120,7 @@
                                                         class="form-control custom_input"
                                                         id="exampleInputEmail1"
                                                         aria-describedby="emailHelp"
-                                                        placeholder="EPS Co., Ltd.
+                                                        placeholder="{{ __('translation.EPS Co Ltd') }}.
 ">
                                                 </div>
                                             </div>
@@ -136,7 +134,7 @@
                                                         class="form-label custom-lab-2 mb-0">
                                                 <span
                                                     class="star_section">*</span>
-                                                        Company..
+                                                        {{ __('translation.Company') }}..
                                                     </label>
                                                 </div>
                                                 <div class="col-lg-9 col-md-12">
@@ -158,7 +156,7 @@
                                                         class="form-label custom-lab-2 mb-0">
                                                 <span
                                                     class="star_section">*</span>
-                                                        Address
+                                                        {{ __('translation.address') }}
                                                     </label>
                                                 </div>
                                                 <div class="col-lg-9 col-md-12">
@@ -167,7 +165,7 @@
                                                         class="form-control custom_input"
                                                         id="exampleInputEmail1"
                                                         aria-describedby="emailHelp"
-                                                        placeholder="132 Sinsa-dong,..">
+                                                        placeholder="{{ __('translation.132 Sinsa-dong') }}...">
                                                 </div>
                                             </div>
 
@@ -179,7 +177,7 @@
                                                         class="form-label custom-lab-2 mb-0">
                                                 <span
                                                     class="star_section">*</span>
-                                                        CEO Name...
+                                                        {{ __('translation.Ceo Name') }}...
                                                     </label>
                                                 </div>
                                                 <div class="col-lg-9 col-md-12">
@@ -188,8 +186,7 @@
                                                         class="form-control custom_input"
                                                         id="exampleInputEmail1"
                                                         aria-describedby="emailHelp"
-                                                        placeholder="Hong Gil Dong
-                                                ">
+                                                        placeholder="{{ __('translation.Hong Gil Dong') }}">
                                                 </div>
                                             </div>
 
@@ -202,7 +199,7 @@
                                                         class="form-label custom-lab-2 mb-0">
                                                 <span
                                                     class="star_section">*</span>
-                                                        Manager Name
+                                                        {{ __('translation.Manager Name') }}
                                                     </label>
                                                 </div>
                                                 <div class="col-lg-9 col-md-12">
@@ -211,8 +208,7 @@
                                                         class="form-control  custom_input"
                                                         id="exampleInputEmail1"
                                                         aria-describedby="emailHelp"
-                                                        placeholder="Junghwan Park
-                                                ">
+                                                        placeholder="{{ __('translation.Junghwan Park') }}">
                                                 </div>
                                             </div>
 
@@ -225,8 +221,7 @@
                                                         class="card-title mt-2 border-bottom-0 mb-3 custom_margin_2">
                                                     <span
                                                         class="bor_lef">&nbsp;</span>
-                                                        customer
-                                                        information
+                                                        {{ __('translation.customer information') }}
                                                     </h4>
                                                 </div>
                                             </div>
@@ -240,7 +235,7 @@
                                                         class="form-label custom-lab-2 mb-0">
                                                 <span
                                                     class="star_section">*</span>
-                                                        Customer ..
+                                                        {{ __('translation.customer') }} ..
                                                     </label>
                                                 </div>
                                                 <div class="col-lg-9 col-md-12">
@@ -249,8 +244,7 @@
                                                         class="form-control custom_input"
                                                         id="exampleInputEmail1"
                                                         aria-describedby="emailHelp"
-                                                        placeholder="Enter contract date
-                                                ">
+                                                        placeholder="{{ __('translation.Enter contract date') }}">
                                                 </div>
                                             </div>
 
@@ -261,7 +255,7 @@
                                                         for="exampleInputEmail1"
                                                         class="form-label custom-lab-2 mb-0">
                                                 <span
-                                                    class="star_section">*</span>Manager Name..
+                                                    class="star_section">*</span>{{ __('translation.Manager Name') }}..
                                                     </label>
                                                 </div>
                                                 <div class="col-lg-9 col-md-12">
@@ -270,8 +264,7 @@
                                                         class="form-control custom_input"
                                                         id="exampleInputEmail1"
                                                         aria-describedby="emailHelp"
-                                                        placeholder="Enter building name
-                                                ">
+                                                        placeholder="{{ __('translation.Enter building name') }}">
                                                 </div>
                                             </div>
 
@@ -282,7 +275,7 @@
                                                         for="exampleInputEmail1"
                                                         class="form-label custom-lab-2 mb-0">
                                                 <span
-                                                    class="star_section">*</span>Manager Contact..
+                                                    class="star_section">*</span>{{ __('translation.Manager Contact') }}..
                                                     </label>
                                                 </div>
                                                 <div class="col-lg-9 col-md-12">
@@ -291,8 +284,7 @@
                                                         class="form-control col-lg-8 custom_input"
                                                         id="exampleInputEmail1"
                                                         aria-describedby="emailHelp"
-                                                        placeholder="Enter contract date
-                                                ">
+                                                        placeholder="{{ __('translation.Enter contract date') }}">
                                                 </div>
                                             </div>
 
@@ -305,7 +297,7 @@
                                                         class="card-title mt-2 border-bottom-0  custom_margin_2">
                                                     <span
                                                         class="bor_lef">&nbsp;</span>
-                                                        Quotation Info
+                                                        {{ __('translation.Quotation Info') }}
                                                     </h4>
                                                 </div>
                                             </div>
@@ -319,7 +311,7 @@
                                                         class="form-label custom-lab-2 mb-0">
                                                 <span
                                                     class="star_section">*</span>
-                                                        Quotation...
+                                                        {{ __('translation.Quotation') }}...
                                                     </label>
                                                 </div>
                                                 <div class="col-lg-9 col-md-12">
@@ -328,8 +320,7 @@
                                                         class="form-control custom_input"
                                                         id="exampleInputEmail1"
                                                         aria-describedby="emailHelp"
-                                                        placeholder="Main motor replacement
-                                                ">
+                                                        placeholder="{{ __('translation.Main motor replacement') }}">
                                                 </div>
                                             </div>
 
@@ -342,7 +333,7 @@
                                                         class="form-label custom-lab-2 mb-0">
                                                 <span
                                                     class="star_section">*</span>
-                                                        Quote Date
+                                                        {{ __('translation.Quote Date') }}
                                                     </label>
                                                 </div>
                                                 <div class="col-lg-9 col-md-12">
@@ -362,7 +353,7 @@
                                                         for="exampleInputEmail1"
                                                         class="form-label custom-lab-2 mb-0">
                                                 <span
-                                                    class="star_section">*</span>Quotation..
+                                                    class="star_section">*</span>{{ __('translation.Quotation') }}..
                                                     </label>
                                                 </div>
                                                 <div class="col-lg-9 col-md-12">
@@ -382,7 +373,7 @@
                                                         for="exampleInputEmail1"
                                                         class="form-label custom-lab-2 mb-0">
                                                 <span
-                                                    class="star_section">*</span>Total Amount
+                                                    class="star_section">*</span>{{ __('translation.Total Amount') }}
                                                     </label>
                                                 </div>
                                                 <div class="col-lg-9 col-md-12">
@@ -401,7 +392,7 @@
                                                         <p class="modal-footer-text m-0 p-0">January 15, 2023 </p>
                                                     </div>
                                                     <div class="col-lg-3">
-                                                        <p class="modal-footer-text m-0 p-0">EPS Co., Ltd.</p>
+                                                        <p class="modal-footer-text m-0 p-0">{{ __('translation.EPS Co Ltd') }}.</p>
                                                     </div>
                                                 </div>
                                             </div>

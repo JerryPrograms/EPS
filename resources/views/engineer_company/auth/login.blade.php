@@ -60,7 +60,7 @@
                             <div class="prompt"></div>
                             <div class="form-floating mt-5 d-flex flex-column">
                                 <input type="email" class="form-control custom_input" name="email" id="email"
-                                       placeholder="{{ __('translation.Email Email Address') }}" required>
+                                       placeholder="{{ __('translation.Enter Email Address') }}" required>
                                 <label for="email">
                                     {{ __('translation.Id') }}
                                 </label>

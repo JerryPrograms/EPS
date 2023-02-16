@@ -223,13 +223,13 @@
                                                             autocomplete="off" required>
                                                             <option value=""
                                                                 @if (empty($customer->ASInformation)) selected @endif disabled>
-                                                                --Select payment method--
+                                                                --{{ __('translation.Select payment method') }}--
                                                             </option>
                                                             <option @if (!empty($customer->ASInformation) && $customer->ASInformation->payment_method == 'stripe') selected @endif
-                                                                value="stripe">Stripe
+                                                                value="stripe">{{ __('translation.Stripe') }}
                                                             </option>
                                                             <option @if (!empty($customer->ASInformation) && $customer->ASInformation->payment_method == 'paypal') selected @endif
-                                                                value="paypal">Paypal
+                                                                value="paypal">{{ __('translation.Paypal') }}
                                                             </option>
                                                         </select></div>
                                                 </div>

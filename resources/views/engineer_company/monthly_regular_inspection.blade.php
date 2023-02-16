@@ -145,7 +145,7 @@
                                                 <h4 class="card-title border-bottom-0 mb-0 pb-0"> <span
                                                         class="bor_lef">&nbsp;</span>
 
-                                                        Last monthly maintenance
+                                                        {{ __('translation.Last monthly maintenance') }}
 
                                                 </h4>
                                             </div>
@@ -208,18 +208,18 @@
                                                         <th class="align-middle border-0">
                                                             {{ __('translation.no.') }}
                                                         </th>
-                                                        <th class="text-center custom_inp_widt  border-0">Inspection Date</th>
+                                                        <th class="text-center custom_inp_widt  border-0">{{ __('translation.Inspection date') }}</th>
                                                         <th class="custom_inp_widt  border-0">
-                                                            Completion Time
+                                                            {{ __('translation.Completion Time') }}
                                                         </th>
                                                         <th class="custom_inp_widt  border-0">
-                                                            Arrival Time
+                                                            {{ __('translation.Arrival time') }}
                                                         </th>
                                                         <th class="text-center  border-0">
-                                                            Manager
+                                                            {{ __('translation.manager') }}
                                                         </th>
                                                         <th class="text-center border-0">
-                                                            Details
+                                                            {{ __('translation.Details') }}
                                                         </th>
                                                     </tr>
                                                     </thead>

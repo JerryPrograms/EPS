@@ -144,7 +144,7 @@
                                         <div class="row mt-3">
                                             <div class="col-lg-11 col-6">
                                                 <h4 class="card-title mt-2 border-bottom-0 mb-4"><span
-                                                        class="bor_lef">&nbsp;</span>Parking
+                                                        class="bor_lef">&nbsp;</span>{{ __('translation.Parking') }}
 
                                                     {{ __('translation.facility certification information') }}
 
@@ -188,39 +188,39 @@
                                                     <select class="form-select" name="type" autocomplete="off" required>
                                                         <option value=""
                                                             @if (empty($customer->ParkingFacilityCertificate)) selected @endif disabled>
-                                                            --Select Type--
+                                                            --{{ __('translation.Select Type') }}--
                                                         </option>
                                                         {{-- <option
                                                             @if (!empty($customer->ParkingFacilityCertificate) && $customer->ParkingFacilityCertificate->type == 'Multilayer Circulation') selected
                                                             @endif value="Multilayer Circulation">Multilayer Circulation
                                                         </option> --}}
                                                         <option @if (!empty($customer->ParkingFacilityCertificate) && $customer->ParkingFacilityCertificate->type == 'elevator_type') selected @endif
-                                                            value="elevator_type">Elevator Type
+                                                            value="elevator_type">{{ __('translation.Elevator Type') }}
                                                         </option>
                                                         <option @if (
                                                             !empty($customer->ParkingFacilityCertificate) &&
                                                                 $customer->ParkingFacilityCertificate->type == 'flat_reciprocating_type') selected @endif
-                                                            value="flat_reciprocating_type">Flat Reciprocating Type
+                                                            value="flat_reciprocating_type">{{ __('translation.Flat Reciprocating Type') }}
                                                         </option>
                                                         <option @if (
                                                             !empty($customer->ParkingFacilityCertificate) &&
                                                                 $customer->ParkingFacilityCertificate->type == 'multi_floor_circulation') selected @endif
-                                                            value="multi_floor_circulation">Multi Floor Circulation
+                                                            value="multi_floor_circulation">{{ __('translation.Multi Floor Circulation') }}
                                                         </option>
                                                         <option @if (
                                                             !empty($customer->ParkingFacilityCertificate) &&
                                                                 $customer->ParkingFacilityCertificate->type == 'vertical_circulation') selected @endif
-                                                            value="vertical_circulation">Vertical Circulation
+                                                            value="vertical_circulation">{{ __('translation.Vertical Circulation') }}
                                                         </option>
                                                         <option @if (
                                                             !empty($customer->ParkingFacilityCertificate) &&
                                                                 $customer->ParkingFacilityCertificate->type == 'multistage') selected @endif
-                                                            value="multistage">Multistage
+                                                            value="multistage">{{ __('translation.Multistage') }}
                                                         </option>
                                                         <option @if (
                                                             !empty($customer->ParkingFacilityCertificate) &&
                                                                 $customer->ParkingFacilityCertificate->type == 'sliding') selected @endif
-                                                            value="sliding">Sliding
+                                                            value="sliding">{{ __('translation.Sliding') }}
                                                         </option>
                                                     </select>
                                                 </div>

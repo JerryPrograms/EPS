@@ -14,7 +14,7 @@
                                     <div class="d-flex align-items-center table-top-actions gap-1">
                                         <select class="form-select select_filter" name="filter" autocomplete="off"
                                             required>
-                                            <option selected="" value="" disabled="">Filter</option>
+                                            <option selected="" value="" disabled="">{{ __('translation.Filter') }}</option>
                                             <option value="all">
                                                 {{ __('translation.all') }}
                                             </option>
@@ -49,7 +49,7 @@
                                         </div>
                                         <div class="buttons d-flex align-items-center justify-content-between gap-1">
                                             <a href="{{ route('add_contract', $customer->user_uid) }}"
-                                                class="btn btn-primary">Add</a>
+                                                class="btn btn-primary">{{ __('translation.Add') }}</a>
                                         </div>
                                     </div>
                                     @if (count($contracts) > 0)

@@ -14,7 +14,7 @@ class ListingController extends Controller
     }
 
     public function del_dispatch_confirmation_record(Request $request){
-        $del_record = DispatchInformationData::where('id',$request->del_id)->delete();
+        $del_record = DispatchInformationData::with('GetCustomer')->where('id',$request->del_id)->delete();
         if($del_record){
             return json_encode(['success'=> true , 'message' => 'Record deleted successfully']);
         }else{
