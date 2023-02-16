@@ -17,6 +17,7 @@ use App\Service\PartReplacement;
 use App\Service\QuoteService;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\engineercompany\InspectionController;
+use App\Http\Controllers\ListingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -181,6 +182,10 @@ Route::group(['prefix' => 'eps-panel', 'middleware' => 'CommonRoutes'], function
 
     //Route to Get Quote Data
     Route::post('/get-quote', [QuoteService::class, 'GetQuote'])->name('GetQuote');
+
+    // Listing Routes
+    Route::get('/distpatch-confirmation-management', [ListingController::class, 'distpatch_confirmation_listing'])->name('distpatch_confirmation_listing');
+    Route::post('/del-dispatch-confirmation-record', [ListingController::class, 'del_dispatch_confirmation_record'])->name('del_dispatch_confirmation_record');
 
 });
 
