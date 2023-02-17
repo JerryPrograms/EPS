@@ -336,5 +336,6 @@ return [
     'no'=>'No',
     'Regular Inspection Log Management' => 'Regular Inspection Log Management',
     'Action' => 'Action',
-    'logout' => 'Logout'
+    'logout' => 'Logout',
+    'Add' => 'Add'
 ];

@@ -336,5 +336,6 @@ return [
     'no'=>'#',
     'Regular Inspection Log Management' => '정기 점검 로그 관리',
     'Action' => '행동',
-    'logout' => '로그 아웃'
+    'logout' => '로그 아웃',
+    'Add' => '추가'
 ];
