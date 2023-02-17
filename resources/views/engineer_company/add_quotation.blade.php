@@ -334,7 +334,7 @@
                                                                                         <div class="col-lg-2">
                                                                                             <label
                                                                                                 for="exampleInputEmail1"
-                                                                                                class="form-label custom_lab_2">{{ translation.'Quote
+                                                                                                class="form-label custom_lab_2">{{ 'translation.Quote
                                                                                                 Item' }}
                                                                                             </label>
                                                                                         </div>

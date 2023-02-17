@@ -133,14 +133,18 @@
 
 
 
-                                                <button class="searchbar_img border-0">
+                                                <button
+                                                onclick="window.location.href= '{{route('regular_inspection_log',$customer->user_uid)}}'"
+                                                class="searchbar_img border-0">
                                                     <img
                                                         src="{{asset('engineer_company/assets/images/Date_range.png')}}">
                                                     <p class="searchbar_text mt-3">
                                                         {{ __('translation.Fill Regular Inspection Log') }}
                                                     </p>
                                                 </button>
-                                                <button class="searchbar_img border-0">
+                                                <button
+                                                onclick="window.location.href= '{{route('contract_management_list',$customer->id)}}'"
+                                                class="searchbar_img border-0">
                                                     <img
                                                         src="{{asset('engineer_company/assets/images/searchbar.png')}}">
                                                     <p class="searchbar_text mt-3">
