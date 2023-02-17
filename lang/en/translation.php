@@ -337,5 +337,10 @@ return [
     'Regular Inspection Log Management' => 'Regular Inspection Log Management',
     'Action' => 'Action',
     'logout' => 'Logout',
-    'Add' => 'Add'
+    'Add' => 'Add',
+    'Quotation Management' => 'Quotation Management',
+    'Quotation Number' => 'Quotation Number',
+    'Amount' => 'Amount',
+    'Quotation Amount' => 'Quotation Amount',
+    'Number' => 'Number'
 ];

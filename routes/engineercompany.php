@@ -168,29 +168,35 @@ Route::group(['prefix' => 'eps-panel', 'middleware' => 'CommonRoutes'], function
     Route::post('/edit-inspection-action', [InspectionController::class, 'edit_inspection_action'])->name('edit_inspection_action');
     Route::get('/view-regular-inspection-log/{id}', [InspectionController::class, 'view_regular_inspection_log'])->name('view_regular_inspection_log');
 
-    //Route to Create todoEvent in calendar
+    // Route to Create todoEvent in calendar
     Route::post('/create-todo-event', [EventService::class, 'CreateTodo'])->name('CreateTodo');
 
-    //Route to Create dispatch Information
+    // Route to Create dispatch Information
     Route::post('/create-dispatch-information', [DispatchInformationService::class, 'CreateDispatchInformation'])->name('CreateDispatchInformation');
 
-    //Route to Create Quote
+    // Route to Create Quote
     Route::post('/create-quote', [QuoteService::class, 'CreateQuote'])->name('CreateQuote');
 
-    //Route to Delete Quote
+    // Route to Delete Quote
     Route::post('/delete-quote', [QuoteService::class, 'DeleteQuote'])->name('DeleteQuote');
 
-    //Route to Get Quote Data
+    // Route to Get Quote Data
     Route::post('/get-quote', [QuoteService::class, 'GetQuote'])->name('GetQuote');
 
     // Listing Routes Start
 
-    //Dispatch confirmation management
+    // Dispatch confirmation management
     Route::get('/dispatch-confirmation-management', [ListingController::class, 'distpatch_confirmation_listing'])->name('distpatch_confirmation_listing');
     Route::post('/del-dispatch-confirmation-record', [ListingController::class, 'del_dispatch_confirmation_record'])->name('del_dispatch_confirmation_record');
 
+    // Regular inspection log management
     Route::get('/regular-inspection-logs', [ListingController::class, 'regular_inspection_logs'])->name('regular_inspection_logs');
     Route::post('/del-regular-inspection-log', [ListingController::class, 'del_regular_inspection_log'])->name('del_regular_inspection_log');
+
+    // Quotation Management Listing
+    Route::get('/quotation-management', [ListingController::class, 'quotation_management'])->name('quotation_management');
+    // Route::post('/del-regular-inspection-log', [ListingController::class, 'del_regular_inspection_log'])->name('del_regular_inspection_log');
+
     // Listing Routes End
 });
 

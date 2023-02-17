@@ -32,7 +32,8 @@
                                                                 <div class="row ">
                                                                     <div class="col-lg-11">
                                                                         <div class="">
-                                                                            <h4 class="card_tittle_2">{{ __('translation.Issue Quotation') }}</h4>
+                                                                            <h4 class="card_tittle_2">
+                                                                                {{ __('translation.Issue Quotation') }}</h4>
                                                                         </div>
                                                                     </div>
 
@@ -220,7 +221,8 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-12 mt-5">
-                                                                        <button class="btn btn-primary submitbtn">{{ __('translation.Save changes') }}</button>
+                                                                        <button
+                                                                            class="btn btn-primary submitbtn">{{ __('translation.Save changes') }}</button>
                                                                     </div>
                                                                 </form>
 
@@ -258,8 +260,6 @@
                             <div class="col-lg-12">
                                 <div class="card">
                                     <div>
-
-
                                         <!-- end table-responsive -->
                                         <!-- end page title -->
                                         <div class="main_content_section_4">
@@ -275,7 +275,8 @@
                                                                 <div class="row ">
                                                                     <div class="col-lg-11">
                                                                         <div class="">
-                                                                            <h4 class="card_tittle_2">{{ __('translation.Issue Quotation') }}
+                                                                            <h4 class="card_tittle_2">
+                                                                                {{ __('translation.Issue Quotation') }}
                                                                             </h4>
                                                                         </div>
                                                                     </div>
@@ -335,7 +336,7 @@
                                                                                             <label
                                                                                                 for="exampleInputEmail1"
                                                                                                 class="form-label custom_lab_2">{{ 'translation.Quote
-                                                                                                Item' }}
+                                                                                                                                                                                                Item' }}
                                                                                             </label>
                                                                                         </div>
                                                                                         <div class="col-lg-10">

@@ -337,5 +337,10 @@ return [
     'Regular Inspection Log Management' => '정기 점검 로그 관리',
     'Action' => '행동',
     'logout' => '로그 아웃',
-    'Add' => '추가'
+    'Add' => '추가',
+    'Quotation Management' => '견적 관리',
+    'Quotation Number' => '견적 번호',
+    'Amount' => '양',
+    'Quotation Amount' => '견적 금액',
+    'Number' => '숫자'
 ];

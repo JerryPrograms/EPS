@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\DispatchInformationData;
 use App\Models\MonthlyRegularInspection;
+use App\Models\Quotation;
 
 class ListingController extends Controller
 {
@@ -23,6 +24,7 @@ class ListingController extends Controller
         }
     }
 
+    // Regular inspection management
     public function regular_inspection_logs(){
         $logs = MonthlyRegularInspection::with('getCustomer')->paginate(10);
         return view('engineer_company.regular_inspection_logs',compact('logs'));
@@ -35,5 +37,12 @@ class ListingController extends Controller
         }else{
             return json_encode(['success'=> false , 'message' => 'Error : Please try again']);
         }
+    }
+
+
+    // Quotation Management
+    public function quotation_management(){
+        $quotations = Quotation::with('GetQuoteContent','getCustomer')->paginate(10);
+        return view('engineer_company.quotation_management',compact('quotations'));
     }
 }
