@@ -329,5 +329,12 @@ return [
     'No Logs Found' => 'No Logs Found',
     'Please enter Building information & Parking facility certification information' => 'Please enter Building information & Parking facility certification information',
     'Signature is required' => 'Signature is required',
-    'Save Inspection' => 'Save Inspection'
+    'Save Inspection' => 'Save Inspection',
+    // Next Translation
+    'Inspector' => 'Inspector',
+    'Inspection Content' => 'Inspection Content',
+    'no'=>'No',
+    'Regular Inspection Log Management' => 'Regular Inspection Log Management',
+    'Action' => 'Action',
+    'logout' => 'Logout'
 ];

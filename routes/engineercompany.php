@@ -183,10 +183,15 @@ Route::group(['prefix' => 'eps-panel', 'middleware' => 'CommonRoutes'], function
     //Route to Get Quote Data
     Route::post('/get-quote', [QuoteService::class, 'GetQuote'])->name('GetQuote');
 
-    // Listing Routes
+    // Listing Routes Start
+
+    //Dispatch confirmation management
     Route::get('/dispatch-confirmation-management', [ListingController::class, 'distpatch_confirmation_listing'])->name('distpatch_confirmation_listing');
     Route::post('/del-dispatch-confirmation-record', [ListingController::class, 'del_dispatch_confirmation_record'])->name('del_dispatch_confirmation_record');
 
+    Route::get('/regular-inspection-logs', [ListingController::class, 'regular_inspection_logs'])->name('regular_inspection_logs');
+    Route::post('/del-regular-inspection-log', [ListingController::class, 'del_regular_inspection_log'])->name('del_regular_inspection_log');
+    // Listing Routes End
 });
 
 

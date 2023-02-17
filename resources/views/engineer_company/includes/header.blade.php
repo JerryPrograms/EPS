@@ -14,7 +14,7 @@
 
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <a class="dropdown-item" href="{{route('ec.EngineerCompanyLogout')}}"><i
-                                    class="text-danger fa fa-power-off me-2"></i>logout</a>
+                                    class="text-danger fa fa-power-off me-2"></i>{{ __('translation.logout') }}</a>
                         </div>
                     </div>
                 </div>
