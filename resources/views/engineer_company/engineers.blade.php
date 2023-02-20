@@ -25,6 +25,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                @if(count($engineers) > 0)
                                                 @foreach ($engineers as $engineer)
                                                 <tr>
                                                     <td>{{ $loop->index + 1 }}</td>
@@ -47,6 +48,13 @@
                                                     </td>
                                                 </tr> 
                                                 @endforeach
+                                                @else
+                                                <tr>
+                                                    <td colspan="6" class="text-center">
+                                                        <img style="height: 200px" class="img-fluid" src="{{asset('engineer_company/images/no-data-found.png')}}">
+                                                    </td>
+                                                </tr>
+                                                @endif
                                             </tbody>
                                         </table>
                                     </div>
