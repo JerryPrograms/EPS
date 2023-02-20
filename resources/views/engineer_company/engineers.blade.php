@@ -13,7 +13,7 @@
                                         <a href="{{ route('add_engineer') }}" class="btn btn-primary">{{ __('translation.Add Engineer') }}</a>
                                     </div>
                                     <div class="table-responsive data-set-list mt-3">
-                                        <table class="table table-striped align-middle mb-0 table-theme">
+                                        <table class="table {{ (count($engineers) != 0) ? 'table-striped' : '' }} align-middle mb-0 table-theme">
                                             <thead class="table-light">
                                                 <tr>
                                                     <th>{{ __('translation.no') }}</th>
