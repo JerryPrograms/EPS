@@ -343,5 +343,21 @@ return [
     'Amount' => 'Amount',
     'Quotation Amount' => 'Quotation Amount',
     'Number' => 'Number',
-    'Issue Quote' => 'Issue Quote'
+    'Issue Quote' => 'Issue Quote',
+    'Register Engineer' => 'Register Engineer',
+    'Affliated Company Name' => 'Affliated Company Name',
+    'Write affliated company name' => 'Write affliated company name',
+    'Write name' => 'Write name',
+    'Phone number' => 'Phone number',
+    'Write phone number' => 'Write phone number',
+    'Write ID' => 'Write ID',
+    'Write password' => 'Write password',
+    'ID' => 'ID',
+    'Engineer Management' => 'Engineer Management',
+    'Register Date' => 'Register Date',
+    'Affiliate Company Name' => 'Affiliate Company Name',
+    'Add Engineer' => 'Add Engineer',
+    'Email' => 'Email',
+    'Write email' => 'Write email',
+    'Edit Engineer' => 'Edit Engineer'
 ];

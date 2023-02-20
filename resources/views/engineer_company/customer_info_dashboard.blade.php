@@ -3,12 +3,9 @@
     <div class="main-content">
         <div class="page-content">
             <div class="container-fluid">
-
                 <!-- start page title -->
 
                 <!-- end page title -->
-
-
                 <div class="main_content_section">
                     <div class="row">
                         <div class="col-lg-12">
@@ -17,8 +14,6 @@
                                     <h4 class="card-title mb-4">
                                         {{ __('translation.Customer Information') }}
                                     </h4>
-
-
                                     <div class="table-responsive mt-3">
                                         <table class="table align-middle custom_mrg">
                                             <thead class="table-light">
@@ -86,17 +81,15 @@
                                             </tbody>
                                         </table>
                                     </div>
-
                                     <!-- end table-responsive -->
                                     <div class="row m-0">
                                         <div class="searchbar_main_section">
                                             <div class="col-lg-12">
                                                 <h4 class="card-title mt-5 border-bottom-0 mb-4"> <span
-                                                        class="bor_lef">&nbsp;</span>
-                                                        {{ __('translation.Input Customer Information') }}
-                                                        </h4>
+                                                class="bor_lef">&nbsp;</span>
+                                                {{ __('translation.Input Customer Information') }}
+                                                </h4>
                                             </div>
-
                                             <div class="button_section">
                                                 <button
                                                     onclick="window.location.href= '{{route('ec.CreateBuildingInfo',$customer->user_uid)}}'"
@@ -107,8 +100,6 @@
                                                         {{ __('translation.Create Customer Info') }}
                                                     </p>
                                                 </button>
-
-
                                                 @if(count($customer->DispatchInformation) > 0)
                                                     <button
                                                         onclick="window.location.href= '{{route('ec.ListDispatchInformation',$customer->user_uid)}}'"
@@ -130,8 +121,6 @@
                                                         </p>
                                                     </button>
                                                 @endif
-
-
 
                                                 <button
                                                 onclick="window.location.href= '{{route('regular_inspection_log',$customer->user_uid)}}'"
@@ -168,14 +157,10 @@
                                                     </p>
                                                 </button>
                                             </div>
-
                                         </div>
                                     </div>
-
-
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -184,6 +169,5 @@
             <!-- container-fluid -->
         </div>
         <!-- End Page-content -->
-
     </div>
 @endsection

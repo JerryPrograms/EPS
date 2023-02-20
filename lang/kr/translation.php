@@ -343,5 +343,20 @@ return [
     'Amount' => '양',
     'Quotation Amount' => '견적 금액',
     'Number' => '숫자',
-    'Issue Quote' => '견적 발행'
+    'Issue Quote' => '견적 발행',
+    'Register Engineer' => '엔지니어 등록',
+    'Affliated Company Name' => '소속 회사명',
+    'Write name' => '이름 쓰기',
+    'Phone number' => '전화 번호',
+    'Write phone number' => '전화번호 쓰기',
+    'Write ID' => '쓰기 ID',
+    'Write password' => '비밀번호 쓰기',
+    'ID' => 'ID',
+    'Engineer Management' => '엔지니어 관리',
+    'Register Date' => '등록 날짜',
+    'Affiliate Company Name' => '제휴사명',
+    'Add Engineer' => '엔지니어 추가',
+    'Email' => '이메일',
+    'Write email' => '이메일 쓰기',
+    'Edit Engineer' => '편집 엔지니어'
 ];

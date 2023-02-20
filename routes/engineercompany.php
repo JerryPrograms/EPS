@@ -18,6 +18,7 @@ use App\Service\QuoteService;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\engineercompany\InspectionController;
 use App\Http\Controllers\ListingController;
+use App\Http\Controllers\EngineerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -201,6 +202,15 @@ Route::group(['prefix' => 'eps-panel', 'middleware' => 'CommonRoutes'], function
     // Route::post('/del-regular-inspection-log', [ListingController::class, 'del_regular_inspection_log'])->name('del_regular_inspection_log');
 
     // Listing Routes End
+
+    // Engineer Management Start
+    Route::get('/engineers', [EngineerController::class, 'engineers'])->name('engineers');
+    Route::get('/add-engineer', [EngineerController::class, 'add_engineer'])->name('add_engineer');
+    Route::post('/add-engineer-action',[EngineerController::class, 'add_engineer_action'])->name('add_engineer_action');
+    Route::get('/edit-engineer/{id}', [EngineerController::class, 'edit_engineer'])->name('edit_engineer');
+    Route::post('/edit-engineer-action',[EngineerController::class, 'edit_engineer_action'])->name('edit_engineer_action');
+    Route::post('/del-engineer-action',[EngineerController::class, 'del_engineer_action'])->name('del_engineer_action');
+    // Engineer Management End
 });
 
 

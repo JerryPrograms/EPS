@@ -164,6 +164,16 @@
 
                 {{--                </li>--}}
 
+                <li class="sidebr_button mt-2">
+                    <a href="{{ route('engineers') }}" class=" waves-effect dropdown_toggle">
+                        <!-- <i class="bx bx-calendar"></i> -->
+                        <img src="{{asset('engineer_company/assets/images/Done_ring_round.png')}}"
+                             class="double_ring_img p-0"
+                             style="margin-left: -1px;">
+                        <span key="t-dashboards" class="dropdown_text">{{ __('translation.Engineer Management') }}</span>
+                    </a>
+                </li>
+
 
                 <li class="sidebr_button mt-2">
                     <a href="{{ route('distpatch_confirmation_listing') }}" class=" waves-effect dropdown_toggle">
@@ -188,7 +198,7 @@
 
 
                 <li class="sidebr_button mt-2">
-                    <a href="javascript: void(0);" class=" waves-effect dropdown_toggle">
+                    <a href="{{ route('contract_management') }}" class=" waves-effect dropdown_toggle">
                         <!-- <i class="bx bx-calendar"></i> -->
                         <img src="{{asset('engineer_company/assets/images/gray-calender.png')}}"
                              class="double_ring_img p-0"
@@ -199,7 +209,7 @@
 
 
                 <li class="sidebr_button mt-2">
-                    <a href="javascript: void(0);" class=" waves-effect dropdown_toggle">
+                    <a href="{{ route('quotation_management') }}" class=" waves-effect dropdown_toggle">
                         <!-- <i class="bx bx-calendar"></i> -->
                         <img src="{{asset('engineer_company/assets/images/gray-calender.png')}}"
                              class="double_ring_img p-0"
