@@ -222,7 +222,7 @@
                                 name="manager_contact"
                                 class="form-control w-100 custom_input"
                                 aria-describedby="emailHelp"
-                                placeholder="{{ __('translation.Enter_manager_contact_number') }}"
+                                placeholder="{{ __('translation.Enter manager contact number') }}"
                                 @if(!empty($customer->BuildingInformation))  value="{{$customer->BuildingInformation->manager_contact}}"
                                 @endif
                                 required></div> </div>

@@ -160,7 +160,7 @@
 
                                                 <div class="row align-items-center mt-4">
                                                     <div class="col-md-4 col-12"><label class="form-label custom_lab mb-0">
-                                                            <span class="star_section">*</span>{{ __('translation.Contract_Date') }}</label></div>
+                                                            <span class="star_section">*</span>{{ __('translation.Contract Date') }}</label></div>
                                                     <div class="col-md-8 col-12"><input type="date" name="contract_date"
                                                             class="form-control w-100 custom_input"
                                                             aria-describedby="emailHelp"
@@ -319,8 +319,7 @@
                                                         </label></div>
                                                     <div class="col-md-8 col-12"><input type="text" name="contacts"
                                                             class="form-control w-100 custom_input"
-                                                            aria-describedby="emailHelp"
-                                                            placeholder="010-3837-4894    /    02-4847-3856" required
+                                                            aria-describedby="emailHelp" required
                                                             @if (!empty($customer->RepairCompanyInformation)) value="{{ $customer->RepairCompanyInformation->contacts }}" @endif>
                                                     </div>
                                                 </div>
@@ -334,7 +333,7 @@
                                                             </label></div>
                                                     <div class="col-md-8 col-12"><input type="text" name="fax"
                                                             class="form-control w-100 custom_input"
-                                                            aria-describedby="emailHelp" placeholder="02-4347-4893"
+                                                            aria-describedby="emailHelp"
                                                             @if (!empty($customer->RepairCompanyInformation)) value="{{ $customer->RepairCompanyInformation->fax }}" @endif>
                                                     </div>
                                                 </div>
@@ -347,7 +346,7 @@
                                                             </label></div>
                                                     <div class="col-md-8 col-12"><input type="email" name="email"
                                                             class="form-control w-100 custom_input"
-                                                            aria-describedby="emailHelp" placeholder="{{ __('translation.Angelina@gmail.com') }}"
+                                                            aria-describedby="emailHelp"
                                                             @if (!empty($customer->RepairCompanyInformation)) value="{{ $customer->RepairCompanyInformation->email }}" @endif>
                                                     </div>
                                                 </div>
