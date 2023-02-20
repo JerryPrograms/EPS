@@ -193,6 +193,9 @@ Route::group(['prefix' => 'eps-panel', 'middleware' => 'CommonRoutes'], function
     Route::get('/regular-inspection-logs', [ListingController::class, 'regular_inspection_logs'])->name('regular_inspection_logs');
     Route::post('/del-regular-inspection-log', [ListingController::class, 'del_regular_inspection_log'])->name('del_regular_inspection_log');
 
+    //Contract Management Listing
+    Route::get('/contract-management', [ListingController::class, 'contract_management'])->name('contract_management');
+
     // Quotation Management Listing
     Route::get('/quotation-management', [ListingController::class, 'quotation_management'])->name('quotation_management');
     // Route::post('/del-regular-inspection-log', [ListingController::class, 'del_regular_inspection_log'])->name('del_regular_inspection_log');

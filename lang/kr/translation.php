@@ -342,5 +342,6 @@ return [
     'Quotation Number' => '견적 번호',
     'Amount' => '양',
     'Quotation Amount' => '견적 금액',
-    'Number' => '숫자'
+    'Number' => '숫자',
+    'Issue Quote' => '견적 발행'
 ];

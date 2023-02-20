@@ -12,9 +12,9 @@
                                         class="card-title mb-4 d-flex align-items-center justify-content-between mobile-flex-column">
                                         <h5 class="mb-0 font-15">{{ __('translation.Quotation Management') }}</h5>
                                     </div>
-                                    <div class="d-flex align-items-center table-top-actions gap-1">
-                                        <div class="left-content">
-                                            <select class="form-select select_filter" name="filter" autocomplete="off"
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="left-content d-flex align-items-center">
+                                            <select class="form-select select_filter w-25" name="filter" autocomplete="off"
                                             required>
                                             <option selected="" value="" disabled="">{{ __('translation.Filter') }}</option>
                                             <option value="all">
@@ -52,7 +52,7 @@
                                         </div>
                                         <div class="buttons d-flex align-items-center justify-content-between gap-1">
                                             <a href="javascript:void(0)"
-                                                class="btn btn-primary">{{ __('translation.Add') }}</a>
+                                                class="btn btn-primary">{{ __('translation.Issue Quote') }}</a>
                                         </div>
                                     </div>
                                     @if (count($quotations) > 0)

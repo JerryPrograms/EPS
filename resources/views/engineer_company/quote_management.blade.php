@@ -37,7 +37,7 @@
 
                                             <a href="{{route('ec.AddQuote',$customer->user_uid)}}"
                                                class="btn btn-primary">Add</a>
-                                            <a onclick="OpenModal()" href="javascript:void(0)" class="btn btn-primary">{{ __('transtion.delete') }}</a>
+                                            <a onclick="OpenModal()" href="javascript:void(0)" class="btn btn-primary">{{ __('translation.delete') }}</a>
                                         </div>
                                     </div>
                                     <div id="customer_list_table" class="table-responsive mt-3">

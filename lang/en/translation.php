@@ -342,5 +342,6 @@ return [
     'Quotation Number' => 'Quotation Number',
     'Amount' => 'Amount',
     'Quotation Amount' => 'Quotation Amount',
-    'Number' => 'Number'
+    'Number' => 'Number',
+    'Issue Quote' => 'Issue Quote'
 ];

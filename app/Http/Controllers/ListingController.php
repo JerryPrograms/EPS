@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\DispatchInformationData;
 use App\Models\MonthlyRegularInspection;
 use App\Models\Quotation;
+use App\Models\Contract;
 
 class ListingController extends Controller
 {
@@ -39,6 +40,11 @@ class ListingController extends Controller
         }
     }
 
+    // Contract Management
+    public function contract_management(){
+        $contracts = Contract::with('get_customer')->paginate(10);
+        return view('engineer_company.contract_management',compact('contracts'));
+    }
 
     // Quotation Management
     public function quotation_management(){
