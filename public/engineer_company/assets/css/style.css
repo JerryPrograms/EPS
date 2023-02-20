@@ -1530,4 +1530,11 @@ table.table-inspection .inspection-grade{
 .btn-custom-table i{
     font-size: 14px;
 }
+.user_test{
+    margin-top: 0;
+    cursor: pointer;
+}
+.user_img{
+    margin-top: 3px;
+}
 
