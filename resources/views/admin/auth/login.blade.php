@@ -72,7 +72,7 @@
                                         placeholder="Email Email Address" name="email" required>
                                     <label for="email">ID</label>
                                     <span class="Custom_icon">
-                                        <img src="{{ asset('images/profile_gray.png') }}" class="user_icon">
+                                        <img src="{{ asset('admin/images/profile_gray.png') }}" class="user_icon">
                                     </span>
                                 </div>
 
@@ -82,7 +82,7 @@
                                     <label for="password">Password
                                     </label>
                                     <span class="Custom_icon">
-                                        <img src="{{ asset('images/lock.png') }}" class="lock_icon">
+                                        <img src="{{ asset('admin/images/lock.png') }}" class="lock_icon">
                                     </span>
                                 </div>
 
