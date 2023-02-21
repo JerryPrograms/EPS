@@ -359,5 +359,20 @@ return [
     'Email' => '이메일',
     'Write email' => '이메일 쓰기',
     'Edit Engineer' => '편집 엔지니어',
-    'Add Company' => '회사 추가'
+    'Add Company' => '회사 추가',
+    'Company Number' => '회사 번호',
+    'Contact' => '연락하다',
+    'Actions' => '행위',
+    'Add Engineer Company' => '엔지니어 회사 추가',
+    'Company Email' => '회사 이메일',
+    'Write company name' => '회사 이름 쓰기',
+    'Write company email' => '회사 이메일 작성',
+    'Write company number' => '회사 번호 쓰기',
+    'Write address' => '주소 쓰기',
+    'Write manager name' => '관리자 이름 쓰기',
+    'Write contract number' => '계약서 번호 쓰기',
+    'Register' => '등록하다',
+    'Contract number' => '계약 번호',
+    'Edit Engineer Company' => '엔지니어 회사 편집',
+    'Engineer Companies' => '엔지니어 회사'
 ];

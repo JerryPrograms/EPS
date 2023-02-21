@@ -177,6 +177,18 @@
                 </li>
                 @endif
 
+                @if((!empty(activeGuard())) && (activeGuard() == 'admin'))
+                <li class="sidebr_button mt-2">
+                    <a href="{{ route('engineer_companies') }}" class=" waves-effect dropdown_toggle">
+                        <!-- <i class="bx bx-calendar"></i> -->
+                        <img src="{{asset('engineer_company/assets/images/Done_ring_round.png')}}"
+                             class="double_ring_img p-0"
+                             style="margin-left: -1px;">
+                        <span key="t-dashboards" class="dropdown_text">{{ __('translation.Engineer Companies') }}</span>
+                    </a>
+                </li>
+                @endif
+
                 <li class="sidebr_button mt-2">
                     <a href="{{ route('distpatch_confirmation_listing') }}" class=" waves-effect dropdown_toggle">
                         <!-- <i class="bx bx-calendar"></i> -->
