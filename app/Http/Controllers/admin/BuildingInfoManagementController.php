@@ -21,4 +21,8 @@ class BuildingInfoManagementController extends Controller
     {
         return view('admin.building_info_management.create_customer_info');
     }
+
+    public function GetAdminLogin(){
+        dd('working');
+    }
 }

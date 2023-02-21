@@ -18,7 +18,7 @@ use App\Http\Controllers\Admin\AdminnController;
 
 Route::group(['prefix' => 'admin'], function () {
 
-    Route::get('/login', [AdminnController::class, 'GetAdminLogin'])->name('admin.AdminLogin');
+    Route::get('/login', [BuildingInfoManagementController::class, 'GetAdminLogin'])->name('admin.AdminLogin');
     Route::post('/admin-login-action', [AdminnController::class, 'admin_login_action'])->name('admin_login_action');
 
     Route::group(['prefix' => 'building-info'], function () {
