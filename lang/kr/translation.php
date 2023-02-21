@@ -358,5 +358,6 @@ return [
     'Add Engineer' => '엔지니어 추가',
     'Email' => '이메일',
     'Write email' => '이메일 쓰기',
-    'Edit Engineer' => '편집 엔지니어'
+    'Edit Engineer' => '편집 엔지니어',
+    'Add Company' => '회사 추가'
 ];

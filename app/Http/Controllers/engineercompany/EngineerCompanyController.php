@@ -174,11 +174,22 @@ class EngineerCompanyController extends Controller
     }
 
 
-    public function EngineerCompanyLogout()
+    public function EngineerCompanyLogout($role)
     {
 
-        Authentication::logout('engineer_company');
-        return redirect()->route('ec.GetECLogin');
+        auth($role)->logout();
+
+        if($role == 'admin'){
+            return redirect()->route('admin.AdminLogin');
+        }
+        
+        if($role == 'engineer_company'){
+            return redirect()->route('ec.GetECLogin');
+        }
+
+        if($role == 'engineer'){
+            return redirect()->route('e.GetECLogin');
+        }
 
     }
 

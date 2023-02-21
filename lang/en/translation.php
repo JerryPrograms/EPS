@@ -359,5 +359,6 @@ return [
     'Add Engineer' => 'Add Engineer',
     'Email' => 'Email',
     'Write email' => 'Write email',
-    'Edit Engineer' => 'Edit Engineer'
+    'Edit Engineer' => 'Edit Engineer',
+    'Add Company' => 'Add Company'
 ];

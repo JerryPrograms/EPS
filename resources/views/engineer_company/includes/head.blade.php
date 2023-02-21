@@ -24,12 +24,12 @@
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
     <!-- App Css-->
     <link href="{{asset('engineer_company/assets/css/app.min.css')}}" id="app-style" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" href="{{asset('engineer_company/assets/css/style.css')}}">
     <link href="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.css" rel="stylesheet" type="text/css"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet"
           type="text/css"/>
 
     <link rel="stylesheet" type="text/css" href="{{asset('engineer_company/assets/libs/toastr/build/toastr.min.css')}}">
+    <link rel="stylesheet" href="{{asset('engineer_company/assets/css/style.css')}}">
 
 </head>
 

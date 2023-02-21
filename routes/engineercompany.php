@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\engineercompany\InspectionController;
 use App\Http\Controllers\ListingController;
 use App\Http\Controllers\EngineerController;
+use App\Http\Controllers\EngineerCompanyController as CompanyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,8 +42,7 @@ Route::group(['prefix' => 'engineer-company'], function () {
 
 Route::group(['prefix' => 'eps-panel', 'middleware' => 'CommonRoutes'], function () {
 
-    Route::get('logout', [EngineerCompanyController::class, 'EngineerCompanyLogout'])->name('ec.EngineerCompanyLogout');
-
+    Route::get('logout/{role}', [EngineerCompanyController::class, 'EngineerCompanyLogout'])->name('ec.EngineerCompanyLogout');
 
     //Customer info
     Route::get('/customer-info-listing', [EngineerCompanyController::class, 'GetCustomerInfoListing'])->name('ec.GetCustomerInfoListing');
@@ -203,15 +203,31 @@ Route::group(['prefix' => 'eps-panel', 'middleware' => 'CommonRoutes'], function
 
     // Listing Routes End
 
-    // Engineer Management Start
-    Route::get('/engineers', [EngineerController::class, 'engineers'])->name('engineers');
-    Route::get('/add-engineer', [EngineerController::class, 'add_engineer'])->name('add_engineer');
-    Route::post('/add-engineer-action',[EngineerController::class, 'add_engineer_action'])->name('add_engineer_action');
-    Route::get('/edit-engineer/{id}', [EngineerController::class, 'edit_engineer'])->name('edit_engineer');
-    Route::post('/edit-engineer-action',[EngineerController::class, 'edit_engineer_action'])->name('edit_engineer_action');
-    Route::post('/del-engineer-action',[EngineerController::class, 'del_engineer_action'])->name('del_engineer_action');
-    // Engineer Management End
 });
+
+Route::group(['prefix' => 'eps-panel', 'middleware' => 'AdminAccess'], function () {
+    // Engineer Company Management Start
+    Route::get('/engineer-companies', [CompanyController::class, 'engineer_companies'])->name('engineer_companies');
+    Route::get('/add-engineer-company', [CompanyController::class, 'add_engineer_company'])->name('add_engineer_company');
+    Route::post('/add-engineer-company-action',[CompanyController::class, 'add_engineer_company_action'])->name('add_engineer_company_action');
+    Route::get('/edit-engineer-company/{id}', [CompanyController::class, 'edit_engineer_company'])->name('edit_engineer_company');
+    Route::post('/edit-engineer-company-action',[CompanyController::class, 'edit_engineer_company_action'])->name('edit_engineer_company_action');
+    Route::post('/del-engineer-company-action',[CompanyController::class, 'del_engineer_company_action'])->name('del_engineer_company_action');
+    // Engineer Company Management End
+});
+
+Route::group(['prefix' => 'eps-panel', 'middleware' => 'AdminCompanyAccess'], function () {
+     // Engineer Management Start
+     Route::get('/engineers', [EngineerController::class, 'engineers'])->name('engineers');
+     Route::get('/add-engineer', [EngineerController::class, 'add_engineer'])->name('add_engineer');
+     Route::post('/add-engineer-action',[EngineerController::class, 'add_engineer_action'])->name('add_engineer_action');
+     Route::get('/edit-engineer/{id}', [EngineerController::class, 'edit_engineer'])->name('edit_engineer');
+     Route::post('/edit-engineer-action',[EngineerController::class, 'edit_engineer_action'])->name('edit_engineer_action');
+     Route::post('/del-engineer-action',[EngineerController::class, 'del_engineer_action'])->name('del_engineer_action');
+     // Engineer Management End
+});
+
+
 
 
 

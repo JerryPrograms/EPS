@@ -10,10 +10,9 @@
                     <img src="{{asset('engineer_company/assets/images/Vector.png')}}" class="user_img mr-4">
                     <div class="dropdown">
                         <p id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false"
-                           class="mb-sm-0 font-size-18 user_test dropdown-toggle">{{auth('engineer_company')->user()->name}}</p>
-
+                           class="mb-sm-0 font-size-18 user_test dropdown-toggle">{{auth(activeGuard())->user()->name}}</p>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="{{route('ec.EngineerCompanyLogout')}}"><i
+                            <a class="dropdown-item" href="{{route('ec.EngineerCompanyLogout',activeGuard())}}"><i
                                     class="text-danger fa fa-power-off me-2"></i>{{ __('translation.logout') }}</a>
                         </div>
                     </div>

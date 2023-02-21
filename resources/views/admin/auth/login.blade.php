@@ -112,7 +112,7 @@
     $( '#loginForm' ).validate( {
             submitHandler: function () {
                 'use strict';
-                ajaxCall($('#loginForm'), "{{ route('admin_login_action') }}", $('#login_btn'), "{{ route('admin.GetBuildingInfoListing') }}", onRequestSuccess);
+                ajaxCall($('#loginForm'), "{{ route('admin_login_action') }}", $('#login_btn'), "{{ route('ec.GetCustomerInfoListing') }}", onRequestSuccess);
             }
         } );
 </script>

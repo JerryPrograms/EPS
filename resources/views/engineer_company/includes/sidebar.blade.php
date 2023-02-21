@@ -164,6 +164,8 @@
 
                 {{--                </li>--}}
 
+
+                @if((!empty(activeGuard())) && (activeGuard() != 'engineer'))
                 <li class="sidebr_button mt-2">
                     <a href="{{ route('engineers') }}" class=" waves-effect dropdown_toggle">
                         <!-- <i class="bx bx-calendar"></i> -->
@@ -173,7 +175,7 @@
                         <span key="t-dashboards" class="dropdown_text">{{ __('translation.Engineer Management') }}</span>
                     </a>
                 </li>
-
+                @endif
 
                 <li class="sidebr_button mt-2">
                     <a href="{{ route('distpatch_confirmation_listing') }}" class=" waves-effect dropdown_toggle">

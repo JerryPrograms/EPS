@@ -27,7 +27,7 @@
     }
 
 </style>
-<body data-sidebar="dark" data-layout-mode="light">
+<body data-sidebar="dark" data-layout-mode="light" class="{{ (!empty(activeGuard()) && activeGuard() == 'admin') ? 'admin-layout' : '' }}">
 
 <!-- <body data-layout="horizontal" data-topbar="dark"> -->
 

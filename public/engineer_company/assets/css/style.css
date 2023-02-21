@@ -1538,3 +1538,21 @@ table.table-inspection .inspection-grade{
     margin-top: 3px;
 }
 
+.admin-layout .navbar-header{
+    background-color: #414141;
+}
+
+.admin-layout #sidebar-menu .mm-active .dropdown_toggle{
+    background-color: #414141 !important;
+}
+.admin-layout .btn-primary{
+    background-color: #414141 !important;
+    border-color: #414141 !important;
+}
+.admin-layout .btn-primary:hover{
+    background-color: #232323 !important;
+    border-color: #232323 !important;
+}
+.admin-layout #sidebar-menu ul li a{
+    background-color: #eeeeee !important;
+}
