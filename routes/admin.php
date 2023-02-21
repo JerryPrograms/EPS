@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\BuildingInfoManagementController;
-use App\Http\Controllers\Admin\AdminnController;
+use App\Http\Controllers\Admin\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,8 +18,8 @@ use App\Http\Controllers\Admin\AdminnController;
 
 Route::group(['prefix' => 'admin'], function () {
 
-    Route::get('/login', [BuildingInfoManagementController::class, 'GetAdminLogin'])->name('admin.AdminLogin');
-    Route::post('/admin-login-action', [AdminnController::class, 'admin_login_action'])->name('admin_login_action');
+    Route::get('/login', [AdminController::class, 'GetAdminLogin'])->name('admin.AdminLogin');
+    Route::post('/admin-login-action', [AdminController::class, 'admin_login_action'])->name('admin_login_action');
 
     Route::group(['prefix' => 'building-info'], function () {
         Route::get('/listing', [BuildingInfoManagementController::class, 'GetBuildingInfoListing'])->name('admin.GetBuildingInfoListing');
