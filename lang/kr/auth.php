@@ -13,8 +13,11 @@ return [
     |
     */
 
-    'failed' => 'These credentials do not match our records.',
-    'password' => 'The provided password is incorrect.',
-    'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
+    'failed' => '회원정보에 없습니다. 다시 확인해주세요.',
+    'password' => '비밀번호가 틀렸습니다. 다시 확인해주세요.',
+    'throttle' => '로그인 횟수를 초과하셨습니다. :seconds 초 후에 다시 시도해주세요.',
 
 ];
+
+
+
