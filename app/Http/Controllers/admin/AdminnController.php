@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Validator;
 use App\Models\Admin;
 use App\Service\Authentication;
 
-class AdminController extends Controller
+class AdminnController extends Controller
 {
     public function GetAdminLogin()
     {
