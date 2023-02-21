@@ -12,6 +12,7 @@ class AdminController extends Controller
 {
     public function GetAdminLogin()
     {
+        dd('working');
         return view('admin.auth.login');
     }
 
