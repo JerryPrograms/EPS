@@ -37,7 +37,7 @@
                                 <i class="fa-sharp fa-solid fa-pen list_icon"></i>
 
                                 <span key="t-dashboards" class="dropdown_text_2">
-                                {{ __('translation.Create Customer Information') }}
+                                {{ __('translation.Fill in customer information') }}
                             </span>
 
                             </a>

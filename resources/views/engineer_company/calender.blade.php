@@ -372,7 +372,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="EditAndDeleteEventCompleteModalLabel">
-                    {{ __('translation.Edit_Event') }}
+                    {{ __('translation.Edit Event') }}
                     </h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -416,7 +416,7 @@
                             <div class="col-md-12">
                                 <div class="mb-3">
                                     <label for="formrow-inputCity" class="form-label">
-                                    {{ __('translation.Select_Type') }}
+                                    {{ __('translation.Select Type') }}
                                     </label>
                                     <select id="a_type" class="form-select" name="type" required>
                                         <option value="" selected disabled>
@@ -479,7 +479,7 @@
                         click: function () {
                             $('#addEventModal').modal('show');
                             $('#type_btn').addClass('fc-weekendDuty-button');
-                            $('#type_btn').text('weekend duty')
+                            $('#type_btn').text('{{ __('translation.Weekend Duty') }}')
                             $('#add_event_type').val('weekend duty')
                         }
                     },
@@ -488,7 +488,7 @@
                         click: function () {
                             $('#addEventModal').modal('show');
                             $('#type_btn').addClass('fc-weekendShift-button');
-                            $('#type_btn').text('weekend shift')
+                            $('#type_btn').text('{{ __('translation.Weekend Shift') }}')
                             $('#add_event_type').val('weekend shift')
                         }
                     },
@@ -497,7 +497,7 @@
                         click: function () {
                             $('#addEventModal').modal('show');
                             $('#type_btn').addClass('fc-nightShift-button');
-                            $('#type_btn').text('night shift')
+                            $('#type_btn').text('{{ __('translation.Night Shift') }}')
                             $('#add_event_type').val('night shift')
                         }
                     },
@@ -506,7 +506,7 @@
                         click: function () {
                             $('#addEventModal').modal('show');
                             $('#type_btn').addClass('fc-holidayDuty-button');
-                            $('#type_btn').text('holiday duty')
+                            $('#type_btn').text('{{ __('translation.Holiday Duty') }}')
                             $('#add_event_type').val('holiday duty')
                         }
                     },
@@ -515,7 +515,7 @@
                         click: function () {
                             $('#addEventModal').modal('show');
                             $('#type_btn').addClass('fc-construction-button');
-                            $('#type_btn').text('construction')
+                            $('#type_btn').text('{{ __('translation.construction') }}')
                             $('#add_event_type').val('construction button')
                         }
                     },
@@ -524,7 +524,7 @@
                         click: function () {
                             $('#addEventModal').modal('show');
                             $('#type_btn').addClass('fc-periodicInspection-button');
-                            $('#type_btn').text('periodic inspection')
+                            $('#type_btn').text('{{ __('translation.Periodic Inspection') }}')
                             $('#add_event_type').val('periodic inspection')
                         }
                     },
