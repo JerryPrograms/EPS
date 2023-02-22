@@ -311,7 +311,7 @@
                                                     @if(!empty($SubParts->image)) required
                                                     @endif
                                                     hidden>
-                                                <p id="file_name"></p>
+                                                <p id="file_name">@if(!empty($SubParts->picture))<a target="_blank" href="{{asset($SubParts->picture)}}">{{explode('/',$SubParts->picture)[3]}}</a> @endif</p>
                                             </div>
 
 

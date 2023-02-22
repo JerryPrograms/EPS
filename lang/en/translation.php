@@ -380,5 +380,6 @@ return [
     'Engineer Company Management' => 'Engineer Company Management',
     'Engineer Companies' => 'Engineer Companies',
     'Customer side verifier' => 'Customer side verifier',
-    'clear' => 'clear'
+    'clear' => 'clear',
+    'select affiliate company'=>'Select affiliate company',
 ];
