@@ -374,5 +374,7 @@ return [
     'Register' => '등록하다',
     'Contract number' => '계약 번호',
     'Edit Engineer Company' => '엔지니어 회사 편집',
-    'Engineer Companies' => '엔지니어 회사'
+    'Engineer Companies' => '엔지니어 회사',
+    'Customer side verifier' => '고객 측 검증자',
+    'clear' => '분명한'
 ];

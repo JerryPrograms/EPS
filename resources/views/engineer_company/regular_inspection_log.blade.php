@@ -22,7 +22,7 @@
                                             <table class="bg-light table bg-light customer-info-table-view">
                                                 <thead>
                                                     <tr>
-                                                        <th>Info</th>
+                                                        <th>{{ __('translation.info') }}</th>
                                                         <th style="min-width:180px;">{{ __('translation.Customer number') }}</th>
                                                         <th style="min-width:180px;">{{ __('translation.Building name') }}</th>
                                                         <th style="min-width:180px;">{{ __('translation.address') }}</th>
@@ -59,10 +59,10 @@
                                                 <table class="table align-middle mb-0 table-theme">
                                                     <thead class="table-light">
                                                         <tr>
-                                                            <th>{{ __('translation.No') }}.</th>
+                                                            <th>{{ __('translation.no') }}.</th>
                                                             <th>{{ __('translation.Inspection date') }}</th>
                                                             <th>{{ __('translation.Emphysema') }}</th>
-                                                            <th>{{ __('translation.Site name') }}</th>
+                                                            <th>{{ __('translation.site name') }}</th>
                                                             <th>{{ __('translation.Installation place') }}</th>
                                                             <th>{{ __('translation.View more') }}</th>
                                                         </tr>

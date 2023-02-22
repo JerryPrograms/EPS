@@ -378,5 +378,7 @@ return [
     'Edit Engineer Company' => 'Edit Engineer Company',
     'Edit Company' => 'Edit Company',
     'Engineer Company Management' => 'Engineer Company Management',
-    'Engineer Companies' => 'Engineer Companies'
+    'Engineer Companies' => 'Engineer Companies',
+    'Customer side verifier' => 'Customer side verifier',
+    'clear' => 'clear'
 ];
