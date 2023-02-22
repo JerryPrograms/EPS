@@ -32,7 +32,7 @@
                                                         <td class="text-left">{{ $customer->getCustomer->building_name }}</td>
                                                     </tr>
                                                     <tr>
-                                                        <th class="text-left">{{ __('translation.Inspection Date') }}</th>
+                                                        <th class="text-left">{{ __('translation.Inspection date') }}</th>
                                                         <td class="text-left">{{ $customer->inspection_date->format('Y-m-d') }}</td>
                                                     </tr>
                                                     <tr>

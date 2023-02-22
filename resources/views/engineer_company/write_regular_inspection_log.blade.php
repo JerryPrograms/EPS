@@ -41,7 +41,7 @@
                                             <div class="form-group mb-4">
                                                 <div class="row align-items-center">
                                                     <div class="col-lg-2 col-md-6 col-12">
-                                                        <label for="inspection_date" class="mb-0">{{ __('translation.Inspection Date') }}</label>
+                                                        <label for="inspection_date" class="mb-0">{{ __('translation.Inspection date') }}</label>
                                                     </div>
                                                     <div class="col-lg-10 col-md-6 col-12">
                                                         <input type="date" class="form-control form-theme-input"
