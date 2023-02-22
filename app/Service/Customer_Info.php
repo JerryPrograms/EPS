@@ -20,7 +20,7 @@ class Customer_Info
                 'maintenance_company' => $request['maintenance_company'],
                 'address' => $request['address'],
                 'customer_number' => Str::random(10),
-                'added_by' => $request->added_by,
+                'added_by' => activeGuard(),
                 'added_by_id' => auth('engineer_company')->id(),
             ]);
             if ($is_created) {

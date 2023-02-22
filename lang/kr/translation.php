@@ -20,7 +20,7 @@ return [
     'e-mail' => '이메일주소',
     'Building management company information' => '건물관리회사 정보',
     'Company Name' => '업체명',
-    'Ceo Name' => '대표자',
+    'Ceo Name' => 'CEO이름',
     'Company Registration Number' => '사업자등록번호',
     'Industry Category' => '업종',
     'contact 1, 2' => '연락처 1, 2',
@@ -79,7 +79,7 @@ return [
     'Repair Company Information' => '보수업체 정보',
     'Enter industry category' => '업태를 입력해주세요',
     'Angelina@gmail.com' => 'aabbccdd@gmail.com', // This is example email address like aaaa@gmail.com
-    'Back page' => '이전',
+    'Back page' => '이전페이지',
     'Dispatch Confirmation' => '정기점검일지 작성',
     'Reception Information' => '접수 정보',
     'site name' => '현장명',
@@ -376,5 +376,6 @@ return [
     'Edit Engineer Company' => '엔지니어 회사 편집',
     'Engineer Companies' => '엔지니어 회사',
     'Customer side verifier' => '고객 측 검증자',
-    'clear' => '분명한'
+    'clear' => '분명한',
+    'select affiliate company'=>'계열사 선택',
 ];
