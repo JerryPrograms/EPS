@@ -518,7 +518,7 @@
                                                         <td class="custom_br_rd">
                                                             <input id="ffrtyhjh" type="text" name="manager_name[]"
                                                                 class="form-control col-lg-2 custom_input_tble_4"
-                                                                placeholder="{{ __('translation.Manager_Name') }}"
+                                                                placeholder="{{ __('translation.Manager Name') }}"
                                                                 required
                                                                 @if (count($customer->InspectionCertificate) > 0) value="{{ $customer->InspectionCertificate[2]->manager_name }}" @endif>
                                                         </td>
@@ -643,13 +643,13 @@
 @section('custom-script')
     <script>
         //DISABLE PREVIOUS DATES
-        var today = new Date();
-        var dd = String(today.getDate()).padStart(2, '0');
-        var mm = String(today.getMonth() + 1).padStart(2, '0');
-        var yyyy = today.getFullYear();
-
-        today = yyyy + '-' + mm + '-' + dd;
-        $('input[type=date]').attr('min', today);
+        // var today = new Date();
+        // var dd = String(today.getDate()).padStart(2, '0');
+        // var mm = String(today.getMonth() + 1).padStart(2, '0');
+        // var yyyy = today.getFullYear();
+        //
+        // today = yyyy + '-' + mm + '-' + dd;
+        // $('input[type=date]').attr('min', today);
 
         $('#parkingFacilityInformationForm').validate({
             submitHandler: function() {

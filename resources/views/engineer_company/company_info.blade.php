@@ -218,20 +218,15 @@
                                                                 class="star_section">&nbsp;</span>
                                                                 {{ __('translation.Payment method') }}
                                                                 </label></div>
-                                                    <div class="col-md-8 col-12"><select
-                                                            class="form-select w-100 custom_input" name="payment_method"
-                                                            autocomplete="off" required>
-                                                            <option value=""
-                                                                @if (empty($customer->ASInformation)) selected @endif disabled>
-                                                                --{{ __('translation.Select payment method') }}--
-                                                            </option>
-                                                            <option @if (!empty($customer->ASInformation) && $customer->ASInformation->payment_method == 'stripe') selected @endif
-                                                                value="stripe">{{ __('translation.Stripe') }}
-                                                            </option>
-                                                            <option @if (!empty($customer->ASInformation) && $customer->ASInformation->payment_method == 'paypal') selected @endif
-                                                                value="paypal">{{ __('translation.Paypal') }}
-                                                            </option>
-                                                        </select></div>
+                                                    <div class="col-md-8 col-12">
+                                                        <input type="text" name="payment_method"
+                                                               class="form-control w-100 custom_input"
+                                                               aria-describedby="emailHelp"
+                                                               placeholder="{{ __('translation.Jewon Lee') }}"
+                                                               required
+                                                               @if (!empty($customer->ASInformation)) value="{{ $customer->ASInformation->payment_method }}" @endif>
+
+                                                    </div>
                                                 </div>
 
                                             </div>
@@ -389,14 +384,15 @@
 @endsection
 @section('custom-script')
     <script>
-        //DISABLE PREVIOUS DATES
-        var today = new Date();
-        var dd = String(today.getDate()).padStart(2, '0');
-        var mm = String(today.getMonth() + 1).padStart(2, '0');
-        var yyyy = today.getFullYear();
 
-        today = yyyy + '-' + mm + '-' + dd;
-        $('input[type=date]').attr('min', today);
+        // //DISABLE PREVIOUS DATES
+        // var today = new Date();
+        // var dd = String(today.getDate()).padStart(2, '0');
+        // var mm = String(today.getMonth() + 1).padStart(2, '0');
+        // var yyyy = today.getFullYear();
+        //
+        // today = yyyy + '-' + mm + '-' + dd;
+        // $('input[type=date]').attr('min', today);
 
         $('#createASAndRepairCompanyInformationForm').validate({
             submitHandler: function() {
