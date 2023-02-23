@@ -36,10 +36,9 @@ class ListingController extends Controller
     // Regular inspection management
     public function regular_inspection_logs()
     {
-        if(activeGuard() == 'web')
-        {
-            $logs = MonthlyRegularInspection::where('customer_id',auth('web')->id())->with('getCustomer')->paginate(10);
-        }else{
+        if (activeGuard() == 'web') {
+            $logs = MonthlyRegularInspection::where('customer_id', auth('web')->id())->with('getCustomer')->paginate(10);
+        } else {
             $logs = MonthlyRegularInspection::with('getCustomer')->paginate(10);
         }
 
@@ -59,14 +58,24 @@ class ListingController extends Controller
     // Contract Management
     public function contract_management()
     {
-        $contracts = Contract::with('get_customer')->paginate(10);
+        if (activeGuard() == 'web') {
+            $contracts = Contract::where('customer_id', auth('web')->id())->with('get_customer')->paginate(10);
+        } else {
+            $contracts = Contract::with('get_customer')->paginate(10);
+        }
+
         return view('engineer_company.contract_management', compact('contracts'));
     }
 
     // Quotation Management
     public function quotation_management()
     {
-        $quotations = Quotation::with('GetQuoteContent', 'getCustomer')->paginate(10);
+        if (activeGuard() != 'web') {
+            $quotations = Quotation::where('customer_id', auth('web')->id())->with('GetQuoteContent', 'getCustomer')->paginate(10);
+        } else {
+            $quotations = Quotation::with('GetQuoteContent', 'getCustomer')->paginate(10);
+        }
+
         return view('engineer_company.quotation_management', compact('quotations'));
     }
 }

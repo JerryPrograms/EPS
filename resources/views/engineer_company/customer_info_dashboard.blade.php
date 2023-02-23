@@ -147,7 +147,7 @@
                                                         {{ __('translation.Quote Management') }}
                                                     </p>
                                                 </button>
-                                                <button class="searchbar_img_2 border-0 mt-2">
+                                                <button onclick="window.location.href= '{{route('create_construction_completion',$customer->user_uid)}}'" class="searchbar_img_2 border-0 mt-2">
                                                     <img
                                                         src="{{asset('engineer_company/assets/images/searchbar.png')}}">
                                                     <p class="searchbar_text mt-3">

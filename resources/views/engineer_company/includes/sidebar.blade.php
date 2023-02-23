@@ -167,7 +167,7 @@
 
 
                 <li class="sidebr_button mt-2">
-                    <a href="javascript: void(0);" class=" waves-effect dropdown_toggle">
+                    <a href="{{route('construction_completion')}}" class=" waves-effect dropdown_toggle">
                         <!-- <i class="bx bx-calendar"></i> -->
                         <img src="{{asset('engineer_company/assets/images/gray-calender.png')}}"
                              class="double_ring_img p-0"

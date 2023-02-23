@@ -3,6 +3,10 @@
 use App\Http\Controllers\engineercompany\AuthController;
 use App\Http\Controllers\engineercompany\ContractController;
 use App\Http\Controllers\engineercompany\EngineerCompanyController;
+use App\Http\Controllers\engineercompany\InspectionController;
+use App\Http\Controllers\EngineerCompanyController as CompanyController;
+use App\Http\Controllers\EngineerController;
+use App\Http\Controllers\ListingController;
 use App\Service\ASAndRepairCompanyInformation;
 use App\Service\BuildingAndCompanyInformation;
 use App\Service\Customer_Info;
@@ -16,10 +20,7 @@ use App\Service\ParkingFacility;
 use App\Service\PartReplacement;
 use App\Service\QuoteService;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\engineercompany\InspectionController;
-use App\Http\Controllers\ListingController;
-use App\Http\Controllers\EngineerController;
-use App\Http\Controllers\EngineerCompanyController as CompanyController;
+use App\Http\Controllers\ConstructionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -169,6 +170,18 @@ Route::group(['prefix' => 'eps-panel', 'middleware' => 'CommonRoutes'], function
     Route::post('/edit-inspection-action', [InspectionController::class, 'edit_inspection_action'])->name('edit_inspection_action');
     Route::get('/view-regular-inspection-log/{id}', [InspectionController::class, 'view_regular_inspection_log'])->name('view_regular_inspection_log');
 
+
+    //Construction Completion Report
+    Route::get('/construction-completion-reports', [ConstructionController::class, 'construction_completion'])->name('construction_completion');
+    Route::get('/create-completion-reports/{id}', [ConstructionController::class, 'create_construction_completion'])->name('create_construction_completion');
+    Route::get('/edit-completion-reports/{id}', [ConstructionController::class, 'edit_construction_completion'])->name('edit_construction_completion');
+    Route::get('/view-completion-reports/{id}', [ConstructionController::class, 'view_construction_completion'])->name('view_construction_completion');
+    Route::post('/add-completion-reports', [ConstructionController::class, 'add_construction_completion'])->name('add_construction_completion');
+    Route::post('/post-completion-reports', [ConstructionController::class, 'post_construction_completion'])->name('post_construction_completion');
+    Route::post('/update-completion-reports', [ConstructionController::class, 'update_construction_completion'])->name('update_construction_completion');
+    Route::post('/print-completion-reports', [ConstructionController::class, 'print_construction_completion'])->name('print_construction_completion');
+
+
     // Route to Create todoEvent in calendar
     Route::post('/create-todo-event', [EventService::class, 'CreateTodo'])->name('CreateTodo');
 
@@ -209,22 +222,22 @@ Route::group(['prefix' => 'eps-panel', 'middleware' => 'AdminAccess'], function 
     // Engineer Company Management Start
     Route::get('/engineer-companies', [CompanyController::class, 'engineer_companies'])->name('engineer_companies');
     Route::get('/add-engineer-company', [CompanyController::class, 'add_engineer_company'])->name('add_engineer_company');
-    Route::post('/add-engineer-company-action',[CompanyController::class, 'add_engineer_company_action'])->name('add_engineer_company_action');
+    Route::post('/add-engineer-company-action', [CompanyController::class, 'add_engineer_company_action'])->name('add_engineer_company_action');
     Route::get('/edit-engineer-company/{id}', [CompanyController::class, 'edit_engineer_company'])->name('edit_engineer_company');
-    Route::post('/edit-engineer-company-action',[CompanyController::class, 'edit_engineer_company_action'])->name('edit_engineer_company_action');
-    Route::post('/del-engineer-company-action',[CompanyController::class, 'del_engineer_company_action'])->name('del_engineer_company_action');
+    Route::post('/edit-engineer-company-action', [CompanyController::class, 'edit_engineer_company_action'])->name('edit_engineer_company_action');
+    Route::post('/del-engineer-company-action', [CompanyController::class, 'del_engineer_company_action'])->name('del_engineer_company_action');
     // Engineer Company Management End
 });
 
 Route::group(['prefix' => 'eps-panel', 'middleware' => 'AdminCompanyAccess'], function () {
-     // Engineer Management Start
-     Route::get('/engineers', [EngineerController::class, 'engineers'])->name('engineers');
-     Route::get('/add-engineer', [EngineerController::class, 'add_engineer'])->name('add_engineer');
-     Route::post('/add-engineer-action',[EngineerController::class, 'add_engineer_action'])->name('add_engineer_action');
-     Route::get('/edit-engineer/{id}', [EngineerController::class, 'edit_engineer'])->name('edit_engineer');
-     Route::post('/edit-engineer-action',[EngineerController::class, 'edit_engineer_action'])->name('edit_engineer_action');
-     Route::post('/del-engineer-action',[EngineerController::class, 'del_engineer_action'])->name('del_engineer_action');
-     // Engineer Management End
+    // Engineer Management Start
+    Route::get('/engineers', [EngineerController::class, 'engineers'])->name('engineers');
+    Route::get('/add-engineer', [EngineerController::class, 'add_engineer'])->name('add_engineer');
+    Route::post('/add-engineer-action', [EngineerController::class, 'add_engineer_action'])->name('add_engineer_action');
+    Route::get('/edit-engineer/{id}', [EngineerController::class, 'edit_engineer'])->name('edit_engineer');
+    Route::post('/edit-engineer-action', [EngineerController::class, 'edit_engineer_action'])->name('edit_engineer_action');
+    Route::post('/del-engineer-action', [EngineerController::class, 'del_engineer_action'])->name('del_engineer_action');
+    // Engineer Management End
 });
 
 
