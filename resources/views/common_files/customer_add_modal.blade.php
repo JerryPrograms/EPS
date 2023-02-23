@@ -50,6 +50,30 @@
                                                    required>
                                         </div>
                                     </div>
+                                    <div class="col-md-12">
+                                        <div class="mb-3">
+                                            <label for="formrow-building-company" class="form-label">Name </label>
+                                            <input type="text" class="form-control" id="formrow-building-company"
+                                                   name="name"
+                                                   placeholder="Enter Name" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="mb-3">
+                                            <label for="formrow-building-company" class="form-label">Email </label>
+                                            <input type="email" class="form-control" id="formrow-building-company"
+                                                   name="email"
+                                                   placeholder="Enter Email" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="mb-3">
+                                            <label for="formrow-building-company" class="form-label">Password</label>
+                                            <input type="password" class="form-control" id="formrow-building-company"
+                                                   name="password"
+                                                   placeholder="Enter Password" required>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <!-- end card body -->

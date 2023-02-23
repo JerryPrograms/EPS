@@ -25,7 +25,7 @@ class EngineerCompanyController extends Controller
     public function GetCustomerInfoListing()
     {
 
-        $customer = CustomerInfo::where('added_by_id', auth('engineer_company')->id())->latest()->paginate(10);
+        $customer = CustomerInfo::where('added_by_id', auth(activeGuard())->id())->latest()->paginate(10);
         return view('engineer_company.customer_list', compact('customer'));
     }
 
@@ -182,13 +182,17 @@ class EngineerCompanyController extends Controller
         if($role == 'admin'){
             return redirect()->route('admin.AdminLogin');
         }
-        
+
         if($role == 'engineer_company'){
             return redirect()->route('ec.GetECLogin');
         }
 
         if($role == 'engineer'){
             return redirect()->route('e.GetECLogin');
+        }
+
+        if($role == 'web'){
+            return redirect()->route('customer-login');
         }
 
     }

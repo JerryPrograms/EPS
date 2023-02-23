@@ -16,7 +16,7 @@ class CommonRoutes
      */
     public function handle(Request $request, Closure $next)
     {
-        if (auth('engineer_company')->check() || auth('engineer')->check() || auth('admin')->check()) {
+        if (auth('engineer_company')->check() || auth('engineer')->check() || auth('admin')->check() || auth('web')->check()) {
             return $next($request);
         }
         return redirect()->route('ec.GetECLogin');

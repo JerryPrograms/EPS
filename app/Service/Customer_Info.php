@@ -6,6 +6,7 @@ use App\Http\Requests\CustomerInfoRequest;
 use App\Models\CustomerInfo;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
 class Customer_Info
@@ -21,7 +22,10 @@ class Customer_Info
                 'address' => $request['address'],
                 'customer_number' => Str::random(10),
                 'added_by' => activeGuard(),
-                'added_by_id' => auth('engineer_company')->id(),
+                'added_by_id' => auth(activeGuard())->id(),
+                'name' => $request['name'],
+                'email' => $request['email'],
+                'password' => Hash::make($request['password']),
             ]);
             if ($is_created) {
                 return json_encode([

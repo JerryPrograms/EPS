@@ -27,30 +27,30 @@
                                         <div class="table-responsive data-set-list">
                                             <table class="table mb-0 table-bordered table-striped table-inspection">
                                                 <tbody>
-                                                    <tr>
-                                                        <th class="text-left">{{ __('translation.Building Name') }}</th>
-                                                        <td class="text-left">{{ $customer->getCustomer->building_name }}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th class="text-left">{{ __('translation.Inspection date') }}</th>
-                                                        <td class="text-left">{{ $customer->inspection_date->format('Y-m-d') }}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th class="text-left">{{ __('translation.Type and number') }}</th>
-                                                        <td class="text-left">{{ str_replace('_', ' ', $customer->getCustomer->ParkingFacilityCertificate->type) }}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th class="text-left">{{ __('translation.Arrival time') }}</th>
-                                                        <td class="text-left">{{ $customer->arrival_time->format('Y-m-d') }}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th class="text-left">{{ __('translation.Completion time') }}</th>
-                                                        <td class="text-left">{{ $customer->completion_time->format('Y-m-d') }}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th class="text-left">{{ __('translation.Checker') }}</th>
-                                                        <td class="text-left">{{ $customer->getCustomer->ParkingFacilityCertificate->producer }}</td>
-                                                    </tr>
+                                                <tr>
+                                                    <th class="text-left">{{ __('translation.Building Name') }}</th>
+                                                    <td class="text-left">{{ $customer->getCustomer->building_name }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-left">{{ __('translation.Inspection date') }}</th>
+                                                    <td class="text-left">{{ $customer->inspection_date->format('Y-m-d') }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-left">{{ __('translation.Type and number') }}</th>
+                                                    <td class="text-left">{{ str_replace('_', ' ', $customer->getCustomer->ParkingFacilityCertificate->type) }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-left">{{ __('translation.Arrival time') }}</th>
+                                                    <td class="text-left">{{ $customer->arrival_time->format('Y-m-d') }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-left">{{ __('translation.Completion time') }}</th>
+                                                    <td class="text-left">{{ $customer->completion_time->format('Y-m-d') }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-left">{{ __('translation.Checker') }}</th>
+                                                    <td class="text-left">{{ $customer->getCustomer->ParkingFacilityCertificate->producer }}</td>
+                                                </tr>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -70,7 +70,8 @@
                                                         <span class="fw-bold mb-2 ms-1">.</span>
                                                         <h4
                                                             class="card_tittle_2 d-flex align-items-center mb-2 text-capitalize">
-                                                            {{ __('translation.Parking Facility Periodic Inspection Table') }} -
+                                                            {{ __('translation.Parking Facility Periodic Inspection Table') }}
+                                                            -
                                                             {{ str_replace('_', ' ', $customer->getCustomer->ParkingFacilityCertificate->type) }}
                                                         </h4>
                                                     </div>
@@ -115,44 +116,44 @@
                                                         <div class="table-responsive data-set-list">
                                                             <table class="table table-inspection mb-0">
                                                                 <thead>
-                                                                    <tr class="bg-light">
-                                                                        <th
-                                                                            class="text-center text-theme-dark min-width-600">
-                                                                            {{ __('translation.Check contents') }}</th>
-                                                                        <th class="text-center text-theme-dark">
-                                                                            {{ __('translation.Situation') }}
-                                                                        </th>
-                                                                        <th class="text-center text-theme-dark">
-                                                                            {{ __('translation.Inspection month') }}
-                                                                        </th>
-                                                                    </tr>
+                                                                <tr class="bg-light">
+                                                                    <th
+                                                                        class="text-center text-theme-dark min-width-600">
+                                                                        {{ __('translation.Check contents') }}</th>
+                                                                    <th class="text-center text-theme-dark">
+                                                                        {{ __('translation.Situation') }}
+                                                                    </th>
+                                                                    <th class="text-center text-theme-dark">
+                                                                        {{ __('translation.Inspection month') }}
+                                                                    </th>
+                                                                </tr>
                                                                 </thead>
                                                                 <tbody>
-                                                                    @foreach ($item->$main_category as $k2 => $v2)
-                                                                        @php
-                                                                            $obj3 = new ArrayIterator($v2);
-                                                                            $sub_category_accordion = $obj3->key();
-                                                                        @endphp
-                                                                        {{-- panel start --}}
-                                                                        <tr class="bg-theme-light-sky">
-                                                                            <td colspan="3"
-                                                                                class="text-left text-black fw-bold">
-                                                                                {{ string_capitalize($sub_category_accordion) }}
+                                                                @foreach ($item->$main_category as $k2 => $v2)
+                                                                    @php
+                                                                        $obj3 = new ArrayIterator($v2);
+                                                                        $sub_category_accordion = $obj3->key();
+                                                                    @endphp
+                                                                    {{-- panel start --}}
+                                                                    <tr class="bg-theme-light-sky">
+                                                                        <td colspan="3"
+                                                                            class="text-left text-black fw-bold">
+                                                                            {{ string_capitalize($sub_category_accordion) }}
+                                                                        </td>
+                                                                    </tr>
+                                                                    @foreach ($v2->$sub_category_accordion as $k3 => $v3)
+                                                                        <tr>
+                                                                            <td class="text-black text-left">
+                                                                                {{ $v3->question_title }}</td>
+                                                                            <td class="fw-bold text-dark">
+                                                                                {{ $check_content[$main_category][$sub_category_accordion][$v3->input_name] }}
                                                                             </td>
+                                                                            <td class="text-black">
+                                                                                {{ $v3->inspection_duration }}</td>
                                                                         </tr>
-                                                                        @foreach ($v2->$sub_category_accordion as $k3 => $v3)
-                                                                            <tr>
-                                                                                <td class="text-black text-left">
-                                                                                    {{ $v3->question_title }}</td>
-                                                                                <td class="fw-bold text-dark">
-                                                                                    {{ $check_content[$main_category][$sub_category_accordion][$v3->input_name] }}
-                                                                                </td>
-                                                                                <td class="text-black">
-                                                                                    {{ $v3->inspection_duration }}</td>
-                                                                            </tr>
-                                                                        @endforeach
-                                                                        {{-- panel end --}}
                                                                     @endforeach
+                                                                    {{-- panel end --}}
+                                                                @endforeach
                                                                 </tbody>
                                                             </table>
                                                         </div>
@@ -169,7 +170,8 @@
                                                 <div class="ca-action gap-2">
                                                     <div class="ca-action-left-content gap-2">
                                                         <div class="heading-text">
-                                                            <h4 class="mb-0">{{ $loopCount + 1 }}. {{ __('translation.Special notes') }}</h4>
+                                                            <h4 class="mb-0">{{ $loopCount + 1 }}
+                                                                . {{ __('translation.Special notes') }}</h4>
                                                         </div>
                                                     </div>
                                                     <div class="ca-action-right-content">
@@ -180,11 +182,11 @@
                                                     <div class="table-responsive">
                                                         <table class="table table-inspection mb-0">
                                                             <tbody>
-                                                                <tr>
-                                                                    <td class="text-left text-dark">
-                                                                        {{ $customer->special_notes }}
-                                                                    </td>
-                                                                </tr>
+                                                            <tr>
+                                                                <td class="text-left text-dark">
+                                                                    {{ $customer->special_notes }}
+                                                                </td>
+                                                            </tr>
                                                             </tbody>
                                                         </table>
                                                     </div>
@@ -196,7 +198,8 @@
                                                 <div class="ca-action gap-2">
                                                     <div class="ca-action-left-content gap-2">
                                                         <div class="heading-text">
-                                                            <h4 class="mb-0">{{ $loopCount + 2 }}. {{ __('translation.Customer side verifier') }}</h4>
+                                                            <h4 class="mb-0">{{ $loopCount + 2 }}
+                                                                . {{ __('translation.Customer side verifier') }}</h4>
                                                         </div>
                                                     </div>
                                                     <div class="ca-action-right-content">
@@ -207,11 +210,12 @@
                                                     <div class="table-responsive">
                                                         <table class="table table-inspection mb-0">
                                                             <tbody>
-                                                                <tr>
-                                                                    <td>
-                                                                        <img src="{{ asset($customer->signature) }}" alt="signature" class="img-fluid">
-                                                                    </td>
-                                                                </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <img src="{{ asset($customer->signature) }}"
+                                                                         alt="signature" class="img-fluid">
+                                                                </td>
+                                                            </tr>
                                                             </tbody>
                                                         </table>
                                                     </div>
@@ -220,26 +224,34 @@
                                             {{-- accordion item end --}}
                                         </div>
                                         {{-- accordion end --}}
-                                        <div class="form-action mt-3 text-right">
-                                            <a href="{{ route('regular_inspection_log',$customer->getCustomer->user_uid) }}" class="btn btn-primary">{{ __('translation.Back') }}</a>
-                                        </div>
+
+                                        @if(activeGuard() != 'web')
+                                            <div class="form-action mt-3 text-right">
+                                                <a href="{{ route('regular_inspection_log',$customer->getCustomer->user_uid) }}"
+                                                   class="btn btn-primary">{{ __('translation.Back') }}</a>
+                                            </div>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
                             <!-- end row -->
                         </div>
                     @else
+
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <div class="alert alert-danger mb-0">{{ __('translation.Please enter Building information & Parking facility certification information') }}. <a
+                                        <div
+                                            class="alert alert-danger mb-0">{{ __('translation.Please enter Building information & Parking facility certification information') }}
+                                            . <a
                                                 href="{{ route('regular_inspection_log', $customer->getCustomer->user_uid) }}"
                                                 class="text-primary mx-2 text-decoration-underline">Back</a></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
                     @endif
                 </div>
                 <!-- section 2 end  -->
@@ -251,7 +263,7 @@
 
 @section('custom-script')
     <script>
-        $('.custom-accordion-item .ca-action').on('click', function() {
+        $('.custom-accordion-item .ca-action').on('click', function () {
             var accordionIcon = $(this).find('.ca-action-right-content').find('i');
             $(this).next('.ca-content').slideToggle();
             if (accordionIcon.hasClass('rotate-180')) {
