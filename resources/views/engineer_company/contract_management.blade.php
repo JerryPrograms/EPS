@@ -43,15 +43,11 @@
                                                     <button type="submit" class="btn btn-primary searchbar_button">
                                                         <div class="search_img">
                                                             <img
-                                                                src="http://127.0.0.1:8000/engineer_company/assets/images/search.png">
+                                                                src="{{asset('engineer_company/assets/images/search.png')}}">
                                                         </div>
                                                     </button>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="buttons d-flex align-items-center justify-content-between gap-1">
-                                            <a href="javascript:void(0)"
-                                                class="btn btn-primary">{{ __('translation.Add Contract') }}</a>
                                         </div>
                                     </div>
                                     @if (count($contracts) > 0)
