@@ -21,7 +21,7 @@
         <th class="text-center">
             {{ __('translation.Building Management Company') }}
         </th>
-        <th class="text-center">Actions</th>
+        <th class="text-center">{{__('translation.action')}}</th>
     </tr>
     </thead>
     <tbody>
