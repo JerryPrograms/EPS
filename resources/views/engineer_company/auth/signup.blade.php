@@ -86,7 +86,7 @@
                                     </span>
                                 </div>
                                 <div class="form-floating mt-3 d-flex flex-column">
-                                    <input type="number" name="phone" class="form-control custom_input" id="phone"
+                                    <input type="number" name="phone" class="form-control custom_input" style="padding-right: 17px !important;" id="phone"
                                         placeholder="{{ __('translation.Enter your phone_number') }}" required>
                                     <label for="phone" class="custom_color_theme">{{ __('translation.Phone number') }}</label>
                                 </div>

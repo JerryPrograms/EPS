@@ -395,7 +395,7 @@ required>
 <div class="form-group">
 <div class="row">
 <div class="col-12">
-<button class="btn btn-danger" type="button" onclick="$(this).parent().parent().parent().parent().remove()"><i class="fa fa-trash"></i></button>
+<button class="btn btn-danger" type="button" onclick="$(this).parent().parent().parent().parent().remove(),calculateSum()"><i class="fa fa-trash"></i></button>
 </div>
 </div>
 </div>

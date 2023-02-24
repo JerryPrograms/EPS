@@ -13,39 +13,14 @@
                                     </h4>
                                     <div class="d-flex align-items-center justify-content-between">
                                         <div class="left-content d-flex align-items-center">
-                                            <select class="form-select select_filter w-25" name="filter" autocomplete="off"
-                                            required>
-                                                <option selected="" value="" disabled="">{{ __('translation.Filter') }}</option>
-                                                <option value="all">
-                                                    {{ __('translation.all') }}
-                                                </option>
-                                                <option value="created_at">
-                                                    {{ __('translation.Registration Date') }}
-                                                </option>
-                                                <option value="building_name">
-                                                    {{ __('translation.Building Name') }}
-                                                </option>
-                                                <option value="customer_number">
-                                                    {{ __('translation.Customer Number') }}
-                                                </option>
-                                                <option value="address">
-                                                    {{ __('translation.address') }}
-                                                </option>
-                                                <option value="building_management company">
-                                                    {{ __('translation.Building Management Company') }}
-                                                </option>
-                                            </select>
                                             <div class="custom_search">
                                                 <div class="search">
-                                                    <input type="text" class="form-control" name="keyword"
-                                                        placeholder="{{ __('translation.search') }}" autocomplete="off"
-                                                        required="">
-                                                    <button type="submit" class="btn btn-primary searchbar_button">
-                                                        <div class="search_img">
-                                                            <img
-                                                                src="{{asset('engineer_company/assets/images/search.png')}}">
-                                                        </div>
-                                                    </button>
+                                                    <input id="myInput" onchange="myFunction()" type="text"
+                                                           class="form-control" name="keyword"
+                                                           placeholder="{{ __('translation.search') }}"
+                                                           autocomplete="off"
+                                                           required="">
+
                                                 </div>
                                             </div>
                                         </div>
@@ -63,7 +38,8 @@
                                         </div>
                                     @else
                                         <div class="text-center">
-                                            <img src="{{ asset('engineer_company/images/no-data-found.png') }}" style="height:250px;" class="img-fluid" alt="No Record Found">
+                                            <img src="{{ asset('engineer_company/images/no-data-found.png') }}"
+                                                 style="height:250px;" class="img-fluid" alt="No Record Found">
                                         </div>
                                     @endif
                                 </div>
@@ -77,4 +53,19 @@
         </div>
         <!-- End Page-content -->
     </div>
+@endsection
+@section('custom-script')
+    <script>
+
+        var $rows = $('#myTable tr');
+        $('#myInput').keyup(function () {
+            var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+
+            $rows.show().filter(function () {
+                var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+                return !~text.indexOf(val);
+            }).hide();
+        });
+
+    </script>
 @endsection

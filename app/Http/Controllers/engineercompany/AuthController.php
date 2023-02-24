@@ -23,13 +23,13 @@ class AuthController extends Controller
     public function ec_signup_action(Request $request){
         $validate = Validator::make($request->all(),[
 	        'name' => 'required',
-	        'email' => ['required','unique:users'],
+	        'email' => ['required','unique:engineer_companies'],
 	        'password' => 'required|min:6',
 	        'phone' => 'required|numeric'
 	    ]);
 	    if($validate->fails())
 	    {
-	    	return response()->json(["Success"=>"False",'Msg'=>$validate->errors()->first()]);
+	    	return response()->json(["success"=>false,'message'=>$validate->errors()->first()]);
 	    }
         $register = Engineer_company::create([
             'name' => $request->name,

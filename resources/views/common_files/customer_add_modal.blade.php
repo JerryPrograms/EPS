@@ -32,8 +32,8 @@
                                     </div>
                                     <div class="col-md-12">
                                         <div class="mb-3">
-                                            <label for="formrow-building-company" class="form-label">{{__('translation.Building management company information')}} </label>
-                                            <input type="text" class="form-control" id="formrow-building-company"
+                                            <label for="" class="form-label">{{__('translation.Building management company information')}} </label>
+                                            <input type="text" class="form-control" id=""
                                                    name="building_management_company"
                                                    placeholder="{{__('translation.Enter Building management company')}} " required>
                                         </div>
@@ -49,24 +49,24 @@
                                     </div>
                                     <div class="col-md-12">
                                         <div class="mb-3">
-                                            <label for="formrow-building-company" class="form-label">{{__('translation.name')}}</label>
-                                            <input type="text" class="form-control" id="formrow-building-company"
+                                            <label for="" class="form-label">{{__('translation.name')}}</label>
+                                            <input type="text" class="form-control" id=""
                                                    name="name"
                                                    placeholder="{{__('translation.Enter Name')}}" required>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="mb-3">
-                                            <label for="formrow-building-company" class="form-label">{{__('translation.Email')}}</label>
-                                            <input type="email" class="form-control" id="formrow-building-company"
+                                            <label for="" class="form-label">{{__('translation.Email')}}</label>
+                                            <input type="email" class="form-control" id=""
                                                    name="email"
                                                    placeholder="{{__('translation.Enter email')}}" required>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="mb-3">
-                                            <label for="formrow-building-company" class="form-label">{{__('translation.Password')}}</label>
-                                            <input type="password" class="form-control" id="formrow-building-company"
+                                            <label for="" class="form-label">{{__('translation.Password')}}</label>
+                                            <input type="password" class="form-control" id=""
                                                    name="password"
                                                    placeholder="{{__('translation.Enter your password')}}" required>
                                         </div>

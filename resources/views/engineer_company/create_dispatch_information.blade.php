@@ -227,6 +227,7 @@
                                                         <button class="btn btn-danger" type="button" id="clear"><i
                                                                 class="fa fa-remove"></i></button>
                                                     </div>
+                                                    <p class="text-danger d-none" id="canvas_error" class="d-none">Signature is required</p>
                                                 </div>
                                             </div>
 
@@ -300,6 +301,9 @@
                 document.getElementsByName("output")[0].setAttribute("value", imageData);
                 if (signaturePad.isEmpty()) {
                     $('#canvas_error').removeClass('d-none');
+                    setTimeout(function(){
+                        $('#canvas_error').addClass('d-none');
+                    },3000);
                 } else {
                     ajaxCall($('#createDispatchConfirmation'), "{{ route('CreateDispatchInformation') }}", $('#createDispatchConfirmation').find('.submitbtn'), "{{ route('ec.ListDispatchInformation',request()->segment(3)) }}", onRequestSuccess);
                 }

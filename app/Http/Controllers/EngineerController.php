@@ -25,7 +25,7 @@ class EngineerController extends Controller
 	        'phone' => 'required',
 	        'password' => 'required|min:3',
             'id' => 'required',
-            'email' => 'required|email'
+            'email' => 'required|email|unique:engineers'
 	    ]);
 	    if($validate->fails())
 	    {

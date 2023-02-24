@@ -24,7 +24,7 @@
         <th class="text-center">{{__('translation.action')}}</th>
     </tr>
     </thead>
-    <tbody>
+    <tbody id="myTable">
     @foreach ($contracts as $v)
         <tr>
             <td>

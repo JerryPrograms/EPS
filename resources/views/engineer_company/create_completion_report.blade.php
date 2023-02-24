@@ -237,37 +237,37 @@
                                                         <div class="card">
                                                             <div class="card-body">
                                                                 <div class="row">
-                                                                    <div class="col-6 pb-3">
+                                                                    <div class="col-lg-6 col-12 pb-3">
                                                                         <div class="d-flex">
                                                                             <label
-                                                                                class="form-label custom_lab">Title</label>
+                                                                                class="form-label custom_lab w-25">Title</label>
                                                                             <input
                                                                                 class="form-control w-100 custom_input"
                                                                                 name="title[]" type="text">
                                                                         </div>
                                                                     </div>
-                                                                    <div class="col-6 pb-3">
+                                                                    <div class="col-lg-6 col-12 pb-3">
                                                                         <div class="d-flex">
                                                                             <label
-                                                                                class="form-label custom_lab">Site</label>
+                                                                                class="form-label custom_lab w-25">Site</label>
                                                                             <input
                                                                                 class="form-control w-100 custom_input"
                                                                                 name="site[]" type="text">
                                                                         </div>
                                                                     </div>
-                                                                    <div class="col-6 pb-3">
+                                                                    <div class="col-lg-6 col-12 pb-3">
                                                                         <div class="d-flex">
                                                                             <label
-                                                                                class="form-label custom_lab">Date</label>
+                                                                                class="form-label custom_lab w-25">Date</label>
                                                                             <input
                                                                                 class="form-control w-100 custom_input"
                                                                                 name="date[]" type="date">
                                                                         </div>
                                                                     </div>
-                                                                    <div class="col-6 pb-3">
+                                                                    <div class="col-lg-6 col-12 pb-3">
                                                                         <div class="d-flex">
                                                                             <label
-                                                                                class="form-label custom_lab me-2">Photo</label>
+                                                                                class="form-label custom_lab w-25">Photo</label>
                                                                             <input
                                                                                 class="form-control w-100 custom_input"
                                                                                 name="photo[]" type="file">
@@ -332,36 +332,36 @@
                                                         <div class="card">
                                                             <div class="card-body">
                                                                 <div class="row">
-                                                                    <div class="col-6 pb-3">
+                                                                    <div class="col-lg-6 col-12 pb-3">
                                                                         <div class="d-flex">
                                                                             <label
-                                                                                class="form-label custom_lab">Title</label>
+                                                                                class="form-label custom_lab w-25">Title</label>
                                                                             <input
                                                                                 class="form-control w-100 custom_input"
                                                                                 name="title[]" type="text">
                                                                         </div>
                                                                     </div>
-                                                                    <div class="col-6 pb-3">
+                                                                    <div class="col-lg-6 col-12 pb-3">
                                                                         <div class="d-flex">
                                                                             <label
-                                                                                class="form-label custom_lab">Site</label>
+                                                                                class="form-label custom_lab w-25">Site</label>
                                                                             <input
                                                                                 class="form-control w-100 custom_input"
                                                                                 name="site[]" type="text">
                                                                         </div>
                                                                     </div>
-                                                                    <div class="col-6 pb-3">
+                                                                    <div class="col-lg-6 col-12 pb-3">
                                                                         <div class="d-flex">
                                                                             <label
-                                                                                class="form-label custom_lab">Date</label>
+                                                                                class="form-label custom_lab w-25">Date</label>
                                                                             <input
                                                                                 class="form-control w-100 custom_input"
                                                                                 name="date[]" type="date">
                                                                         </div>
                                                                     </div>
-                                                                    <div class="col-6 pb-3">
+                                                                    <div class="col-lg-6 col-12 pb-3">
                                                                         <div class="d-flex">
-                                                                            <label class="form-label custom_lab me-2">Photo</label>
+                                                                            <label class="form-label custom_lab w-25">Photo</label>
                                                                             <input
                                                                                 class="form-control w-100 custom_input"
                                                                                 name="photo[]" type="file">

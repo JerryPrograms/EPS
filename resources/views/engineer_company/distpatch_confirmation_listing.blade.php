@@ -69,7 +69,7 @@
                                         </div>
                                     @else
                                         <div class="text-center">
-                                            <img src="{{asset('engineer_company/images/no-data-found.png')}}"
+                                            <img style="width: 500px!important;" src="{{asset('engineer_company/images/no-data-found.png')}}"
                                                  alt="No Records Found">
                                         </div>
                                     @endif
