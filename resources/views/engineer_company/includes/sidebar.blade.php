@@ -177,16 +177,17 @@
                     </a>
                 </li>
 
-
-                <li class="sidebr_button mt-2">
-                    <a href="{{route('ec.GetCalender')}}" class=" waves-effect dropdown_toggle">
-                        <!-- <i class="bx bx-calendar"></i> -->
-                        <img src="{{asset('engineer_company/assets/images/gray-calender.png')}}"
-                             class="double_ring_img p-0"
-                             style="margin-left: -1px;">
-                        <span key="t-dashboards" class="dropdown_text">{{ __('translation.Calendar') }}</span>
-                    </a>
-                </li>
+                @if(activeGuard() != 'web')
+                    <li class="sidebr_button mt-2">
+                        <a href="{{route('ec.GetCalender')}}" class=" waves-effect dropdown_toggle">
+                            <!-- <i class="bx bx-calendar"></i> -->
+                            <img src="{{asset('engineer_company/assets/images/gray-calender.png')}}"
+                                 class="double_ring_img p-0"
+                                 style="margin-left: -1px;">
+                            <span key="t-dashboards" class="dropdown_text">{{ __('translation.Calendar') }}</span>
+                        </a>
+                    </li>
+                @endif
             </ul>
         </div>
         <!-- Sidebar -->

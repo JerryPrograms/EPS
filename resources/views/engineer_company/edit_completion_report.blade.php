@@ -246,8 +246,9 @@
                                                     </div>
                                                 </div>
 
-                                                @for($i = 0 ; $i < count(json_decode($completion_report->title)) ; $i++)
-                                                    <div class="row align-items-center mt-4">
+
+                                                <div class="row align-items-center mt-4">
+                                                    @for($i = 0 ; $i < count(json_decode($completion_report->title)) ; $i++)
                                                         <div id="data_div" class="col-12">
                                                             <div class="card">
                                                                 <div class="card-body">
@@ -260,8 +261,8 @@
                                                                                 <input
                                                                                     class="form-control w-100 custom_input"
                                                                                     name="title[]" type="text"
-                                                                                value="{{json_decode($completion_report->title)[$i]}}"
-                                                                                required>
+                                                                                    value="{{json_decode($completion_report->title)[$i]}}"
+                                                                                    required>
                                                                             </div>
                                                                         </div>
                                                                         <div class="col-6 pb-3">
@@ -272,7 +273,7 @@
                                                                                     class="form-control w-100 custom_input"
                                                                                     name="site[]" type="text"
                                                                                     value="{{json_decode($completion_report->site)[$i]}}"
-                                                                                    required >
+                                                                                    required>
                                                                             </div>
                                                                         </div>
                                                                         <div class="col-6 pb-3">
@@ -286,14 +287,16 @@
                                                                                     required>
                                                                             </div>
                                                                         </div>
-                                                                        <input name="id" value="{{$completion_report->id}}" hidden>
+                                                                        <input name="id"
+                                                                               value="{{$completion_report->id}}"
+                                                                               hidden>
                                                                         <div class="col-6 pb-3">
                                                                             <div class="d-flex">
                                                                                 <label
                                                                                     class="form-label custom_lab me-2">Photo</label>
                                                                                 <input
                                                                                     class="form-control w-100 custom_input"
-                                                                                    name="photo[]" type="file"
+                                                                                    name="photo[{{$i}}]" type="file"
                                                                                 >
                                                                             </div>
                                                                         </div>
@@ -301,13 +304,14 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div id="button_div" class="col-12 text-end">
-                                                            <button type="button" onclick="AddData()"
-                                                                    class="btn btn-primary"><i class="fa fa-plus"></i>
-                                                            </button>
-                                                        </div>
+                                                    @endfor
+                                                    <div id="button_div" class="col-12 text-end">
+                                                        <button type="button" onclick="AddData()"
+                                                                class="btn btn-primary"><i class="fa fa-plus"></i>
+                                                        </button>
                                                     </div>
-                                                @endfor
+                                                </div>
+
 
                                             </div>
                                         </div>
@@ -351,7 +355,7 @@
         }
 
         function AddData() {
-            $('#button_div').prepend(`<div id="data_div" class="col-12 position-relative">
+            $(`<div id="data_div" class="col-12 position-relative">
                                                         <div class="card">
                                                             <div class="card-body">
                                                                 <div class="row">
@@ -395,7 +399,7 @@
                                                         </div>
 <button type="button" onclick="$(this).parent().remove()" style="top: -13px;
     right: -16px;" class="btn btn-danger position-absolute"><i class="fa fa-times"></i></button>
-                                                    </div>`);
+                                                    </div>`).insertBefore('#button_div');
         }
 
 

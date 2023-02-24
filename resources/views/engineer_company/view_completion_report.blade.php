@@ -299,7 +299,7 @@
 
                                                     <div class="process-photo-section border-bottom-0">
                                                         <img src="{{asset(json_decode($completion_report->photo)[$i])}}"
-                                                             class="mt-5">
+                                                             class="w-100 mt-5">
 
                                                         <div class="customer-info-2 mt-5">
                                                             <div class="table-responsive">

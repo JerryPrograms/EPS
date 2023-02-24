@@ -111,21 +111,25 @@
                                                             <img
                                                                 src="{{asset('engineer_company/assets/images/red-search.png')}}">
                                                         </a>
-                                                        <a href="{{route('edit_construction_completion',$c->id)}}"
-                                                           class="btn btn-outline-primary btn-theme-primary-outline btn-outline btn-sm">
-                                                            <img
-                                                                src="{{asset('engineer_company/assets/images/Arhive_fill.png')}}">
-                                                        </a>
+                                                        @if(activeGuard() != 'web')
+                                                            <a href="{{route('edit_construction_completion',$c->id)}}"
+                                                               class="btn btn-outline-primary btn-theme-primary-outline btn-outline btn-sm">
+                                                                <img
+                                                                    src="{{asset('engineer_company/assets/images/Arhive_fill.png')}}">
+                                                            </a>
+                                                        @endif
                                                         <button onclick="print('{{$c->id}}')"
-                                                            class="btn btn-outline-light btn-theme-light-outline btn-outline btn-sm">
+                                                                class="btn btn-outline-light btn-theme-light-outline btn-outline btn-sm">
                                                             <img
                                                                 src="{{asset('engineer_company/assets/images/archive_icon.png')}}">
                                                         </button>
-                                                        <button onclick="openDeleteModal('{{$c->id}}')"
-                                                                class="btn btn-outline-light btn-theme-light-outline btn-outline btn-sm">
-                                                            <img
-                                                                src="{{asset('engineer_company/assets/images/delete.png')}}">
-                                                        </button>
+                                                        @if(activeGuard() != 'web')
+                                                            <button onclick="openDeleteModal('{{$c->id}}')"
+                                                                    class="btn btn-outline-light btn-theme-light-outline btn-outline btn-sm">
+                                                                <img
+                                                                    src="{{asset('engineer_company/assets/images/delete.png')}}">
+                                                            </button>
+                                                        @endif
                                                     </td>
                                                 </tr>
                                             @endforeach
@@ -200,8 +204,7 @@
             }
         });
 
-        function print(id)
-        {
+        function print(id) {
             $.ajax({
                 type: "POST",
                 url: '{{ route("print_construction_completion") }}',
@@ -211,8 +214,8 @@
 
                 },
                 success: function (response) {
-                     $('#print_form').html('');
-                     $('#print_form').html(response.html);
+                    $('#print_form').html('');
+                    $('#print_form').html(response.html);
                     $('#print_form').print({
                         globalStyles: true,
                         mediaPrint: false,

@@ -277,6 +277,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
+
                                                     <div id="button_div" class="col-12 text-end">
                                                         <button type="button" onclick="AddData()"
                                                                 class="btn btn-primary"><i class="fa fa-plus"></i>
@@ -327,7 +328,7 @@
         }
 
         function AddData() {
-            $('#button_div').prepend(`<div id="data_div" class="col-12 position-relative">
+            $(`<div id="data_div" class="col-12 position-relative">
                                                         <div class="card">
                                                             <div class="card-body">
                                                                 <div class="row">
@@ -371,13 +372,13 @@
                                                         </div>
 <button type="button" onclick="$(this).parent().remove()" style="top: -13px;
     right: -16px;" class="btn btn-danger position-absolute"><i class="fa fa-times"></i></button>
-                                                    </div>`);
+                                                    </div>`).insertBefore('#button_div');
         }
 
 
         $('#add_contract_completion_form').validate({
             submitHandler: function () {
-                ajaxCall($('#add_contract_completion_form'), "{{ route('add_construction_completion') }}", $('#add_contract_completion_form').find('button.form_button'), "{{ route('ec.CreateMonthlyRegularInspection',request()->segment(3)) }}", onRequestSuccess);
+                ajaxCall($('#add_contract_completion_form'), "{{ route('add_construction_completion') }}", $('#add_contract_completion_form').find('button.form_button'), "{{ route('construction_completion') }}", onRequestSuccess);
             }
         });
     </script>

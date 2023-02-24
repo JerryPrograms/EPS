@@ -10,8 +10,11 @@ class ConstructionController extends Controller
 {
     public function construction_completion()
     {
-        $completion_reports = CompletionRequestModel::where('added_by', auth(activeGuard())->id())->latest()->get();
-
+        if (activeGuard() == 'web') {
+            $completion_reports = CompletionRequestModel::where('customer_id', auth(activeGuard())->id())->latest()->get();
+        } else {
+            $completion_reports = CompletionRequestModel::where('added_by', auth(activeGuard())->id())->latest()->get();
+        }
         return view('engineer_company.construction_completion', compact('completion_reports'));
     }
 
@@ -99,10 +102,18 @@ class ConstructionController extends Controller
         try {
             if ($request->has('photo')) {
 
+                $data = CompletionRequestModel::where('id', $request->id)->first();
+                $previous_photos = json_decode($data->photo);
                 $photos = array();
-                foreach ($request->photo as $photo) {
-                    $photos[] = saveFiles('', 'engineer_company/completion_report', $photo);
+
+                foreach ($request->photo as $key => $photo) {
+                    if ($key > count($previous_photos)) {
+                        $previous_photos[] = saveFiles('', 'engineer_company/completion_report', $photo);
+                    } else {
+                        $previous_photos[$key] = saveFiles('', 'engineer_company/completion_report', $photo);
+                    }
                 }
+
 
                 CompletionRequestModel::where('id', $request->id)->update([
                     'customer_id' => $request->customer_id,
@@ -122,7 +133,7 @@ class ConstructionController extends Controller
                     'title' => json_encode($request->title),
                     'site' => json_encode($request->site),
                     'date' => json_encode($request->date),
-                    'photo' => json_encode($photos),
+                    'photo' => json_encode($previous_photos),
                 ]);
             } else {
                 CompletionRequestModel::where('id', $request->id)->update([
