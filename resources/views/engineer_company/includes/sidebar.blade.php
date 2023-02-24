@@ -122,7 +122,7 @@
                 <li class="sidebr_button mt-2">
                     <a href="{{ route('distpatch_confirmation_listing') }}" class=" waves-effect dropdown_toggle">
                         <!-- <i class="bx bx-calendar"></i> -->
-                        <img src="{{asset('engineer_company/assets/images/Done_ring_round.png')}}"
+                        <img src="{{asset('engineer_company/assets/images/Group 427323401.png')}}"
                              class="double_ring_img p-0"
                              style="margin-left: -1px;">
                         <span key="t-dashboards"
@@ -134,7 +134,7 @@
                 <li class="sidebr_button mt-2">
                     <a href="{{ route('regular_inspection_logs') }}" class=" waves-effect dropdown_toggle">
                         <!-- <i class="bx bx-calendar"></i> -->
-                        <img src="{{asset('engineer_company/assets/images/gray-calender.png')}}"
+                        <img src="{{asset('engineer_company/assets/images/Group 427323320.png')}}"
                              class="double_ring_img p-0"
                              style="margin-left: -1px;">
                         <span key="t-dashboards"
@@ -146,7 +146,7 @@
                 <li class="sidebr_button mt-2">
                     <a href="{{ route('contract_management') }}" class=" waves-effect dropdown_toggle">
                         <!-- <i class="bx bx-calendar"></i> -->
-                        <img src="{{asset('engineer_company/assets/images/gray-calender.png')}}"
+                        <img src="{{asset('engineer_company/assets/images/Group.png')}}"
                              class="double_ring_img p-0"
                              style="margin-left: -1px;">
                         <span key="t-dashboards"
@@ -158,7 +158,7 @@
                 <li class="sidebr_button mt-2">
                     <a href="{{ route('quotation_management') }}" class=" waves-effect dropdown_toggle">
                         <!-- <i class="bx bx-calendar"></i> -->
-                        <img src="{{asset('engineer_company/assets/images/gray-calender.png')}}"
+                        <img src="{{asset('engineer_company/assets/images/Book_check.png')}}"
                              class="double_ring_img p-0"
                              style="margin-left: -1px;">
                         <span key="t-dashboards" class="dropdown_text">{{ __('translation.Quote Management') }}</span>
@@ -169,7 +169,7 @@
                 <li class="sidebr_button mt-2">
                     <a href="{{route('construction_completion')}}" class=" waves-effect dropdown_toggle">
                         <!-- <i class="bx bx-calendar"></i> -->
-                        <img src="{{asset('engineer_company/assets/images/gray-calender.png')}}"
+                        <img src="{{asset('engineer_company/assets/images/Vector.png')}}"
                              class="double_ring_img p-0"
                              style="margin-left: -1px;">
                         <span key="t-dashboards"
@@ -181,7 +181,7 @@
                     <li class="sidebr_button mt-2">
                         <a href="{{route('ec.GetCalender')}}" class=" waves-effect dropdown_toggle">
                             <!-- <i class="bx bx-calendar"></i> -->
-                            <img src="{{asset('engineer_company/assets/images/gray-calender.png')}}"
+                            <img src="{{asset('engineer_company/assets/images/Frame.png')}}"
                                  class="double_ring_img p-0"
                                  style="margin-left: -1px;">
                             <span key="t-dashboards" class="dropdown_text">{{ __('translation.Calendar') }}</span>
