@@ -95,7 +95,7 @@
                                                     onclick="window.location.href= '{{route('ec.CreateBuildingInfo',$customer->user_uid)}}'"
                                                     class="searchbar_img border-0">
                                                     <img
-                                                        src="{{asset('engineer_company/assets/images/Group.png')}}">
+                                                        src="{{asset('engineer_company/assets/images/1.png')}}">
                                                     <p class="searchbar_text mt-3">
                                                         {{ __('translation.Create Customer Info') }}
                                                     </p>
@@ -105,7 +105,7 @@
                                                         onclick="window.location.href= '{{route('ec.ListDispatchInformation',$customer->user_uid)}}'"
                                                         class="searchbar_img border-0">
                                                         <img
-                                                            src="{{asset('engineer_company/assets/images/Book_check.png')}}">
+                                                            src="{{asset('engineer_company/assets/images/2.png')}}">
                                                         <p class="searchbar_text mt-3">
                                                             {{ __('translation.Fill Dispatch Confirmation') }}
                                                         </p>
@@ -115,7 +115,7 @@
                                                         onclick="window.location.href= '{{route('ec.CreateDispatchInformation',$customer->user_uid)}}'"
                                                         class="searchbar_img border-0">
                                                         <img
-                                                            src="{{asset('engineer_company/assets/images/Book_check.png')}}">
+                                                            src="{{asset('engineer_company/assets/images/3.png')}}">
                                                         <p class="searchbar_text mt-3">
                                                           {{ __('translation.Fill Dispatch Confirmation') }}
                                                         </p>
@@ -126,7 +126,7 @@
                                                 onclick="window.location.href= '{{route('regular_inspection_log',$customer->user_uid)}}'"
                                                 class="searchbar_img border-0">
                                                     <img
-                                                        src="{{asset('engineer_company/assets/images/Date_range.png')}}">
+                                                        src="{{asset('engineer_company/assets/images/1.png')}}">
                                                     <p class="searchbar_text mt-3">
                                                         {{ __('translation.Fill Regular Inspection Log') }}
                                                     </p>
@@ -135,21 +135,21 @@
                                                 onclick="window.location.href= '{{route('contract_management_list',$customer->id)}}'"
                                                 class="searchbar_img border-0">
                                                     <img
-                                                        src="{{asset('engineer_company/assets/images/searchbar.png')}}">
+                                                        src="{{asset('engineer_company/assets/images/2.png')}}">
                                                     <p class="searchbar_text mt-3">
                                                         {{ __('translation.Contract Managment') }}
                                                     </p>
                                                 </button>
                                                 <button  onclick="window.location.href= '{{route('ec.GetQuoteManagement',$customer->user_uid)}}'" class="searchbar_img border-0">
                                                     <img
-                                                        src="{{asset('engineer_company/assets/images/searchbar.png')}}">
+                                                        src="{{asset('engineer_company/assets/images/3.png')}}">
                                                     <p class="searchbar_text mt-3">
                                                         {{ __('translation.Quote Management') }}
                                                     </p>
                                                 </button>
                                                 <button onclick="window.location.href= '{{route('create_construction_completion',$customer->user_uid)}}'" class="searchbar_img_2 border-0 mt-2">
                                                     <img
-                                                        src="{{asset('engineer_company/assets/images/searchbar.png')}}">
+                                                        src="{{asset('engineer_company/assets/images/3.png')}}">
                                                     <p class="searchbar_text mt-3">
                                                         {{ __('translation.construction') }} <br>
 
