@@ -7,7 +7,7 @@
             </div>
             <div class="col-lg-9 d-flex col-6">
                 <div style="text-align: right;display: flex;" class="profile_section">
-                    <img src="{{asset('engineer_company/assets/images/Vector.png')}}" class="user_img mr-4">
+                    <img src="{{asset('engineer_company/assets/images/Vector(2).png')}}" class="user_img mr-4">
                     <div class="dropdown">
                         <p id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false"
                            class="mb-sm-0 font-size-18 user_test dropdown-toggle">{{auth(activeGuard())->user()->name}}</p>
