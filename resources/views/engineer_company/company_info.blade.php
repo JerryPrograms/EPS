@@ -222,7 +222,7 @@
                                                         <input type="text" name="payment_method"
                                                                class="form-control w-100 custom_input"
                                                                aria-describedby="emailHelp"
-                                                               placeholder="{{ __('translation.Jewon Lee') }}"
+                                                               placeholder="{{ __('translation.Payment method') }}"
                                                                required
                                                                @if (!empty($customer->ASInformation)) value="{{ $customer->ASInformation->payment_method }}" @endif>
 
@@ -314,6 +314,7 @@
                                                         </label></div>
                                                     <div class="col-md-8 col-12"><input type="text" name="contacts"
                                                             class="form-control w-100 custom_input"
+                                                                                        placeholder="{{ __('translation.contact 1/contact 2') }}"
                                                             aria-describedby="emailHelp" required
                                                             @if (!empty($customer->RepairCompanyInformation)) value="{{ $customer->RepairCompanyInformation->contacts }}" @endif>
                                                     </div>
@@ -329,6 +330,7 @@
                                                     <div class="col-md-8 col-12"><input type="text" name="fax"
                                                             class="form-control w-100 custom_input"
                                                             aria-describedby="emailHelp"
+                                                                                        placeholder="02-4347-4893"
                                                             @if (!empty($customer->RepairCompanyInformation)) value="{{ $customer->RepairCompanyInformation->fax }}" @endif>
                                                     </div>
                                                 </div>
@@ -342,6 +344,7 @@
                                                     <div class="col-md-8 col-12"><input type="email" name="email"
                                                             class="form-control w-100 custom_input"
                                                             aria-describedby="emailHelp"
+                                                                                        placeholder="{{ __('translation.Enter email') }}"
                                                             @if (!empty($customer->RepairCompanyInformation)) value="{{ $customer->RepairCompanyInformation->email }}" @endif>
                                                     </div>
                                                 </div>

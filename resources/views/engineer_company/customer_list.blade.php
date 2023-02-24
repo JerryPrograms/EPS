@@ -50,7 +50,7 @@
                                                 <div class="custom_search">
                                                     <div class="search mt-4">
                                                         <input type="text" class="form-control" name="keyword"
-                                                               placeholder="search" autocomplete="off" required>
+                                                               placeholder="{{__('translation.search')}}" autocomplete="off" required>
                                                         <button type="submit" class="btn btn-primary searchbar_button">
                                                             <div class="search_img">
                                                                 <img

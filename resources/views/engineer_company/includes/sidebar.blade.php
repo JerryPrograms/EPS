@@ -9,7 +9,7 @@
                 @if((!empty(activeGuard())) && (activeGuard() != 'engineer') && (activeGuard() != 'web'))
                     <li class="sidebr_button">
                         <a href="javascript: void(0);" class="waves-effect dropdown_toggle">
-                            <img src="{{asset('engineer_company/assets/images/blue-profile.png')}}"
+                            <img src="{{asset('engineer_company/assets/images/user.png')}}"
                                  class="double_ring_img p-0"
                                  style="margin-left: -1px;">
                             <span key="t-dashboards" class="dropdown_text">{{ __('translation.Customer List') }}</span>
@@ -49,7 +49,7 @@
                                             ...</a></li>
 
                                     <li><a key="t-saas" class="list_menubar_text"
-                                           title="AS Info & Engineer company Info"><span class="custom_dot">.</span>AS
+                                           title="AS Info & Engineer company Info"><span class="custom_dot">.</span>
                                             {{ __('translation.Info & Engineer') }}...</a></li>
 
                                     <li><a key="t-crypto"
