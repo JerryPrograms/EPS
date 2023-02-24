@@ -371,7 +371,6 @@ return [
     'Write company number' => 'Write company number',
     'Write address' => 'Write address',
     'Write manager name' => 'Write manager name',
-    'Write manager name' => 'Write manager name',
     'Write contract number' => 'Write contract number',
     'Register' => 'Register',
     'Contract number' => 'Contract number',
@@ -382,4 +381,8 @@ return [
     'Customer side verifier' => 'Customer side verifier',
     'clear' => 'clear',
     'select affiliate company'=>'Select affiliate company',
+    'Enter Building management company'=>'Enter Building management company',
+    'Enter maintenance company'=>'Enter maintenance company',
+    'Write affiliated company name'=>'Write affiliated company name',
+
 ];

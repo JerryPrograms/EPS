@@ -33,7 +33,7 @@
                                                     <select name="company_name" id="company_name"
                                                         class="form-control form-theme-input" required>
                                                         <option value="">
-                                                            {{ __('translation.Write affliated company name') }}
+                                                            {{ __('translation.Write affiliated company name') }}
                                                         </option>
                                                         @foreach ($engineer_companies as $engineer_company)
                                                             <option value="{{ $engineer_company->id }}">

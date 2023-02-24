@@ -166,7 +166,7 @@
                                         {{-- <div class="row mt-2">
                                             <div class="col-lg-3">
                                                 <p class="circle_img_text fw-bold mt-3">
-                                                    
+
                                                 </p>
                                             </div>
                                             <div class="col-lg-3">
@@ -210,7 +210,7 @@
                                                         </th>
                                                         <th class="text-center custom_inp_widt  border-0">{{ __('translation.Inspection date') }}</th>
                                                         <th class="custom_inp_widt  border-0">
-                                                            {{ __('translation.Completion Time') }}
+                                                            {{ __('translation.Completion time') }}
                                                         </th>
                                                         <th class="custom_inp_widt  border-0">
                                                             {{ __('translation.Arrival time') }}
