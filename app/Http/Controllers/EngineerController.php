@@ -16,7 +16,11 @@ class EngineerController extends Controller
 
     public function engineers()
     {
-        $engineers = Engineer::with('getEngineerCompany')->paginate(10);
+        if (activeGuard() == 'admin') {
+            $engineers = Engineer::with('getEngineerCompany')->paginate(10);
+        } else {
+            $engineers = Engineer::where('affiliated_company', auth(activeGuard())->id())->with('getEngineerCompany')->paginate(10);
+        }
         return view('engineer_company.engineers', compact('engineers'));
     }
 

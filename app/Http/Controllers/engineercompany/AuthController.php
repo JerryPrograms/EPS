@@ -60,7 +60,7 @@ class AuthController extends Controller
             return response()->json(["success" => false, 'message' => $validate->errors()->first()]);
         }
         $login_attempt = Authentication::login($request->email, $request->password, 'engineer_company');
-        if ($login_attempt == 'x') {
+        if ($login_attempt === 'x') {
             return json_encode([
                 'success' => false,
                 'message' => 'you are already logged in as ' . activeGuard(),

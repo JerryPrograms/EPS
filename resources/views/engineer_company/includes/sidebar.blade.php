@@ -177,7 +177,7 @@
                     </a>
                 </li>
 
-                @if(activeGuard() != 'web')
+                @if(activeGuard() != 'web' && activeGuard() !='admin')
                     <li class="sidebr_button mt-2">
                         <a href="{{route('ec.GetCalender')}}" class=" waves-effect dropdown_toggle">
                             <!-- <i class="bx bx-calendar"></i> -->

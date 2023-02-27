@@ -8,7 +8,10 @@
                 <!-- end page title -->
                 <form id="add_contract_completion_form">
                     @csrf
-                    <input name="customer_id" value="{{request()->segment(3)}}" hidden>
+                    @php
+                        $customer = \App\Models\CustomerInfo::where('user_uid',request()->segment(3))->first();
+                    @endphp
+                    <input name="customer_id" value="{{$customer->id}}" hidden>
                     <div class="main_content_section">
                         <div class="row">
 
@@ -19,7 +22,6 @@
                                         <!-- end table-responsive -->
 
 
-                                        <input name="customer_id" value="4" hidden="">
 
                                         <div class="card_section_2">
                                             <div class="row align-items-baseline">
