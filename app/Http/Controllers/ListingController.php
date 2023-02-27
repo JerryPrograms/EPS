@@ -27,9 +27,9 @@ class ListingController extends Controller
     {
         $del_record = DispatchInformationData::with('GetCustomer')->where('id', $request->del_id)->delete();
         if ($del_record) {
-            return json_encode(['success' => true, 'message' => 'Record deleted successfully']);
+            return json_encode(['success' => true, 'message' => __('translation.Record deleted successfully')]);
         } else {
-            return json_encode(['success' => false, 'message' => 'Error : Please try again']);
+            return json_encode(['success' => false, 'message' => __('translation.Error : Please try again')]);
         }
     }
 
@@ -49,9 +49,9 @@ class ListingController extends Controller
     {
         $delRegularInspection = MonthlyRegularInspection::where('id', $request->del_id)->delete();
         if ($delRegularInspection) {
-            return json_encode(['success' => true, 'message' => 'Record deleted successfully']);
+            return json_encode(['success' => true, 'message' => __('translation.Record deleted successfully')]);
         } else {
-            return json_encode(['success' => false, 'message' => 'Error : Please try again']);
+            return json_encode(['success' => false, 'message' => __('translation.Error : Please try again')]);
         }
     }
 

@@ -8,10 +8,10 @@
                         <div class="contract-details border-0">
 
                             <div class="contract-details-section">
-                                <h4>Construction completion report </h4>
+                                <h4>{{__('translation.Construction Completion Management')}}</h4>
                                 <div class="d-flex">
                                     <p class="construction-text_2 custom_pr_2">
-                                        ▶ Project number:
+                                        ▶ {{__('translation.Project Number')}}:
                                     </p>
 
                                     <p class="construction-text custom-padding-left">
@@ -21,7 +21,7 @@
 
                                 <div class="d-flex mt-3">
                                     <p class="construction-text_2 custom_pr_2">
-                                        Site Name:
+                                        {{__('translation.Site Name')}}:
                                     </p>
 
                                     <p class="construction-text custom-padding-left">
@@ -31,7 +31,7 @@
 
                                 <div class="d-flex">
                                     <p class="construction-text_2 custom_pr_2">
-                                        Species name:
+                                        {{__('translation.Species name')}}:
                                     </p>
 
                                     <p class="construction-text custom-padding-left">
@@ -42,18 +42,18 @@
 
                                 <div class="d-flex">
                                     <p class="construction-text_2 custom_pr_2">
-                                        Contract amount
+                                        {{__('translation.Contract amount')}}
                                     </p>
 
                                     <p class="construction-text custom-padding-left">
-                                        {{$completion_report->contract_amount}} won per day
+                                        {{$completion_report->contract_amount}} {{__('translation.won per day')}}
                                     </p>
                                 </div>
 
 
                                 <div class="d-flex">
                                     <p class="construction-text_2 custom_pr_2">
-                                        Company name :
+                                        {{__('translation.Company name')}} :
                                     </p>
 
                                     <p class="construction-text custom-padding-left">
@@ -65,7 +65,7 @@
 
                                     <div class="d-flex mt-4 ">
                                         <p class="construction-text_2 custom_pr_2">
-                                            Date of contract:
+                                            {{__('translation.Date of contract')}}:
                                         </p>
 
                                         <p class="construction-text custom-padding-left">
@@ -75,7 +75,7 @@
 
                                     <div class="d-flex">
                                         <p class="construction-text_2 custom_pr_2">
-                                            Date of work:
+                                            {{__('translation.Date of work')}}:
                                         </p>
 
                                         <p class="construction-text custom-padding-left">
@@ -85,7 +85,7 @@
 
                                     <div class="d-flex">
                                         <p class="construction-text_2 custom_pr_2">
-                                            Date of Completion:
+                                            {{__('translation.Date of Completion')}}:
                                         </p>
 
                                         <p class="construction-text custom-padding-left">
@@ -95,7 +95,7 @@
 
                                     <div class="d-flex">
                                         <p class="construction-text_2 custom_pr_2">
-                                            Date of confirmation:
+                                            {{__('translation.Date of confirmation')}}:
                                         </p>
 
                                         <p class="construction-text custom-padding-left">
@@ -107,7 +107,7 @@
 
                                 <div class="d-flex mt-4">
                                     <p class="construction-text custom_pr_2">
-                                        ▶ Construction claim details
+                                        ▶ {{__('translation.Construction claim details')}}
                                     </p>
 
                                     <p class="construction-text custom-padding-left">
@@ -123,13 +123,13 @@
 
                                         <thead>
                                         <tr>
-                                            <th>Contract Amount</th>
-                                            <th>Advance Payment</th>
+                                            <th>{{__('translation.Contract Amount')}}</th>
+                                            <th>{{__('translation.Advance Payment')}}</th>
                                             <th>%</th>
-                                            <th>Completion Fund</th>
+                                            <th>{{__('translation.Completion Fund')}}</th>
                                             <th>%</th>
-                                            <th>Other Settlement Amount</th>
-                                            <th>Microbial Balance</th>
+                                            <th>{{__('translation.Other Settlement Amount')}}</th>
+                                            <th>{{__('translation.Microbial Balance')}}</th>
                                             <th>%</th>
                                         </tr>
                                         </thead>
@@ -153,8 +153,7 @@
 
 
                             <p class="construction-text pb-5 mt-2">
-                                When the work for the above construction is completed, a construction
-                                completion report is prepared by attaching work photos.
+                                {{__('translation.When the work for the above construction is completed, a construction completion report is prepared by attaching work photos.')}}
                             </p>
 
 
@@ -215,7 +214,7 @@
 
                             @for($i = 0 ; $i < count(json_decode($completion_report->title)); $i++)
                                 <div class="contract-details-section">
-                                    <h4>Process Photo</h4>
+                                    <h4>{{__('translation.Process Photo')}}</h4>
                                     <p class="construction-heading">{{json_decode($completion_report->title)[$i]}}
                                     </p>
 
@@ -229,10 +228,10 @@
 
                                                     <thead>
                                                     <tr>
-                                                        <th class="construction-text">Site Name</th>
+                                                        <th class="construction-text">{{__('translation.Site Name')}}</th>
                                                         <th class="construction-text">{{json_decode($completion_report->site)[$i]}}
                                                         </th>
-                                                        <th class="construction-text">Date</th>
+                                                        <th class="construction-text">{{__('translation.Date')}}</th>
                                                         <th class="construction-text">{{json_decode($completion_report->date)[$i]}}
                                                         </th>
                                                     </tr>

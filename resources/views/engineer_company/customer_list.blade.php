@@ -109,7 +109,7 @@
         //ajax to create customer basic information
         $('#customerCreateForm').validate({
             submitHandler: function () {
-                $('.submitbtn').html('<i class="fa fa-spinner fa-spin me-1"></i> Processing').attr('disabled', true);
+                $('.submitbtn').html('<i class="fa fa-spinner fa-spin me-1"></i> 처리').attr('disabled', true);
                 $('.submitbtn').prev().attr('disabled', true);
                 var form = $('#customerCreateForm')[0];
                 var formData = new FormData(form);
@@ -130,7 +130,7 @@
                     },
                     success: function (res) {
 
-                        $('.submitbtn').html('Create').attr('disabled', false);
+                        $('.submitbtn').html('처리').attr('disabled', false);
                         $('.submitbtn').prev().attr('disabled', false);
 
                         if (res.success == false) {
@@ -167,7 +167,7 @@
                     error: function (e) {
 
 
-                        $('.submitbtn').html('Create').attr('disabled', false);
+                        $('.submitbtn').html('처리').attr('disabled', false);
                         $('.submitbtn').prev().attr('disabled', false);
                         var first_error = '';
                         $.each(e.responseJSON.errors, function (index, item) {
@@ -201,7 +201,7 @@
         //ajax to delete customer basic information
         $('#customerDeleteForm').submit(function (e) {
 
-            $('.submitbtn').html('<i class="fa fa-spinner fa-spin me-1"></i> Processing').attr('disabled', true);
+            $('.submitbtn').html('<i class="fa fa-spinner fa-spin me-1"></i> 처리').attr('disabled', true);
             $('.submitbtn').prev().attr('disabled', true);
             e.preventDefault();
             var form = $('#customerDeleteForm')[0];
@@ -223,7 +223,7 @@
                 },
                 success: function (res) {
 
-                    $('.submitbtn').html('Delete').attr('disabled', false);
+                    $('.submitbtn').html('삭제').attr('disabled', false);
                     $('.submitbtn').prev().attr('disabled', false);
 
                     if (res.success == false) {
@@ -260,7 +260,7 @@
                 error: function (e) {
 
 
-                    $('.submitbtn').html('Delete').attr('disabled', false);
+                    $('.submitbtn').html('삭제').attr('disabled', false);
                     $('.submitbtn').prev().attr('disabled', false);
                     var first_error = '';
                     $.each(e.responseJSON.errors, function (index, item) {

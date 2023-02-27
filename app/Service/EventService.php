@@ -46,7 +46,7 @@ class EventService
             if ($event) {
                 return json_encode([
                     'success' => true,
-                    'message' => 'Event Created',
+                    'message' => __('translation.Event Created'),
                 ]);
             }
 
@@ -132,7 +132,7 @@ class EventService
             if ($event) {
                 return json_encode([
                     'success' => true,
-                    'message' => 'Event Created',
+                    'message' => __('translation.Event Created'),
                 ]);
             }
 
@@ -172,7 +172,7 @@ class EventService
             $createTodo = Todo::create($request->except('_token'));
             return json_encode([
                 'success' => true,
-                'message' => 'TODO created successfully',
+                'message' => __('translation.TODO created successfully'),
             ]);
         } catch (\Exception $ex) {
             return json_encode([

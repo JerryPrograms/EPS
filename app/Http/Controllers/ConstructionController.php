@@ -68,7 +68,7 @@ class ConstructionController extends Controller
             ]);
             return json_encode([
                 'success' => true,
-                'message' => 'Completion Report added successfully',
+                'message' => __('translation.Completion Report added successfully'),
             ]);
 
         } catch (\Exception $ex) {
@@ -85,7 +85,7 @@ class ConstructionController extends Controller
         $completion_report = CompletionRequestModel::where('id', $request->id)->delete();
         return json_encode([
             'success' => true,
-            'message' => 'Completion report deleted successfully',
+            'message' => __('translation.Completion report deleted successfully'),
         ]);
     }
 
@@ -159,7 +159,7 @@ class ConstructionController extends Controller
 
             return json_encode([
                 'success' => true,
-                'message' => 'Completion Report updated successfully',
+                'message' => __('translation.Completion Report updated successfully'),
             ]);
 
         } catch (\Exception $ex) {

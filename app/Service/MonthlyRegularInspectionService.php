@@ -2,12 +2,8 @@
 
 namespace App\Service;
 
-use App\Http\Requests\KeyAccessoryRequest;
 use App\Http\Requests\MonthlyRegularInspectionRequest;
-use App\Models\KeyAccessoryInformation as KeyAccessoryModel;
-use App\Models\MainPartModel;
 use App\Models\MonthlyRegularInspection;
-use App\Models\PartReplacementHistoryModel;
 use Illuminate\Http\Request;
 
 
@@ -19,11 +15,10 @@ class MonthlyRegularInspectionService
     {
 
 
-        if(!$request->has('date'))
-        {
+        if (!$request->has('date')) {
             return json_encode([
-                'success'=>true,
-                'message'=>'Redirecting to next page...',
+                'success' => true,
+                'message' => __('translation.Redirecting to next page'),
             ]);
         }
 
@@ -40,7 +35,7 @@ class MonthlyRegularInspectionService
             }
             return json_encode([
                 'success' => true,
-                'message' => 'Monthly Regular Inspection added successfully',
+                'message' => __('translation.Monthly Regular Inspection added successfully'),
             ]);
 
 
@@ -59,7 +54,7 @@ class MonthlyRegularInspectionService
 
         try {
 
-            $MonthlyRegularInspections = MonthlyRegularInspection::where('date', $request->date)->where('customer_id',$request->id)->get();
+            $MonthlyRegularInspections = MonthlyRegularInspection::where('date', $request->date)->where('customer_id', $request->id)->get();
 
             $html = view('engineer_company.monthly_inspection_replacement_listing_template', compact('MonthlyRegularInspections'))->render();
 
@@ -85,7 +80,7 @@ class MonthlyRegularInspectionService
             $main_part_hstory_delete = MonthlyRegularInspection::where('id', $request->id)->delete();
             return json_encode([
                 'success' => true,
-                'message' => 'Data deleted successfully',
+                'message' => __('translation.Data deleted successfully'),
             ]);
 
         } catch (\Exception $ex) {

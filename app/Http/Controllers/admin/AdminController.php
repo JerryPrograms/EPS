@@ -3,10 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Service\Authentication;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use App\Models\Admin;
-use App\Service\Authentication;
 
 class AdminController extends Controller
 {
@@ -15,25 +14,31 @@ class AdminController extends Controller
         return view('admin.auth.login');
     }
 
-    public function admin_login_action(Request $request){
-        $validate = Validator::make($request->all(),[
-	        'email' => 'required',
-	        'password' => 'required'
-	    ]);
-	    if($validate->fails())
-	    {
-	    	return response()->json(["Success"=>"False",'Msg'=>$validate->errors()->first()]);
-	    }
+    public function admin_login_action(Request $request)
+    {
+        $validate = Validator::make($request->all(), [
+            'email' => 'required',
+            'password' => 'required'
+        ]);
+        if ($validate->fails()) {
+            return response()->json(["success" => false, 'message' => $validate->errors()->first()]);
+        }
         $login_attempt = Authentication::login($request->email, $request->password, 'admin');
-        if($login_attempt){
-            return json_encode([
-                'success' => true,
-                'message' => 'Login Successfully'
-            ]);
-        }else{
+        if ($login_attempt == 'x') {
             return json_encode([
                 'success' => false,
-                'message' => 'Invalid credentials , please try again'
+                'message' => 'you are already logged in as ' . activeGuard(),
+            ]);
+        }
+        if ($login_attempt) {
+            return json_encode([
+                'success' => true,
+                'message' => __("translation.Login Successfully"),
+            ]);
+        } else {
+            return json_encode([
+                'success' => false,
+                'message' => __('translation.Invalid credentials , please try again'),
             ]);
         }
     }

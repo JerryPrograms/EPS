@@ -29,27 +29,27 @@ class AuthController extends Controller
             'email' => ['required', 'unique:users'],
             'password' => 'required|min:6',
             'phone' => 'required|numeric',
-            'affiliated_company'=>'required',
+            'affiliated_company' => 'required',
         ]);
         if ($validate->fails()) {
-            return response()->json(["Success" => "False", 'Msg' => $validate->errors()->first()]);
+            return response()->json(["success" => false, 'message' => $validate->errors()->first()]);
         }
         $register = Engineer::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => \Hash::make($request->password),
             'phone' => $request->phone,
-            'affiliated_company'=>$request->affiliated_company,
+            'affiliated_company' => $request->affiliated_company,
         ]);
         if ($register) {
             return json_encode([
                 'success' => true,
-                'message' => 'Registered successfully'
+                'message' => __('translation.Registered successfully'),
             ]);
         } else {
             return json_encode([
                 'success' => false,
-                'message' => 'Error : Please try again later'
+                'message' => __('translation.Error : Please try again later'),
             ]);
         }
     }
@@ -61,18 +61,24 @@ class AuthController extends Controller
             'password' => 'required'
         ]);
         if ($validate->fails()) {
-            return response()->json(["Success" => "False", 'Msg' => $validate->errors()->first()]);
+            return response()->json(["success" => false, 'message' => $validate->errors()->first()]);
         }
         $login_attempt = Authentication::login($request->email, $request->password, 'engineer');
+        if ($login_attempt == 'x') {
+            return json_encode([
+                'success' => false,
+                'message' => 'you are already logged in as ' . activeGuard(),
+            ]);
+        }
         if ($login_attempt) {
             return json_encode([
                 'success' => true,
-                'message' => 'Login Successfully'
+                'message' => __('translation.Login Successfully')
             ]);
         } else {
             return json_encode([
                 'success' => false,
-                'message' => 'Invalid credentials , please try again'
+                'message' => __('translation.Invalid credentials , please try again')
             ]);
         }
     }

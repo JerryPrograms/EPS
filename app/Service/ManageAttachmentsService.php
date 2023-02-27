@@ -44,7 +44,7 @@ class ManageAttachmentsService
             $main_part_hstory_delete = ManageAttachment::where('id', $request->id)->delete();
             return json_encode([
                 'success' => true,
-                'message' => 'Data deleted successfully',
+                'message' => __('translation.Data deleted successfully'),
             ]);
 
         } catch (\Exception $ex) {

@@ -9,37 +9,38 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="card-title mb-4">
-                                        Construction Completion Management
+                                        {{__('translation.Construction Completion Management')}}
                                     </h4>
                                     <div class="d-flex align-items-center justify-content-between">
                                         <div class="left-content d-flex align-items-center">
                                             <select class="form-select select_filter w-25" name="filter"
                                                     autocomplete="off"
                                                     required>
-                                                <option selected="" value="" disabled="">Filter</option>
+                                                <option selected="" value=""
+                                                        disabled="">{{__('translation.filter')}}</option>
                                                 <option value="all">
-                                                    All
+                                                    {{__('translation.all')}}
                                                 </option>
                                                 <option value="created_at">
-                                                    Registration Date
+                                                    {{__('translation.Registration Date')}}
                                                 </option>
                                                 <option value="building_name">
-                                                    Building Name
+                                                    {{__('translation.Building Name')}}
                                                 </option>
                                                 <option value="customer_number">
-                                                    Customer Number
+                                                    {{__('translation.Customer Number')}}
                                                 </option>
                                                 <option value="address">
-                                                    Address
+                                                    {{__('translation.Address')}}
                                                 </option>
                                                 <option value="building_management company">
-                                                    Building Management Company
+                                                    {{__('translation.Building Management Company')}}
                                                 </option>
                                             </select>
                                             <div class="custom_search">
                                                 <div class="search">
                                                     <input type="text" class="form-control" name="keyword"
-                                                           placeholder="search" autocomplete="off"
+                                                           placeholder="{{__('translation.search')}}" autocomplete="off"
                                                            required="">
                                                     <button type="submit" class="btn btn-primary searchbar_button">
                                                         <div class="search_img">
@@ -57,28 +58,28 @@
                                             <tr>
 
                                                 <th class="">
-                                                    No.
+                                                    {{__('translation.no.')}}
                                                 </th>
                                                 <th class="text-center">
-                                                    Registration Date
+                                                    {{__('translation.Registration Date')}}
                                                 </th>
                                                 <th class="text-center">
-                                                    Customer No
+                                                    {{__('translation.Customer No')}}
                                                 </th>
                                                 <th class="text-center">
-                                                    Site Name
+                                                    {{__('translation.site name')}}
                                                 </th>
                                                 <th class="text-center">
-                                                    Construction Name
+                                                    {{__('translation.Construction Name')}}
                                                 </th>
 
                                                 <th class="text-center">
-                                                    Building Management Company
+                                                    {{__('translation.Building Management Company')}}
                                                 </th>
                                                 <th class="text-center">
-                                                    Note
+                                                    {{__('translation.Note')}}
                                                 </th>
-                                                <th class="text-center">Actions</th>
+                                                <th class="text-center">{{__('translation.Actions')}}</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -161,7 +162,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="myModalLabel">Delete Customer</h5>
+                    <h5 class="modal-title" id="myModalLabel">{{__('translation.Delete Report')}}</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form id="customerDeleteForm">
@@ -171,14 +172,16 @@
                             <div class="col-md-12">
                                 <div class="prompt w-100"></div>
                             </div>
-                            <p>Are you sure you want to delete this completion report?</p>
+                            <p>{{__('translation.Are you sure you want to delete this completion report?')}}</p>
                             <input name="id" id="customerInfoID" hidden>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary waves-effect" data-bs-dismiss="modal">Close
+                        <button type="button" class="btn btn-secondary waves-effect"
+                                data-bs-dismiss="modal">{{__('translation.close')}}
                         </button>
-                        <button type="submit" class="btn btn-primary waves-effect waves-light submitbtn">Delete</button>
+                        <button type="submit"
+                                class="btn btn-primary waves-effect waves-light submitbtn">{{__('translation.delete')}}</button>
                     </div>
                 </form>
             </div><!-- /.modal-content -->

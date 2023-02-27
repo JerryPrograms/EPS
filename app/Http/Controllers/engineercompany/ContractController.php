@@ -51,10 +51,10 @@ class ContractController extends Controller
                 'contract_description' => $request->contract_description
             ]);
 
-            return json_encode(['success' => true, 'message' => 'Contract saved successfuly']);
+            return json_encode(['success' => true, 'message' => __('translation.Contract saved successfully')]);
 
         } catch (\Throwable $th) {
-            return json_encode(['success' => false, 'message' => 'Error : please try again']);
+            return json_encode(['success' => false, 'message' => __('translation.Error : please try again')]);
         }
 
     }
@@ -75,7 +75,7 @@ class ContractController extends Controller
 
                 return json_encode([
                     'success' => true,
-                    'message' => 'found',
+                    'message' => __('translation.found'),
                     'html' => $html,
                 ]);
 
@@ -90,7 +90,7 @@ class ContractController extends Controller
                     } catch (\Exception $ex) {
                         return json_encode([
                             'success' => false,
-                            'message' => 'Please enter date in the Year-day-month format'
+                            'message' => __('translation.Please enter date in the Year-day-month format'),
                         ]);
                     }
                     $contracts = Contract::where($request['filter'], $date)->paginate(10);
@@ -105,7 +105,7 @@ class ContractController extends Controller
 
                 return json_encode([
                     'success' => true,
-                    'message' => 'found',
+                    'message' => __('translation.found'),
                     'html' => $html,
                 ]);
 
@@ -124,7 +124,7 @@ class ContractController extends Controller
 
         return json_encode([
             'success' => true,
-            'message' => 'found',
+            'message' => __('translation.found'),
             'html' => $html,
         ]);
     }

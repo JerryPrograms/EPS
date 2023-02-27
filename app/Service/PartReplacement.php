@@ -21,7 +21,7 @@ class PartReplacement
             if (!$request->has('part')) {
                 return json_encode([
                     'success' => true,
-                    'message' => 'Redirecting to next page...',
+                    'message' => __('translation.Redirecting to next page'),
                 ]);
             } else {
                 for ($i = 0; $i < count($request->part); $i++) {
@@ -37,7 +37,7 @@ class PartReplacement
 
                 return json_encode([
                     'success' => true,
-                    'message' => 'Part replacement history added successfully',
+                    'message' => __('translation.Part replacement history added successfully'),
                 ]);
             }
 
@@ -82,7 +82,7 @@ class PartReplacement
             $main_part_hstory_delete = PartReplacementHistoryModel::where('id', $request->id)->delete();
             return json_encode([
                 'success' => true,
-                'message' => 'Data deleted successfully',
+                'message' => __('translation.Data deleted successfully'),
             ]);
 
         } catch (\Exception $ex) {

@@ -1,28 +1,36 @@
 <?php
 
 namespace App\Service;
-use Carbon\Carbon;
-use App\Models\User;
 
-class Authentication {
+use App\Models\User;
+use Carbon\Carbon;
+
+class Authentication
+{
 
     // Login function
-    public static function login($email, $password , $guard = 'web'){
+    public static function login($email, $password, $guard = 'web')
+    {
         try {
-            $attempLogin = \Auth::guard($guard)->attempt(['email' => $email, 'password' => $password]);
-            return $attempLogin;
+            if (empty(activeGuard())) {
+                $attempLogin = \Auth::guard($guard)->attempt(['email' => $email, 'password' => $password]);
+                return $attempLogin;
+            }
+            return 'x';
+
         } catch (\Throwable $th) {
             return false;
         }
     }
 
     // Logout function
-    public static function logout($guard = 'web'){
+    public static function logout($guard = 'web')
+    {
         try {
             $logout = \Auth::guard($guard)->logout();
-            if($logout){
+            if ($logout) {
                 return true;
-            }else{
+            } else {
                 return false;
             }
         } catch (\Throwable $th) {
@@ -31,7 +39,8 @@ class Authentication {
     }
 
     // Forgot password reset link
-    public static function password_reset_link($email, $reset_password_routename , $mail_view , $mail_body){
+    public static function password_reset_link($email, $reset_password_routename, $mail_view, $mail_body)
+    {
         try {
             $token = \Str::random(64);
             $set_password_field = \DB::table('password_resets')->insert([
@@ -39,18 +48,18 @@ class Authentication {
                 'token' => $token,
                 'created_at' => Carbon::now()
             ]);
-            if($set_password_field){
-                $action_link = route($reset_password_routename,['token' => $token , 'email' => $email]);
+            if ($set_password_field) {
+                $action_link = route($reset_password_routename, ['token' => $token, 'email' => $email]);
                 $body = $mail_body;
-                $send_mail = \Mail::send($mail_view, ['action_link' => $action_link, 'body' => $body], function($message) use ($email){
+                $send_mail = \Mail::send($mail_view, ['action_link' => $action_link, 'body' => $body], function ($message) use ($email) {
                     $message->to($email)->subject('Reset Password');
                 });
-                if($send_mail){
+                if ($send_mail) {
                     return true;
-                }else{
+                } else {
                     return false;
                 }
-            }else{
+            } else {
                 return false;
             }
         } catch (\Throwable $th) {
@@ -59,14 +68,15 @@ class Authentication {
     }
 
     // Reset Password
-    public static function password_reset($email, $token, $password){
+    public static function password_reset($email, $token, $password)
+    {
         try {
             $check_token = \DB::table('password_resets')->where([
                 'email' => $email,
                 'token' => $token
             ])->first();
-            if ($check_token){
-                User::where('email',$email)->update([
+            if ($check_token) {
+                User::where('email', $email)->update([
                     'password' => \Hash::make($password)
                 ]);
                 \DB::table('password_resets')->where([
@@ -74,7 +84,7 @@ class Authentication {
                 ])->delete();
 
                 return true;
-            }else{
+            } else {
                 return false;
             }
         } catch (\Throwable $th) {

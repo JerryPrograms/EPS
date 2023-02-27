@@ -40,7 +40,7 @@ class DispatchInformationService
 
             return json_encode([
                 'success' => true,
-                'message' => 'Dispatch Information Uploaded',
+                'message' => __('translation.Dispatch Information Uploaded'),
             ]);
 
         } catch (\Exception $ex) {

@@ -23,12 +23,12 @@ class KeyAccessoryInformation
             if ($main) {
                 return json_encode([
                     'success' => true,
-                    'message' => 'Part added successfully',
+                    'message' => __('translation.Part added successfully'),
                 ]);
             }
             return json_encode([
                 'success' => false,
-                'message' => 'Something went wrong',
+                'message' => __('translation.Something went wrong'),
             ]);
 
         } catch (\Exception $ex) {
@@ -47,7 +47,7 @@ class KeyAccessoryInformation
             $sub_part_title = KeyAccessoryModel::create($request->except('_token'));
             return json_encode([
                 'success' => true,
-                'message' => 'Sub Part added successfully',
+                'message' => __('translation.Sub Part added successfully'),
             ]);
         } catch (\Exception $ex) {
             return json_encode([
@@ -76,7 +76,7 @@ class KeyAccessoryInformation
 
             return json_encode([
                 'success' => true,
-                'message' => 'Information Uploaded Successfully',
+                'message' => __('translation.Information Uploaded Successfully'),
             ]);
 
         } catch (\Exception $ex) {

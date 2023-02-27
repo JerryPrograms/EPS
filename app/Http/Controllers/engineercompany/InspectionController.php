@@ -75,7 +75,7 @@ class InspectionController extends Controller
         $safeName = \Str::random(10) . '.' . 'png';
         \Storage::disk('public')->put('engineer_company/inspection/' . $safeName, $image);
         $signature = 'storage/engineer_company/inspection/' . $safeName;
-        
+
         $inspectionSave = MonthlyRegularInspection::create([
             'customer_id' => $request->user_uid,
             'inspection_date' => $request->inspection_date,
@@ -89,9 +89,9 @@ class InspectionController extends Controller
         ]);
 
         if($inspectionSave){
-            return json_encode(['success' => true, 'message' => 'Inspection saved successfuly']);
+            return json_encode(['success' => true, 'message' => __('translation.Inspection saved successfully')]);
         }else{
-            return json_encode(['success' => false, 'message' => 'Error : Please try again']);
+            return json_encode(['success' => false, 'message' => __('translation.Error : Please try again')]);
         }
     }
 
@@ -156,9 +156,9 @@ class InspectionController extends Controller
         ]);
 
         if($inspectionEdit){
-            return json_encode(['success' => true, 'message' => 'Inspection edited successfuly']);
+            return json_encode(['success' => true, 'message' => __('translation.Inspection edited successfully')]);
         }else{
-            return json_encode(['success' => false, 'message' => 'Error : Please try again']);
+            return json_encode(['success' => false, 'message' => __('translation.Error : Please try again')]);
         }
     }
 

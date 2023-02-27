@@ -36,7 +36,7 @@ function ajaxCall(form, action, btn, redirect, successCallback){
         mimeType: "multipart/form-data",
         beforeSend: function() {
             btn.prop('disabled', true);
-            btn.html('<i class="fa fa-spinner fa-spin me-1"></i> Processing');
+            btn.html('<i class="fa fa-spinner fa-spin me-1"></i> 처리');
         },
         success: function(res) {
             if((successCallback !== undefined) && (successCallback !== null)){

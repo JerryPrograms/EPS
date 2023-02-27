@@ -16,7 +16,7 @@ class EmergencyDispatchCheckListService
         if (!$request->has('date')) {
             return json_encode([
                 'success' => true,
-                'message' => 'Redirecting to next page',
+                'message' => __('translation.Redirecting to next page'),
             ]);
         }
 
@@ -33,7 +33,7 @@ class EmergencyDispatchCheckListService
             }
             return json_encode([
                 'success' => true,
-                'message' => 'Emergency Dispatch Checklist added successfully',
+                'message' => __('translation.Emergency Dispatch Checklist added successfully'),
             ]);
 
 
@@ -77,7 +77,7 @@ class EmergencyDispatchCheckListService
             $main_part_hstory_delete = EmergencyDispatchCheckList::where('id', $request->id)->delete();
             return json_encode([
                 'success' => true,
-                'message' => 'Data deleted successfully',
+                'message' => __('translation.Data deleted successfully'),
             ]);
 
         } catch (\Exception $ex) {

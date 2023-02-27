@@ -38,7 +38,7 @@ class QuoteService
             DB::commit();
             return json_encode([
                 'success' => true,
-                'message' => 'Quotation added successfully',
+                'message' => __('translation.Quotation added successfully'),
             ]);
         } catch (\Exception $ex) {
 
@@ -58,7 +58,7 @@ class QuoteService
             $quote = Quotation::where('id', $request->id)->delete();
             return json_encode([
                 'success' => true,
-                'message' => 'Quote deleted successfully',
+                'message' => __('translation.Quote deleted successfully'),
             ]);
         } catch (\Exception $ex) {
             return json_encode([

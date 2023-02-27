@@ -26,7 +26,7 @@
                                                 <div class="col-lg-11">
                                                     <div class="">
                                                         <h4 class="card_tittle_2">
-                                                            Construction Completion Report
+                                                            {{__('translation.Construction Completion Report')}}
                                                         </h4>
                                                     </div>
                                                 </div>
@@ -42,7 +42,7 @@
                                                     <div class="col-lg-4 col-12">
                                                         <label class="form-label custom_lab mb-0"> <span
                                                                 class="star_section">*</span>
-                                                            Project Number
+                                                            {{__('translation.Project Number')}}
                                                         </label>
                                                     </div>
                                                     <div class="col-lg-8 col-12">
@@ -50,7 +50,7 @@
                                                                class="form-control custom_input w-100"
                                                                aria-describedby="emailHelp"
                                                                value="{{$completion_report->project_number}}"
-                                                               placeholder="Enter Project Number" required="">
+                                                               placeholder="{{__('translation.Enter Project Number')}}" required="">
                                                     </div>
                                                 </div>
 
@@ -58,14 +58,14 @@
                                                     <div class="col-lg-4 col-12">
                                                         <label class="form-label custom_lab mb-0"> <span
                                                                 class="star_section">*</span>
-                                                            Site Name
+                                                            {{__('translation.Site Name')}}
                                                         </label>
                                                     </div>
                                                     <div class="col-lg-8 col-12">
                                                         <input type="text" name="site_name"
                                                                class="form-control w-100 custom_input"
                                                                aria-describedby="emailHelp"
-                                                               placeholder="Enter site name"
+                                                               placeholder="{{__('translation.Enter site name')}}"
                                                                required=""
                                                                value="{{$completion_report->site_name}}"
                                                         >
@@ -77,13 +77,13 @@
                                                     <div class="col-lg-4 col-12"><label
                                                             class="form-label custom_lab mb-0"> <span
                                                                 class="star_section">*</span>
-                                                            Joint Nmae
+                                                            {{__('translation.Joint Name')}}
                                                         </label></div>
                                                     <div class="col-lg-8 col-12">
                                                         <input type="text" min="0" name="joint_name"
                                                                class="form-control w-100 custom_input"
                                                                aria-describedby="emailHelp"
-                                                               placeholder="Enter joint name"
+                                                               placeholder="{{__('translation.Enter joint name')}}"
                                                                value="{{$completion_report->joint_name}}"
                                                                required="">
                                                     </div>
@@ -94,7 +94,7 @@
                                                     <div class="col-lg-4 col-12"><label
                                                             class="form-label custom_lab mb-0"> <span
                                                                 class="star_section">*</span>
-                                                            Down Payment
+                                                            {{__('translation.Down Payment')}}
                                                         </label></div>
                                                     <div class="col-lg-8 col-12">
                                                         <input
@@ -102,7 +102,7 @@
                                                             name="down_payment"
                                                             class="form-control w-100 custom_input"
                                                             aria-describedby="emailHelp"
-                                                            placeholder="Enter down payment"
+                                                            placeholder="{{__('translation.Enter down payment')}}"
                                                             value="{{$completion_report->down_payment}}"
                                                             required="">
                                                     </div>
@@ -112,7 +112,7 @@
                                                     <div class="col-lg-4 col-12"><label
                                                             class="form-label custom_lab mb-0"> <span
                                                                 class="star_section">*</span>
-                                                            Contract Amount
+                                                            {{__('translation.Contract Amount')}}
                                                         </label></div>
                                                     <div class="col-lg-8 col-12">
                                                         <input
@@ -120,7 +120,7 @@
                                                             name="contract_amount"
                                                             class="form-control w-100 custom_input"
                                                             aria-describedby="emailHelp"
-                                                            placeholder="Enter contract payment"
+                                                            placeholder="{{__('translation.Enter contract payment')}}"
                                                             value="{{$completion_report->contract_amount}}"
                                                             required="">
                                                     </div>
@@ -130,7 +130,7 @@
                                                     <div class="col-lg-4 col-12"><label
                                                             class="form-label custom_lab mb-0"> <span
                                                                 class="star_section">*</span>
-                                                            Completion Fund
+                                                            {{__('translation.Completion Fund')}}
                                                         </label></div>
                                                     <div class="col-lg-8 col-12">
                                                         <input
@@ -138,7 +138,7 @@
                                                             name="completion_fund"
                                                             class="form-control w-100 custom_input"
                                                             aria-describedby="emailHelp"
-                                                            placeholder="Enter completion fund"
+                                                            placeholder="{{__('translation.Enter completion fund')}}"
                                                             value="{{$completion_report->completion_fund}}"
                                                             required="">
                                                     </div>
@@ -148,7 +148,7 @@
                                                     <div class="col-lg-4 col-12"><label
                                                             class="form-label custom_lab mb-0"> <span
                                                                 class="star_section">*</span>
-                                                            Other Settlement Fund
+                                                            {{__('translation.Other Settlement Fund')}}
                                                         </label></div>
                                                     <div class="col-lg-8 col-12">
                                                         <input
@@ -156,7 +156,7 @@
                                                             name="other_settlement_fund"
                                                             class="form-control w-100 custom_input"
                                                             aria-describedby="emailHelp"
-                                                            placeholder="Enter other settlement"
+                                                            placeholder="{{__('translation.Enter other settlement')}}"
                                                             value="{{$completion_report->other_settlement_fund}}"
                                                             required="">
                                                     </div>
@@ -166,7 +166,7 @@
                                                     <div class="col-lg-4 col-12"><label
                                                             class="form-label custom_lab mb-0"> <span
                                                                 class="star_section">*</span>
-                                                            Microbial Fund
+                                                            {{__('translation.Microbial Fund')}}
                                                         </label></div>
                                                     <div class="col-lg-8 col-12">
                                                         <input
@@ -174,7 +174,7 @@
                                                             name="microbial_fund"
                                                             class="form-control w-100 custom_input"
                                                             aria-describedby="emailHelp"
-                                                            placeholder="Enter microbial fund"
+                                                            placeholder="{{__('translation.Enter microbial fund')}}"
                                                             value="{{$completion_report->microbial_fund}}"
                                                             required="">
                                                     </div>
@@ -185,7 +185,7 @@
                                                     <div class="col-lg-4 col-12"><label
                                                             class="form-label custom_lab mb-0"> <span
                                                                 class="star_section">*</span>
-                                                            Contract Date
+                                                            {{__('translation.Contract Date')}}
                                                         </label></div>
                                                     <div class="col-lg-8 col-12"><input
                                                             onchange="RestrictNextDate($(this))"
@@ -202,7 +202,7 @@
                                                     <div class="col-lg-4 col-12"><label
                                                             class="form-label custom_lab mb-0"> <span
                                                                 class="star_section">*</span>
-                                                            Production Date
+                                                            {{__('translation.Production Date')}}
                                                         </label></div>
                                                     <div class="col-lg-8 col-12"><input
                                                             onchange="RestrictNextDate($(this))" type="date"
@@ -218,7 +218,7 @@
                                                     <div class="col-lg-4 col-12"><label
                                                             class="form-label custom_lab mb-0"> <span
                                                                 class="star_section">*</span>
-                                                            Completion Date
+                                                            {{__('translation.Completion Date')}}
                                                         </label></div>
                                                     <div class="col-lg-8 col-12"><input
                                                             onchange="RestrictNextDate($(this))" type="date"
@@ -234,7 +234,7 @@
                                                     <div class="col-lg-4 col-12"><label
                                                             class="form-label custom_lab mb-0"> <span
                                                                 class="star_section">*</span>
-                                                            Confirmation Date
+                                                            {{__('translation.Confirmation Date')}}
                                                         </label></div>
                                                     <div class="col-lg-8 col-12">
                                                         <input type="date"
@@ -257,7 +257,7 @@
                                                                             <div class="d-flex">
 
                                                                                 <label
-                                                                                    class="form-label custom_lab">Title</label>
+                                                                                    class="form-label custom_lab">{{__('translation.Title')}}</label>
                                                                                 <input
                                                                                     class="form-control w-100 custom_input"
                                                                                     name="title[]" type="text"
@@ -268,7 +268,7 @@
                                                                         <div class="col-6 pb-3">
                                                                             <div class="d-flex">
                                                                                 <label
-                                                                                    class="form-label custom_lab">Site</label>
+                                                                                    class="form-label custom_lab">{{__('translation.Site')}}</label>
                                                                                 <input
                                                                                     class="form-control w-100 custom_input"
                                                                                     name="site[]" type="text"
@@ -279,7 +279,7 @@
                                                                         <div class="col-6 pb-3">
                                                                             <div class="d-flex">
                                                                                 <label
-                                                                                    class="form-label custom_lab">Date</label>
+                                                                                    class="form-label custom_lab">{{__('translation.date')}}</label>
                                                                                 <input
                                                                                     class="form-control w-100 custom_input"
                                                                                     name="date[]" type="date"
@@ -293,7 +293,7 @@
                                                                         <div class="col-6 pb-3">
                                                                             <div class="d-flex">
                                                                                 <label
-                                                                                    class="form-label custom_lab me-2">Photo</label>
+                                                                                    class="form-label custom_lab me-2">{{__('translation.Photo')}}</label>
                                                                                 <input
                                                                                     class="form-control w-100 custom_input"
                                                                                     name="photo[{{$i}}]" type="file"
@@ -324,7 +324,7 @@
 
 
                                                 <button class="form_button mb-5 mt-5">
-                                                    Save and Next
+                                                    {{__('translation.Save and Next')}}
                                                 </button>
 
                                             </div>
@@ -362,7 +362,7 @@
                                                                     <div class="col-6 pb-3">
                                                                         <div class="d-flex">
                                                                             <label
-                                                                                class="form-label custom_lab">Title</label>
+                                                                                class="form-label custom_lab">{{__('translation.Title')}}</label>
                                                                             <input
                                                                                 class="form-control w-100 custom_input"
                                                                                 name="title[]" type="text">
@@ -371,7 +371,7 @@
                                                                     <div class="col-6 pb-3">
                                                                         <div class="d-flex">
                                                                             <label
-                                                                                class="form-label custom_lab">Site</label>
+                                                                                class="form-label custom_lab">{{__('translation.Site')}}</label>
                                                                             <input
                                                                                 class="form-control w-100 custom_input"
                                                                                 name="site[]" type="text">
@@ -380,7 +380,7 @@
                                                                     <div class="col-6 pb-3">
                                                                         <div class="d-flex">
                                                                             <label
-                                                                                class="form-label custom_lab">Date</label>
+                                                                                class="form-label custom_lab">{{__('translation.Date')}}</label>
                                                                             <input
                                                                                 class="form-control w-100 custom_input"
                                                                                 name="date[]" type="date">
@@ -388,7 +388,7 @@
                                                                     </div>
                                                                     <div class="col-6 pb-3">
                                                                         <div class="d-flex">
-                                                                            <label class="form-label custom_lab me-2">Photo</label>
+                                                                            <label class="form-label custom_lab me-2">{{__('translation.Photo')}}</label>
                                                                             <input
                                                                                 class="form-control w-100 custom_input"
                                                                                 name="photo[]" type="file">

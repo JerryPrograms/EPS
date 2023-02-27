@@ -30,12 +30,12 @@ class Customer_Info
             if ($is_created) {
                 return json_encode([
                     'success' => true,
-                    'message' => 'Customer Created Successfully',
+                    'message' => __('Customer Deleted Successfully'),
                 ]);
             } else {
                 return json_encode([
                     'success' => true,
-                    'message' => 'Something went wrong.....',
+                    'message' => __('Something went wrong.....'),
                 ]);
             }
         } catch (\Exception $ex) {
@@ -138,7 +138,7 @@ class Customer_Info
 
         return json_encode([
             'success' => true,
-            'message' => 'found',
+            'message' => __('translation.found'),
             'html' => $html,
         ]);
     }
