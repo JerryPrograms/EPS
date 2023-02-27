@@ -23,6 +23,7 @@ class ManageAttachmentsRequest extends FormRequest
      */
     public function rules()
     {
+
         return [
             'date' => 'required',
             'file' => 'required',

@@ -144,7 +144,8 @@
                                                 <h4 class="card-title border-bottom-0"> <span
                                                         class="bor_lef">&nbsp;</span>
 
-                                                        {{ __('translation.Manage Attachments') }}                                                </h4>
+                                                    {{ __('translation.Manage Attachments') }}
+                                                </h4>
 
                                             </div>
                                             <div class="col-lg-1">
@@ -164,7 +165,7 @@
                                             <div class="col-lg-12 text-end">
                                                 <button type="button" onclick="addMonthlyregularInspection()"
                                                         class="history_add_btn">
-                                                        {{ __('translation.add') }}
+                                                    {{ __('translation.add') }}
                                                 </button>
                                             </div>
 
@@ -280,7 +281,7 @@
                                                         onclick="window.location.href='{{route('ec.CreateEmergencyDispatchChecklist',$customer->user_uid)}}'"
                                                         class="form_button_2 mb-5 mt-5">
 
-                                                        {{ __('translation.Back page') }}
+                                                    {{ __('translation.Back page') }}
 
                                                 </button>
                                             </div>
@@ -340,11 +341,11 @@
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary waves-effect"
                                     data-bs-dismiss="modal">
-                                    {{ __('translation.close') }}
+                                {{ __('translation.close') }}
                             </button>
                             <button type="submit"
                                     class="btn btn-primary waves-effect waves-light submitbtn">
-                                    {{ __('translation.delete') }}
+                                {{ __('translation.delete') }}
                             </button>
                         </div>
 
@@ -372,7 +373,7 @@
                         <button type="button" class="btn btn-secondary waves-effect"
                                 data-bs-dismiss="modal">
 
-                                {{ __('translation.cancel') }}
+                            {{ __('translation.cancel') }}
 
                         </button>
                     </div>
@@ -384,6 +385,8 @@
 @endsection
 @section('custom-script')
     <script>
+        var count = 0;
+
         function addMonthlyregularInspection() {
             $('#monthly_regular_inspection_tbody').prepend(`<tr class="custom_bor_3 border-top-0 mt-5">
                                                         <td><a href="javascript: void(0);" class="text-body fw-bold">#</a>
@@ -412,15 +415,21 @@
                                                             </button>
                                                         </td>
                                                     </tr>`);
+            count++;
         }
 
         function removeMonthlyRegularInspection(element) {
             element.parent().parent().remove();
+            count--;
         }
 
         $('#monthlyRegularInspectionForm').validate({
             submitHandler: function () {
-                ajaxCall($('#monthlyRegularInspectionForm'), "{{ route('CreateManageAttachments') }}", $('#monthlyRegularInspectionForm').find('button.form_button'), "{{ route('ec.CreateManageAttachments',request()->segment(3)) }}", onRequestSuccess);
+                if (count == 0) {
+                    window.location.href = '{{route("ec.GetCustomerInfoListing")}}';
+                } else {
+                    ajaxCall($('#monthlyRegularInspectionForm'), "{{ route('CreateManageAttachments') }}", $('#monthlyRegularInspectionForm').find('button.form_button'), "{{ route('ec.CreateManageAttachments',request()->segment(3)) }}", onRequestSuccess);
+                }
             }
         });
 
