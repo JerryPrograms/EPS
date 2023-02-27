@@ -44,6 +44,9 @@
                                                     <option value="building_management_company">
                                                         {{ __('translation.Building Management Company') }}
                                                     </option>
+                                                    <option value="building_management_company">
+                                                        {{ __('translation.Building Management Company') }}
+                                                    </option>
                                                 </select>
                                             </div>
                                             <div class="col-md-3 col-6">

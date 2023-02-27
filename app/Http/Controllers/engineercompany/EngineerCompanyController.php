@@ -23,7 +23,11 @@ class EngineerCompanyController extends Controller
     public function GetCustomerInfoListing()
     {
 
-        $customer = CustomerInfo::where('added_by_id', auth(activeGuard())->id())->latest()->paginate(10);
+        if (activeGuard() == 'admin') {
+            $customer = CustomerInfo::latest()->paginate(10);
+        } else {
+            $customer = CustomerInfo::where('added_by_id', auth(activeGuard())->id())->latest()->paginate(10);
+        }
         return view('engineer_company.customer_list', compact('customer'));
     }
 
