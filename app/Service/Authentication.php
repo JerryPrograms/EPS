@@ -12,11 +12,14 @@ class Authentication
     public static function login($email, $password, $guard = 'web')
     {
         try {
+
             if (empty(activeGuard())) {
                 $attempLogin = \Auth::guard($guard)->attempt(['email' => $email, 'password' => $password]);
                 return $attempLogin;
+            } else {
+
+                return 'x';
             }
-            return 'x';
 
         } catch (\Throwable $th) {
             return false;

@@ -18,7 +18,7 @@ class ListingController extends Controller
         if (activeGuard() == 'web') {
             $dispatch_information_data = DispatchInformationData::where('customer_id', auth('web')->id())->paginate(10);
         } else {
-            $dispatch_information_data = DispatchInformationData::paginate(10);
+            $dispatch_information_data = DispatchInformationData::where('customer_id', auth(activeGuard())->id())->paginate(10);
         }
         return view('engineer_company.distpatch_confirmation_listing', compact('dispatch_information_data'));
     }
