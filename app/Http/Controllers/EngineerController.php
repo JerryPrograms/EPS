@@ -52,7 +52,7 @@ class EngineerController extends Controller
     public function edit_engineer($id)
     {
         $engineer_companies = Engineer_company::get();
-        $engineer = Engineer::with('getEngineerCompany')->first();
+        $engineer = Engineer::where('id', $id)->with('getEngineerCompany')->first();
         return view('engineer_company.edit_engineer', compact('engineer_companies', 'engineer'));
     }
 

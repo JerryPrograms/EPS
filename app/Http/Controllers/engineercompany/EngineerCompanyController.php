@@ -8,8 +8,6 @@ use App\Models\DispatchInformationData;
 use App\Models\Events;
 use App\Models\Quotation;
 use App\Models\Todo;
-use App\Service\Authentication;
-use Barryvdh\DomPDF\Facade\Pdf;
 
 class EngineerCompanyController extends Controller
 {
@@ -140,9 +138,16 @@ class EngineerCompanyController extends Controller
 
     public function GetCalender()
     {
-        $events = Events::where('status', 0)->where('user_id', auth(activeGuard())->user()->id)->latest()->get();
-        $todos_pending = Todo::where('status', 0)->where('user_id', auth(activeGuard())->user()->id)->latest()->get();
-        $todos_completed = Todo::where('status', 1)->where('user_id', auth(activeGuard())->user()->id)->latest()->get();
+        if (activeGuard() == 'admin') {
+            $events = Events::where('status', 0)->latest()->get();
+            $todos_pending = Todo::where('status', 0)->latest()->get();
+            $todos_completed = Todo::where('status', 1)->latest()->get();
+        } else {
+            $events = Events::where('status', 0)->where('user_id', auth(activeGuard())->user()->id)->latest()->get();
+            $todos_pending = Todo::where('status', 0)->where('user_id', auth(activeGuard())->user()->id)->latest()->get();
+            $todos_completed = Todo::where('status', 1)->where('user_id', auth(activeGuard())->user()->id)->latest()->get();
+        }
+
         $data = array();
 
         if (count($events) > 0) {
@@ -179,19 +184,19 @@ class EngineerCompanyController extends Controller
 
         auth($role)->logout();
 
-        if($role == 'admin'){
+        if ($role == 'admin') {
             return redirect()->route('admin.AdminLogin');
         }
 
-        if($role == 'engineer_company'){
+        if ($role == 'engineer_company') {
             return redirect()->route('ec.GetECLogin');
         }
 
-        if($role == 'engineer'){
+        if ($role == 'engineer') {
             return redirect()->route('e.GetECLogin');
         }
 
-        if($role == 'web'){
+        if ($role == 'web') {
             return redirect()->route('customer-login');
         }
 
