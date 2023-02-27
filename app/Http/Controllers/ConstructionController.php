@@ -12,6 +12,8 @@ class ConstructionController extends Controller
     {
         if (activeGuard() == 'web') {
             $completion_reports = CompletionRequestModel::where('customer_id', auth(activeGuard())->id())->latest()->get();
+        } else if (activeGuard() == 'admin') {
+            $completion_reports = CompletionRequestModel::latest()->get();
         } else {
             $completion_reports = CompletionRequestModel::where('added_by', auth(activeGuard())->id())->latest()->get();
         }

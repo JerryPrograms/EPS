@@ -18,6 +18,8 @@ class ListingController extends Controller
 
         if (activeGuard() == 'web') {
             $dispatch_information_data = DispatchInformationData::where('customer_id', auth('web')->id())->paginate(10);
+        } else if (activeGuard() == 'admin') {
+            $dispatch_information_data = DispatchInformationData::paginate(10);
         } else {
             $customers = CustomerInfo::where('added_by', activeGuard())->where('added_by_id', auth(activeGuard())->id())->pluck('id');
             $dispatch_information_data = DispatchInformationData::whereIn('customer_id', $customers)->paginate(10);
@@ -40,6 +42,8 @@ class ListingController extends Controller
     {
         if (activeGuard() == 'web') {
             $logs = MonthlyRegularInspection::where('customer_id', auth('web')->id())->with('getCustomer')->paginate(10);
+        } else if (activeGuard() == 'admin') {
+            $logs = MonthlyRegularInspection::with('getCustomer')->paginate(10);
         } else {
             $customers = CustomerInfo::where('added_by', activeGuard())->where('added_by_id', auth(activeGuard())->id())->pluck('id');
             $logs = MonthlyRegularInspection::whereIn('customer_id', $customers)->with('getCustomer')->paginate(10);
@@ -63,9 +67,11 @@ class ListingController extends Controller
     {
         if (activeGuard() == 'web') {
             $contracts = Contract::where('customer_id', auth('web')->id())->with('get_customer')->paginate(10);
+        } else if (activeGuard() == 'admin') {
+            $contracts = Contract::with('get_customer')->paginate(10);
         } else {
             $customers = CustomerInfo::where('added_by', activeGuard())->where('added_by_id', auth(activeGuard())->id())->pluck('id');
-            $contracts = Contract::whereIn('customer_id',$customers)->with('get_customer')->paginate(10);
+            $contracts = Contract::whereIn('customer_id', $customers)->with('get_customer')->paginate(10);
         }
 
         return view('engineer_company.contract_management', compact('contracts'));
@@ -76,9 +82,11 @@ class ListingController extends Controller
     {
         if (activeGuard() == 'web') {
             $quotations = Quotation::where('customer_id', auth('web')->id())->with('GetQuoteContent', 'getCustomer')->paginate(10);
+        } else if (activeGuard() == 'admin') {
+            $quotations = Quotation::with('GetQuoteContent', 'getCustomer')->paginate(10);
         } else {
             $customers = CustomerInfo::where('added_by', activeGuard())->where('added_by_id', auth(activeGuard())->id())->pluck('id');
-            $quotations = Quotation::whereIn('customer_id',$customers)->with('GetQuoteContent', 'getCustomer')->paginate(10);
+            $quotations = Quotation::whereIn('customer_id', $customers)->with('GetQuoteContent', 'getCustomer')->paginate(10);
         }
 
         return view('engineer_company.quotation_management', compact('quotations'));
