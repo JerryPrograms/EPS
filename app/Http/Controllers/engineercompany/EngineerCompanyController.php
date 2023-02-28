@@ -26,7 +26,7 @@ class EngineerCompanyController extends Controller
         if (activeGuard() == 'admin') {
             $customer = CustomerInfo::latest()->paginate(10);
         } else {
-            $customer = CustomerInfo::where('added_by_id', auth(activeGuard())->id())->latest()->paginate(10);
+            $customer = CustomerInfo::where('added_by',activeGuard())->where('added_by_id', auth(activeGuard())->id())->latest()->paginate(10);
         }
         return view('engineer_company.customer_list', compact('customer'));
     }
