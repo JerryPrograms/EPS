@@ -24,10 +24,10 @@
                                                 <select class="form-select mt-4" name="filter" autocomplete="off"
                                                         required>
                                                     <option selected value="" disabled>
-                                        {{ __('translation.filter') }}
+                                                        {{ __('translation.filter') }}
                                                     </option>
                                                     <option value="all">
-                                        {{ __('translation.all') }}
+                                                        {{ __('translation.all') }}
                                                     </option>
                                                     <option value="created_at">
                                                         {{ __('translation.Registration Date') }}
@@ -53,7 +53,8 @@
                                                 <div class="custom_search">
                                                     <div class="search mt-4">
                                                         <input type="text" class="form-control" name="keyword"
-                                                               placeholder="{{__('translation.search')}}" autocomplete="off" required>
+                                                               placeholder="{{__('translation.search')}}"
+                                                               autocomplete="off" required>
                                                         <button type="submit" class="btn btn-primary searchbar_button">
                                                             <div class="search_img">
                                                                 <img
@@ -68,8 +69,8 @@
                                                         onclick="ClearFilter()"
                                                         type="button"
                                                         class="d-none btn btn-primary waves-effect waves-light w-sm mt-4"
-                                                        >
-                                                        {{ __('translation.Clear Filter') }}
+                                                >
+                                                    {{ __('translation.Clear Filter') }}
                                                 </button>
                                             </div>
                                             <div class="col-md-4 col-12 text-end">
@@ -363,6 +364,7 @@
 
                         $('#customer_list_table').html('');
                         $('#customer_list_table').append(res.html);
+                        $('#searchbar_button').attr('disabled', false);
                     }
                 },
                 error: function (e) {

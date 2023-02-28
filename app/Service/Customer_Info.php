@@ -80,15 +80,17 @@ class Customer_Info
             if ($request['filter'] == 'all') {
 
                 if (activeGuard() != 'admin') {
-                    $customer = CustomerInfo::orWhere('building_name', 'like', '%' . $request['keyword'] . '%')
-                        ->orWhere('building_management_company', 'like', '%' . $request['keyword'] . '%')
-                        ->orWhere('maintenance_company', 'like', '%' . $request['keyword'] . '%')
-                        ->orWhere('address', 'like', '%' . $request['keyword'] . '%')
-                        ->orWhere('customer_number', 'like', '%' . $request['keyword'] . '%')
-                        ->orWhere('created_at', 'like', '%' . $request['keyword'] . '%')
-                        ->where('added_by', activeGuard())
+                    $customer = CustomerInfo::where(function($query) use($request){
+                        $query->orWhere('building_name', 'like', '%' . $request['keyword'] . '%')
+                            ->orWhere('building_management_company', 'like', '%' . $request['keyword'] . '%')
+                            ->orWhere('maintenance_company', 'like', '%' . $request['keyword'] . '%')
+                            ->orWhere('address', 'like', '%' . $request['keyword'] . '%')
+                            ->orWhere('customer_number', 'like', '%' . $request['keyword'] . '%')
+                            ->orWhere('created_at', 'like', '%' . $request['keyword'] . '%');
+                    })->where('added_by', activeGuard())
                         ->where('added_by_id', auth(activeGuard())->id())
                         ->paginate(10);
+
                 } else {
                     $customer = CustomerInfo::orWhere('building_name', 'like', '%' . $request['keyword'] . '%')
                         ->orWhere('building_management_company', 'like', '%' . $request['keyword'] . '%')
@@ -159,7 +161,12 @@ class Customer_Info
 
     public static function ClearCustomerInfo(Request $request)
     {
-        $customer = CustomerInfo::paginate(10);
+        if(activeGuard() == 'admin')
+        {
+            $customer = CustomerInfo::paginate(10);
+        }else{
+            $customer = CustomerInfo::where('added_by',activeGuard())->where('added_by_id',auth(activeGuard())->id())->paginate(10);
+        }
         $html = view('engineer_company.customer_list_template', compact('customer'))->render();
 
         return json_encode([
