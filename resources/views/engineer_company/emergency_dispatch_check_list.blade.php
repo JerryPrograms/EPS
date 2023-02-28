@@ -126,7 +126,7 @@
                                                     <div class="">
                                                         <h4 class="card_tittle_2">
 
-                                                    {{ __('translation.Customer information creation page') }}
+                                                            {{ __('translation.Customer information creation page') }}
 
                                                         </h4>
                                                     </div>
@@ -143,14 +143,15 @@
                                                 <h4 class="card-title border-bottom-0"> <span
                                                         class="bor_lef">&nbsp;</span>
 
-                                                        {{ __('translation.Customer Information') }}
+                                                    {{ __('translation.Customer Information') }}
 
                                                 </h4>
                                             </div>
                                             <div class="col-lg-1">
 
                                                 <div class="file_main_section">
-                                                    <button class="file_button">
+                                                    <button type="button" onclick="printForm($('.main-content'))"
+                                                            class="file_button">
                                                         <img src="{{asset('engineer_company/images/Vector.png')}}">
                                                     </button>
                                                 </div>
@@ -182,7 +183,7 @@
                                             <div class="col-lg-6 text-end">
                                                 <button type="button" onclick="addMonthlyregularInspection()"
                                                         class="history_add_btn">
-                                                        {{ __('translation.add') }}
+                                                    {{ __('translation.add') }}
                                                 </button>
                                             </div>
 
@@ -230,44 +231,52 @@
                                                     </tr>
                                                     </thead>
                                                     <tbody id="monthly_regular_inspection_tbody">
+                                                    @if(count($MonthlyRegularInspections) > 0)
+                                                        @foreach($MonthlyRegularInspections as $mr)
+                                                            <tr class="custom_bor_clr">
+                                                                <td class="border-bottom-0"><a
+                                                                        href="javascript: void(0);"
+                                                                        class="text-body fw-bold">{{$loop->index + 1}}</a>
+                                                                </td>
+                                                                <td class="border-bottom-0">
+                                                                    <button
+                                                                        class="date_button border-0">{{$mr->date}}
+                                                                    </button>
+                                                                </td>
+                                                                <td class="border-bottom-0">
+                                                                    <img class="monthly-inspection-listing-img"
+                                                                         src="{{asset($mr->photo)}}"
+                                                                         class="gallery_img">
+                                                                </td>
+                                                                <td class="border-bottom-0">
+                                                                    <button
+                                                                        class="date_button_2 border-0">{{$mr->manager}}
+                                                                    </button>
+                                                                </td>
+                                                                <td class="border-bottom-0">
+                                                                    <button
+                                                                        class="date_button_2 border-0">{{$mr->check_contents}}
+                                                                    </button>
+                                                                </td>
 
-                                                    @foreach($MonthlyRegularInspections as $mr)
-                                                        <tr class="custom_bor_clr">
-                                                            <td class="border-bottom-0"><a
-                                                                    href="javascript: void(0);"
-                                                                    class="text-body fw-bold">{{$loop->index + 1}}</a>
-                                                            </td>
-                                                            <td class="border-bottom-0">
-                                                                <button
-                                                                    class="date_button border-0">{{$mr->date}}
-                                                                </button>
-                                                            </td>
-                                                            <td class="border-bottom-0">
-                                                                <img class="monthly-inspection-listing-img"
-                                                                     src="{{asset($mr->photo)}}"
-                                                                     class="gallery_img">
-                                                            </td>
-                                                            <td class="border-bottom-0">
-                                                                <button class="date_button_2 border-0">{{$mr->manager}}
-                                                                </button>
-                                                            </td>
-                                                            <td class="border-bottom-0">
-                                                                <button
-                                                                    class="date_button_2 border-0">{{$mr->check_contents}}
-                                                                </button>
-                                                            </td>
-
-                                                            <td class="border-bottom-0 text-center">
-                                                                <button
-                                                                    onclick="$('#partReplacementID').val('{{$mr->id}}')"
-                                                                    type="button" data-bs-toggle="modal"
-                                                                    data-bs-target="#deleteReplacementHistory"
-                                                                    class="date_button_2 border-0">
-                                                                    <i class="fa fa-trash-can"></i>
-                                                                </button>
+                                                                <td class="border-bottom-0 text-center">
+                                                                    <button
+                                                                        onclick="$('#partReplacementID').val('{{$mr->id}}')"
+                                                                        type="button" data-bs-toggle="modal"
+                                                                        data-bs-target="#deleteReplacementHistory"
+                                                                        class="date_button_2 border-0">
+                                                                        <i class="fa fa-trash-can"></i>
+                                                                    </button>
+                                                                </td>
+                                                            </tr>
+                                                        @endforeach
+                                                    @else
+                                                        <tr>
+                                                            <td colspan="8"><img style="width: 50%; height: 50%"
+                                                                                 src="{{asset('engineer_company/images/no-data-found.png')}}">
                                                             </td>
                                                         </tr>
-                                                    @endforeach
+                                                    @endif
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -288,7 +297,7 @@
                                                         onclick="window.location.href='{{route("ec.CreateMonthlyRegularInspection",$customer->user_uid)}}'"
                                                         class="form_button_2 mb-5 mt-5">
 
-                                                        {{ __('translation.Back page') }}
+                                                    {{ __('translation.Back page') }}
 
                                                 </button>
                                             </div>
@@ -322,7 +331,8 @@
             <div class="modal-content">
                 <div class="modal-header">
 
-    <h5 class="modal-title" id="myModalLabel">{{ __('translation.Delete_Emergency Dispatch Check List') }}</h5>
+                    <h5 class="modal-title"
+                        id="myModalLabel">{{ __('translation.Delete_Emergency Dispatch Check List') }}</h5>
 
                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                             aria-label="Close"></button>
@@ -344,11 +354,11 @@
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary waves-effect"
                                     data-bs-dismiss="modal">
-                                    {{ __('translation.close') }}
+                                {{ __('translation.close') }}
                             </button>
                             <button type="submit"
                                     class="btn btn-primary waves-effect waves-light submitbtn">
-                                    {{ __('translation.delete') }}
+                                {{ __('translation.delete') }}
                             </button>
                         </div>
 
@@ -360,7 +370,10 @@
 @endsection
 @section('custom-script')
     <script>
+        var count = 0;
+
         function addMonthlyregularInspection() {
+            count++;
             $('#monthly_regular_inspection_tbody').prepend(`<tr class="custom_bor_3 border-top-0 mt-5">
                                                         <td><a href="javascript: void(0);" class="text-body fw-bold">#</a>
                                                         </td>
@@ -388,9 +401,15 @@
                                                             </button>
                                                         </td>
                                                     </tr>`);
+
+            $('tr td img').addClass('d-none');
         }
 
         function removeMonthlyRegularInspection(element) {
+            count--;
+            if (count == 0) {
+                $('tr td img').removeClass('d-none');
+            }
             element.parent().parent().remove();
         }
 

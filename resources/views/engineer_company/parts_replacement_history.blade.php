@@ -144,14 +144,15 @@
                                                 <h4 class="card-title border-bottom-0"> <span
                                                         class="bor_lef">&nbsp;</span>
 
-                                                        {{ __('translation.Customer Information') }}
+                                                    {{ __('translation.Customer Information') }}
 
                                                 </h4>
                                             </div>
                                             <div class="col-lg-1">
 
                                                 <div class="file_main_section">
-                                                    <button class="file_button">
+                                                    <button onclick="printForm($('.main-content'))" type="button"
+                                                            class="file_button">
                                                         <img src="{{asset('engineer_company/images/Vector.png')}}">
                                                     </button>
                                                 </div>
@@ -207,7 +208,7 @@
                                             <div class="col-lg-6 text-end">
                                                 <button type="button" onclick="addReplacementHistoryRow()"
                                                         class="history_add_btn">
-                                                        {{ __('translation.add') }}
+                                                    {{ __('translation.add') }}
                                                 </button>
                                             </div>
                                         </div>
@@ -255,48 +256,6 @@
                                             @endphp
 
                                             @include('engineer_company.part_replacement_history_listing_template',compact('MainPart'))
-{{--                                            @if(count($PartsReplacementHistory) > 0)--}}
-{{--                                            @foreach($PartsReplacementHistory as $rh)--}}
-{{--                                                <tr>--}}
-{{--                                                    <td class="custom_br_theme_gray"><a href="javascript: void(0);"--}}
-{{--                                                                                        class="text-body fw-bold">{{$loop->index + 1}}</a>--}}
-{{--                                                    </td>--}}
-{{--                                                    <td class="custom_br_theme_gray_2">--}}
-{{--                                                        <button type="button"--}}
-{{--                                                                class="date_button border-0">{{\Carbon\Carbon::parse($rh->registration_date)->format('Y.d.m')}}</button>--}}
-{{--                                                    </td>--}}
-
-{{--                                                    <td class="custom_br_theme_gray_2">--}}
-{{--                                                        <button type="button"--}}
-{{--                                                                class="date_button_2 border-0">{{$rh->part}}--}}
-{{--                                                        </button>--}}
-{{--                                                    </td>--}}
-
-{{--                                                    <td class="custom_br_theme_gray_2">--}}
-{{--                                                        <button type="button"--}}
-{{--                                                                class="date_button_2 border-0">{{$rh->manager}}--}}
-{{--                                                        </button>--}}
-{{--                                                    </td>--}}
-{{--                                                    <td class="custom_br_theme_gray_3">--}}
-{{--                                                        <!-- Button trigger modal -->--}}
-{{--                                                        <button type="button"--}}
-{{--                                                                class="date_button_2 border-0">{{$rh->as_content}}--}}
-{{--                                                        </button>--}}
-{{--                                                    </td>--}}
-{{--                                                    <td class="custom_br_theme_gray_3">--}}
-{{--                                                        <!-- Button trigger modal -->--}}
-{{--                                                        <button onclick="$('#partReplacementID').val('{{$rh->id}}')"--}}
-{{--                                                                type="button" data-bs-toggle="modal"--}}
-{{--                                                                data-bs-target="#deleteReplacementHistory"--}}
-{{--                                                                class="date_button_2 border-0">--}}
-{{--                                                            <i class="fa fa-trash-can"></i>--}}
-{{--                                                        </button>--}}
-{{--                                                    </td>--}}
-{{--                                                </tr>--}}
-{{--                                            @endforeach--}}
-{{--                                            @else--}}
-{{--                                                --}}
-{{--                                            @endif--}}
                                             </tbody>
                                         </table>
 
@@ -379,11 +338,11 @@
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary waves-effect"
                                     data-bs-dismiss="modal">
-                                    {{ __('translation.close') }}
+                                {{ __('translation.close') }}
                             </button>
                             <button type="submit"
                                     class="btn btn-primary waves-effect waves-light submitbtn">
-                                    {{ __('translation.delete') }}
+                                {{ __('translation.delete') }}
                             </button>
                         </div>
 
@@ -427,14 +386,14 @@
                                                     class="form-control col-lg-12 custom_input_tble"
                                                      aria-describedby="emailHelp"
                                                     placeholder="{{ __('translation.Manager Name') }}
-                                                    " required>
-                                            </td>
+            " required>
+    </td>
 
-                                            <td class="custom_br_theme_gray_3">
-                                                <input type="text" name="as_content[]"
-                                                    class="form-control col-lg-2 custom_input_tble"
-                                                     aria-describedby="emailHelp"
-                                                    placeholder="{{ __('translation.AS content') }}" required>
+    <td class="custom_br_theme_gray_3">
+        <input type="text" name="as_content[]"
+            class="form-control col-lg-2 custom_input_tble"
+             aria-describedby="emailHelp"
+            placeholder="{{ __('translation.AS content') }}" required>
                                             </td>
 
                                  <td class="custom_br_theme_gray_3">
@@ -442,12 +401,14 @@
                                  </td>
                                         </tr>
              `);
+            $('tr td img').addClass('d-none');
         }
 
         function removeRow(element) {
             element.remove();
             counter--;
             if (counter == 0) {
+                $('tr td img').removeClass('d-none');
                 $('#initial_date').attr('required', false);
             }
         }

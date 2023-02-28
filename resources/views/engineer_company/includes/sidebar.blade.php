@@ -6,7 +6,7 @@
 
 
             <ul class="metismenu list-unstyled" id="side-menu">
-                @if((!empty(activeGuard())) && (activeGuard() != 'engineer') && (activeGuard() != 'web'))
+                @if((activeGuard() != 'web'))
                     <li class="sidebr_button">
                         <a href="javascript: void(0);" class="waves-effect dropdown_toggle">
                             <img src="{{asset('engineer_company/assets/images/user.png')}}"

@@ -1,3 +1,4 @@
+@if(count($MonthlyRegularInspections) > 0)
 @foreach($MonthlyRegularInspections as $mr)
 
     <tr class="custom_bor_clr">
@@ -33,3 +34,10 @@
         </td>
     </tr>
 @endforeach
+@else
+    <tr>
+        <td colspan="8"><img style="width: 50%; height: 50%"
+                             src="{{asset('engineer_company/images/no-data-found.png')}}">
+        </td>
+    </tr>
+@endif

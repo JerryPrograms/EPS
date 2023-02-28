@@ -28,7 +28,7 @@
                                     <div class="d-flex align-items-center table-top-actions gap-1">
                                         <div class="buttons d-flex align-items-center justify-content-between gap-1">
                                             <div class="d-flex">
-                                                <input id="search" class="form-control me-2" name="keyword"
+                                                <input id="search" onkeyup="myFunction()" class="form-control me-2" name="keyword"
                                                        placeholder="{{ __('translation.Search here') }}" required
                                                        type="text"
                                                        autocomplete="off">
@@ -37,7 +37,8 @@
 
                                             <a href="{{route('ec.AddQuote',$customer->user_uid)}}"
                                                class="btn btn-primary">Add</a>
-                                            <a onclick="OpenModal()" href="javascript:void(0)" class="btn btn-primary">{{ __('translation.delete') }}</a>
+                                            <a onclick="OpenModal()" href="javascript:void(0)"
+                                               class="btn btn-primary">{{ __('translation.delete') }}</a>
                                         </div>
                                     </div>
                                     <div id="customer_list_table" class="table-responsive mt-3">
@@ -59,7 +60,7 @@
 @section('modal')
 
     <!-- view modal -->
-    <div class="modal fade " id="exampleModal0" tabindex="-1"
+    <div class="modal fade dsadasda" id="exampleModal0" tabindex="-1"
          aria-labelledby="exampleModalLabel"
          aria-hidden="true">
         <div class="modal-dialog">
@@ -93,8 +94,8 @@
                                              style="text-align: end;">
                                             <div
                                                 class="file_main_section">
-                                                <button
-                                                    class="file_button">
+                                                <button type="button" onclick="printForm($('.dsadasda'))"
+                                                        class="file_button">
                                                     <img
                                                         src="{{asset('engineer_company/images/Vector.png')}}">
                                                 </button>
@@ -275,7 +276,8 @@
                                                         for="exampleInputEmail1"
                                                         class="form-label custom-lab-2 mb-0">
                                                 <span
-                                                    class="star_section">*</span>{{ __('translation.Manager Contact') }}..
+                                                    class="star_section">*</span>{{ __('translation.Manager Contact') }}
+                                                        ..
                                                     </label>
                                                 </div>
                                                 <div class="col-lg-9 col-md-12">
@@ -392,7 +394,8 @@
                                                         <p class="modal-footer-text m-0 p-0">January 15, 2023 </p>
                                                     </div>
                                                     <div class="col-lg-3">
-                                                        <p class="modal-footer-text m-0 p-0">{{ __('translation.EPS Co Ltd') }}.</p>
+                                                        <p class="modal-footer-text m-0 p-0">{{ __('translation.EPS Co Ltd') }}
+                                                            .</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -423,7 +426,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="myModalLabel112">
-                        {{ __('translation.Delete_Parts_history_Replacement') }}
+                        {{ __('translation.Delete Parts history Replacement') }}
                     </h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                             aria-label="Close"></button>
@@ -435,7 +438,7 @@
                         <div class="col-12">
                             <div class="prompt w-100"></div>
                             <p>
-                                {{ __('translation.Are_you_sure_you_want_to_delete_this_data?') }}
+                                {{ __('translation.Are you sure you want to delete') }}
                             </p>
                             <div class="mb-3">
 
@@ -505,15 +508,43 @@
         });
 
 
-        var $rows = $('#level1_listin_table_old tr');
-        $('#search').keyup(function () {
-            var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+        // var $rows = $('#level1_listin_table_old tr');
+        // $('#search').keyup(function () {
+        //     var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+        //
+        //     $rows.show().filter(function () {
+        //         var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+        //         return !~text.indexOf(val);
+        //     }).hide();
+        // });
 
-            $rows.show().filter(function () {
-                var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
-                return !~text.indexOf(val);
-            }).hide();
-        });
+        let hiddenCount = 0;
+
+        function myFunction() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("search");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("quote_tbody");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[2];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].classList.remove('d-none');
+                    } else {
+                        tr[i].classList.add('d-none');
+                        $('#noRecord').addClass('d-none');
+                    }
+                }
+            }
+
+            if ($("#quote_tbody tbody tr.main-tr").length == $("#quote_tbody tbody tr.d-none.main-tr").length) {
+                $('#noRecord').removeClass('d-none');
+            } else {
+                $("#noRecord").addClass('d-none')
+            }
+        }
 
 
         function GetQuoteData(id) {

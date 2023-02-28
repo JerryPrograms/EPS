@@ -1,4 +1,4 @@
-<table class="table align-middle mb-0 table-theme">
+<table id="myTable" class="table align-middle mb-0 table-theme">
     <thead class="table-light">
     <tr>
 
@@ -61,6 +61,9 @@
             </td>
         </tr>
     @endforeach
+    <tr class="d-none main-tr">
+        <td>No records found</td>
+    </tr>
     </tbody>
 </table>
 

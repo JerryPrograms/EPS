@@ -13,8 +13,9 @@
                                     </h4>
                                     <div class="d-flex align-items-center table-top-actions gap-1">
                                         <select class="form-select select_filter" name="filter" autocomplete="off"
-                                            required>
-                                            <option selected="" value="" disabled="">{{ __('translation.Filter') }}</option>
+                                                required>
+                                            <option selected="" value=""
+                                                    disabled="">{{ __('translation.Filter') }}</option>
                                             <option value="all">
                                                 {{ __('translation.all') }}
                                             </option>
@@ -36,9 +37,9 @@
                                         </select>
                                         <div class="custom_search">
                                             <div class="search">
-                                                <input type="text" class="form-control" name="keyword"
-                                                    placeholder="{{ __('translation.search') }}" autocomplete="off"
-                                                    required="">
+                                                <input type="text" id="search" onkeyup="myFunction()" class="form-control" name="keyword"
+                                                       placeholder="{{ __('translation.search') }}" autocomplete="off"
+                                                       required="">
                                                 <button type="submit" class="btn btn-primary searchbar_button">
                                                     <div class="search_img">
                                                         <img
@@ -49,7 +50,7 @@
                                         </div>
                                         <div class="buttons d-flex align-items-center justify-content-between gap-1">
                                             <a href="{{ route('add_contract', $customer->user_uid) }}"
-                                                class="btn btn-primary">{{ __('translation.Add') }}</a>
+                                               class="btn btn-primary">{{ __('translation.Add') }}</a>
                                         </div>
                                     </div>
                                     @if (count($contracts) > 0)
@@ -65,7 +66,8 @@
                                         </div>
                                     @else
                                         <div class="text-center">
-                                            <img src="{{ asset('engineer_company/images/no-data-found.png') }}" style="height:250px;" class="img-fluid" alt="No Record Found">
+                                            <img src="{{ asset('engineer_company/images/no-data-found.png') }}"
+                                                 style="height:250px;" class="img-fluid" alt="No Record Found">
                                         </div>
                                     @endif
                                 </div>
@@ -85,7 +87,7 @@
 @section('custom-script')
     <script>
         //ajax to search customer basic information
-        $('#customerSearchForm').submit(function(e) {
+        $('#customerSearchForm').submit(function (e) {
 
             $('.searchbar_button').attr('disabled', true);
             e.preventDefault();
@@ -103,10 +105,10 @@
                 processData: false,
                 cache: false,
                 mimeType: "multipart/form-data",
-                beforeSend: function() {
+                beforeSend: function () {
                     $('#clearFilter').removeClass('d-none');
                 },
-                success: function(res) {
+                success: function (res) {
 
                     $('.searchbar_button').attr('disabled', false);
 
@@ -114,7 +116,7 @@
                         prompt.html('<div class="alert alert-danger">' + res.message + '</div>');
 
                         $("div.prompt").fadeIn();
-                        setTimeout(function() {
+                        setTimeout(function () {
                             $("div.prompt").fadeOut();
                         }, 2000);
 
@@ -124,7 +126,7 @@
                         $('#customer_list_table').append(res.html);
                     }
                 },
-                error: function(e) {
+                error: function (e) {
 
 
                 }
@@ -141,10 +143,10 @@
                 data: {
                     '_token': '{{ csrf_token() }}',
                 },
-                beforeSend: function() {
+                beforeSend: function () {
                     $('#clearFilter').addClass('d-none');
                 },
-                success: function(res) {
+                success: function (res) {
 
 
                     if (res.success == false) {
@@ -156,11 +158,39 @@
                         $('#customer_list_table').append(res.html);
                     }
                 },
-                error: function(e) {
+                error: function (e) {
 
 
                 }
             });
+        }
+
+
+        let hiddenCount = 0;
+
+        function myFunction() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("search");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[2];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].classList.remove('d-none');
+                    } else {
+                        tr[i].classList.add('d-none');
+                    }
+                }
+            }
+
+            if ($("#myTable tbody tr.main-tr").length == $("#myTable tbody tr.d-none.main-tr").length) {
+                $('#no_record').removeClass('d-none');
+            } else {
+                $("#no_record").addClass('d-none')
+            }
         }
     </script>
 @endsection

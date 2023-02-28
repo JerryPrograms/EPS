@@ -239,7 +239,7 @@
                                         <!-- form row 4 start  -->
                                         <div class="">
                                             <div class="row justify-content-end">
-                                                <div class="col-lg-2">
+                                                <div class="col-lg-3">
                                                     <button class="confirm_button_2 mb-5 mt-5 submitbtn">
                                                         {{ __('translation.confirm') }}
                                                     </button>

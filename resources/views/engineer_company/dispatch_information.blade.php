@@ -16,28 +16,28 @@
                                     <!-- end table-responsive -->
 
                                     <div class="row justify-content-center align-items-baseline">
-                                        <div class="col-lg-11 p-0">
-                                            <div class="card_section_3">
-                                                <h4 class="card_tittle_2">
-                                                    {{ __('translation.Dispatch Confirmation') }}
-                                                </h4>
+                                        <div class="col-lg-12 p-0">
+                                            <div class="card_section_3 ms-0">
+                                                <div class="d-flex justify-content-between align-items-center my-2">
+                                                    <h4 class="card_tittle_2 mb-0">
+                                                        {{ __('translation.Dispatch Confirmation') }}
+                                                    </h4>
+                                                    <a href="{{route('ec.CreateDispatchInformation',$customer->user_uid)}}" class="history_add_btn">
+                                                        {{ __('translation.add') }}
+                                                    </a>
+                                                </div>
+
+
                                             </div>
                                         </div>
+
 
                                     </div>
                                 </div>
 
                                 <!-- table info start  -->
                                 <div class="info-table-padding">
-                                    <div class="row">
-                                        <div class="col-12 text-end">
 
-                                            <a href="{{route('ec.CreateDispatchInformation',$customer->user_uid)}}" class="history_add_btn">
-                                                {{ __('translation.add') }}
-                                            </a>
-
-                                        </div>
-                                    </div>
                                     <table class="table align-middle custom_mrg_2">
                                         <thead class="table-light">
                                         <tr>
@@ -99,7 +99,7 @@
 
                                 <!--- tabel 2 start--- -->
                                 <!-- end page title------------------------------- -->
-                                <div class="row justify-content-center mt-5 mb-5">
+                                <div class="row justify-content-center mb-5">
                                     <div class="col-lg-11 p-0">
                                         <div class="customer-table-2">
                                             <div class="table-responsive table-info">

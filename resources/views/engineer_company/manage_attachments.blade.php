@@ -150,7 +150,7 @@
                                             </div>
                                             <div class="col-lg-1">
                                                 <div class="file_main_section">
-                                                    <button class="file_button">
+                                                    <button type="button" onclick="printForm($('.main-content'))" class="file_button">
                                                         <img src="{{asset('engineer_company/images/Vector.png')}}">
                                                     </button>
                                                 </div>

@@ -20,6 +20,7 @@
     </tr>
     </thead>
     <tbody id="quote_tbody">
+
     @foreach($quote as $q)
         <tr onclick="SelectRow($(this),'{{$q->id}}')">
             <td>
@@ -58,6 +59,11 @@
             </td>
         </tr>
     @endforeach
+
+    {{--    <tr colspan="8" class="d-none main-tr" id="noRecord">--}}
+    {{--        <img src="{{asset('engineer_company/images/no-data-found.png')}}">--}}
+    {{--    </tr>--}}
+
     </tbody>
 </table>
 
