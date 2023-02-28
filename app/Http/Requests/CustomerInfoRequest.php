@@ -27,6 +27,7 @@ class CustomerInfoRequest extends FormRequest
             'building_name' => 'required',
             'building_management_company' => 'required',
             'maintenance_company' => 'required',
+            'email'=>'required|unique:customer_infos',
         ];
     }
 
