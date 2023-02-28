@@ -79,13 +79,26 @@ class Customer_Info
         try {
             if ($request['filter'] == 'all') {
 
-                $customer = CustomerInfo::orWhere('building_name', 'like', '%' . $request['keyword'] . '%')
-                    ->orWhere('building_management_company', 'like', '%' . $request['keyword'] . '%')
-                    ->orWhere('maintenance_company', 'like', '%' . $request['keyword'] . '%')
-                    ->orWhere('address', 'like', '%' . $request['keyword'] . '%')
-                    ->orWhere('customer_number', 'like', '%' . $request['keyword'] . '%')
-                    ->orWhere('created_at', 'like', '%' . $request['keyword'] . '%')
-                    ->paginate(10);
+                if (activeGuard() != 'admin') {
+                    $customer = CustomerInfo::orWhere('building_name', 'like', '%' . $request['keyword'] . '%')
+                        ->orWhere('building_management_company', 'like', '%' . $request['keyword'] . '%')
+                        ->orWhere('maintenance_company', 'like', '%' . $request['keyword'] . '%')
+                        ->orWhere('address', 'like', '%' . $request['keyword'] . '%')
+                        ->orWhere('customer_number', 'like', '%' . $request['keyword'] . '%')
+                        ->orWhere('created_at', 'like', '%' . $request['keyword'] . '%')
+                        ->where('added_by', activeGuard())
+                        ->where('added_by_id', auth(activeGuard())->id())
+                        ->paginate(10);
+                } else {
+                    $customer = CustomerInfo::orWhere('building_name', 'like', '%' . $request['keyword'] . '%')
+                        ->orWhere('building_management_company', 'like', '%' . $request['keyword'] . '%')
+                        ->orWhere('maintenance_company', 'like', '%' . $request['keyword'] . '%')
+                        ->orWhere('address', 'like', '%' . $request['keyword'] . '%')
+                        ->orWhere('customer_number', 'like', '%' . $request['keyword'] . '%')
+                        ->orWhere('created_at', 'like', '%' . $request['keyword'] . '%')
+                        ->paginate(10);
+                }
+
                 $html = view('engineer_company.customer_list_template', compact('customer'))->render();
 
                 return json_encode([
@@ -108,11 +121,24 @@ class Customer_Info
                             'message' => 'Please enter date in the Year-day-month format'
                         ]);
                     }
-                    $customer = CustomerInfo::where($request['filter'], $date)->paginate(10);
+                    if (activeGuard() == 'admin') {
+                        $customer = CustomerInfo::where($request['filter'], $date)->paginate(10);
+                    } else {
+                        $customer = CustomerInfo::where($request['filter'], $date)
+                            ->where('added_by', activeGuard())
+                            ->where('added_by_id', auth(activeGuard())->id())->paginate(10);
+                    }
+
                     $html = view('engineer_company.customer_list_template', compact('customer'))->render();
 
                 } else {
-                    $customer = CustomerInfo::where($request['filter'], 'like', '%' . $request['keyword'] . '%')->paginate(10);
+                    if (activeGuard() == 'admin') {
+                        $customer = CustomerInfo::where($request['filter'], 'like', '%' . $request['keyword'] . '%')->paginate(10);
+                    } else {
+                        $customer = CustomerInfo::where($request['filter'], 'like', '%' . $request['keyword'] . '%')->where('added_by', activeGuard())
+                            ->where('added_by_id', auth(activeGuard())->id())->paginate(10);
+
+                    }
                     $html = view('engineer_company.customer_list_template', compact('customer'))->render();
 
                 }
