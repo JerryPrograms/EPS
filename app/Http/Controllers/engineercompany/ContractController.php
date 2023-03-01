@@ -128,4 +128,15 @@ class ContractController extends Controller
             'html' => $html,
         ]);
     }
+
+    public static function delete_contract(Request $request)
+    {
+
+
+        $contract = Contract::where('id', $request->id)->delete();
+        return json_encode([
+            'success' => true,
+            'message' => 'Deleted Successfully',
+        ]);
+    }
 }

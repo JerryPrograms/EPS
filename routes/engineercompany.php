@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ConstructionController;
 use App\Http\Controllers\engineercompany\AuthController;
 use App\Http\Controllers\engineercompany\ContractController;
 use App\Http\Controllers\engineercompany\EngineerCompanyController;
@@ -20,7 +21,6 @@ use App\Service\ParkingFacility;
 use App\Service\PartReplacement;
 use App\Service\QuoteService;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ConstructionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -211,7 +211,7 @@ Route::group(['prefix' => 'eps-panel', 'middleware' => 'CommonRoutes'], function
 
     //Contract Management Listing
     Route::get('/contract-management', [ListingController::class, 'contract_management'])->name('contract_management');
-
+    Route::post('/delete-contact-management', [ContractController::class, 'delete_contract'])->name('delete_contract');
     // Quotation Management Listing
     Route::get('/quotation-management', [ListingController::class, 'quotation_management'])->name('quotation_management');
     // Route::post('/del-regular-inspection-log', [ListingController::class, 'del_regular_inspection_log'])->name('del_regular_inspection_log');

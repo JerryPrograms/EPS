@@ -46,8 +46,7 @@
                                                            required="">
                                                     <button type="submit" class="btn btn-primary searchbar_button">
                                                         <div class="search_img">
-                                                            <img
-                                                                src="{{asset('engineer_company/assets/images/search.png')}}">
+                                                            <img  src="{{asset('engineer_company/assets/images/search.png')}}" alt="img">
                                                         </div>
                                                     </button>
                                                 </div>
