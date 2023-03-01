@@ -13,33 +13,33 @@
                                     </h4>
                                     <div class="d-flex align-items-center justify-content-between">
                                         <div class="left-content d-flex align-items-center">
-                                            <select class="form-select select_filter w-25" name="filter"
-                                                    autocomplete="off"
-                                                    required>
-                                                <option selected="" value=""
-                                                        disabled="">{{__('translation.filter')}}</option>
-                                                <option value="all">
-                                                    {{__('translation.all')}}
-                                                </option>
-                                                <option value="created_at">
-                                                    {{__('translation.Registration Date')}}
-                                                </option>
-                                                <option value="building_name">
-                                                    {{__('translation.Building Name')}}
-                                                </option>
-                                                <option value="customer_number">
-                                                    {{__('translation.Customer Number')}}
-                                                </option>
-                                                <option value="address">
-                                                    {{__('translation.Address')}}
-                                                </option>
-                                                <option value="building_management company">
-                                                    {{__('translation.Building Management Company')}}
-                                                </option>
-                                            </select>
+{{--                                            <select class="form-select select_filter w-25" name="filter"--}}
+{{--                                                    autocomplete="off"--}}
+{{--                                                    required>--}}
+{{--                                                <option selected="" value=""--}}
+{{--                                                        disabled="">{{__('translation.filter')}}</option>--}}
+{{--                                                <option value="all">--}}
+{{--                                                    {{__('translation.all')}}--}}
+{{--                                                </option>--}}
+{{--                                                <option value="created_at">--}}
+{{--                                                    {{__('translation.Registration Date')}}--}}
+{{--                                                </option>--}}
+{{--                                                <option value="building_name">--}}
+{{--                                                    {{__('translation.Building Name')}}--}}
+{{--                                                </option>--}}
+{{--                                                <option value="customer_number">--}}
+{{--                                                    {{__('translation.Customer Number')}}--}}
+{{--                                                </option>--}}
+{{--                                                <option value="address">--}}
+{{--                                                    {{__('translation.Address')}}--}}
+{{--                                                </option>--}}
+{{--                                                <option value="building_management company">--}}
+{{--                                                    {{__('translation.Building Management Company')}}--}}
+{{--                                                </option>--}}
+{{--                                            </select>--}}
                                             <div class="custom_search">
                                                 <div class="search">
-                                                    <input type="text" class="form-control" name="keyword"
+                                                    <input id="search" onkeyup="myFunction()" type="text" class="form-control" name="keyword"
                                                            placeholder="{{__('translation.search')}}" autocomplete="off"
                                                            required="">
                                                     <button type="submit" class="btn btn-primary searchbar_button">
@@ -239,6 +239,33 @@
                 error: function () {
                 }
             });
+        }
+
+        let hiddenCount = 0;
+
+        function myFunction() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("search");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("customer_list_table");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[2];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].classList.remove('d-none');
+                    } else {
+                        tr[i].classList.add('d-none');
+                    }
+                }
+            }
+
+            if ($("#customer_list_table tbody tr.main-tr").length == $("#customer_list_table tbody tr.d-none.main-tr").length) {
+                $('#no_record').removeClass('d-none');
+            } else {
+                $("#no_record").addClass('d-none')
+            }
         }
     </script>
 @endsection
