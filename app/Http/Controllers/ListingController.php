@@ -33,10 +33,10 @@ class ListingController extends Controller
             })->latest()->pluck('id');
             $dispatch_information_data = DispatchInformationData::whereIn('customer_id', $customers)->paginate(10);
         } else {
-            $engineers = Engineer::where('affiliated_company', auth(activeGuard())->id())->first();
+            $engineers = Engineer::where('affiliated_company', auth(activeGuard())->id())->pluck('id');
             $customers = CustomerInfo::where(function ($query) use ($engineers) {
                 $query->where('added_by', 'engineer')
-                    ->where('added_by_id', $engineers->id);
+                    ->whereIn('added_by_id', $engineers);
             })->orwhere(function ($query) {
                 $query->where('added_by', activeGuard())
                     ->where('added_by_id', auth(activeGuard())->id());
@@ -75,10 +75,10 @@ class ListingController extends Controller
             $logs = MonthlyRegularInspection::whereIn('customer_id', $customers)->with('getCustomer')->paginate(10);
 
         } else {
-            $engineers = Engineer::where('affiliated_company', auth(activeGuard())->id())->first();
+            $engineers = Engineer::where('affiliated_company', auth(activeGuard())->id())->pluck('id');
             $customers = CustomerInfo::where(function ($query) use ($engineers) {
                 $query->where('added_by', 'engineer')
-                    ->where('added_by_id', $engineers->id);
+                    ->whereIn('added_by_id', $engineers);
             })->orwhere(function ($query) {
                 $query->where('added_by', activeGuard())
                     ->where('added_by_id', auth(activeGuard())->id());
@@ -117,10 +117,10 @@ class ListingController extends Controller
             })->latest()->pluck('id');
             $contracts = Contract::whereIn('customer_id', $customers)->with('get_customer')->paginate(10);
         } else {
-            $engineers = Engineer::where('affiliated_company', auth(activeGuard())->id())->first();
+            $engineers = Engineer::where('affiliated_company', auth(activeGuard())->id())->pluck('id');
             $customers = CustomerInfo::where(function ($query) use ($engineers) {
                 $query->where('added_by', 'engineer')
-                    ->where('added_by_id', $engineers->id);
+                    ->whereIn('added_by_id', $engineers);
             })->orwhere(function ($query) {
                 $query->where('added_by', activeGuard())
                     ->where('added_by_id', auth(activeGuard())->id());
@@ -149,10 +149,10 @@ class ListingController extends Controller
             })->latest()->pluck('id');
             $quotations = Quotation::whereIn('customer_id', $customers)->with('GetQuoteContent', 'getCustomer')->paginate(10);
         } else {
-            $engineers = Engineer::where('affiliated_company', auth(activeGuard())->id())->first();
+            $engineers = Engineer::where('affiliated_company', auth(activeGuard())->id())->pluck('id');
             $customers = CustomerInfo::where(function ($query) use ($engineers) {
                 $query->where('added_by', 'engineer')
-                    ->where('added_by_id', $engineers->id);
+                    ->whereIn('added_by_id', $engineers);
             })->orwhere(function ($query) {
                 $query->where('added_by', activeGuard())
                     ->where('added_by_id', auth(activeGuard())->id());

@@ -19,18 +19,22 @@ class ConstructionController extends Controller
         } else if (activeGuard() == 'engineer') {
             $companies = Engineer_company::where('id', auth(activeGuard())->user()->affiliated_company)->first();
             $completion_reports = CompletionRequestModel::where(function ($query) use ($companies) {
-                $query->where('added_by', $companies->id);
+                $query->where('added_by', $companies->id)
+                    ->where('added_by_user', 'engineer_company');
             })->orwhere(function ($query) {
-                $query->where('added_by', auth(activeGuard())->id());
+                $query->where('added_by', auth(activeGuard())->id())
+                    ->where('added_by_user', activeGuard());
             })->latest()->get();
         } else {
-            $engineers = Engineer::where('affiliated_company', auth(activeGuard())->id())->first();
+            $engineers = Engineer::where('affiliated_company', auth(activeGuard())->id())->pluck('id');
             $completion_reports = CompletionRequestModel::where(function ($query) use ($engineers) {
-                $query->where('added_by', $engineers->id);
+                $query->whereIn('added_by', $engineers)
+                    ->where('added_by_user', 'engineer');
             })->orwhere(function ($query) {
-                $query->where('added_by', auth(activeGuard())->id());
+                $query->where('added_by', auth(activeGuard())->id())
+                    ->where('added_by_user', activeGuard());
             })->latest()->get();
-           }
+        }
         return view('engineer_company.construction_completion', compact('completion_reports'));
     }
 
@@ -81,6 +85,7 @@ class ConstructionController extends Controller
                 'site' => json_encode($request->site),
                 'date' => json_encode($request->date),
                 'photo' => json_encode($photos),
+                'added_by_user' => activeGuard(),
             ]);
             return json_encode([
                 'success' => true,

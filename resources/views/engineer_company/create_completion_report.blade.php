@@ -315,6 +315,7 @@
                             <!-- end row -->
                         </div>
                     </div>
+                    <input name="added_by_user" value="{{activeGuard()}}" hidden>
                 </form>
                 <!-- section 2 end  -->
             </div>
