@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Contract;
 use App\Models\CustomerInfo;
 use App\Models\DispatchInformationData;
+use App\Models\Engineer_company;
 use App\Models\MonthlyRegularInspection;
 use App\Models\Quotation;
 use Illuminate\Http\Request;
@@ -20,6 +21,16 @@ class ListingController extends Controller
             $dispatch_information_data = DispatchInformationData::where('customer_id', auth('web')->id())->paginate(10);
         } else if (activeGuard() == 'admin') {
             $dispatch_information_data = DispatchInformationData::paginate(10);
+        } else if (activeGuard() == 'engineer') {
+            $companies = Engineer_company::where('id', auth(activeGuard())->user()->affiliated_company)->first();
+            $customers = CustomerInfo::where(function ($query) use ($companies) {
+                $query->where('added_by', 'engineer_company')
+                    ->where('added_by_id', $companies->id);
+            })->orwhere(function ($query) {
+                $query->where('added_by', activeGuard())
+                    ->where('added_by_id', auth(activeGuard())->id());
+            })->latest()->pluck('id');
+            $dispatch_information_data = DispatchInformationData::whereIn('customer_id', $customers)->paginate(10);
         } else {
             $customers = CustomerInfo::where('added_by', activeGuard())->where('added_by_id', auth(activeGuard())->id())->pluck('id');
             $dispatch_information_data = DispatchInformationData::whereIn('customer_id', $customers)->paginate(10);
@@ -44,6 +55,17 @@ class ListingController extends Controller
             $logs = MonthlyRegularInspection::where('customer_id', auth('web')->id())->with('getCustomer')->paginate(10);
         } else if (activeGuard() == 'admin') {
             $logs = MonthlyRegularInspection::with('getCustomer')->paginate(10);
+        } else if (activeGuard() == 'engineer') {
+            $companies = Engineer_company::where('id', auth(activeGuard())->user()->affiliated_company)->first();
+            $customers = CustomerInfo::where(function ($query) use ($companies) {
+                $query->where('added_by', 'engineer_company')
+                    ->where('added_by_id', $companies->id);
+            })->orwhere(function ($query) {
+                $query->where('added_by', activeGuard())
+                    ->where('added_by_id', auth(activeGuard())->id());
+            })->latest()->pluck('id');
+            $logs = MonthlyRegularInspection::whereIn('customer_id', $customers)->with('getCustomer')->paginate(10);
+
         } else {
             $customers = CustomerInfo::where('added_by', activeGuard())->where('added_by_id', auth(activeGuard())->id())->pluck('id');
             $logs = MonthlyRegularInspection::whereIn('customer_id', $customers)->with('getCustomer')->paginate(10);
@@ -69,6 +91,16 @@ class ListingController extends Controller
             $contracts = Contract::where('customer_id', auth('web')->id())->with('get_customer')->paginate(10);
         } else if (activeGuard() == 'admin') {
             $contracts = Contract::with('get_customer')->paginate(10);
+        } else if (activeGuard() == 'engineer') {
+            $companies = Engineer_company::where('id', auth(activeGuard())->user()->affiliated_company)->first();
+            $customers = CustomerInfo::where(function ($query) use ($companies) {
+                $query->where('added_by', 'engineer_company')
+                    ->where('added_by_id', $companies->id);
+            })->orwhere(function ($query) {
+                $query->where('added_by', activeGuard())
+                    ->where('added_by_id', auth(activeGuard())->id());
+            })->latest()->pluck('id');
+            $contracts = Contract::whereIn('customer_id', $customers)->with('get_customer')->paginate(10);
         } else {
             $customers = CustomerInfo::where('added_by', activeGuard())->where('added_by_id', auth(activeGuard())->id())->pluck('id');
             $contracts = Contract::whereIn('customer_id', $customers)->with('get_customer')->paginate(10);
@@ -84,6 +116,16 @@ class ListingController extends Controller
             $quotations = Quotation::where('customer_id', auth('web')->id())->with('GetQuoteContent', 'getCustomer')->paginate(10);
         } else if (activeGuard() == 'admin') {
             $quotations = Quotation::with('GetQuoteContent', 'getCustomer')->paginate(10);
+        } else if (activeGuard() == 'engineer') {
+            $companies = Engineer_company::where('id', auth(activeGuard())->user()->affiliated_company)->first();
+            $customers = CustomerInfo::where(function ($query) use ($companies) {
+                $query->where('added_by', 'engineer_company')
+                    ->where('added_by_id', $companies->id);
+            })->orwhere(function ($query) {
+                $query->where('added_by', activeGuard())
+                    ->where('added_by_id', auth(activeGuard())->id());
+            })->latest()->pluck('id');
+            $quotations = Quotation::whereIn('customer_id', $customers)->with('GetQuoteContent', 'getCustomer')->paginate(10);
         } else {
             $customers = CustomerInfo::where('added_by', activeGuard())->where('added_by_id', auth(activeGuard())->id())->pluck('id');
             $quotations = Quotation::whereIn('customer_id', $customers)->with('GetQuoteContent', 'getCustomer')->paginate(10);
