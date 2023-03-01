@@ -33,12 +33,12 @@
                                                     <div class="col-lg-9 col-md-6 col-12">
                                                         <input type="text" class="d-none form-control form-theme-input"
                                                                name="company_name" value="{{auth(activeGuard())->id()}}"
-                                                               id="name"
+
                                                                placeholder="{{ __('translation.Write name') }}"
                                                                required>
                                                         <input type="text" class="form-control form-theme-input"
                                                                value="{{auth(activeGuard())->user()->name}}"
-                                                               id="name"
+
                                                                placeholder="{{ __('translation.Write name') }}"
                                                                disabled>
                                                     </div>
@@ -61,12 +61,12 @@
                                         <div class="form-group mb-4">
                                             <div class="row align-items-center">
                                                 <div class="col-lg-3 col-md-6 col-12">
-                                                    <label for="name"
+                                                    <label
                                                            class="mb-0">{{ __('translation.Name') }}</label>
                                                 </div>
                                                 <div class="col-lg-9 col-md-6 col-12">
                                                     <input type="text" class="form-control form-theme-input"
-                                                           name="name" id="name"
+                                                           name="name"
                                                            placeholder="{{ __('translation.Write name') }}" required>
                                                 </div>
                                             </div>
@@ -74,12 +74,12 @@
                                         <div class="form-group mb-4">
                                             <div class="row align-items-center">
                                                 <div class="col-lg-3 col-md-6 col-12">
-                                                    <label for="name"
+                                                    <label
                                                            class="mb-0">{{ __('translation.Email') }}</label>
                                                 </div>
                                                 <div class="col-lg-9 col-md-6 col-12">
                                                     <input type="email" class="form-control form-theme-input"
-                                                           name="email" id="name"
+                                                           name="email"
                                                            placeholder="{{ __('translation.Write email') }}" required>
                                                 </div>
                                             </div>
