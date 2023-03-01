@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ConstructionCompletionRequest;
 use App\Models\CompletionRequestModel;
+use App\Models\Engineer;
 use App\Models\Engineer_company;
 use Illuminate\Http\Request;
 
@@ -23,8 +24,13 @@ class ConstructionController extends Controller
                 $query->where('added_by', auth(activeGuard())->id());
             })->latest()->get();
         } else {
-            $completion_reports = CompletionRequestModel::where('added_by', auth(activeGuard())->id())->latest()->get();
-        }
+            $engineers = Engineer::where('affiliated_company', auth(activeGuard())->id())->first();
+            $completion_reports = CompletionRequestModel::where(function ($query) use ($engineers) {
+                $query->where('added_by', $engineers->id);
+            })->orwhere(function ($query) {
+                $query->where('added_by', auth(activeGuard())->id());
+            })->latest()->get();
+           }
         return view('engineer_company.construction_completion', compact('completion_reports'));
     }
 

@@ -27,32 +27,47 @@
                                             <div class="row align-items-center">
                                                 <div class="col-lg-3 col-md-6 col-12">
                                                     <label for="company_name"
-                                                        class="mb-0">{{ __('translation.Affliated Company Name') }}</label>
+                                                           class="mb-0">{{ __('translation.Affliated Company Name') }}</label>
                                                 </div>
-                                                <div class="col-lg-9 col-md-6 col-12">
-                                                    <select name="company_name" id="company_name"
-                                                        class="form-control form-theme-input" required>
-                                                        <option value="">
-                                                            {{ __('translation.Write affiliated company name') }}
-                                                        </option>
-                                                        @foreach ($engineer_companies as $engineer_company)
-                                                            <option value="{{ $engineer_company->id }}">
-                                                                {{ $engineer_company->name }}</option>
-                                                        @endforeach
-                                                    </select>
-                                                </div>
+                                                @if(activeGuard() == 'engineer_company')
+                                                    <div class="col-lg-9 col-md-6 col-12">
+                                                        <input type="text" class="d-none form-control form-theme-input"
+                                                               name="company_name" value="{{auth(activeGuard())->id()}}"
+                                                               id="name"
+                                                               placeholder="{{ __('translation.Write name') }}"
+                                                               required>
+                                                        <input type="text" class="form-control form-theme-input"
+                                                               value="{{auth(activeGuard())->user()->name}}"
+                                                               id="name"
+                                                               placeholder="{{ __('translation.Write name') }}"
+                                                               disabled>
+                                                    </div>
+                                                @else
+                                                    <div class="col-lg-9 col-md-6 col-12">
+                                                        <select name="company_name" id="company_name"
+                                                                class="form-control form-theme-input" required>
+                                                            <option value="">
+                                                                {{ __('translation.Write affiliated company name') }}
+                                                            </option>
+                                                            @foreach ($engineer_companies as $engineer_company)
+                                                                <option value="{{ $engineer_company->id }}">
+                                                                    {{ $engineer_company->name }}</option>
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
+                                                @endif
                                             </div>
                                         </div>
                                         <div class="form-group mb-4">
                                             <div class="row align-items-center">
                                                 <div class="col-lg-3 col-md-6 col-12">
                                                     <label for="name"
-                                                        class="mb-0">{{ __('translation.Name') }}</label>
+                                                           class="mb-0">{{ __('translation.Name') }}</label>
                                                 </div>
                                                 <div class="col-lg-9 col-md-6 col-12">
                                                     <input type="text" class="form-control form-theme-input"
-                                                        name="name" id="name"
-                                                        placeholder="{{ __('translation.Write name') }}" required>
+                                                           name="name" id="name"
+                                                           placeholder="{{ __('translation.Write name') }}" required>
                                                 </div>
                                             </div>
                                         </div>
@@ -60,12 +75,12 @@
                                             <div class="row align-items-center">
                                                 <div class="col-lg-3 col-md-6 col-12">
                                                     <label for="name"
-                                                        class="mb-0">{{ __('translation.Email') }}</label>
+                                                           class="mb-0">{{ __('translation.Email') }}</label>
                                                 </div>
                                                 <div class="col-lg-9 col-md-6 col-12">
                                                     <input type="email" class="form-control form-theme-input"
-                                                        name="email" id="name"
-                                                        placeholder="{{ __('translation.Write email') }}" required>
+                                                           name="email" id="name"
+                                                           placeholder="{{ __('translation.Write email') }}" required>
                                                 </div>
                                             </div>
                                         </div>
@@ -73,12 +88,13 @@
                                             <div class="row align-items-center">
                                                 <div class="col-lg-3 col-md-6 col-12">
                                                     <label for="phone_number"
-                                                        class="mb-0">{{ __('translation.Phone number') }}</label>
+                                                           class="mb-0">{{ __('translation.Phone number') }}</label>
                                                 </div>
                                                 <div class="col-lg-9 col-md-6 col-12">
                                                     <input type="number" class="form-control form-theme-input"
-                                                        name="phone" id="phone_number"
-                                                        placeholder="{{ __('translation.Write phone number') }}" required>
+                                                           name="phone" id="phone_number"
+                                                           placeholder="{{ __('translation.Write phone number') }}"
+                                                           required>
                                                 </div>
                                             </div>
                                         </div>
@@ -89,8 +105,8 @@
                                                 </div>
                                                 <div class="col-lg-9 col-md-6 col-12">
                                                     <input type="text" class="form-control form-theme-input"
-                                                        name="id" id="id"
-                                                        placeholder="{{ __('translation.Write ID') }}" required>
+                                                           name="id" id="id"
+                                                           placeholder="{{ __('translation.Write ID') }}" required>
                                                 </div>
                                             </div>
                                         </div>
@@ -98,18 +114,20 @@
                                             <div class="row align-items-center">
                                                 <div class="col-lg-3 col-md-6 col-12">
                                                     <label for="password"
-                                                        class="mb-0">{{ __('translation.Password') }}</label>
+                                                           class="mb-0">{{ __('translation.Password') }}</label>
                                                 </div>
                                                 <div class="col-lg-9 col-md-6 col-12">
                                                     <input type="password" class="form-control form-theme-input"
-                                                        name="password" id="password"
-                                                        placeholder="{{ __('translation.Write password') }}" required>
+                                                           name="password" id="password"
+                                                           placeholder="{{ __('translation.Write password') }}"
+                                                           required>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="form-action mt-4 text-end">
                                             <button id="addEngineerBtn" type="submit"
-                                                class="btn btn-primary">Register</button>
+                                                    class="btn btn-primary">Register
+                                            </button>
                                         </div>
                                     </form>
                                 </div>
@@ -128,7 +146,7 @@
 @section('custom-script')
     <script>
         $('#addEngineerForm').validate({
-            submitHandler: function() {
+            submitHandler: function () {
                 ajaxCall($('#addEngineerForm'), "{{ route('add_engineer_action') }}", $('#addEngineerBtn'),
                     "{{ route('engineers') }}", onRequestSuccess);
             }

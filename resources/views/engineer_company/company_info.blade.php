@@ -215,7 +215,7 @@
                                                 <div class="row align-items-center mt-4">
                                                     <div class="col-md-4 col-12"><label
                                                             class="form-label custom_lab mb-0"> <span
-                                                                class="star_section">&nbsp;</span>
+                                                                class="star_section">*</span>
                                                                 {{ __('translation.Payment method') }}
                                                                 </label></div>
                                                     <div class="col-md-8 col-12">

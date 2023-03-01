@@ -5,6 +5,7 @@ namespace App\Http\Controllers\engineercompany;
 use App\Http\Controllers\Controller;
 use App\Models\CustomerInfo;
 use App\Models\DispatchInformationData;
+use App\Models\Engineer;
 use App\Models\Engineer_company;
 use App\Models\Events;
 use App\Models\Quotation;
@@ -36,7 +37,14 @@ class EngineerCompanyController extends Controller
                     ->where('added_by_id', auth(activeGuard())->id());
             })->latest()->paginate(10);
         } else {
-            $customer = CustomerInfo::where('added_by', activeGuard())->where('added_by_id', auth(activeGuard())->id())->latest()->paginate(10);
+            $engineers = Engineer::where('affiliated_company', auth(activeGuard())->id())->first();
+            $customer = CustomerInfo::where(function ($query) use ($engineers) {
+                $query->where('added_by', 'engineer')
+                    ->where('added_by_id', $engineers->id);
+            })->orwhere(function ($query) {
+                $query->where('added_by', activeGuard())
+                    ->where('added_by_id', auth(activeGuard())->id());
+            })->latest()->paginate(10);
         }
         return view('engineer_company.customer_list', compact('customer'));
     }

@@ -14,19 +14,37 @@ class Customer_Info
     public static function CreateCustomerInfo(CustomerInfoRequest $request)
     {
         try {
-            $is_created = CustomerInfo::create([
-                'user_uid' => Str::uuid(),
-                'building_name' => $request['building_name'],
-                'building_management_company' => $request['building_management_company'],
-                'maintenance_company' => $request['maintenance_company'],
-                'address' => $request['address'],
-                'customer_number' => Str::random(10),
-                'added_by' => activeGuard(),
-                'added_by_id' => auth(activeGuard())->id(),
-                'name' => $request['name'],
-                'email' => $request['email'],
-                'password' => Hash::make($request['password']),
-            ]);
+            if(activeGuard() == 'admin')
+            {
+                $is_created = CustomerInfo::create([
+                    'user_uid' => Str::uuid(),
+                    'building_name' => $request['building_name'],
+                    'building_management_company' => $request['building_management_company'],
+                    'maintenance_company' => $request['maintenance_company'],
+                    'address' => $request['address'],
+                    'customer_number' => Str::random(10),
+                    'added_by' => activeGuard(),
+                    'added_by_id' => $request->added_by_id,
+                    'name' => $request['name'],
+                    'email' => $request['email'],
+                    'password' => Hash::make($request['password']),
+                ]);
+            }
+            else{
+                $is_created = CustomerInfo::create([
+                    'user_uid' => Str::uuid(),
+                    'building_name' => $request['building_name'],
+                    'building_management_company' => $request['building_management_company'],
+                    'maintenance_company' => $request['maintenance_company'],
+                    'address' => $request['address'],
+                    'customer_number' => Str::random(10),
+                    'added_by' => activeGuard(),
+                    'added_by_id' => auth(activeGuard())->id(),
+                    'name' => $request['name'],
+                    'email' => $request['email'],
+                    'password' => Hash::make($request['password']),
+                ]);
+            }
             if ($is_created) {
                 return json_encode([
                     'success' => true,
