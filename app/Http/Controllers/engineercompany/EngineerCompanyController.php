@@ -38,6 +38,7 @@ class EngineerCompanyController extends Controller
             })->latest()->paginate(10);
         } else {
             $engineers = Engineer::where('affiliated_company', auth(activeGuard())->id())->first();
+            dd($engineers);
             $customer = CustomerInfo::orWhere(function ($query) use ($engineers) {
                 $query->where('added_by', 'engineer')
                     ->where('added_by_id', $engineers->id);
