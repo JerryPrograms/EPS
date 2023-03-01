@@ -43,7 +43,7 @@
                                                 <button type="submit" class="btn btn-primary searchbar_button">
                                                     <div class="search_img">
                                                         <img
-                                                            src="http://127.0.0.1:8000/engineer_company/assets/images/search.png">
+                                                            src="{{asset('engineer_company/assets/images/search.png')}}">
                                                     </div>
                                                 </button>
                                             </div>
