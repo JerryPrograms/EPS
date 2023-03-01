@@ -146,7 +146,7 @@
                                                                                                 </label>
                                                                                             </div>
                                                                                             <div class="col-lg-10">
-                                                                                                <input type="number"
+                                                                                                <input onkeyup="calculateSum()" type="number"
                                                                                                     min="1"
                                                                                                     class="form-control  custom_input"
                                                                                                     name="quantity[]"
@@ -361,6 +361,7 @@
                                                                                         <div class="col-lg-10">
                                                                                             <input type="number"
                                                                                                    min="1"
+                                                                                                   onkeyup="calculateSum()"
                                                                                                    class="form-control  custom_input"
                                                                                                    name="quantity[]"
                                                                                                    aria-describedby="emailHelp"
