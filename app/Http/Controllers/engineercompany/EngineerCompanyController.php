@@ -37,11 +37,10 @@ class EngineerCompanyController extends Controller
                     ->where('added_by_id', auth(activeGuard())->id());
             })->latest()->paginate(10);
         } else {
-            $engineers = Engineer::where('affiliated_company', auth(activeGuard())->id())->first();
-            dd($engineers);
+            $engineers = Engineer::where('affiliated_company', auth(activeGuard())->id())->pluck('id');
             $customer = CustomerInfo::orWhere(function ($query) use ($engineers) {
                 $query->where('added_by', 'engineer')
-                    ->where('added_by_id', $engineers->id);
+                    ->whereIn('added_by_id', $engineers);
             })->orWhere(function ($query) {
                 $query->where('added_by', activeGuard())
                     ->where('added_by_id', auth(activeGuard())->id());
