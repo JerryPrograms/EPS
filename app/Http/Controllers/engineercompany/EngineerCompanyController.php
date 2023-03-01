@@ -29,19 +29,19 @@ class EngineerCompanyController extends Controller
             $customer = CustomerInfo::latest()->paginate(10);
         } else if (activeGuard() == 'engineer') {
             $companies = Engineer_company::where('id', auth(activeGuard())->user()->affiliated_company)->first();
-            $customer = CustomerInfo::orwhere(function ($query) use ($companies) {
+            $customer = CustomerInfo::orWhere(function ($query) use ($companies) {
                 $query->where('added_by', 'engineer_company')
                     ->where('added_by_id', $companies->id);
-            })->orwhere(function ($query) {
+            })->orWhere(function ($query) {
                 $query->where('added_by', activeGuard())
                     ->where('added_by_id', auth(activeGuard())->id());
             })->latest()->paginate(10);
         } else {
             $engineers = Engineer::where('affiliated_company', auth(activeGuard())->id())->first();
-            $customer = CustomerInfo::orwhere(function ($query) use ($engineers) {
+            $customer = CustomerInfo::orWhere(function ($query) use ($engineers) {
                 $query->where('added_by', 'engineer')
                     ->where('added_by_id', $engineers->id);
-            })->orwhere(function ($query) {
+            })->orWhere(function ($query) {
                 $query->where('added_by', activeGuard())
                     ->where('added_by_id', auth(activeGuard())->id());
             })->latest()->paginate(10);
