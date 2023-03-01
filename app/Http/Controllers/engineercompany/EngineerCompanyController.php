@@ -38,16 +38,14 @@ class EngineerCompanyController extends Controller
             })->latest()->paginate(10);
         } else {
             $engineers = Engineer::where('affiliated_company', auth(activeGuard())->id())->first();
-            dd($engineers);
+//            dd($engineers);
             $customer = CustomerInfo::orWhere(function ($query) use ($engineers) {
                 $query->where('added_by', 'engineer')
                     ->where('added_by_id', $engineers->id);
-            })
-//                ->orWhere(function ($query) {
-//                $query->where('added_by', activeGuard())
-//                    ->where('added_by_id', auth(activeGuard())->id());
-//            })
-                ->latest()->paginate(10);
+            })->orWhere(function ($query) {
+                $query->where('added_by', activeGuard())
+                    ->where('added_by_id', auth(activeGuard())->id());
+            })->latest()->paginate(10);
         }
         return view('engineer_company.customer_list', compact('customer'));
     }
