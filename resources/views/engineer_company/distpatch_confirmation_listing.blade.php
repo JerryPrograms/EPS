@@ -35,7 +35,7 @@
                                                     <tr>
                                                         <td>{{ $loop->index + 1 }}</td>
                                                         <td>{{ $reception_date_and_time[0] }}</td>
-                                                        <td>{{ $reception_date_and_time[0] }}</td>
+                                                        <td>{{ $reception_date_and_time[1] }}</td>
                                                         <td>{{ $v->dispatcher }}</td>
                                                         <td title="{{ $v->submission_details }}">{{ Str::limit($v->submission_details, 10, '...') }}</td>
                                                         <td>{{ $v->GetCustomer->customer_number }}</td>
