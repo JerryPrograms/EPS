@@ -1,5 +1,10 @@
 @extends('engineer_company.includes.layout')
 @section('body')
+    <style>
+        .selected-row {
+            border: 3px solid #6281FE !important;
+        }
+    </style>
     <div class="main-content">
         <div class="page-content">
             <div class="container-fluid">
@@ -47,8 +52,13 @@
                                                             src="{{asset('engineer_company/assets/images/search.png')}}">
                                                     </div>
                                                 </button>
+
                                             </div>
                                         </div>
+                                        <button type="button" onclick="openDeleteModal()"
+                                                class="btn btn-primary">
+                                            Delete
+                                        </button>
                                         <div class="buttons d-flex align-items-center justify-content-between gap-1">
                                             <a href="{{ route('add_contract', $customer->user_uid) }}"
                                                class="btn btn-primary">{{ __('translation.Add') }}</a>
@@ -224,9 +234,33 @@
             }
         }
 
-        function openDeleteModal(id) {
-            $('#customerDeleteModal').modal('show');
-            $('#customerInfoID').val(id);
+        function openDeleteModal() {
+
+
+            if ($('#customerInfoID').val() == '') {
+                Command: toastr["error"]("You need to select row first")
+
+                toastr.options = {
+                    "closeButton": false,
+                    "debug": false,
+                    "newestOnTop": false,
+                    "progressBar": true,
+                    "positionClass": "toast-top-right",
+                    "preventDuplicates": true,
+                    "onclick": null,
+                    "showDuration": 300,
+                    "hideDuration": 1000,
+                    "timeOut": 2000,
+                    "extendedTimeOut": 1000,
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                }
+            } else {
+                $('#customerDeleteModal').modal('show');
+
+            }
         }
 
         $('#customerDeleteForm').validate({
@@ -319,5 +353,13 @@
                 });
             }
         });
+
+        function SelectRow(row, id) {
+            $('tr').each(function () {
+                $(this).removeClass('selected-row');
+            });
+            row.addClass('selected-row');
+            $('#customerInfoID').val(id);
+        }
     </script>
 @endsection

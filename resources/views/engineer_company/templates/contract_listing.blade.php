@@ -26,7 +26,7 @@
     </thead>
     <tbody id="myTable">
     @foreach ($contracts as $v)
-        <tr>
+        <tr onclick="SelectRow($(this),'{{$v->id}}')">
             <td>
                 {{ $loop->index + 1 }}
             </td>
@@ -64,10 +64,6 @@
                     </button>
                     <button class="btn btn-outline-light btn-theme-light-outline btn-outline btn-sm">
                         <img src="{{ asset('engineer_company/assets/images/archive_icon.png') }}">
-                    </button>
-                    <button onclick="openDeleteModal('{{$v->id}}')"
-                            class="btn btn-outline-light btn-theme-light-outline btn-outline btn-sm">
-                        <img src="{{asset('engineer_company/assets/images/delete.png')}}">
                     </button>
                 @endif
             </td>
