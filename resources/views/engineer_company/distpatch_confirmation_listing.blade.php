@@ -20,7 +20,12 @@
                                                                placeholder="{{ __('translation.search') }}"
                                                                autocomplete="off"
                                                                required="">
-
+                                                        <button type="submit" class="btn btn-primary searchbar_button">
+                                                            <div class="search_img">
+                                                                <img
+                                                                    src="{{asset('engineer_company/assets/images/search.png')}}">
+                                                            </div>
+                                                        </button>
                                                     </div>
                                                 </div>
                                             </div>

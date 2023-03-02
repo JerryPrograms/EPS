@@ -8,35 +8,12 @@
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title mb-4">
-                                        {{__('translation.Construction Completion Management')}}
-                                    </h4>
-                                    <div class="d-flex align-items-center justify-content-between">
+
+                                    <div class="card-title d-flex align-items-center justify-content-between mobile-flex-column mb-0 py-2">
+                                        <h4 class="">
+                                            {{__('translation.Construction Completion Management')}}
+                                        </h4>
                                         <div class="left-content d-flex align-items-center">
-                                            {{--                                            <select class="form-select select_filter w-25" name="filter"--}}
-                                            {{--                                                    autocomplete="off"--}}
-                                            {{--                                                    required>--}}
-                                            {{--                                                <option selected="" value=""--}}
-                                            {{--                                                        disabled="">{{__('translation.filter')}}</option>--}}
-                                            {{--                                                <option value="all">--}}
-                                            {{--                                                    {{__('translation.all')}}--}}
-                                            {{--                                                </option>--}}
-                                            {{--                                                <option value="created_at">--}}
-                                            {{--                                                    {{__('translation.Registration Date')}}--}}
-                                            {{--                                                </option>--}}
-                                            {{--                                                <option value="building_name">--}}
-                                            {{--                                                    {{__('translation.Building Name')}}--}}
-                                            {{--                                                </option>--}}
-                                            {{--                                                <option value="customer_number">--}}
-                                            {{--                                                    {{__('translation.Customer Number')}}--}}
-                                            {{--                                                </option>--}}
-                                            {{--                                                <option value="address">--}}
-                                            {{--                                                    {{__('translation.Address')}}--}}
-                                            {{--                                                </option>--}}
-                                            {{--                                                <option value="building_management company">--}}
-                                            {{--                                                    {{__('translation.Building Management Company')}}--}}
-                                            {{--                                                </option>--}}
-                                            {{--                                            </select>--}}
                                             <div class="custom_search">
                                                 <div class="search">
                                                     <input id="search" onkeyup="myFunction()" type="text"

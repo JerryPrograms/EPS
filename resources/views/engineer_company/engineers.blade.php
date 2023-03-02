@@ -20,7 +20,12 @@
                                                                placeholder="{{ __('translation.search') }}"
                                                                autocomplete="off"
                                                                required="">
-
+                                                        <button type="submit" class="btn btn-primary searchbar_button">
+                                                            <div class="search_img">
+                                                                <img
+                                                                    src="{{asset('engineer_company/assets/images/search.png')}}">
+                                                            </div>
+                                                        </button>
                                                     </div>
 
                                                 </div>
@@ -55,11 +60,13 @@
                                                         <td>{{ $engineer->phone }}</td>
                                                         <td>
                                                             <div class="d-flex gap-1 justify-content-center">
-                                                                <a @if(activeGuard() == 'admin') style="background-color: #696CFF !important; border: none" @endif href="{{ route('edit_engineer',$engineer->id) }}"
+                                                                <a @if(activeGuard() == 'admin') style="background-color: #696CFF !important; border: none"
+                                                                   @endif href="{{ route('edit_engineer',$engineer->id) }}"
                                                                    class="btn btn-primary btn-custom-table btn-sm">
                                                                     <i class="bx bxs-edit-alt"></i>
                                                                 </a>
-                                                                <a @if(activeGuard() == 'admin') style="background-color: #FF3E1D !important; border: none" @endif data-bs-toggle="modal"
+                                                                <a @if(activeGuard() == 'admin') style="background-color: #FF3E1D !important; border: none"
+                                                                   @endif data-bs-toggle="modal"
                                                                    data-del-id="{{ $engineer->id }}"
                                                                    data-bs-target="#delModal"
                                                                    class="btn btn-danger btn-custom-table btn-sm delBtn">
