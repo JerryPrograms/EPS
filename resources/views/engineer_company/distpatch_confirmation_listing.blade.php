@@ -11,6 +11,20 @@
                                     <div
                                         class="card-title mb-4 d-flex align-items-center justify-content-between mobile-flex-column">
                                         <h5 class="mb-0 font-15">{{ __('translation.Dispatch Confirmation Management') }}</h5>
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <div class="left-content d-flex align-items-center">
+                                                <div class="custom_search">
+                                                    <div class="search">
+                                                        <input id="myInput" type="text"
+                                                               class="form-control" name="keyword"
+                                                               placeholder="{{ __('translation.search') }}"
+                                                               autocomplete="off"
+                                                               required="">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                     @if (count($dispatch_information_data) > 0)
                                         <div class="table-responsive data-set-list mt-3">
@@ -27,7 +41,7 @@
                                                     <th>{{ __('translation.Action') }}</th>
                                                 </tr>
                                                 </thead>
-                                                <tbody>
+                                                <tbody id="myTable">
                                                 @foreach ($dispatch_information_data as $v)
                                                     @php
                                                         $reception_date_and_time = explode(' ',$v->reception_date_and_time);
@@ -35,7 +49,7 @@
                                                     <tr>
                                                         <td>{{ $loop->index + 1 }}</td>
                                                         <td>{{ $reception_date_and_time[0] }}</td>
-                                                        <td>{{ $reception_date_and_time[1] }}</td>
+                                                        <td>{{ \Carbon\Carbon::parse($reception_date_and_time[1])->format('g:i A') }}</td>
                                                         <td>{{ $v->dispatcher }}</td>
                                                         <td title="{{ $v->submission_details }}">{{ Str::limit($v->submission_details, 10, '...') }}</td>
                                                         <td>{{ $v->GetCustomer->customer_number }}</td>
@@ -69,7 +83,8 @@
                                         </div>
                                     @else
                                         <div class="text-center">
-                                            <img style="width: 500px!important;" src="{{asset('engineer_company/images/no-data-found.png')}}"
+                                            <img style="width: 500px!important;"
+                                                 src="{{asset('engineer_company/images/no-data-found.png')}}"
                                                  alt="No Records Found">
                                         </div>
                                     @endif
@@ -141,6 +156,16 @@
                 error: function () {
                 }
             });
+        })
+
+        var $rows = $('#myTable tr');
+        $('#myInput').keyup(function () {
+            var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+
+            $rows.show().filter(function () {
+                var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+                return !~text.indexOf(val);
+            }).hide();
         });
     </script>
 @endsection

@@ -11,6 +11,20 @@
                                     <div
                                         class="card-title mb-4 d-flex align-items-center justify-content-between mobile-flex-column">
                                         <h5 class="mb-0 font-15">{{ __('translation.Regular Inspection Log Management') }}</h5>
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <div class="left-content d-flex align-items-center">
+                                                <div class="custom_search">
+                                                    <div class="search">
+                                                        <input id="myInput" onchange="myFunction()" type="text"
+                                                               class="form-control" name="keyword"
+                                                               placeholder="{{ __('translation.search') }}"
+                                                               autocomplete="off"
+                                                               required="">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                     @if (count($logs) > 0)
                                         <div class="table-responsive data-set-list mt-3">
@@ -26,7 +40,7 @@
                                                     <th>{{ __('translation.action') }}</th>
                                                 </tr>
                                                 </thead>
-                                                <tbody>
+                                                <tbody id="myTable">
                                                 @foreach ($logs as $v)
                                                     <tr>
                                                         <td>{{ $loop->index + 1 }}</td>
@@ -136,6 +150,16 @@
                 error: function () {
                 }
             });
+        });
+
+        var $rows = $('#myTable tr');
+        $('#myInput').keyup(function () {
+            var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+
+            $rows.show().filter(function () {
+                var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+                return !~text.indexOf(val);
+            }).hide();
         });
     </script>
 @endsection

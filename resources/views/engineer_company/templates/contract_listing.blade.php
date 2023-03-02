@@ -1,4 +1,4 @@
-<table id="myTable" class="table align-middle mb-0 table-theme">
+<table  class="table align-middle mb-0 table-theme">
     <thead class="table-light">
     <tr>
 
