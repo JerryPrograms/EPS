@@ -10,7 +10,69 @@
                                 <div class="card-body">
                                     <div
                                         class="card-title mb-4 d-flex align-items-center justify-content-between mobile-flex-column">
-                                        <h5 class="mb-0 font-15">{{ __('translation.Regular Inspection Log Management') }}</h5>
+                                        <div class="d-flex w-75 align-items-center">
+                                            <h5 class="mb-0 font-15">{{ __('translation.Regular Inspection Log Management') }}</h5>
+                                            <select
+                                                onchange="window.location.href = '{{route('regular_inspection_logs','id')}}'.replace('id',$(this).val())"
+                                                class="form-select valid w-25 ms-3" name="type" autocomplete="off"
+                                                required="">
+                                                <option selected value="" disabled="">
+                                                    --Select Filter--
+                                                </option>
+                                                <option
+                                                    {{request()->segment(3) == '1' ? 'selected' : ''}} value="1">{{ date("Y")}}
+                                                    -01
+                                                </option>
+                                                <option
+                                                    {{request()->segment(3) == '2' ? 'selected' : ''}} value="2">{{ date("Y")}}
+                                                    -02
+                                                </option>
+                                                <option
+                                                    {{request()->segment(3) == '3' ? 'selected' : ''}} value="3">{{ date("Y")}}
+                                                    -03
+                                                </option>
+                                                <option
+                                                    {{request()->segment(3) == '4' ? 'selected' : ''}} value="4">{{ date("Y")}}
+                                                    -04
+                                                </option>
+                                                <option
+                                                    {{request()->segment(3) == '5' ? 'selected' : ''}} value="5">{{ date("Y")}}
+                                                    -05
+                                                </option>
+                                                <option
+                                                    {{request()->segment(3) == '6' ? 'selected' : ''}} value="6">{{ date("Y")}}
+                                                    -06
+                                                </option>
+                                                <option
+                                                    {{request()->segment(3) == '7' ? 'selected' : ''}} value="7">{{ date("Y")}}
+                                                    -07
+                                                </option>
+                                                <option
+                                                    {{request()->segment(3) == '8' ? 'selected' : ''}} value="8">{{ date("Y")}}
+                                                    -08
+                                                </option>
+                                                <option
+                                                    {{request()->segment(3) == '9' ? 'selected' : ''}} value="9">{{ date("Y")}}
+                                                    -09
+                                                </option>
+                                                <option
+                                                    {{request()->segment(3) == '10' ? 'selected' : ''}} value="10">{{ date("Y")}}
+                                                    -10
+                                                </option>
+                                                <option
+                                                    {{request()->segment(3) == '11' ? 'selected' : ''}} value="11">{{ date("Y")}}
+                                                    -11
+                                                </option>
+                                                <option
+                                                    {{request()->segment(3) == '12' ? 'selected' : ''}} value="12">{{ date("Y")}}
+                                                    -12
+                                                </option>
+                                            </select>
+                                            @if(!empty(request()->segment(3)))
+                                                <a href="{{route('regular_inspection_logs')}}" class="btn btn-primary ms-2">Clear Filter</a>
+                                            @endif
+                                        </div>
+
                                         <div class="d-flex align-items-center justify-content-between">
                                             <div class="left-content d-flex align-items-center">
                                                 <div class="custom_search">

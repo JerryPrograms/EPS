@@ -112,19 +112,21 @@
                                                             <img
                                                                 src="{{asset('engineer_company/assets/images/red-search.png')}}">
                                                         </a>
-                                                        @if(activeGuard() != 'web')
+                                                        @if(activeGuard() != 'web' && activeGuard() != 'admin')
                                                             <a href="{{route('edit_construction_completion',$c->id)}}"
                                                                class="btn btn-outline-primary btn-theme-primary-outline btn-outline btn-sm">
                                                                 <img
                                                                     src="{{asset('engineer_company/assets/images/Arhive_fill.png')}}">
                                                             </a>
                                                         @endif
+                                                        @if(activeGuard() != 'admin')
                                                         <button onclick="print('{{$c->id}}')"
                                                                 class="btn btn-outline-light btn-theme-light-outline btn-outline btn-sm">
                                                             <img
                                                                 src="{{asset('engineer_company/assets/images/archive_icon.png')}}">
                                                         </button>
-                                                        @if(activeGuard() != 'web')
+                                                        @endif
+                                                        @if(activeGuard() != 'web' && activeGuard() != 'admin')
                                                             <button onclick="openDeleteModal('{{$c->id}}')"
                                                                     class="btn btn-outline-light btn-theme-light-outline btn-outline btn-sm">
                                                                 <img

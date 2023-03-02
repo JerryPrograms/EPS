@@ -59,16 +59,30 @@
                                                         <td>{{ $engineer_company->contract_number }}</td>
                                                         <td>
                                                             <div class="d-flex gap-1 justify-content-center">
-                                                                <a href="{{ route('edit_engineer_company',$engineer_company->id) }}"
-                                                                   class="btn btn-primary btn-custom-table btn-sm">
-                                                                    <i class="bx bxs-edit-alt"></i>
-                                                                </a>
-                                                                <a data-bs-toggle="modal"
-                                                                   data-del-id="{{ $engineer_company->id }}"
-                                                                   data-bs-target="#delModal"
-                                                                   class="btn btn-danger btn-custom-table btn-sm delBtn">
-                                                                    <i class="bx bx-trash-alt"></i>
-                                                                </a>
+                                                                @if(activeGuard() == 'admin')
+                                                                    <a style="background-color: #696CFF !important; border: none !important;" href="{{ route('edit_engineer_company',$engineer_company->id) }}"
+                                                                       class="btn btn-primary btn-custom-table btn-sm">
+                                                                        <i class="bx bxs-edit-alt"></i>
+                                                                    </a>
+                                                                    <a style="background-color: #FF3E1D !important;" data-bs-toggle="modal"
+                                                                       data-del-id="{{ $engineer_company->id }}"
+                                                                       data-bs-target="#delModal"
+                                                                       class="btn btn-danger btn-custom-table btn-sm delBtn">
+                                                                        <i class="bx bx-trash-alt"></i>
+                                                                    </a>
+                                                                @else
+                                                                    <a  href="{{ route('edit_engineer_company',$engineer_company->id) }}"
+                                                                       class="btn btn-primary btn-custom-table btn-sm">
+                                                                        <i class="bx bxs-edit-alt"></i>
+                                                                    </a>
+                                                                    <a data-bs-toggle="modal"
+                                                                       data-del-id="{{ $engineer_company->id }}"
+                                                                       data-bs-target="#delModal"
+                                                                       class="btn btn-danger btn-custom-table btn-sm delBtn">
+                                                                        <i class="bx bx-trash-alt"></i>
+                                                                    </a>
+                                                                @endif
+
                                                             </div>
                                                         </td>
                                                     </tr>

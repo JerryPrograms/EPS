@@ -61,7 +61,7 @@
                                                                     <i class="bx bx-search-alt-2"></i>
                                                                 </a>
                                                                 @if(activeGuard() != 'web')
-                                                                    <a href="{{ route('ec.EditDispatchInformation', $v->id) }}"
+                                                                    <a @if(activeGuard() == 'admin') style="background-color: #696CFF !important; border: none !important;" @endif href="{{ route('ec.EditDispatchInformation', $v->id) }}"
                                                                        class="btn btn-primary btn-custom-table btn-sm">
                                                                         <i class="bx bxs-edit-alt"></i>
                                                                     </a>

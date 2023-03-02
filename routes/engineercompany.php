@@ -74,6 +74,7 @@ Route::group(['prefix' => 'eps-panel', 'middleware' => 'CommonRoutes'], function
     Route::get('/view-quotation/{uid}', [EngineerCompanyController::class, 'ViewQuote'])->name('ec.ViewQuote');
     Route::get('/pdf-quotation/{uid}', [EngineerCompanyController::class, 'PDFQuote'])->name('ec.PDFQuote');
 
+
     //Route to create customer basic information by engineer company
     Route::post('/post-customer-info', [Customer_Info::class, 'CreateCustomerInfo'])->name('CustomerInfo');
 
@@ -206,7 +207,7 @@ Route::group(['prefix' => 'eps-panel', 'middleware' => 'CommonRoutes'], function
     Route::post('/del-dispatch-confirmation-record', [ListingController::class, 'del_dispatch_confirmation_record'])->name('del_dispatch_confirmation_record');
 
     // Regular inspection log management
-    Route::get('/regular-inspection-logs', [ListingController::class, 'regular_inspection_logs'])->name('regular_inspection_logs');
+    Route::get('/regular-inspection-logs/{filter?}', [ListingController::class, 'regular_inspection_logs'])->name('regular_inspection_logs');
     Route::post('/del-regular-inspection-log', [ListingController::class, 'del_regular_inspection_log'])->name('del_regular_inspection_log');
 
     //Contract Management Listing

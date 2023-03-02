@@ -57,34 +57,65 @@ class ListingController extends Controller
     }
 
     // Regular inspection management
-    public function regular_inspection_logs()
+    public function regular_inspection_logs($filter = '')
     {
-        if (activeGuard() == 'web') {
-            $logs = MonthlyRegularInspection::where('customer_id', auth('web')->id())->with('getCustomer')->paginate(10);
-        } else if (activeGuard() == 'admin') {
-            $logs = MonthlyRegularInspection::with('getCustomer')->paginate(10);
-        } else if (activeGuard() == 'engineer') {
-            $companies = Engineer_company::where('id', auth(activeGuard())->user()->affiliated_company)->first();
-            $customers = CustomerInfo::where(function ($query) use ($companies) {
-                $query->where('added_by', 'engineer_company')
-                    ->where('added_by_id', $companies->id);
-            })->orwhere(function ($query) {
-                $query->where('added_by', activeGuard())
-                    ->where('added_by_id', auth(activeGuard())->id());
-            })->latest()->pluck('id');
-            $logs = MonthlyRegularInspection::whereIn('customer_id', $customers)->with('getCustomer')->paginate(10);
+        if (!empty($filter)) {
 
+            if (activeGuard() == 'web') {
+                $logs = MonthlyRegularInspection::whereMonth('created_at', $filter)->where('customer_id', auth('web')->id())->with('getCustomer')->paginate(10);
+            } else if (activeGuard() == 'admin') {
+                $logs = MonthlyRegularInspection::whereMonth('created_at', $filter)->with('getCustomer')->paginate(10);
+            } else if (activeGuard() == 'engineer') {
+                $companies = Engineer_company::where('id', auth(activeGuard())->user()->affiliated_company)->first();
+                $customers = CustomerInfo::where(function ($query) use ($companies) {
+                    $query->where('added_by', 'engineer_company')
+                        ->where('added_by_id', $companies->id);
+                })->orwhere(function ($query) {
+                    $query->where('added_by', activeGuard())
+                        ->where('added_by_id', auth(activeGuard())->id());
+                })->latest()->pluck('id');
+                $logs = MonthlyRegularInspection::whereMonth('created_at', $filter)->whereIn('customer_id', $customers)->with('getCustomer')->paginate(10);
+
+            } else {
+                $engineers = Engineer::where('affiliated_company', auth(activeGuard())->id())->pluck('id');
+                $customers = CustomerInfo::where(function ($query) use ($engineers) {
+                    $query->where('added_by', 'engineer')
+                        ->whereIn('added_by_id', $engineers);
+                })->orwhere(function ($query) {
+                    $query->where('added_by', activeGuard())
+                        ->where('added_by_id', auth(activeGuard())->id());
+                })->latest()->pluck('id');
+                $logs = MonthlyRegularInspection::whereMonth('created_at', $filter)->whereIn('customer_id', $customers)->with('getCustomer')->paginate(10);
+            }
         } else {
-            $engineers = Engineer::where('affiliated_company', auth(activeGuard())->id())->pluck('id');
-            $customers = CustomerInfo::where(function ($query) use ($engineers) {
-                $query->where('added_by', 'engineer')
-                    ->whereIn('added_by_id', $engineers);
-            })->orwhere(function ($query) {
-                $query->where('added_by', activeGuard())
-                    ->where('added_by_id', auth(activeGuard())->id());
-            })->latest()->pluck('id');
-            $logs = MonthlyRegularInspection::whereIn('customer_id', $customers)->with('getCustomer')->paginate(10);
+            if (activeGuard() == 'web') {
+                $logs = MonthlyRegularInspection::where('customer_id', auth('web')->id())->with('getCustomer')->paginate(10);
+            } else if (activeGuard() == 'admin') {
+                $logs = MonthlyRegularInspection::with('getCustomer')->paginate(10);
+            } else if (activeGuard() == 'engineer') {
+                $companies = Engineer_company::where('id', auth(activeGuard())->user()->affiliated_company)->first();
+                $customers = CustomerInfo::where(function ($query) use ($companies) {
+                    $query->where('added_by', 'engineer_company')
+                        ->where('added_by_id', $companies->id);
+                })->orwhere(function ($query) {
+                    $query->where('added_by', activeGuard())
+                        ->where('added_by_id', auth(activeGuard())->id());
+                })->latest()->pluck('id');
+                $logs = MonthlyRegularInspection::whereIn('customer_id', $customers)->with('getCustomer')->paginate(10);
+
+            } else {
+                $engineers = Engineer::where('affiliated_company', auth(activeGuard())->id())->pluck('id');
+                $customers = CustomerInfo::where(function ($query) use ($engineers) {
+                    $query->where('added_by', 'engineer')
+                        ->whereIn('added_by_id', $engineers);
+                })->orwhere(function ($query) {
+                    $query->where('added_by', activeGuard())
+                        ->where('added_by_id', auth(activeGuard())->id());
+                })->latest()->pluck('id');
+                $logs = MonthlyRegularInspection::whereIn('customer_id', $customers)->with('getCustomer')->paginate(10);
+            }
         }
+
 
         return view('engineer_company.regular_inspection_logs', compact('logs'));
     }

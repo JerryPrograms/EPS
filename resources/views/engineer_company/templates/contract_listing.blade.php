@@ -50,7 +50,7 @@
                 <button class="btn btn-outline-danger btn-theme-danger-outline btn-outline btn-sm">
                     <img src="{{ asset('engineer_company/assets/images/red-search.png') }}">
                 </button>
-                @if(activeGuard() != 'web')
+                @if(activeGuard() != 'web' && activeGuard() != 'admin')
                     <button class="btn btn-outline-primary btn-theme-primary-outline btn-outline btn-sm">
                         <img src="{{ asset('engineer_company/assets/images/Arhive_fill.png') }}">
                     </button>
