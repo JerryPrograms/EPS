@@ -196,7 +196,7 @@ class AuthController extends Controller
 
         if ($request->password == $request->password_confirmation) {
             $update = DB::table($request->model)->update([
-                'password' => Hash::make($request->passowrd),
+                'password' => Hash::make($request->password),
             ]);
             if ($request->model == 'customer_infos') {
                 return redirect()->route('customer-login');
