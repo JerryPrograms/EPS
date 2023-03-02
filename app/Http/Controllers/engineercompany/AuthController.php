@@ -150,7 +150,7 @@ class AuthController extends Controller
 
                 'title' => 'Click on the link below to reset password',
 
-                'body' => $url,
+                'url' => $url,
 
             ];
 
