@@ -1,4 +1,4 @@
-<table  class="table align-middle mb-0 table-theme">
+<table class="table align-middle mb-0 table-theme">
     <thead class="table-light">
     <tr>
 
@@ -47,7 +47,8 @@
                 {{ $v->get_customer->building_management_company }}
             </td>
             <td class="d-flex gap-1">
-                <button class="btn btn-outline-danger btn-theme-danger-outline btn-outline btn-sm">
+                <button
+                    @if(activeGuard() == 'admin') style="background-color: #6281FE1A; color: #6281FE; border: 1px solid #6281FE" @endif class="btn btn-outline-danger btn-theme-danger-outline btn-outline btn-sm">
                     <img src="{{ asset('engineer_company/assets/images/red-search.png') }}">
                 </button>
                 @if(activeGuard() != 'web' && activeGuard() != 'admin')
@@ -57,7 +58,8 @@
                     <button class="btn btn-outline-light btn-theme-light-outline btn-outline btn-sm">
                         <img src="{{ asset('engineer_company/assets/images/archive_icon.png') }}">
                     </button>
-                    <button onclick="openDeleteModal('{{$v->id}}')" class="btn btn-outline-light btn-theme-light-outline btn-outline btn-sm">
+                    <button onclick="openDeleteModal('{{$v->id}}')"
+                            class="btn btn-outline-light btn-theme-light-outline btn-outline btn-sm">
                         <img src="{{asset('engineer_company/assets/images/delete.png')}}">
                     </button>
                 @endif

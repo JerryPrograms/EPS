@@ -53,12 +53,12 @@
                                                         <td>{{ $v->total_amount }}</td>
                                                         <td>
                                                             <div class="d-flex gap-1 justify-content-center">
-                                                                <a href="{{ route('ec.ViewDispatchInformation', $v->id) }}"
+                                                                <a @if(activeGuard() == 'admin') style="background-color: #6281FE !important; border: none" @endif href="{{ route('ec.ViewDispatchInformation', $v->id) }}"
                                                                    class="btn btn-success btn-custom-table btn-sm">
                                                                     <i class="bx bx-search-alt-2"></i>
                                                                 </a>
                                                                 @if(activeGuard() != 'web')
-                                                                    <a href="{{ route('ec.EditDispatchInformation', $v->id) }}"
+                                                                    <a  href="{{ route('ec.EditDispatchInformation', $v->id) }}"
                                                                        class="btn btn-primary btn-custom-table btn-sm">
                                                                         <i class="bx bxs-edit-alt"></i>
                                                                     </a>

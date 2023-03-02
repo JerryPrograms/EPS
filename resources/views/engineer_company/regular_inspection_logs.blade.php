@@ -113,16 +113,16 @@
                                                         <td title="{{ $v->GetCustomer->address }}">{{ Str::limit($v->GetCustomer->address, 20, '...') }}</td>
                                                         <td>
                                                             <div class="d-flex gap-1 justify-content-center">
-                                                                <a href="{{ route('view_regular_inspection_log', $v->id) }}"
+                                                                <a @if(activeGuard() == 'admin') style="background-color: #4ADE80 !important; border: none" @endif href="{{ route('view_regular_inspection_log', $v->id) }}"
                                                                    class="btn btn-success btn-custom-table btn-sm">
                                                                     <i class="bx bx-search-alt-2"></i>
                                                                 </a>
                                                                 @if(activeGuard() != 'web')
-                                                                    <a href="{{ route('edit_regular_inspection_log', $v->id) }}"
+                                                                    <a @if(activeGuard() == 'admin') style="background-color: #696CFF !important; border: none !important;" @endif href="{{ route('edit_regular_inspection_log', $v->id) }}"
                                                                        class="btn btn-primary btn-custom-table btn-sm">
                                                                         <i class="bx bxs-edit-alt"></i>
                                                                     </a>
-                                                                    <a data-bs-toggle="modal" data-del-id="{{ $v->id }}"
+                                                                    <a @if(activeGuard() == 'admin') style="background-color: #FF3E1D !important; border: none !important;" @endif data-bs-toggle="modal" data-del-id="{{ $v->id }}"
                                                                        data-bs-target="#delModal"
                                                                        class="btn btn-danger btn-custom-table btn-sm delBtn">
                                                                         <i class="bx bx-trash-alt"></i>
