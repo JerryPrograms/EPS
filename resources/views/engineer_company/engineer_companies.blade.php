@@ -9,7 +9,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="card-title mb-4 d-flex align-items-center justify-content-between mobile-flex-column">
-                                        <h5 class="mb-0 font-15">{{ __('translation.Engineer Company Management') }}</h5>
+                                        <h5 class="mb-0 font-15">{{ __('translation.Engineer Company Management') }}  ({{count($engineer_companies)}})</h5>
                                         <a href="{{ route('add_engineer_company') }}" class="btn btn-primary">{{ __('translation.Add Company') }}</a>
                                     </div>
                                     <div class="table-responsive data-set-list mt-3">
@@ -50,7 +50,7 @@
                                                             </a>
                                                         </div>
                                                     </td>
-                                                </tr> 
+                                                </tr>
                                                 @endforeach
                                                 @else
                                                 <tr>
