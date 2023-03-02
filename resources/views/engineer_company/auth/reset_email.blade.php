@@ -49,67 +49,46 @@
 <main class="form-container">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-lg-6">
-                <div class="Main_form_section">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">{{ __('Reset Password') }}</div>
 
-                    <form class="card-body p-lg-5" method="POST" id="loginForm">
-                        @csrf
-                        <div>
-                            <h3>{{ __('translation.login') }}</h3>
-                            <p>{{ __('translation.EVERY PARKING SOLUTION') }}</p>
-                            <div class="prompt"></div>
-                            <div class="form-floating mt-5 d-flex flex-column">
-                                <input type="email" class="form-control custom_input" name="email" id="email"
-                                       placeholder="{{ __('translation.Enter Email Address') }}" required>
-                                <label for="email">
-                                    {{ __('translation.Id') }}
-                                </label>
-                                <span class="Custom_icon">
-                                        <img src="{{asset('engineer_company/images/profile_gray.png')}}"
-                                             class="user_icon">
+                    <div class="card-body">
+                        @if (session('status'))
+                            <div class="alert alert-success" role="alert">
+                                {{ session('status') }}
+                            </div>
+                        @endif
+
+                        <form method="POST" action="{{ route('SendResetPassword') }}">
+                            @csrf
+
+                            <div class="row mb-3">
+                                <label for="email"
+                                       class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+
+                                <div class="col-md-6">
+                                    <input id="email" type="email"
+                                           class="form-control @error('email') is-invalid @enderror" name="email"
+                                           value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                    <input name="guard" value="{{$guard}}" hidden>
+                                    @if(request()->session()->has('message'))
+                                        <span class="text-danger" role="alert">
+                                        <strong>{{ request()->session()->get('message') }}</strong>
                                     </span>
-                            </div>
-
-                            <div class="form-floating mt-4 d-flex flex-column">
-                                <input type="password" class="form-control custom_input" id="password"
-                                       placeholder="{{ __('translation.Enter your password') }}" name="password" required>
-                                <label for="password">
-                                    {{ __('translation.password') }}
-                                </label>
-                                <span class="Custom_icon">
-                                        <img src="{{asset('engineer_company/images/lock.png')}}" class="lock_icon">
-                                    </span>
-                            </div>
-
-
-                            <div class="col-lg-12" style="text-align: end;">
-                                <div class="mt-4 pt-3">
-                                    <a href="{{route('getResetPassword','engineer_company')}}" class="form_text">
-                                        {{ __('translation.find password') }}
-                                    </a>
-
+                                    @endif
                                 </div>
-
-                            </div>
-                            <div class="col-lg-12" style="text-align: end;">
-                                <div class="">
-                                    <a href="{{route('ec.GetECSignup')}}" class="form_text">
-                                        {{ __('translation.New to EPS? Signup here!') }}
-                                    </a>
-
-                                </div>
-
                             </div>
 
-                            <div class="col-lg-12 pl-2 pr-2">
-                                <div class="buton_sett mt-5">
-                                    <button type="submit" id="login_btn" class="btn btn-primary btn-theme-auth w-100">
-                                        {{ __('translation.login') }}
+                            <div class="row mb-0">
+                                <div class="col-md-6 offset-md-4">
+                                    <button type="submit" class="btn btn-primary">
+                                        {{ __('Send Password Reset Link') }}
                                     </button>
                                 </div>
                             </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

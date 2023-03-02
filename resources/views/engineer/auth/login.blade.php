@@ -81,7 +81,7 @@
 
                             <div class="col-lg-12" style="text-align: end;">
                                 <div class="mt-4 pt-3">
-                                    <a href="#" class="form_text">{{ __('translation.find password') }}
+                                    <a href="{{route('getResetPassword','engineer')}}" class="form_text">{{ __('translation.find password') }}
                                     </a>
                                 </div>
                             </div>

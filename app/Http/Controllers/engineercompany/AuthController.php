@@ -3,10 +3,13 @@
 namespace App\Http\Controllers\engineercompany;
 
 use App\Http\Controllers\Controller;
+use App\Models\CustomerInfo;
+use App\Models\Engineer;
 use App\Models\Engineer_company;
 use App\Service\Authentication;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 
 class AuthController extends Controller
 {
@@ -77,5 +80,85 @@ class AuthController extends Controller
                 'message' => __('translation.Invalid credentials , please try again')
             ]);
         }
+    }
+
+    public function GetResetPassword($guard)
+    {
+        return view('engineer_company.auth.reset_email', compact('guard'));
+    }
+
+    public function SendResetPassword(Request $request)
+    {
+        $token = Str::random('20');
+        if ($request->guard == 'engineer_company') {
+            $engineer_company = Engineer_company::where('email', $request->email)->first();
+            if ($engineer_company) {
+
+                Engineer_company::where('id', $engineer_company->id)->update([
+                    'remember_token' => $token . 'a',
+                ]);
+
+                $this->sendEmail(route('UpdatePassword', $token), $request->email);
+                return redirect()->route('CheckEmail')->with('url', route('ec.GetECLogin'));
+
+            } else {
+                return redirect()->back()->with('message', 'Email not found');
+            }
+        } else if ($request->guard == 'engineer') {
+            $engineer = Engineer::where('email', $request->email)->first();
+            if ($engineer) {
+
+                Engineer::where('id', $engineer->id)->update([
+                    'remember_token' => $token . 'b',
+                ]);
+                $this->sendEmail(route('UpdatePassword', $token), $request->email);
+                return redirect()->route('CheckEmail')->with('url', route('e.GetECLogin'));;
+
+            } else {
+                return redirect()->back()->with('message', 'Email not found');
+            }
+        } else {
+            $customer = CustomerInfo::where('email', $request->email)->first();
+            if ($customer) {
+
+                CustomerInfo::where('id', $customer->id)->update([
+                    'remember_token' => $token . 'c',
+                ]);
+                $this->sendEmail(route('UpdatePassword', $token), $request->email);
+                return redirect()->route('CheckEmail')->with('url', route('admin.AdminLogin'));
+
+            } else {
+                return redirect()->back()->with('message', 'Email not found');
+            }
+        }
+    }
+
+    public function UpdatePassword($token)
+    {
+
+    }
+
+    public function CheckEmail()
+    {
+        return view('engineer_company.auth.check_email');
+    }
+
+    public function sendEmail($url, $email)
+    {
+        try {
+            $details = [
+
+                'title' => 'Click on the link below to reset password',
+
+                'body' => $url,
+
+            ];
+
+
+            \Mail::to($email)->send(new \App\Mail\MyTestMail($details));
+        } catch (\Exception $ex) {
+
+        }
+
     }
 }

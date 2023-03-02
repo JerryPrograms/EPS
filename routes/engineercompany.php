@@ -41,6 +41,12 @@ Route::group(['prefix' => 'engineer-company'], function () {
 });
 
 
+Route::get('password-reset/{guard}', [AuthController::class, 'GetResetPassword'])->name('getResetPassword');
+Route::post('send-password-reset/', [AuthController::class, 'SendResetPassword'])->name('SendResetPassword');
+Route::get('update-password/{token}', [AuthController::class, 'UpdatePassword'])->name('UpdatePassword');
+Route::get('check-email', [AuthController::class, 'CheckEmail'])->name('CheckEmail');
+
+
 Route::group(['prefix' => 'eps-panel', 'middleware' => 'CommonRoutes'], function () {
 
     Route::get('logout/{role}', [EngineerCompanyController::class, 'EngineerCompanyLogout'])->name('ec.EngineerCompanyLogout');
