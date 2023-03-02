@@ -13,33 +13,34 @@
                                     </h4>
                                     <div class="d-flex align-items-center justify-content-between">
                                         <div class="left-content d-flex align-items-center">
-{{--                                            <select class="form-select select_filter w-25" name="filter"--}}
-{{--                                                    autocomplete="off"--}}
-{{--                                                    required>--}}
-{{--                                                <option selected="" value=""--}}
-{{--                                                        disabled="">{{__('translation.filter')}}</option>--}}
-{{--                                                <option value="all">--}}
-{{--                                                    {{__('translation.all')}}--}}
-{{--                                                </option>--}}
-{{--                                                <option value="created_at">--}}
-{{--                                                    {{__('translation.Registration Date')}}--}}
-{{--                                                </option>--}}
-{{--                                                <option value="building_name">--}}
-{{--                                                    {{__('translation.Building Name')}}--}}
-{{--                                                </option>--}}
-{{--                                                <option value="customer_number">--}}
-{{--                                                    {{__('translation.Customer Number')}}--}}
-{{--                                                </option>--}}
-{{--                                                <option value="address">--}}
-{{--                                                    {{__('translation.Address')}}--}}
-{{--                                                </option>--}}
-{{--                                                <option value="building_management company">--}}
-{{--                                                    {{__('translation.Building Management Company')}}--}}
-{{--                                                </option>--}}
-{{--                                            </select>--}}
+                                            {{--                                            <select class="form-select select_filter w-25" name="filter"--}}
+                                            {{--                                                    autocomplete="off"--}}
+                                            {{--                                                    required>--}}
+                                            {{--                                                <option selected="" value=""--}}
+                                            {{--                                                        disabled="">{{__('translation.filter')}}</option>--}}
+                                            {{--                                                <option value="all">--}}
+                                            {{--                                                    {{__('translation.all')}}--}}
+                                            {{--                                                </option>--}}
+                                            {{--                                                <option value="created_at">--}}
+                                            {{--                                                    {{__('translation.Registration Date')}}--}}
+                                            {{--                                                </option>--}}
+                                            {{--                                                <option value="building_name">--}}
+                                            {{--                                                    {{__('translation.Building Name')}}--}}
+                                            {{--                                                </option>--}}
+                                            {{--                                                <option value="customer_number">--}}
+                                            {{--                                                    {{__('translation.Customer Number')}}--}}
+                                            {{--                                                </option>--}}
+                                            {{--                                                <option value="address">--}}
+                                            {{--                                                    {{__('translation.Address')}}--}}
+                                            {{--                                                </option>--}}
+                                            {{--                                                <option value="building_management company">--}}
+                                            {{--                                                    {{__('translation.Building Management Company')}}--}}
+                                            {{--                                                </option>--}}
+                                            {{--                                            </select>--}}
                                             <div class="custom_search">
                                                 <div class="search">
-                                                    <input id="search" onkeyup="myFunction()" type="text" class="form-control" name="keyword"
+                                                    <input id="search" onkeyup="myFunction()" type="text"
+                                                           class="form-control" name="keyword"
                                                            placeholder="{{__('translation.search')}}" autocomplete="off"
                                                            required="">
                                                     <button type="submit" class="btn btn-primary searchbar_button">
@@ -107,10 +108,16 @@
                                                         ....
                                                     </td>
                                                     <td class="d-flex gap-1">
-                                                        <a href="{{route('view_construction_completion',$c->id)}}"
+                                                        <a @if(activeGuard() == 'admin') style="background-color: #6281FE1A !important; border: 1px solid #6281FE"
+                                                           @endif href="{{route('view_construction_completion',$c->id)}}"
                                                            class="btn btn-outline-danger btn-theme-danger-outline btn-outline btn-sm">
-                                                            <img
-                                                                src="{{asset('engineer_company/assets/images/red-search.png')}}">
+                                                            @if(activeGuard() == 'admin')
+                                                                <img
+                                                                    src="{{asset('engineer_company/images/Vector(3).png')}}">
+                                                            @else
+                                                                <img
+                                                                    src="{{asset('engineer_company/assets/images/red-search.png')}}">
+                                                            @endif
                                                         </a>
                                                         @if(activeGuard() != 'web' && activeGuard() != 'admin')
                                                             <a href="{{route('edit_construction_completion',$c->id)}}"
@@ -120,11 +127,11 @@
                                                             </a>
                                                         @endif
                                                         @if(activeGuard() != 'admin')
-                                                        <button onclick="print('{{$c->id}}')"
-                                                                class="btn btn-outline-light btn-theme-light-outline btn-outline btn-sm">
-                                                            <img
-                                                                src="{{asset('engineer_company/assets/images/archive_icon.png')}}">
-                                                        </button>
+                                                            <button onclick="print('{{$c->id}}')"
+                                                                    class="btn btn-outline-light btn-theme-light-outline btn-outline btn-sm">
+                                                                <img
+                                                                    src="{{asset('engineer_company/assets/images/archive_icon.png')}}">
+                                                            </button>
                                                         @endif
                                                         @if(activeGuard() != 'web' && activeGuard() != 'admin')
                                                             <button onclick="openDeleteModal('{{$c->id}}')"

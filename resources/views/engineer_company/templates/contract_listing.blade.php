@@ -48,8 +48,15 @@
             </td>
             <td class="d-flex gap-1">
                 <button
-                    @if(activeGuard() == 'admin') style="background-color: #6281FE1A; color: #6281FE; border: 1px solid #6281FE" @endif class="btn btn-outline-danger btn-theme-danger-outline btn-outline btn-sm">
-                    <img src="{{ asset('engineer_company/assets/images/red-search.png') }}">
+                    @if(activeGuard() == 'admin') style="background-color: #6281FE1A; color: #6281FE; border: 1px solid #6281FE"
+                    @endif class="btn btn-outline-danger btn-theme-danger-outline btn-outline btn-sm">
+                    @if(activeGuard() == 'admin')
+                        <img
+                            src="{{asset('engineer_company/images/Vector(3).png')}}">
+                    @else
+                        <img
+                            src="{{asset('engineer_company/assets/images/red-search.png')}}">
+                    @endif
                 </button>
                 @if(activeGuard() != 'web' && activeGuard() != 'admin')
                     <button class="btn btn-outline-primary btn-theme-primary-outline btn-outline btn-sm">
