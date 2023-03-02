@@ -74,22 +74,23 @@
                                             @endif
                                         </div>
 
-                                        <div class="d-flex align-items-center justify-content-between">
-                                            <div class="left-content d-flex align-items-center">
-                                                <div class="custom_search">
-                                                    <div class="search">
-                                                        <input id="myInput" onchange="myFunction()" type="text"
-                                                               class="form-control" name="keyword"
-                                                               placeholder="{{ __('translation.search') }}"
-                                                               autocomplete="off"
-                                                               required="">
-                                                        <button type="submit" class="btn btn-primary searchbar_button">
-                                                            <div class="search_img">
-                                                                <img
-                                                                    src="{{asset('engineer_company/assets/images/search.png')}}">
-                                                            </div>
-                                                        </button>
-                                                    </div>
+
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="left-content d-flex align-items-center">
+                                            <div class="custom_search">
+                                                <div class="search">
+                                                    <input id="myInput" onchange="myFunction()" type="text"
+                                                           class="form-control" name="keyword"
+                                                           placeholder="{{ __('translation.search') }}"
+                                                           autocomplete="off"
+                                                           required="">
+                                                    <button type="submit" class="btn btn-primary searchbar_button">
+                                                        <div class="search_img">
+                                                            <img
+                                                                src="{{asset('engineer_company/assets/images/search.png')}}">
+                                                        </div>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>

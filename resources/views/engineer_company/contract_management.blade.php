@@ -13,25 +13,25 @@
                                         <h4 class="card-title mb-0 pb-0 border-0">
                                             {{ __('translation.Contract Management') }}
                                         </h4>
-                                        <div class="left-content d-flex align-items-center">
-                                            <div class="custom_search">
-                                                <div class="search">
-                                                    <input id="myInput" onchange="myFunction()" type="text"
-                                                           class="form-control" name="keyword"
-                                                           placeholder="{{ __('translation.search') }}"
-                                                           autocomplete="off"
-                                                           required="">
-                                                    <button type="button" class="btn btn-primary searchbar_button">
-                                                        <div class="search_img">
-                                                            <img
-                                                                src="{{asset('engineer_company/assets/images/search.png')}}">
-                                                        </div>
-                                                    </button>
-                                                </div>
+
+                                    </div>
+                                    <div class="mt-3 left-content d-flex align-items-center">
+                                        <div class="custom_search">
+                                            <div class="search">
+                                                <input id="myInput" onchange="myFunction()" type="text"
+                                                       class="form-control" name="keyword"
+                                                       placeholder="{{ __('translation.search') }}"
+                                                       autocomplete="off"
+                                                       required="">
+                                                <button type="button" class="btn btn-primary searchbar_button">
+                                                    <div class="search_img">
+                                                        <img
+                                                            src="{{asset('engineer_company/assets/images/search.png')}}">
+                                                    </div>
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
-
                                     {{--                                    <div class="d-flex align-items-center justify-content-end">--}}
                                     {{--                                        <div class="left-content d-flex align-items-center">--}}
                                     {{--                                            <div class="custom_search">--}}

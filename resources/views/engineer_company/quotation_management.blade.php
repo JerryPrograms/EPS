@@ -12,22 +12,23 @@
                                         <div
                                             class="card-title d-flex align-items-center justify-content-between mobile-flex-column mb-0 py-2">
                                             <h5 class="mb-0 font-15">{{ __('translation.Quotation Management') }}</h5>
-                                            <div class="left-content d-flex align-items-center">
-                                                <div class="custom_search">
-                                                    <div class="search">
-                                                        <input id="myInput" onchange="myFunction()" type="text"
-                                                               class="form-control" name="keyword"
-                                                               placeholder="{{ __('translation.search') }}"
-                                                               autocomplete="off"
-                                                               required="">
-                                                        <button type="button" class="btn btn-primary searchbar_button">
-                                                            <div class="search_img">
-                                                                <img
-                                                                    src="{{asset('engineer_company/assets/images/search.png')}}">
-                                                            </div>
-                                                        </button>
+
+                                        </div>
+                                    </div>
+                                    <div class="mt-3 left-content d-flex align-items-center">
+                                        <div class="custom_search">
+                                            <div class="search">
+                                                <input id="myInput" onchange="myFunction()" type="text"
+                                                       class="form-control" name="keyword"
+                                                       placeholder="{{ __('translation.search') }}"
+                                                       autocomplete="off"
+                                                       required="">
+                                                <button type="button" class="btn btn-primary searchbar_button">
+                                                    <div class="search_img">
+                                                        <img
+                                                            src="{{asset('engineer_company/assets/images/search.png')}}">
                                                     </div>
-                                                </div>
+                                                </button>
                                             </div>
                                         </div>
                                     </div>

@@ -11,22 +11,23 @@
                                     <div
                                         class="card-title mb-4 d-flex align-items-center justify-content-between mobile-flex-column">
                                         <h5 class="mb-0 font-15">{{ __('translation.Dispatch Confirmation Management') }}</h5>
-                                        <div class="d-flex align-items-center justify-content-between">
-                                            <div class="left-content d-flex align-items-center">
-                                                <div class="custom_search">
-                                                    <div class="search">
-                                                        <input id="myInput" type="text"
-                                                               class="form-control" name="keyword"
-                                                               placeholder="{{ __('translation.search') }}"
-                                                               autocomplete="off"
-                                                               required="">
-                                                        <button type="submit" class="btn btn-primary searchbar_button">
-                                                            <div class="search_img">
-                                                                <img
-                                                                    src="{{asset('engineer_company/assets/images/search.png')}}">
-                                                            </div>
-                                                        </button>
-                                                    </div>
+
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="left-content d-flex align-items-center">
+                                            <div class="custom_search">
+                                                <div class="search">
+                                                    <input id="myInput" type="text"
+                                                           class="form-control" name="keyword"
+                                                           placeholder="{{ __('translation.search') }}"
+                                                           autocomplete="off"
+                                                           required="">
+                                                    <button type="submit" class="btn btn-primary searchbar_button">
+                                                        <div class="search_img">
+                                                            <img
+                                                                src="{{asset('engineer_company/assets/images/search.png')}}">
+                                                        </div>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -66,7 +67,8 @@
                                                                     <i class="bx bx-search-alt-2"></i>
                                                                 </a>
                                                                 @if(activeGuard() != 'web')
-                                                                    <a @if(activeGuard() == 'admin') style="background-color: #696CFF !important; border: none !important;" @endif href="{{ route('ec.EditDispatchInformation', $v->id) }}"
+                                                                    <a @if(activeGuard() == 'admin') style="background-color: #696CFF !important; border: none !important;"
+                                                                       @endif href="{{ route('ec.EditDispatchInformation', $v->id) }}"
                                                                        class="btn btn-primary btn-custom-table btn-sm">
                                                                         <i class="bx bxs-edit-alt"></i>
                                                                     </a>

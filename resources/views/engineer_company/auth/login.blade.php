@@ -84,7 +84,7 @@
 
                             <div class="col-lg-12" style="text-align: end;">
                                 <div class="mt-4 pt-3">
-                                    <a href="#" class="form_text">
+                                    <a href="{{route('password.request')}}" class="form_text">
                                         {{ __('translation.find password') }}
                                     </a>
 

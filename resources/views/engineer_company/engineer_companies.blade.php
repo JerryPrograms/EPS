@@ -12,22 +12,28 @@
                                         class="card-title mb-4 d-flex align-items-center justify-content-between mobile-flex-column">
                                         <h5 class="mb-0 font-15">{{ __('translation.Engineer Company Management') }}
                                             ({{count($engineer_companies)}})</h5>
+                                        <a href="{{ route('add_engineer_company') }}"
+                                           class="btn btn-primary">{{ __('translation.Add Company') }}</a>
 
-                                        <div class="d-flex align-items-center justify-content-between">
-                                            <div class="left-content d-flex align-items-center me-3">
-                                                <div class="custom_search">
-                                                    <div class="search">
-                                                        <input id="myInput" onchange="myFunction()" type="text"
-                                                               class="form-control" name="keyword"
-                                                               placeholder="{{ __('translation.search') }}"
-                                                               autocomplete="off"
-                                                               required="">
 
-                                                    </div>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="left-content d-flex align-items-center me-3">
+                                            <div class="custom_search">
+                                                <div class="search">
+                                                    <input id="myInput" onchange="myFunction()" type="text"
+                                                           class="form-control" name="keyword"
+                                                           placeholder="{{ __('translation.search') }}"
+                                                           autocomplete="off"
+                                                           required="">
+                                                    <button type="button" class="btn btn-primary searchbar_button">
+                                                        <div class="search_img">
+                                                            <img
+                                                                src="{{asset('engineer_company/assets/images/search.png')}}">
+                                                        </div>
+                                                    </button>
                                                 </div>
                                             </div>
-                                            <a href="{{ route('add_engineer_company') }}"
-                                               class="btn btn-primary">{{ __('translation.Add Company') }}</a>
                                         </div>
 
                                     </div>
@@ -60,18 +66,20 @@
                                                         <td>
                                                             <div class="d-flex gap-1 justify-content-center">
                                                                 @if(activeGuard() == 'admin')
-                                                                    <a style="background-color: #696CFF !important; border: none !important;" href="{{ route('edit_engineer_company',$engineer_company->id) }}"
+                                                                    <a style="background-color: #696CFF !important; border: none !important;"
+                                                                       href="{{ route('edit_engineer_company',$engineer_company->id) }}"
                                                                        class="btn btn-primary btn-custom-table btn-sm">
                                                                         <i class="bx bxs-edit-alt"></i>
                                                                     </a>
-                                                                    <a style="background-color: #FF3E1D !important;" data-bs-toggle="modal"
+                                                                    <a style="background-color: #FF3E1D !important;"
+                                                                       data-bs-toggle="modal"
                                                                        data-del-id="{{ $engineer_company->id }}"
                                                                        data-bs-target="#delModal"
                                                                        class="btn btn-danger btn-custom-table btn-sm delBtn">
                                                                         <i class="bx bx-trash-alt"></i>
                                                                     </a>
                                                                 @else
-                                                                    <a  href="{{ route('edit_engineer_company',$engineer_company->id) }}"
+                                                                    <a href="{{ route('edit_engineer_company',$engineer_company->id) }}"
                                                                        class="btn btn-primary btn-custom-table btn-sm">
                                                                         <i class="bx bxs-edit-alt"></i>
                                                                     </a>
