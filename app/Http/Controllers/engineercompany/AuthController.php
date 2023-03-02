@@ -145,7 +145,7 @@ class AuthController extends Controller
 
     public function sendEmail($url, $email)
     {
-        
+
             $details = [
 
                 'title' => 'Click on the link below to reset password',
@@ -156,7 +156,7 @@ class AuthController extends Controller
 
 
             \Mail::to($email)->send(new \App\Mail\MyTestMail($details));
-        
+
 
     }
 }
