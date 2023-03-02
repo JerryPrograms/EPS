@@ -100,7 +100,7 @@ class AuthController extends Controller
                     'remember_token' => $token . 'a',
                 ]);
 
-                $this->sendEmail(route('UpdatePassword', $token), $request->email);
+                $this->sendEmail(route('UpdatePassword', $token.'a'), $request->email);
                 return redirect()->route('CheckEmail')->with('url', route('ec.GetECLogin'));
 
             } else {
@@ -113,7 +113,7 @@ class AuthController extends Controller
                 Engineer::where('id', $engineer->id)->update([
                     'remember_token' => $token . 'b',
                 ]);
-                $this->sendEmail(route('UpdatePassword', $token), $request->email);
+                $this->sendEmail(route('UpdatePassword', $token.'b'), $request->email);
                 return redirect()->route('CheckEmail')->with('url', route('e.GetECLogin'));;
 
             } else {
@@ -126,7 +126,7 @@ class AuthController extends Controller
                 CustomerInfo::where('id', $customer->id)->update([
                     'remember_token' => $token . 'c',
                 ]);
-                $this->sendEmail(route('UpdatePassword', $token), $request->email);
+                $this->sendEmail(route('UpdatePassword', $token.'c'), $request->email);
                 return redirect()->route('CheckEmail')->with('url', route('customer-login'));
 
             } else {
@@ -193,7 +193,7 @@ class AuthController extends Controller
 
     public function UpdateResetPassword(Request $request)
     {
-        
+
         if ($request->password == $request->password_confirmation) {
             $update = DB::table($request->model)->update([
                 'password' => Hash::make($request->passowrd),
