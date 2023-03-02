@@ -8,6 +8,8 @@ use App\Models\Engineer;
 use App\Models\Engineer_company;
 use App\Service\Authentication;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 
@@ -125,7 +127,7 @@ class AuthController extends Controller
                     'remember_token' => $token . 'c',
                 ]);
                 $this->sendEmail(route('UpdatePassword', $token), $request->email);
-                return redirect()->route('CheckEmail')->with('url', route('admin.AdminLogin'));
+                return redirect()->route('CheckEmail')->with('url', route('customer-login'));
 
             } else {
                 return redirect()->back()->with('message', 'Email not found');
@@ -135,6 +137,35 @@ class AuthController extends Controller
 
     public function UpdatePassword($token)
     {
+        $last = $token[strlen($token) - 1];
+        if ($last == 'a') {
+            $check = Engineer_company::where('remember_token', $token)->first();
+            $model = 'engineer_companies';
+            $id = $check->id;
+            if ($check) {
+                return view('engineer_company.auth.reset_password', compact('token', 'model', 'id'));
+            } else {
+                abort(404);
+            }
+        } else if ($last == 'b') {
+            $check = Engineer::where('remember_token', $token)->first();
+            $model = 'engineers';
+            $id = $check->id;
+            if ($check) {
+                return view('engineer_company.auth.reset_password', compact('token', 'model', 'id'));
+            } else {
+                abort(404);
+            }
+        } else {
+            $check = CustomerInfo::where('remember_token', $token)->first();
+            $model = 'customer_infos';
+            $id = $check->id;
+            if ($check) {
+                return view('engineer_company.auth.reset_password', compact('token', 'model', 'id'));
+            } else {
+                abort(404);
+            }
+        }
 
     }
 
@@ -146,17 +177,36 @@ class AuthController extends Controller
     public function sendEmail($url, $email)
     {
 
-            $details = [
+        $details = [
 
-                'title' => 'Click on the link below to reset password',
+            'title' => 'Click on the link below to reset password',
 
-                'url' => $url,
+            'url' => $url,
 
-            ];
-
-
-            \Mail::to($email)->send(new \App\Mail\MyTestMail($details));
+        ];
 
 
+        \Mail::to($email)->send(new \App\Mail\MyTestMail($details));
+
+
+    }
+
+    public function UpdateResetPassword(Request $request)
+    {
+        
+        if ($request->password == $request->password_confirmation) {
+            $update = DB::table($request->model)->update([
+                'password' => Hash::make($request->passowrd),
+            ]);
+            if ($request->model == 'customer_infos') {
+                return redirect()->route('customer-login');
+            } else if ($request->model == 'engineers') {
+                return redirect()->route('e.GetECLogin');
+            } else {
+                return redirect()->route('ec.GetECLogin');
+            }
+        } else {
+            return redirect()->back()->with('password_error', 'Passwords do not match');
+        }
     }
 }

@@ -45,7 +45,7 @@ Route::get('password-reset/{guard}', [AuthController::class, 'GetResetPassword']
 Route::post('send-password-reset/', [AuthController::class, 'SendResetPassword'])->name('SendResetPassword');
 Route::get('update-password/{token}', [AuthController::class, 'UpdatePassword'])->name('UpdatePassword');
 Route::get('check-email', [AuthController::class, 'CheckEmail'])->name('CheckEmail');
-
+Route::post('update-password-reset/', [AuthController::class, 'UpdateResetPassword'])->name('UpdateResetPassword');
 
 Route::group(['prefix' => 'eps-panel', 'middleware' => 'CommonRoutes'], function () {
 
