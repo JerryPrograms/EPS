@@ -242,7 +242,7 @@
                                                             <div class="card-body">
                                                                 <div class="row">
                                                                     <div class="col-lg-6 col-12 pb-3">
-                                                                        <div class="d-flex">
+                                                                        <div class="d-flex align-items-end">
                                                                             <label
                                                                                 class="form-label custom_lab w-25">{{__('translation.Title')}}</label>
                                                                             <input
@@ -251,7 +251,7 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-lg-6 col-12 pb-3">
-                                                                        <div class="d-flex">
+                                                                        <div class="d-flex align-items-end">
                                                                             <label
                                                                                 class="form-label custom_lab w-25">{{__('translation.Site')}}</label>
                                                                             <input
@@ -260,7 +260,7 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-lg-6 col-12 pb-3">
-                                                                        <div class="d-flex">
+                                                                        <div class="d-flex align-items-end">
                                                                             <label
                                                                                 class="form-label custom_lab w-25">{{__('translation.date')}}</label>
                                                                             <input
@@ -269,7 +269,7 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-lg-6 col-12 pb-3">
-                                                                        <div class="d-flex">
+                                                                        <div class="d-flex align-items-end">
                                                                             <label
                                                                                 class="form-label custom_lab w-25">{{__('translation.Photo')}}</label>
                                                                             <input
@@ -338,7 +338,7 @@
                                                             <div class="card-body">
                                                                 <div class="row">
                                                                     <div class="col-lg-6 col-12 pb-3">
-                                                                        <div class="d-flex">
+                                                                        <div class="d-flex align-items-end">
                                                                             <label
                                                                                 class="form-label custom_lab w-25">{{__('translation.Title')}}</label>
                                                                             <input
@@ -347,7 +347,7 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-lg-6 col-12 pb-3">
-                                                                        <div class="d-flex">
+                                                                        <div class="d-flex align-items-end">
                                                                             <label
                                                                                 class="form-label custom_lab w-25">{{__('translation.Site')}}</label>
                                                                             <input
@@ -356,7 +356,7 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-lg-6 col-12 pb-3">
-                                                                        <div class="d-flex">
+                                                                        <div class="d-flex align-items-end">
                                                                             <label
                                                                                 class="form-label custom_lab w-25">{{__('translation.Date')}}</label>
                                                                             <input
@@ -365,7 +365,7 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-lg-6 col-12 pb-3">
-                                                                        <div class="d-flex">
+                                                                        <div class="d-flex align-items-end">
                                                                             <label class="form-label custom_lab w-25">{{__('translation.Photo')}}</label>
                                                                             <input
                                                                                 class="form-control w-100 custom_input"
