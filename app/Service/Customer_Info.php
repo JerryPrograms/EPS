@@ -48,7 +48,7 @@ class Customer_Info
             if ($is_created) {
                 return json_encode([
                     'success' => true,
-                    'message' => __('Customer Deleted Successfully'),
+                    'message' => __('Customer Created Successfully'),
                 ]);
             } else {
                 return json_encode([

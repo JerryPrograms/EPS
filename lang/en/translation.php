@@ -456,4 +456,5 @@ return [
     'Process Photo' => 'Process Photo',
     'Delete Report' => 'Delete Report',
     'Are you sure you want to delete this completion report?' => 'Are you sure you want to delete this completion report?',
+    'Customer Created Successfully' => 'Customer Created Successfully',
 ];
