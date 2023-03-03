@@ -85,6 +85,11 @@
                                                     </td>
                                                 </tr>
                                             @endif
+                                            <tr id="no_record_found" class="text-center d-none">
+                                                <td colspan="8"><img style="height: 200px;"
+                                                                     src="{{asset('engineer_company/images/no-data-found.png')}}"
+                                                                     alt="No Records Found"></td>
+                                            </tr>
                                             </tbody>
                                         </table>
                                     </div>
@@ -164,11 +169,21 @@
         var $rows = $('#myTable tr');
         $('#myInput').keyup(function () {
             var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
-
+            let count = 0;
             $rows.show().filter(function () {
                 var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+                if (!~text.indexOf(val)) {
+                    count++;
+                }
                 return !~text.indexOf(val);
             }).hide();
+            if (count == $rows.length) {
+                $('#no_record_found').removeClass('d-none').show();
+            } else {
+                if (!$('#no_record_found').hasClass('d-none')) {
+                    $('#no_record_found').addClass('d-none').hide();
+                }
+            }
         });
     </script>
 @endsection

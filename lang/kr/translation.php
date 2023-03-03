@@ -452,8 +452,8 @@ return [
     'Delete Report' => '보고서 삭제',
     'Are you sure you want to delete this completion report?' => '공사완료 보고서를 삭제하시겠습니까?',
     'Customer Created Successfully' => '고객이 성공적으로 생성됨',
-    'Reset Password' => '',
-    'Kindly check your email!' => '',
-    'Return to login' => '',
-    'Send Password Reset Link' => '',
+    'Reset Password' => '이메일을 확인해주세요',
+    'Kindly check your email!' => '로그인으로 돌아가기',
+    'Return to login' => '리셋 링크에 비밀번호 전송하기',
+    'Send Password Reset Link' => '비밀번호 재설정하기',
 ];

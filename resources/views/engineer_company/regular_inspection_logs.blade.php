@@ -151,7 +151,7 @@
                                         </div>
                                     @else
                                         <div class="text-center">
-                                            <img src="{{asset('engineer_company/images/no-data-found.png')}}"
+                                            <img style="height: 200px;" src="{{asset('engineer_company/images/no-data-found.png')}}"
                                                  alt="No Records Found">
                                         </div>
                                     @endif

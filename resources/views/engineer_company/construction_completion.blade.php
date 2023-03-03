@@ -63,6 +63,7 @@
                                             </tr>
                                             </thead>
                                             <tbody>
+                                            @if(count($completion_reports) > 0)
                                             @foreach($completion_reports as $c)
                                                 <tr>
                                                     <td>
@@ -122,6 +123,12 @@
                                                     </td>
                                                 </tr>
                                             @endforeach
+                                            @else
+                                                <tr  class="text-center">
+                                                   <td colspan="8"> <img style="height: 200px;" src="{{asset('engineer_company/images/no-data-found.png')}}"
+                                                             alt="No Records Found"></td>
+                                                </tr>
+                                            @endif
                                             </tbody>
                                         </table>
 

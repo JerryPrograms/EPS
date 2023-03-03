@@ -90,7 +90,7 @@
                                         </div>
                                     @else
                                         <div class="text-center">
-                                            <img style="width: 500px!important;"
+                                            <img style="height: 200px;"
                                                  src="{{asset('engineer_company/images/no-data-found.png')}}"
                                                  alt="No Records Found">
                                         </div>

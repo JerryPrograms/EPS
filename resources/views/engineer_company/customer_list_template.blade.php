@@ -32,7 +32,7 @@
 
     @if(count($customer) == 0)
         <tr>
-            <td colspan="8"><img style="width: 50%; height: 50%"
+            <td colspan="8"><img style="height: 200px;"
                                  src="{{asset('engineer_company/images/no-data-found.png')}}">
             </td>
         </tr>

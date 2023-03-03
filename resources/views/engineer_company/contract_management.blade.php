@@ -60,7 +60,7 @@
                                     @else
                                         <div class="text-center">
                                             <img src="{{ asset('engineer_company/images/no-data-found.png') }}"
-                                                 style="height:250px;" class="img-fluid" alt="No Record Found">
+                                                 style="height: 200px;" class="img-fluid" alt="No Record Found">
                                         </div>
                                     @endif
                                 </div>
