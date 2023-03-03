@@ -113,7 +113,7 @@ return [
     'info' => 'Info',
     'login' => 'Login',
     'EVERY PARKING SOLUTION' => 'EVERY PARKING SOLUTION',
-    'Email Email Address' => 'Email Email Address',
+    'Email Address' => 'Email Address',
     'Id' => 'ID',
     'Enter your password' => 'Enter your password',
     'password' => 'Password',
@@ -457,4 +457,8 @@ return [
     'Delete Report' => 'Delete Report',
     'Are you sure you want to delete this completion report?' => 'Are you sure you want to delete this completion report?',
     'Customer Created Successfully' => 'Customer Created Successfully',
+    'Reset Password' => 'Reset Password',
+    'Kindly check your email!' => 'Kindly check your email!',
+    'Return to login' => 'Return to login',
+    'Send Password Reset Link' => 'Send Password Reset Link',
 ];

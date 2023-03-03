@@ -51,7 +51,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Reset Password') }}</div>
+                    <div class="card-header">{{ __('translation.Reset Password') }}</div>
 
                     <div class="card-body">
 
@@ -65,7 +65,7 @@
 
                             <div class="row mb-3">
                                 <label for="password"
-                                       class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
+                                       class="col-md-4 col-form-label text-md-end">{{ __('translation.Password') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="password" type="password"
@@ -85,7 +85,7 @@
 
                             <div class="row mb-3">
                                 <label for="password-confirm"
-                                       class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password') }}</label>
+                                       class="col-md-4 col-form-label text-md-end">{{ __('confirm') }}{{__('Password')}}</label>
 
                                 <div class="col-md-6">
                                     <input id="password-confirm" type="password" class="form-control"
@@ -96,7 +96,7 @@
                             <div class="row mb-0">
                                 <div class="col-md-6 offset-md-4">
                                     <button type="submit" class="btn btn-primary">
-                                        {{ __('Reset Password') }}
+                                        {{ __('translation.Reset Password') }}
                                     </button>
                                 </div>
                             </div>
