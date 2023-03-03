@@ -451,4 +451,5 @@ return [
     'Process Photo' => '작업사진',
     'Delete Report' => '보고서 삭제',
     'Are you sure you want to delete this completion report?' => '공사완료 보고서를 삭제하시겠습니까?',
+    'Customer Created Successfully' => '고객이 성공적으로 생성됨',
 ];
