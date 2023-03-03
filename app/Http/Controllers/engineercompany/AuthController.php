@@ -193,7 +193,7 @@ class AuthController extends Controller
 
     public function UpdateResetPassword(Request $request)
     {
-        dd($request->all());
+
         if ($request->password == $request->password_confirmation) {
             $update = DB::table($request->model)->where('id', $request->id)->update([
                 'password' => Hash::make($request->password),
