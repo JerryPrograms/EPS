@@ -29,7 +29,7 @@ class AdminController extends Controller
         if ($login_attempt === "x") {
             return json_encode([
                 'success' => false,
-                'message' => 'you are already logged in as ' . activeGuard(),
+                'message' => __('translation.you are already logged in as ') . activeGuard(),
             ]);
         }
         if ($login_attempt) {

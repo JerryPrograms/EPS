@@ -461,4 +461,7 @@ return [
     'Kindly check your email!' => 'Kindly check your email!',
     'Return to login' => 'Return to login',
     'Send Password Reset Link' => 'Send Password Reset Link',
+    'you are already logged in as ' => 'you are already logged in as ',
+    'ADMIN Login' => 'ADMIN Login',
+    'Engineer registered successfully' => 'Engineer registered successfully',
 ];

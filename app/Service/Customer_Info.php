@@ -48,12 +48,12 @@ class Customer_Info
             if ($is_created) {
                 return json_encode([
                     'success' => true,
-                    'message' => __('Customer Created Successfully'),
+                    'message' => __('translation.Customer Created Successfully'),
                 ]);
             } else {
                 return json_encode([
                     'success' => true,
-                    'message' => __('Something went wrong.....'),
+                    'message' => __('translation.Something went wrong.....'),
                 ]);
             }
         } catch (\Exception $ex) {
@@ -72,12 +72,12 @@ class Customer_Info
             if ($is_deleted) {
                 return json_encode([
                     'success' => true,
-                    'message' => __('Customer Deleted Successfully'),
+                    'message' => __('translation.Customer Deleted Successfully'),
                 ]);
             } else {
                 return json_encode([
                     'success' => true,
-                    'message' => __('Something went wrong.....'),
+                    'message' => __('translation.Something went wrong.....'),
 
 
                 ]);

@@ -126,7 +126,7 @@
                                         </div>
                                         <div class="form-action mt-4 text-end">
                                             <button id="addEngineerBtn" type="submit"
-                                                    class="btn btn-primary">Register
+                                                    class="btn btn-primary">{{__('translation.Register')}}
                                             </button>
                                         </div>
                                     </form>

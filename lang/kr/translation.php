@@ -456,4 +456,7 @@ return [
     'Kindly check your email!' => '로그인으로 돌아가기',
     'Return to login' => '리셋 링크에 비밀번호 전송하기',
     'Send Password Reset Link' => '비밀번호 재설정하기',
+    'you are already logged in as ' => '이미 다음 계정으로 로그인되어 있습니다',
+    'ADMIN Login' => '관리자 로그인',
+    'Engineer registered successfully' => '엔지니어가 성공적으로 등록되었습니다.',
 ];

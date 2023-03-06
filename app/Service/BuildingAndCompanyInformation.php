@@ -62,7 +62,7 @@ class BuildingAndCompanyInformation
             DB::commit();
             return json_encode([
                 'success' => true,
-                'message' => __('Information Uploaded Successfully'),
+                'message' => __('translation.Information Uploaded Successfully'),
             ]);
 
         } catch (\Exception $ex) {
