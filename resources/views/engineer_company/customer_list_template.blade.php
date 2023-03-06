@@ -83,6 +83,6 @@
     @endforeach
     </tbody>
 </table>
-<div class="col-lg-12 text-center">
+<div class="col-lg-12 text-center pt-3">
     {!! $customer->links('common_files.paginate') !!}
 </div>
