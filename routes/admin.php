@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\BuildingInfoManagementController;
-use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\admin\BuildingInfoManagementController;
+use App\Http\Controllers\admin\AdminController;
 
 /*
 |--------------------------------------------------------------------------

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Service\Authentication;
@@ -16,6 +16,7 @@ class AdminController extends Controller
 
     public function admin_login_action(Request $request)
     {
+
         $validate = Validator::make($request->all(), [
             'email' => 'required',
             'password' => 'required'
