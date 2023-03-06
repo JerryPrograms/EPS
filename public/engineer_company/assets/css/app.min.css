@@ -5862,7 +5862,8 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
     background-color: #6281FE;
     border-color: #007bff;
     border-radius: 7px;
-    padding: 6px 12px 6px 12px;
+    padding: 4px 12px 4px 12px;
+    margin-top: 4px;
 }
 .page-link {
     position: relative;
