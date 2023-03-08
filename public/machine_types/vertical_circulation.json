@@ -4,37 +4,37 @@
             {
                 "control_panel_and_operation_panel": [
                     {
-                        "question_title": "Operation panel touch screen operation status",
+                        "question_title": "조작반 버튼, 터치스크린 작동 상태",
                         "situation": "B",
                         "inspection_duration": "Monthly",
                         "input_name": "operation_panel_touch_screen_operation_status"
                     },
                     {
-                        "question_title": "Emergency S/W and various S/W operation status",
+                        "question_title": "비상S/W 및 각종 S/W 동작 상태",
                         "situation": "B",
                         "inspection_duration": "Monthly",
                         "input_name": "emergency_S_W_and_various_S_W_operation_status"
                     },
                     {
-                        "question_title": "Control panel interior cleanliness",
+                        "question_title": "제어반 내부 청결 상태",
                         "situation": "B",
                         "inspection_duration": "3, 9",
                         "input_name": "control_panel_interior_cleanliness"
                     },
                     {
-                        "question_title": "Operation status of various parts [magnet, relay, etc]",
+                        "question_title": "각종 부품[마그네트, 릴레이 등] 동작 상태",
                         "situation": "B",
                         "inspection_duration": "3, 6, 9",
                         "input_name": "operation_status_of_various_parts_magnet_relay_etc"
                     },
                     {
-                        "question_title": "PLC input, output signal and communication operation status",
+                        "question_title": "PLC 입력, 출력 신호 및 통신 동작 상태",
                         "situation": "B",
                         "inspection_duration": "Monthly",
                         "input_name": "PLC_input_output_signal_and_communication_operation_status"
                     },
                     {
-                        "question_title": "Terminal block bolt tightening condition",
+                        "question_title": "단자대 볼트 조임 상태",
                         "situation": "B",
                         "inspection_duration": "3, 9",
                         "input_name": "terminal_block_bolt_tightening_condition"
@@ -44,19 +44,19 @@
             {
                 "entrance": [
                     {
-                        "question_title": "Door operation and parts [S/W, Shoe, Rope] status",
+                        "question_title": "도어 작동 및 부품[S/W, Shoe, Rope] 상태",
                         "situation": "B",
                         "inspection_duration": "Monthly",
                         "input_name": "door_operation_and_parts_S_W_shoe_rope_status"
                     },
                     {
-                        "question_title": "Guidance light, indicator operation status",
+                        "question_title": "유도안내등, 표시등 동작 상태",
                         "situation": "B",
                         "inspection_duration": "Monthly",
                         "input_name": "guidance_light_indicator_operation_status"
                     },
                     {
-                        "question_title": "Various nameplates attached, guide mirror condition",
+                        "question_title": "각종 명판 부착, 안내거울 상태",
                         "situation": "B",
                         "inspection_duration": "Monthly",
                         "input_name": "various_nameplates_attached_guide_mirror_condition"
@@ -66,19 +66,19 @@
             {
                 "platform": [
                     {
-                        "question_title": "Fixed and operating status of various sensors",
+                        "question_title": "각종 센서 고정 및 동작 상태",
                         "situation": "B",
                         "inspection_duration": "Monthly",
                         "input_name": "fixed_and_operating_status_of_various_sensors"
                     },
                     {
-                        "question_title": "Anti-skid stopper status",
+                        "question_title": "밀림 방지 스토퍼 상태",
                         "situation": "B",
                         "inspection_duration": "3, 6, 9",
                         "input_name": "anti_skid_stopper_status"
                     },
                     {
-                        "question_title": "Guidance light, warning light, buzzer status",
+                        "question_title": "유도안내등, 경광등, 부저 상태",
                         "situation": "B",
                         "inspection_duration": "Monthly",
                         "input_name": "guidance_light_warning_light_buzzer_status"
@@ -92,79 +92,79 @@
             {
                 "driving_part": [
                     {
-                        "question_title": "Main motor fixed and noise condition",
+                        "question_title": "메인 모터 고정 및 소음 상태",
                         "situation": "B",
                         "inspection_duration": "Monthly",
                         "input_name": "main_motor_fixed_and_noise_condition"
                     },
                     {
-                        "question_title": "Motor brake operation and lining wear, gap condition",
+                        "question_title": "모터 브레이크 동작 및 라이닝 마모, Gap 상태",
                         "situation": "B",
                         "inspection_duration": "2, 5, 8, 11",
                         "input_name": "motor_brake_operation_and_lining_wear_gap_condition"
                     },
                     {
-                        "question_title": "Reducer oil leakage and noise condition",
+                        "question_title": "감속기 누유 및 소음상태",
                         "situation": "B",
                         "inspection_duration": "2, 5, 8, 11",
                         "input_name": "reducer_oil_leakage_and_noise_condition"
                     },
                     {
-                        "question_title": "Pinion Gear wear condition",
+                        "question_title": "Pinion Gear 마모 상태",
                         "situation": "B",
                         "inspection_duration": "2, 5, 8, 11",
                         "input_name": "pinion_gear_wear_condition"
                     },
                     {
-                        "question_title": "Sprocket condition",
+                        "question_title": "스프라켓 상태",
                         "situation": "B",
                         "inspection_duration": "2, 5, 8, 11",
                         "input_name": "sprocket_condition"
                     },
                     {
-                        "question_title": "Chain tension, wear condition",
+                        "question_title": "체인 Tension, 마모 상태",
                         "situation": "B",
                         "inspection_duration": "2, 5, 8, 11",
                         "input_name": "chain_tension_wear_condition"
                     },
                     {
-                        "question_title": "Bearing noise and condition of each part",
+                        "question_title": "각부 베어링 소음 및 상태",
                         "situation": "B",
                         "inspection_duration": "2, 5, 8, 11",
                         "input_name": "bearing_noise_and_condition_of_each_part"
                     },
                     {
-                        "question_title": "Gear wear condition",
+                        "question_title": "기어 치면 마모 상태",
                         "situation": "B",
                         "inspection_duration": "3, 9",
                         "input_name": "gear_wear_condition"
                     },
                     {
-                        "question_title": "Progress guide rail condition",
+                        "question_title": "진방 가이드 레일 상태",
                         "situation": "B",
                         "inspection_duration": "Monthly",
                         "input_name": "progress_guide_rail_condition"
                     },
                     {
-                        "question_title": "Progress guide roller condition",
+                        "question_title": "진방 가이드 롤러 상태",
                         "situation": "B",
                         "inspection_duration": "Monthly",
                         "input_name": "progress_guide_roller_condition"
                     },
                     {
-                        "question_title": "Rotating guide status",
+                        "question_title": "회전 가이드 상태",
                         "situation": "B",
                         "inspection_duration": "Monthly",
                         "input_name": "rotating_guide_status"
                     },
                     {
-                        "question_title": "Chain roller wear",
+                        "question_title": "체인 롤러 마모 상태",
                         "situation": "B",
                         "inspection_duration": "3, 9",
                         "input_name": "chain_roller_wear"
                     },
                     {
-                        "question_title": "Pallet shaft, hanger status",
+                        "question_title": "팔레트 축(Shaft), 행거 상태",
                         "situation": "B",
                         "inspection_duration": "3, 9",
                         "input_name": "pallet_shaft_hanger_status"
@@ -178,79 +178,79 @@
             {
                 "follower": [
                     {
-                        "question_title": "Main motor fixed and noise condition",
+                        "question_title": "메인 모터 고정 및 소음상태",
                         "situation": "B",
                         "inspection_duration": "Monthly",
                         "input_name": "main_motor_fixed_and_noise_condition"
                     },
                     {
-                        "question_title": "Motor brake operation and lining wear, gap condition",
+                        "question_title": "모터 브레이크 동작 및 라이닝 마모, Gap 상태",
                         "situation": "B",
                         "inspection_duration": "2, 5, 8, 11",
                         "input_name": "motor_brake_operation_and_lining_wear_gap_condition"
                     },
                     {
-                        "question_title": "Reducer oil leakage and noise condition",
+                        "question_title": "감속기 누유 및 소음상태",
                         "situation": "B",
                         "inspection_duration": "2, 5, 8, 11",
                         "input_name": "reducer_oil_leakage_and_noise_condition"
                     },
                     {
-                        "question_title": "Pinion Gear wear condition",
+                        "question_title": "Pinion Gear 마모 상태",
                         "situation": "B",
                         "inspection_duration": "2, 5, 8, 11",
                         "input_name": "pinion_gear_wear_condition"
                     },
                     {
-                        "question_title": "Sprocket condition",
+                        "question_title": "스프라켓 상태",
                         "situation": "B",
                         "inspection_duration": "2, 5, 8, 11",
                         "input_name": "sprocket_condition"
                     },
                     {
-                        "question_title": "Chain tension, wear condition",
+                        "question_title": "체인 Tension, 마모 상태",
                         "situation": "B",
                         "inspection_duration": "2, 5, 8, 11",
                         "input_name": "chain_tension_wear_condition"
                     },
                     {
-                        "question_title": "Bearing noise and condition of each part",
+                        "question_title": "각부 베어링 소음 및 상태",
                         "situation": "B",
                         "inspection_duration": "2, 5, 8, 11",
                         "input_name": "bearing_noise_and_condition_of_each_part"
                     },
                     {
-                        "question_title": "Gear wear condition",
+                        "question_title": "기어 치면  마모 상태",
                         "situation": "B",
                         "inspection_duration": "3, 9",
                         "input_name": "gear_wear_condition"
                     },
                     {
-                        "question_title": "Progress guide rail condition",
+                        "question_title": "진방 가이드 레일 상태",
                         "situation": "B",
                         "inspection_duration": "Monthly",
                         "input_name": "progress_guide_rail_condition"
                     },
                     {
-                        "question_title": "Progress guide roller condition",
+                        "question_title": "진방 가이드 롤러 상태",
                         "situation": "B",
                         "inspection_duration": "Monthly",
                         "input_name": "progress_guide_roller_condition"
                     },
                     {
-                        "question_title": "Rotating guide status",
+                        "question_title": "회전 가이드 상태",
                         "situation": "B",
                         "inspection_duration": "Monthly",
                         "input_name": "rotating_guide_status"
                     },
                     {
-                        "question_title": "Chain roller wear",
+                        "question_title": "체인 롤러 마모 상태",
                         "situation": "B",
                         "inspection_duration": "3, 9",
                         "input_name": "chain_roller_wear"
                     },
                     {
-                        "question_title": "Pallet shaft, hanger status",
+                        "question_title": "팔레트 축(Shaft), 행거 상태",
                         "situation": "B",
                         "inspection_duration": "3, 9",
                         "input_name": "pallet_shaft_hanger_status"
@@ -264,25 +264,25 @@
             {
                 "turntable": [
                     {
-                        "question_title": "Drive motor, turn lifting motor fixed and noise condition",
+                        "question_title": "구동모터, 턴 리프팅 모터 고정 및 소음 상태",
                         "situation": "B",
                         "inspection_duration": "Monthly",
                         "input_name": "drive_motor_turn_lifting_motor_fixed_and_noise_condition"
                     },
                     {
-                        "question_title": "Roller motion and noise condition",
+                        "question_title": "롤러 동작 및 소음 상태",
                         "situation": "B",
                         "inspection_duration": "Monthly",
                         "input_name": "roller_motion_and_noise_condition"
                     },
                     {
-                        "question_title": "Position and sensor operation status",
+                        "question_title": "정위치 및 센서 동작 상태",
                         "situation": "B",
                         "inspection_duration": "Monthly",
                         "input_name": "position_and_sensor_operation_status"
                     },
                     {
-                        "question_title": "Side roller condition",
+                        "question_title": "사이드 롤러 상태",
                         "situation": "B",
                         "inspection_duration": "2, 5, 8, 11",
                         "input_name": "side_roller_condition"
@@ -296,49 +296,49 @@
             {
                 "etc": [
                     {
-                        "question_title": "Steel frame vertical and horizontal deformation",
+                        "question_title": "철골 수직, 수평 변형 상태",
                         "situation": "B",
                         "inspection_duration": "3, 9",
                         "input_name": "steel_frame_vertical_and_horizontal_deformation"
                     },
                     {
-                        "question_title": "Bolt tightening condition",
+                        "question_title": "볼트류 조임 상태",
                         "situation": "B",
                         "inspection_duration": "3, 9",
                         "input_name": "bolt_tightening_condition"
                     },
                     {
-                        "question_title": "Paint corrosion condition",
+                        "question_title": "도장 부식 상태",
                         "situation": "B",
                         "inspection_duration": "3, 9",
                         "input_name": "paint_corrosion_condition"
                     },
                     {
-                        "question_title": "Position sensor operation status",
+                        "question_title": "정위치 센서 동작 상태",
                         "situation": "B",
                         "inspection_duration": "Monthly",
                         "input_name": "position_sensor_operation_status"
                     },
                     {
-                        "question_title": "Doorway and overhead light conditions",
+                        "question_title": "출입구 및 상부 조명등 상태",
                         "situation": "B",
                         "inspection_duration": "Monthly",
                         "input_name": "doorway_and_overhead_light_conditions"
                     },
                     {
-                        "question_title": "External turntable condition (drive motor, roller operation and noise condition, deformation and damage of frame)",
+                        "question_title": "외장 턴테이블 상태(구동모터, 롤러 동작 및 소음 상태, 프레임의 변형 및 손상)",
                         "situation": "B",
                         "inspection_duration": "Monthly",
                         "input_name": "external_turntable_condition_drive_motor,_roller_operation_and_noise_condition_deformation_and_damage_of_frame"
                     },
                     {
-                        "question_title": "Pallet deformation state",
+                        "question_title": "팔레트 변형상태",
                         "situation": "B",
                         "inspection_duration": "3, 9",
                         "input_name": "pallet_deformation_state"
                     },
                     {
-                        "question_title": "Lubricating each part and applying grease (chain, bearing, gear, coupling, guide rail, etc)",
+                        "question_title": "각 부 주유, 구리스 도포 상태(체인, 베어링, 기어, 커플링, 가이드 레일 등)",
                         "situation": "B",
                         "inspection_duration": "3, 9",
                         "input_name": "lubricating_each_part_and_applying_grease_chain_bearing_gear_coupling_guide_rail"

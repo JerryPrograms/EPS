@@ -278,7 +278,7 @@ return [
     'Address' => '주소',
     'Confirm Delete' => '삭제확인',
     'Are you sure you want to delete' => '삭제하시겠습니까?',
-    'Parking Facility Periodic Inspection Table' => '주차설비 정기 점검표 - 평면왕복식',
+    'Parking Facility Periodic Inspection Table' => '주차시설 정기점검표',
     'Type and number' => '기종 및 대수',
     'Arrival time' => '도착시간',
     'Completion time' => '완료시간',
