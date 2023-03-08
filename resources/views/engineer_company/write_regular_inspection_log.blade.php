@@ -114,7 +114,7 @@
                                                             <h4
                                                                 class="card_tittle_2 d-flex align-items-center mb-2 text-capitalize">
                                                                 {{ __('translation.Parking Facility Periodic Inspection Table') }} -
-                                                                {{ str_replace('_', ' ', $customer->ParkingFacilityCertificate->type) }}
+                                                                {{ __('translation.'.str_replace('_', ' ', $customer->ParkingFacilityCertificate->type)) }}
                                                             </h4>
                                                         </div>
                                                     </div>
@@ -145,7 +145,7 @@
                                                                             $obj2 = new ArrayIterator($v);
                                                                             $sub_category = $obj2->key();
                                                                         @endphp
-                                                                        <span class="badge bg-light">{{ string_capitalize($sub_category) }}</span>
+                                                                        <span class="badge bg-light">{{     string_capitalize($sub_category) }}</span>
                                                                     @endforeach
                                                                 </div>
                                                             </div>

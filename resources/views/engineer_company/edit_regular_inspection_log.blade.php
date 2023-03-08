@@ -117,7 +117,7 @@ $check_content = json_decode($customer->check_contents,true);
                                                             <h4
                                                                 class="card_tittle_2 d-flex align-items-center mb-2 text-capitalize">
                                                                 {{ __('translation.Parking Facility Periodic Inspection Table') }} -
-                                                                {{ str_replace('_', ' ', $customer->getCustomer->ParkingFacilityCertificate->type) }}
+                                                                {{ __('translation.'.str_replace('_', ' ', $customer->getCustomer->ParkingFacilityCertificate->type)) }}
                                                             </h4>
                                                         </div>
                                                     </div>

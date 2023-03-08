@@ -6,13 +6,13 @@
                     {
                         "question_title": "조작반 버튼, 터치스크린 작동 상태",
                         "situation": "B",
-                        "inspection_duration": "Monthly",
+                        "inspection_duration": "월간 간행물",
                         "input_name": "operation_panel_touch_screen_operation_status"
                     },
                     {
                         "question_title": "비상S/W 및 각종 S/W 동작 상태",
                         "situation": "B",
-                        "inspection_duration": "Monthly",
+                        "inspection_duration": "월간 간행물",
                         "input_name": "emergency_S_W_and_various_S_W_operation_status"
                     },
                     {
@@ -30,7 +30,7 @@
                     {
                         "question_title": "PLC 입력, 출력 신호 및 통신 동작 상태",
                         "situation": "B",
-                        "inspection_duration": "Monthly",
+                        "inspection_duration": "월간 간행물",
                         "input_name": "PLC_input_output_signal_and_communication_operation_status"
                     },
                     {
@@ -46,19 +46,19 @@
                     {
                         "question_title": "도어 작동 및 부품[S/W, Shoe, Rope] 상태",
                         "situation": "B",
-                        "inspection_duration": "Monthly",
+                        "inspection_duration": "월간 간행물",
                         "input_name": "door_operation_and_parts_S_W_shoe_rope_status"
                     },
                     {
                         "question_title": "유도안내등, 표시등 동작 상태",
                         "situation": "B",
-                        "inspection_duration": "Monthly",
+                        "inspection_duration": "월간 간행물",
                         "input_name": "guidance_light_indicator_operation_status"
                     },
                     {
                         "question_title": "각종 명판 부착, 안내거울 상태",
                         "situation": "B",
-                        "inspection_duration": "Monthly",
+                        "inspection_duration": "월간 간행물",
                         "input_name": "various_nameplates_attached_guide_mirror_condition"
                     }
                 ]
@@ -68,7 +68,7 @@
                     {
                         "question_title": "각종 센서 고정 및 동작 상태",
                         "situation": "B",
-                        "inspection_duration": "Monthly",
+                        "inspection_duration": "월간 간행물",
                         "input_name": "fixed_and_operating_status_of_various_sensors"
                     },
                     {
@@ -80,7 +80,7 @@
                     {
                         "question_title": "유도안내등, 경광등, 부저 상태",
                         "situation": "B",
-                        "inspection_duration": "Monthly",
+                        "inspection_duration": "월간 간행물",
                         "input_name": "guidance_light_warning_light_buzzer_status"
                     }
                 ]
@@ -94,7 +94,7 @@
                     {
                         "question_title": "메인 모터 고정 및 소음 상태",
                         "situation": "B",
-                        "inspection_duration": "Monthly",
+                        "inspection_duration": "월간 간행물",
                         "input_name": "main_motor_fixed_and_noise_condition"
                     },
                     {
@@ -142,19 +142,19 @@
                     {
                         "question_title": "진방 가이드 레일 상태",
                         "situation": "B",
-                        "inspection_duration": "Monthly",
+                        "inspection_duration": "월간 간행물",
                         "input_name": "progress_guide_rail_condition"
                     },
                     {
                         "question_title": "진방 가이드 롤러 상태",
                         "situation": "B",
-                        "inspection_duration": "Monthly",
+                        "inspection_duration": "월간 간행물",
                         "input_name": "progress_guide_roller_condition"
                     },
                     {
                         "question_title": "회전 가이드 상태",
                         "situation": "B",
-                        "inspection_duration": "Monthly",
+                        "inspection_duration": "월간 간행물",
                         "input_name": "rotating_guide_status"
                     },
                     {
@@ -180,7 +180,7 @@
                     {
                         "question_title": "메인 모터 고정 및 소음상태",
                         "situation": "B",
-                        "inspection_duration": "Monthly",
+                        "inspection_duration": "월간 간행물",
                         "input_name": "main_motor_fixed_and_noise_condition"
                     },
                     {
@@ -228,19 +228,19 @@
                     {
                         "question_title": "진방 가이드 레일 상태",
                         "situation": "B",
-                        "inspection_duration": "Monthly",
+                        "inspection_duration": "월간 간행물",
                         "input_name": "progress_guide_rail_condition"
                     },
                     {
                         "question_title": "진방 가이드 롤러 상태",
                         "situation": "B",
-                        "inspection_duration": "Monthly",
+                        "inspection_duration": "월간 간행물",
                         "input_name": "progress_guide_roller_condition"
                     },
                     {
                         "question_title": "회전 가이드 상태",
                         "situation": "B",
-                        "inspection_duration": "Monthly",
+                        "inspection_duration": "월간 간행물",
                         "input_name": "rotating_guide_status"
                     },
                     {
@@ -266,19 +266,19 @@
                     {
                         "question_title": "구동모터, 턴 리프팅 모터 고정 및 소음 상태",
                         "situation": "B",
-                        "inspection_duration": "Monthly",
+                        "inspection_duration": "월간 간행물",
                         "input_name": "drive_motor_turn_lifting_motor_fixed_and_noise_condition"
                     },
                     {
                         "question_title": "롤러 동작 및 소음 상태",
                         "situation": "B",
-                        "inspection_duration": "Monthly",
+                        "inspection_duration": "월간 간행물",
                         "input_name": "roller_motion_and_noise_condition"
                     },
                     {
                         "question_title": "정위치 및 센서 동작 상태",
                         "situation": "B",
-                        "inspection_duration": "Monthly",
+                        "inspection_duration": "월간 간행물",
                         "input_name": "position_and_sensor_operation_status"
                     },
                     {
@@ -316,19 +316,19 @@
                     {
                         "question_title": "정위치 센서 동작 상태",
                         "situation": "B",
-                        "inspection_duration": "Monthly",
+                        "inspection_duration": "월간 간행물",
                         "input_name": "position_sensor_operation_status"
                     },
                     {
                         "question_title": "출입구 및 상부 조명등 상태",
                         "situation": "B",
-                        "inspection_duration": "Monthly",
+                        "inspection_duration": "월간 간행물",
                         "input_name": "doorway_and_overhead_light_conditions"
                     },
                     {
                         "question_title": "외장 턴테이블 상태(구동모터, 롤러 동작 및 소음 상태, 프레임의 변형 및 손상)",
                         "situation": "B",
-                        "inspection_duration": "Monthly",
+                        "inspection_duration": "월간 간행물",
                         "input_name": "external_turntable_condition_drive_motor,_roller_operation_and_noise_condition_deformation_and_damage_of_frame"
                     },
                     {

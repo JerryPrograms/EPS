@@ -6,19 +6,19 @@
                     {
                         "question_title": "조작반 터치스크린 작동 상태",
                         "situation": "B",
-                        "inspection_duration": "Monthly",
+                        "inspection_duration": "월간 간행물",
                         "input_name": "operation_panel_touch_screen_operation_status"
                     },
                     {
                         "question_title": "비상S/W 및 각종 S/W 동작 상태",
                         "situation": "B",
-                        "inspection_duration": "Monthly",
+                        "inspection_duration": "월간 간행물",
                         "input_name": "emergency_s_w_and_various_s_w_operation_status"
                     },
                     {
                         "question_title": "인버터, 제동저항 동작 상태",
                         "situation": "B",
-                        "inspection_duration": "Monthly",
+                        "inspection_duration": "월간 간행물",
                         "input_name": "inverter_braking_resistor_operation_status"
                     },
                     {
@@ -30,13 +30,13 @@
                     {
                         "question_title": "각종 부품[마그네트, 릴레이 등] 동작 상태",
                         "situation": "B",
-                        "inspection_duration": "Monthly",
+                        "inspection_duration": "월간 간행물",
                         "input_name": "operation_status_of_various_parts_magnet_relay_etc"
                     },
                     {
                         "question_title": "PLC 입력, 출력 신호 및 통신 동작 상태",
                         "situation": "B",
-                        "inspection_duration": "Monthly",
+                        "inspection_duration": "월간 간행물",
                         "input_name": "PLC_input_output_signal_and_communication_operation_status"
                     },
                     {
@@ -52,19 +52,19 @@
                     {
                         "question_title": "도어 작동 및 부품[S/W, Shoe, Rope] 상태",
                         "situation": "B",
-                        "inspection_duration": "Monthly",
+                        "inspection_duration": "월간 간행물",
                         "input_name": "door_operation_and_parts_S_W_shoe_rope_status"
                     },
                     {
                         "question_title": "유도안내등, 표시등 동작 상태",
                         "situation": "B",
-                        "inspection_duration": "Monthly",
+                        "inspection_duration": "월간 간행물",
                         "input_name": "guidance_light_indicator_operation_status"
                     },
                     {
                         "question_title": "각종 명판 부착, 안내거울 상태",
                         "situation": "B",
-                        "inspection_duration": "Monthly",
+                        "inspection_duration": "월간 간행물",
                         "input_name": "various_nameplates_attached_guide_mirror_condition"
                     }
                 ]
@@ -74,7 +74,7 @@
                     {
                         "question_title": "각종 센서 고정 및 동작 상태",
                         "situation": "B",
-                        "inspection_duration": "Monthly",
+                        "inspection_duration": "월간 간행물",
                         "input_name": "fixed_and_operating_status_of_various_sensors"
                     },
                     {
@@ -86,7 +86,7 @@
                     {
                         "question_title": "유도안내등, 경광등, 부저 상태",
                         "situation": "B",
-                        "inspection_duration": "Monthly",
+                        "inspection_duration": "월간 간행물",
                         "input_name": "guidance_light_warning_light_buzzer_status"
                     }
                 ]
@@ -100,13 +100,13 @@
                     {
                         "question_title": "구동 모터 고정 및 소음 상태",
                         "situation": "B",
-                        "inspection_duration": "Monthly",
+                        "inspection_duration": "월간 간행물",
                         "input_name": "driving_motor_fixed_and_noise_condition"
                     },
                     {
                         "question_title": "롤러류(구동, 하부, 사이드) 상태",
                         "situation": "B",
-                        "inspection_duration": "Monthly",
+                        "inspection_duration": "월간 간행물",
                         "input_name": "state_of_rollers_drive_bottom_side"
                     },
                     {
@@ -118,13 +118,13 @@
                     {
                         "question_title": "정위치 및 센서 동작 상태",
                         "situation": "B",
-                        "inspection_duration": "Monthly",
+                        "inspection_duration": "월간 간행물",
                         "input_name": "position_and_sensor_operation_status"
                     },
                     {
                         "question_title": "포지션 모터 ASS’Y 상태",
                         "situation": "B",
-                        "inspection_duration": "Monthly",
+                        "inspection_duration": "월간 간행물",
                         "input_name": "position_motor_as_state"
                     },
                     {
@@ -144,19 +144,19 @@
                     {
                         "question_title": "모터, 감속기 고정 및 소음 상태",
                         "situation": "B",
-                        "inspection_duration": "Monthly",
+                        "inspection_duration": "월간 간행물",
                         "input_name": "motor_reducer_fixed_and_noise_condition"
                     },
                     {
                         "question_title": "모터 브레이크 동작 및 라이닝 마모, Gap 상태",
                         "situation": "B",
-                        "inspection_duration": "Monthly",
+                        "inspection_duration": "월간 간행물",
                         "input_name": "motor_brake_operation_and_lining_wear_gap_condition"
                     },
                     {
                         "question_title": "감속기 누유 및 오일량 상태",
                         "situation": "B",
-                        "inspection_duration": "Monthly",
+                        "inspection_duration": "월간 간행물",
                         "input_name": "reducer_oil_leakage_and_oil_level_condition"
                     },
                     {
@@ -174,13 +174,13 @@
                     {
                         "question_title": "정위치, 휠감지 센서 동작 상태",
                         "situation": "B",
-                        "inspection_duration": "Monthly",
+                        "inspection_duration": "월간 간행물",
                         "input_name": "position_wheel_detection_sensor_operation_status"
                     },
                     {
                         "question_title": "Pallet 롤러 상태",
                         "situation": "B",
-                        "inspection_duration": "Monthly",
+                        "inspection_duration": "월간 간행물",
                         "input_name": "pallet_roller_status"
                     },
                     {
@@ -206,19 +206,19 @@
                     {
                         "question_title": "모터, 감속기 고정 및 소음 상태",
                         "situation": "B",
-                        "inspection_duration": "Monthly",
+                        "inspection_duration": "월간 간행물",
                         "input_name": "motor_reducer_fixed_and_noise_condition"
                     },
                     {
                         "question_title": "모터 브레이크 동작 및 라이닝 마모, Gap 상태",
                         "situation": "B",
-                        "inspection_duration": "Monthly",
+                        "inspection_duration": "월간 간행물",
                         "input_name": "motor_brake_operation_and_lining_wear_gap_condition"
                     },
                     {
                         "question_title": "감속기 누유 및 오일량 상태",
                         "situation": "B",
-                        "inspection_duration": "Monthly",
+                        "inspection_duration": "월간 간행물",
                         "input_name": "reducer_oil_leakage_and_oil_level_condition"
                     },
                     {
@@ -266,7 +266,7 @@
                     {
                         "question_title": "리미트 스위치(상, 하한 Overrun, 감속) 동작 상태",
                         "situation": "B",
-                        "inspection_duration": "Monthly",
+                        "inspection_duration": "월간 간행물",
                         "input_name": "limit_switch_upper_lower_limit_overrun_deceleration_operation_status"
                     },
                     {
@@ -282,19 +282,19 @@
                     {
                         "question_title": "모터, 감속기, 구동축 고정 및 소음 상태",
                         "situation": "B",
-                        "inspection_duration": "Monthly",
+                        "inspection_duration": "월간 간행물",
                         "input_name": "motor_reducer_drive_shaft_fixed_and_noise_condition"
                     },
                     {
                         "question_title": "모터 브레이크 동작 및 라이닝 마모, Gap 상태",
                         "situation": "B",
-                        "inspection_duration": "Monthly",
+                        "inspection_duration": "월간 간행물",
                         "input_name": "motor_brake_operation_and_lining_wear_gap_condition"
                     },
                     {
                         "question_title": "감속기 누유 및 오일량 상태",
                         "situation": "B",
-                        "inspection_duration": "Monthly",
+                        "inspection_duration": "월간 간행물",
                         "input_name": "reducer_oil_leakage_and_oil_level_condition"
                     },
                     {
@@ -342,7 +342,7 @@
                     {
                         "question_title": "리미트 스위치(상, 하한 Overrun, 감속) 동작 상태",
                         "situation": "B",
-                        "inspection_duration": "Monthly",
+                        "inspection_duration": "월간 간행물",
                         "input_name": "limit_switch_upper_lower_limit_overrun_deceleration_operation_status"
                     },
                     {
@@ -374,7 +374,7 @@
                     {
                         "question_title": "외장 턴테이블 상태(구동모터, 롤러 동작 및 소음 상태, 프레임의 변형 및 손상)",
                         "situation": "B",
-                        "inspection_duration": "Monthly",
+                        "inspection_duration": "월간 간행물",
                         "input_name": "external_turntable_condition_drive_motor,_roller_operation_and_noise_condition_deformation_and_damage_of_frame"
                     },
                     {
