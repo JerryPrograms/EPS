@@ -292,7 +292,7 @@
 
                                             @for($i = 0 ; $i < count(json_decode($completion_report->title)); $i++)
                                                 <div class="contract-details-section">
-                                                    <h4>{{__('translation.Process Photo')}}</h4>
+{{--                                                    <h4>{{__('translation.Process Photo')}}</h4>--}}
                                                     <p class="construction-heading">{{json_decode($completion_report->title)[$i]}}
                                                     </p>
 

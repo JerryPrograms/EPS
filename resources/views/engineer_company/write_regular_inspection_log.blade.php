@@ -68,7 +68,7 @@
                                                         <label for="arrival_time" class="mb-0">{{ __('translation.Arrival time') }}</label>
                                                     </div>
                                                     <div class="col-lg-10 col-md-6 col-12">
-                                                        <input type="date" class="form-control form-theme-input"
+                                                        <input type="time" class="form-control form-theme-input"
                                                             id="arrival_time" name="arrival_time" required>
                                                     </div>
                                                 </div>
@@ -79,7 +79,7 @@
                                                         <label for="completion_time" class="mb-0">{{ __('translation.Completion time') }}</label>
                                                     </div>
                                                     <div class="col-lg-10 col-md-6 col-12">
-                                                        <input type="date" class="form-control form-theme-input"
+                                                        <input type="time" class="form-control form-theme-input"
                                                             id="completion_time" name="completion_time" required>
                                                     </div>
                                                 </div>
@@ -92,7 +92,7 @@
                                                     <div class="col-lg-10 col-md-6 col-12">
                                                         <input type="text" class="form-control form-theme-input"
                                                             id="checker" name="inspection_manager"
-                                                            value="{{ $customer->ParkingFacilityCertificate->producer }}"
+                                                            value=""
                                                             required>
                                                     </div>
                                                 </div>
@@ -123,7 +123,7 @@
                                             {{-- accordion start --}}
                                             <div class="custom-accordion">
                                                 @php
-                                                    $loopCount = 0    
+                                                    $loopCount = 0
                                                 @endphp
                                                 @foreach ($file_content as $key => $item)
                                                     @php
