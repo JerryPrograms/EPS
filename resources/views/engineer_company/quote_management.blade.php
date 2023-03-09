@@ -36,7 +36,7 @@
                                             </div>
 
                                             <a href="{{route('ec.AddQuote',$customer->user_uid)}}"
-                                               class="btn btn-primary">Add</a>
+                                               class="btn btn-primary">{{__('translation.Add')}}</a>
                                             <a onclick="OpenModal()" href="javascript:void(0)"
                                                class="btn btn-primary">{{ __('translation.delete') }}</a>
                                         </div>

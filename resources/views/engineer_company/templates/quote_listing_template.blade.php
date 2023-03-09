@@ -2,20 +2,20 @@
     <thead class="table-light">
     <tr>
 
-        <th class="">No.</th>
-        <th class="text-center">Registration Date
+        <th class="">{{__('translation.no.')}}</th>
+        <th class="text-center">{{__('translation.Registration Date')}}
         </th>
-        <th class="text-center">Customer No
+        <th class="text-center">{{__('translation.Customer No')}}
         </th>
-        <th class="text-center">Site Name
+        <th class="text-center">{{__('translation.Site Name')}}
         </th>
-        <th class="text-center">Construction Name</th>
+        <th class="text-center">{{__('translation.Construction Name')}}</th>
 
-        <th class="text-center">Building Management Company
+        <th class="text-center">{{__('translation.Building Management Company')}}
         </th>
-        <th class="text-center">Note
+        <th class="text-center">{{__('translation.Note')}}
         </th>
-        <th class="text-center">Actions
+        <th class="text-center">{{__('translation.actions')}}
         </th>
     </tr>
     </thead>
