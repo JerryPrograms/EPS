@@ -505,5 +505,6 @@ return [
     'Hanger' => 'Hanger',
     'Stacker' => 'Stacker',
     'Computer' => 'Computer',
-    'Follower' => 'Follower'
+    'Follower' => 'Follower',
+    'Building Information1' => 'Building Information',
 ];

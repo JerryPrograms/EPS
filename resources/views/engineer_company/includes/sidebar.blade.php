@@ -45,47 +45,47 @@
                                     <li><a key="t-default"
                                            class="list_menubar_text"
                                            title="Information & Building Management Company Information"><span
-                                                class="custom_dot">.</span>{{ __('translation.Building Information') }} {{ __('translation.&') }}
-                                            ...</a></li>
+                                                class="custom_dot">.</span>{{ __('translation.Building Information1') }}
+                                            </a></li>
 
                                     <li><a key="t-saas" class="list_menubar_text"
                                            title="AS Info & Engineer company Info"><span class="custom_dot">.</span>
-                                            {{ __('translation.Info & Engineer') }}...</a></li>
+                                            {{ __('translation.Info & Engineer') }}.</a></li>
 
                                     <li><a key="t-crypto"
                                            class="list_menubar_text"
                                            title="Parking facility certification information & inspection certificate
                                 "><span class="custom_dot">.</span>{{ __('translation.Parking facility certification') }}
-                                            ..
+
                                         </a></li>
 
                                     <li><a key="t-blog" class="list_menubar_text"
                                            title="Key Accessories History"><span
                                                 class="custom_dot">.</span>{{ __('translation.Key Accessories History') }}
-                                            ..</a>
+                                            </a>
                                     </li>
 
-                                    <li><a href="dashboard-blog.html" key="t-blog" class="list_menubar_text"
+                                    <li><a href="" key="t-blog" class="list_menubar_text"
                                            title="Component replacement history">
                                             <span
                                                 class="custom_dot">.</span>{{ __('translation.Component replacement') }}
-                                            ..</a></li>
+                                            </a></li>
 
-                                    <li><a href="dashboard-blog.html" key="t-blog" class="list_menubar_text" title="Monthly Inspection list
+                                    <li><a href="" key="t-blog" class="list_menubar_text" title="Monthly Inspection list
                                 ">
                                             <span
                                                 class="custom_dot">.</span>{{ __('translation.Monthly Inspection list') }}
                                         </a></li>
 
-                                    <li><a href="dashboard-blog.html" key="t-blog" class="list_menubar_text" title="Emergency dispatch confirmation list
+                                    <li><a href="" key="t-blog" class="list_menubar_text" title="Emergency dispatch confirmation list
                                 ">
                                             <span class="custom_dot">.</span>{{ __('translation.Emergency dispatch') }}
-                                            ...</a></li>
+                                            </a></li>
 
-                                    <li><a href="dashboard-blog.html" key="t-blog" class="list_menubar_text"
+                                    <li><a href="" key="t-blog" class="list_menubar_text"
                                            title="Manage attachments">
                                             <span class="custom_dot">.</span>{{ __('translation.Manage attachments') }}
-                                            ...</a></li>
+                                            </a></li>
                                 </ul>
 
                             </li>
