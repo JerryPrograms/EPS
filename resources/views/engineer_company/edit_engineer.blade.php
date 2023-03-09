@@ -93,13 +93,13 @@
                                                     <input type="password" class="form-control form-theme-input"
                                                         name="password" id="password"
                                                         placeholder="{{ __('translation.Write password') }}">
-                                                    <small class="d-block text-dark">Enter password if you wan't to change</small>
+                                                    <small class="d-block text-dark">{{ __('translation.Enter password if you want to change') }}</small>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="form-action mt-4 text-end">
                                             <button id="editEngineerBtn" type="submit"
-                                                class="btn btn-primary">Edit</button>
+                                                class="btn btn-primary">{{ __('translation.Edit') }}</button>
                                         </div>
                                     </form>
                                 </div>

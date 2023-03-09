@@ -501,5 +501,7 @@ return [
     'Hanger' => '행거',
     'Stacker' => 'Stacker',
     'Computer' => 'Computer',
-    'Follower' => 'Follower'
+    'Follower' => 'Follower',
+    'Enter password if you want to change' => 'Enter password if you want to change',
+    'Edit' => 'Edit'
 ];

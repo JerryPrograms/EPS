@@ -26,8 +26,7 @@ class EngineerCompanyController extends Controller
             'password' => 'required|min:3',
             'phone' => 'required',
             'address' => 'required',
-            'manager_name' => 'required',
-            'contract_number' => 'required'
+            'manager_name' => 'required'
         ]);
         if ($validate->fails()) {
             return response()->json(["success" => false, 'message' => $validate->errors()->first()]);
@@ -39,8 +38,7 @@ class EngineerCompanyController extends Controller
                 'password' => \Hash::make($request->password),
                 'phone' => $request->phone,
                 'address' => $request->address,
-                'manager_name' => $request->manager_name,
-                'contract_number' => $request->contract_number
+                'manager_name' => $request->manager_name
             ]);
 
             return json_encode(['success' => true, 'message' => __('translation.Engineer company added successfully')]);

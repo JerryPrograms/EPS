@@ -507,4 +507,6 @@ return [
     'Computer' => 'Computer',
     'Follower' => 'Follower',
     'Building Information1' => 'Building Information',
+    'Enter password if you want to change' => 'Enter password if you want to change',
+    'Edit' => 'Edit'
 ];
