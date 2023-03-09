@@ -18,7 +18,7 @@
                                                     <div class="d-flex align-items-center gap-2">
                                                         <span class="fw-bold mb-2 ms-1">.</span>
                                                         <h4 class="card_tittle_2 d-flex align-items-center mb-0">
-                                                            {{ __('translation.Parking Facility Periodic Inspection Table') }} - {{ __('translation.'.str_replace('_', ' ', $customer->ParkingFacilityCertificate->type)) }}
+                                                            {{ __('translation.Parking Facility Periodic Inspection Table') }} - {{ __('translation.'.str_replace('_', ' ', $customer->getCustomer->ParkingFacilityCertificate->type)) }}
                                                         </h4>
                                                     </div>
                                                 </div>
