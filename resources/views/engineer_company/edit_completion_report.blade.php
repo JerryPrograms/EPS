@@ -6,10 +6,12 @@
 
                 <!-- start page title -->
                 <!-- end page title -->
+
                 <form id="add_contract_completion_form">
                     @csrf
                     @php
-                        $customer = \App\Models\CustomerInfo::where('user_uid',request()->segment(3))->first();
+                        $customer = \App\Models\CustomerInfo::where('id',$completion_report->customer_id)->first();
+
                     @endphp
                     <input name="customer_id" value="{{$customer->id}}" hidden>
                     <div class="main_content_section">

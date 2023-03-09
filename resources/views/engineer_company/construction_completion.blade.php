@@ -109,8 +109,7 @@
                                                         @if(activeGuard() != 'admin')
                                                             <button onclick="print('{{$c->id}}')"
                                                                     class="btn btn-outline-light btn-theme-light-outline btn-outline btn-sm">
-                                                                <img
-                                                                    src="{{asset('engineer_company/assets/images/archive_icon.png')}}">
+                                                                <img src="{{asset('engineer_company/images/Vector.png')}}">
                                                             </button>
                                                         @endif
                                                         @if(activeGuard() != 'web' && activeGuard() != 'admin')

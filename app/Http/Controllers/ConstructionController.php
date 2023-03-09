@@ -113,7 +113,7 @@ class ConstructionController extends Controller
     public function edit_construction_completion($id)
     {
         $completion_report = CompletionRequestModel::where('id', $id)->first();
-        return view('engineer_company.edit_completion_report', compact('completion_report'));
+        return view('engineer_company.edit_completion_report', ['completion_report'=>$completion_report]);
     }
 
     public function update_construction_completion(Request $request)
