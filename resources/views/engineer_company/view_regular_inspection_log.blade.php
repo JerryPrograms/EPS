@@ -18,7 +18,7 @@
                                                     <div class="d-flex align-items-center gap-2">
                                                         <span class="fw-bold mb-2 ms-1">.</span>
                                                         <h4 class="card_tittle_2 d-flex align-items-center mb-0">
-                                                            {{ __('translation.Parking Facility Periodic Inspection Table') }}
+                                                            {{ __('translation.Parking Facility Periodic Inspection Table') }} - {{ __('translation.'.str_replace('_', ' ', $customer->ParkingFacilityCertificate->type)) }}
                                                         </h4>
                                                     </div>
                                                 </div>
@@ -37,7 +37,7 @@
                                                 </tr>
                                                 <tr>
                                                     <th class="text-left">{{ __('translation.Type and number') }}</th>
-                                                    <td class="text-left">{{ str_replace('_', ' ', $customer->getCustomer->ParkingFacilityCertificate->type) }}</td>
+                                                    <td class="text-left">{{ __('translation.'.str_replace('_', ' ', $customer->getCustomer->ParkingFacilityCertificate->type) ) }}</td>
                                                 </tr>
                                                 <tr>
                                                     <th class="text-left">{{ __('translation.Arrival time') }}</th>

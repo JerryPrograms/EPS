@@ -22,7 +22,7 @@ $check_content = json_decode($customer->check_contents,true);
                                                         <div class="d-flex align-items-center gap-2">
                                                             <span class="fw-bold mb-2 ms-1">.</span>
                                                             <h4 class="card_tittle_2 d-flex align-items-center mb-0">
-                                                                {{ __('translation.Parking Facility Periodic Inspection Table') }}
+                                                                {{ __('translation.Parking Facility Periodic Inspection Table') }} - {{ __('translation.'.str_replace('_', ' ', $customer->ParkingFacilityCertificate->type)) }}
                                                             </h4>
                                                         </div>
                                                     </div>
@@ -60,7 +60,7 @@ $check_content = json_decode($customer->check_contents,true);
                                                     <div class="col-lg-10 col-md-6 col-12">
                                                         <input type="text" class="form-control form-theme-input"
                                                             id="type_and_number"
-                                                            value="{{ str_replace('_', ' ', $customer->type) }}"
+                                                            value="{{ __('translation.'.str_replace('_', ' ', $customer->type)) }}"
                                                             disabled>
                                                     </div>
                                                 </div>
