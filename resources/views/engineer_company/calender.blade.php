@@ -528,11 +528,17 @@
                             $('#add_event_type').val('periodic inspection')
                         }
                     },
+                    currentMonth: {
+                        text: '{{ now()->format('M') }}',
+                        click: function () {
+
+                        }
+                    },
                 },
                 headerToolbar: {
-                    start: 'prev,next weekendDuty,weekendShift,nightShift,holidayDuty,construction,periodicInspection', // will normally be on the left. if RTL, will be on the right
+                    start: 'weekendDuty,weekendShift,nightShift,holidayDuty,construction,periodicInspection', // will normally be on the left. if RTL, will be on the right
                     center: '',
-                    right: '',// will normally be on the right. if RTL, will be on the left
+                    right: 'prev,next',// will normally be on the right. if RTL, will be on the left
                 },
                 selectable: false,
                 selectHelper: true,
