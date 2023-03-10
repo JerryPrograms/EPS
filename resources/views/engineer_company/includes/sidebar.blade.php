@@ -27,7 +27,8 @@
                                     </span>
 
                                 </a>
-
+                            </li>
+                            @if (activeGuard() != 'admin')
                             <li>
 
                                 <a key="t-level-1-2" href="javascript: void(0);"
@@ -90,6 +91,7 @@
                                 </ul>
 
                             </li>
+                            @endif
                         </ul>
                     </li>
                 @endif
