@@ -163,24 +163,24 @@
 
                                         <!-- row 2 start  -->
                                         <div class="row mt-2">
-                                            <div class="col-lg-3">
-                                                <p class="circle_img_text mt-3">
-                                                    <b>
+{{--                                            <div class="col-lg-3">--}}
+{{--                                                <p class="circle_img_text mt-3">--}}
+{{--                                                    <b>--}}
 
-                                                        {{ __('translation.Failure and replacement history') }}
+{{--                                                        {{ __('translation.Failure and replacement history') }}--}}
 
-                                                    </b>
-                                                </p>
-                                            </div>
-                                            <div class="col-lg-3">
-                                                <div class="dropdown align-self-start mt-sm-0 mb-2">
-                                                    <input type="date" onchange="FilterData($(this).val())"
-                                                           class="form-control frm_section_inp"
-                                                           data-date-container='#datepicker1'
-                                                           data-provide="datepicker">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 text-end">
+{{--                                                    </b>--}}
+{{--                                                </p>--}}
+{{--                                            </div>--}}
+{{--                                            <div class="col-lg-3">--}}
+{{--                                                <div class="dropdown align-self-start mt-sm-0 mb-2">--}}
+{{--                                                    <input type="date" onchange="FilterData($(this).val())"--}}
+{{--                                                           class="form-control frm_section_inp"--}}
+{{--                                                           data-date-container='#datepicker1'--}}
+{{--                                                           data-provide="datepicker">--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+                                            <div class="col-lg-12 text-end">
                                                 <button type="button" onclick="addMonthlyregularInspection()"
                                                         class="history_add_btn">
                                                     {{ __('translation.add') }}
@@ -391,7 +391,7 @@
                                                         </td>
 
                                                         <td>
-                                                            <input type="text" name="check_contents[]" required class="form-control col-lg-2 custom_input_tble"  aria-describedby="emailHelp" placeholder="Center lift replacement
+                                                            <input type="text" name="check_contents[]" required class="form-control col-lg-2 custom_input_tble"  aria-describedby="emailHelp" placeholder="{{__('translation.Center lift replacement')}}
                                                                         ">
                                                         </td>
 

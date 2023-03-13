@@ -44,13 +44,13 @@
                     {
                         "question_title": "MOTOR 소음상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "MOTOR_noise_condition"
                     },
                     {
                         "question_title": "MOTOR BRAKE 수동개방상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "MOTOR_BRAKE_manual_open_state"
                     },
                     {
@@ -62,31 +62,31 @@
                     {
                         "question_title": "승입 LAMP 동작상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "Boarding_LAMP_operating_state"
                     },
                     {
                         "question_title": "LAMP용 SENSOR 동작상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "LAMP_SENSOR_operating_state"
                     },
                     {
                         "question_title": "사슬 CHAIN 마모상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "CHAIN_wear_condition"
                     },
                     {
                         "question_title": "사슬 CHAIN 꼬임상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "CHAIN_twisted_state"
                     },
                     {
                         "question_title": "사슬 CHAIN TENSION 상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "CHAIN_tension_status"
                     },
                     {
@@ -98,43 +98,43 @@
                     {
                         "question_title": "CAM SWITCH 동작상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "CAM_SWITCH_operation_status"
                     },
                     {
                         "question_title": "구동CHAIN TENSION 상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "driving_chain_tension_status"
                     },
                     {
                         "question_title": "HOOK 동작상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "HOOK_operation_status"
                     },
                     {
                         "question_title": "HOOK 조립상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "HOOK_assembly_status"
                     },
                     {
                         "question_title": "SOLENOIDE 동작상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "SOLENOIDE_operating_status"
                     },
                     {
                         "question_title": "HOOK LIMIT S/W 동작상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "HOOK_LIMIT_S_W_Operation_status"
                     },
                     {
                         "question_title": "OVER-RUN 동작상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "OVER_RUN_operation_status"
                     }
                 ]
@@ -154,19 +154,19 @@
                     {
                         "question_title": "MOTOR 소음상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "motor_noise_condition"
                     },
                     {
                         "question_title": "MOTOR 동작상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "MOTOR_operating_status"
                     },
                     {
                         "question_title": "MOTOR BRAKE 수동개방상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "MOTOR_BRAKE_manual_open_state"
                     },
                     {
@@ -178,13 +178,13 @@
                     {
                         "question_title": "구동 CHAIN TENSION 상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "driving_chain_tension_status"
                     },
                     {
                         "question_title": "구동 CHAIN 마모상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "driving_chain_wear_condition"
                     },
                     {
@@ -202,25 +202,25 @@
                     {
                         "question_title": "승입 LAMP 동작상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "entering_LAMP_operation_status"
                     },
                     {
                         "question_title": "LAMP용 SENSOR 동작상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "SENSOR_operation_status_for_LAMP"
                     },
                     {
                         "question_title": "정위치 LIMIT S/W 동작상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "Position_LIMIT_S_W_operation_status"
                     },
                     {
                         "question_title": "좌우이동용 LIMIT S/W 동작상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "LIMIT_S_W_operation_status_for_left_and_right_movement"
                     }
                 ]
@@ -234,49 +234,49 @@
                     {
                         "question_title": "진입 SENSOR 동작상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "entry_SENSOR_operation_status"
                     },
                     {
                         "question_title": "부저 동작상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "buzzer_operation_status"
                     },
                     {
                         "question_title": "조작 PANNEL 상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "operation_PANNEL_status"
                     },
                     {
                         "question_title": "PANNEL 정위치 LAMP 동작상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "PANNEL_regular_position_LAMP_operation_status"
                     },
                     {
                         "question_title": "OVER-RUN LAMP 동작상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "OVER_RUN_LAMP_Operation_Status_pin"
                     },
                     {
                         "question_title": "CONTROL PANNEL 청소상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "CONTROL_PANNEL_cleaning_status"
                     },
                     {
                         "question_title": "RAIL 주위 환경 상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "RAIL_ambient_conditions"
                     },
                     {
                         "question_title": "바닥면 상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "floor_condition"
                     },
                     {

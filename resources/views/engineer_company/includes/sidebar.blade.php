@@ -9,8 +9,9 @@
                 @if (activeGuard() != 'web')
                     <li class="sidebr_button">
                         <a href="javascript: void(0);" class="waves-effect dropdown_toggle">
-                            <img src="{{ asset('engineer_company/assets/images/user.png') }}" class="double_ring_img p-0"
-                                style="margin-left: -1px;">
+                            <img src="{{ asset('engineer_company/assets/images/user.png') }}"
+                                 class="double_ring_img p-0"
+                                 style="margin-left: -1px;">
                             <span key="t-dashboards" class="dropdown_text">{{ __('translation.Customer List') }}</span>
                             <div class="plus_section_5">
                                 <!-- <img src="{{ asset('engineer_company/assets/images/gray-plus.png') }}" alt=""> -->
@@ -20,77 +21,79 @@
                         <ul class="sub-menu" aria-expanded="true">
                             <li>
                                 <a key="t-level-1-1" href="{{ route('ec.GetCustomerInfoListing') }}"
-                                    class="waves-effect  dropdown_toggle_2">
+                                   class="waves-effect  dropdown_toggle_2">
                                     <i class="fa-solid fa-list list_icon"></i>
                                     <span key="t-dashboards"
-                                        class="dropdown_text_2">{{ __('translation.customer info') }}
+                                          class="dropdown_text_2">{{ __('translation.customer info') }}
                                     </span>
 
                                 </a>
                             </li>
                             @if (activeGuard() != 'admin')
-                            <li>
+                                <li>
 
-                                <a key="t-level-1-2" href="javascript: void(0);"
-                                    class=" waves-effect {{ request()->segment(2) == 'customer-info-dashboard' ? 'active' : '' }}  dropdown_toggle_2 pt-0">
-                                    <!-- <i class="bx bx-calendar"></i> -->
-                                    <!-- <i class="fa-solid fa-list list_icon"></i> -->
-                                    <i class="fa-sharp fa-solid fa-pen list_icon"></i>
+                                    <a key="t-level-1-2" href="javascript: void(0);"
+                                       class=" waves-effect {{ request()->segment(2) == 'customer-info-dashboard' ? 'active' : '' }}  dropdown_toggle_2 pt-0">
+                                        <!-- <i class="bx bx-calendar"></i> -->
+                                        <!-- <i class="fa-solid fa-list list_icon"></i> -->
+                                        <i class="fa-sharp fa-solid fa-pen list_icon"></i>
 
-                                    <span key="t-dashboards" class="dropdown_text_2">
+                                        <span key="t-dashboards" class="dropdown_text_2">
                                         {{ __('translation.Fill in customer information') }}
                                     </span>
 
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a key="t-default" class="list_menubar_text"
-                                            title="Information & Building Management Company Information"><span
-                                                class="custom_dot">.</span>{{ __('translation.Building Information1') }}
-                                        </a></li>
+                                    </a>
+                                    <ul class="sub-menu" aria-expanded="false">
+                                        <li><a key="t-default" class="list_menubar_text"
+                                               title="Information & Building Management Company Information"><span
+                                                    class="custom_dot">.</span>{{ __('translation.Building Information1') }}
+                                            </a></li>
 
-                                    <li><a key="t-saas" class="list_menubar_text"
-                                            title="AS Info & Engineer company Info"><span class="custom_dot">.</span>
-                                            {{ __('translation.Info & Engineer') }}.</a></li>
+                                        <li><a key="t-saas" class="list_menubar_text"
+                                               title="AS Info & Engineer company Info"><span class="custom_dot">.</span>
+                                                {{ __('translation.Info & Engineer') }}.</a></li>
 
-                                    <li><a key="t-crypto" class="list_menubar_text"
-                                            title="Parking facility certification information & inspection certificate
+                                        <li><a key="t-crypto" class="list_menubar_text"
+                                               title="Parking facility certification information & inspection certificate
                                 "><span
-                                                class="custom_dot">.</span>{{ __('translation.Parking facility certification') }}
+                                                    class="custom_dot">.</span>{{ __('translation.Parking facility certification') }}
 
-                                        </a></li>
+                                            </a></li>
 
-                                    <li><a key="t-blog" class="list_menubar_text"
-                                            title="Key Accessories History"><span
-                                                class="custom_dot">.</span>{{ __('translation.Key Accessories History') }}
-                                        </a>
-                                    </li>
+                                        <li><a key="t-blog" class="list_menubar_text"
+                                               title="Key Accessories History"><span
+                                                    class="custom_dot">.</span>{{ __('translation.Key Accessories History') }}
+                                            </a>
+                                        </li>
 
-                                    <li><a href="" key="t-blog" class="list_menubar_text"
-                                            title="Component replacement history">
+                                        <li><a href="" key="t-blog" class="list_menubar_text"
+                                               title="Component replacement history">
                                             <span
                                                 class="custom_dot">.</span>{{ __('translation.Component replacement') }}
-                                        </a></li>
+                                            </a></li>
 
-                                    <li><a href="" key="t-blog" class="list_menubar_text"
-                                            title="Monthly Inspection list
+                                        <li><a href="" key="t-blog" class="list_menubar_text"
+                                               title="Monthly Inspection list
                                 ">
                                             <span
                                                 class="custom_dot">.</span>{{ __('translation.Monthly Inspection list') }}
-                                        </a></li>
+                                            </a></li>
 
-                                    <li><a href="" key="t-blog" class="list_menubar_text"
-                                            title="Emergency dispatch confirmation list
+                                        <li><a href="" key="t-blog" class="list_menubar_text"
+                                               title="Emergency dispatch confirmation list
                                 ">
-                                            <span class="custom_dot">.</span>{{ __('translation.Emergency dispatch') }}
-                                        </a></li>
+                                                <span
+                                                    class="custom_dot">.</span>{{ __('translation.Emergency dispatch') }}
+                                            </a></li>
 
-                                    <li><a href="" key="t-blog" class="list_menubar_text"
-                                            title="Manage attachments">
-                                            <span class="custom_dot">.</span>{{ __('translation.Manage attachments') }}
-                                        </a></li>
-                                </ul>
+                                        <li><a href="" key="t-blog" class="list_menubar_text"
+                                               title="Manage attachments">
+                                                <span
+                                                    class="custom_dot">.</span>{{ __('translation.Manage attachments') }}
+                                            </a></li>
+                                    </ul>
 
-                            </li>
+                                </li>
                             @endif
                         </ul>
                     </li>
@@ -100,9 +103,9 @@
                         <a href="{{ route('engineers') }}" class=" waves-effect dropdown_toggle">
                             <!-- <i class="bx bx-calendar"></i> -->
                             <img src="{{ asset('engineer_company/assets/images/Done_ring_round.png') }}"
-                                class="double_ring_img p-0" style="margin-left: -1px;">
+                                 class="double_ring_img p-0" style="margin-left: -1px;">
                             <span key="t-dashboards"
-                                class="dropdown_text">{{ __('translation.Engineer Management') }}</span>
+                                  class="dropdown_text">{{ __('translation.Engineer Management') }}</span>
                         </a>
                     </li>
                 @endif
@@ -112,9 +115,9 @@
                         <a href="{{ route('engineer_companies') }}" class="waves-effect dropdown_toggle">
                             <!-- <i class="bx bx-calendar"></i> -->
                             <img src="{{ asset('engineer_company/assets/images/Done_ring_round.png') }}"
-                                class="double_ring_img p-0" style="margin-left: -1px;">
+                                 class="double_ring_img p-0" style="margin-left: -1px;">
                             <span key="t-dashboards"
-                                class="dropdown_text">{{ __('translation.Engineer Companies') }}</span>
+                                  class="dropdown_text">{{ __('translation.Engineer Companies') }}</span>
                         </a>
                     </li>
                 @endif
@@ -123,9 +126,9 @@
                     <a href="{{ route('distpatch_confirmation_listing') }}" class=" waves-effect dropdown_toggle">
                         <!-- <i class="bx bx-calendar"></i> -->
                         <img src="{{ asset('engineer_company/assets/images/Group 427323401.png') }}"
-                            class="double_ring_img p-0" style="margin-left: -1px;">
+                             class="double_ring_img p-0" style="margin-left: -1px;">
                         <span key="t-dashboards"
-                            class="dropdown_text">{{ __('translation.Dispatch Confirmation') }}</span>
+                              class="dropdown_text">{{ __('translation.Dispatch Confirmation') }}</span>
                     </a>
                 </li>
 
@@ -134,9 +137,9 @@
                     <a href="{{ route('regular_inspection_logs') }}" class=" waves-effect dropdown_toggle">
                         <!-- <i class="bx bx-calendar"></i> -->
                         <img src="{{ asset('engineer_company/assets/images/Group 427323320.png') }}"
-                            class="double_ring_img p-0" style="margin-left: -1px;">
+                             class="double_ring_img p-0" style="margin-left: -1px;">
                         <span key="t-dashboards"
-                            class="dropdown_text">{{ __('translation.Regular inspection log') }}</span>
+                              class="dropdown_text">{{ __('translation.Regular inspection log') }}</span>
                     </a>
                 </li>
 
@@ -145,9 +148,9 @@
                     <a href="{{ route('contract_management') }}" class=" waves-effect dropdown_toggle">
                         <!-- <i class="bx bx-calendar"></i> -->
                         <img src="{{ asset('engineer_company/assets/images/Group.png') }}"
-                            class="double_ring_img p-0" style="margin-left: -1px;">
+                             class="double_ring_img p-0" style="margin-left: -1px;">
                         <span key="t-dashboards"
-                            class="dropdown_text">{{ __('translation.Contract Management') }}</span>
+                              class="dropdown_text">{{ __('translation.Contract Management') }}</span>
                     </a>
                 </li>
 
@@ -156,9 +159,9 @@
                     <a href="{{ route('quotation_management') }}" class=" waves-effect dropdown_toggle">
                         <!-- <i class="bx bx-calendar"></i> -->
                         <img src="{{ asset('engineer_company/assets/images/Book_check.png') }}"
-                            class="double_ring_img p-0" style="margin-left: -1px;">
+                             class="double_ring_img p-0" style="margin-left: -1px;">
                         <span key="t-dashboards"
-                            class="dropdown_text">{{ __('translation.Quote Management') }}</span>
+                              class="dropdown_text">{{ __('translation.Quote Management') }}</span>
                     </a>
                 </li>
 
@@ -167,9 +170,9 @@
                     <a href="{{ route('construction_completion') }}" class=" waves-effect dropdown_toggle">
                         <!-- <i class="bx bx-calendar"></i> -->
                         <img src="{{ asset('engineer_company/assets/images/Vector.png') }}"
-                            class="double_ring_img p-0" style="margin-left: -1px;">
+                             class="double_ring_img p-0" style="margin-left: -1px;">
                         <span key="t-dashboards"
-                            class="dropdown_text">{{ __('translation.Construction Completion') }} </span>
+                              class="dropdown_text">{{ __('translation.Construction Completion') }} </span>
                     </a>
                 </li>
 
@@ -178,7 +181,7 @@
                         <a href="{{ route('ec.GetCalender') }}" class=" waves-effect dropdown_toggle">
                             <!-- <i class="bx bx-calendar"></i> -->
                             <img src="{{ asset('engineer_company/assets/images/Frame.png') }}"
-                                class="double_ring_img p-0" style="margin-left: -1px;">
+                                 class="double_ring_img p-0" style="margin-left: -1px;">
                             <span key="t-dashboards" class="dropdown_text">{{ __('translation.Calendar') }}</span>
                         </a>
                     </li>

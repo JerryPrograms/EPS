@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ConstructionCompletionRequest;
 use App\Models\CompletionRequestModel;
+use App\Models\CustomerInfo;
 use App\Models\Engineer;
 use App\Models\Engineer_company;
 use Illuminate\Http\Request;
@@ -38,9 +39,18 @@ class ConstructionController extends Controller
         return view('engineer_company.construction_completion', compact('completion_reports'));
     }
 
-    public function create_construction_completion($id)
+    public function create_construction_completion($id = null)
     {
-        return view('engineer_company.create_completion_report');
+        if(empty($id))
+        {
+            $customers = CustomerInfo::where('added_by',activeGuard())->where('added_by_id',auth(activeGuard())->id())->get();
+
+        }
+        else{
+            $customers = [];
+        }
+
+        return view('engineer_company.create_completion_report',compact('customers'));
     }
 
     public function view_construction_completion($id)

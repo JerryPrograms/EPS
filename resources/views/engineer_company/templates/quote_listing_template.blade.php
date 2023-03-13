@@ -3,17 +3,17 @@
     <tr>
 
         <th class="">{{__('translation.no.')}}</th>
-        <th class="text-center">{{__('translation.Registration Date')}}
+        <th class="text-center">{{__('translation.Contract Date')}}
         </th>
         <th class="text-center">{{__('translation.Customer No')}}
         </th>
-        <th class="text-center">{{__('translation.Site Name')}}
+        <th class="text-center">{{__('translation.Building Name')}}
         </th>
-        <th class="text-center">{{__('translation.Construction Name')}}</th>
+        <th class="text-center">{{__('translation.Address')}}</th>
 
         <th class="text-center">{{__('translation.Building Management Company')}}
         </th>
-        <th class="text-center">{{__('translation.Note')}}
+        <th class="text-center">{{__('translation.contents')}}
         </th>
         <th class="text-center">{{__('translation.actions')}}
         </th>

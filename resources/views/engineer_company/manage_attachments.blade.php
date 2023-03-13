@@ -202,7 +202,7 @@
 
                                                         </th>
                                                         <th class="custom_inp_widt  border-0 ">
-                                                            {{ __('translation.name') }}
+                                                            {{ __('translation.Manager Name') }}
                                                         </th>
                                                         <th class="text-center  border-0">
 

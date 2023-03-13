@@ -384,8 +384,8 @@
                                                 <div class="row justify-content-end no-print">
                                                     <div class="col-lg-2 col-6">
                                                         <a href="{{route('ec.CreateParkingFacility',request()->segment(3))}}">
-                                                            <button type="button" class="form_button_2 mb-5 mt-5">{{ __('translation.Back') }}
-                                                                {{ __('translation.page') }}
+                                                            <button type="button" class="form_button_2 mb-5 mt-5">
+                                                                {{ __('translation.Back page') }}
                                                             </button>
                                                         </a>
                                                     </div>

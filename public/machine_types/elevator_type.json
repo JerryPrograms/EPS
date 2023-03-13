@@ -6,19 +6,19 @@
                     {
                         "question_title": "조작반 버튼, 터치스크린 작동 상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "operation_panel_buttons_touch_screen_operation_status"
                     },
                     {
                         "question_title": "비상S/W 및 각종 S/W 동작 상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "emergency_S_W_and_various_S_W_operation_status"
                     },
                     {
                         "question_title": "인버터, 제동저항 동작 상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "inverter_braking_resistor_operation_status"
                     },
                     {
@@ -30,13 +30,13 @@
                     {
                         "question_title": "각종 부품[마그네트,릴레이 등] 동작 상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "operation_status_of_various_parts_magnet_relay_etc"
                     },
                     {
                         "question_title": "PLC 입력, 출력 신호 및 통신 동작 상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "PLC_input_output_signal_and_communication_operation_status"
                     },
                     {
@@ -52,19 +52,19 @@
                     {
                         "question_title": "도어 작동 및 부품[S/W, Shoe, Rope] 상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "door_operation_and_parts_S_W_shoe_rope_status"
                     },
                     {
                         "question_title": "유도안내등, 표시등 동작 상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "guidance_light_indicator_operation_status"
                     },
                     {
                         "question_title": "각종 명판 부착, 안내거울 상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "various_nameplates_attached_guide_mirror_condition"
                     }
                 ]
@@ -74,7 +74,7 @@
                     {
                         "question_title": "각종 센서 고정 및 동작 상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "fixed_and_operating_status_of_various_sensors"
                     },
                     {
@@ -86,7 +86,7 @@
                     {
                         "question_title": "유도안내등, 경광등, 부저 상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "guidance_light_warning_light_buzzer_status"
                     }
                 ]
@@ -100,31 +100,31 @@
                     {
                         "question_title": "프레임의 변형 및 손상 상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "deformation_and_damage_condition_of_frame"
                     },
                     {
                         "question_title": "케이지내 각부 Sensor 동작상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "sensor_operation_status_of_each_part_in_the_cage"
                     },
                     {
                         "question_title": "수동조작반(연결부)의 상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "condition_of_manual_control_panel_connection_part"
                     },
                     {
                         "question_title": "도르래(Idle Sheave) 및 로프의 고정 상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "idle_sheave_and_rope_anchorage"
                     },
                     {
                         "question_title": "횡행 모터, 감속기 고정 및 소음 상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "traversing_motor_speed_reducer_fixed_and_noise_condition"
                     },
                     {
@@ -142,13 +142,13 @@
                     {
                         "question_title": "팔레트 정위치 상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "pallet_in_place"
                     },
                     {
                         "question_title": "가이드 롤러 마모 및 소음 상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "guide_roller_wear_and_noise_condition"
                     },
                     {
@@ -164,7 +164,7 @@
                     {
                         "question_title": "구동모터, 턴 리프팅 모터 고정 및 소음 상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "drive_motor_turn_lifting_motor_fixed_and_noise_condition"
                     },
                     {
@@ -176,13 +176,13 @@
                     {
                         "question_title": "정위치 및 센서 동작 상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "position_and_sensor_operation_status"
                     },
                     {
                         "question_title": "외장 턴테이블 상태 (구동모터, 롤러 동작 및 소음 상태, 프레임의 변형 및 손상)",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "external_turntable_condition"
                     }
                 ]
@@ -196,7 +196,7 @@
                     {
                         "question_title": "센서 (정위치, 상,하한 감속, 비상) 고정 및 동작 상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "sensor_fixed_position_upper_lower_limit_deceleration_emergency_fixed_and_operating_status"
                     },
                     {
@@ -238,7 +238,7 @@
                     {
                         "question_title": "피트 상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "feet_status"
                     }
                 ]
@@ -280,7 +280,7 @@
                     {
                         "question_title": "메인 모터 고정 및 소음상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "main_motor_fixed_and_noise_condition"
                     },
                     {
@@ -292,7 +292,7 @@
                     {
                         "question_title": "구동부 감속기 누유 및 소음상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "drive_unit_reducer_oil_leakage_and_noise_condition"
                     },
                     {
@@ -304,13 +304,13 @@
                     {
                         "question_title": "Bearing 소음 상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "bearing_noise_condition"
                     },
                     {
                         "question_title": "Wire Rope (Chain) 절단 S/W 동작 상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "wire_rope_chain_cutting_S_W_Operation_Status"
                     },
                     {
@@ -322,7 +322,7 @@
                     {
                         "question_title": "기계실 청결 상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "machine_room_cleanliness"
                     }
                 ]
@@ -332,13 +332,13 @@
                     {
                         "question_title": "Wire Rope (Chain) 마모 및 부식 상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "wire_rope_chain_abrasion_and_corrosion"
                     },
                     {
                         "question_title": "Wire Rope (Chain) 소선의 단선, 킹크 상태",
                         "situation": "B",
-                        "inspection_duration": "월간 간행물",
+                        "inspection_duration": "매월",
                         "input_name": "wire_rope_chain_wire_disconnection_kink_state"
                     },
                     {

@@ -8,11 +8,7 @@
                 <!-- end page title -->
                 <form id="add_contract_completion_form">
                     @csrf
-                    @php
-                        $customer = \App\Models\CustomerInfo::where('user_uid',request()->segment(3))->first();
 
-                    @endphp
-                    <input name="customer_id" value="{{$customer->id}}" hidden>
                     <div class="main_content_section">
                         <div class="row">
                             <div class="col-lg-12">
@@ -20,7 +16,6 @@
 
                                     <div class="card-body">
                                         <!-- end table-responsive -->
-
 
 
                                         <div class="card_section_2">
@@ -87,6 +82,36 @@
                                                                required="">
                                                     </div>
                                                 </div>
+                                                @if(count($customers) > 0)
+                                                    <div class="row align-items-center mt-4">
+                                                        <div class="col-lg-4 col-12"><label
+                                                                class="form-label custom_lab mb-0"> <span
+                                                                    class="star_section">*</span>
+                                                                {{__('translation.Customer')}}
+                                                            </label></div>
+                                                        <div class="col-lg-8 col-12">
+
+                                                            <select  class="form-select w-100 custom_input" name="customer_id"
+                                                                    autocomplete="off" required="">
+                                                                <option selected="" value="" disabled="">
+                                                                    Select Customer
+                                                                </option>
+                                                                @foreach($customers as $c)
+                                                                    <option value="{{$c->id}}">
+                                                                        {{$c->name}}
+                                                                    </option>
+                                                                @endforeach
+                                                            </select>
+
+                                                        </div>
+                                                    </div>
+                                                @else
+                                                    @php
+                                                        $customer = \App\Models\CustomerInfo::where('user_uid',request()->segment(3))->first();
+
+                                                    @endphp
+                                                    <input name="customer_id" value="{{$customer->id}}" hidden>
+                                                @endif
 
 
                                                 <div class="row align-items-center mt-4">

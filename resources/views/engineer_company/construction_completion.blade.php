@@ -17,7 +17,10 @@
 
                                     </div>
                                     <div class="mt-3 left-content d-flex align-items-center">
-                                        <div class="custom_search">
+                                        <div class="custom_search" style="display: flex;
+                                        width: 100%;
+                                        justify-items: flex-start;
+                                        justify-content: space-between;">
                                             <div class="search">
                                                 <input id="search" onkeyup="myFunction()" type="text"
                                                        class="form-control" name="keyword"
@@ -30,6 +33,7 @@
                                                     </div>
                                                 </button>
                                             </div>
+                                            <a href="{{route('create_construction_completion')}}" class="btn btn-primary">{{__('translation.add')}}</a>
                                         </div>
                                     </div>
                                     <div id="customer_list_table" class="table-responsive mt-3 data-set-list">
@@ -102,8 +106,9 @@
                                                         @if(activeGuard() != 'web' && activeGuard() != 'admin')
                                                             <a href="{{route('edit_construction_completion',$c->id)}}"
                                                                class="btn btn-outline-primary btn-theme-primary-outline btn-outline btn-sm">
-                                                                <img
-                                                                    src="{{asset('engineer_company/assets/images/Arhive_fill.png')}}">
+{{--                                                                <img--}}
+{{--                                                                    src="{{asset('engineer_company/assets/images/Arhive_fill.png')}}">--}}
+                                                                <i class="fa fa-edit"></i>
                                                             </a>
                                                         @endif
                                                         @if(activeGuard() != 'admin')

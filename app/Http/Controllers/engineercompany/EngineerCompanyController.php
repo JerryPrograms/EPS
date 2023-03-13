@@ -234,8 +234,9 @@ class EngineerCompanyController extends Controller
 
     }
 
-    public function AddQuote($uid)
+    public function AddQuote($uid = null)
     {
+
         $customer = CustomerInfo::where('user_uid', $uid)->first();
         if ($customer) {
             return view('engineer_company.add_quotation', compact('customer'));
