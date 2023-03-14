@@ -141,7 +141,7 @@ return [
     'daily' => 'Daily',
     'monthly' => '매월',
     'yearly' => 'Yearly',
-    'Select Customer' => 'Select Customer',
+    'Select Customer' => '고객 선택',
     'John Doe' => '홍길동',
     'Kate Wilson' => '홍길동',
     'Enter contract date' => '계약일자를 입력해주세요',

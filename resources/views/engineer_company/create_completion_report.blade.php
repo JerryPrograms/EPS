@@ -87,14 +87,14 @@
                                                         <div class="col-lg-4 col-12"><label
                                                                 class="form-label custom_lab mb-0"> <span
                                                                     class="star_section">*</span>
-                                                                {{__('translation.Customer')}}
+                                                                {{__('translation.customer')}}
                                                             </label></div>
                                                         <div class="col-lg-8 col-12">
 
                                                             <select  class="form-select w-100 custom_input" name="customer_id"
                                                                     autocomplete="off" required="">
                                                                 <option selected="" value="" disabled="">
-                                                                    Select Customer
+                                                                    {{__('translation.Select Customer')}}
                                                                 </option>
                                                                 @foreach($customers as $c)
                                                                     <option value="{{$c->id}}">
