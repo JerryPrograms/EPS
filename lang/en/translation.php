@@ -508,5 +508,12 @@ return [
     'Follower' => 'Follower',
     'Building Information1' => 'Building Information',
     'Enter password if you want to change' => 'Enter password if you want to change',
-    'Edit' => 'Edit'
+    'Edit' => 'Edit',
+    'Parts replacement history' => 'Parts replacement history',
+    '02-4347-4893' => '02-4347-4893',
+    'Name of person in charge' => 'Name of person in charge',
+    'correction' => 'correction',
+    'Construction completion report management' => 'Construction completion report management',
+    'Regular inspection management' => 'Regular inspection management',
+    'Partner Management' => 'Partner Management',
 ];

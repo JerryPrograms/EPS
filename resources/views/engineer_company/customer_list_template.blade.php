@@ -1,4 +1,4 @@
-                                                                                                                                                                                                            <table class="table align-middle mb-0 table-theme">
+<table class="table align-middle mb-0 table-theme">
     <thead class="table-light">
     <tr>
 
@@ -40,7 +40,7 @@
     @foreach($customer as $c)
         <tr>
             <td class=""><a href="javascript: void(0);"
-                            class="text-body fw-bold">{{$loop->index +1}}</a>
+                            class="text-body fw-bold">{{$counter}}</a>
             </td>
             <td class="">
                 <button
@@ -70,9 +70,10 @@
             </td>
             <td class="d-flex">
                 <!-- Button trigger modal -->
-{{--                <a href="{{route('add_contract',$c->user_uid)}}" class="date_button_2 border-0"><i class="fa fas fa-file-contract  custom-trash-padding"></i></a>--}}
-{{--                <a href="{{route('regular_inspection_log',$c->user_uid)}}" class="date_button_2 border-0"><i class="fa fa-magnifying-glass-plus custom-trash-padding"></i></a>--}}
-                <a href="{{route('ec.GetCustomerInfoDashboard',$c->user_uid)}}" class="date_button_2 border-0"><i class="fa fa-edit custom-trash-padding"></i></a>
+                {{--                <a href="{{route('add_contract',$c->user_uid)}}" class="date_button_2 border-0"><i class="fa fas fa-file-contract  custom-trash-padding"></i></a>--}}
+                {{--                <a href="{{route('regular_inspection_log',$c->user_uid)}}" class="date_button_2 border-0"><i class="fa fa-magnifying-glass-plus custom-trash-padding"></i></a>--}}
+                <a href="{{route('ec.GetCustomerInfoDashboard',$c->user_uid)}}" class="date_button_2 border-0"><i
+                        class="fa fa-edit custom-trash-padding"></i></a>
                 <button onclick="$('#customerInfoID').val('{{$c->id}}')"
                         data-bs-toggle="modal"
                         data-bs-target="#customerDeleteModal"
@@ -80,6 +81,9 @@
                         class="fa fa-trash-can custom-trash-padding"></i></button>
             </td>
         </tr>
+        @php
+            $counter--;
+        @endphp
     @endforeach
     </tbody>
 </table>

@@ -133,6 +133,7 @@
                                                         </h4>
                                                     </div>
                                                 </div>
+
                                                 <div class="col-lg-1">
                                                     <h4 class="card_tittle_2" style="text-align: end;">6 / 8</h4>
                                                 </div>
@@ -148,6 +149,14 @@
                                                         {{ __('translation.Last monthly maintenance') }}
 
                                                 </h4>
+                                            </div>
+                                            <div class="col-lg-1">
+
+                                                <div class="file_main_section">
+                                                    <button onclick="printForm($('.monthly_regular_table'))" type="button" class="file_button">
+                                                        <img src="http://127.0.0.1:8000/engineer_company/images/Vector.png">
+                                                    </button>
+                                                </div>
                                             </div>
                                             {{-- <div class="col-lg-1">
 
@@ -202,7 +211,7 @@
                                     <div class="row justify-content-center">
                                         <div class="col-lg-11 p-0">
                                             <div class="table-responsive">
-                                                <table class="table align-middle table-nowrap mb-0">
+                                                <table id="monthly_regular_table" class="table align-middle table-nowrap mb-0">
                                                     <thead class="table-light">
                                                     <tr>
                                                         <th class="align-middle border-0">
@@ -238,7 +247,7 @@
                                     </div>
                                     <!-- end page title end---------------------  -->
                                     <!-- form row 4 start  -->
-                                    <div class="main_section_buttn">
+                                    <div class="main_section_buttn no-print">
                                         <div class="row justify-content-end">
                                             <div class="col-lg-2 col-6">
                                                 <button type="button"

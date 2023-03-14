@@ -11,7 +11,7 @@
                                     <div
                                         class="card-title mb-4 d-flex align-items-center justify-content-between mobile-flex-column">
                                         <div class="d-flex w-75 align-items-center">
-                                            <h5 class="mb-0 font-15">{{ __('translation.Regular Inspection Log Management') }}</h5>
+                                            <h5 class="mb-0 font-15">{{ __('translation.Regular inspection management') }}</h5>
                                             <select
                                                 onchange="window.location.href = '{{route('regular_inspection_logs','id')}}'.replace('id',$(this).val())"
                                                 class="form-select valid w-25 ms-3" name="type" autocomplete="off"

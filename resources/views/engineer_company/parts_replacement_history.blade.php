@@ -144,7 +144,7 @@
                                                 <h4 class="card-title border-bottom-0"> <span
                                                         class="bor_lef">&nbsp;</span>
 
-                                                    {{ __('translation.Customer Information') }}
+                                                    {{ __('translation.Parts replacement history') }}
 
                                                 </h4>
                                             </div>
@@ -173,11 +173,15 @@
                                             <div class="col-lg-3 mt-2" style="flex-direction: column">
                                                 <div class="input-group" id="datepicker1">
                                                     <input id="initial_date"
-                                                           type="date" name="initial_date"
+                                                           type="date"
+                                                           onchange="UpdateInitialDate($(this).val(),'{{request()->segment(3)}}')"
                                                            class="form-control frm_section_inp w-100"
                                                            placeholder="2022-12-06" data-date-format="dd M, yyyy"
                                                            data-date-container='#datepicker1'
-                                                           data-provide="datepicker">
+                                                           data-provide="datepicker"
+                                                           autocomplete="off"
+                                                    value="{{$customer->getInitialDate->initial_date}}"
+                                                    >
                                                 </div><!-- input-group -->
                                             </div>
 
@@ -360,7 +364,6 @@
 
         function addReplacementHistoryRow() {
             counter++;
-            $('#initial_date').attr('required', true);
             $('#partReplacemnetTbody').prepend(`
                                             <tr class="mt-5">
                                             <td class="custom_br_theme_gray"><a href="javascript: void(0);"
@@ -449,5 +452,91 @@
                 }
             });
         }
+
+
+        function UpdateInitialDate(date, customer_id) {
+            $.ajax({
+
+                type: "POST",
+                url: '{{route('UpdateReplacementInitialDate')}}',
+                dataType: 'json',
+                data: {
+                    '_token': '{{csrf_token()}}',
+                    'initial_date': date,
+                    'customer_id': customer_id,
+                },
+                beforeSend: function () {
+
+                },
+                success: function (res) {
+
+
+                    // window.location.reload();
+                    if (res.Error == true) {
+
+
+                        $("div.prompt").html('<div class="alert alert-danger">' + res.Message + '</div>');
+
+                        $("div.prompt").fadeIn();
+                        setTimeout(function () {
+                            $("div.prompt").fadeOut();
+                        }, 2000);
+
+                    } else if (res.Error == false) {
+
+                        $("div.prompt").html('<div class="alert alert-success">' + res.Message + '</div>');
+
+                        $("div.prompt").fadeIn();
+                        setTimeout(function () {
+
+                            window.location.reload();
+
+                        }, 2000);
+
+                        setTimeout(function () {
+                            $("div.prompt").fadeOut();
+                            {
+                                {
+
+                                }
+                            }
+
+                        }, 2000);
+
+                    }
+                },
+                error: function (e) {
+
+
+                    var first_error = '';
+                    $.each(e.responseJSON.errors, function (index, item) {
+
+                        first_error = item[0];
+
+                    });
+
+                    $('.parent-loader').addClass('d-none');
+                    $("div.prompt").fadeIn();
+                    {
+                        {
+                            $('.prompt').html('<div class="alert alert-danger">' + first_error + '</div>');
+                        }
+                    }
+                    setTimeout(function () {
+                        $("div.prompt").fadeOut();
+                        {
+                            {
+                                prompt.html('<div class="alert alert-danger">' + first_error + '</div>');
+                            }
+                        }
+
+                    }, 2000);
+
+
+                }
+
+            });
+        }
+
     </script>
 @endsection

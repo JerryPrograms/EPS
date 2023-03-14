@@ -259,7 +259,7 @@
                                                             class="star_section">&nbsp;</span> fax</label>
                                                     <input type="email" class="form-control col-lg-8 custom_input"
                                                            id="exampleInputEmail1" aria-describedby="emailHelp"
-                                                           placeholder="02-4347-4893">
+                                                           placeholder="{{__('translation.02-4347-4893')}}">
                                                 </div>
 
                                                 <div class="d-flex align-items-baseline mt-4">
@@ -359,7 +359,7 @@
                                                             class="star_section">&nbsp;</span> fax</label>
                                                     <input type="email" class="form-control col-lg-8 custom_input"
                                                            id="exampleInputEmail1" aria-describedby="emailHelp"
-                                                           placeholder="02-4347-4893">
+                                                           placeholder="{{__("translation.02-4347-4893")}}">
                                                 </div>
 
                                                 <div class="d-flex align-items-baseline mt-4">

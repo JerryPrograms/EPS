@@ -99,7 +99,7 @@
                                         </div>
                                         <div class="form-action mt-4 text-end">
                                             <button id="editEngineerBtn" type="submit"
-                                                class="btn btn-primary">{{ __('translation.Edit') }}</button>
+                                                class="btn btn-primary">{{ __('translation.correction') }}</button>
                                         </div>
                                     </form>
                                 </div>

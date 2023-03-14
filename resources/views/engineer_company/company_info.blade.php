@@ -330,7 +330,7 @@
                                                     <div class="col-md-8 col-12"><input type="text" name="fax"
                                                             class="form-control w-100 custom_input"
                                                             aria-describedby="emailHelp"
-                                                                                        placeholder="02-4347-4893"
+                                                                                        placeholder="{{__('translation.02-4347-4893')}}"
                                                             @if (!empty($customer->RepairCompanyInformation)) value="{{ $customer->RepairCompanyInformation->fax }}" @endif>
                                                     </div>
                                                 </div>

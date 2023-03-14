@@ -32,6 +32,7 @@
                                             </div>
                                         </div>
                                     </div>
+
                                     @if (count($dispatch_information_data) > 0)
                                         <div class="table-responsive data-set-list mt-3">
                                             <table class="table table-striped align-middle mb-0 table-theme">

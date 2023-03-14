@@ -3,7 +3,9 @@
 namespace App\Service;
 
 use App\Http\Requests\PartReplacementHistoryRequest;
+use App\Models\CustomerInfo;
 use App\Models\PartReplacementHistoryModel;
+use App\Models\PartsInitialDate;
 use Illuminate\Http\Request;
 
 
@@ -31,7 +33,6 @@ class PartReplacement
                         'manager' => $request->manager[$i],
                         'as_content' => $request->as_content[$i],
                         'registration_date' => $request->registration_date[$i],
-                        'initial_date' => $request->initial_date,
                     ]);
                 }
 
@@ -89,6 +90,36 @@ class PartReplacement
             return json_decode([
                 'success' => false,
                 'message' => $ex->getMessage(),
+            ]);
+        }
+    }
+
+    public function UpdateReplacementInitialDate(Request $request)
+    {
+
+        $customer = CustomerInfo::where('user_uid', $request->customer_id)->first();
+        if ($customer) {
+
+            $check = PartsInitialDate::where('customer_id', $customer->id)->first();
+            if ($check) {
+                PartsInitialDate::where('id', $check->id)->update([
+                    'initial_date' => $request->initial_date,
+                ]);
+            } else {
+                PartsInitialDate::create([
+                    'initial_date' => $request->initial_date,
+                    'customer_id' => $customer->id,
+                ]);
+            }
+
+            return json_encode([
+                'Error' => false,
+                'Message' => 'Initial Date Uploaded',
+            ]);
+        } else {
+            return json_encode([
+                'Error' => true,
+                'Message' => 'No user found',
             ]);
         }
     }

@@ -163,28 +163,29 @@
 
                                         <!-- row 2 start  -->
                                         <div class="row mt-2">
-{{--                                            <div class="col-lg-3">--}}
-{{--                                                <p class="circle_img_text mt-3">--}}
-{{--                                                    <b>--}}
+                                            {{--                                            <div class="col-lg-3">--}}
+                                            {{--                                                <p class="circle_img_text mt-3">--}}
+                                            {{--                                                    <b>--}}
 
-{{--                                                        {{ __('translation.Failure and replacement history') }}--}}
+                                            {{--                                                        {{ __('translation.Failure and replacement history') }}--}}
 
-{{--                                                    </b>--}}
-{{--                                                </p>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="col-lg-3">--}}
-{{--                                                <div class="dropdown align-self-start mt-sm-0 mb-2">--}}
-{{--                                                    <input type="date" onchange="FilterData($(this).val())"--}}
-{{--                                                           class="form-control frm_section_inp"--}}
-{{--                                                           data-date-container='#datepicker1'--}}
-{{--                                                           data-provide="datepicker">--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
+                                            {{--                                                    </b>--}}
+                                            {{--                                                </p>--}}
+                                            {{--                                            </div>--}}
+                                            {{--                                            <div class="col-lg-3">--}}
+                                            {{--                                                <div class="dropdown align-self-start mt-sm-0 mb-2">--}}
+                                            {{--                                                    <input type="date" onchange="FilterData($(this).val())"--}}
+                                            {{--                                                           class="form-control frm_section_inp"--}}
+                                            {{--                                                           data-date-container='#datepicker1'--}}
+                                            {{--                                                           data-provide="datepicker">--}}
+                                            {{--                                                </div>--}}
+                                            {{--                                            </div>--}}
                                             <div class="col-lg-12 text-end">
-                                                <button type="button" onclick="addMonthlyregularInspection()"
-                                                        class="history_add_btn">
+                                                <a href="{{route('ec.CreateDispatchInformation',request()->segment(3))}}"
+                                                   type="button"
+                                                   class="history_add_btn">
                                                     {{ __('translation.add') }}
-                                                </button>
+                                                </a>
                                             </div>
 
                                         </div>
@@ -199,95 +200,75 @@
                                     <!--- tabel 2 start--- -->
                                     <!-- end page title------------------------------- -->
                                     @php
-                                        $MonthlyRegularInspections = $customer->EmergencyDispatchCheckList()->paginate(10);
+                                        $MonthlyRegularInspections = $customer->DispatchInformation()->paginate(10);
                                     @endphp
                                     <div class="row justify-content-center">
                                         <div class="col-lg-11 p-0">
-                                            <div class="table-responsive">
-                                                <table class="table align-middle table-nowrap mb-0">
+                                            <div class="table-responsive data-set-list mt-3">
+                                                <table class="table table-striped align-middle mb-0 table-theme">
                                                     <thead class="table-light">
                                                     <tr>
-
-                                                        <th class="align-middle border-0">
-                                                            {{ __('translation.no.') }}
-                                                        </th>
-                                                        <th class="text-center custom_inp_widt  border-0">
-                                                            {{ __('translation.date') }}
-
-                                                        </th>
-                                                        <th class="custom_inp_widt  border-0">
-                                                            {{ __('translation.attached photo') }}
-                                                        </th>
-                                                        <th class="custom_inp_widt  border-0 ">
-                                                            {{ __('translation.manager') }}
-                                                        </th>
-                                                        <th class="text-center  border-0">
-                                                            {{ __('translation.Check contents') }}
-                                                        </th>
-                                                        <th class="text-center  border-0">
-
-                                                            {{ __('translation.action') }}
-                                                        </th>
+                                                        <th>{{ __('translation.no') }}</th>
+                                                        <th>{{ __('translation.Reception date') }}</th>
+                                                        <th>{{ __('translation.Reception Time') }}</th>
+                                                        <th>{{ __('translation.Dispatcher Name') }}</th>
+                                                        <th>{{ __('translation.Dispatch content') }}</th>
+                                                        <th>{{ __('translation.Customer Name') }}</th>
+                                                        <th>{{ __('translation.Address') }}</th>
+                                                        <th>{{ __('translation.Action') }}</th>
                                                     </tr>
                                                     </thead>
-                                                    <tbody id="monthly_regular_inspection_tbody">
-                                                    @if(count($MonthlyRegularInspections) > 0)
-                                                        @foreach($MonthlyRegularInspections as $mr)
-                                                            <tr class="custom_bor_clr">
-                                                                <td class="border-bottom-0"><a
-                                                                        href="javascript: void(0);"
-                                                                        class="text-body fw-bold">{{$loop->index + 1}}</a>
-                                                                </td>
-                                                                <td class="border-bottom-0">
-                                                                    <button
-                                                                        class="date_button border-0">{{$mr->date}}
-                                                                    </button>
-                                                                </td>
-                                                                <td class="border-bottom-0">
-                                                                    <img class="monthly-inspection-listing-img"
-                                                                         src="{{asset($mr->photo)}}"
-                                                                         class="gallery_img">
-                                                                </td>
-                                                                <td class="border-bottom-0">
-                                                                    <button
-                                                                        class="date_button_2 border-0">{{$mr->manager}}
-                                                                    </button>
-                                                                </td>
-                                                                <td class="border-bottom-0">
-                                                                    <button
-                                                                        class="date_button_2 border-0">{{$mr->check_contents}}
-                                                                    </button>
-                                                                </td>
+                                                    <tbody id="myTable">
+                                                    @foreach ($MonthlyRegularInspections as $v)
+                                                        @php
+                                                            $reception_date_and_time = explode(' ',$v->reception_date_and_time);
 
-                                                                <td class="border-bottom-0 text-center">
-                                                                    <button
-                                                                        onclick="$('#partReplacementID').val('{{$mr->id}}')"
-                                                                        type="button" data-bs-toggle="modal"
-                                                                        data-bs-target="#deleteReplacementHistory"
-                                                                        class="date_button_2 border-0">
-                                                                        <i class="fa fa-trash-can"></i>
-                                                                    </button>
-                                                                </td>
-                                                            </tr>
-                                                        @endforeach
-                                                    @else
+                                                        @endphp
                                                         <tr>
-                                                            <td colspan="8"><img style="width: 50%; height: 50%"
-                                                                                 src="{{asset('engineer_company/images/no-data-found.png')}}">
+                                                            <td>{{ $loop->index + 1 }}</td>
+                                                            <td>{{ $reception_date_and_time[0] }}</td>
+                                                            <td>{{ \Carbon\Carbon::parse($reception_date_and_time[1])->format('g:i A') }}</td>
+                                                            <td>{{ $v->dispatcher }}</td>
+                                                            <td title="{{ $v->submission_details }}">{{ Str::limit($v->submission_details, 10, '...') }}</td>
+                                                            <td>{{ $v->GetCustomer->customer_number }}</td>
+                                                            <td title="{{ $v->GetCustomer->address }}">{{ Str::limit($v->GetCustomer->address, 10, '...') }}</td>
+                                                            <td>
+                                                                <div class="d-flex gap-1 justify-content-center">
+                                                                    <a href="{{ route('ec.ViewDispatchInformation', $v->id) }}"
+                                                                       class="btn btn-success btn-custom-table btn-sm">
+                                                                        <i class="bx bx-search-alt-2"></i>
+                                                                    </a>
+                                                                    @if(activeGuard() != 'web')
+                                                                        <a @if(activeGuard() == 'admin') style="background-color: #696CFF !important; border: none !important;"
+                                                                           @endif href="{{ route('ec.EditDispatchInformation', $v->id) }}"
+                                                                           class="btn btn-primary btn-custom-table btn-sm">
+                                                                            <i class="bx bxs-edit-alt"></i>
+                                                                        </a>
+                                                                        <a data-bs-toggle="modal"
+                                                                           data-del-id="{{ $v->id }}"
+                                                                           data-bs-target="#delModal"
+                                                                           class="btn btn-danger btn-custom-table btn-sm delBtn">
+                                                                            <i class="bx bx-trash-alt"></i>
+                                                                        </a>
+                                                                    @endif
+                                                                </div>
                                                             </td>
                                                         </tr>
-                                                    @endif
+                                                    @endforeach
                                                     </tbody>
                                                 </table>
+                                            </div>
+                                            <div class="text-center mt-3">
+                                                {!! $MonthlyRegularInspections->links('common_files.paginate') !!}
                                             </div>
                                         </div>
                                     </div>
                                     <!-- end table-responsive -->
-                                    <div id="monthlyInspectionListingPagination" class="row justify-content-center">
-                                        <div class="col-lg-12">
-                                            {!! $MonthlyRegularInspections->links('common_files.paginate') !!}
-                                        </div>
-                                    </div>
+{{--                                    <div id="monthlyInspectionListingPagination" class="row justify-content-center">--}}
+{{--                                        <div class="col-lg-12">--}}
+{{--                                            {!! $MonthlyRegularInspections->links('common_files.paginate') !!}--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
                                     <!-- end page title end---------------------  -->
                                     <!-- form row 4 start  -->
                                     <div class="main_section_buttn">
@@ -392,15 +373,15 @@
 
                                                         <td>
                                                             <input type="text" name="check_contents[]" required class="form-control col-lg-2 custom_input_tble"  aria-describedby="emailHelp" placeholder="{{__('translation.Center lift replacement')}}
-                                                                        ">
-                                                        </td>
+            ">
+</td>
 
-                                                        <td class="text-center">
-                                                            <button type="button" onclick="removeMonthlyRegularInspection($(this))" class="search_button">
-                                                               <i class="fa fa-trash"></i>
-                                                            </button>
-                                                        </td>
-                                                    </tr>`);
+<td class="text-center">
+<button type="button" onclick="removeMonthlyRegularInspection($(this))" class="search_button">
+   <i class="fa fa-trash"></i>
+</button>
+</td>
+</tr>`);
 
             $('tr td img').addClass('d-none');
         }

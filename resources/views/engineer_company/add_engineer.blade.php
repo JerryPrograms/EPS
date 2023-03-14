@@ -47,7 +47,7 @@
                                                         <select name="company_name" id="company_name"
                                                                 class="form-control form-theme-input" required>
                                                             <option value="">
-                                                                {{ __('translation.Write affiliated company name') }}
+                                                                {{ __('translation.Write company name') }}
                                                             </option>
                                                             @foreach ($engineer_companies as $engineer_company)
                                                                 <option value="{{ $engineer_company->id }}">
@@ -101,12 +101,12 @@
                                         <div class="form-group mb-4">
                                             <div class="row align-items-center">
                                                 <div class="col-lg-3 col-md-6 col-12">
-                                                    <label for="id" class="mb-0">{{ __('translation.ID') }}</label>
+                                                    <label for="id" class="mb-0">{{ __('translation.Name of person in charge') }}</label>
                                                 </div>
                                                 <div class="col-lg-9 col-md-6 col-12">
                                                     <input type="text" class="form-control form-theme-input"
                                                            name="id" id="id"
-                                                           placeholder="{{ __('translation.Write ID') }}" required>
+                                                           placeholder="{{ __('translation.Name of person in charge') }}" required>
                                                 </div>
                                             </div>
                                         </div>

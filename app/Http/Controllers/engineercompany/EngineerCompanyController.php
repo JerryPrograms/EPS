@@ -25,9 +25,26 @@ class EngineerCompanyController extends Controller
     public function GetCustomerInfoListing()
     {
 
+        $counter = 10;
         if (activeGuard() == 'admin') {
-            $customer = CustomerInfo::latest()->paginate(10);
+            $limit = 10;
+            $page = 1;
+            $totalRecords = CustomerInfo::count();
+            if (request()->has('page')) {
+                $page = request()->get('page');
+            }
+
+            if ($totalRecords > $limit) {
+                $counter = $totalRecords - (($page - 1) * $limit);
+            } else {
+                $counter = $totalRecords;
+            }
+
+            $customer = CustomerInfo::latest()->paginate($limit);
         } else if (activeGuard() == 'engineer') {
+
+
+            $limit = 10;
             $companies = Engineer_company::where('id', auth(activeGuard())->user()->affiliated_company)->first();
             $customer = CustomerInfo::orWhere(function ($query) use ($companies) {
                 $query->where('added_by', 'engineer_company')
@@ -35,8 +52,23 @@ class EngineerCompanyController extends Controller
             })->orWhere(function ($query) {
                 $query->where('added_by', activeGuard())
                     ->where('added_by_id', auth(activeGuard())->id());
-            })->latest()->paginate(10);
+            })->latest();
+
+
+            $page = 1;
+            $totalRecords = $customer->count();
+            $customer = $customer->paginate($limit);
+            if (request()->has('page')) {
+                $page = request()->get('page');
+            }
+
+            if ($totalRecords > $limit) {
+                $counter = $totalRecords - (($page - 1) * $limit);
+            } else {
+                $counter = $totalRecords;
+            }
         } else {
+            $limit = 10;
             $engineers = Engineer::where('affiliated_company', auth(activeGuard())->id())->pluck('id');
             $customer = CustomerInfo::orWhere(function ($query) use ($engineers) {
                 $query->where('added_by', 'engineer')
@@ -44,9 +76,24 @@ class EngineerCompanyController extends Controller
             })->orWhere(function ($query) {
                 $query->where('added_by', activeGuard())
                     ->where('added_by_id', auth(activeGuard())->id());
-            })->latest()->paginate(10);
+            })->latest();
+            $totalRecords = $customer->count();
+            $customer = $customer->paginate($limit);
+            $page = 1;
+
+
+            if (request()->has('page')) {
+                $page = request()->get('page');
+            }
+
+            if ($totalRecords > $limit) {
+                $counter = $totalRecords - (($page - 1) * $limit);
+            } else {
+                $counter = $totalRecords;
+            }
+
         }
-        return view('engineer_company.customer_list', compact('customer'));
+        return view('engineer_company.customer_list', compact('customer', 'counter'));
     }
 
     public function CreateBuildingInfo($uid)

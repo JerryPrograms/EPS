@@ -172,7 +172,7 @@
                         <img src="{{ asset('engineer_company/assets/images/Vector.png') }}"
                              class="double_ring_img p-0" style="margin-left: -1px;">
                         <span key="t-dashboards"
-                              class="dropdown_text">{{ __('translation.Construction Completion') }} </span>
+                              class="dropdown_text">{{ __('translation.Construction completion report management') }} </span>
                     </a>
                 </li>
 

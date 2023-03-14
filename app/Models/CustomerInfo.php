@@ -97,4 +97,9 @@ class CustomerInfo extends Authenticatable
     {
         return $this->hasMany(Quotation::class, 'customer_id', 'id');
     }
+
+    public function getInitialDate()
+    {
+        return $this->hasOne(PartsInitialDate::class, 'customer_id', 'id');
+    }
 }
