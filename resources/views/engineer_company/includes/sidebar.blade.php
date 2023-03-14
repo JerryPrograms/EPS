@@ -8,17 +8,17 @@
             <ul class="metismenu list-unstyled" id="side-menu">
                 @if (activeGuard() != 'web')
                     <li class="sidebr_button">
-                        <a href="javascript: void(0);" class="waves-effect dropdown_toggle">
+                        <a href="javascript:void(0)" class="waves-effect dropdown_toggle">
                             <img src="{{ asset('engineer_company/assets/images/user.png') }}"
                                  class="double_ring_img p-0"
                                  style="margin-left: -1px;">
-                            <span key="t-dashboards" class="dropdown_text">{{ __('translation.Customer List') }}</span>
+                            <span key="t-dashboardsasdas"
+                                  class="dropdown_text">{{ __('translation.Customer List') }}</span>
                             <div class="plus_section_5">
-                                <!-- <img src="{{ asset('engineer_company/assets/images/gray-plus.png') }}" alt=""> -->
                                 <i class="fa-solid fa-plus plus_icon"></i>
                             </div>
                         </a>
-                        <ul class="sub-menu" aria-expanded="true">
+                        <ul class="sub-menu" aria-expanded="false">
                             <li>
                                 <a key="t-level-1-1" href="{{ route('ec.GetCustomerInfoListing') }}"
                                    class="waves-effect  dropdown_toggle_2">
@@ -32,13 +32,13 @@
                             @if (activeGuard() != 'admin')
                                 <li>
 
-                                    <a key="t-level-1-2" href="javascript: void(0);"
-                                       class=" waves-effect {{ request()->segment(2) == 'customer-info-dashboard' ? 'active' : '' }}  dropdown_toggle_2 pt-0">
+                                    <a href="javascript:void(0)"
+                                       class=" waves-effect dropdown_toggle_2 pt-0" aria-expanded="false">
                                         <!-- <i class="bx bx-calendar"></i> -->
                                         <!-- <i class="fa-solid fa-list list_icon"></i> -->
                                         <i class="fa-sharp fa-solid fa-pen list_icon"></i>
 
-                                        <span key="t-dashboards" class="dropdown_text_2">
+                                        <span class="dropdown_text_2">
                                         {{ __('translation.Fill in customer information') }}
                                     </span>
 
@@ -63,30 +63,29 @@
                                         <li><a key="t-blog" class="list_menubar_text"
                                                title="Key Accessories History"><span
                                                     class="custom_dot">.</span>{{ __('translation.Key Accessories History') }}
-                                            </a>
-                                        </li>
+                                            </a></li>
 
-                                        <li><a href="" key="t-blog" class="list_menubar_text"
+                                        <li><a key="t-blog" class="list_menubar_text"
                                                title="Component replacement history">
                                             <span
                                                 class="custom_dot">.</span>{{ __('translation.Component replacement') }}
                                             </a></li>
 
-                                        <li><a href="" key="t-blog" class="list_menubar_text"
+                                        <li><a key="t-blog" class="list_menubar_text"
                                                title="Monthly Inspection list
                                 ">
                                             <span
                                                 class="custom_dot">.</span>{{ __('translation.Monthly Inspection list') }}
                                             </a></li>
 
-                                        <li><a href="" key="t-blog" class="list_menubar_text"
+                                        <li><a key="t-blog" class="list_menubar_text"
                                                title="Emergency dispatch confirmation list
                                 ">
                                                 <span
                                                     class="custom_dot">.</span>{{ __('translation.Emergency dispatch') }}
                                             </a></li>
 
-                                        <li><a href="" key="t-blog" class="list_menubar_text"
+                                        <li><a key="t-blog" class="list_menubar_text"
                                                title="Manage attachments">
                                                 <span
                                                     class="custom_dot">.</span>{{ __('translation.Manage attachments') }}

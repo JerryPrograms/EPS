@@ -57,7 +57,7 @@
                                         </div>
                                         <button type="button" onclick="openDeleteModal()"
                                                 class="btn btn-primary">
-                                            Delete
+                                            {{__('translation.delete')}}
                                         </button>
                                         <div class="buttons d-flex align-items-center justify-content-between gap-1">
                                             <a href="{{ route('add_contract', $customer->user_uid) }}"
