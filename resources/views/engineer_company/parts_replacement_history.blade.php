@@ -180,7 +180,9 @@
                                                            data-date-container='#datepicker1'
                                                            data-provide="datepicker"
                                                            autocomplete="off"
-                                                    value="{{$customer->getInitialDate->initial_date}}"
+                                                           @if(!empty($customer->getInitialDate))
+                                                               value="{{$customer->getInitialDate->initial_date}}"
+                                                        @endif
                                                     >
                                                 </div><!-- input-group -->
                                             </div>
