@@ -39,7 +39,7 @@ class EventService
         $date = $request->except('_token');
         $date['color'] = $color;
         $date['text_color'] = $text_color;
-        $date['user_id'] = auth('engineer_company')->user()->id;
+        $date['user_id'] = auth(activeGuard())->user()->id;
         try {
 
             $event = Events::create($date);
