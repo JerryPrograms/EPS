@@ -14,7 +14,7 @@
                                                 <div class="d-flex align-items-center gap-2">
                                                     <span class="fw-bold mb-2 ms-1">.</span>
                                                     <h4 class="card_tittle_2 d-flex align-items-center mb-0">
-                                                        {{ __('translation.Add Engineer Company') }}
+                                                        {{ __('translation.Register as a partner') }}
                                                     </h4>
                                                 </div>
                                             </div>
@@ -32,7 +32,7 @@
                                                 <div class="col-lg-9 col-md-6 col-12">
                                                     <input type="text" class="form-control form-theme-input"
                                                         name="name" id="name"
-                                                        placeholder="{{ __('translation.Write company name') }}" required>
+                                                        placeholder="{{ __('translation.Enter business name') }}" required>
                                                 </div>
                                             </div>
                                         </div>
@@ -88,19 +88,19 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="form-group mb-4">
-                                            <div class="row align-items-center">
-                                                <div class="col-lg-3 col-md-6 col-12">
-                                                    <label for="manager_name"
-                                                        class="mb-0">{{ __('translation.Manager Name') }}</label>
-                                                </div>
-                                                <div class="col-lg-9 col-md-6 col-12">
-                                                    <input type="text" class="form-control form-theme-input"
-                                                        name="manager_name" id="manager_name"
-                                                        placeholder="{{ __('translation.Write manager name') }}" required>
-                                                </div>
-                                            </div>
-                                        </div>
+{{--                                        <div class="form-group mb-4">--}}
+{{--                                            <div class="row align-items-center">--}}
+{{--                                                <div class="col-lg-3 col-md-6 col-12">--}}
+{{--                                                    <label for="manager_name"--}}
+{{--                                                        class="mb-0">{{ __('translation.Manager Name') }}</label>--}}
+{{--                                                </div>--}}
+{{--                                                <div class="col-lg-9 col-md-6 col-12">--}}
+{{--                                                    <input type="text" class="form-control form-theme-input"--}}
+{{--                                                        name="manager_name" id="manager_name"--}}
+{{--                                                        placeholder="{{ __('translation.Write manager name') }}" required>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
                                         <div class="form-action mt-4 text-end">
                                             <button id="addEngineerCompanyBtn" type="submit"
                                                 class="btn btn-primary">{{ __('translation.Register') }}</button>

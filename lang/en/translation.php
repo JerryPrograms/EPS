@@ -516,4 +516,6 @@ return [
     'Construction completion report management' => 'Construction completion report management',
     'Regular inspection management' => 'Regular inspection management',
     'Partner Management' => 'Partner Management',
+    'Register as a partner' => 'Register as a partner',
+    'Enter business name' => 'Enter business name',
 ];

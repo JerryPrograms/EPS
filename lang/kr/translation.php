@@ -511,4 +511,6 @@ return [
     'Construction completion report management' => '공사 완료 보고서 관리',
     'Regular inspection management' => '정기점검 관리',
     'Partner Management' => '협력업체 관리',
+    'Register as a partner' => '협력업체 등록',
+    'Enter business name' => '업체명 입력',
 ];
