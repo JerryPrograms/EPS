@@ -343,6 +343,7 @@
                                 <input type="date" class="form-control border-none" name="start_date"
                                        required>
                             </div>
+                            <input name="added_by" value="{{activeGuard()}}" hidden>
                             <div class="col-6 text-end">
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>

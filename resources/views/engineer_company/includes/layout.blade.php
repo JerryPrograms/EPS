@@ -19,6 +19,7 @@
         border-radius: 4px;
         padding: 7px 10px 7px 10px;
     }
+
     .delete_btn_attachments {
         border: 1px solid #FF6633;
         background: rgba(255, 102, 51, 0.1);
@@ -27,7 +28,8 @@
     }
 
 </style>
-<body data-sidebar="dark" data-layout-mode="light" class="{{ (!empty(activeGuard()) && activeGuard() == 'admin') ? 'admin-layout' : '' }}">
+<body data-sidebar="dark" data-layout-mode="light"
+      class="{{ (!empty(activeGuard()) && activeGuard() == 'admin') ? 'admin-layout' : '' }}">
 
 <!-- <body data-layout="horizontal" data-topbar="dark"> -->
 
@@ -54,8 +56,8 @@
     <div class="rightbar-overlay"></div>
     @yield('modal')
     <!-- JAVASCRIPT -->
-@include('engineer_company.includes.scripts')
-@yield('custom-script')
+    @include('engineer_company.includes.scripts')
+    @yield('custom-script')
 
 </body>
 

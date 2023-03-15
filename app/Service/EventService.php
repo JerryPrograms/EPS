@@ -40,6 +40,7 @@ class EventService
         $date['color'] = $color;
         $date['text_color'] = $text_color;
         $date['user_id'] = auth(activeGuard())->user()->id;
+        $date['added_by'] = activeGuard();
         try {
 
             $event = Events::create($date);

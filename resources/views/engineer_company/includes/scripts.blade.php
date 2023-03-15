@@ -68,6 +68,43 @@
             doctype: '<!doctype html>'
         });
     }
+
+    @php
+        $routes = ['building-info','as-and-engineer-company','parking-facility','key-accessory-history','parts-replacement-history','monthly-regular-inspection','emergency-dispatch-checklist','manage-attachments'];
+    @endphp
+
+    @if(in_array(request()->segment(2),$routes))
+
+    $(window).on('load', function () {
+        $('.customer-details').addClass('mm-active');
+        $('.customer-details a').attr('aria-expanded', 'true');
+        $('.sub-menu').attr('aria-expanded', 'true');
+        $('.sub-menu .mm-collapse').addClass('mm-show');
+        $('.sub-menu .mm-collapse').attr('aria-expanded', 'true');
+        $('.sub-menu').removeClass('mm-collapse');
+        if ('{{request()->segment(2)}}' == 'building-info') {
+            $('.a a').get(0).style.cssText = 'color:blue !important';
+        } else if ('{{request()->segment(2)}}' == 'as-and-engineer-company') {
+            $('.b a').get(0).style.cssText = 'color:blue !important';
+        } else if ('{{request()->segment(2)}}' == 'parking-facility') {
+            $('.c a').get(0).style.cssText = 'color:blue !important';
+        } else if ('{{request()->segment(2)}}' == 'key-accessory-history') {
+            $('.d a').get(0).style.cssText = 'color:blue !important';
+        } else if ('{{request()->segment(2)}}' == 'parts-replacement-history') {
+            $('.e a').get(0).style.cssText = 'color:blue !important';
+        } else if ('{{request()->segment(2)}}' == 'monthly-regular-inspection') {
+            $('.f a').get(0).style.cssText = 'color:blue !important';
+        } else if ('{{request()->segment(2)}}' == 'emergency-dispatch-checklist') {
+            $('.g a').get(0).style.cssText = 'color:blue !important';
+        } else if ('{{request()->segment(2)}}' == 'manage-attachments') {
+            $('.h a').get(0).style.cssText = 'color:blue !important';
+        }
+    });
+
+
+    @endif
+
+
 </script>
 
 

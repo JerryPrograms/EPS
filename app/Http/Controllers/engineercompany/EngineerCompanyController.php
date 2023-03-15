@@ -211,10 +211,45 @@ class EngineerCompanyController extends Controller
             $events = Events::where('status', 0)->latest()->get();
             $todos_pending = Todo::where('status', 0)->latest()->get();
             $todos_completed = Todo::where('status', 1)->latest()->get();
+        } else if (activeGuard() == 'engineer') {
+
+            $company = Engineer_company::where('id', auth(activeGuard())->user()->affiliated_company)->first();
+
+
+            $events = Events::orWhere(function ($query) {
+
+                $query->where('added_by', activeGuard())->where('user_id', auth(activeGuard())->user()->id);
+
+            })->orWhere(function ($query) use ($company) {
+
+                $query->where('added_by', 'engineer_company')->where('user_id', $company->id);
+
+            })->where('status', 0)->latest()->get();
+
+
+            $todos_pending = Todo::where('status', 0)->where('user_id', auth(activeGuard())->user()->id)->where('added_by', activeGuard())->latest()->get();
+            $todos_completed = Todo::where('status', 1)->where('user_id', auth(activeGuard())->user()->id)->where('added_by', activeGuard())->latest()->get();
         } else {
-            $events = Events::where('status', 0)->where('user_id', auth(activeGuard())->user()->id)->latest()->get();
-            $todos_pending = Todo::where('status', 0)->where('user_id', auth(activeGuard())->user()->id)->latest()->get();
-            $todos_completed = Todo::where('status', 1)->where('user_id', auth(activeGuard())->user()->id)->latest()->get();
+
+
+            $engineers = Engineer::where('affiliated_company', auth(activeGuard())->user()->id)->pluck('id');
+
+
+            $events = Events::orWhere(function ($query) {
+
+                $query->where('added_by', activeGuard())->where('user_id', auth(activeGuard())->user()->id);
+
+            })->orWhere(function ($query) use ($engineers) {
+
+                $query->where('added_by', 'engineer')->whereIn('user_id', $engineers);
+
+            })->where('status', 0)->latest()->get();
+
+
+            $todos_pending = Todo::where('status', 0)->where('user_id', auth(activeGuard())->user()->id)->where('added_by', activeGuard())->latest()->get();
+            $todos_completed = Todo::where('status', 1)->where('user_id', auth(activeGuard())->user()->id)->where('added_by', activeGuard())->latest()->get();
+
+
         }
 
         $data = array();

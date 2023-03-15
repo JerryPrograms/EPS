@@ -1,4 +1,9 @@
 <div class="vertical-menu">
+    @php
+        $routes = ['building-info','as-and-engineer-company','parking-facility','key-accessory-history','parts-replacement-history','monthly-regular-inspection','emergency-dispatch-checklist','manage-attachments'];
+    @endphp
+
+
     <div data-simplebar class="h-100">
         <!--- Sidemenu -->
         <div id="sidebar-menu">
@@ -7,7 +12,7 @@
 
             <ul class="metismenu list-unstyled" id="side-menu">
                 @if (activeGuard() != 'web')
-                    <li class="sidebr_button">
+                    <li class="sidebr_button customer-details">
                         <a href="javascript:void(0)" class="waves-effect dropdown_toggle">
                             <img src="{{ asset('engineer_company/assets/images/user.png') }}"
                                  class="double_ring_img p-0"
@@ -18,7 +23,7 @@
                                 <i class="fa-solid fa-plus plus_icon"></i>
                             </div>
                         </a>
-                        <ul class="sub-menu" aria-expanded="false">
+                        <ul class="sub-menu " @if(in_array(request()->segment(2),$routes)) aria-expanded="true" @else aria-expanded="false" @endif>
                             <li>
                                 <a key="t-level-1-1" href="{{ route('ec.GetCustomerInfoListing') }}"
                                    class="waves-effect  dropdown_toggle_2">
@@ -44,48 +49,48 @@
 
                                     </a>
                                     <ul class="sub-menu" aria-expanded="false">
-                                        <li><a key="t-default" class="list_menubar_text"
+                                        <li class="a"><a key="t-default" class="list_menubar_text"
                                                title="Information & Building Management Company Information"><span
                                                     class="custom_dot">.</span>{{ __('translation.Building Information1') }}
                                             </a></li>
 
-                                        <li><a key="t-saas" class="list_menubar_text"
+                                        <li class="b"><a key="t-saas" class="list_menubar_text"
                                                title="AS Info & Engineer company Info"><span class="custom_dot">.</span>
                                                 {{ __('translation.Info & Engineer') }}.</a></li>
 
-                                        <li><a key="t-crypto" class="list_menubar_text"
+                                        <li class="c"><a key="t-crypto" class="list_menubar_text"
                                                title="Parking facility certification information & inspection certificate
                                 "><span
                                                     class="custom_dot">.</span>{{ __('translation.Parking facility certification') }}
 
                                             </a></li>
 
-                                        <li><a key="t-blog" class="list_menubar_text"
+                                        <li class="d"><a key="t-blog" class="list_menubar_text"
                                                title="Key Accessories History"><span
                                                     class="custom_dot">.</span>{{ __('translation.Key Accessories History') }}
                                             </a></li>
 
-                                        <li><a key="t-blog" class="list_menubar_text"
+                                        <li class="e"><a key="t-blog" class="list_menubar_text"
                                                title="Component replacement history">
                                             <span
                                                 class="custom_dot">.</span>{{ __('translation.Component replacement') }}
                                             </a></li>
 
-                                        <li><a key="t-blog" class="list_menubar_text"
+                                        <li class="f"><a key="t-blog" class="list_menubar_text"
                                                title="Monthly Inspection list
                                 ">
                                             <span
                                                 class="custom_dot">.</span>{{ __('translation.Monthly Inspection list') }}
                                             </a></li>
 
-                                        <li><a key="t-blog" class="list_menubar_text"
+                                        <li class="g"><a key="t-blog" class="list_menubar_text"
                                                title="Emergency dispatch confirmation list
                                 ">
                                                 <span
                                                     class="custom_dot">.</span>{{ __('translation.Emergency dispatch') }}
                                             </a></li>
 
-                                        <li><a key="t-blog" class="list_menubar_text"
+                                        <li class="h"><a key="t-blog" class="list_menubar_text"
                                                title="Manage attachments">
                                                 <span
                                                     class="custom_dot">.</span>{{ __('translation.Manage attachments') }}
