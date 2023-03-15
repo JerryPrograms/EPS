@@ -41,16 +41,35 @@ class ConstructionController extends Controller
 
     public function create_construction_completion($id = null)
     {
-        if(empty($id))
-        {
-            $customers = CustomerInfo::where('added_by',activeGuard())->where('added_by_id',auth(activeGuard())->id())->get();
+        if (empty($id)) {
 
-        }
-        else{
+            if (activeGuard() == 'engineer') {
+                $companies = Engineer_company::where('id', auth(activeGuard())->user()->affiliated_company)->first();
+                $customers = CustomerInfo::orWhere(function ($query) use ($companies) {
+                    $query->where('added_by', 'engineer_company')
+                        ->where('added_by_id', $companies->id);
+                })->orWhere(function ($query) {
+                    $query->where('added_by', activeGuard())
+                        ->where('added_by_id', auth(activeGuard())->id());
+                })->latest()->get();
+            } else if (activeGuard() == 'engineer-company') {
+                $engineers = Engineer::where('affiliated_company', auth(activeGuard())->id())->pluck('id');
+                $customers = CustomerInfo::orWhere(function ($query) use ($engineers) {
+                    $query->where('added_by', 'engineer')
+                        ->whereIn('added_by_id', $engineers);
+                })->orWhere(function ($query) {
+                    $query->where('added_by', activeGuard())
+                        ->where('added_by_id', auth(activeGuard())->id());
+                })->latest()->get();
+            } else {
+                $customers = CustomerInfo::latest()->get();
+            }
+
+        } else {
             $customers = [];
         }
 
-        return view('engineer_company.create_completion_report',compact('customers'));
+        return view('engineer_company.create_completion_report', compact('customers'));
     }
 
     public function view_construction_completion($id)
@@ -123,7 +142,7 @@ class ConstructionController extends Controller
     public function edit_construction_completion($id)
     {
         $completion_report = CompletionRequestModel::where('id', $id)->first();
-        return view('engineer_company.edit_completion_report', ['completion_report'=>$completion_report]);
+        return view('engineer_company.edit_completion_report', ['completion_report' => $completion_report]);
     }
 
     public function update_construction_completion(Request $request)

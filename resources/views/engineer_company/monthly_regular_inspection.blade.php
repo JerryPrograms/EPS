@@ -154,7 +154,7 @@
 
                                                 <div class="file_main_section">
                                                     <button onclick="printForm($('.monthly_regular_table'))" type="button" class="file_button">
-                                                        <img src="http://127.0.0.1:8000/engineer_company/images/Vector.png">
+                                                        <img src="{{asset('engineer_company/images/Vector.png')}}">
                                                     </button>
                                                 </div>
                                             </div>
