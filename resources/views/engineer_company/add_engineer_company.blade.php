@@ -88,19 +88,20 @@
                                                 </div>
                                             </div>
                                         </div>
-{{--                                        <div class="form-group mb-4">--}}
-{{--                                            <div class="row align-items-center">--}}
-{{--                                                <div class="col-lg-3 col-md-6 col-12">--}}
-{{--                                                    <label for="manager_name"--}}
-{{--                                                        class="mb-0">{{ __('translation.Manager Name') }}</label>--}}
-{{--                                                </div>--}}
-{{--                                                <div class="col-lg-9 col-md-6 col-12">--}}
-{{--                                                    <input type="text" class="form-control form-theme-input"--}}
-{{--                                                        name="manager_name" id="manager_name"--}}
-{{--                                                        placeholder="{{ __('translation.Write manager name') }}" required>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
+                                        <div class="form-group mb-4">
+                                            <div class="row align-items-center">
+                                                <div class="col-lg-3 col-md-6 col-12">
+                                                    <label for="manager_name"
+                                                           class="mb-0">{{ __('translation.Name of person in charge') }}</label>
+                                                </div>
+                                                <div class="col-lg-9 col-md-6 col-12">
+                                                    <input type="text" class="form-control form-theme-input"
+                                                           name="manager_name" id="manager_name"
+                                                           placeholder="{{ __('translation.Write manager name') }}"
+                                                           required>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="form-action mt-4 text-end">
                                             <button id="addEngineerCompanyBtn" type="submit"
                                                 class="btn btn-primary">{{ __('translation.Register') }}</button>
