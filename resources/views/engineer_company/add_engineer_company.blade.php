@@ -97,7 +97,7 @@
                                                 <div class="col-lg-9 col-md-6 col-12">
                                                     <input type="text" class="form-control form-theme-input"
                                                            name="manager_name" id="manager_name"
-                                                           placeholder="{{ __('translation.Write manager name') }}"
+                                                           placeholder="{{ __('translation.Enter the person in charge') }}"
                                                            required>
                                                 </div>
                                             </div>

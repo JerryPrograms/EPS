@@ -518,5 +518,6 @@ return [
     'Partner Management' => 'Partner Management',
     'Register as a partner' => 'Register as a partner',
     'Enter business name' => 'Enter business name',
+    'Enter the person in charge' => 'Enter the person in charge',
 
 ];

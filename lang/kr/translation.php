@@ -513,4 +513,5 @@ return [
     'Partner Management' => '협력업체 관리',
     'Register as a partner' => '협력업체 등록',
     'Enter business name' => '업체명 입력',
+    'Enter the person in charge'=>'담당자명 입력'
 ];
