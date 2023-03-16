@@ -516,5 +516,6 @@ return [
     'Enter the person in charge' => '담당자명 입력',
     'Attachments added successfully' => '첨부파일이 성공적으로 추가되었습니다',
     'dispatch details' => '출동내역',
-    'Write a dispatcher'=>'출동자 작성',
+    'Write a dispatcher' => '출동자 작성',
+    'A special note is required' => '특별한 메모가 필요합니다',
 ];

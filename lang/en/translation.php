@@ -522,5 +522,6 @@ return [
     'Attachments added successfully' => 'Attachments added successfully',
     'dispatch details' => 'Dispatch Details',
     'Write a dispatcher' => 'Write a dispatcher',
+    'A special note is required' => 'A special note is required',
 
 ];

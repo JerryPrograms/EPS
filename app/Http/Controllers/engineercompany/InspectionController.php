@@ -67,7 +67,10 @@ class InspectionController extends Controller
             'inspection' => 'required',
             'special_notes' => 'required',
             'output' => 'required'
-        ]);
+        ], [
+                'special_notes.required' => __('translation.A special note is required'),
+            ]
+        );
         if ($validate->fails()) {
             return response()->json(["success" => false, 'message' => $validate->errors()->first()]);
         }
@@ -145,6 +148,8 @@ class InspectionController extends Controller
             'inspection_manager' => 'required',
             'inspection' => 'required',
             'special_notes' => 'required',
+        ], [
+            'special_notes.required' => __('translation.A special note is required'),
         ]);
         if ($validate->fails()) {
             return response()->json(["success" => false, 'message' => $validate->errors()->first()]);
