@@ -6,10 +6,10 @@
                 {{ $mr->inspection_date->format('d-m-Y') }}
             </td>
             <td class="border-bottom-0">
-                {{ $mr->completion_time->format('d-m-Y') }}
+                {{ $mr->completion_time }}
             </td>
             <td class="border-bottom-0">
-                {{ $mr->arrival_time->format('d-m-Y') }}
+                {{ $mr->arrival_time }}
             </td>
             <td class="border-bottom-0">
                 {{ $mr->inspection_manager }}
