@@ -519,5 +519,8 @@ return [
     'Register as a partner' => 'Register as a partner',
     'Enter business name' => 'Enter business name',
     'Enter the person in charge' => 'Enter the person in charge',
+    'Attachments added successfully' => 'Attachments added successfully',
+    'dispatch details' => 'Dispatch Details',
+    'Write a dispatcher' => 'Write a dispatcher',
 
 ];

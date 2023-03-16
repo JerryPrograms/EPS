@@ -187,7 +187,7 @@
                                                 <div class="col-lg-8 col-12">
                                                     <textarea required name="undecided"
                                                               class="form-control custom_color_gray_2"
-                                                              placeholder="고장원인 작성"
+                                                              placeholder="{{__('translation.Fill in pending issues')}}"
                                                               rows="7"></textarea>
                                                 </div>
                                             </div>
@@ -203,7 +203,7 @@
                                                     <input type="text" required name="dispatcher"
                                                            class=" custom_input w-100 custom_color_gray"
                                                            aria-describedby="emailHelp"
-                                                           placeholder="{{ __('translation.Fill in pending issues') }}">
+                                                           placeholder="{{ __('translation.Write a dispatcher') }}">
                                                 </div>
                                             </div>
                                             <div class="row mt-4">

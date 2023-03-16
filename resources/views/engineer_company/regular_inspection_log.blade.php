@@ -54,6 +54,7 @@
                                                 </tbody>
                                             </table>
                                         </div>
+
                                         @if (count($customer->MonthlyRegularInspection) > 0)
                                             <div class="table-responsive data-set-list mt-3">
                                                 <table class="table align-middle mb-0 table-theme">
@@ -71,8 +72,8 @@
                                                     @foreach ($customer->MonthlyRegularInspection as $v)
                                                         <tr>
                                                             <td>{{ $loop->index + 1 }}</td>
-                                                            <td>{{ $v->inspection_date->format('d-m-Y') }}</td>
-                                                            <td>{{ $v->arrival_time->format('d-m-Y') }}</td>
+                                                            <td>{{ $v->inspection_date }}</td>
+                                                            <td>{{ $v->arrival_time }}</td>
                                                             <td>{{ $customer->building_name }}</td>
                                                             <td>{{ $customer->building_name }}</td>
                                                             <td class="d-flex gap-1 justify-content-center">

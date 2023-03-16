@@ -501,7 +501,7 @@ return [
     'Hanger' => '행거',
     'Stacker' => 'Stacker',
     'Computer' => 'Computer',
-    'Follower' => 'Follower',
+    'Follower' => '종동부',
     'Enter password if you want to change' => '비밀번호를 변경하고 싶다면 새로운 비밀번호 작성 후 저장해주세요',
     'Edit' => '편집하다',
     'Parts replacement history' => '부품교체이력',
@@ -513,5 +513,8 @@ return [
     'Partner Management' => '협력업체 관리',
     'Register as a partner' => '협력업체 등록',
     'Enter business name' => '업체명 입력',
-    'Enter the person in charge'=>'담당자명 입력'
+    'Enter the person in charge' => '담당자명 입력',
+    'Attachments added successfully' => '첨부파일이 성공적으로 추가되었습니다',
+    'dispatch details' => '출동내역',
+    'Write a dispatcher'=>'출동자 작성',
 ];

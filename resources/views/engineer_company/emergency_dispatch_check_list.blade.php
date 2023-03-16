@@ -143,7 +143,7 @@
                                                 <h4 class="card-title border-bottom-0"> <span
                                                         class="bor_lef">&nbsp;</span>
 
-                                                    {{ __('translation.Customer Information') }}
+                                                    {{ __('translation.dispatch details') }}
 
                                                 </h4>
                                             </div>

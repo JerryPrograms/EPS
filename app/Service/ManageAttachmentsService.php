@@ -25,7 +25,7 @@ class ManageAttachmentsService
             }
             return json_encode([
                 'success' => true,
-                'message' => 'Attachments added successfully',
+                'message' => __('translation.Attachments added successfully'),
             ]);
 
 

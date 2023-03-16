@@ -1,8 +1,8 @@
 @extends('engineer_company.includes.layout')
 @section('body')
-@php 
-$check_content = json_decode($customer->check_contents,true);
-@endphp
+    @php
+        $check_content = json_decode($customer->check_contents,true);
+    @endphp
     <div class="main-content">
         <div class="page-content">
             <div class="container-fluid">
@@ -22,7 +22,8 @@ $check_content = json_decode($customer->check_contents,true);
                                                         <div class="d-flex align-items-center gap-2">
                                                             <span class="fw-bold mb-2 ms-1">.</span>
                                                             <h4 class="card_tittle_2 d-flex align-items-center mb-0">
-                                                                {{ __('translation.Parking Facility Periodic Inspection Table') }} - {{ __('translation.'.str_replace('_', ' ', $customer->getCustomer->ParkingFacilityCertificate->type)) }}
+                                                                {{ __('translation.Parking Facility Periodic Inspection Table') }}
+                                                                - {{ __('translation.'.str_replace('_', ' ', $customer->getCustomer->ParkingFacilityCertificate->type)) }}
                                                             </h4>
                                                         </div>
                                                     </div>
@@ -32,71 +33,87 @@ $check_content = json_decode($customer->check_contents,true);
                                             <div class="form-group mb-4">
                                                 <div class="row align-items-center">
                                                     <div class="col-lg-2 col-md-6 col-12">
-                                                        <label for="building_name" class="mb-0">{{ __('translation.Building Name') }}</label>
+                                                        <label for="building_name"
+                                                               class="mb-0">{{ __('translation.Building Name') }}</label>
                                                     </div>
                                                     <div class="col-lg-10 col-md-6 col-12">
                                                         <input type="text" class="form-control form-theme-input"
-                                                            id="building_name" value="{{ $customer->getCustomer->building_name }}"
-                                                            disabled>
+                                                               id="building_name"
+                                                               value="{{ $customer->getCustomer->building_name }}"
+                                                               disabled>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group mb-4">
                                                 <div class="row align-items-center">
                                                     <div class="col-lg-2 col-md-6 col-12">
-                                                        <label for="inspection_date" class="mb-0">{{ __('translation.Inspection date') }}</label>
+                                                        <label for="inspection_date"
+                                                               class="mb-0">{{ __('translation.Inspection date') }}</label>
                                                     </div>
                                                     <div class="col-lg-10 col-md-6 col-12">
                                                         <input type="date" class="form-control form-theme-input"
-                                                            name="inspection_date" value="{{ $customer->inspection_date->format('Y-m-d') }}" id="inspection_date" required>
+                                                               name="inspection_date"
+                                                               value="{{ $customer->inspection_date->format('Y-m-d') }}"
+                                                               id="inspection_date" required>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group mb-4">
                                                 <div class="row align-items-center">
                                                     <div class="col-lg-2 col-md-6 col-12">
-                                                        <label for="type_and_number" class="mb-0">{{ __('translation.Type and number') }}</label>
+                                                        <label for="type_and_number"
+                                                               class="mb-0">{{ __('translation.Type and number') }}</label>
                                                     </div>
                                                     <div class="col-lg-10 col-md-6 col-12">
                                                         <input type="text" class="form-control form-theme-input"
-                                                            id="type_and_number"
-                                                            value="{{ __('translation.'.str_replace('_', ' ', $customer->type)) }}"
-                                                            disabled>
+                                                               id="type_and_number"
+                                                               value="{{ __('translation.'.str_replace('_', ' ', $customer->type)) }}"
+                                                               disabled>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group mb-4">
                                                 <div class="row align-items-center">
                                                     <div class="col-lg-2 col-md-6 col-12">
-                                                        <label for="arrival_time" class="mb-0">{{ __('translation.Arrival time') }}</label>
+                                                        <label for="arrival_time"
+                                                               class="mb-0">{{ __('translation.Arrival time') }}</label>
                                                     </div>
                                                     <div class="col-lg-10 col-md-6 col-12">
-                                                        <input type="date" class="form-control form-theme-input"
-                                                            id="arrival_time" value="{{ $customer->arrival_time->format('Y-m-d') }}" name="arrival_time" required>
+                                                        <input type="text" class="form-control form-theme-input" hidden
+                                                               id="arrival_time"
+                                                               value="{{ $customer->arrival_time }}"
+                                                               name="arrival_time" required>
+
+                                                        <div class="w-50" id="arrival_time_picker"></div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group mb-4">
                                                 <div class="row align-items-center">
                                                     <div class="col-lg-2 col-md-6 col-12">
-                                                        <label for="completion_time" class="mb-0">{{ __('translation.Completion time') }}</label>
+                                                        <label for="completion_time"
+                                                               class="mb-0">{{ __('translation.Completion time') }}</label>
                                                     </div>
                                                     <div class="col-lg-10 col-md-6 col-12">
-                                                        <input type="date" class="form-control form-theme-input"
-                                                            id="completion_time" value="{{ $customer->completion_time->format('Y-m-d') }}" name="completion_time" required>
+                                                        <input hidden type="text" class="form-control form-theme-input"
+                                                               id="completion_time"
+                                                               value="{{ $customer->completion_time }}"
+                                                               name="completion_time" required>
+                                                        <div class="w-50" id="completion_time_picker"></div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <div class="row align-items-center">
                                                     <div class="col-lg-2 col-md-6 col-12">
-                                                        <label for="checker" class="mb-0">{{ __('translation.Checker') }}</label>
+                                                        <label for="checker"
+                                                               class="mb-0">{{ __('translation.Checker') }}</label>
                                                     </div>
                                                     <div class="col-lg-10 col-md-6 col-12">
                                                         <input type="text" class="form-control form-theme-input"
-                                                            id="checker" name="inspection_manager"
-                                                            value="{{ $customer->getCustomer->ParkingFacilityCertificate->producer }}"
-                                                            required>
+                                                               id="checker" name="inspection_manager"
+                                                               value="{{ $customer->getCustomer->ParkingFacilityCertificate->producer }}"
+                                                               required>
                                                     </div>
                                                 </div>
                                             </div>
@@ -116,7 +133,8 @@ $check_content = json_decode($customer->check_contents,true);
                                                             <span class="fw-bold mb-2 ms-1">.</span>
                                                             <h4
                                                                 class="card_tittle_2 d-flex align-items-center mb-2 text-capitalize">
-                                                                {{ __('translation.Parking Facility Periodic Inspection Table') }} -
+                                                                {{ __('translation.Parking Facility Periodic Inspection Table') }}
+                                                                -
                                                                 {{ __('translation.'.str_replace('_', ' ', $customer->getCustomer->ParkingFacilityCertificate->type)) }}
                                                             </h4>
                                                         </div>
@@ -148,7 +166,8 @@ $check_content = json_decode($customer->check_contents,true);
                                                                             $obj2 = new ArrayIterator($v);
                                                                             $sub_category = $obj2->key();
                                                                         @endphp
-                                                                        <span class="badge bg-light">{{ string_capitalize($sub_category) }}</span>
+                                                                        <span
+                                                                            class="badge bg-light">{{ string_capitalize($sub_category) }}</span>
                                                                     @endforeach
                                                                 </div>
                                                             </div>
@@ -160,41 +179,41 @@ $check_content = json_decode($customer->check_contents,true);
                                                             <div class="table-responsive">
                                                                 <table class="table table-inspection mb-0">
                                                                     <thead>
-                                                                        <tr class="bg-light">
-                                                                            <th
-                                                                                class="text-center text-theme-dark min-width-600">
-                                                                                {{ __('translation.Check contents') }}</th>
-                                                                            <th class="text-center text-theme-dark">
-                                                                                {{ __('translation.Situation') }}
-                                                                            </th>
-                                                                            <th class="text-center text-theme-dark">
-                                                                                {{ __('translation.Inspection month') }}
-                                                                            </th>
-                                                                        </tr>
+                                                                    <tr class="bg-light">
+                                                                        <th
+                                                                            class="text-center text-theme-dark min-width-600">
+                                                                            {{ __('translation.Check contents') }}</th>
+                                                                        <th class="text-center text-theme-dark">
+                                                                            {{ __('translation.Situation') }}
+                                                                        </th>
+                                                                        <th class="text-center text-theme-dark">
+                                                                            {{ __('translation.Inspection month') }}
+                                                                        </th>
+                                                                    </tr>
                                                                     </thead>
                                                                     <tbody>
-                                                                        <tr class="bg-light">
-                                                                            <th></th>
-                                                                            <th>
-                                                                                <div
-                                                                                    class="d-flex align-items-center justify-content-center gap-4">
-                                                                                    <p
-                                                                                        class="mb-0 text-black inspection-grade">
-                                                                                        {{ __('translation.A') }}
-                                                                                    </p>
-                                                                                    <p
-                                                                                        class="mb-0 text-black inspection-grade">
-                                                                                        {{ __('translation.B') }}
-                                                                                    </p>
-                                                                                    <p
-                                                                                        class="mb-0 text-black inspection-grade">
-                                                                                        {{ __('translation.C') }}
-                                                                                    </p>
-                                                                                </div>
-                                                                            </th>
-                                                                            <th></th>
-                                                                        </tr>
-                                                                        @foreach($item->$main_category as $k2 => $v2)
+                                                                    <tr class="bg-light">
+                                                                        <th></th>
+                                                                        <th>
+                                                                            <div
+                                                                                class="d-flex align-items-center justify-content-center gap-4">
+                                                                                <p
+                                                                                    class="mb-0 text-black inspection-grade">
+                                                                                    {{ __('translation.A') }}
+                                                                                </p>
+                                                                                <p
+                                                                                    class="mb-0 text-black inspection-grade">
+                                                                                    {{ __('translation.B') }}
+                                                                                </p>
+                                                                                <p
+                                                                                    class="mb-0 text-black inspection-grade">
+                                                                                    {{ __('translation.C') }}
+                                                                                </p>
+                                                                            </div>
+                                                                        </th>
+                                                                        <th></th>
+                                                                    </tr>
+                                                                    @foreach($item->$main_category as $k2 => $v2)
                                                                         @php
                                                                             $obj3 = new ArrayIterator($v2);
                                                                             $sub_category_accordion = $obj3->key();
@@ -206,30 +225,30 @@ $check_content = json_decode($customer->check_contents,true);
                                                                                 {{ string_capitalize($sub_category_accordion) }}</td>
                                                                         </tr>
                                                                         @foreach($v2->$sub_category_accordion as $k3 => $v3)
-                                                                        <tr>
-                                                                            <td class="text-black text-left">{{ $v3->question_title }}</td>
-                                                                            <td>
-                                                                                <div
-                                                                                    class="d-flex align-items-center justify-content-center gap-4">
-                                                                                    <input type="radio"
-                                                                                        class="inspection-grade"
-                                                                                        name="inspection[{{ $main_category }}][{{ $sub_category_accordion }}][{{ $v3->input_name }}]"
-                                                                                        value="A" {{ $check_content[$main_category][$sub_category_accordion][$v3->input_name] == 'A' ? 'checked' : '' }}>
-                                                                                    <input type="radio"
-                                                                                        class="inspection-grade"
-                                                                                        name="inspection[{{ $main_category }}][{{ $sub_category_accordion }}][{{ $v3->input_name }}]"
-                                                                                        value="B" {{ $check_content[$main_category][$sub_category_accordion][$v3->input_name] == 'B' ? 'checked' : '' }}>
-                                                                                    <input type="radio"
-                                                                                        class="inspection-grade"
-                                                                                        name="inspection[{{ $main_category }}][{{ $sub_category_accordion }}][{{ $v3->input_name }}]"
-                                                                                        value="C" {{ $check_content[$main_category][$sub_category_accordion][$v3->input_name] == 'C' ? 'checked' : '' }}>
-                                                                                </div>
-                                                                            </td>
-                                                                            <td class="text-black">{{  $v3->inspection_duration }}</td>
-                                                                        </tr>
+                                                                            <tr>
+                                                                                <td class="text-black text-left">{{ $v3->question_title }}</td>
+                                                                                <td>
+                                                                                    <div
+                                                                                        class="d-flex align-items-center justify-content-center gap-4">
+                                                                                        <input type="radio"
+                                                                                               class="inspection-grade"
+                                                                                               name="inspection[{{ $main_category }}][{{ $sub_category_accordion }}][{{ $v3->input_name }}]"
+                                                                                               value="A" {{ $check_content[$main_category][$sub_category_accordion][$v3->input_name] == 'A' ? 'checked' : '' }}>
+                                                                                        <input type="radio"
+                                                                                               class="inspection-grade"
+                                                                                               name="inspection[{{ $main_category }}][{{ $sub_category_accordion }}][{{ $v3->input_name }}]"
+                                                                                               value="B" {{ $check_content[$main_category][$sub_category_accordion][$v3->input_name] == 'B' ? 'checked' : '' }}>
+                                                                                        <input type="radio"
+                                                                                               class="inspection-grade"
+                                                                                               name="inspection[{{ $main_category }}][{{ $sub_category_accordion }}][{{ $v3->input_name }}]"
+                                                                                               value="C" {{ $check_content[$main_category][$sub_category_accordion][$v3->input_name] == 'C' ? 'checked' : '' }}>
+                                                                                    </div>
+                                                                                </td>
+                                                                                <td class="text-black">{{  $v3->inspection_duration }}</td>
+                                                                            </tr>
                                                                         @endforeach
                                                                         {{-- panel end --}}
-                                                                        @endforeach
+                                                                    @endforeach
                                                                     </tbody>
                                                                 </table>
                                                             </div>
@@ -246,7 +265,8 @@ $check_content = json_decode($customer->check_contents,true);
                                                     <div class="ca-action gap-2">
                                                         <div class="ca-action-left-content gap-2">
                                                             <div class="heading-text">
-                                                                <h4 class="mb-0">{{ $loopContent + 1 }}. {{ __('translation.Special notes') }}</h4>
+                                                                <h4 class="mb-0">{{ $loopContent + 1 }}
+                                                                    . {{ __('translation.Special notes') }}</h4>
                                                             </div>
                                                         </div>
                                                         <div class="ca-action-right-content">
@@ -257,11 +277,14 @@ $check_content = json_decode($customer->check_contents,true);
                                                         <div class="table-responsive">
                                                             <table class="table table-inspection mb-0">
                                                                 <tbody>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <textarea name="special_notes" id="special_notes" rows="5" class="form-control" style="border-radius: 0;">{{ $customer->special_notes }}</textarea>
-                                                                        </td>
-                                                                    </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <textarea name="special_notes"
+                                                                                  id="special_notes" rows="5"
+                                                                                  class="form-control"
+                                                                                  style="border-radius: 0;">{{ $customer->special_notes }}</textarea>
+                                                                    </td>
+                                                                </tr>
                                                                 </tbody>
                                                             </table>
                                                         </div>
@@ -271,7 +294,8 @@ $check_content = json_decode($customer->check_contents,true);
                                             </div>
                                             {{-- accordion end --}}
                                             <div class="form-action mt-3 text-right">
-                                                <button type="submit" id="formBtn" class="btn btn-primary">{{ __('translation.Edit Inspection') }}</button>
+                                                <button type="submit" id="formBtn"
+                                                        class="btn btn-primary">{{ __('translation.Edit Inspection') }}</button>
                                             </div>
                                         </div>
                                     </div>
@@ -284,9 +308,12 @@ $check_content = json_decode($customer->check_contents,true);
                             <div class="col-lg-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <div class="alert alert-danger mb-0">{{ __('translation.Please enter Building information & Parking facility certification information') }}.<a
+                                        <div
+                                            class="alert alert-danger mb-0">{{ __('translation.Please enter Building information & Parking facility certification information') }}
+                                            .<a
                                                 href="{{ route('regular_inspection_log', $customer->getCustomer->user_uid) }}"
-                                                class="text-primary mx-2 text-decoration-underline">{{ __('translation.Back') }}</a></div>
+                                                class="text-primary mx-2 text-decoration-underline">{{ __('translation.Back') }}</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -301,7 +328,7 @@ $check_content = json_decode($customer->check_contents,true);
 @endsection
 
 @section('custom-script')
-<script>
+    <script>
         var canvas = document.getElementById('signature-pad');
 
         // Adjust canvas coordinate space taking into account pixel ratio,
@@ -330,7 +357,7 @@ $check_content = json_decode($customer->check_contents,true);
     </script>
     <script src="{{asset('signature_plugin/assets/json2.min.js')}}"></script>
     <script>
-        $('.custom-accordion-item .ca-action').on('click', function() {
+        $('.custom-accordion-item .ca-action').on('click', function () {
             var accordionIcon = $(this).find('.ca-action-right-content').find('i');
             $(this).next('.ca-content').slideToggle();
             if (accordionIcon.hasClass('rotate-180')) {
@@ -340,10 +367,26 @@ $check_content = json_decode($customer->check_contents,true);
             }
         });
         $('#inspectionForm').validate({
-            submitHandler: function() {
+            submitHandler: function () {
                 ajaxCall($('#inspectionForm'), "{{ route('edit_inspection_action') }}", $('#formBtn'),
                     "{{ route('regular_inspection_log',$customer->getCustomer->user_uid) }}", onRequestSuccess);
             }
         });
+
+
+        $("#arrival_time_picker").timepicker({
+            value: $('#arrival_time').val(),
+            onChange: function (value) {
+                $('#arrival_time').val(value);
+            }
+        });
+        $("#completion_time_picker").timepicker({
+            value: $('#completion_time').val(),
+            onChange: function (value) {
+                $('#completion_time').val(value);
+            }
+        });
+
+
     </script>
 @endsection

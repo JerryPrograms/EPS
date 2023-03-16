@@ -150,7 +150,7 @@
                                                                     <p class="date_button">{{date('h:i:s a', strtotime(explode(' ',$dispatch->reception_date_and_time)[1]))}}</p>
                                                                 </td>
                                                                 <td>
-                                                                    <p class="date_button_3">{{auth(activeGuard())->user()->name}}
+                                                                    <p title="{{$dispatch->dispatcher}}" class="date_button_3">{{\Illuminate\Support\Str::limit($dispatch->dispatcher,15)}}
                                                                     </p>
                                                                 </td>
                                                                <td>

@@ -12,7 +12,7 @@ class MonthlyRegularInspection extends Model
 
     protected $guarded = [];
 
-    protected $casts = ['arrival_time'=>'datetime','completion_time'=>'datetime','inspection_date'=>'datetime'];
+    protected $casts = ['inspection_date'=>'datetime'];
 
     public function getCustomer()
     {

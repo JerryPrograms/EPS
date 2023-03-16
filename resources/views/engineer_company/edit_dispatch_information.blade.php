@@ -243,12 +243,12 @@
                                                 </div>
                                                 <div class="col-lg-8 col-12">
                                                     <div id="canvas_image" class="w-100 ">
-                                                        <label
-                                                            class="form-label ">
+{{--                                                        <label--}}
+{{--                                                            class="form-label ">--}}
 
-                                                            {{ __('translation.Contact Person / Signature') }}
+{{--                                                            {{ __('translation.Contact Person / Signature') }}--}}
 
-                                                        </label>
+{{--                                                        </label>--}}
                                                         <canvas id="signature-pad" name="signature"
                                                                 class="signature-pad w-100" style="touch-action: none;
                                                     height: 223px;
@@ -263,11 +263,13 @@
                                                                 class="fa fa-remove"></i></button>
                                                     </div>
                                                     <div id="previous_image" class="w-100">
-                                                        <label
-                                                            class="form-label ">
-                                                            {{ __('translation.Contact_Person / Signature') }}</label>
+{{--                                                        <label--}}
+{{--                                                            class="form-label ">--}}
+{{--                                                            {{ __('translation.Contact_Person / Signature') }}</label>--}}
 
-                                                        <img class="w-100" src="{{asset($dispatch->output)}}">
+                                                        <div style="border: 1px solid" class="mb-3 p-3">
+                                                            <img class="w-100" src="{{asset($dispatch->output)}}">
+                                                        </div>
                                                         <button onclick="ChangeSignature()" class="btn btn-primary"
                                                                 type="button" id="clear"><i
                                                                 class="fa fa-edit"></i></button>

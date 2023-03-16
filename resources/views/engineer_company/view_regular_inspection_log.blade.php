@@ -41,11 +41,11 @@
                                                 </tr>
                                                 <tr>
                                                     <th class="text-left">{{ __('translation.Arrival time') }}</th>
-                                                    <td class="text-left">{{ $customer->arrival_time->format('Y-m-d') }}</td>
+                                                    <td class="text-left">{{ $customer->arrival_time }}</td>
                                                 </tr>
                                                 <tr>
                                                     <th class="text-left">{{ __('translation.Completion time') }}</th>
-                                                    <td class="text-left">{{ $customer->completion_time->format('Y-m-d') }}</td>
+                                                    <td class="text-left">{{ $customer->completion_time }}</td>
                                                 </tr>
                                                 <tr>
                                                     <th class="text-left">{{ __('translation.Checker') }}</th>
