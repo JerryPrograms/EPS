@@ -2,7 +2,7 @@
     <div class="navbar-header">
         <div class="row">
             <div class="col-lg-3 col-6">
-                <img src="{{asset('engineer_company/assets/images/logo.png')}}" class="img-fluid" style="width: 50%;"
+                <img src="{{asset('engineer_company/assets/images/logo.jpg')}}" class="img-fluid" style="width: 50%;"
                      alt="">
             </div>
             <div class="col-lg-9 d-flex col-6">

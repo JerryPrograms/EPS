@@ -36,7 +36,7 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="p-2">
-                        <img src="{{asset('engineer_company/images/logo.png')}}" alt="image" height="40">
+                        <img src="{{asset('engineer_company/assets/images/logo.jpg')}}" alt="image" height="40">
                     </div>
                 </div>
             </div>
