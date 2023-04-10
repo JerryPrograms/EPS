@@ -523,5 +523,6 @@ return [
     'dispatch details' => 'Dispatch Details',
     'Write a dispatcher' => 'Write a dispatcher',
     'A special note is required' => 'A special note is required',
+    'Building name registration management'=>'Building name registration management',
 
 ];
