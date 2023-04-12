@@ -21,7 +21,8 @@ class Engineer extends Authenticatable
         'email',
         'password',
         'phone',
-        'affiliated_company'
+        'affiliated_company',
+        'pwd',
     ];
 
     /**
@@ -42,7 +43,7 @@ class Engineer extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    
+
     public function getEngineerCompany()
     {
         return $this->hasOne(Engineer_company::class,'id','affiliated_company');

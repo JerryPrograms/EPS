@@ -30,6 +30,7 @@
 
     <link rel="stylesheet" type="text/css" href="{{asset('engineer_company/assets/libs/toastr/build/toastr.min.css')}}">
     <link rel="stylesheet" href="{{asset('engineer_company/assets/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('engineer_company/assets/BsMultiSelect.css')}}">
 
 </head>
 

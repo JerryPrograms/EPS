@@ -36,14 +36,25 @@ class EventService
             $text_color = '#2563EB';
         }
 
-        $date = $request->except('_token');
-        $date['color'] = $color;
-        $date['text_color'] = $text_color;
-        $date['user_id'] = auth(activeGuard())->user()->id;
-        $date['added_by'] = activeGuard();
+
         try {
 
-            $event = Events::create($date);
+
+            foreach ($request->building_names as $key => $bn)
+            {
+                $date['color'] = $color;
+                $date['text_color'] = $text_color;
+                $date['user_id'] = auth(activeGuard())->user()->id;
+                $date['added_by'] = activeGuard();
+                $date['title'] = json_encode($request->building_names[$key]);
+                $date['memo'] = json_encode($request->memo[$key]);
+                $date['start_date']=$request->start_date;
+                $date['type']=$request->type;
+
+                $event = Events::create($date);
+            }
+
+
             if ($event) {
                 return json_encode([
                     'success' => true,
@@ -168,9 +179,11 @@ class EventService
 
     public static function CreateTodo(Request $request)
     {
+        $data = $request->except('_token');
 
+        $data['building_names'] = json_encode($data['building_names']);
         try {
-            $createTodo = Todo::create($request->except('_token'));
+            $createTodo = Todo::create($data);
             return json_encode([
                 'success' => true,
                 'message' => __('translation.TODO created successfully'),

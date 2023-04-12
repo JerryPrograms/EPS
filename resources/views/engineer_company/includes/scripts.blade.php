@@ -172,7 +172,8 @@
     @endif
 
 
-</script>
 
+</script>
+<script src="{{asset('engineer_company/assets/BsMultiSelect.js')}}"></script>
 
 

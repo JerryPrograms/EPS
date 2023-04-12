@@ -102,4 +102,8 @@ class CustomerInfo extends Authenticatable
     {
         return $this->hasOne(PartsInitialDate::class, 'customer_id', 'id');
     }
+    public function GetBuildingInfo()
+    {
+        return $this->hasOne(BuildingAddress::class, 'id', 'building_name');
+    }
 }

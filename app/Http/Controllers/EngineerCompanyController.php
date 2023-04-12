@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ASInformation;
+use App\Models\CustomerInfo;
 use App\Models\Engineer_company;
 use Illuminate\Http\Request;
 
@@ -98,5 +100,12 @@ class EngineerCompanyController extends Controller
         } else {
             return json_encode(['success' => false, 'message' => __('translation.Error : Please try again')]);
         }
+    }
+
+    public function ASCompanyList()
+    {
+        $customers = CustomerInfo::where('added_by',activeGuard())->where('added_by_id',auth(activeGuard())->id())->pluck('id');
+        $as_information = ASInformation::whereIn('customer_id',$customers)->paginate(10);
+        return view('engineer_company.as_company_list',compact('as_information'));
     }
 }

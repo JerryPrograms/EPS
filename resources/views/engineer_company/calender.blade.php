@@ -153,6 +153,11 @@
 
         }
 
+        .card {
+            border: 1px solid #d7d7d7;
+            border-radius: 10px;
+        }
+
     </style>
     <div class="main-content">
 
@@ -306,16 +311,30 @@
                                 </button>
                             </div>
                             <div class="col-4 text-end">
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
+                                <button type="button" onclick="appendDiv()" class="btn-primary"><i class="fa fa-plus-circle"></i></button>
                             </div>
-                            <div class="col-12 mt-3">
-                                <input type="text" class="form-control w-50 border-blue-2px" name="title"
-                                       placeholder="{{ __('translation.Enter Name') }}" required>
-                            </div>
-                            <div class="col-12 mt-2">
-                                <input type="text" class="form-control border-blue-2px" name="memo"
-                                       placeholder="{{ __('translation.Enter Memo') }}" required>
+                            <div id="event_list" class="col-12 mt-3">
+
+                                <div class="card my-3">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-12 mt-3">
+                                                <select multiple name="building_names[0][]" id="building_names"
+                                                        class="filter-multi-select">
+                                                    @foreach($building_names as $bn)
+                                                        <option value="{{$bn->id}}">{{$bn->building_name}}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                            <div class="col-12 mt-2">
+                                                <input type="text" class="form-control border-blue-2px" name="memo[]"
+                                                       placeholder="{{ __('translation.Enter Memo') }}" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
                             </div>
                             <div class="col-12 mt-3 text-center">
                                 <button type="submit" class="btn btn-primary submitbtn">
@@ -356,6 +375,14 @@
                                 <input type="text" class="form-control border-blue-2px" name="memo"
                                        placeholder="{{ __('translation.Enter Content') }}" required>
                             </div>
+                            <div class="col-12 mt-2">
+                                <select multiple name="building_names[]" id="building_names"
+                                        class="filter-multi-select">
+                                    @foreach($building_names as $bn)
+                                        <option value="{{$bn->id}}">{{$bn->building_name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                             <div class="col-12 mt-3 text-center">
                                 <button type="submit" class="btn btn-primary submitbtn">
                                     {{ __('translation.Save changes') }}
@@ -390,9 +417,12 @@
                             <input id="edit_id" name="id" hidden>
                             <label for="formrow-firstname-input"
                                    class="form-label">{{ __('translation.Title') }}</label>
-                            <input type="text" id="a_title" class="form-control" name="title"
-
-                                   placeholder="{{ __('translation.Enter Your First Name') }}" required>
+                            <select multiple name="title[]" id="building_names123"
+                                    class="filter-multi-select">
+                                @foreach($building_names as $bn)
+                                    <option value="{{$bn->id}}">{{$bn->building_name}}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <div class="row">
                             <div class="col-md-12">
@@ -604,7 +634,7 @@
                         },
                         success: function (res) {
                             $('#EditAndDeleteEventCompleteModal').modal('show');
-                            $('#a_title').val(res.data.title);
+                            $('#building_names123').val($.parseJSON(res.data.title));
                             $('#a_start_date').val(res.data.start_date);
                             $('#a_end_date').val(res.data.start_date);
                             $('#a_assigned_to_id').val(res.data.assigned_to_id);
@@ -623,8 +653,10 @@
             calendar.render();
         });
 
-
         $('#addEventForm').validate({
+
+
+
             submitHandler: function () {
                 ajaxCall($('#addEventForm'), "{{ route('CreateEvent') }}", $('#addEventForm').find('.submitbtn'), "{{ route('ec.GetCalender')}}", onRequestSuccess);
             }
@@ -684,6 +716,48 @@
             });
         }
 
+        $("#building_names").bsMultiSelect({
+            placeholder: 'Select Building Name',
+        });
+
+        $("#building_names123").bsMultiSelect({
+            placeholder: 'Select Building Name',
+        });
+
+        var count = 1;
+        function appendDiv()
+        {
+           $('#event_list').append(`<div class="card my-3 position-relative">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-12 mt-3">
+                                                <select multiple name="building_names[${count}][]" id="building_names${count}"
+                                                        class="filter-multi-select">
+                                                    @foreach($building_names as $bn)
+           <option value="{{$bn->id}}">{{$bn->building_name}}</option>
+                                                    @endforeach
+           </select>
+       </div>
+       <div class="col-12 mt-2">
+           <input type="text" class="form-control border-blue-2px" name="memo[]"
+                  placeholder="{{ __('translation.Enter Memo') }}" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="button" onClick="$(this).parent().remove()" style="width: 35px;
+                                    position: absolute;
+                                    top: 13px;
+                                    right: 8px;
+                                    border:none;
+                                    background:transparent"><i class="fa fa-times"></i></button>
+                                </div>`);
+
+
+            $("#building_names"+count).bsMultiSelect({
+                placeholder: 'Select Building Name',
+            });
+            count++;
+        }
 
     </script>
 @endsection

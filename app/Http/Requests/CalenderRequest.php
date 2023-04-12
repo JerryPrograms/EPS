@@ -25,7 +25,6 @@ class CalenderRequest extends FormRequest
     {
         return [
             'start_date' => 'required',
-            'title' => 'required',
             'memo' => 'required',
             'assigned_by_id' => 'required',
             'type' => 'required',

@@ -12,8 +12,6 @@
                                         class="card-title mb-4 d-flex align-items-center justify-content-between mobile-flex-column">
                                         <h5 class="mb-0 font-15">{{ __('translation.Engineer Management') }}</h5>
 
-                                        <a href="{{ route('add_engineer') }}"
-                                           class="btn btn-primary">{{ __('translation.Add Engineer') }}</a>
                                     </div>
                                     <div class="d-flex align-items-center justify-content-between">
                                         <div class="left-content d-flex align-items-center me-3">
@@ -39,44 +37,29 @@
                                     </div>
                                     <div class="table-responsive data-set-list mt-3">
                                         <table
-                                            class="table {{ (count($engineers) != 0) ? 'table-striped' : '' }} align-middle mb-0 table-theme">
+                                            class="table {{ (count($as_information) != 0) ? 'table-striped' : '' }} align-middle mb-0 table-theme">
                                             <thead class="table-light">
                                             <tr>
-                                                <th>{{ __('translation.no') }}</th>
-                                                <th>{{ __('translation.Register Date') }}</th>
-                                                <th>{{ __('translation.Affiliate Company Name') }}</th>
-                                                <th>{{ __('translation.Name') }}</th>
-                                                <th>{{ __('translation.Phone number') }}</th>
-                                                <tH>{{__('translation.Password')}}</tH>
-                                                <th>{{ __('translation.Action') }}</th>
+                                                <th>#</th>
+                                                <th>Company Name</th>
+                                                <th>Contract Date</th>
+                                                <th>Fee</th>
+                                                <th>Tax Invoice Issue Date</th>
+                                                <th>Payment Date</th>
+                                                <th>Payment Method</th>
                                             </tr>
                                             </thead>
                                             <tbody id="myTable">
-                                            @if(count($engineers) > 0)
-                                                @foreach ($engineers as $engineer)
+                                            @if(count($as_information) > 0)
+                                                @foreach ($as_information as $engineer)
                                                     <tr>
                                                         <td>{{ $loop->index + 1 }}</td>
-                                                        <td>{{ $engineer->created_at->format('d-m-Y') }}</td>
-                                                        <td>{{ $engineer->getEngineerCompany->name }}</td>
-                                                        <td>{{ $engineer->name }}</td>
-                                                        <td>{{ $engineer->phone }}</td>
-                                                            <td>{{ $engineer->pwd }}</td>
-                                                        <td>
-                                                            <div class="d-flex gap-1 justify-content-center">
-                                                                <a @if(activeGuard() == 'admin') style="background-color: #696CFF !important; border: none"
-                                                                   @endif href="{{ route('edit_engineer',$engineer->id) }}"
-                                                                   class="btn btn-primary btn-custom-table btn-sm">
-                                                                    <i class="bx bxs-edit-alt"></i>
-                                                                </a>
-                                                                <a @if(activeGuard() == 'admin') style="background-color: #FF3E1D !important; border: none"
-                                                                   @endif data-bs-toggle="modal"
-                                                                   data-del-id="{{ $engineer->id }}"
-                                                                   data-bs-target="#delModal"
-                                                                   class="btn btn-danger btn-custom-table btn-sm delBtn">
-                                                                    <i class="bx bx-trash-alt"></i>
-                                                                </a>
-                                                            </div>
-                                                        </td>
+                                                        <td>{{ $engineer->repair_company_name }}</td>
+                                                        <td>{{ $engineer->contract_date }}</td>
+                                                        <td>{{ $engineer->fee}}</td>
+                                                        <td>{{ $engineer->invoice_issue_date }}</td>
+                                                        <td>{{ $engineer->payment_date }}</td>
+                                                        <td>{{ $engineer->payment_method }}</td>
                                                     </tr>
                                                 @endforeach
                                             @else
@@ -96,7 +79,7 @@
                                         </table>
                                     </div>
                                     <div class="text-center mt-3">
-                                        {!! $engineers->links('common_files.paginate') !!}
+                                        {!! $as_information->links('common_files.paginate') !!}
                                     </div>
                                 </div>
                             </div>

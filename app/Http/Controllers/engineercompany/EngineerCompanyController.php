@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\engineercompany;
 
 use App\Http\Controllers\Controller;
+use App\Models\BuildingAddress;
 use App\Models\CustomerInfo;
 use App\Models\DispatchInformationData;
 use App\Models\Engineer;
@@ -100,7 +101,8 @@ class EngineerCompanyController extends Controller
     {
         $customer = CustomerInfo::where('user_uid', $uid)->first();
         if ($customer) {
-            return view('engineer_company.building_info', compact('customer'));
+            $buildings = BuildingAddress::latest()->get();
+            return view('engineer_company.building_info', compact('customer', 'buildings'));
         }
         abort(404);
     }
@@ -207,6 +209,14 @@ class EngineerCompanyController extends Controller
 
     public function GetCalender()
     {
+
+        $twoMonthsAgo = \Carbon\Carbon::now()->subMonths(2);
+
+        Todo::whereDate('created_at', '<', $twoMonthsAgo)
+            ->where('status', 1)
+            ->delete();
+
+
         if (activeGuard() == 'admin') {
             $events = Events::where('status', 0)->latest()->get();
             $todos_pending = Todo::where('status', 0)->latest()->get();
@@ -256,10 +266,14 @@ class EngineerCompanyController extends Controller
 
         if (count($events) > 0) {
             foreach ($events as $ev) {
+
+                $building_names = BuildingAddress::whereIn('id', json_decode($ev->title))->pluck('building_name')->toArray();
+
+
                 if (!empty($ev->end_date)) {
                     $data[] = [
                         'id' => $ev->id,
-                        'title' => $ev->title,
+                        'title' => implode(',', $building_names),
                         'start' => $ev->start_date,
                         'end' => $ev->end_date,
                         'color' => $ev->color,
@@ -268,7 +282,7 @@ class EngineerCompanyController extends Controller
                 } else {
                     $data[] = [
                         'id' => $ev->id,
-                        'title' => $ev->title,
+                        'title' => implode(',', $building_names),
                         'start' => $ev->start_date,
                         'end' => $ev->start_date,
                         'color' => $ev->color,
@@ -279,7 +293,9 @@ class EngineerCompanyController extends Controller
             }
         }
 
-        return view('engineer_company.calender', compact('data', 'events', 'todos_pending', 'todos_completed'));
+        $building_names = BuildingAddress::latest()->get();
+
+        return view('engineer_company.calender', compact('building_names', 'data', 'events', 'todos_pending', 'todos_completed'));
     }
 
 

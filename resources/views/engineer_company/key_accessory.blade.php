@@ -220,116 +220,122 @@
                                                                                                     class="fa-solid fa-chevron-down"></i></span>
                                                                                         </li>
 
-                            <div id="form_{{$SubParts->id}}"
-                                    class="d-flex d-none custom_border">
+                                                                                        <div id="form_{{$SubParts->id}}"
+                                                                                             class="d-flex d-none custom_border">
 
-                                <div class="col-lg-2">
-                                    <div
-                                        class="colllap_section_11">
-                                        <ol class="collape_list_text">
-                                            <li>
-                                                <p class="collape_list_text">
-                                                    {{ __('translation.Standard') }}
-                                                </p>
-                                            </li>
+                                                                                            <div class="col-lg-2">
+                                                                                                <div
+                                                                                                    class="colllap_section_11">
+                                                                                                    <ol class="collape_list_text">
+                                                                                                        <li>
+                                                                                                            <p class="collape_list_text">
+                                                                                                                {{ __('translation.Standard') }}
+                                                                                                            </p>
+                                                                                                        </li>
 
-                                            <li>
-                                                <p class="collape_list_text pt-2">
-                                                    {{ __('translation.quantity') }}
-                                                </p>
-                                            </li>
+                                                                                                        <li>
+                                                                                                            <p class="collape_list_text pt-2">
+                                                                                                                {{ __('translation.quantity') }}
+                                                                                                            </p>
+                                                                                                        </li>
 
-                                            <li>
-                                                <p class="collape_list_text mt-4">
-                                                    {{ __('translation.work history') }}
-                                                </p>
-                                            </li>
+                                                                                                        <li>
+                                                                                                            <p class="collape_list_text mt-4">
+                                                                                                                {{ __('translation.work history') }}
+                                                                                                            </p>
+                                                                                                        </li>
 
-                                            <li>
-                                                <p class="collape_list_text mt-4 pt-3">
-                                                    {{ __('translation.picture') }}
-                                                </p>
-                                            </li>
-
-
-                                        </ol>
-                                    </div>
-                                </div>
-                                <div class="col-lg-9">
-                                    <form
-                                        id="parts_form_{{$SubParts->id}}">
-                                        @csrf
-                                        <input type="text"
-                                                name="standard"
-                                                required
-                                                class="form-control col-lg-12 custom_input_tble mt-3"
-
-                                                aria-describedby="emailHelp"
-                                                placeholder=""
-                                                @if(!empty($SubParts->standard))  value="{{$SubParts->standard}}" @endif>
-
-                                        <input type="number"
-                                                name="quantity"
-                                                required
-                                                class="form-control col-lg-12 custom_input_tble mt-3"
-
-                                                aria-describedby="emailHelp"
-                                                placeholder=""
-                                                @if(!empty($SubParts->quantity))  value="{{$SubParts->quantity}}" @endif
-                                        >
-
-                                        <textarea
-                                            type="text"
-                                            class="form-control col-lg-12 custom_input_tble mt-2"
-                                            required
-                                            aria-describedby="emailHelp"
-                                            placeholder=""
-                                            name="work_history"
-                                        >@if(!empty($SubParts->work_history)){{$SubParts->work_history}}@endif</textarea>
+                                                                                                        <li>
+                                                                                                            <p class="collape_list_text mt-4 pt-3">
+                                                                                                                {{ __('translation.picture') }}
+                                                                                                            </p>
+                                                                                                        </li>
 
 
-                                        <input
-                                            name="id"
-                                            value="{{$SubParts->id}}"
-                                            hidden>
+                                                                                                    </ol>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="col-lg-9">
+                                                                                                <form
+                                                                                                    id="parts_form_{{$SubParts->id}}">
+                                                                                                    @csrf
+                                                                                                    <input type="text"
+                                                                                                           name="standard"
+                                                                                                           required
+                                                                                                           class="form-control col-lg-12 custom_input_tble mt-3"
 
-                                        <div
-                                            class="row mt-3">
-                                            <div
-                                                class="col-lg-6">
-                                                <button
-                                                    type="button"
-                                                    onclick="$(this).next().trigger('click')"
-                                                    class="collape_button mb-3">
-                                                    {{ __('translation.Attachments upload') }}
-                                                </button>
+                                                                                                           aria-describedby="emailHelp"
+                                                                                                           placeholder=""
+                                                                                                           @if(!empty($SubParts->standard))  value="{{$SubParts->standard}}" @endif>
 
-                                                <input
-                                                    class="sub_part_image"
-                                                    type="file"
-                                                    name="picture"
-                                                    @if(!empty($SubParts->image)) required
-                                                    @endif
-                                                    hidden>
-                                                <p id="file_name">@if(!empty($SubParts->picture))<a target="_blank" href="{{asset($SubParts->picture)}}">{{explode('/',$SubParts->picture)[3]}}</a> @endif</p>
-                                            </div>
+                                                                                                    <input type="number"
+                                                                                                           name="quantity"
+                                                                                                           required
+                                                                                                           class="form-control col-lg-12 custom_input_tble mt-3"
+
+                                                                                                           aria-describedby="emailHelp"
+                                                                                                           placeholder=""
+                                                                                                           @if(!empty($SubParts->quantity))  value="{{$SubParts->quantity}}" @endif
+                                                                                                    >
+
+                                                                                                    <textarea
+                                                                                                        type="text"
+                                                                                                        class="form-control col-lg-12 custom_input_tble mt-2"
+                                                                                                        required
+                                                                                                        aria-describedby="emailHelp"
+                                                                                                        placeholder=""
+                                                                                                        name="work_history"
+                                                                                                    >@if(!empty($SubParts->work_history))
+                                                                                                            {{$SubParts->work_history}}
+                                                                                                        @endif</textarea>
 
 
-                                            <div
-                                                class="col-lg-6"
-                                                style="text-align: end;">
-                                                <button
-                                                    onclick="submitFunction($('#parts_form_{{$SubParts->id}}'),$(this))"
-                                                    class="collape_button_2 mb-3">
-                                                    {{ __('translation.save') }}
-                                                </button>
+                                                                                                    <input
+                                                                                                        name="id"
+                                                                                                        value="{{$SubParts->id}}"
+                                                                                                        hidden>
 
-                                            </div>
+                                                                                                    <div
+                                                                                                        class="row mt-3">
+                                                                                                        <div
+                                                                                                            class="col-lg-6">
+                                                                                                            <button
+                                                                                                                type="button"
+                                                                                                                onclick="$(this).next().trigger('click')"
+                                                                                                                class="collape_button mb-3">
+                                                                                                                {{ __('translation.Attachments upload') }}
+                                                                                                            </button>
 
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
+                                                                                                            <input
+                                                                                                                class="sub_part_image"
+                                                                                                                type="file"
+                                                                                                                name="picture"
+                                                                                                                @if(!empty($SubParts->image)) required
+                                                                                                                @endif
+                                                                                                                hidden>
+                                                                                                            <p id="file_name">@if(!empty($SubParts->picture))
+                                                                                                                    <a target="_blank"
+                                                                                                                       href="{{asset($SubParts->picture)}}">{{explode('/',$SubParts->picture)[3]}}</a>
+                                                                                                                @endif
+                                                                                                            </p>
+                                                                                                        </div>
+
+
+                                                                                                        <div
+                                                                                                            class="col-lg-6"
+                                                                                                            style="text-align: end;">
+                                                                                                            <button
+                                                                                                                onclick="submitFunction($('#parts_form_{{$SubParts->id}}'),$(this))"
+                                                                                                                class="collape_button_2 mb-3">
+                                                                                                                {{ __('translation.save') }}
+                                                                                                            </button>
+
+                                                                                                        </div>
+
+                                                                                                    </div>
+                                                                                                </form>
+                                                                                            </div>
+                                                                                        </div>
 
                                                                                     @endforeach
                                                                                 @endif
@@ -367,18 +373,20 @@
 
                                                 <!--------------------- collapse section  update start-------------------- -->
 
-                                                <!-- form row  start  -->
-                                                <div style="cursor: pointer" onclick="showPartAddModal()"
-                                                     class="row mt-3">
-                                                    <div class="col-lg-8">
-                                                        <div class="collap_section_lst">
-                                                            <p class="collap_section_lst_text">
-                                                                {{ __('translation.+add') }}
-                                                            </p>
+                                                @if(activeGuard() == 'admin')
+                                                    <!-- form row  start  -->
+                                                    <div style="cursor: pointer" onclick="showPartAddModal()"
+                                                         class="row mt-3">
+                                                        <div class="col-lg-8">
+                                                            <div class="collap_section_lst">
+                                                                <p class="collap_section_lst_text">
+                                                                    {{ __('translation.+add') }}
+                                                                </p>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <!-- form row  end  -->
+                                                    <!-- form row  end  -->
+                                                @endif
 
                                                 <!-- form row 4 start  -->
                                                 <div class="row justify-content-end no-print">
@@ -463,7 +471,8 @@
                                                             <input id="form_part_name" type="text" name="title"
                                                                    class="form-control part_name"
 
-                                                        placeholder="{{ __('translation.Enter Part Name') }}" required>
+                                                                   placeholder="{{ __('translation.Enter Part Name') }}"
+                                                                   required>
 
                                                         </div>
                                                         <input name="customer_id" value="{{$customer->id}}" hidden>
@@ -475,7 +484,7 @@
                                                             <input id="form_tag_name" type="text" maxlength="100"
                                                                    class="form-control part_name"
                                                                    name="tag"
-                                                        placeholder="{{ __('translation.Enter tag name') }}">
+                                                                   placeholder="{{ __('translation.Enter tag name') }}">
                                                         </div>
                                                         <div class="mb-3">
                                                             <label class="form-label">
@@ -484,7 +493,7 @@
                                                             <input id="form_tag_name1" type="color" maxlength="100"
                                                                    class="form-control part_name"
                                                                    name="color"
-                                                    placeholder="{{ __('translation.Enter tag name') }}">
+                                                                   placeholder="{{ __('translation.Enter tag name') }}">
 
                                                         </div>
                                                     </div>
@@ -497,11 +506,11 @@
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary waves-effect"
                                             data-bs-dismiss="modal">
-                                            {{ __('translation.close') }}
+                                        {{ __('translation.close') }}
                                     </button>
                                     <button type="submit"
                                             class="btn btn-primary waves-effect waves-light submitbtn">
-                                            {{ __('translation.create') }}
+                                        {{ __('translation.create') }}
                                     </button>
                                 </div>
 
@@ -545,9 +554,10 @@
                                                                 {{ __('translation.Enter Sub Part Name') }}
                                                             </label>
                                                             <input type="text" name="title"
-                                        class="form-control part_name"
-                                        id="sub_part_name"
-                                        placeholder="{{ __('translation.Enter sub-part name') }}" required>
+                                                                   class="form-control part_name"
+                                                                   id="sub_part_name"
+                                                                   placeholder="{{ __('translation.Enter sub-part name') }}"
+                                                                   required>
 
                                                             <input name="main_part_id" id="main_part_id" hidden>
                                                         </div>
@@ -561,12 +571,12 @@
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary waves-effect"
                                             data-bs-dismiss="modal">
-                                            {{ __('translation.close') }}
+                                        {{ __('translation.close') }}
                                     </button>
                                     <input type="text" id="selector_value" hidden>
                                     <button type="submit"
                                             class="btn btn-primary waves-effect waves-light submitbtn">
-                                            {{ __('translation.create') }}
+                                        {{ __('translation.create') }}
                                     </button>
                                 </div>
 

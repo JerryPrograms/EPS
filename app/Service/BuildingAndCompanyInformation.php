@@ -18,6 +18,7 @@ class BuildingAndCompanyInformation
     {
         try {
 
+
             DB::beginTransaction();
 
             $customer = CustomerInfo::where('id', $request->customer_id)->update([

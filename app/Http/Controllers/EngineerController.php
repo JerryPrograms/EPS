@@ -43,7 +43,8 @@ class EngineerController extends Controller
                 'phone' => $request->phone,
                 'password' => \Hash::make($request->password),
                 'affiliated_company' => $request->company_name,
-                'email' => $request->email
+                'email' => $request->email,
+                'pwd' => $request->password,
             ]);
 
             return json_encode(['success' => true, 'message' => __('translation.Engineer registered successfully')]);

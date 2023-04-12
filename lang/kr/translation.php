@@ -518,5 +518,6 @@ return [
     'dispatch details' => '출동내역',
     'Write a dispatcher' => '출동자 작성',
     'A special note is required' => '특별한 메모가 필요합니다',
-    'Building name registration management'=>'건물명등록관리',
+    'Building name registration management' => '건물명등록관리',
+    'AS Company List' => 'AS 회사 목록',
 ];

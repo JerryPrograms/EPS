@@ -227,6 +227,8 @@ Route::group(['prefix' => 'eps-panel', 'middleware' => 'CommonRoutes'], function
 
     Route::post('/update-initial-date', [PartReplacement::class, 'UpdateReplacementInitialDate'])->name('UpdateReplacementInitialDate');
 
+
+    Route::get('as-company-list',[CompanyController::class,'ASCompanyList'])->name('ASCompanyList');
 });
 
 Route::group(['prefix' => 'eps-panel', 'middleware' => 'AdminAccess'], function () {

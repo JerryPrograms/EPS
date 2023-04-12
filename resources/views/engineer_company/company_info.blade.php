@@ -327,8 +327,8 @@
                                                                 class="star_section">&nbsp;</span>
                                                                 {{ __('translation.fax') }}
                                                             </label></div>
-                                                    <div class="col-md-8 col-12"><input type="text" name="fax"
-                                                            class="form-control w-100 custom_input"
+                                                    <div class="col-md-8 col-12"><input type="text" maxlength="12" onkeypress="return ( (event.charCode >= 48 && event.charCode < 58))" name="fax"
+                                                            class="format-number form-control w-100 custom_input"
                                                             aria-describedby="emailHelp"
                                                                                         placeholder="{{__('translation.02-4347-4893')}}"
                                                             @if (!empty($customer->RepairCompanyInformation)) value="{{ $customer->RepairCompanyInformation->fax }}" @endif>
@@ -404,5 +404,15 @@
                     "{{ route('ec.CreateParkingFacility', request()->segment(3)) }}", onRequestSuccess);
             }
         });
+
+        $('.format-number').keyup(function () {
+            var foo = $(this).val().split("-").join(""); // remove hyphens
+
+            foo = foo.match(new RegExp('.{1,4}$|.{1,3}', 'g')).join("-");
+
+            $(this).val(foo);
+
+        });
+
     </script>
 @endsection
