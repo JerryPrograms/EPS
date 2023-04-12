@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::table('engineers', function (Blueprint $table) {
 
-            $table->longText('pwd')->default('N/A');
+            $table->longText('pwd');
         });
     }
 
