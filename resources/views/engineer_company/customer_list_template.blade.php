@@ -51,7 +51,7 @@
             </td>
             <td class="">
                 <button
-                    class="date_button_2 border-0">{{$c->building_name}}</button>
+                    class="date_button_2 border-0">{{$c->GetBuildingInfo->building_name}}</button>
             </td>
             <td class="">
                 <button title="{{$c->address}}"
