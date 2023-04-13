@@ -74,7 +74,7 @@
                 {{--                <a href="{{route('regular_inspection_log',$c->user_uid)}}" class="date_button_2 border-0"><i class="fa fa-magnifying-glass-plus custom-trash-padding"></i></a>--}}
                 <a href="{{route('ec.GetCustomerInfoDashboard',$c->user_uid)}}" class="date_button_2 border-0"><i
                         class="fa fa-edit custom-trash-padding"></i></a>
-                <button onclick="$('#customerInfoID').val('{{$c->id}}',$('#bname').text('asd'))"
+                <button onclick="$('#customerInfoID').val('{{$c->id}}',$('#bname').text('{{$c->GetBuildingInfo->building_name}}'))"
                         data-bs-toggle="modal"
                         data-bs-target="#customerDeleteModal"
                         class="date_button_2 border-0"><i
