@@ -47,7 +47,9 @@
                                                 <th>{{ __('translation.Affiliate Company Name') }}</th>
                                                 <th>{{ __('translation.Name') }}</th>
                                                 <th>{{ __('translation.Phone number') }}</th>
-                                                <tH>{{__('translation.Password')}}</tH>
+                                                @if(activeGuard() == 'admin')
+                                                    <th>{{__('translation.Password')}}</th>
+                                                @endif
                                                 <th>{{ __('translation.Action') }}</th>
                                             </tr>
                                             </thead>
@@ -60,7 +62,12 @@
                                                         <td>{{ $engineer->getEngineerCompany->name }}</td>
                                                         <td>{{ $engineer->name }}</td>
                                                         <td>{{ $engineer->phone }}</td>
-                                                            <td>{{ $engineer->pwd }}</td>
+                                                        @if(activeGuard() == 'admin')
+                                                            <td>
+                                                                <span class="">*********</span>
+                                                                <span class="d-none">{{ $engineer->pwd }}</span>
+                                                                <button onclick="showPassword($(this))" style="background: transparent; border: none;"><i class="fa fa-eye"></i></button></td>
+                                                        @endif
                                                         <td>
                                                             <div class="d-flex gap-1 justify-content-center">
                                                                 <a @if(activeGuard() == 'admin') style="background-color: #696CFF !important; border: none"
@@ -187,5 +194,18 @@
                 }
             }
         });
+
+
+        function showPassword(element)
+        {
+            if(element.prev().hasClass('d-none'))
+            {
+                element.prev().removeClass('d-none');
+                element.prev().prev().addClass('d-none');
+            }else{
+                element.prev().addClass('d-none');
+                element.prev().prev().removeClass('d-none');
+            }
+        }
     </script>
 @endsection

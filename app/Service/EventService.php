@@ -135,12 +135,21 @@ class EventService
         }
 
 
-        $date = $request->except('_token');
-        $date['color'] = $color;
+
+
 
         try {
 
-            $event = Events::where('id', $request->id)->update($date);
+            foreach ($request->building_names as $key => $bn)
+            {
+                $date['title'] = json_encode($request->building_names[$key]);
+                $date['memo'] = json_encode($request->memo[$key]);
+                $date['start_date']=$request->start_date;
+                $date['type']=$request->type;
+
+                $event = Events::where('id', $request->id)->update($date);
+            }
+
             if ($event) {
                 return json_encode([
                     'success' => true,
