@@ -134,16 +134,14 @@ class EventService
         }
 
 
-
-
         try {
 
-                $date['title'] = json_encode($request->title);
-                $date['memo'] = ($request->memo);
-                $date['start_date'] = $request->start_date;
-                $date['type'] = $request->type;
+            $date['title'] = json_encode($request->title);
+            $date['memo'] = ($request->memo);
+            $date['start_date'] = $request->start_date;
+            $date['type'] = $request->type;
 
-                $event = Events::where('id', $request->id)->update($date);
+            $event = Events::where('id', $request->id)->update($date);
 
             if ($event) {
                 return json_encode([
@@ -198,5 +196,16 @@ class EventService
                 'message' => $ex->getMessage(),
             ]);
         }
+    }
+
+    public static function MarkAsCompleted(Request $request)
+    {
+        $event = Events::where('id', $request->id)->update([
+            'status' => 1,
+        ]);
+        return json_encode([
+            'success' => true,
+            'message' => 'Mark as completed',
+        ]);
     }
 }

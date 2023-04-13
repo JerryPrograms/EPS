@@ -278,6 +278,7 @@ class EngineerCompanyController extends Controller
                         'end' => $ev->end_date,
                         'color' => $ev->color,
                         'textColor' => $ev->text_color,
+                        'status'=>$ev->status,
                     ];
                 } else {
                     $data[] = [
@@ -287,6 +288,7 @@ class EngineerCompanyController extends Controller
                         'end' => $ev->start_date,
                         'color' => $ev->color,
                         'textColor' => $ev->text_color,
+                        'status'=>$ev->status,
                     ];
                 }
 

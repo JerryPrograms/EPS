@@ -311,7 +311,8 @@
                                 </button>
                             </div>
                             <div class="col-4 text-end">
-                                <button type="button" onclick="appendDiv()" class="btn-primary"><i class="fa fa-plus-circle"></i></button>
+                                <button type="button" onclick="appendDiv()" class="btn-primary"><i
+                                        class="fa fa-plus-circle"></i></button>
                             </div>
                             <div id="event_list" class="col-12 mt-3">
 
@@ -492,6 +493,9 @@
                         <button type="submit" class="btn btn-primary submitbtn">
                             {{ __('translation.Save changes') }}
                         </button>
+                        <button type="button" onclick="MarkAsCompleted()" class="mark btn btn-info submitbtn">
+                            {{ __('translation.Mark as completed') }}
+                        </button>
                     </div>
                 </form>
             </div>
@@ -589,8 +593,6 @@
                 droppable: true,
                 events:@json($data),
                 editable: true,
-
-
                 eventDrop: function (event) {
 
 
@@ -641,6 +643,13 @@
                             $('#a_type').val(res.data.type);
                             $('#edit_id').val(res.data.id);
                             $('#a_memo').val(res.data.memo);
+                            if(res.data.status != 1)
+                            {
+                                $('.mark').prop('disabled',false);
+                            }else{
+                                $('.mark').prop('disabled',true);
+                            }
+
                         },
                         error: function (e) {
 
@@ -648,15 +657,30 @@
                     });
 
 
+                },
+                eventClassNames: function (info) {
+                    if (info.event.extendedProps.status == 1) {
+                        console.log('1') // add the 'event-red' class to the event
+                    } else {
+                        console.log('2') // add the 'event-normal' class to the event
+                    }
+                },
+                eventContent: function (info) {
+                    if (info.event.extendedProps.status == 1) {
+                        return {
+                            html: '<s>' + info.event.title + '</s>' // customize the event content for status 1
+                        };
+                    } else {
+                        return {
+                            html: '<p>'+info.event.title+'</p>' // use the default event content for status 0
+                        };
+                    }
                 }
             });
             calendar.render();
         });
 
         $('#addEventForm').validate({
-
-
-
             submitHandler: function () {
                 ajaxCall($('#addEventForm'), "{{ route('CreateEvent') }}", $('#addEventForm').find('.submitbtn'), "{{ route('ec.GetCalender')}}", onRequestSuccess);
             }
@@ -678,6 +702,27 @@
             $.ajax({
                 type: "POST",
                 url: '{{route('DeleteEventDate')}}',
+                dataType: 'json',
+                data: {
+                    '_token': '{{csrf_token()}}',
+                    'id': $('#edit_id').val(),
+                },
+                beforeSend: function () {
+
+                },
+                success: function (res) {
+                    window.location.reload();
+                },
+                error: function (e) {
+
+                }
+            });
+        }
+
+        function MarkAsCompleted() {
+            $.ajax({
+                type: "POST",
+                url: '{{route('MarkAsCompleted')}}',
                 dataType: 'json',
                 data: {
                     '_token': '{{csrf_token()}}',
@@ -725,22 +770,22 @@
         });
 
         var count = 1;
-        function appendDiv()
-        {
-           $('#event_list').append(`<div class="card my-3 position-relative">
+
+        function appendDiv() {
+            $('#event_list').append(`<div class="card my-3 position-relative">
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-12 mt-3">
                                                 <select multiple name="building_names[${count}][]" id="building_names${count}"
                                                         class="filter-multi-select">
                                                     @foreach($building_names as $bn)
-           <option value="{{$bn->id}}">{{$bn->building_name}}</option>
+            <option value="{{$bn->id}}">{{$bn->building_name}}</option>
                                                     @endforeach
-           </select>
-       </div>
-       <div class="col-12 mt-2">
-           <input type="text" class="form-control border-blue-2px" name="memo[]"
-                  placeholder="{{ __('translation.Enter Memo') }}" required>
+            </select>
+        </div>
+        <div class="col-12 mt-2">
+            <input type="text" class="form-control border-blue-2px" name="memo[]"
+                   placeholder="{{ __('translation.Enter Memo') }}" required>
                                             </div>
                                         </div>
                                     </div>
@@ -753,7 +798,7 @@
                                 </div>`);
 
 
-            $("#building_names"+count).bsMultiSelect({
+            $("#building_names" + count).bsMultiSelect({
                 placeholder: 'Select Building Name',
             });
             count++;

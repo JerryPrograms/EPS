@@ -159,6 +159,9 @@ Route::group(['prefix' => 'eps-panel', 'middleware' => 'CommonRoutes'], function
     //Route to get event date in calendar
     Route::post('/delete-event-date', [EventService::class, 'DeleteEventDate'])->name('DeleteEventDate');
 
+    //Route to complete event
+    Route::post('mark-as-completed',[EventService::class,'MarkAsCompleted'])->name('MarkAsCompleted');
+
     //Route to get event date in calendar
     Route::post('/change-event-status', [EventService::class, 'ChangeEventStatus'])->name('ChangeEventStatus');
 
