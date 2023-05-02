@@ -9,6 +9,7 @@ use App\Models\DispatchInformationData;
 use App\Models\Engineer;
 use App\Models\Engineer_company;
 use App\Models\Events;
+use App\Models\MainPartModel;
 use App\Models\Quotation;
 use App\Models\Todo;
 
@@ -129,7 +130,8 @@ class EngineerCompanyController extends Controller
     {
         $customer = CustomerInfo::where('user_uid', $uid)->first();
         if ($customer) {
-            $buildings = BuildingAddress::where('id','!=',$customer->building_name)->latest()->get();
+            $main_part = MainPartModel::pluck('customer_id');
+            $buildings = CustomerInfo::where('id','!=',$customer->id)->whereIn('id',$main_part)->latest()->get();
             return view('engineer_company.key_accessory', compact('customer','buildings'));
         }
         abort(404);

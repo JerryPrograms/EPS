@@ -6,6 +6,7 @@ use App\Http\Requests\KeyAccessoryRequest;
 use App\Models\KeyAccessoryInformation as KeyAccessoryModel;
 use App\Models\MainPartModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 
 class KeyAccessoryInformation
@@ -91,14 +92,52 @@ class KeyAccessoryInformation
     public static function ImportKey(Request $request)
     {
 
+
         if (!$request->has('buildings')) {
             return json_encode([
                 'success' => false,
                 'message' => 'You have to select one building to import parts'
             ]);
         } else {
-            foreach ($request->buildings as $building) {
+            DB::beginTransaction();
+            try {
+                foreach ($request->buildings as $building) {
+                    $MainPart = MainPartModel::where('customer_id', $building)->first();
 
+                    $SubParts = \App\Models\KeyAccessoryInformation::where('main_part_id', $MainPart->id)->get();
+
+                    $MainPartCreate = MainPartModel::create([
+                        'customer_id' => $request->customer_id,
+                        'title' => $MainPart->title,
+                        'tag' => $MainPart->tag,
+                        'color' => $MainPart->color,
+                    ]);
+
+                    foreach ($SubParts as $part) {
+                        \App\Models\KeyAccessoryInformation::create([
+                            'main_part_id' => $MainPartCreate->id,
+                            'title' => $part->title,
+                            'standard' => $part->standard,
+                            'quantity' => $part->quantity,
+                            'work_history' => $part->work_history,
+                            'picture' => $part->picture,
+                        ]);
+                    }
+
+                }
+                DB::commit();
+                return json_encode([
+                    'success' => true,
+                    'message' => 'Parts Imported Successfully',
+                ]);
+
+
+            } catch (\Exception $ex) {
+                DB::rollBack();
+                return json_encode([
+                    'success' => false,
+                    'message' => $ex->getMessage(),
+                ]);
             }
         }
 

@@ -156,6 +156,7 @@
                                                     <div class="col-lg-4 col-6 no-print">
                                                         <div class="file_main_section d-flex">
                                                             <form class="w-100 d-flex" id="key_import">
+                                                                <input name="customer_id" value="{{$customer->id}}" hidden="">
                                                                 @csrf
                                                                 <div class="mb-3">
                                                                     <div class="dropdown me-2">
@@ -173,7 +174,7 @@
                                                                                 <input type="checkbox"
                                                                                        class="form-check-input"
                                                                                        name="buildings[]" value="{{$building->id}}">
-                                                                               {{$building->building_name}}
+                                                                               {{$building->name}}
                                                                             </div>
                                                                             @endforeach
                                                                         </div>

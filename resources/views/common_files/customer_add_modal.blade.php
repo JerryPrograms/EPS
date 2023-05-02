@@ -15,13 +15,23 @@
                                     <div class="col-md-12">
                                         <div class="prompt w-100"></div>
                                     </div>
+                                    @php
+                                    $buildings = \App\Models\BuildingAddress::latest()->get();
+                                    @endphp
                                     <div class="col-md-12">
                                         <div class="mb-3">
                                             <label for="formrow-firstname-input"
                                                    class="form-label">{{__('translation.Building name')}}</label>
-                                            <input type="text" name="building_name" class="form-control"
-                                                   id="formrow-firstname-input"
-                                                   placeholder="{{__('translation.Enter building Name')}}" required>
+                                            <select name="building_name" id="company_name"
+                                                    class="form-control form-theme-input" required>
+                                                <option value="">
+                                                    {{__('translation.Enter building Name')}}
+                                                </option>
+                                                @foreach ($buildings as $engineer_company)
+                                                    <option value="{{ $engineer_company->id }}">
+                                                        {{ $engineer_company->building_name }}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
