@@ -160,7 +160,7 @@ Route::group(['prefix' => 'eps-panel', 'middleware' => 'CommonRoutes'], function
     Route::post('/delete-event-date', [EventService::class, 'DeleteEventDate'])->name('DeleteEventDate');
 
     //Route to complete event
-    Route::post('mark-as-completed',[EventService::class,'MarkAsCompleted'])->name('MarkAsCompleted');
+    Route::post('mark-as-completed', [EventService::class, 'MarkAsCompleted'])->name('MarkAsCompleted');
 
     //Route to get event date in calendar
     Route::post('/change-event-status', [EventService::class, 'ChangeEventStatus'])->name('ChangeEventStatus');
@@ -232,7 +232,9 @@ Route::group(['prefix' => 'eps-panel', 'middleware' => 'CommonRoutes'], function
     Route::post('/update-initial-date', [PartReplacement::class, 'UpdateReplacementInitialDate'])->name('UpdateReplacementInitialDate');
 
 
-    Route::get('as-company-list',[CompanyController::class,'ASCompanyList'])->name('ASCompanyList');
+    Route::get('as-company-list', [CompanyController::class, 'ASCompanyList'])->name('ASCompanyList');
+
+    Route::post('key-import', [KeyAccessoryInformation::class, 'ImportKey'])->name('ImportKey');
 });
 
 Route::group(['prefix' => 'eps-panel', 'middleware' => 'AdminAccess'], function () {

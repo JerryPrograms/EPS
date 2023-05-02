@@ -105,6 +105,11 @@
                                                 <span
                                                     class="custom_dot">.</span>{{ __('translation.Manage attachments') }}
                                 </a></li>
+                            <li class="b"><a key="t-blog" class="list_menubar_text"
+                                             title="Manage attachments">
+                                                <span
+                                                    class="custom_dot">.</span>{{ __('Fill Regular Inspection Log') }}
+                                </a></li>
                         </ul>
 
                     </li>

@@ -129,7 +129,8 @@ class EngineerCompanyController extends Controller
     {
         $customer = CustomerInfo::where('user_uid', $uid)->first();
         if ($customer) {
-            return view('engineer_company.key_accessory', compact('customer'));
+            $buildings = BuildingAddress::where('id','!=',$customer->building_name)->latest()->get();
+            return view('engineer_company.key_accessory', compact('customer','buildings'));
         }
         abort(404);
 
@@ -278,7 +279,7 @@ class EngineerCompanyController extends Controller
                         'end' => $ev->end_date,
                         'color' => $ev->color,
                         'textColor' => $ev->text_color,
-                        'status'=>$ev->status,
+                        'status' => $ev->status,
                     ];
                 } else {
                     $data[] = [
@@ -288,7 +289,7 @@ class EngineerCompanyController extends Controller
                         'end' => $ev->start_date,
                         'color' => $ev->color,
                         'textColor' => $ev->text_color,
-                        'status'=>$ev->status,
+                        'status' => $ev->status,
                     ];
                 }
 

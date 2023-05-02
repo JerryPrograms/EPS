@@ -86,7 +86,7 @@
         if ('{{request()->segment(2)}}' == 'building-info') {
             $('.a a').get(0).style.cssText = 'color:blue !important';
             $('.a a').attr('href', '{{route('ec.CreateBuildingInfo',request()->segment(3))}}');
-            $('.b a').attr('href', '{{route('ec.CreateCompanyInfo',request()->segment(3))}}');
+            $('.b a').attr('href', '{{route('write_regular_inspection_log',request()->segment(3))}}');
             $('.c a').attr('href', '{{route('ec.CreateParkingFacility',request()->segment(3))}}');
             $('.d a').attr('href', '{{route('ec.CreateKeyAccessoryHistory',request()->segment(3))}}');
             $('.e a').attr('href', '{{route('ec.CreatePartsReplacementHistory',request()->segment(3))}}');
@@ -96,7 +96,7 @@
         } else if ('{{request()->segment(2)}}' == 'as-and-engineer-company') {
             $('.b a').get(0).style.cssText = 'color:blue !important';
             $('.a a').attr('href', '{{route('ec.CreateBuildingInfo',request()->segment(3))}}');
-            $('.b a').attr('href', '{{route('ec.CreateCompanyInfo',request()->segment(3))}}');
+            $('.b a').attr('href', '{{route('write_regular_inspection_log',request()->segment(3))}}');
             $('.c a').attr('href', '{{route('ec.CreateParkingFacility',request()->segment(3))}}');
             $('.d a').attr('href', '{{route('ec.CreateKeyAccessoryHistory',request()->segment(3))}}');
             $('.e a').attr('href', '{{route('ec.CreatePartsReplacementHistory',request()->segment(3))}}');
@@ -106,7 +106,7 @@
         } else if ('{{request()->segment(2)}}' == 'parking-facility') {
             $('.c a').get(0).style.cssText = 'color:blue !important';
             $('.a a').attr('href', '{{route('ec.CreateBuildingInfo',request()->segment(3))}}');
-            $('.b a').attr('href', '{{route('ec.CreateCompanyInfo',request()->segment(3))}}');
+            $('.b a').attr('href', '{{route('write_regular_inspection_log',request()->segment(3))}}');
             $('.c a').attr('href', '{{route('ec.CreateParkingFacility',request()->segment(3))}}');
             $('.d a').attr('href', '{{route('ec.CreateKeyAccessoryHistory',request()->segment(3))}}');
             $('.e a').attr('href', '{{route('ec.CreatePartsReplacementHistory',request()->segment(3))}}');
@@ -116,7 +116,7 @@
         } else if ('{{request()->segment(2)}}' == 'key-accessory-history') {
             $('.d a').get(0).style.cssText = 'color:blue !important';
             $('.a a').attr('href', '{{route('ec.CreateBuildingInfo',request()->segment(3))}}');
-            $('.b a').attr('href', '{{route('ec.CreateCompanyInfo',request()->segment(3))}}');
+            $('.b a').attr('href', '{{route('write_regular_inspection_log',request()->segment(3))}}');
             $('.c a').attr('href', '{{route('ec.CreateParkingFacility',request()->segment(3))}}');
             $('.d a').attr('href', '{{route('ec.CreateKeyAccessoryHistory',request()->segment(3))}}');
             $('.e a').attr('href', '{{route('ec.CreatePartsReplacementHistory',request()->segment(3))}}');
@@ -126,7 +126,7 @@
         } else if ('{{request()->segment(2)}}' == 'parts-replacement-history') {
             $('.e a').get(0).style.cssText = 'color:blue !important';
             $('.a a').attr('href', '{{route('ec.CreateBuildingInfo',request()->segment(3))}}');
-            $('.b a').attr('href', '{{route('ec.CreateCompanyInfo',request()->segment(3))}}');
+            $('.b a').attr('href', '{{route('write_regular_inspection_log',request()->segment(3))}}');
             $('.c a').attr('href', '{{route('ec.CreateParkingFacility',request()->segment(3))}}');
             $('.d a').attr('href', '{{route('ec.CreateKeyAccessoryHistory',request()->segment(3))}}');
             $('.e a').attr('href', '{{route('ec.CreatePartsReplacementHistory',request()->segment(3))}}');
@@ -136,7 +136,7 @@
         } else if ('{{request()->segment(2)}}' == 'monthly-regular-inspection') {
             $('.f a').get(0).style.cssText = 'color:blue !important';
             $('.a a').attr('href', '{{route('ec.CreateBuildingInfo',request()->segment(3))}}');
-            $('.b a').attr('href', '{{route('ec.CreateCompanyInfo',request()->segment(3))}}');
+            $('.b a').attr('href', '{{route('write_regular_inspection_log',request()->segment(3))}}');
             $('.c a').attr('href', '{{route('ec.CreateParkingFacility',request()->segment(3))}}');
             $('.d a').attr('href', '{{route('ec.CreateKeyAccessoryHistory',request()->segment(3))}}');
             $('.e a').attr('href', '{{route('ec.CreatePartsReplacementHistory',request()->segment(3))}}');
@@ -146,7 +146,7 @@
         } else if ('{{request()->segment(2)}}' == 'emergency-dispatch-checklist') {
             $('.g a').get(0).style.cssText = 'color:blue !important';
             $('.a a').attr('href', '{{route('ec.CreateBuildingInfo',request()->segment(3))}}');
-            $('.b a').attr('href', '{{route('ec.CreateCompanyInfo',request()->segment(3))}}');
+            $('.b a').attr('href', '{{route('write_regular_inspection_log',request()->segment(3))}}');
             $('.c a').attr('href', '{{route('ec.CreateParkingFacility',request()->segment(3))}}');
             $('.d a').attr('href', '{{route('ec.CreateKeyAccessoryHistory',request()->segment(3))}}');
             $('.e a').attr('href', '{{route('ec.CreatePartsReplacementHistory',request()->segment(3))}}');
@@ -156,7 +156,7 @@
         } else if ('{{request()->segment(2)}}' == 'manage-attachments') {
             $('.h a').get(0).style.cssText = 'color:blue !important';
             $('.a a').attr('href', '{{route('ec.CreateBuildingInfo',request()->segment(3))}}');
-            $('.b a').attr('href', '{{route('ec.CreateCompanyInfo',request()->segment(3))}}');
+            $('.b a').attr('href', '{{route('write_regular_inspection_log',request()->segment(3))}}');
             $('.c a').attr('href', '{{route('ec.CreateParkingFacility',request()->segment(3))}}');
             $('.d a').attr('href', '{{route('ec.CreateKeyAccessoryHistory',request()->segment(3))}}');
             $('.e a').attr('href', '{{route('ec.CreatePartsReplacementHistory',request()->segment(3))}}');

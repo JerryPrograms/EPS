@@ -70,8 +70,8 @@
             </td>
             <td class="d-flex">
                 <!-- Button trigger modal -->
-                                <a href="{{route('add_contract',$c->user_uid)}}" class="date_button_2 border-0"><i class="fa fas fa-file-contract  custom-trash-padding"></i></a>
-                                <a href="{{route('regular_inspection_log',$c->user_uid)}}" class="date_button_2 border-0"><i class="fa fa-magnifying-glass-plus custom-trash-padding"></i></a>
+{{--                                <a href="{{route('add_contract',$c->user_uid)}}" class="date_button_2 border-0"><i class="fa fas fa-file-contract  custom-trash-padding"></i></a>--}}
+{{--                                <a href="{{route('regular_inspection_log',$c->user_uid)}}" class="date_button_2 border-0"><i class="fa fa-magnifying-glass-plus custom-trash-padding"></i></a>--}}
                 <a href="{{route('ec.CreateBuildingInfo',$c->user_uid)}}" class="date_button_2 border-0"><i
                         class="fa fa-edit custom-trash-padding"></i></a>
 {{--                <button onclick="$('#customerInfoID').val('{{$c->id}}',$('#bname').text('{{$c->GetBuildingInfo->building_name}}'))"--}}
