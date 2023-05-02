@@ -55,6 +55,7 @@
                                                         <input type="text" class="form-control" name="keyword"
                                                                placeholder="{{__('translation.search')}}"
                                                                autocomplete="off" required>
+
                                                         <button type="submit" class="btn btn-primary searchbar_button">
                                                             <div class="search_img">
                                                                 <img
@@ -74,6 +75,12 @@
                                                 </button>
                                             </div>
                                             <div class="col-md-4 col-12 text-end">
+                                                <button data-bs-toggle="modal"
+                                                        data-bs-target="#customerDeleteModal"
+                                                        type="button"
+                                                        class="btn btn-primary waves-effect waves-light w-sm mt-3">
+                                                    <i class="mdi mdi-trash-can d-block font-size-16"></i>
+                                                </button>
                                                 <button data-bs-toggle="modal" data-bs-target="#customerInfoModal"
                                                         type="button"
                                                         class="btn btn-primary waves-effect waves-light w-sm mt-3">
@@ -205,93 +212,105 @@
         //ajax to delete customer basic information
         $('#customerDeleteForm').submit(function (e) {
 
-            $('.submitbtn').html('<i class="fa fa-spinner fa-spin me-1"></i> 처리').attr('disabled', true);
-            $('.submitbtn').prev().attr('disabled', true);
             e.preventDefault();
-            var form = $('#customerDeleteForm')[0];
-            var formData = new FormData(form);
-            let prompt = $('.prompt');
+            if ($('#customerInfoID').val() == '') {
+                $('.prompt').html('<div class="alert alert-danger">Please select a row first</div>');
 
-            $.ajax({
+                $("div.prompt").fadeIn();
+                setTimeout(function () {
+                    $("div.prompt").fadeOut();
+                }, 2000);
+            } else {
+                $('.submitbtn').html('<i class="fa fa-spinner fa-spin me-1"></i> 처리').attr('disabled', true);
+                $('.submitbtn').prev().attr('disabled', true);
 
-                type: "POST",
-                url: '{{route('DeleteCustomerInfo')}}',
-                dataType: 'json',
-                data: formData,
-                contentType: false,
-                processData: false,
-                cache: false,
-                mimeType: "multipart/form-data",
-                beforeSend: function () {
+                var form = $('#customerDeleteForm')[0];
+                var formData = new FormData(form);
+                let prompt = $('.prompt');
 
-                },
-                success: function (res) {
+                $.ajax({
 
-                    $('.submitbtn').html('삭제').attr('disabled', false);
-                    $('.submitbtn').prev().attr('disabled', false);
+                    type: "POST",
+                    url: '{{route('DeleteCustomerInfo')}}',
+                    dataType: 'json',
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    cache: false,
+                    mimeType: "multipart/form-data",
+                    beforeSend: function () {
 
-                    if (res.success == false) {
+                    },
+                    success: function (res) {
+
+                        $('.submitbtn').html('삭제').attr('disabled', false);
+                        $('.submitbtn').prev().attr('disabled', false);
+
+                        if (res.success == false) {
 
 
-                        prompt.html('<div class="alert alert-danger">' + res.message + '</div>');
+                            prompt.html('<div class="alert alert-danger">' + res.message + '</div>');
 
+                            $("div.prompt").fadeIn();
+                            setTimeout(function () {
+                                $("div.prompt").fadeOut();
+                            }, 2000);
+
+                        } else if (res.success == true) {
+
+                            prompt.html('<div class="alert alert-success">' + res.message + '</div>');
+
+                            $("div.prompt").fadeIn();
+                            setTimeout(function () {
+                                window.location.reload();
+                            }, 2000);
+
+                            setTimeout(function () {
+                                $("div.prompt").fadeOut();
+                                {
+                                    {
+
+                                    }
+                                }
+
+                            }, 2000);
+
+                        }
+                    },
+                    error: function (e) {
+
+
+                        $('.submitbtn').html('삭제').attr('disabled', false);
+                        $('.submitbtn').prev().attr('disabled', false);
+                        var first_error = '';
+                        $.each(e.responseJSON.errors, function (index, item) {
+
+                            first_error = item[0];
+
+                        });
                         $("div.prompt").fadeIn();
-                        setTimeout(function () {
-                            $("div.prompt").fadeOut();
-                        }, 2000);
-
-                    } else if (res.success == true) {
-
-                        prompt.html('<div class="alert alert-success">' + res.message + '</div>');
-
-                        $("div.prompt").fadeIn();
-                        setTimeout(function () {
-                            window.location.reload();
-                        }, 2000);
-
+                        {
+                            {
+                                $('.prompt').html('<div class="alert alert-danger">' + first_error + '</div>');
+                            }
+                        }
                         setTimeout(function () {
                             $("div.prompt").fadeOut();
                             {
                                 {
-
+                                    prompt.html('<div class="alert alert-danger">' + first_error + '</div>');
                                 }
                             }
 
                         }, 2000);
 
+
                     }
-                },
-                error: function (e) {
+
+                });
+            }
 
 
-                    $('.submitbtn').html('삭제').attr('disabled', false);
-                    $('.submitbtn').prev().attr('disabled', false);
-                    var first_error = '';
-                    $.each(e.responseJSON.errors, function (index, item) {
-
-                        first_error = item[0];
-
-                    });
-                    $("div.prompt").fadeIn();
-                    {
-                        {
-                            $('.prompt').html('<div class="alert alert-danger">' + first_error + '</div>');
-                        }
-                    }
-                    setTimeout(function () {
-                        $("div.prompt").fadeOut();
-                        {
-                            {
-                                prompt.html('<div class="alert alert-danger">' + first_error + '</div>');
-                            }
-                        }
-
-                    }, 2000);
-
-
-                }
-
-            });
         });
 
         //ajax to search customer basic information
@@ -341,6 +360,23 @@
             });
         });
 
+        function selectRow(id, value) {
+
+            $('tr').each(function () {
+
+                $(this).removeClass('selected-row-blue');
+
+            });
+
+            if (id.hasClass('selected-row-blue')) {
+                id.removeClass('selected-row-blue');
+            } else {
+                id.addClass('selected-row-blue');
+            }
+            console.log(value);
+            $('#customerInfoID').val(value);
+            $('#customerInfoID').val();
+        }
 
         function ClearFilter() {
             $.ajax({

@@ -527,5 +527,12 @@ return [
     'AS Company List' => 'AS Company List',
     'Are you sure you want to delete this' => 'Are you sure you want to delete this',
     'Mark as completed' => 'Mark as completed',
+    'Are you sure you want to delete' => 'Are you sure you want to delete',
+    'Are you sure you want to turn off alarm?' => 'Are you sure you want to turn off alarm?',
+    'Turn Off Alarm' => 'Turn Off Alarm',
+    'Turn Off' => 'Turn Off',
+    'Alarm set off successfully' => 'Alarm set off successfully',
+    "Something went wrong. Please try again" => 'Something went wrong. Please try again',
+    'Quotation Content'=>'Quotation Content',
 
 ];

@@ -87,4 +87,20 @@ class KeyAccessoryInformation
             ]);
         }
     }
+
+    public static function ImportKey(Request $request)
+    {
+
+        if (!$request->has('buildings')) {
+            return json_encode([
+                'success' => false,
+                'message' => 'You have to select one building to import parts'
+            ]);
+        } else {
+            foreach ($request->buildings as $building) {
+
+            }
+        }
+
+    }
 }

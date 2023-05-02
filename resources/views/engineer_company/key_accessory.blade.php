@@ -148,30 +148,61 @@
 
                                                 <!-- form row 1 start  -->
                                                 <div id="customer_info_div" class="row mt-3">
-                                                    <div class="col-lg-11 col-6">
+                                                    <div class="col-lg-8 col-6">
                                                         <h4 class="card-title mt-2 border-bottom-0 mb-4">
                                                             <span>&nbsp;</span>
                                                             &nbsp;</h4>
                                                     </div>
-                                                    <div class="col-lg-1 col-6 no-print">
-                                                        <div class="file_main_section">
-                                                            <button type="button"
-                                                                    onclick="printForm($('#parkingFacilityInformationForm'))"
-                                                                    class="file_button">
-                                                                <img
-                                                                    src="{{asset('engineer_company/images/Vector.png')}}">
-                                                            </button>
+                                                    <div class="col-lg-4 col-6 no-print">
+                                                        <div class="file_main_section d-flex">
+                                                            <form class="w-100 d-flex" id="key_import">
+                                                                @csrf
+                                                                <div class="mb-3">
+                                                                    <div class="dropdown me-2">
+                                                                        <button
+                                                                            class="btn btn-secondary dropdown-toggle"
+                                                                            type="button" id="dropdownMenuButton"
+                                                                            data-bs-toggle="dropdown"
+                                                                            aria-expanded="false">
+                                                                            Select Buildings
+                                                                        </button>
+                                                                        <div class="dropdown-menu"
+                                                                             aria-labelledby="dropdownMenuButton">
+                                                                            @foreach($buildings as $building)
+                                                                            <div class="w-100 p-2">
+                                                                                <input type="checkbox"
+                                                                                       class="form-check-input"
+                                                                                       name="buildings[]" value="{{$building->id}}">
+                                                                               {{$building->building_name}}
+                                                                            </div>
+                                                                            @endforeach
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                                <button type="submit"
+                                                                        class="file_button me-2">
+                                                                    <img
+                                                                        src="{{asset('engineer_company/images/Vector(2).png')}}">
+                                                                </button>
+
+                                                                <button type="button"
+                                                                        onclick="printForm($('#parkingFacilityInformationForm'))"
+                                                                        class="file_button">
+                                                                    <img
+                                                                        src="{{asset('engineer_company/images/Vector.png')}}">
+                                                                </button>
+                                                            </form>
                                                         </div>
                                                     </div>
 
                                                 </div>
 
+                                                <div class="row mt-3">
+                                                    @if(count($customer->MainAccessory) > 0)
+                                                        @foreach($customer->MainAccessory as $main_accessory)
 
-                                                @if(count($customer->MainAccessory) > 0)
-                                                    @foreach($customer->MainAccessory as $main_accessory)
-                                                        <div class="row mt-3">
-
-                                                            <div class="col-lg-11">
+                                                            <div class="col-lg-6 mt-2">
 
                                                                 <div class="colllap_section">
 
@@ -361,10 +392,9 @@
 
                                                             </div>
 
-                                                        </div>
-                                                    @endforeach
-                                                @endif
-
+                                                        @endforeach
+                                                    @endif
+                                                </div>
                                                 <!-- form row 1 end  -->
 
 
@@ -616,6 +646,13 @@
                 $('#sub_part_form').validate({
                     submitHandler: function () {
                         ajaxCall($('#sub_part_form'), "{{ route('CreateSubPartTitle') }}", $('#sub_part_form').find('.submitbtn'), "{{ route('ec.CreateKeyAccessoryHistory',request()->segment(3)) }}", onRequestSuccess);
+                    }
+                });
+
+                //import key
+                $('#key_import').validate({
+                    submitHandler: function () {
+                        ajaxCall($('#key_import'), "{{ route('ImportKey') }}", $('#key_import').find('.submitbtn'), "{{ route('ec.CreateKeyAccessoryHistory',request()->segment(3)) }}", onRequestSuccess);
                     }
                 });
 

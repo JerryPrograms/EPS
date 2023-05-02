@@ -70,9 +70,13 @@ class QuoteService
 
     public static function GetQuote(Request $request)
     {
-//        try {
-//            $getQuote = Quotation::where('id', $request->id)->first();
-//        }
+        $getQuote = Quotation::where('id', $request->id)->first();
+        return view('engineer_company.quote_listing_template', compact('getQuote'));
+    }
+    public static function GetQuoteDetails($id)
+    {
+        $getQuote = Quotation::where('id', $id)->first();
+        return view('engineer_company.quotation_management_details', compact('getQuote'));
     }
 
 }

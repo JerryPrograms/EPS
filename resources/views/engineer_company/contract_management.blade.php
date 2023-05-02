@@ -32,20 +32,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    {{--                                    <div class="d-flex align-items-center justify-content-end">--}}
-                                    {{--                                        <div class="left-content d-flex align-items-center">--}}
-                                    {{--                                            <div class="custom_search">--}}
-                                    {{--                                                <div class="search">--}}
-                                    {{--                                                    <input id="myInput" onchange="myFunction()" type="text"--}}
-                                    {{--                                                           class="form-control" name="keyword"--}}
-                                    {{--                                                           placeholder="{{ __('translation.search') }}"--}}
-                                    {{--                                                           autocomplete="off"--}}
-                                    {{--                                                           required="">--}}
-
-                                    {{--                                                </div>--}}
-                                    {{--                                            </div>--}}
-                                    {{--                                        </div>--}}
-                                    {{--                                    </div>--}}
                                     @if (count($contracts) > 0)
                                         <div id="customer_list_table" class="table-responsive mt-3 data-set-list">
                                             @include('engineer_company.templates.contract_listing', [
@@ -100,6 +86,35 @@
                         </button>
                         <button type="submit"
                                 class="btn btn-primary waves-effect waves-light submitbtn">{{__('translation.delete')}}</button>
+                    </div>
+                </form>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+    <div id="customerTurnOffAlarm" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="myModalLabel">{{__('Turn Off Alarm')}}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form id="contract_turn_off">
+                    @csrf
+                    <div class="modal-body">
+                        <div class="col-12">
+                            <div class="col-md-12">
+                                <div class="prompt w-100"></div>
+                            </div>
+                            <p>{{__('Are you sure you want to turn off alarm?')}}</p>
+                            <input name="id" id="contract_id" hidden>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary waves-effect"
+                                data-bs-dismiss="modal">{{__('translation.close')}}
+                        </button>
+                        <button type="submit"
+                                class="btn btn-primary waves-effect waves-light submitbtn">{{__('Turn Off')}}</button>
                     </div>
                 </form>
             </div><!-- /.modal-content -->
@@ -213,6 +228,16 @@
                     }
 
                 });
+            }
+        });
+
+        function set_contract_id(id) {
+            $('#contract_id').val(id);
+        }
+
+        $('#contract_turn_off').validate({
+            submitHandler: function () {
+                ajaxCall($('#contract_turn_off'), "{{ route('customer.TurnOffContract') }}", $('#contract_turn_off').find('.submitbtn'), "{{ route('contract_management') }}", onRequestSuccess);
             }
         });
     </script>

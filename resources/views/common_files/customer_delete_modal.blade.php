@@ -12,7 +12,7 @@
                         <div class="col-md-12">
                             <div class="prompt w-100"></div>
                         </div>
-                        <p>{{__('Are you sure you want to delete this')}} <span id="bname"></span>?</p>
+                        <p>{{__('translation.Are you sure you want to delete this')}} <span id="bname"></span>?</p>
                         <input name="id" id="customerInfoID" hidden>
                     </div>
                 </div>

@@ -66,6 +66,14 @@
                         <img src="{{ asset('engineer_company/assets/images/archive_icon.png') }}">
                     </button>
                 @endif
+                @if(activeGuard() == 'web')
+                    <button @if($v->alarm == 1) data-bs-toggle="modal" data-bs-target="#customerTurnOffAlarm" onclick="set_contract_id('{{$v->id}}')" class="btn btn-outline-light btn-theme-light-outline btn-outline btn-sm btn-background-light-yellow" @else class="btn btn-outline-light btn-theme-light-outline btn-outline btn-sm disabled" @endif>
+                       @if($v->alarm == 1) <img src="{{ asset('engineer_company/images/alarm.png') }}">
+                        @else
+                            <img src="{{ asset('engineer_company/images/alarm_grey.png') }}">
+                        @endif
+                    </button>
+                @endif
             </td>
         </tr>
     @endforeach

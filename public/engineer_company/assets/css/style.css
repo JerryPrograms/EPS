@@ -43,6 +43,12 @@ li.page-item.custom_mar {
     padding: 6px 20px;
 }
 
+
+.btn-background-light-yellow{
+    background: rgba(255, 203, 51, 0.05) !important;
+    border: 1px solid #FFCB33 !important;
+}
+
 .drop_section_2:hover {
     width: 86px;
     background: white;

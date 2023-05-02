@@ -11,97 +11,6 @@
 
 
             <ul class="metismenu list-unstyled" id="side-menu">
-                @if (activeGuard() != 'web')
-                    <li class="sidebr_button customer-details">
-                        <a href="javascript:void(0)" class="waves-effect dropdown_toggle">
-                            <img src="{{ asset('engineer_company/assets/images/user.png') }}"
-                                 class="double_ring_img p-0"
-                                 style="margin-left: -1px;">
-                            <span key="t-dashboardsasdas"
-                                  class="dropdown_text">{{ __('translation.Customer List') }}</span>
-                            <div class="plus_section_5">
-                                <i class="fa-solid fa-plus plus_icon"></i>
-                            </div>
-                        </a>
-                        <ul class="sub-menu " @if(in_array(request()->segment(2),$routes)) aria-expanded="true"
-                            @else aria-expanded="false" @endif>
-                            <li>
-                                <a key="t-level-1-1" href="{{ route('ec.GetCustomerInfoListing') }}"
-                                   class="waves-effect  dropdown_toggle_2">
-                                    <i class="fa-solid fa-list list_icon"></i>
-                                    <span key="t-dashboards"
-                                          class="dropdown_text_2">{{ __('translation.customer info') }}
-                                    </span>
-
-                                </a>
-                            </li>
-                            <li>
-
-                                <a href="javascript:void(0)"
-                                   class=" waves-effect dropdown_toggle_2 pt-0" aria-expanded="false">
-                                    <!-- <i class="bx bx-calendar"></i> -->
-                                    <!-- <i class="fa-solid fa-list list_icon"></i> -->
-                                    <i class="fa-sharp fa-solid fa-pen list_icon"></i>
-
-                                    <span class="dropdown_text_2">
-                                        {{ __('translation.Fill in customer information') }}
-                                    </span>
-
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li class="a"><a key="t-default" class="list_menubar_text"
-                                                     title="Information & Building Management Company Information"><span
-                                                class="custom_dot">.</span>{{ __('translation.Building Information1') }}
-                                        </a></li>
-
-                                    <li class="b"><a key="t-saas" class="list_menubar_text"
-                                                     title="AS Info & Engineer company Info"><span
-                                                class="custom_dot">.</span>
-                                            {{ __('translation.Info & Engineer') }}.</a></li>
-
-                                    <li class="c"><a key="t-crypto" class="list_menubar_text"
-                                                     title="Parking facility certification information & inspection certificate
-                                "><span
-                                                class="custom_dot">.</span>{{ __('translation.Parking facility certification') }}
-
-                                        </a></li>
-
-                                    <li class="d"><a key="t-blog" class="list_menubar_text"
-                                                     title="Key Accessories History"><span
-                                                class="custom_dot">.</span>{{ __('translation.Key Accessories History') }}
-                                        </a></li>
-
-                                    <li class="e"><a key="t-blog" class="list_menubar_text"
-                                                     title="Component replacement history">
-                                            <span
-                                                class="custom_dot">.</span>{{ __('translation.Component replacement') }}
-                                        </a></li>
-
-                                    <li class="f"><a key="t-blog" class="list_menubar_text"
-                                                     title="Monthly Inspection list
-                                ">
-                                            <span
-                                                class="custom_dot">.</span>{{ __('translation.Monthly Inspection list') }}
-                                        </a></li>
-
-                                    <li class="g"><a key="t-blog" class="list_menubar_text"
-                                                     title="Emergency dispatch confirmation list
-                                ">
-                                                <span
-                                                    class="custom_dot">.</span>{{ __('translation.Emergency dispatch') }}
-                                        </a></li>
-
-                                    <li class="h"><a key="t-blog" class="list_menubar_text"
-                                                     title="Manage attachments">
-                                                <span
-                                                    class="custom_dot">.</span>{{ __('translation.Manage attachments') }}
-                                        </a></li>
-                                </ul>
-
-                            </li>
-                        </ul>
-                    </li>
-                @endif
                 @if (!empty(activeGuard()) && activeGuard() != 'engineer' && activeGuard() != 'web')
                     <li class="sidebr_button mt-2">
                         <a href="{{ route('engineers') }}" class=" waves-effect dropdown_toggle">
@@ -113,6 +22,100 @@
                         </a>
                     </li>
                 @endif
+                <li class="sidebr_button mt-2">
+                    <a href="{{ route('ASCompanyList') }}" class=" waves-effect dropdown_toggle">
+                        <!-- <i class="bx bx-calendar"></i> -->
+                        <img src="{{ asset('engineer_company/assets/images/Frame.png') }}"
+                             class="double_ring_img p-0" style="margin-left: -1px;">
+                        <span key="t-dashboards"
+                              class="dropdown_text">{{ __('translation.AS Company List') }}</span>
+                    </a>
+                </li>
+                @if (activeGuard() != 'web')
+                    <li class="sidebr_button mt-2">
+                        <a href="{{ route('ec.GetCustomerInfoListing') }}" class=" waves-effect dropdown_toggle">
+                            <!-- <i class="bx bx-calendar"></i> -->
+                            <img src="{{ asset('engineer_company/assets/images/user.png') }}"
+                                 class="double_ring_img p-0"
+                                 style="margin-left: -1px;">
+                            <span key="t-dashboardsasdas"
+                                  class="dropdown_text">{{ __('translation.Customer List') }}</span>
+                        </a>
+                    </li>
+                    <li class="sidebr_button mt-2">
+
+                        <a href="javascript:void(0)"
+                           class=" waves-effect dropdown_toggle" aria-expanded="false">
+                            <!-- <i class="bx bx-calendar"></i> -->
+                            <!-- <i class="fa-solid fa-list list_icon"></i> -->
+                            <img src="{{ asset('engineer_company/assets/images/user.png') }}"
+                                 class="double_ring_img p-0"
+                                 style="margin-left: -1px;">
+
+                            <span class="dropdown_text">
+                                        {{ __('translation.Fill in customer information') }}
+                                    </span>
+
+                        </a>
+                        <ul class="sub-menu" aria-expanded="false">
+                            <li class="a"><a key="t-default" class="list_menubar_text"
+                                             title="Information & Building Management Company Information"><span
+                                        class="custom_dot">.</span>{{ __('translation.Building Information1') }}
+                                </a></li>
+
+{{--                            <li class="b"><a key="t-saas" class="list_menubar_text"--}}
+{{--                                             title="AS Info & Engineer company Info"><span--}}
+{{--                                        class="custom_dot">.</span>--}}
+{{--                                    {{ __('translation.Info & Engineer') }}.</a></li>--}}
+
+                            <li class="c"><a key="t-crypto" class="list_menubar_text"
+                                             title="Parking facility certification information & inspection certificate
+                                "><span
+                                        class="custom_dot">.</span>{{ __('translation.Parking facility certification') }}
+
+                                </a></li>
+
+                            <li class="d"><a key="t-blog" class="list_menubar_text"
+                                             title="Key Accessories History"><span
+                                        class="custom_dot">.</span>{{ __('translation.Key Accessories History') }}
+                                </a></li>
+
+                            <li class="e"><a key="t-blog" class="list_menubar_text"
+                                             title="Component replacement history">
+                                            <span
+                                                class="custom_dot">.</span>{{ __('translation.Component replacement') }}
+                                </a></li>
+
+                            <li class="f"><a key="t-blog" class="list_menubar_text"
+                                             title="Monthly Inspection list
+                                ">
+                                            <span
+                                                class="custom_dot">.</span>{{ __('translation.Monthly Inspection list') }}
+                                </a></li>
+
+                            <li class="g"><a key="t-blog" class="list_menubar_text"
+                                             title="Emergency dispatch confirmation list
+                                ">
+                                                <span
+                                                    class="custom_dot">.</span>{{ __('translation.Emergency dispatch') }}
+                                </a></li>
+
+                            <li class="h"><a key="t-blog" class="list_menubar_text"
+                                             title="Manage attachments">
+                                                <span
+                                                    class="custom_dot">.</span>{{ __('translation.Manage attachments') }}
+                                </a></li>
+                            <li class="b"><a key="t-blog" class="list_menubar_text"
+                                             title="Manage attachments">
+                                                <span
+                                                    class="custom_dot">.</span>{{ __('Fill Regular Inspection Log') }}
+                                </a></li>
+                        </ul>
+
+                    </li>
+
+                @endif
+
 
                 @if (!empty(activeGuard()) && activeGuard() == 'admin')
                     <li class="sidebr_button mt-2">
@@ -202,15 +205,7 @@
                         </a>
                     </li>
                 @endif
-                <li class="sidebr_button mt-2">
-                    <a href="{{ route('ASCompanyList') }}" class=" waves-effect dropdown_toggle">
-                        <!-- <i class="bx bx-calendar"></i> -->
-                        <img src="{{ asset('engineer_company/assets/images/Frame.png') }}"
-                             class="double_ring_img p-0" style="margin-left: -1px;">
-                        <span key="t-dashboards"
-                              class="dropdown_text">{{ __('translation.AS Company List') }}</span>
-                    </a>
-                </li>
+
             </ul>
         </div>
         <!-- Sidebar -->

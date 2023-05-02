@@ -45,10 +45,10 @@
                 일반유지보수
             </td>
             <td class="d-flex gap-1">
-                <button onclick="GetQuoteData('{{$q->id}}')" data-bs-toggle="modal" data-bs-target="#exampleModal0"
+                <a href="{{route('GetQuoteDetails',$q->id)}}"
                         class="btn btn-outline-danger btn-theme-danger-outline btn-outline btn-sm">
                     <img src="{{ asset('engineer_company/assets/images/red-search.png') }}">
-                </button>
+                </a>
                 <button class="btn btn-outline-primary btn-theme-primary-outline btn-outline btn-sm">
                     <img src="{{ asset('engineer_company/assets/images/Arhive_fill.png') }}">
                 </button>

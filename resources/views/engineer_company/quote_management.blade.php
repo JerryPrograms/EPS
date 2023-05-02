@@ -476,6 +476,7 @@
 
         function OpenModal() {
             if ($('#quoteId').val() == '') {
+                console.log('asd');
                 Command: toastr["error"]("You need to select row first")
 
                 toastr.options = {
