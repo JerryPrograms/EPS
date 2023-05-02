@@ -87,7 +87,8 @@
                                         </div>
                                     @else
                                         <div class="text-center">
-                                            <img style="height: 200px;" src="{{asset('engineer_company/images/no-data-found.png')}}"
+                                            <img style="height: 200px;"
+                                                 src="{{asset('engineer_company/images/no-data-found.png')}}"
                                                  alt="No Records Found">
                                         </div>
                                     @endif
@@ -104,6 +105,367 @@
     </div>
 @endsection
 @section('modal')
+
+    <div class="modal fade dsadasda" id="exampleModal0" tabindex="-1"
+         aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content custom-modal-width">
+                <div class="modal-header">
+                    <h5 class="modal-title"
+                        id="exampleModalLabel">
+                        {{ __('translation.View Quotation') }}
+                    </h5>
+                    <button type="button" class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+                <div class="modal-body modal-body-2">
+                    <!-- section 2 start  -->
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class=" mb-0">
+                                <div>
+                                    <!-- end table-responsive -->
+                                    <div class="row">
+                                        <div
+                                            class="col-lg-5 col-9 p-0">
+                                            <h4
+                                                class="card-title mt-2 border-bottom-0 mb-4 custom_margin_2">
+                                                <span class="bor_lef">&nbsp;</span>
+                                                {{ __('translation.Provider Info') }}
+                                            </h4>
+                                        </div>
+                                        <div class="col-lg-7 col-3"
+                                             style="text-align: end;">
+                                            <div
+                                                class="file_main_section">
+                                                <button type="button" onclick="printForm($('.dsadasda'))"
+                                                        class="file_button">
+                                                    <img
+                                                        src="{{asset('engineer_company/images/Vector.png')}}">
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- form row 1 start  -->
+                                    <div class="row">
+                                        <form>
+                                            <div
+                                                class="row align-items-baseline quoatation-info-form">
+                                                <div class="col-lg-3 col-md-12">
+                                                    <label for="exampleInputEmail1"
+                                                           class="form-label custom-lab-2 mb-0">
+                                                <span
+                                                    class="star_section">*</span>
+                                                        {{ __('translation.Provider') }}
+                                                    </label>
+                                                </div>
+                                                <div class="col-lg-9 col-md-12">
+                                                    <input
+                                                        type="email"
+                                                        class="form-control custom_input"
+                                                        id="exampleInputEmail1"
+                                                        aria-describedby="emailHelp"
+                                                        placeholder="{{ __('translation.EPS Co Ltd') }}.
+">
+                                                </div>
+                                            </div>
+
+
+                                            <div
+                                                class="row align-items-center mt-4 quoatation-info-form">
+                                                <div class="col-lg-3 col-md-12">
+                                                    <label
+                                                        for="exampleInputEmail1"
+                                                        class="form-label custom-lab-2 mb-0">
+                                                <span
+                                                    class="star_section">*</span>
+                                                        {{ __('translation.Company') }}..
+                                                    </label>
+                                                </div>
+                                                <div class="col-lg-9 col-md-12">
+                                                    <input
+                                                        type="email"
+                                                        class="form-control custom_input"
+                                                        id="exampleInputEmail1"
+                                                        aria-describedby="emailHelp"
+                                                        placeholder="142-52-19287">
+                                                </div>
+                                            </div>
+
+
+                                            <div
+                                                class="row align-items-baseline mt-4 quoatation-info-form">
+                                                <div class="col-lg-3 col-md-12">
+                                                    <label
+                                                        for="exampleInputEmail1"
+                                                        class="form-label custom-lab-2 mb-0">
+                                                <span
+                                                    class="star_section">*</span>
+                                                        {{ __('translation.address') }}
+                                                    </label>
+                                                </div>
+                                                <div class="col-lg-9 col-md-12">
+                                                    <input
+                                                        type="email"
+                                                        class="form-control custom_input"
+                                                        id="exampleInputEmail1"
+                                                        aria-describedby="emailHelp"
+                                                        placeholder="{{ __('translation.132 Sinsa-dong') }}...">
+                                                </div>
+                                            </div>
+
+                                            <div
+                                                class="row align-items-baseline mt-4 quoatation-info-form">
+                                                <div class="col-lg-3 col-md-12">
+                                                    <label
+                                                        for="exampleInputEmail1"
+                                                        class="form-label custom-lab-2 mb-0">
+                                                <span
+                                                    class="star_section">*</span>
+                                                        {{ __('translation.Ceo Name') }}...
+                                                    </label>
+                                                </div>
+                                                <div class="col-lg-9 col-md-12">
+                                                    <input
+                                                        type="email"
+                                                        class="form-control custom_input"
+                                                        id="exampleInputEmail1"
+                                                        aria-describedby="emailHelp"
+                                                        placeholder="{{ __('translation.Hong Gil Dong') }}">
+                                                </div>
+                                            </div>
+
+
+                                            <div
+                                                class="row align-items-center mt-4 quoatation-info-form">
+                                                <div class="col-lg-3 col-md-12">
+                                                    <label
+                                                        for="exampleInputEmail1"
+                                                        class="form-label custom-lab-2 mb-0">
+                                                <span
+                                                    class="star_section">*</span>
+                                                        {{ __('translation.Manager Name') }}
+                                                    </label>
+                                                </div>
+                                                <div class="col-lg-9 col-md-12">
+                                                    <input
+                                                        type="email"
+                                                        class="form-control  custom_input"
+                                                        id="exampleInputEmail1"
+                                                        aria-describedby="emailHelp"
+                                                        placeholder="{{ __('translation.Junghwan Park') }}">
+                                                </div>
+                                            </div>
+
+
+                                            <div
+                                                class="row mt-4">
+                                                <div
+                                                    class="col-lg-5 col-9 p-0">
+                                                    <h4
+                                                        class="card-title mt-2 border-bottom-0 mb-3 custom_margin_2">
+                                                    <span
+                                                        class="bor_lef">&nbsp;</span>
+                                                        {{ __('translation.customer information') }}
+                                                    </h4>
+                                                </div>
+                                            </div>
+
+
+                                            <div
+                                                class="row align-items-center mt-2 quoatation-info-form">
+                                                <div class="col-lg-3 col-md-12">
+                                                    <label
+                                                        for="exampleInputEmail1"
+                                                        class="form-label custom-lab-2 mb-0">
+                                                <span
+                                                    class="star_section">*</span>
+                                                        {{ __('translation.customer') }} ..
+                                                    </label>
+                                                </div>
+                                                <div class="col-lg-9 col-md-12">
+                                                    <input
+                                                        type="email"
+                                                        class="form-control custom_input"
+                                                        id="exampleInputEmail1"
+                                                        aria-describedby="emailHelp"
+                                                        placeholder="{{ __('translation.Enter contract date') }}">
+                                                </div>
+                                            </div>
+
+                                            <div
+                                                class="row align-items-center mt-4 quoatation-info-form">
+                                                <div class="col-lg-3 col-md-12">
+                                                    <label
+                                                        for="exampleInputEmail1"
+                                                        class="form-label custom-lab-2 mb-0">
+                                                <span
+                                                    class="star_section">*</span>{{ __('translation.Manager Name') }}..
+                                                    </label>
+                                                </div>
+                                                <div class="col-lg-9 col-md-12">
+                                                    <input
+                                                        type="email"
+                                                        class="form-control custom_input"
+                                                        id="exampleInputEmail1"
+                                                        aria-describedby="emailHelp"
+                                                        placeholder="{{ __('translation.Enter building name') }}">
+                                                </div>
+                                            </div>
+
+                                            <div
+                                                class="row align-items-center mt-4 quoatation-info-form">
+                                                <div class="col-lg-3 col-md-12">
+                                                    <label
+                                                        for="exampleInputEmail1"
+                                                        class="form-label custom-lab-2 mb-0">
+                                                <span
+                                                    class="star_section">*</span>{{ __('translation.Manager Contact') }}
+                                                        ..
+                                                    </label>
+                                                </div>
+                                                <div class="col-lg-9 col-md-12">
+                                                    <input
+                                                        type="email"
+                                                        class="form-control col-lg-8 custom_input"
+                                                        id="exampleInputEmail1"
+                                                        aria-describedby="emailHelp"
+                                                        placeholder="{{ __('translation.Enter contract date') }}">
+                                                </div>
+                                            </div>
+
+
+                                            <div
+                                                class="row mt-4">
+                                                <div
+                                                    class="col-lg-5 col-9 p-0">
+                                                    <h4
+                                                        class="card-title mt-2 border-bottom-0  custom_margin_2">
+                                                    <span
+                                                        class="bor_lef">&nbsp;</span>
+                                                        {{ __('translation.Quotation Info') }}
+                                                    </h4>
+                                                </div>
+                                            </div>
+
+
+                                            <div
+                                                class="row align-items-center mt-3 quoatation-info-form">
+                                                <div class="col-lg-3 col-md-12">
+                                                    <label
+                                                        for="exampleInputEmail1"
+                                                        class="form-label custom-lab-2 mb-0">
+                                                <span
+                                                    class="star_section">*</span>
+                                                        {{ __('translation.Quotation') }}...
+                                                    </label>
+                                                </div>
+                                                <div class="col-lg-9 col-md-12">
+                                                    <input
+                                                        type="email"
+                                                        class="form-control custom_input"
+                                                        id="exampleInputEmail1"
+                                                        aria-describedby="emailHelp"
+                                                        placeholder="{{ __('translation.Main motor replacement') }}">
+                                                </div>
+                                            </div>
+
+
+                                            <div
+                                                class="row align-items-center mt-3 quoatation-info-form">
+                                                <div class="col-lg-3 col-md-12">
+                                                    <label
+                                                        for="exampleInputEmail1"
+                                                        class="form-label custom-lab-2 mb-0">
+                                                <span
+                                                    class="star_section">*</span>
+                                                        {{ __('translation.Quote Date') }}
+                                                    </label>
+                                                </div>
+                                                <div class="col-lg-9 col-md-12">
+                                                    <input
+                                                        type="email"
+                                                        class="form-control custom_input"
+                                                        id="exampleInputEmail1"
+                                                        aria-describedby="emailHelp"
+                                                        placeholder="2023.01.15">
+                                                </div>
+                                            </div>
+
+                                            <div
+                                                class="row align-items-center mt-3 quoatation-info-form">
+                                                <div class="col-lg-3 col-md-12">
+                                                    <label
+                                                        for="exampleInputEmail1"
+                                                        class="form-label custom-lab-2 mb-0">
+                                                <span
+                                                    class="star_section">*</span>{{ __('translation.Quotation') }}..
+                                                    </label>
+                                                </div>
+                                                <div class="col-lg-9 col-md-12">
+                                                    <input
+                                                        type="email"
+                                                        class="form-control  custom_input"
+                                                        id="exampleInputEmail1"
+                                                        aria-describedby="emailHelp"
+                                                        placeholder="1">
+                                                </div>
+                                            </div>
+
+                                            <div
+                                                class="row align-items-center mt-3 quoatation-info-form">
+                                                <div class="col-lg-3 col-md-12">
+                                                    <label
+                                                        for="exampleInputEmail1"
+                                                        class="form-label custom-lab-2 mb-0">
+                                                <span
+                                                    class="star_section">*</span>{{ __('translation.Total Amount') }}
+                                                    </label>
+                                                </div>
+                                                <div class="col-lg-9 col-md-12">
+                                                    <input
+                                                        type="email"
+                                                        class="form-control custom_input"
+                                                        id="exampleInputEmail1"
+                                                        aria-describedby="emailHelp"
+                                                        placeholder="500,000">
+                                                </div>
+                                            </div>
+
+                                            <div class="mt-5 mb-5">
+                                                <div class="row justify-content-center">
+                                                    <div class="col-lg-3">
+                                                        <p class="modal-footer-text m-0 p-0">January 15, 2023 </p>
+                                                    </div>
+                                                    <div class="col-lg-3">
+                                                        <p class="modal-footer-text m-0 p-0">{{ __('translation.EPS Co Ltd') }}
+                                                            .</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </form>
+                                    </div>
+                                    <!-- form row 1 end  -->
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- end row -->
+                    </div>
+
+
+                    <!-- section 2 end  -->
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
     <div id="delModal" class="modal fade" tabindex="-1" aria-labelledby="delModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -170,5 +532,32 @@
                 return !~text.indexOf(val);
             }).hide();
         });
+
+        function OpenModal() {
+            if ($('#quoteId').val() == '') {
+                Command: toastr["error"]("You need to select row first")
+
+                toastr.options = {
+                    "closeButton": false,
+                    "debug": false,
+                    "newestOnTop": false,
+                    "progressBar": true,
+                    "positionClass": "toast-top-right",
+                    "preventDuplicates": true,
+                    "onclick": null,
+                    "showDuration": 300,
+                    "hideDuration": 1000,
+                    "timeOut": 2000,
+                    "extendedTimeOut": 1000,
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                }
+            } else {
+                $('#deleteQuoteModal').modal('show');
+
+            }
+        }
     </script>
 @endsection

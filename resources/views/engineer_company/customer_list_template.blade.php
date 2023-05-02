@@ -38,7 +38,7 @@
         </tr>
     @endif
     @foreach($customer as $c)
-        <tr>
+        <tr onclick="selectRow($(this),'{{$c->id}}')">
             <td class=""><a href="javascript: void(0);"
                             class="text-body fw-bold">{{$counter}}</a>
             </td>
@@ -70,15 +70,15 @@
             </td>
             <td class="d-flex">
                 <!-- Button trigger modal -->
-                {{--                <a href="{{route('add_contract',$c->user_uid)}}" class="date_button_2 border-0"><i class="fa fas fa-file-contract  custom-trash-padding"></i></a>--}}
-                {{--                <a href="{{route('regular_inspection_log',$c->user_uid)}}" class="date_button_2 border-0"><i class="fa fa-magnifying-glass-plus custom-trash-padding"></i></a>--}}
-                <a href="{{route('ec.GetCustomerInfoDashboard',$c->user_uid)}}" class="date_button_2 border-0"><i
+                                <a href="{{route('add_contract',$c->user_uid)}}" class="date_button_2 border-0"><i class="fa fas fa-file-contract  custom-trash-padding"></i></a>
+                                <a href="{{route('regular_inspection_log',$c->user_uid)}}" class="date_button_2 border-0"><i class="fa fa-magnifying-glass-plus custom-trash-padding"></i></a>
+                <a href="{{route('ec.CreateBuildingInfo',$c->user_uid)}}" class="date_button_2 border-0"><i
                         class="fa fa-edit custom-trash-padding"></i></a>
-                <button onclick="$('#customerInfoID').val('{{$c->id}}',$('#bname').text('{{$c->GetBuildingInfo->building_name}}'))"
-                        data-bs-toggle="modal"
-                        data-bs-target="#customerDeleteModal"
-                        class="date_button_2 border-0"><i
-                        class="fa fa-trash-can custom-trash-padding"></i></button>
+{{--                <button onclick="$('#customerInfoID').val('{{$c->id}}',$('#bname').text('{{$c->GetBuildingInfo->building_name}}'))"--}}
+{{--                        data-bs-toggle="modal"--}}
+{{--                        data-bs-target="#customerDeleteModal"--}}
+{{--                        class="date_button_2 border-0"><i--}}
+{{--                        class="fa fa-trash-can custom-trash-padding"></i></button>--}}
             </td>
         </tr>
         @php

@@ -27,6 +27,10 @@
         padding: 7px 10px 7px 10px;
     }
 
+    .selected-row-blue {
+        border: 3px solid #556ee6 !important;
+    }
+
 </style>
 <body data-sidebar="dark" data-layout-mode="light"
       class="{{ (!empty(activeGuard()) && activeGuard() == 'admin') ? 'admin-layout' : '' }}">
@@ -56,8 +60,8 @@
     <div class="rightbar-overlay"></div>
     @yield('modal')
     <!-- JAVASCRIPT -->
-    @include('engineer_company.includes.scripts')
-    @yield('custom-script')
+@include('engineer_company.includes.scripts')
+@yield('custom-script')
 
 </body>
 

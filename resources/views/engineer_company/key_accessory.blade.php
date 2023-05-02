@@ -166,12 +166,11 @@
 
                                                 </div>
 
+                                                <div class="row mt-3">
+                                                    @if(count($customer->MainAccessory) > 0)
+                                                        @foreach($customer->MainAccessory as $main_accessory)
 
-                                                @if(count($customer->MainAccessory) > 0)
-                                                    @foreach($customer->MainAccessory as $main_accessory)
-                                                        <div class="row mt-3">
-
-                                                            <div class="col-lg-11">
+                                                            <div class="col-lg-6 mt-2">
 
                                                                 <div class="colllap_section">
 
@@ -361,10 +360,9 @@
 
                                                             </div>
 
-                                                        </div>
-                                                    @endforeach
-                                                @endif
-
+                                                        @endforeach
+                                                    @endif
+                                                </div>
                                                 <!-- form row 1 end  -->
 
 

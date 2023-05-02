@@ -208,6 +208,7 @@ Route::group(['prefix' => 'eps-panel', 'middleware' => 'CommonRoutes'], function
 
     // Route to Get Quote Data
     Route::post('/get-quote', [QuoteService::class, 'GetQuote'])->name('GetQuote');
+    Route::get('/get-quote-details/{id}', [QuoteService::class, 'GetQuoteDetails'])->name('GetQuoteDetails');
 
     // Listing Routes Start
 

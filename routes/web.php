@@ -1,8 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\admin\BuildingInfoManagementController;
 use App\Http\Controllers\customer\AuthController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +22,5 @@ Route::group(['prefix' => 'customer'], function () {
 });
 
 Auth::routes();
+
+Route::post('/turn-off-contract', [AuthController::class, 'TurnOffContract'])->name('customer.TurnOffContract');
