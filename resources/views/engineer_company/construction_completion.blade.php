@@ -33,7 +33,8 @@
                                                     </div>
                                                 </button>
                                             </div>
-                                            <a href="{{route('create_construction_completion')}}" class="btn btn-primary">{{__('translation.add')}}</a>
+                                            <a href="{{route('create_construction_completion')}}"
+                                               class="btn btn-primary">{{__('translation.add')}}</a>
                                         </div>
                                     </div>
                                     <div id="customer_list_table" class="table-responsive mt-3 data-set-list">
@@ -68,69 +69,86 @@
                                             </thead>
                                             <tbody>
                                             @if(count($completion_reports) > 0)
-                                            @foreach($completion_reports as $c)
-                                                <tr>
-                                                    <td>
-                                                        {{$loop->index + 1}}
-                                                    </td>
-                                                    <td>
-                                                        {{$c->created_at->format('d-m-Y')}}
-                                                    </td>
-                                                    <td>
-                                                        {{$c->GetCustomer->customer_number}}
-                                                    </td>
-                                                    <td>
-                                                        {{$c->site_name}}
-                                                    </td>
-                                                    <td>
-                                                        {{$c->joint_name}}
-                                                    </td>
-                                                    <td>
-                                                        ....
-                                                    </td>
-                                                    <td>
-                                                        ....
-                                                    </td>
-                                                    <td class="d-flex gap-1">
-                                                        <a @if(activeGuard() == 'admin') style="background-color: #6281FE1A !important; border: 1px solid #6281FE"
-                                                           @endif href="{{route('view_construction_completion',$c->id)}}"
-                                                           class="btn btn-outline-danger btn-theme-danger-outline btn-outline btn-sm">
-                                                            @if(activeGuard() == 'admin')
-                                                                <img
-                                                                    src="{{asset('engineer_company/images/Vector(3).png')}}">
-                                                            @else
-                                                                <img
-                                                                    src="{{asset('engineer_company/assets/images/red-search.png')}}">
-                                                            @endif
-                                                        </a>
-                                                        @if(activeGuard() != 'web' && activeGuard() != 'admin')
-                                                            <a href="{{route('edit_construction_completion',$c->id)}}"
-                                                               class="btn btn-outline-primary btn-theme-primary-outline btn-outline btn-sm">
-{{--                                                                <img--}}
-{{--                                                                    src="{{asset('engineer_company/assets/images/Arhive_fill.png')}}">--}}
-                                                                <i class="fa fa-edit"></i>
+                                                @foreach($completion_reports as $c)
+                                                    <tr>
+                                                        <td>
+                                                            {{$loop->index + 1}}
+                                                        </td>
+                                                        <td>
+                                                            {{$c->created_at->format('d-m-Y')}}
+                                                        </td>
+                                                        <td>
+                                                            {{$c->GetCustomer->customer_number}}
+                                                        </td>
+                                                        <td>
+                                                            {{$c->site_name}}
+                                                        </td>
+                                                        <td>
+                                                            {{$c->joint_name}}
+                                                        </td>
+                                                        <td>
+                                                            ....
+                                                        </td>
+                                                        <td>
+                                                            ....
+                                                        </td>
+                                                        <td class="d-flex gap-1">
+                                                            <a @if(activeGuard() == 'admin') style="background-color: #6281FE1A !important; border: 1px solid #6281FE"
+                                                               @endif href="{{route('view_construction_completion',$c->id)}}"
+                                                               class="btn btn-outline-danger btn-theme-danger-outline btn-outline btn-sm">
+                                                                @if(activeGuard() == 'admin')
+                                                                    <img
+                                                                        src="{{asset('engineer_company/images/Vector(3).png')}}">
+                                                                @else
+                                                                    <img
+                                                                        src="{{asset('engineer_company/assets/images/red-search.png')}}">
+                                                                @endif
                                                             </a>
-                                                        @endif
-                                                        @if(activeGuard() != 'admin')
-                                                            <button onclick="print('{{$c->id}}')"
-                                                                    class="btn btn-outline-light btn-theme-light-outline btn-outline btn-sm">
-                                                                <img src="{{asset('engineer_company/images/Vector.png')}}">
-                                                            </button>
-                                                        @endif
-                                                        @if(activeGuard() != 'web' && activeGuard() != 'admin')
-                                                            <button onclick="openDeleteModal('{{$c->id}}')"
-                                                                    class="btn btn-outline-light btn-theme-light-outline btn-outline btn-sm">
-                                                                <img
-                                                                    src="{{asset('engineer_company/assets/images/delete.png')}}">
-                                                            </button>
-                                                        @endif
-                                                    </td>
-                                                </tr>
-                                            @endforeach
+                                                            @if(activeGuard() != 'web' && activeGuard() != 'admin')
+                                                                <a href="{{route('edit_construction_completion',$c->id)}}"
+                                                                   class="btn btn-outline-primary btn-theme-primary-outline btn-outline btn-sm">
+                                                                    {{--                                                                <img--}}
+                                                                    {{--                                                                    src="{{asset('engineer_company/assets/images/Arhive_fill.png')}}">--}}
+                                                                    <i class="fa fa-edit"></i>
+                                                                </a>
+                                                            @endif
+                                                            @if(activeGuard() != 'admin')
+                                                                <button onclick="print('{{$c->id}}')"
+                                                                        class="btn btn-outline-light btn-theme-light-outline btn-outline btn-sm">
+                                                                    <img
+                                                                        src="{{asset('engineer_company/images/Vector.png')}}">
+                                                                </button>
+                                                            @endif
+                                                            @if(activeGuard() != 'web' && activeGuard() != 'admin')
+                                                                <button onclick="openDeleteModal('{{$c->id}}')"
+                                                                        class="btn btn-outline-light btn-theme-light-outline btn-outline btn-sm">
+                                                                    <img
+                                                                        src="{{asset('engineer_company/assets/images/delete.png')}}">
+                                                                </button>
+                                                            @endif
+                                                            @if(activeGuard() == 'web')
+                                                                <button @if($c->alarm == 1) data-bs-toggle="modal"
+                                                                        data-bs-target="#customerTurnOffAlarm"
+                                                                        onclick="set_contract_id('{{$c->id}}')"
+                                                                        class="btn btn-outline-light btn-theme-light-outline btn-outline btn-sm btn-background-light-yellow"
+                                                                        @else class="btn btn-outline-light btn-theme-light-outline btn-outline btn-sm disabled" @endif>
+                                                                    @if($c->alarm == 1)
+                                                                        <img
+                                                                            src="{{ asset('engineer_company/images/alarm.png') }}">
+                                                                    @else
+                                                                        <img
+                                                                            src="{{ asset('engineer_company/images/alarm_grey.png') }}">
+                                                                    @endif
+                                                                </button>
+                                                            @endif
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
                                             @else
-                                                <tr  class="text-center">
-                                                   <td colspan="8"> <img style="height: 200px;" src="{{asset('engineer_company/images/no-data-found.png')}}"
-                                                             alt="No Records Found"></td>
+                                                <tr class="text-center">
+                                                    <td colspan="8"><img style="height: 200px;"
+                                                                         src="{{asset('engineer_company/images/no-data-found.png')}}"
+                                                                         alt="No Records Found"></td>
                                                 </tr>
                                             @endif
                                             </tbody>
@@ -190,6 +208,35 @@
         <div id="print_form">
 
         </div>
+    </div>
+    <div id="customerTurnOffAlarm" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="myModalLabel">{{__('Turn Off Alarm')}}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form id="contract_turn_off">
+                    @csrf
+                    <div class="modal-body">
+                        <div class="col-12">
+                            <div class="col-md-12">
+                                <div class="prompt w-100"></div>
+                            </div>
+                            <p>{{__('Are you sure you want to turn off alarm?')}}</p>
+                            <input name="id" id="contract_id" hidden>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary waves-effect"
+                                data-bs-dismiss="modal">{{__('translation.close')}}
+                        </button>
+                        <button type="submit"
+                                class="btn btn-primary waves-effect waves-light submitbtn">{{__('Turn Off')}}</button>
+                    </div>
+                </form>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
     </div>
 
 @endsection
@@ -266,5 +313,15 @@
                 $("#no_record").addClass('d-none')
             }
         }
+
+        function set_contract_id(id) {
+            $('#contract_id').val(id);
+        }
+
+        $('#contract_turn_off').validate({
+            submitHandler: function () {
+                ajaxCall($('#contract_turn_off'), "{{ route('customer.TurnOffCompletion') }}", $('#contract_turn_off').find('.submitbtn'), "{{ route('construction_completion') }}", onRequestSuccess);
+            }
+        });
     </script>
 @endsection

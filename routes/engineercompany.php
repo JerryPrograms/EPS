@@ -167,6 +167,7 @@ Route::group(['prefix' => 'eps-panel', 'middleware' => 'CommonRoutes'], function
 
     // Contract Management
     Route::get('/contract-management-list/{id}', [ContractController::class, 'contract_management_list'])->name('contract_management_list');
+    Route::get('/contracts-management-list/{id}', [ContractController::class, 'contracts_management_list'])->name('contracts_management_list');
     Route::get('/add-contract/{uid}', [ContractController::class, 'add_contract'])->name('add_contract');
     Route::post('/add-contract-action', [ContractController::class, 'add_contract_action'])->name('add_contract_action');
     Route::post('/search-contract-action', [ContractController::class, 'search_contract_action'])->name('search_contract_action');

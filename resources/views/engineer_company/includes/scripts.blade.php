@@ -93,6 +93,8 @@
             $('.f a').attr('href', '{{route('ec.CreateMonthlyRegularInspection',request()->segment(3))}}');
             $('.g a').attr('href', '{{route('ec.CreateEmergencyDispatchChecklist',request()->segment(3))}}');
             $('.h a').attr('href', '{{route('ec.CreateManageAttachments',request()->segment(3))}}');
+            $('.i a').attr('href', '{{route('contracts_management_list',request()->segment(3))}}');
+            $('.j a').attr('href', '{{route('ec.GetQuoteManagement',request()->segment(3))}}');
         } else if ('{{request()->segment(2)}}' == 'as-and-engineer-company') {
             $('.b a').get(0).style.cssText = 'color:blue !important';
             $('.a a').attr('href', '{{route('ec.CreateBuildingInfo',request()->segment(3))}}');
@@ -103,6 +105,8 @@
             $('.f a').attr('href', '{{route('ec.CreateMonthlyRegularInspection',request()->segment(3))}}');
             $('.g a').attr('href', '{{route('ec.CreateEmergencyDispatchChecklist',request()->segment(3))}}');
             $('.h a').attr('href', '{{route('ec.CreateManageAttachments',request()->segment(3))}}');
+            $('.i a').attr('href', '{{route('contracts_management_list',request()->segment(3))}}');
+            $('.j a').attr('href', '{{route('ec.GetQuoteManagement',request()->segment(3))}}');
         } else if ('{{request()->segment(2)}}' == 'parking-facility') {
             $('.c a').get(0).style.cssText = 'color:blue !important';
             $('.a a').attr('href', '{{route('ec.CreateBuildingInfo',request()->segment(3))}}');
@@ -113,6 +117,8 @@
             $('.f a').attr('href', '{{route('ec.CreateMonthlyRegularInspection',request()->segment(3))}}');
             $('.g a').attr('href', '{{route('ec.CreateEmergencyDispatchChecklist',request()->segment(3))}}');
             $('.h a').attr('href', '{{route('ec.CreateManageAttachments',request()->segment(3))}}');
+            $('.i a').attr('href', '{{route('contracts_management_list',request()->segment(3))}}');
+            $('.j a').attr('href', '{{route('ec.GetQuoteManagement',request()->segment(3))}}');
         } else if ('{{request()->segment(2)}}' == 'key-accessory-history') {
             $('.d a').get(0).style.cssText = 'color:blue !important';
             $('.a a').attr('href', '{{route('ec.CreateBuildingInfo',request()->segment(3))}}');
@@ -123,6 +129,8 @@
             $('.f a').attr('href', '{{route('ec.CreateMonthlyRegularInspection',request()->segment(3))}}');
             $('.g a').attr('href', '{{route('ec.CreateEmergencyDispatchChecklist',request()->segment(3))}}');
             $('.h a').attr('href', '{{route('ec.CreateManageAttachments',request()->segment(3))}}');
+            $('.i a').attr('href', '{{route('contracts_management_list',request()->segment(3))}}');
+            $('.j a').attr('href', '{{route('ec.GetQuoteManagement',request()->segment(3))}}');
         } else if ('{{request()->segment(2)}}' == 'parts-replacement-history') {
             $('.e a').get(0).style.cssText = 'color:blue !important';
             $('.a a').attr('href', '{{route('ec.CreateBuildingInfo',request()->segment(3))}}');
@@ -133,6 +141,8 @@
             $('.f a').attr('href', '{{route('ec.CreateMonthlyRegularInspection',request()->segment(3))}}');
             $('.g a').attr('href', '{{route('ec.CreateEmergencyDispatchChecklist',request()->segment(3))}}');
             $('.h a').attr('href', '{{route('ec.CreateManageAttachments',request()->segment(3))}}');
+            $('.i a').attr('href', '{{route('contracts_management_list',request()->segment(3))}}');
+            $('.j a').attr('href', '{{route('ec.GetQuoteManagement',request()->segment(3))}}');
         } else if ('{{request()->segment(2)}}' == 'monthly-regular-inspection') {
             $('.f a').get(0).style.cssText = 'color:blue !important';
             $('.a a').attr('href', '{{route('ec.CreateBuildingInfo',request()->segment(3))}}');
@@ -143,6 +153,8 @@
             $('.f a').attr('href', '{{route('ec.CreateMonthlyRegularInspection',request()->segment(3))}}');
             $('.g a').attr('href', '{{route('ec.CreateEmergencyDispatchChecklist',request()->segment(3))}}');
             $('.h a').attr('href', '{{route('ec.CreateManageAttachments',request()->segment(3))}}');
+            $('.i a').attr('href', '{{route('contracts_management_list',request()->segment(3))}}');
+            $('.j a').attr('href', '{{route('ec.GetQuoteManagement',request()->segment(3))}}');
         } else if ('{{request()->segment(2)}}' == 'emergency-dispatch-checklist') {
             $('.g a').get(0).style.cssText = 'color:blue !important';
             $('.a a').attr('href', '{{route('ec.CreateBuildingInfo',request()->segment(3))}}');
@@ -153,6 +165,8 @@
             $('.f a').attr('href', '{{route('ec.CreateMonthlyRegularInspection',request()->segment(3))}}');
             $('.g a').attr('href', '{{route('ec.CreateEmergencyDispatchChecklist',request()->segment(3))}}');
             $('.h a').attr('href', '{{route('ec.CreateManageAttachments',request()->segment(3))}}');
+            $('.i a').attr('href', '{{route('contracts_management_list',request()->segment(3))}}');
+            $('.j a').attr('href', '{{route('ec.GetQuoteManagement',request()->segment(3))}}');
         } else if ('{{request()->segment(2)}}' == 'manage-attachments') {
             $('.h a').get(0).style.cssText = 'color:blue !important';
             $('.a a').attr('href', '{{route('ec.CreateBuildingInfo',request()->segment(3))}}');
@@ -163,6 +177,8 @@
             $('.f a').attr('href', '{{route('ec.CreateMonthlyRegularInspection',request()->segment(3))}}');
             $('.g a').attr('href', '{{route('ec.CreateEmergencyDispatchChecklist',request()->segment(3))}}');
             $('.h a').attr('href', '{{route('ec.CreateManageAttachments',request()->segment(3))}}');
+            $('.i a').attr('href', '{{route('contracts_management_list',request()->segment(3))}}');
+            $('.j a').attr('href', '{{route('ec.GetQuoteManagement',request()->segment(3))}}');
         }
 
 
@@ -170,7 +186,6 @@
 
 
     @endif
-
 
 
 </script>

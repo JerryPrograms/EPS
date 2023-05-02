@@ -63,10 +63,10 @@
                                         class="custom_dot">.</span>{{ __('translation.Building Information1') }}
                                 </a></li>
 
-{{--                            <li class="b"><a key="t-saas" class="list_menubar_text"--}}
-{{--                                             title="AS Info & Engineer company Info"><span--}}
-{{--                                        class="custom_dot">.</span>--}}
-{{--                                    {{ __('translation.Info & Engineer') }}.</a></li>--}}
+                            {{--                            <li class="b"><a key="t-saas" class="list_menubar_text"--}}
+                            {{--                                             title="AS Info & Engineer company Info"><span--}}
+                            {{--                                        class="custom_dot">.</span>--}}
+                            {{--                                    {{ __('translation.Info & Engineer') }}.</a></li>--}}
 
                             <li class="c"><a key="t-crypto" class="list_menubar_text"
                                              title="Parking facility certification information & inspection certificate
@@ -108,7 +108,17 @@
                             <li class="b"><a key="t-blog" class="list_menubar_text"
                                              title="Manage attachments">
                                                 <span
-                                                    class="custom_dot">.</span>{{ __('Fill Regular Inspection Log') }}
+                                                    class="custom_dot">.</span>{{ __('translation.Fill Regular Inspection Log') }}
+                                </a></li>
+                            <li class="i"><a key="t-blog" class="list_menubar_text"
+                                             title="Manage attachments">
+                                                <span
+                                                    class="custom_dot">.</span>{{ __('translation.Contract Management') }}
+                                </a></li>
+                            <li class="j"><a key="t-blog" class="list_menubar_text"
+                                             title="Manage attachments">
+                                                <span
+                                                    class="custom_dot">.</span>{{ __('translation.Quote Management') }}
                                 </a></li>
                         </ul>
 

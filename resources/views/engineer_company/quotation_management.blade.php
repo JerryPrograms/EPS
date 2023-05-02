@@ -75,6 +75,21 @@
                                                                         <i class="bx bx-trash-alt"></i>
                                                                     </a>
                                                                 @endif
+                                                                @if(activeGuard() == 'web')
+                                                                    <button @if($v->alarm == 1) data-bs-toggle="modal"
+                                                                            data-bs-target="#customerTurnOffAlarm"
+                                                                            onclick="set_contract_id('{{$v->id}}')"
+                                                                            class="btn btn-outline-light btn-theme-light-outline btn-outline btn-sm btn-background-light-yellow"
+                                                                            @else class="btn btn-outline-light btn-theme-light-outline btn-outline btn-sm disabled" @endif>
+                                                                        @if($v->alarm == 1)
+                                                                            <img
+                                                                                src="{{ asset('engineer_company/images/alarm.png') }}">
+                                                                        @else
+                                                                            <img
+                                                                                src="{{ asset('engineer_company/images/alarm_grey.png') }}">
+                                                                        @endif
+                                                                    </button>
+                                                                @endif
                                                             </div>
                                                         </td>
                                                     </tr>
@@ -487,6 +502,37 @@
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div>
+
+    <div id="customerTurnOffAlarm" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="myModalLabel">Turn Off Alarm</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form id="contract_turn_off">
+                    <input type="hidden" name="_token" value="xTg25t9cWyiCMS7WjnAiFUCyLA8AsqAWJQurqbd2">
+                    <div class="modal-body">
+                        <div class="col-12">
+                            <div class="col-md-12">
+                                <div class="prompt w-100"></div>
+                            </div>
+                            <p>Are you sure you want to turn off alarm?</p>
+                            <input name="id" id="contract_id" hidden>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary waves-effect"
+                                data-bs-dismiss="modal">Close
+                        </button>
+                        <button type="submit"
+                                class="btn btn-primary waves-effect waves-light submitbtn">Turn Off
+                        </button>
+                    </div>
+                </form>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
 @endsection
 @section('custom-script')
     <script>
@@ -559,5 +605,15 @@
 
             }
         }
+
+        function set_contract_id(id) {
+            $('#contract_id').val(id);
+        }
+
+        $('#contract_turn_off').validate({
+            submitHandler: function () {
+                ajaxCall($('#contract_turn_off'), "{{ route('customer.TurnOffQuote') }}", $('#contract_turn_off').find('.submitbtn'), "{{ route('quotation_management') }}", onRequestSuccess);
+            }
+        });
     </script>
 @endsection

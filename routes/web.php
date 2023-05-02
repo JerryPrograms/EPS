@@ -24,3 +24,5 @@ Route::group(['prefix' => 'customer'], function () {
 Auth::routes();
 
 Route::post('/turn-off-contract', [AuthController::class, 'TurnOffContract'])->name('customer.TurnOffContract');
+Route::post('/turn-off-quote', [AuthController::class, 'TurnOffQuote'])->name('customer.TurnOffQuote');
+Route::post('/turn-off-completion', [AuthController::class, 'TurnOffCompletion'])->name('customer.TurnOffCompletion');
