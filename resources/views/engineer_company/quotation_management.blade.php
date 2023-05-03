@@ -65,7 +65,7 @@
                                                                     <i class="bx bx-search-alt-2"></i>
                                                                 </a>
                                                                 @if(activeGuard() != 'web')
-                                                                    <a href="{{ route('ec.EditDispatchInformation', $v->id) }}"
+                                                                    <a href="{{ route('ec.ViewQuote', $v->id) }}"
                                                                        class="btn btn-primary btn-custom-table btn-sm">
                                                                         <i class="bx bxs-edit-alt"></i>
                                                                     </a>
