@@ -16,9 +16,10 @@ class ContractController extends Controller
         $customer = CustomerInfo::where('id', $id)->first();
         return view('engineer_company.contract_management_list', compact('contracts', 'customer'));
     }
+
     public function contracts_management_list($id)
     {
-        $user = CustomerInfo::where('user_uid',$id)->first();
+        $user = CustomerInfo::where('user_uid', $id)->first();
 
         $contracts = Contract::with('get_customer')->where('customer_id', $user->id)->paginate(10);
         $customer = CustomerInfo::where('user_uid', $id)->first();
@@ -29,6 +30,12 @@ class ContractController extends Controller
     {
         $customer = CustomerInfo::with('BuildingInformation')->where('user_uid', $uid)->first();
         return view('engineer_company.add_contract', compact('customer'));
+    }
+
+    public function view_contract($id)
+    {
+        $contract = Contract::where('id', $id)->first();
+        return view('engineer_company.view_contract', compact('contract'));
     }
 
     public function contract_view()

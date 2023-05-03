@@ -27,6 +27,7 @@
     <tbody id="myTable">
     @foreach ($contracts as $v)
         <tr onclick="SelectRow($(this),'{{$v->id}}')">
+
             <td>
                 {{ $loop->index + 1 }}
             </td>
@@ -34,20 +35,20 @@
                 {{ $v->contract_date }}
             </td>
             <td>
-                {{ $v->get_customer->customer_number }}
+                {{ !empty($v->get_customer) ?  $v->get_customer->customer_number : 'N/A' }}
             </td>
             <td>
-                {{ $v->get_customer->building_name }}
+                {{ !empty($v->get_customer) ? $v->get_customer->building_name : 'N/A' }}
             </td>
             <td>
                 <p class="mb-0"
-                   title="{{ $v->get_customer->BuildingInformation->address }}">{{ Str::limit($v->get_customer->BuildingInformation->address, 50, '...') }}</p>
+                   title="{{ !empty($v->get_customer) ? $v->get_customer->BuildingInformation->address : '' }}">{{ !empty($v->get_customer) ? Str::limit($v->get_customer->BuildingInformation->address, 50, '...') : '' }}</p>
             </td>
             <td>
-                {{ $v->get_customer->building_management_company }}
+                {{ !empty($v->get_customer) ? $v->get_customer->building_management_company : '' }}
             </td>
             <td class="d-flex gap-1">
-                <button
+                <a  href="{{route('view_contract',$v->id)}}"
                     @if(activeGuard() == 'admin') style="background-color: #6281FE1A; color: #6281FE; border: 1px solid #6281FE"
                     @endif class="btn btn-outline-danger btn-theme-danger-outline btn-outline btn-sm">
                     @if(activeGuard() == 'admin')
@@ -57,7 +58,7 @@
                         <img
                             src="{{asset('engineer_company/assets/images/red-search.png')}}">
                     @endif
-                </button>
+                </a>
                 @if(activeGuard() != 'web' && activeGuard() != 'admin')
                     <button class="btn btn-outline-primary btn-theme-primary-outline btn-outline btn-sm">
                         <img src="{{ asset('engineer_company/assets/images/Arhive_fill.png') }}">
@@ -67,8 +68,12 @@
                     </button>
                 @endif
                 @if(activeGuard() == 'web')
-                    <button @if($v->alarm == 1) data-bs-toggle="modal" data-bs-target="#customerTurnOffAlarm" onclick="set_contract_id('{{$v->id}}')" class="btn btn-outline-light btn-theme-light-outline btn-outline btn-sm btn-background-light-yellow" @else class="btn btn-outline-light btn-theme-light-outline btn-outline btn-sm disabled" @endif>
-                       @if($v->alarm == 1) <img src="{{ asset('engineer_company/images/alarm.png') }}">
+                    <button @if($v->alarm == 1) data-bs-toggle="modal" data-bs-target="#customerTurnOffAlarm"
+                            onclick="set_contract_id('{{$v->id}}')"
+                            class="btn btn-outline-light btn-theme-light-outline btn-outline btn-sm btn-background-light-yellow"
+                            @else class="btn btn-outline-light btn-theme-light-outline btn-outline btn-sm disabled" @endif>
+                        @if($v->alarm == 1)
+                            <img src="{{ asset('engineer_company/images/alarm.png') }}">
                         @else
                             <img src="{{ asset('engineer_company/images/alarm_grey.png') }}">
                         @endif
