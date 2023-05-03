@@ -60,7 +60,7 @@
                                                         <td>
                                                             <div class="d-flex gap-1 justify-content-center">
                                                                 <a @if(activeGuard() == 'admin') style="background-color: #6281FE !important; border: none"
-                                                                   @endif href="{{ route('ec.ViewDispatchInformation', $v->id) }}"
+                                                                   @endif href="{{ route('ec.ViewQuote', $v->id) }}"
                                                                    class="btn btn-success btn-custom-table btn-sm">
                                                                     <i class="bx bx-search-alt-2"></i>
                                                                 </a>
