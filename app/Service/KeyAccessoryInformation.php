@@ -96,7 +96,7 @@ class KeyAccessoryInformation
         if (!$request->has('buildings')) {
             return json_encode([
                 'success' => false,
-                'message' => 'You have to select one building to import parts'
+                'message' => __('translation.You have to select one building to import parts')
             ]);
         } else {
             DB::beginTransaction();
@@ -128,7 +128,7 @@ class KeyAccessoryInformation
                 DB::commit();
                 return json_encode([
                     'success' => true,
-                    'message' => 'Parts Imported Successfully',
+                    'message' => __('translation.Parts Imported Successfully'),
                 ]);
 
 

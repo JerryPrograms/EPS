@@ -533,6 +533,9 @@ return [
     'Turn Off' => 'Turn Off',
     'Alarm set off successfully' => 'Alarm set off successfully',
     "Something went wrong. Please try again" => 'Something went wrong. Please try again',
-    'Quotation Content'=>'Quotation Content',
+    'Quotation Content' => 'Quotation Content',
+    'Parts Imported Successfully' => 'Parts Imported Successfully',
+    'You have to select one building to import parts' => 'You have to select one building to import parts',
+
 
 ];
