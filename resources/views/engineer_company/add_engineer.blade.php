@@ -62,7 +62,7 @@
                                             <div class="row align-items-center">
                                                 <div class="col-lg-3 col-md-6 col-12">
                                                     <label
-                                                           class="mb-0">{{ __('translation.Name') }}</label>
+                                                        class="mb-0">{{ __('translation.Name') }}</label>
                                                 </div>
                                                 <div class="col-lg-9 col-md-6 col-12">
                                                     <input type="text" class="form-control form-theme-input"
@@ -75,7 +75,7 @@
                                             <div class="row align-items-center">
                                                 <div class="col-lg-3 col-md-6 col-12">
                                                     <label
-                                                           class="mb-0">{{ __('translation.Email') }}</label>
+                                                        class="mb-0">{{ __('translation.Email') }}</label>
                                                 </div>
                                                 <div class="col-lg-9 col-md-6 col-12">
                                                     <input type="email" class="form-control form-theme-input"
@@ -91,8 +91,11 @@
                                                            class="mb-0">{{ __('translation.Phone number') }}</label>
                                                 </div>
                                                 <div class="col-lg-9 col-md-6 col-12">
-                                                    <input type="number" class="form-control form-theme-input"
+                                                    <input type="text"
+                                                           class="form-control form-theme-input format-number"
                                                            name="phone" id="phone_number"
+                                                           maxlength="12"
+                                                           onkeypress="return ( (event.charCode >= 48 && event.charCode < 58))"
                                                            placeholder="{{ __('translation.Write phone number') }}"
                                                            required>
                                                 </div>
@@ -101,12 +104,14 @@
                                         <div class="form-group mb-4">
                                             <div class="row align-items-center">
                                                 <div class="col-lg-3 col-md-6 col-12">
-                                                    <label for="id" class="mb-0">{{ __('translation.Name of person in charge') }}</label>
+                                                    <label for="id"
+                                                           class="mb-0">{{ __('translation.Name of person in charge') }}</label>
                                                 </div>
                                                 <div class="col-lg-9 col-md-6 col-12">
                                                     <input type="text" class="form-control form-theme-input"
                                                            name="id" id="id"
-                                                           placeholder="{{ __('translation.Name of person in charge') }}" required>
+                                                           placeholder="{{ __('translation.Name of person in charge') }}"
+                                                           required>
                                                 </div>
                                             </div>
                                         </div>
@@ -150,6 +155,15 @@
                 ajaxCall($('#addEngineerForm'), "{{ route('add_engineer_action') }}", $('#addEngineerBtn'),
                     "{{ route('engineers') }}", onRequestSuccess);
             }
+        });
+
+        $('.format-number').keyup(function () {
+            var foo = $(this).val().split("-").join(""); // remove hyphens
+
+            foo = foo.match(new RegExp('.{1,4}$|.{1,3}', 'g')).join("-");
+
+            $(this).val(foo);
+
         });
     </script>
 @endsection

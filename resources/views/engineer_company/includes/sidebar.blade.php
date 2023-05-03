@@ -41,22 +41,6 @@
                             <span key="t-dashboardsasdas"
                                   class="dropdown_text">{{ __('translation.Customer List') }}</span>
                         </a>
-                    </li>
-                    <li class="sidebr_button mt-2">
-
-                        <a href="javascript:void(0)"
-                           class=" waves-effect dropdown_toggle" aria-expanded="false">
-                            <!-- <i class="bx bx-calendar"></i> -->
-                            <!-- <i class="fa-solid fa-list list_icon"></i> -->
-                            <img src="{{ asset('engineer_company/assets/images/user.png') }}"
-                                 class="double_ring_img p-0"
-                                 style="margin-left: -1px;">
-
-                            <span class="dropdown_text">
-                                        {{ __('translation.Fill in customer information') }}
-                                    </span>
-
-                        </a>
                         <ul class="sub-menu" aria-expanded="false">
                             <li class="a"><a key="t-default" class="list_menubar_text"
                                              title="Information & Building Management Company Information"><span
@@ -121,8 +105,25 @@
                                                     class="custom_dot">.</span>{{ __('translation.Quote Management') }}
                                 </a></li>
                         </ul>
-
                     </li>
+{{--                    <li class="sidebr_button mt-2">--}}
+
+{{--                        <a href="javascript:void(0)"--}}
+{{--                           class=" waves-effect dropdown_toggle" aria-expanded="false">--}}
+{{--                            <!-- <i class="bx bx-calendar"></i> -->--}}
+{{--                            <!-- <i class="fa-solid fa-list list_icon"></i> -->--}}
+{{--                            <img src="{{ asset('engineer_company/assets/images/user.png') }}"--}}
+{{--                                 class="double_ring_img p-0"--}}
+{{--                                 style="margin-left: -1px;">--}}
+
+{{--                            <span class="dropdown_text">--}}
+{{--                                        {{ __('translation.Fill in customer information') }}--}}
+{{--                                    </span>--}}
+
+{{--                        </a>--}}
+
+
+{{--                    </li>--}}
 
                 @endif
 

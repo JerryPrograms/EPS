@@ -27,12 +27,13 @@
                                             <div class="row align-items-center">
                                                 <div class="col-lg-3 col-md-6 col-12">
                                                     <label for="name"
-                                                        class="mb-0">{{ __('translation.Company Name') }}</label>
+                                                           class="mb-0">{{ __('translation.Company Name') }}</label>
                                                 </div>
                                                 <div class="col-lg-9 col-md-6 col-12">
                                                     <input type="text" class="form-control form-theme-input"
-                                                        name="name" id="name"
-                                                        placeholder="{{ __('translation.Enter business name') }}" required>
+                                                           name="name" id="name"
+                                                           placeholder="{{ __('translation.Enter business name') }}"
+                                                           required>
                                                 </div>
                                             </div>
                                         </div>
@@ -40,12 +41,13 @@
                                             <div class="row align-items-center">
                                                 <div class="col-lg-3 col-md-6 col-12">
                                                     <label for="email"
-                                                        class="mb-0">{{ __('translation.Company Email') }}</label>
+                                                           class="mb-0">{{ __('translation.Company Email') }}</label>
                                                 </div>
                                                 <div class="col-lg-9 col-md-6 col-12">
                                                     <input type="email" class="form-control form-theme-input"
-                                                        name="email" id="email"
-                                                        placeholder="{{ __('translation.Write company email') }}" required>
+                                                           name="email" id="email"
+                                                           placeholder="{{ __('translation.Write company email') }}"
+                                                           required>
                                                 </div>
                                             </div>
                                         </div>
@@ -53,12 +55,13 @@
                                             <div class="row align-items-center">
                                                 <div class="col-lg-3 col-md-6 col-12">
                                                     <label for="password"
-                                                        class="mb-0">{{ __('translation.Password') }}</label>
+                                                           class="mb-0">{{ __('translation.Password') }}</label>
                                                 </div>
                                                 <div class="col-lg-9 col-md-6 col-12">
                                                     <input type="password" class="form-control form-theme-input"
-                                                        name="password" id="password"
-                                                        placeholder="{{ __('translation.Write password') }}" required>
+                                                           name="password" id="password"
+                                                           placeholder="{{ __('translation.Write password') }}"
+                                                           required>
                                                 </div>
                                             </div>
                                         </div>
@@ -66,12 +69,16 @@
                                             <div class="row align-items-center">
                                                 <div class="col-lg-3 col-md-6 col-12">
                                                     <label for="phone"
-                                                        class="mb-0">{{ __('translation.Company Number') }}</label>
+                                                           class="mb-0">{{ __('translation.Company Number') }}</label>
                                                 </div>
                                                 <div class="col-lg-9 col-md-6 col-12">
-                                                    <input type="number" class="form-control form-theme-input"
-                                                        name="phone" id="phone"
-                                                        placeholder="{{ __('translation.Write company number') }}" required>
+                                                    <input type="text"
+                                                           class="form-control form-theme-input format-number"
+                                                           name="phone" id="phone"
+                                                           maxlength="12"
+                                                           onkeypress="return ( (event.charCode >= 48 && event.charCode < 58))"
+                                                           placeholder="{{ __('translation.Write company number') }}"
+                                                           required>
                                                 </div>
                                             </div>
                                         </div>
@@ -79,12 +86,12 @@
                                             <div class="row align-items-center">
                                                 <div class="col-lg-3 col-md-6 col-12">
                                                     <label for="address"
-                                                        class="mb-0">{{ __('translation.Address') }}</label>
+                                                           class="mb-0">{{ __('translation.Address') }}</label>
                                                 </div>
                                                 <div class="col-lg-9 col-md-6 col-12">
                                                     <input type="text" class="form-control form-theme-input"
-                                                        name="address" id="address"
-                                                        placeholder="{{ __('translation.Write address') }}" required>
+                                                           name="address" id="address"
+                                                           placeholder="{{ __('translation.Write address') }}" required>
                                                 </div>
                                             </div>
                                         </div>
@@ -104,7 +111,7 @@
                                         </div>
                                         <div class="form-action mt-4 text-end">
                                             <button id="addEngineerCompanyBtn" type="submit"
-                                                class="btn btn-primary">{{ __('translation.Register') }}</button>
+                                                    class="btn btn-primary">{{ __('translation.Register') }}</button>
                                         </div>
                                     </form>
                                 </div>
@@ -123,10 +130,19 @@
 @section('custom-script')
     <script>
         $('#addEngineerCompanyForm').validate({
-            submitHandler: function() {
+            submitHandler: function () {
                 ajaxCall($('#addEngineerCompanyForm'), "{{ route('add_engineer_company_action') }}", $('#addEngineerCompanyBtn'),
                     "{{ route('engineer_companies') }}", onRequestSuccess);
             }
+        });
+
+        $('.format-number').keyup(function () {
+            var foo = $(this).val().split("-").join(""); // remove hyphens
+
+            foo = foo.match(new RegExp('.{1,4}$|.{1,3}', 'g')).join("-");
+
+            $(this).val(foo);
+
         });
     </script>
 @endsection
