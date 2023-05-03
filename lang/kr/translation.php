@@ -520,7 +520,7 @@ return [
     'A special note is required' => '특별한 메모가 필요합니다',
     'Building name registration management' => '건물명등록관리',
     'AS Company List' => 'AS 회사 목록',
-    'Are you sure you want to delete this'=>'삭제하시겠습니까',
+    'Are you sure you want to delete this' => '삭제하시겠습니까',
     'Mark as completed' => '',
     'Are you sure you want to delete' => '',
     'Are you sure you want to turn off alarm?' => '',
@@ -531,4 +531,5 @@ return [
     'Quotation Content' => '',
     'Parts Imported Successfully' => '',
     'You have to select one building to import parts' => '',
+    'Please select a row first' => '',
 ];

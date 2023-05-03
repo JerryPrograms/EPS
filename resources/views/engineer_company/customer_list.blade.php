@@ -214,7 +214,7 @@
 
             e.preventDefault();
             if ($('#customerInfoID').val() == '') {
-                $('.prompt').html('<div class="alert alert-danger">Please select a row first</div>');
+                $('.prompt').html('<div class="alert alert-danger">{{__('translation.Please select a row first')}}</div>');
 
                 $("div.prompt").fadeIn();
                 setTimeout(function () {
