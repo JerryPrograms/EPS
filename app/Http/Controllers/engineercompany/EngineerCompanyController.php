@@ -42,7 +42,9 @@ class EngineerCompanyController extends Controller
                 $counter = $totalRecords;
             }
 
+
             $customer = CustomerInfo::latest()->paginate($limit);
+//            dd($customer);
         } else if (activeGuard() == 'engineer') {
 
 
@@ -102,8 +104,9 @@ class EngineerCompanyController extends Controller
     {
         $customer = CustomerInfo::where('user_uid', $uid)->first();
         if ($customer) {
-            $buildings = BuildingAddress::latest()->get();
-            return view('engineer_company.building_info', compact('customer', 'buildings'));
+            $buildings = BuildingAddress::latest()->where('status', 0)->get();
+            $company = Engineer_company::latest()->get();
+            return view('engineer_company.building_info', compact('customer', 'buildings','company'));
         }
         abort(404);
     }
@@ -131,8 +134,8 @@ class EngineerCompanyController extends Controller
         $customer = CustomerInfo::where('user_uid', $uid)->first();
         if ($customer) {
             $main_part = MainPartModel::pluck('customer_id');
-            $buildings = CustomerInfo::where('id','!=',$customer->id)->whereIn('id',$main_part)->latest()->get();
-            return view('engineer_company.key_accessory', compact('customer','buildings'));
+            $buildings = CustomerInfo::where('id', '!=', $customer->id)->whereIn('id', $main_part)->latest()->get();
+            return view('engineer_company.key_accessory', compact('customer', 'buildings'));
         }
         abort(404);
 

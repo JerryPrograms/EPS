@@ -11,6 +11,17 @@
 
 
             <ul class="metismenu list-unstyled" id="side-menu">
+                @if(activeGuard() == 'admin')
+                    <li class="sidebr_button mt-2">
+                        <a href="{{ route('clients_listing') }}" class=" waves-effect dropdown_toggle">
+                            <!-- <i class="bx bx-calendar"></i> -->
+                            <img src="{{ asset('engineer_company/assets/images/Done_ring_round.png') }}"
+                                 class="double_ring_img p-0" style="margin-left: -1px;">
+                            <span key="t-dashboards"
+                                  class="dropdown_text">{{ __('translation.Clients List') }}</span>
+                        </a>
+                    </li>
+                @endif
                 @if (!empty(activeGuard()) && activeGuard() != 'engineer' && activeGuard() != 'web')
                     <li class="sidebr_button mt-2">
                         <a href="{{ route('engineers') }}" class=" waves-effect dropdown_toggle">
@@ -22,15 +33,15 @@
                         </a>
                     </li>
                 @endif
-                <li class="sidebr_button mt-2">
-                    <a href="{{ route('ASCompanyList') }}" class=" waves-effect dropdown_toggle">
-                        <!-- <i class="bx bx-calendar"></i> -->
-                        <img src="{{ asset('engineer_company/assets/images/Frame.png') }}"
-                             class="double_ring_img p-0" style="margin-left: -1px;">
-                        <span key="t-dashboards"
-                              class="dropdown_text">{{ __('translation.AS Company List') }}</span>
-                    </a>
-                </li>
+{{--                <li class="sidebr_button mt-2">--}}
+{{--                    <a href="{{ route('ASCompanyList') }}" class=" waves-effect dropdown_toggle">--}}
+{{--                        <!-- <i class="bx bx-calendar"></i> -->--}}
+{{--                        <img src="{{ asset('engineer_company/assets/images/Frame.png') }}"--}}
+{{--                             class="double_ring_img p-0" style="margin-left: -1px;">--}}
+{{--                        <span key="t-dashboards"--}}
+{{--                              class="dropdown_text">{{ __('translation.AS Company List') }}</span>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
                 @if (activeGuard() != 'web')
                     <li class="sidebr_button mt-2">
                         <a href="{{ route('ec.GetCustomerInfoListing') }}" class=" waves-effect dropdown_toggle">
@@ -106,24 +117,24 @@
                                 </a></li>
                         </ul>
                     </li>
-{{--                    <li class="sidebr_button mt-2">--}}
+                    {{--                    <li class="sidebr_button mt-2">--}}
 
-{{--                        <a href="javascript:void(0)"--}}
-{{--                           class=" waves-effect dropdown_toggle" aria-expanded="false">--}}
-{{--                            <!-- <i class="bx bx-calendar"></i> -->--}}
-{{--                            <!-- <i class="fa-solid fa-list list_icon"></i> -->--}}
-{{--                            <img src="{{ asset('engineer_company/assets/images/user.png') }}"--}}
-{{--                                 class="double_ring_img p-0"--}}
-{{--                                 style="margin-left: -1px;">--}}
+                    {{--                        <a href="javascript:void(0)"--}}
+                    {{--                           class=" waves-effect dropdown_toggle" aria-expanded="false">--}}
+                    {{--                            <!-- <i class="bx bx-calendar"></i> -->--}}
+                    {{--                            <!-- <i class="fa-solid fa-list list_icon"></i> -->--}}
+                    {{--                            <img src="{{ asset('engineer_company/assets/images/user.png') }}"--}}
+                    {{--                                 class="double_ring_img p-0"--}}
+                    {{--                                 style="margin-left: -1px;">--}}
 
-{{--                            <span class="dropdown_text">--}}
-{{--                                        {{ __('translation.Fill in customer information') }}--}}
-{{--                                    </span>--}}
+                    {{--                            <span class="dropdown_text">--}}
+                    {{--                                        {{ __('translation.Fill in customer information') }}--}}
+                    {{--                                    </span>--}}
 
-{{--                        </a>--}}
+                    {{--                        </a>--}}
 
 
-{{--                    </li>--}}
+                    {{--                    </li>--}}
 
                 @endif
 

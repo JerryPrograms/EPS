@@ -161,21 +161,31 @@
                                                                 </label>
                                                             </div>
                                                             <div class="col-lg-8 col-12">
-                                                                <select onchange="SetAddress($(this))"
-                                                                        class="form-select mt-4"
-                                                                        name="b_building_name"
-                                                                        autocomplete="off" required="">
-                                                                    <option selected="" value="" disabled="">
-                                                                        {{ __('translation.Enter building Name') }}
-                                                                    </option>
-                                                                    @foreach($buildings as $building)
-                                                                        <option
-                                                                            {{$customer->building_name == $building->id ? 'selected' : ''}} address="{{$building->address}}"
-                                                                            value="{{$building->id}}">
-                                                                            {{$building->building_name}}
+                                                                @if(empty($customer->building_id))
+                                                                    <select onchange="SetAddress($(this))"
+                                                                            class="form-select mt-4"
+                                                                            name="b_building_name"
+                                                                            autocomplete="off" required="">
+                                                                        <option selected="" value="" disabled="">
+                                                                            {{ __('translation.Enter building Name') }}
                                                                         </option>
-                                                                    @endforeach
-                                                                </select>
+                                                                        @foreach($buildings as $building)
+                                                                            <option
+                                                                                {{$customer->building_name == $building->id ? 'selected' : ''}} address="{{$building->address}}"
+                                                                                value="{{$building->id}}">
+                                                                                {{$building->building_name}}
+                                                                            </option>
+                                                                        @endforeach
+                                                                    </select>
+                                                                @else
+                                                                    <input type="text"
+                                                                           class="form-control w-100 custom_input"
+                                                                           aria-describedby="emailHelp"
+                                                                           placeholder="{{ __('translation.Enter building manager name') }}"
+                                                                           value="{{$customer->GetBuildingInfo->building_name}}"
+                                                                           disabled
+                                                                           required>
+                                                                @endif
                                                             </div>
                                                         </div>
 
@@ -228,6 +238,8 @@
                                                                                                 name="b_address"
                                                                                                 class="form-control w-100 custom_input"
                                                                                                 aria-describedby="emailHelp"
+                                                                                                @if(!empty($customer->BuildingInformation)) readonly
+                                                                                                @endif
                                                                                                 placeholder="{{ __('translation.Enter address') }}"
                                                                                                 @if(!empty($customer->BuildingInformation))  value="{{$customer->BuildingInformation->address}}"
                                                                                                 @endif
@@ -461,7 +473,50 @@
                                                                 </button>
                                                             </div>
                                                         </div>
-                                                        <div class="row align-items-center">
+
+                                                        @if(activeGuard() == 'admin')
+                                                            <div class="row align-items-center">
+                                                                <div class="col-lg-4 col-12">
+                                                                    <label
+                                                                        class="form-label custom_lab mb-0"> <span
+                                                                            class="star_section">*</span>
+                                                                        Engineer Company
+                                                                    </label>
+                                                                </div>
+                                                                <div class="col-lg-8 col-12">
+                                                                    @if(empty($customer->engineer_company_id))
+                                                                        <select class="form-select mt-4"
+                                                                                name="engineer_company_id"
+                                                                                autocomplete="off" required="">
+                                                                            <option selected="" value="" disabled="">
+                                                                                Select Engineer Company
+                                                                            </option>
+                                                                            @foreach($company as $building)
+                                                                                <option
+                                                                                    {{$customer->engineer_company_id == $building->id ? 'selected' : ''}}
+                                                                                    value="{{$building->id}}">
+                                                                                    {{$building->company_name}}
+                                                                                </option>
+                                                                            @endforeach
+                                                                        </select>
+                                                                    @else
+                                                                        <input type="text"
+                                                                               class="form-control w-100 custom_input"
+                                                                               aria-describedby="emailHelp"
+                                                                               placeholder="{{ __('translation.Enter company name') }}"
+                                                                               required
+                                                                               disabled
+                                                                               value="{{$customer->EngineerCompany->company_name}}">
+
+                                                                    @endif
+                                                                </div>
+                                                            </div>
+                                                        @else
+                                                            <input name="engineer_company_id"
+                                                                   value="{{auth(activeGuard())->id()}}" hidden="">
+                                                        @endif
+
+                                                        <div class="row align-items-center mt-4">
                                                             <div class="col-md-4 col-12">
                                                                 <label class="form-label custom_lab mb-0"> <span
                                                                         class="star_section">*</span>
@@ -477,6 +532,7 @@
                                                                        @if (!empty($customer->ASInformation)) value="{{ $customer->ASInformation->repair_company_name }}" @endif>
                                                             </div>
                                                         </div>
+
 
                                                         <div class="row align-items-center mt-4">
                                                             <div class="col-md-4 col-12"><label

@@ -15,8 +15,21 @@ class CustomerInfo extends Authenticatable
     protected $guarded = [];
 
     protected $hidden = [
+        'customer_number',
+        'master_id',
         'password',
-        'remember_token',
+        'company_name',
+        'company_registration_number',
+        'representative',
+        'maintenance_business_registration_number',
+        'address',
+        'business_email',
+        'sectors',
+        'contact',
+        'fax',
+        'email',
+        'division',
+        'show_password',
     ];
 
     /**
@@ -102,8 +115,14 @@ class CustomerInfo extends Authenticatable
     {
         return $this->hasOne(PartsInitialDate::class, 'customer_id', 'id');
     }
+
     public function GetBuildingInfo()
     {
-        return $this->hasOne(BuildingAddress::class, 'id', 'building_name');
+        return $this->hasOne(BuildingAddress::class, 'id', 'building_id');
+    }
+
+    public function EngineerCompany()
+    {
+        return $this->hasOne(Engineer_company::class, 'id', 'engineer_company_id');
     }
 }

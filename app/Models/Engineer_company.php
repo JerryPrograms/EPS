@@ -17,10 +17,21 @@ class Engineer_company extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'email',
+        'customer_number',
+        'master_id',
         'password',
-        'phone'
+        'company_name',
+        'company_registration_number',
+        'representative',
+        'maintenance_business_registration_number',
+        'address',
+        'business_email',
+        'sectors',
+        'contact',
+        'fax',
+        'email',
+        'division',
+        'show_password',
     ];
 
     /**

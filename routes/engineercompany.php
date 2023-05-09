@@ -248,6 +248,7 @@ Route::group(['prefix' => 'eps-panel', 'middleware' => 'AdminAccess'], function 
     Route::post('/edit-engineer-company-action', [CompanyController::class, 'edit_engineer_company_action'])->name('edit_engineer_company_action');
     Route::post('/del-engineer-company-action', [CompanyController::class, 'del_engineer_company_action'])->name('del_engineer_company_action');
     // Engineer Company Management End
+
 });
 
 Route::group(['prefix' => 'eps-panel', 'middleware' => 'AdminCompanyAccess'], function () {

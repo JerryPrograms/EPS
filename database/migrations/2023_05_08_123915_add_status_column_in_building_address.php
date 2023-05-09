@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      *
@@ -13,12 +12,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('customer_infos', function (Blueprint $table) {
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->timestamp('email_verified_at')->nullable();
-            $table->rememberToken();
+        Schema::table('building_addresses', function (Blueprint $table) {
+            $table->string('status')->default(0);
         });
     }
 
@@ -29,6 +24,8 @@ return new class extends Migration
      */
     public function down()
     {
-       
+        Schema::table('building_addresses', function (Blueprint $table) {
+            $table->dropColumn('status');
+        });
     }
 };

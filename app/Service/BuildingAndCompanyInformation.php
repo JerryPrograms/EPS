@@ -4,6 +4,7 @@ namespace App\Service;
 
 use App\Http\Requests\BuildingAndCompanyRequest;
 use App\Models\ASInformation;
+use App\Models\BuildingAddress;
 use App\Models\BuildingCompanyInformation;
 use App\Models\BuildingInformation;
 use App\Models\CustomerInfo;
@@ -19,15 +20,26 @@ class BuildingAndCompanyInformation
     public static function CreateBuildingAndCompanyInformation(BuildingAndCompanyRequest $request)
     {
 
+//        dd($request->all());
 
         try {
 
 
             DB::beginTransaction();
 
-            $customer = CustomerInfo::where('id', $request->customer_id)->update([
-                'building_name' => $request->b_building_name,
-            ]);
+            if ($request->has('b_building_name')) {
+                BuildingAddress::where('id', $request->b_building_name)->update(
+                    ['status' => 1]);
+                $customer = CustomerInfo::where('id', $request->customer_id)->update([
+                    'building_id' => $request->b_building_name,
+                ]);
+            }
+            if ($request->has('engineer_company_id')) {
+                $customer = CustomerInfo::where('id', $request->customer_id)->update([
+                    'engineer_company_id' => $request->engineer_company_id,
+                ]);
+            }
+
 
             $building_data = array();
             $building_data['building_manager_name'] = $request->b_building_manager_name;

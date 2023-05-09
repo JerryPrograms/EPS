@@ -14,15 +14,23 @@ return new class extends Migration {
     {
         Schema::create('customer_infos', function (Blueprint $table) {
             $table->id();
-            $table->string('user_uid');
-            $table->string('building_name');
-            $table->string('building_management_company');
-            $table->string('maintenance_company');
-            $table->string('address');
+            $table->timestamp('email_verified_at')->nullable();
+            $table->rememberToken();
             $table->string('customer_number');
-            $table->string('added_by');
-            $table->string('added_by_id');
-            $table->string('step')->default(0);
+            $table->string('master_id');
+            $table->string('password');
+            $table->string('show_password');
+            $table->string('company_name');
+            $table->string('company_registration_number');
+            $table->string('representative');
+            $table->string('maintenance_business_registration_number');
+            $table->string('address');
+            $table->string('business_email');
+            $table->string('sectors');
+            $table->string('contact');
+            $table->string('fax');
+            $table->string('email');
+            $table->string('division');
             $table->timestamps();
         });
     }

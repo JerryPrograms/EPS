@@ -104,8 +104,10 @@ class EngineerCompanyController extends Controller
 
     public function ASCompanyList()
     {
-        $customers = CustomerInfo::where('added_by',activeGuard())->where('added_by_id',auth(activeGuard())->id())->pluck('id');
-        $as_information = ASInformation::whereIn('customer_id',$customers)->paginate(10);
-        return view('engineer_company.as_company_list',compact('as_information'));
+        $customers = CustomerInfo::where('added_by', activeGuard())->where('added_by_id', auth(activeGuard())->id())->pluck('id');
+        $as_information = ASInformation::whereIn('customer_id', $customers)->paginate(10);
+        return view('engineer_company.as_company_list', compact('as_information'));
     }
+
+
 }

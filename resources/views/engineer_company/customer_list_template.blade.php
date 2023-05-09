@@ -51,7 +51,7 @@
             </td>
             <td class="">
                 <button
-                    class="date_button_2 border-0">{{$c->GetBuildingInfo->building_name}}</button>
+                    class="date_button_2 border-0">{{!empty($c->GetBuildingInfo) ?  $c->GetBuildingInfo->building_name : 'Not Specified Yet'}}</button>
             </td>
             <td class="">
                 <button title="{{$c->address}}"
@@ -61,24 +61,24 @@
             </td>
             <td class="">
                 <button
-                    class="date_button_2 border-0">{{$c->building_management_company}}</button>
+                    class="date_button_2 border-0">{{!empty($c->EngineerCompany) ? $c->EngineerCompany->company_name : 'Not specified yet'}}</button>
             </td>
             <td class="">
                 <!-- Button trigger modal -->
                 <button
-                    class="date_button_2 border-0">{{$c->maintenance_company}}</button>
+                    class="date_button_2 border-0">{{!empty($c->EngineerCompany) ? $c->EngineerCompany->company_registration_number : 'Not specified yet'}}</button>
             </td>
             <td class="d-flex">
                 <!-- Button trigger modal -->
-{{--                                <a href="{{route('add_contract',$c->user_uid)}}" class="date_button_2 border-0"><i class="fa fas fa-file-contract  custom-trash-padding"></i></a>--}}
-{{--                                <a href="{{route('regular_inspection_log',$c->user_uid)}}" class="date_button_2 border-0"><i class="fa fa-magnifying-glass-plus custom-trash-padding"></i></a>--}}
+                {{--                                <a href="{{route('add_contract',$c->user_uid)}}" class="date_button_2 border-0"><i class="fa fas fa-file-contract  custom-trash-padding"></i></a>--}}
+                {{--                                <a href="{{route('regular_inspection_log',$c->user_uid)}}" class="date_button_2 border-0"><i class="fa fa-magnifying-glass-plus custom-trash-padding"></i></a>--}}
                 <a href="{{route('ec.CreateBuildingInfo',$c->user_uid)}}" class="date_button_2 border-0"><i
                         class="fa fa-edit custom-trash-padding"></i></a>
-{{--                <button onclick="$('#customerInfoID').val('{{$c->id}}',$('#bname').text('{{$c->GetBuildingInfo->building_name}}'))"--}}
-{{--                        data-bs-toggle="modal"--}}
-{{--                        data-bs-target="#customerDeleteModal"--}}
-{{--                        class="date_button_2 border-0"><i--}}
-{{--                        class="fa fa-trash-can custom-trash-padding"></i></button>--}}
+                {{--                <button onclick="$('#customerInfoID').val('{{$c->id}}',$('#bname').text('{{$c->GetBuildingInfo->building_name}}'))"--}}
+                {{--                        data-bs-toggle="modal"--}}
+                {{--                        data-bs-target="#customerDeleteModal"--}}
+                {{--                        class="date_button_2 border-0"><i--}}
+                {{--                        class="fa fa-trash-can custom-trash-padding"></i></button>--}}
             </td>
         </tr>
         @php

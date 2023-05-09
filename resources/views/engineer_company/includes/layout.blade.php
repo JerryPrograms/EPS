@@ -31,6 +31,11 @@
         border: 3px solid #556ee6 !important;
     }
 
+    .back-green{
+        background: rgba(22, 163, 74, 0.05) !important;
+        border: 1px solid #16A34A;
+    }
+
 </style>
 <body data-sidebar="dark" data-layout-mode="light"
       class="{{ (!empty(activeGuard()) && activeGuard() == 'admin') ? 'admin-layout' : '' }}">

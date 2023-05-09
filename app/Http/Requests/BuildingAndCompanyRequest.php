@@ -24,10 +24,8 @@ class BuildingAndCompanyRequest extends FormRequest
     public function rules()
     {
         return [
-            'b_building_name' => 'required',
             'b_building_manager_name' => 'required',
             'b_building_manager_contact' => 'required',
-            'b_address' => 'required',
             'b_manager_contact' => 'required',
             'b_company_reg_number' => 'required',
             'b_ci_address' => 'required',
