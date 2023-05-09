@@ -46,6 +46,23 @@ class ListingController extends Controller
         return view('engineer_company.distpatch_confirmation_listing', compact('dispatch_information_data'));
     }
 
+    public function distpatch_confirmation_listing_company($id)
+    {
+
+
+        $engineers = Engineer::where('affiliated_company', $id)->pluck('id');
+        $customers = CustomerInfo::where(function ($query) use ($engineers) {
+            $query->where('added_by', 'engineer')
+                ->whereIn('added_by_id', $engineers);
+        })->orwhere(function ($query) use ($id) {
+            $query->where('added_by', 'engineer_company')
+                ->where('added_by_id', $id);
+        })->latest()->pluck('id');
+        $dispatch_information_data = DispatchInformationData::whereIn('customer_id', $customers)->paginate(10);
+
+        return view('engineer_company.distpatch_confirmation_listing', compact('dispatch_information_data'));
+    }
+
     public function del_dispatch_confirmation_record(Request $request)
     {
         $del_record = DispatchInformationData::with('GetCustomer')->where('id', $request->del_id)->delete();

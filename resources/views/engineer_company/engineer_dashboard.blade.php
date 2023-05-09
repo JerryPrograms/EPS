@@ -89,13 +89,13 @@
                                                         {{ __('translation.Engineer Management') }}
                                                     </p>
                                                 </button>
-                                                <button
+                                                <button onclick="window.location.href = '{{route('distpatch_confirmation_listing_company',$company->id)}}'"
 
                                                     class="searchbar_img border-0">
                                                     <img
                                                         src="{{asset('engineer_company/assets/images/1.png')}}">
                                                     <p class="searchbar_text mt-3">
-                                                        {{ __('translation.Create Customer Info') }}
+                                                        {{ __('translation.Dispatch Confirmation') }}
                                                     </p>
                                                 </button>
 

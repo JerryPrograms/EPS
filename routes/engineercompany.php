@@ -221,6 +221,7 @@ Route::group(['prefix' => 'eps-panel', 'middleware' => 'CommonRoutes'], function
 
     // Dispatch confirmation management
     Route::get('/dispatch-confirmation-management', [ListingController::class, 'distpatch_confirmation_listing'])->name('distpatch_confirmation_listing');
+    Route::get('/dispatch-confirmation-management/company/{id}', [ListingController::class, 'distpatch_confirmation_listing_company'])->name('distpatch_confirmation_listing_company');
     Route::post('/del-dispatch-confirmation-record', [ListingController::class, 'del_dispatch_confirmation_record'])->name('del_dispatch_confirmation_record');
 
     // Regular inspection log management
