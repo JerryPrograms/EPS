@@ -13,7 +13,8 @@
                                 <div class="card">
                                     <div class="card-body mb-4">
                                         <div class="prompt w-100"></div>
-                                        <h4 class="card-title mb-4">Registration of business partners
+                                        <h4 class="card-title mb-4">
+                                            {{__('translation.Client Information')}}
                                         </h4>
                                         <div class="table-responsive mt-3">
                                             <table class="table" style="border-collapse: collapse;">

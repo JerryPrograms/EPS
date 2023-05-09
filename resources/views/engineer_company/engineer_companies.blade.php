@@ -58,16 +58,16 @@
                                                     <tr>
                                                         <td>{{ $loop->index + 1 }}</td>
                                                         <td>{{ $engineer_company->created_at->format('d-m-Y') }}</td>
-                                                        <td>{{ $engineer_company->name }}</td>
-                                                        <td>{{ $engineer_company->phone }}</td>
+                                                        <td>{{ $engineer_company->company_name }}</td>
+                                                        <td>{{ $engineer_company->company_registration_number }}</td>
                                                         <td>{{ $engineer_company->address }}</td>
-                                                        <td>{{ $engineer_company->manager_name }}</td>
-                                                        <td>{{ $engineer_company->contract_number }}</td>
+                                                        <td>{{ $engineer_company->representative }}</td>
+                                                        <td>{{ $engineer_company->contact }}</td>
                                                         <td>
                                                             <div class="d-flex gap-1 justify-content-center">
                                                                 @if(activeGuard() == 'admin')
                                                                     <a style="background-color: #696CFF !important; border: none !important;"
-                                                                       href="{{ route('edit_engineer_company',$engineer_company->id) }}"
+                                                                       href="{{ route('ec.ecdashboard',$engineer_company->id) }}"
                                                                        class="btn btn-primary btn-custom-table btn-sm">
                                                                         <i class="bx bxs-edit-alt"></i>
                                                                     </a>
@@ -79,7 +79,7 @@
                                                                         <i class="bx bx-trash-alt"></i>
                                                                     </a>
                                                                 @else
-                                                                    <a href="{{ route('edit_engineer_company',$engineer_company->id) }}"
+                                                                    <a href="{{ route('ec.ecdashboard',$engineer_company->id) }}"
                                                                        class="btn btn-primary btn-custom-table btn-sm">
                                                                         <i class="bx bxs-edit-alt"></i>
                                                                     </a>

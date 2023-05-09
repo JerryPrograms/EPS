@@ -46,12 +46,12 @@
                                                     <div class="col-lg-9 col-md-6 col-12">
                                                         <select name="company_name" id="company_name"
                                                                 class="form-control form-theme-input" required>
-                                                            <option value="">
+                                                            <option value="" disabled>
                                                                 {{ __('translation.Write company name') }}
                                                             </option>
                                                             @foreach ($engineer_companies as $engineer_company)
                                                                 <option value="{{ $engineer_company->id }}">
-                                                                    {{ $engineer_company->name }}</option>
+                                                                    {{ $engineer_company->company_name }}</option>
                                                             @endforeach
                                                         </select>
                                                     </div>

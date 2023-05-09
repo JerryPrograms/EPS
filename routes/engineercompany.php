@@ -51,6 +51,11 @@ Route::group(['prefix' => 'eps-panel', 'middleware' => 'CommonRoutes'], function
 
     Route::get('logout/{role}', [EngineerCompanyController::class, 'EngineerCompanyLogout'])->name('ec.EngineerCompanyLogout');
 
+
+    //engineer company dashbaord
+    Route::get('/engineer-company/dashboard/{id}', [EngineerCompanyController::class, 'GetECDashboard'])->name('ec.ecdashboard');
+
+
     //Customer info
     Route::get('/customer-info-listing', [EngineerCompanyController::class, 'GetCustomerInfoListing'])->name('ec.GetCustomerInfoListing');
     Route::get('/customer-info-dashboard/{uid}', [EngineerCompanyController::class, 'GetCustomerInfoDashboard'])->name('ec.GetCustomerInfoDashboard');
@@ -249,11 +254,13 @@ Route::group(['prefix' => 'eps-panel', 'middleware' => 'AdminAccess'], function 
     Route::post('/del-engineer-company-action', [CompanyController::class, 'del_engineer_company_action'])->name('del_engineer_company_action');
     // Engineer Company Management End
 
+
 });
 
 Route::group(['prefix' => 'eps-panel', 'middleware' => 'AdminCompanyAccess'], function () {
     // Engineer Management Start
     Route::get('/engineers', [EngineerController::class, 'engineers'])->name('engineers');
+    Route::get('/engineers/company/{id}', [EngineerController::class, 'engineers_company'])->name('engineerscc');
     Route::get('/add-engineer', [EngineerController::class, 'add_engineer'])->name('add_engineer');
     Route::post('/add-engineer-action', [EngineerController::class, 'add_engineer_action'])->name('add_engineer_action');
     Route::get('/edit-engineer/{id}', [EngineerController::class, 'edit_engineer'])->name('edit_engineer');

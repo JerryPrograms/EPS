@@ -106,7 +106,7 @@ class EngineerCompanyController extends Controller
         if ($customer) {
             $buildings = BuildingAddress::latest()->where('status', 0)->get();
             $company = Engineer_company::latest()->get();
-            return view('engineer_company.building_info', compact('customer', 'buildings','company'));
+            return view('engineer_company.building_info', compact('customer', 'buildings', 'company'));
         }
         abort(404);
     }
@@ -372,5 +372,15 @@ class EngineerCompanyController extends Controller
             return view('engineer_company.templates.quote_view_template', compact('quote'));
         }
         abort(404);
+    }
+
+    public function GetECDashboard($id)
+    {
+        $company = Engineer_company::where('id', $id)->first();
+        if ($company) {
+            return view('engineer_company.engineer_dashboard', compact('company'));
+        } else {
+            abort(404);
+        }
     }
 }

@@ -536,8 +536,9 @@ return [
     'Quotation Content' => 'Quotation Content',
     'Parts Imported Successfully' => 'Parts Imported Successfully',
     'You have to select one building to import parts' => 'You have to select one building to import parts',
-    'Please select a row first'=>'Please select a row first',
-    'Clients List'=>'Clients List',
-
+    'Please select a row first' => 'Please select a row first',
+    'Clients List' => 'Clients List',
+    'Division' => 'Division',
+    'Client Information'=>'Client Information'
 
 ];

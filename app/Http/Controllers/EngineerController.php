@@ -24,6 +24,12 @@ class EngineerController extends Controller
         return view('engineer_company.engineers', compact('engineers'));
     }
 
+    public function engineers_company($id)
+    {
+        $engineers = Engineer::where('affiliated_company', $id)->with('getEngineerCompany')->paginate(10);
+        return view('engineer_company.engineers', compact('engineers'));
+    }
+
     public function add_engineer_action(Request $request)
     {
         $validate = \Validator::make($request->all(), [

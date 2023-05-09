@@ -12,7 +12,7 @@
                                     <div
                                         class="card-title d-flex align-items-center justify-content-between mobile-flex-column mb-0 py-2">
                                         <h4 class="">
-                                            Construction Completion Management
+                                            {{__('translation.Clients List')}}
                                         </h4>
 
                                     </div>
@@ -21,15 +21,15 @@
                                         width: 100%;
                                         justify-items: flex-start;
                                         justify-content: end">
-                                            <input id="search" class="form-control w-25 me-2 d-none" >
+                                            <input id="search" class="form-control w-25 me-2 d-none">
                                             <button type="button" onclick="$(this).prev().removeClass('d-none')"
-                                                    class="btn btn-primary me-2">Search
+                                                    class="btn btn-primary me-2">{{__('translation.search')}}
                                             </button>
                                             <button type="button" onclick="OpenModal()"
-                                                    class="btn btn-primary me-2">Delete
+                                                    class="btn btn-primary me-2">{{__('translation.delete')}}
                                             </button>
                                             <a href="{{route('add_client')}}"
-                                               class="btn btn-primary">Add</a>
+                                               class="btn btn-primary">{{__('translation.add')}}</a>
                                         </div>
                                     </div>
                                     <div id="customer_list_table" class="table-responsive mt-3 data-set-list">
@@ -38,25 +38,25 @@
                                             <tr>
 
                                                 <th class="">
-                                                    No.
+                                                    {{__('translation.no')}}
                                                 </th>
                                                 <th class="text-center">
-                                                    Registration Date
+                                                    {{__('translation.Registration Date')}}
                                                 </th>
                                                 <th class="text-center">
-                                                    Customer No
+                                                    {{__('translation.Customer No')}}
                                                 </th>
                                                 <th class="text-center">
-                                                    Company Name
+                                                    {{__('translation.Company Name')}}
                                                 </th>
                                                 <th class="text-center">
-                                                    Address
+                                                    {{__('translation.Address')}}
                                                 </th>
 
                                                 <th class="text-center">
-                                                    Division
+                                                    {{__('translation.Division')}}
                                                 </th>
-                                                <th class="text-center">Actions</th>
+                                                <th class="text-center">{{__('translation.Actions')}}</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -192,7 +192,7 @@
         function OpenModal() {
             if ($('#quoteId').val() == '') {
                 console.log('asd');
-                Command: toastr["error"]("You need to select row first")
+                Command: toastr["error"]("{{__('translation.Please select a row first')}}")
 
                 toastr.options = {
                     "closeButton": false,

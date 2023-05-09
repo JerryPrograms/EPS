@@ -532,4 +532,6 @@ return [
     'Parts Imported Successfully' => '부품 구성이 성공적으로 추가되었습니다',
     'You have to select one building to import parts' => '부품 구성을 추가하기 위해서는 건물을 반드시 선택해야 합니다',
     'Please select a row first' => '행을 먼저 선택하세요',
+    'Clients List'=>'',
+    'Division' => '',
 ];

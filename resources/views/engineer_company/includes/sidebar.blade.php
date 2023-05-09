@@ -22,7 +22,7 @@
                         </a>
                     </li>
                 @endif
-                @if (!empty(activeGuard()) && activeGuard() != 'engineer' && activeGuard() != 'web')
+                @if (!empty(activeGuard()) && activeGuard() != 'engineer' && activeGuard() != 'web' && activeGuard() != 'admin')
                     <li class="sidebr_button mt-2">
                         <a href="{{ route('engineers') }}" class=" waves-effect dropdown_toggle">
                             <!-- <i class="bx bx-calendar"></i> -->
