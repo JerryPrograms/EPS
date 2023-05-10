@@ -36,7 +36,7 @@
                                                     </div>
                                                     <div class="col-lg-10 col-md-6 col-12">
                                                         <input type="text" class="form-control form-theme-input"
-                                                               id="building_name" value="{{ $customer->building_name }}"
+                                                               id="building_name" value="{{ $customer->GetBuildingInfo->building_name }}"
                                                                disabled>
                                                     </div>
                                                 </div>

@@ -78,6 +78,7 @@ Route::group(['prefix' => 'eps-panel', 'middleware' => 'CommonRoutes'], function
 
     //Calender
     Route::get('/calender', [EngineerCompanyController::class, 'GetCalender'])->name('ec.GetCalender');
+    Route::get('/calender-company/{id}', [EngineerCompanyController::class, 'GetCalenderCompany'])->name('ec.GetCalenderCompany');
 
     //Quote Management
     Route::get('/quote-management/{uid}', [EngineerCompanyController::class, 'GetQuoteManagement'])->name('ec.GetQuoteManagement');
@@ -192,6 +193,7 @@ Route::group(['prefix' => 'eps-panel', 'middleware' => 'CommonRoutes'], function
 
     //Construction Completion Report
     Route::get('/construction-completion-reports', [ConstructionController::class, 'construction_completion'])->name('construction_completion');
+    Route::get('/construction-completion-reports-company/{id}', [ConstructionController::class, 'construction_completion_company'])->name('construction_completion_company');
     Route::get('/create-completion-reports/{id?}', [ConstructionController::class, 'create_construction_completion'])->name('create_construction_completion');
     Route::get('/edit-completion-reports/{id}', [ConstructionController::class, 'edit_construction_completion'])->name('edit_construction_completion');
     Route::get('/view-completion-reports/{id}', [ConstructionController::class, 'view_construction_completion'])->name('view_construction_completion');
@@ -226,13 +228,16 @@ Route::group(['prefix' => 'eps-panel', 'middleware' => 'CommonRoutes'], function
 
     // Regular inspection log management
     Route::get('/regular-inspection-logs/{filter?}', [ListingController::class, 'regular_inspection_logs'])->name('regular_inspection_logs');
+    Route::get('/regular-inspection-logs-company/{id}/{filter?}', [ListingController::class, 'regular_inspection_logs_company'])->name('regular_inspection_logs_company');
     Route::post('/del-regular-inspection-log', [ListingController::class, 'del_regular_inspection_log'])->name('del_regular_inspection_log');
 
     //Contract Management Listing
     Route::get('/contract-management', [ListingController::class, 'contract_management'])->name('contract_management');
+    Route::get('/contract-management-company/{id}', [ListingController::class, 'contract_management_company'])->name('contract_management_company');
     Route::post('/delete-contact-management', [ContractController::class, 'delete_contract'])->name('delete_contract');
     // Quotation Management Listing
     Route::get('/quotation-management', [ListingController::class, 'quotation_management'])->name('quotation_management');
+    Route::get('/quotation-management-company/{id}', [ListingController::class, 'quotation_management_company'])->name('quotation_management_company');
     // Route::post('/del-regular-inspection-log', [ListingController::class, 'del_regular_inspection_log'])->name('del_regular_inspection_log');
 
     // Listing Routes End

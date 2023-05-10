@@ -98,7 +98,7 @@
                                                                 </option>
                                                                 @foreach($customers as $c)
                                                                     <option value="{{$c->id}}">
-                                                                        {{$c->name}}
+                                                                        {{$c->representative}}
                                                                     </option>
                                                                 @endforeach
                                                             </select>

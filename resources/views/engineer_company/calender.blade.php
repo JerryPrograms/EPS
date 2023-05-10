@@ -198,11 +198,13 @@
                                                                               src="{{asset('engineer_company/assets/images/rect.png')}}">{{ __('translation.To do list') }}
                                                 </h6>
 
-                                                <button id="btn-new-event" data-bs-toggle="modal"
-                                                        data-bs-target="#addEventCompleteModal"
-                                                        class="calender_add_btn">
-                                                    {{ __('translation.+add') }}
-                                                </button>
+                                                @if(activeGuard() != 'admin')
+                                                    <button id="btn-new-event" data-bs-toggle="modal"
+                                                            data-bs-target="#addEventCompleteModal"
+                                                            class="calender_add_btn">
+                                                        {{ __('translation.+add') }}
+                                                    </button>
+                                                @endif
                                             </div>
                                             <div class="mb-3">
                                                 @foreach($todos_pending as $ev)
@@ -583,11 +585,13 @@
                         }
                     },
                 },
+                @if(activeGuard() != 'admin')
                 headerToolbar: {
                     start: 'weekendDuty,weekendShift,nightShift,holidayDuty,construction,periodicInspection', // will normally be on the left. if RTL, will be on the right
                     center: 'title',
                     right: 'prev,next',// will normally be on the right. if RTL, will be on the left
                 },
+                @endif
                 selectable: false,
                 selectHelper: true,
                 droppable: true,
@@ -643,11 +647,10 @@
                             $('#a_type').val(res.data.type);
                             $('#edit_id').val(res.data.id);
                             $('#a_memo').val(res.data.memo);
-                            if(res.data.status != 1)
-                            {
-                                $('.mark').prop('disabled',false);
-                            }else{
-                                $('.mark').prop('disabled',true);
+                            if (res.data.status != 1) {
+                                $('.mark').prop('disabled', false);
+                            } else {
+                                $('.mark').prop('disabled', true);
                             }
 
                         },
@@ -672,7 +675,7 @@
                         };
                     } else {
                         return {
-                            html: '<p>'+info.event.title+'</p>' // use the default event content for status 0
+                            html: '<p>' + info.event.title + '</p>' // use the default event content for status 0
                         };
                     }
                 }

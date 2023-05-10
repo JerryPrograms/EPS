@@ -39,6 +39,20 @@ class ConstructionController extends Controller
         return view('engineer_company.construction_completion', compact('completion_reports'));
     }
 
+    public function construction_completion_company($id)
+    {
+
+        $engineers = Engineer::where('affiliated_company', $id)->pluck('id');
+        $completion_reports = CompletionRequestModel::where(function ($query) use ($engineers) {
+            $query->whereIn('added_by', $engineers)
+                ->where('added_by_user', 'engineer');
+        })->orwhere(function ($query) use ($id) {
+            $query->where('added_by', $id)
+                ->where('added_by_user', 'engineer_company');
+        })->latest()->get();
+        return view('engineer_company.construction_completion', compact('completion_reports'));
+    }
+
     public function create_construction_completion($id = null)
     {
         if (empty($id)) {

@@ -68,7 +68,7 @@
                                                     <div class="col-lg-10 col-md-6 col-12">
                                                         <input type="text" class="form-control form-theme-input" id="building_name"
                                                             placeholder="{{ __('translation.Enter building name') }}"
-                                                            value="{{ $customer->building_name }}" disabled>
+                                                            value="{{ $customer->GetBuildingInfo->building_name }}" disabled>
                                                     </div>
                                                 </div>
                                             </div>

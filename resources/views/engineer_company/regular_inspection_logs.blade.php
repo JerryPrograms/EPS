@@ -13,7 +13,7 @@
                                         <div class="d-flex w-75 align-items-center">
                                             <h5 class="mb-0 font-15">{{ __('translation.Regular inspection management') }}</h5>
                                             <select
-                                                onchange="window.location.href = '{{route('regular_inspection_logs','id')}}'.replace('id',$(this).val())"
+                                             @if(activeGuard() == 'admin' && count($logs) > 0) onchange="window.location.href = '{{route('regular_inspection_logs_company',$logs[0]->getCustomer->engineer_company_id,'id')}}'.replace('id',$(this).val())"   @elseif(count($logs) > 0) onchange="window.location.href = '{{route('regular_inspection_logs','id')}}'.replace('id',$(this).val())" @endif
                                                 class="form-select valid w-25 ms-3" name="type" autocomplete="off"
                                                 required="">
                                                 <option selected value="" disabled="">
@@ -111,6 +111,7 @@
                                                 </thead>
                                                 <tbody id="myTable">
                                                 @foreach ($logs as $v)
+
                                                     <tr>
                                                         <td>{{ $loop->index + 1 }}</td>
                                                         <td>{{ $v->inspection_date }}</td>

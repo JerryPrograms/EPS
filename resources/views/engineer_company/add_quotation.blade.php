@@ -88,7 +88,7 @@
                                                                                     id="building_name"
                                                                                     placeholder="{{ __('translation.Enter building name') }}"
                                                                                     disabled
-                                                                                    value="{{ $customer->building_name }}">
+                                                                                    value="{{ $customer->GetBuildingInfo->building_name }}">
                                                                             </div>
                                                                         </div>
                                                                     </div>

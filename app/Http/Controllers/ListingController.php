@@ -137,6 +137,42 @@ class ListingController extends Controller
         return view('engineer_company.regular_inspection_logs', compact('logs'));
     }
 
+    public function regular_inspection_logs_company($id, $filter = '')
+    {
+        if (!empty($filter)) {
+
+
+            $engineers = Engineer::where('affiliated_company', $id)->pluck('id');
+            $customers = CustomerInfo::where(function ($query) use ($engineers) {
+                $query->where('added_by', 'engineer')
+                    ->whereIn('added_by_id', $engineers);
+            })->orwhere(function ($query) use ($id) {
+                $query->where('added_by', 'engineer_company')
+                    ->where('added_by_id', $id);
+            })->latest()->pluck('id');
+
+            $logs = MonthlyRegularInspection::whereMonth('created_at', $filter)->whereIn('customer_id', $customers)->with('getCustomer')->paginate(10);
+
+        } else {
+
+            $engineers = Engineer::where('affiliated_company', $id)->pluck('id');
+            $customers = CustomerInfo::where(function ($query) use ($engineers) {
+                $query->where('added_by', 'engineer')
+                    ->whereIn('added_by_id', $engineers);
+            })->orwhere(function ($query) use ($id) {
+                $query->where('added_by', 'engineer_company')
+                    ->where('added_by_id', $id);
+            })->latest()->pluck('id');
+
+            $logs = MonthlyRegularInspection::whereIn('customer_id', $customers)->with('getCustomer')->paginate(10);
+
+
+        }
+
+
+        return view('engineer_company.regular_inspection_logs', compact('logs'));
+    }
+
     public function del_regular_inspection_log(Request $request)
     {
         $delRegularInspection = MonthlyRegularInspection::where('id', $request->del_id)->delete();
@@ -179,6 +215,23 @@ class ListingController extends Controller
         return view('engineer_company.contract_management', compact('contracts'));
     }
 
+    public function contract_management_company($id)
+    {
+
+        $companies = Engineer_company::where('id', $id)->first();
+        $customers = CustomerInfo::where(function ($query) use ($companies) {
+            $query->where('added_by', 'engineer_company')
+                ->where('added_by_id', $companies->id);
+        })->orwhere(function ($query) {
+            $query->where('added_by', activeGuard())
+                ->where('added_by_id', auth(activeGuard())->id());
+        })->latest()->pluck('id');
+        $contracts = Contract::whereIn('customer_id', $customers)->with('get_customer')->paginate(10);
+
+
+        return view('engineer_company.contract_management', compact('contracts'));
+    }
+
     // Quotation Management
     public function quotation_management()
     {
@@ -207,6 +260,22 @@ class ListingController extends Controller
             })->latest()->pluck('id');
             $quotations = Quotation::whereIn('customer_id', $customers)->with('GetQuoteContent', 'getCustomer')->paginate(10);
         }
+
+        return view('engineer_company.quotation_management', compact('quotations'));
+    }
+
+    public function quotation_management_company($id)
+    {
+
+        $engineers = Engineer::where('affiliated_company', $id)->pluck('id');
+        $customers = CustomerInfo::where(function ($query) use ($engineers) {
+            $query->where('added_by', 'engineer')
+                ->whereIn('added_by_id', $engineers);
+        })->orwhere(function ($query) use ($id) {
+            $query->where('added_by', 'engineer_company')
+                ->where('added_by_id', $id);
+        })->latest()->pluck('id');
+        $quotations = Quotation::whereIn('customer_id', $customers)->with('GetQuoteContent', 'getCustomer')->paginate(10);
 
         return view('engineer_company.quotation_management', compact('quotations'));
     }

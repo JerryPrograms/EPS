@@ -33,8 +33,10 @@
                                                     </div>
                                                 </button>
                                             </div>
+                                            @if(activeGuard() != 'admin')
                                             <a href="{{route('create_construction_completion')}}"
                                                class="btn btn-primary">{{__('translation.add')}}</a>
+                                            @endif
                                         </div>
                                     </div>
                                     <div id="customer_list_table" class="table-responsive mt-3 data-set-list">

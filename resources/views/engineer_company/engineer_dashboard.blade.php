@@ -100,7 +100,7 @@
                                                 </button>
 
 
-                                                <button
+                                                <button onclick="window.location.href = '{{route('regular_inspection_logs_company',$company->id)}}'"
 
                                                     class="searchbar_img border-0">
                                                     <img
@@ -109,7 +109,7 @@
                                                         {{ __('translation.Fill Regular Inspection Log') }}
                                                     </p>
                                                 </button>
-                                                <button
+                                                <button onclick="window.location.href = '{{route('contract_management_company',$company->id)}}'"
 
                                                     class="searchbar_img border-0">
                                                     <img
@@ -118,7 +118,7 @@
                                                         {{ __('translation.Contract Managment') }}
                                                     </p>
                                                 </button>
-                                                <button
+                                                <button onclick="window.location.href = '{{route('quotation_management_company',$company->id)}}'"
 
                                                     class="searchbar_img border-0">
                                                     <img
@@ -127,7 +127,18 @@
                                                         {{ __('translation.Quote Management') }}
                                                     </p>
                                                 </button>
-                                                <button
+                                                <button onclick="window.location.href = '{{route('construction_completion_company',$company->id)}}'"
+
+                                                    class="searchbar_img_2 border-0 mt-2">
+                                                    <img
+                                                        src="{{asset('engineer_company/assets/images/3.png')}}">
+                                                    <p class="searchbar_text mt-3">
+                                                        {{ __('translation.construction') }} <br>
+
+                                                        {{ __('translation.Completion Report') }}
+                                                    </p>
+                                                </button>
+                                                <button onclick="window.location.href = '{{route('ec.GetCalenderCompany',$company->id)}}'"
 
                                                     class="searchbar_img_2 border-0 mt-2">
                                                     <img

@@ -306,6 +306,70 @@ class EngineerCompanyController extends Controller
         return view('engineer_company.calender', compact('building_names', 'data', 'events', 'todos_pending', 'todos_completed'));
     }
 
+    public function GetCalenderCompany($id)
+    {
+
+        $twoMonthsAgo = \Carbon\Carbon::now()->subMonths(2);
+
+        Todo::whereDate('created_at', '<', $twoMonthsAgo)
+            ->where('status', 1)
+            ->delete();
+        $engineers = Engineer::where('affiliated_company', $id)->pluck('id');
+
+
+        $events = Events::orWhere(function ($query) use ($id) {
+
+            $query->where('added_by', 'engineer_company')->where('user_id', $id);
+
+        })->orWhere(function ($query) use ($engineers) {
+
+            $query->where('added_by', 'engineer')->whereIn('user_id', $engineers);
+
+        })->where('status', 0)->latest()->get();
+
+
+        $todos_pending = Todo::where('status', 0)->where('user_id', auth(activeGuard())->user()->id)->where('added_by', activeGuard())->latest()->get();
+        $todos_completed = Todo::where('status', 1)->where('user_id', auth(activeGuard())->user()->id)->where('added_by', activeGuard())->latest()->get();
+
+
+        $data = array();
+
+        if (count($events) > 0) {
+            foreach ($events as $ev) {
+
+                $building_names = BuildingAddress::whereIn('id', json_decode($ev->title))->pluck('building_name')->toArray();
+
+
+                if (!empty($ev->end_date)) {
+                    $data[] = [
+                        'id' => $ev->id,
+                        'title' => implode(',', $building_names),
+                        'start' => $ev->start_date,
+                        'end' => $ev->end_date,
+                        'color' => $ev->color,
+                        'textColor' => $ev->text_color,
+                        'status' => $ev->status,
+                    ];
+                } else {
+                    $data[] = [
+                        'id' => $ev->id,
+                        'title' => implode(',', $building_names),
+                        'start' => $ev->start_date,
+                        'end' => $ev->start_date,
+                        'color' => $ev->color,
+                        'textColor' => $ev->text_color,
+                        'status' => $ev->status,
+                    ];
+                }
+
+            }
+        }
+
+        $building_names = BuildingAddress::latest()->get();
+
+        return view('engineer_company.calender', compact('building_names', 'data', 'events', 'todos_pending', 'todos_completed'));
+    }
+
 
     public function EngineerCompanyLogout($role)
     {
