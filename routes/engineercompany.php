@@ -268,6 +268,7 @@ Route::group(['prefix' => 'eps-panel', 'middleware' => 'AdminCompanyAccess'], fu
     Route::get('/engineers', [EngineerController::class, 'engineers'])->name('engineers');
     Route::get('/engineers/company/{id}', [EngineerController::class, 'engineers_company'])->name('engineerscc');
     Route::get('/add-engineer', [EngineerController::class, 'add_engineer'])->name('add_engineer');
+    Route::get('/add-engineer-by-company/{id}', [EngineerController::class, 'add_engineer_company'])->name('add_engineer_by_company');
     Route::post('/add-engineer-action', [EngineerController::class, 'add_engineer_action'])->name('add_engineer_action');
     Route::get('/edit-engineer/{id}', [EngineerController::class, 'edit_engineer'])->name('edit_engineer');
     Route::post('/edit-engineer-action', [EngineerController::class, 'edit_engineer_action'])->name('edit_engineer_action');

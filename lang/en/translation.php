@@ -539,6 +539,10 @@ return [
     'Please select a row first' => 'Please select a row first',
     'Clients List' => 'Clients List',
     'Division' => 'Division',
-    'Client Information'=>'Client Information'
-
+    'Client Information' => 'Client Information',
+    'Social Security' => 'Social Security',
+    'Write Social Security' => 'Write Social Security',
+    'Rank' => 'Rank',
+    'Approval Rights' => 'Approval Rights',
+    'Email Already Exists'=>'Email Already Exists'
 ];

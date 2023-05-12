@@ -23,6 +23,9 @@ class Engineer extends Authenticatable
         'phone',
         'affiliated_company',
         'pwd',
+        'rank',
+        'social_security',
+        'approval_rights',
     ];
 
     /**
@@ -46,6 +49,6 @@ class Engineer extends Authenticatable
 
     public function getEngineerCompany()
     {
-        return $this->hasOne(Engineer_company::class,'id','affiliated_company');
+        return $this->hasOne(Engineer_company::class, 'id', 'affiliated_company');
     }
 }

@@ -1,5 +1,12 @@
 @extends('engineer_company.includes.layout')
 @section('body')
+    @php
+
+        if(activeGuard() != 'admin')
+            {
+                  $company = \App\Models\Engineer_company::where('id',auth(activeGuard())->id())->first();
+            }
+    @endphp
     <div class="main-content">
         <div class="page-content">
             <div class="container-fluid">
@@ -8,15 +15,73 @@
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-body">
+                                    <h4 class="card-title mb-4">
+                                        {{ __('translation.Customer Information') }}
+                                    </h4>
+                                    <div class="table-responsive mt-3">
+                                        <table class="table align-middle custom_mrg">
+                                            <thead class="table-light">
+                                            <tr>
+                                                <th>{{ __('translation.no') }}</th>
+                                                <th>{{ __('translation.Register Date') }}</th>
+                                                <th>{{ __('translation.Company Name') }}</th>
+                                                <th>{{ __('translation.Company Number') }}</th>
+                                                <th>{{ __('translation.Address') }}</th>
+                                                <th>{{ __('translation.Manager Name') }}</th>
+                                                <th>{{ __('translation.Contact') }}</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr class="custom_bor mt-5">
+                                                <td class="custom_br_theme_clr"><a
+                                                        href="javascript: void(0);"
+                                                        class="text-body  tble_text">1</a></td>
+                                                <td class="custom_br_theme_clr_2">
+                                                    <p class="tble_text">
+                                                        {{$company->created_at->format('Y.m.d')}}
+                                                    </p>
+                                                </td>
+                                                </td>
+                                                </td>
+                                                </td>
+                                                <td class="custom_br_theme_clr_2">
+                                                    <p class="tble_text">
+                                                        {{$company->company_name}}
+                                                    </p>
+                                                </td>
+                                                <td class="custom_br_theme_clr_2">
+                                                    <p class="tble_text">
+                                                        {{$company->company_registration_number}}
+                                                    </p>
+                                                </td>
+                                                <td class="custom_br_theme_clr_2">
+                                                    <p class="tble_text">
+                                                        {{$company->address}}
+                                                    </p>
+                                                </td>
+
+                                                <td class="custom_br_theme_clr_2">
+                                                    <p class="tble_text">
+                                                        {{$company->company_registration_number}}
+                                                    </p>
+                                                </td>
+                                                <td class="custom_br_theme_clr_3">
+                                                    <p class="tble_text">
+                                                        {{$company->contact}}
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
                                     <div
                                         class="card-title mb-4 d-flex align-items-center justify-content-between mobile-flex-column">
                                         <h5 class="mb-0 font-15">{{ __('translation.Engineer Management') }}</h5>
-
-                                        <a href="{{ route('add_engineer') }}"
-                                           class="btn btn-primary">{{ __('translation.Add Engineer') }}</a>
-                                    </div>
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        <div class="left-content d-flex align-items-center me-3">
+                                        <div class="d-flex gap-3">
                                             <div class="custom_search">
                                                 <div class="search">
                                                     <input id="myInput" onchange="myFunction()" type="text"
@@ -33,9 +98,16 @@
                                                 </div>
 
                                             </div>
-
+                                            @if(activeGuard() == 'admin')
+                                                <a href="{{ route('add_engineer_by_company',$company->id) }}"
+                                                   class="btn btn-primary">{{ __('translation.Add') }}</a>
+                                            @else
+                                                <a href="{{ route('add_engineer_by_company',auth(activeGuard())->id()) }}"
+                                                   class="btn btn-primary">{{ __('translation.Add') }}</a>
+                                            @endif
+                                            <a href="javascript:void(0)" onclick="OpenModal()"
+                                               class="btn btn-primary">{{ __('translation.delete') }}</a>
                                         </div>
-
                                     </div>
                                     <div class="table-responsive data-set-list mt-3">
                                         <table
@@ -56,31 +128,36 @@
                                             <tbody id="myTable">
                                             @if(count($engineers) > 0)
                                                 @foreach ($engineers as $engineer)
-                                                    <tr>
+                                                    <tr onclick="selectRow($(this),'{{$engineer->id}}')">
                                                         <td>{{ $loop->index + 1 }}</td>
                                                         <td>{{ $engineer->created_at->format('d-m-Y') }}</td>
-                                                        <td>{{ $engineer->getEngineerCompany->name }}</td>
+                                                        <td>{{ $engineer->getEngineerCompany->company_name }}</td>
                                                         <td>{{ $engineer->name }}</td>
                                                         <td>{{ $engineer->phone }}</td>
                                                         @if(activeGuard() == 'admin')
                                                             <td>
                                                                 <span class="">*********</span>
                                                                 <span class="d-none">{{ $engineer->pwd }}</span>
-                                                                <button onclick="showPassword($(this))" style="background: transparent; border: none;"><i class="fa fa-eye"></i></button></td>
+                                                                <button onclick="showPassword($(this))"
+                                                                        style="background: transparent; border: none;">
+                                                                    <i class="fa fa-eye"></i></button>
+                                                            </td>
                                                         @endif
                                                         <td>
                                                             <div class="d-flex gap-1 justify-content-center">
-                                                                <a @if(activeGuard() == 'admin') style="background-color: #696CFF !important; border: none"
+                                                                <a @if(activeGuard() == 'admin')
                                                                    @endif href="{{ route('edit_engineer',$engineer->id) }}"
-                                                                   class="btn btn-primary btn-custom-table btn-sm">
-                                                                    <i class="bx bxs-edit-alt"></i>
+                                                                   class="btn back-green btn-outline btn-sm">
+                                                                    <img
+                                                                        src="{{asset('engineer_company/images/edit_icon.png')}}">
                                                                 </a>
-                                                                <a @if(activeGuard() == 'admin') style="background-color: #FF3E1D !important; border: none"
+                                                                <a @if(activeGuard() == 'admin')
                                                                    @endif data-bs-toggle="modal"
                                                                    data-del-id="{{ $engineer->id }}"
                                                                    data-bs-target="#delModal"
-                                                                   class="btn btn-danger btn-custom-table btn-sm delBtn">
-                                                                    <i class="bx bx-trash-alt"></i>
+                                                                   class="btn btn-outline-danger btn-theme-danger-outline btn-outline btn-sm">
+                                                                    <img
+                                                                        src="{{asset('engineer_company/assets/images/red-search.png')}}">
                                                                 </a>
                                                             </div>
                                                         </td>
@@ -142,9 +219,6 @@
 @endsection
 @section('custom-script')
     <script>
-        $('.delBtn').on('click', function () {
-            $('#delinput').val($(this).attr('data-del-id'));
-        });
 
         $('#delBtnAction').on('click', function () {
             var btn = $(this);
@@ -196,15 +270,59 @@
         });
 
 
-        function showPassword(element)
-        {
-            if(element.prev().hasClass('d-none'))
-            {
+        function showPassword(element) {
+            if (element.prev().hasClass('d-none')) {
                 element.prev().removeClass('d-none');
                 element.prev().prev().addClass('d-none');
-            }else{
+            } else {
                 element.prev().addClass('d-none');
                 element.prev().prev().removeClass('d-none');
+            }
+        }
+
+        function selectRow(id, value) {
+
+            $('tr').each(function () {
+
+                $(this).removeClass('selected-row-blue');
+
+            });
+
+            if (id.hasClass('selected-row-blue')) {
+                id.removeClass('selected-row-blue');
+            } else {
+                id.addClass('selected-row-blue');
+            }
+            // console.log(value);
+            $('#delinput').val(value);
+        }
+
+        function OpenModal() {
+            console.log($('#delinput').val());
+            if ($('#delinput').val() == '') {
+                console.log('asd');
+                Command: toastr["error"]("{{__('translation.Please select a row first')}}")
+
+                toastr.options = {
+                    "closeButton": false,
+                    "debug": false,
+                    "newestOnTop": false,
+                    "progressBar": true,
+                    "positionClass": "toast-top-right",
+                    "preventDuplicates": true,
+                    "onclick": null,
+                    "showDuration": 300,
+                    "hideDuration": 1000,
+                    "timeOut": 2000,
+                    "extendedTimeOut": 1000,
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                }
+            } else {
+                $('#delModal').modal('show');
+
             }
         }
     </script>

@@ -66,16 +66,17 @@
                                                         <td>
                                                             <div class="d-flex gap-1 justify-content-center">
                                                                 @if(activeGuard() == 'admin')
-                                                                    <a style="background-color: #696CFF !important; border: none !important;"
+                                                                    <a
                                                                        href="{{ route('ec.ecdashboard',$engineer_company->id) }}"
-                                                                       class="btn btn-primary btn-custom-table btn-sm">
-                                                                        <i class="bx bxs-edit-alt"></i>
+                                                                       class="btn back-green btn-outline btn-sm">
+                                                                        <img
+                                                                            src="{{asset('engineer_company/images/edit_icon.png')}}">
                                                                     </a>
-                                                                    <a style="background-color: #FF3E1D !important;"
+                                                                    <a
                                                                        data-bs-toggle="modal"
                                                                        data-del-id="{{ $engineer_company->id }}"
                                                                        data-bs-target="#delModal"
-                                                                       class="btn btn-danger btn-custom-table btn-sm delBtn">
+                                                                       class="btn btn-outline-danger btn-theme-danger-outline btn-outline btn-sm">
                                                                         <i class="bx bx-trash-alt"></i>
                                                                     </a>
                                                                 @else
