@@ -14,32 +14,33 @@
                                     <div class="card-body mb-4">
                                         <div class="prompt w-100"></div>
                                         <h4 class="card-title mb-4">
-                                            {{__('translation.Client Information')}}
+                                            {{__('translation.Account information')}}
                                         </h4>
                                         <div class="table-responsive mt-3">
                                             <table class="table" style="border-collapse: collapse;">
                                                 <thead class="table-light">
                                                 <tr>
 
-                                                    <th class="">No.</th>
-                                                    <th class="text-center">
-                                                        Registration Date
+                                                    <th class="">
+                                                        {{__('translation.no')}}
                                                     </th>
                                                     <th class="text-center">
-                                                        Customer Number
+                                                        {{__('translation.Registration Date')}}
                                                     </th>
                                                     <th class="text-center">
-                                                        Company Name
+                                                        {{__('translation.Customer No')}}
                                                     </th>
                                                     <th class="text-center">
-                                                        Address
+                                                        {{__('translation.Company Name')}}
                                                     </th>
                                                     <th class="text-center">
-                                                        Division
+                                                        {{__('translation.Address')}}
                                                     </th>
+
                                                     <th class="text-center">
-                                                        Action
+                                                        {{__('translation.Division')}}
                                                     </th>
+                                                    <th class="text-center">{{__('translation.Actions')}}</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -115,12 +116,9 @@
                                                 <div class="col-lg-11">
                                                     <div class="">
                                                         <h4 class="card_tittle_2">
-                                                            Account information
+                                                           {{__('translation.Account information')}}
                                                         </h4>
                                                     </div>
-                                                </div>
-                                                <div class="col-lg-1">
-                                                    <h4 class="card_tittle_2" style="text-align: end;">1 / 8</h4>
                                                 </div>
                                             </div>
                                         </div>
@@ -133,7 +131,7 @@
                                                         <div class="col-lg-11">
                                                             <h4 class="card-title border-bottom-0 mb-4 mt-3"><span
                                                                     class="bor_lef">&nbsp;</span>
-                                                                Company information
+                                                               {{__('translation.Company Information')}}
                                                             </h4>
 
                                                         </div>
@@ -153,14 +151,14 @@
                                                             <div class="col-lg-4 col-12">
                                                                 <label class="form-label custom_lab mb-0"> <span
                                                                         class="star_section">*</span>
-                                                                    Customer Number
+                                                                   {{__('translation.Customer Number')}}
                                                                 </label>
                                                             </div>
                                                             <div class="col-lg-8 col-12">
                                                                 <input type="number" min="1" name="customer_number"
                                                                        class="form-control w-100 custom_input"
                                                                        aria-describedby="emailHelp"
-                                                                       placeholder="Enter Customer Number"
+                                                                       placeholder="{{__('translation.Enter customer number')}}"
                                                                        required="">
                                                             </div>
                                                         </div>
@@ -169,14 +167,14 @@
                                                             <div class="col-lg-4 col-12">
                                                                 <label class="form-label custom_lab mb-0"> <span
                                                                         class="star_section">*</span>
-                                                                    Master ID
+                                                                    {{__('translation.Master ID')}}
                                                                 </label>
                                                             </div>
                                                             <div class="col-lg-8 col-12">
                                                                 <input type="text" name="master_id"
                                                                        class="form-control w-100 custom_input"
                                                                        aria-describedby="emailHelp"
-                                                                       placeholder="Enter building manager name"
+                                                                       placeholder="{{__('translation.Enter Master ID')}}"
                                                                        required="">
                                                             </div>
                                                         </div>
@@ -186,14 +184,14 @@
                                                             <div class="col-lg-4 col-12"><label
                                                                     class="form-label custom_lab mb-0"> <span
                                                                         class="star_section">*</span>
-                                                                    Master PW
+                                                                    {{__('translation.Master PW')}}
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12">
                                                                 <input type="password"
                                                                        name="password"
                                                                        class="format-number form-control w-100 custom_input"
                                                                        aria-describedby="emailHelp"
-                                                                       placeholder="Enter Password"
+                                                                       placeholder="{{__('translation.Enter Password')}}"
                                                                        required="">
                                                             </div>
                                                         </div>
@@ -202,7 +200,7 @@
                                                             <div class="col-lg-4 col-12"><label
                                                                     class="form-label custom_lab mb-0"> <span
                                                                         class="star_section">*</span>
-                                                                    Company Name
+                                                                    {{__('translation.Company Name')}}
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12">
                                                                 <div class="row">
@@ -211,14 +209,14 @@
                                                                                name="company_name"
                                                                                class="form-control w-100 custom_input"
                                                                                aria-describedby="emailHelp"
-                                                                               placeholder="Enter Company Name"
+                                                                               placeholder="{{__('translation.Enter Company Name')}}"
                                                                                required="">
                                                                     </div>
                                                                     <div class="col-3">
                                                                         <label
                                                                             class="form-label custom_lab mb-0"> <span
                                                                                 class="star_section">*</span>
-                                                                            Company Registration Number
+                                                                            {{__('translation.Company Registration Number')}}
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-5">
@@ -226,7 +224,7 @@
                                                                                name="company_registration_number"
                                                                                class="form-control w-100 custom_input"
                                                                                aria-describedby="emailHelp"
-                                                                               placeholder="Enter Company Registration Number"
+                                                                               placeholder="{{__('translation.Enter Company Registration Number')}}"
                                                                                required="">
                                                                     </div>
                                                                 </div>
@@ -237,7 +235,7 @@
                                                             <div class="col-lg-4 col-12"><label
                                                                     class="form-label custom_lab mb-0"> <span
                                                                         class="star_section">*</span>
-                                                                    Representative
+                                                                    {{__('translation.Representative')}}
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12">
                                                                 <div class="row">
@@ -246,14 +244,14 @@
                                                                                name="representative"
                                                                                class="form-control w-100 custom_input"
                                                                                aria-describedby="emailHelp"
-                                                                               placeholder="Enter Representative"
+                                                                               placeholder="{{__('translation.Enter Representative')}}"
                                                                                required="">
                                                                     </div>
                                                                     <div class="col-3">
                                                                         <label
                                                                             class="form-label custom_lab mb-0"> <span
                                                                                 class="star_section">*</span>
-                                                                            Maintenance business registration number
+                                                                           {{__('translation.Maintenance business registration number')}}
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-5">
@@ -261,7 +259,7 @@
                                                                                name="maintenance_business_registration_number"
                                                                                class="form-control w-100 custom_input"
                                                                                aria-describedby="emailHelp"
-                                                                               placeholder="Enter Maintenance business registration number"
+                                                                               placeholder="{{__('translation.Maintenance business registration number')}}"
                                                                                required="">
                                                                     </div>
                                                                 </div>
@@ -273,13 +271,13 @@
                                                             <div class="col-lg-4 col-12"><label
                                                                     class="form-label custom_lab mb-0"> <span
                                                                         class=" star_section">&nbsp;</span>
-                                                                    Address
+                                                                    {{__('translation.Address')}}
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12"><input type="text"
                                                                                                 name="address"
                                                                                                 class="format-number form-control w-100 custom_input"
                                                                                                 aria-describedby="emailHelp"
-                                                                                                placeholder="Enter address">
+                                                                                                placeholder="{{__('translation.Enter Address')}}">
                                                             </div>
                                                         </div>
 
@@ -287,7 +285,7 @@
                                                             <div class="col-lg-4 col-12"><label
                                                                     class="form-label custom_lab mb-0"> <span
                                                                         class="star_section">*</span>
-                                                                    Business Email
+                                                                {{__('translation.Business Email')}}
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12">
                                                                 <div class="row">
@@ -296,14 +294,14 @@
                                                                                name="business_email"
                                                                                class="form-control w-100 custom_input"
                                                                                aria-describedby="emailHelp"
-                                                                               placeholder="Enter Business Email"
+                                                                               placeholder="{{__('translation.Enter Business Email')}}"
                                                                                required="">
                                                                     </div>
                                                                     <div class="col-3">
                                                                         <label
                                                                             class="form-label custom_lab mb-0 mt-2"> <span
                                                                                 class="star_section">*</span>
-                                                                            Sectors
+                                                                            {{__('translation.Sectors')}}
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-5">
@@ -311,7 +309,7 @@
                                                                                name="sectors"
                                                                                class="form-control w-100 custom_input"
                                                                                aria-describedby="emailHelp"
-                                                                               placeholder="Enter Sectors"
+                                                                               placeholder="{{__('translation.Enter Sectors')}}"
                                                                                required="">
                                                                     </div>
                                                                 </div>
@@ -322,13 +320,13 @@
                                                             <div class="col-lg-4 col-12"><label
                                                                     class="form-label custom_lab mb-0"> <span
                                                                         class="star_section">*</span>
-                                                                    Contact
+                                                                    {{__('Contact')}}
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12"><input type="text"
                                                                                                 name="contact"
                                                                                                 class="form-control w-100   custom_input"
                                                                                                 aria-describedby="emailHelp"
-                                                                                                placeholder="Enter Contact"
+                                                                                                placeholder="{{__('translation.Enter Contact')}}"
                                                                                                 required=""></div>
                                                         </div>
 
@@ -336,7 +334,7 @@
                                                             <div class="col-lg-4 col-12"><label
                                                                     class="form-label custom_lab mb-0"> <span
                                                                         class="star_section">&nbsp;</span>
-                                                                    Fax
+                                                                    {{__('translation.fax')}}
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12"><input type="text"
                                                                                                 name="fax"
@@ -351,13 +349,13 @@
                                                             <div class="col-lg-4 col-12"><label
                                                                     class="form-label custom_lab mb-0"> <span
                                                                         class="star_section">&nbsp;</span>
-                                                                    E-mail
+                                                                    {{__('translation.Email')}}
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12"><input type="email"
                                                                                                 name="email"
                                                                                                 class="form-control w-100   custom_input"
                                                                                                 aria-describedby="emailHelp"
-                                                                                                placeholder="Enter email">
+                                                                                                placeholder="{{__('translation.Enter email')}}">
                                                             </div>
                                                         </div>
 
@@ -365,21 +363,20 @@
                                                             <div class="col-lg-4 col-12"><label
                                                                     class="form-label custom_lab mb-0"> <span
                                                                         class="star_section">&nbsp;</span>
-                                                                    Division
+                                                                    {{__('translation.Division')}}
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12">
                                                                 <select class="form-select mt-4 valid"
                                                                         name="division" autocomplete="off"
                                                                         required="">
                                                                     <option selected="" value="" disabled="">
-                                                                        Select Division
+                                                                        {{__('translation.Select Division')}}
                                                                     </option>
                                                                     <option value="engineer company">
-
-                                                                        Engineer Company
+                                                                        {{__('translation.Engineer Company')}}
                                                                     </option>
                                                                     <option value="building owner">
-                                                                        Building Owner
+                                                                        {{__('translation.Building Owner')}}
                                                                     </option>
                                                                 </select>
                                                             </div>
@@ -400,7 +397,7 @@
 
 
                                                 <button class="form_button mb-5 mt-5 submit_btn">
-                                                    Save and Next
+                                                    {{__('translation.Save and Next')}}
                                                 </button>
 
                                             </div>

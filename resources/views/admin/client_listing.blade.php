@@ -132,7 +132,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="myModalLabel112">
-                        {{ __('translation.Delete Parts history Replacement') }}
+                        {{ __('translation.Delete Client') }}
                     </h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                             aria-label="Close"></button>

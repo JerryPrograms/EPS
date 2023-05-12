@@ -19,24 +19,24 @@
                                             <thead class="table-light">
                                             <tr>
 
-                                                <th class="">No.</th>
+                                                <th class="">{{__('translation.no.')}}</th>
                                                 <th class="text-center">
-                                                    Registration Date
+                                                    {{__('translation.Registration Date')}}
                                                 </th>
                                                 <th class="text-center">
-                                                    Customer Number
+                                                    {{__('translation.Customer Number')}}
                                                 </th>
                                                 <th class="text-center">
-                                                    Company Name
+                                                    {{__('translation.Company Name')}}
                                                 </th>
                                                 <th class="text-center">
-                                                    Address
+                                                    {{__('translation.Address')}}
                                                 </th>
                                                 <th class="text-center">
-                                                    Division
+                                                    {{__('translation.Division')}}
                                                 </th>
                                                 <th class="text-center">
-                                                    Action
+                                                    {{__('translation.Action')}}
                                                 </th>
                                             </tr>
                                             </thead>
@@ -106,18 +106,16 @@
                                     <!-- end table-responsive -->
 
                                     <form id="CreateClientForm">
+                                        <input disabled name="id" value="{{$data->id}}" hidden="">
                                         @csrf
                                         <div class="card_section_2">
                                             <div class="row align-items-baseline">
                                                 <div class="col-lg-11">
                                                     <div class="">
                                                         <h4 class="card_tittle_2">
-                                                            Account information
+                                                            {{__('translation.Account information')}}
                                                         </h4>
                                                     </div>
-                                                </div>
-                                                <div class="col-lg-1">
-                                                    <h4 class="card_tittle_2" style="text-align: end;">1 / 8</h4>
                                                 </div>
                                             </div>
                                         </div>
@@ -130,7 +128,7 @@
                                                         <div class="col-lg-11">
                                                             <h4 class="card-title border-bottom-0 mb-4 mt-3"><span
                                                                     class="bor_lef">&nbsp;</span>
-                                                                Company information
+                                                                {{__('translation.Company Information')}}
                                                             </h4>
 
                                                         </div>
@@ -150,7 +148,7 @@
                                                             <div class="col-lg-4 col-12">
                                                                 <label class="form-label custom_lab mb-0"> <span
                                                                         class="star_section">*</span>
-                                                                    Customer Number
+                                                                    {{__('translation.Customer Number')}}
                                                                 </label>
                                                             </div>
                                                             <div class="col-lg-8 col-12">
@@ -158,7 +156,7 @@
                                                                        name="customer_number"
                                                                        class="form-control w-100 custom_input"
                                                                        aria-describedby="emailHelp"
-                                                                       placeholder="Enter Customer Number"
+                                                                       placeholder="{{__('translation.Enter customer number')}}"
                                                                        value="{{$data->customer_number}}"
                                                                        required="">
                                                             </div>
@@ -168,7 +166,7 @@
                                                             <div class="col-lg-4 col-12">
                                                                 <label class="form-label custom_lab mb-0"> <span
                                                                         class="star_section">*</span>
-                                                                    Master ID
+                                                                    {{__('translation.Master ID')}}
                                                                 </label>
                                                             </div>
                                                             <div class="col-lg-8 col-12">
@@ -176,7 +174,7 @@
                                                                        class="form-control w-100 custom_input"
                                                                        aria-describedby="emailHelp"
                                                                        value="{{$data->master_id}}"
-                                                                       placeholder="Enter building manager name"
+                                                                       placeholder="{{__('translation.Enter Master ID')}}"
                                                                        required="">
                                                             </div>
                                                         </div>
@@ -186,7 +184,7 @@
                                                             <div class="col-lg-4 col-12"><label
                                                                     class="form-label custom_lab mb-0"> <span
                                                                         class="star_section">*</span>
-                                                                    Master PW
+                                                                    {{__('translation.Master PW')}}
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12">
                                                                 <input disabled type="text"
@@ -194,7 +192,7 @@
                                                                        class="format-number form-control w-100 custom_input"
                                                                        aria-describedby="emailHelp"
                                                                        value="{{$data->show_password}}"
-                                                                       placeholder="Enter Password"
+                                                                       placeholder="{{__('translation.Enter Password')}}"
                                                                        required="">
                                                             </div>
                                                         </div>
@@ -203,7 +201,7 @@
                                                             <div class="col-lg-4 col-12"><label
                                                                     class="form-label custom_lab mb-0"> <span
                                                                         class="star_section">*</span>
-                                                                    Company Name
+                                                                    {{__('translation.Company Name')}}
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12">
                                                                 <div class="row">
@@ -212,7 +210,7 @@
                                                                                name="company_name"
                                                                                class="form-control w-100 custom_input"
                                                                                aria-describedby="emailHelp"
-                                                                               placeholder="Enter Company Name"
+                                                                               placeholder="{{__('translation.Enter Company Name')}}"
                                                                                value="{{$data->company_name}}"
                                                                                required="">
                                                                     </div>
@@ -220,7 +218,7 @@
                                                                         <label
                                                                             class="form-label custom_lab mb-0"> <span
                                                                                 class="star_section">*</span>
-                                                                            Company Registration Number
+                                                                            {{__('translation.Company Registration Number')}}
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-5">
@@ -228,7 +226,7 @@
                                                                                name="company_registration_number"
                                                                                class="form-control w-100 custom_input"
                                                                                aria-describedby="emailHelp"
-                                                                               placeholder="Enter Company Registration Number"
+                                                                               placeholder="{{__('translation.Enter Company Registration Number')}}"
                                                                                value="{{$data->company_registration_number}}"
                                                                                required="">
                                                                     </div>
@@ -257,7 +255,7 @@
                                                                         <label
                                                                             class="form-label custom_lab mb-0"> <span
                                                                                 class="star_section">*</span>
-                                                                            Maintenance business registration number
+                                                                            {{__('translation.Maintenance business registration number')}}
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-5">
@@ -265,7 +263,7 @@
                                                                                name="maintenance_business_registration_number"
                                                                                class="form-control w-100 custom_input"
                                                                                aria-describedby="emailHelp"
-                                                                               placeholder="Enter Maintenance business registration number"
+                                                                               placeholder="{{__('translation.Enter Maintenance business registration number')}}"
                                                                                value="{{$data->maintenance_business_registration_number}}"
                                                                                required="">
                                                                     </div>
@@ -285,7 +283,7 @@
                                                                                                 class="format-number form-control w-100 custom_input"
                                                                                                 aria-describedby="emailHelp"
                                                                                                 value="{{$data->address}}"
-                                                                                                placeholder="Enter address">
+                                                                                                placeholder="{{__('translation.Enter address')}}">
                                                             </div>
                                                         </div>
 
@@ -293,7 +291,7 @@
                                                             <div class="col-lg-4 col-12"><label
                                                                     class="form-label custom_lab mb-0"> <span
                                                                         class="star_section">*</span>
-                                                                    Business Email
+                                                                    {{__('translation.Business Email')}}
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12">
                                                                 <div class="row">
@@ -302,7 +300,7 @@
                                                                                name="business_email"
                                                                                class="form-control w-100 custom_input"
                                                                                aria-describedby="emailHelp"
-                                                                               placeholder="Enter Business Email"
+                                                                               placeholder="{{__('translation.Enter Business Email')}}"
                                                                                value="{{$data->business_email}}"
                                                                                required="">
                                                                     </div>
@@ -310,7 +308,7 @@
                                                                         <label
                                                                             class="form-label custom_lab mb-0 mt-2"> <span
                                                                                 class="star_section">*</span>
-                                                                            Sectors
+                                                                            {{__('translation.Sectors')}}
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-5">
@@ -318,7 +316,7 @@
                                                                                name="sectors"
                                                                                class="form-control w-100 custom_input"
                                                                                aria-describedby="emailHelp"
-                                                                               placeholder="Enter Sectors"
+                                                                               placeholder="{{__('translation.Enter Sectors')}}"
                                                                                value="{{$data->sectors}}"
                                                                                required="">
                                                                     </div>
@@ -330,13 +328,13 @@
                                                             <div class="col-lg-4 col-12"><label
                                                                     class="form-label custom_lab mb-0"> <span
                                                                         class="star_section">*</span>
-                                                                    Contact
+                                                                    {{__('translation.Contact')}}
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12"><input disabled type="text"
                                                                                                 name="contact"
                                                                                                 class="form-control w-100   custom_input"
                                                                                                 aria-describedby="emailHelp"
-                                                                                                placeholder="Enter Contact"
+                                                                                                placeholder="{{__('translation.Enter Contact')}}"
                                                                                                 value="{{$data->contact}}"
                                                                                                 required=""></div>
                                                         </div>
@@ -345,7 +343,7 @@
                                                             <div class="col-lg-4 col-12"><label
                                                                     class="form-label custom_lab mb-0"> <span
                                                                         class="star_section">&nbsp;</span>
-                                                                    Fax
+                                                                    {{__('translation.fax')}}
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12"><input disabled type="text"
                                                                                                 name="fax"
@@ -361,40 +359,17 @@
                                                             <div class="col-lg-4 col-12"><label
                                                                     class="form-label custom_lab mb-0"> <span
                                                                         class="star_section">&nbsp;</span>
-                                                                    E-mail
+                                                                    {{__('translation.Email')}}
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12"><input disabled type="email"
                                                                                                 name="email"
                                                                                                 class="form-control w-100   custom_input"
                                                                                                 aria-describedby="emailHelp"
                                                                                                 value="{{$data->email}}"
-                                                                                                placeholder="Enter email">
+                                                                                                placeholder="{{__('translation.Enter email')}}">
                                                             </div>
                                                         </div>
-
-                                                        <div class="row align-items-center mt-4">
-                                                            <div class="col-lg-4 col-12"><label
-                                                                    class="form-label custom_lab mb-0"> <span
-                                                                        class="star_section">&nbsp;</span>
-                                                                    Division
-                                                                </label></div>
-                                                            <div class="col-lg-8 col-12">
-                                                                <select class="form-select mt-4 valid"
-                                                                        name="division" autocomplete="off"
-                                                                        required="">
-                                                                    <option selected="" value="" disabled="">
-                                                                        Select Division
-                                                                    </option>
-                                                                    <option {{$data->division == 'engineer company' ? 'selected' : ''}} value="engineer company">
-                                                                        Building Owner
-                                                                    </option>
-                                                                    <option {{$data->division == 'building owner' ? 'selected' : ''}} value="building owner">
-                                                                        Engineer Company
-                                                                    </option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-
+                                                        <input disabled name="division" value="{{$data->division}}" hidden="">
                                                     </div>
                                                 </div>
                                                 <!-- form row 1 end  -->
@@ -410,8 +385,9 @@
                                             <div class="col-lg-2">
 
 
-                                                <button type="button" onclick="window.location.href = '{{route('clients_listing')}}'" class="form_button mb-5 mt-5 submit_btn">
-                                                    Back
+                                                <button type="submit"
+                                                        class="form_button mb-5 mt-5 submit_btn">
+                                                    {{__('translation.Update')}}
                                                 </button>
 
                                             </div>
@@ -435,4 +411,11 @@
     </div>
 @endsection
 @section('custom-script')
+    <script>
+        $('#CreateClientForm').validate({
+            submitHandler: function () {
+                ajaxCall($('#CreateClientForm'), "{{ route('update_client') }}", $('.submit_btn'), "{{ route('clients_listing') }}", onRequestSuccess);
+            }
+        });
+    </script>
 @endsection
