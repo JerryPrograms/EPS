@@ -562,6 +562,7 @@ return [
     'Enter Address' => 'Enter Address',
     'Sectors' => 'Sectors',
     'Enter Sectors' => 'Enter Sectors',
+    'Business Email' => 'Business Email',
     'Enter Business Email' => 'Enter Business Email',
     'Contact' => 'Contact',
     'Enter Contact' => 'Enter Contact',
