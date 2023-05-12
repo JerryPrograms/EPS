@@ -58,7 +58,7 @@
                                                 </td>
                                                 <td class="custom_br_theme_clr_2">
                                                     <p class="tble_text">
-                                                        {{$customer->building_name}}
+                                                        {{!empty($customer->GetBuildingInfo) ? $customer->GetBuildingInfo->building_name : 'Not specified yet'}}
                                                     </p>
                                                 </td>
                                                 <td class="custom_br_theme_clr_2">
@@ -69,12 +69,12 @@
 
                                                 <td class="custom_br_theme_clr_2">
                                                     <p class="tble_text">
-                                                        {{$customer->building_management_company}}
+                                                        {{$customer->company_name}}
                                                     </p>
                                                 </td>
                                                 <td class="custom_br_theme_clr_3">
                                                     <p class="tble_text">
-                                                        {{$customer->maintenance_company}}
+                                                        {{$customer->EngineerCompany->company_name}}
                                                     </p>
                                                 </td>
                                             </tr>
@@ -86,8 +86,8 @@
                                         <div class="searchbar_main_section">
                                             <div class="col-lg-12">
                                                 <h4 class="card-title mt-5 border-bottom-0 mb-4"> <span
-                                                class="bor_lef">&nbsp;</span>
-                                                {{ __('translation.Input Customer Information') }}
+                                                        class="bor_lef">&nbsp;</span>
+                                                    {{ __('translation.Input Customer Information') }}
                                                 </h4>
                                             </div>
                                             <div class="button_section">
@@ -117,14 +117,14 @@
                                                         <img
                                                             src="{{asset('engineer_company/assets/images/3.png')}}">
                                                         <p class="searchbar_text mt-3">
-                                                          {{ __('translation.Fill Dispatch Confirmation') }}
+                                                            {{ __('translation.Fill Dispatch Confirmation') }}
                                                         </p>
                                                     </button>
                                                 @endif
 
                                                 <button
-                                                onclick="window.location.href= '{{route('regular_inspection_log',$customer->user_uid)}}'"
-                                                class="searchbar_img border-0">
+                                                    onclick="window.location.href= '{{route('regular_inspection_log',$customer->user_uid)}}'"
+                                                    class="searchbar_img border-0">
                                                     <img
                                                         src="{{asset('engineer_company/assets/images/1.png')}}">
                                                     <p class="searchbar_text mt-3">
@@ -132,22 +132,26 @@
                                                     </p>
                                                 </button>
                                                 <button
-                                                onclick="window.location.href= '{{route('contract_management_list',$customer->id)}}'"
-                                                class="searchbar_img border-0">
+                                                    onclick="window.location.href= '{{route('contract_management_list',$customer->id)}}'"
+                                                    class="searchbar_img border-0">
                                                     <img
                                                         src="{{asset('engineer_company/assets/images/2.png')}}">
                                                     <p class="searchbar_text mt-3">
                                                         {{ __('translation.Contract Managment') }}
                                                     </p>
                                                 </button>
-                                                <button  onclick="window.location.href= '{{route('ec.GetQuoteManagement',$customer->user_uid)}}'" class="searchbar_img border-0">
+                                                <button
+                                                    onclick="window.location.href= '{{route('ec.GetQuoteManagement',$customer->user_uid)}}'"
+                                                    class="searchbar_img border-0">
                                                     <img
                                                         src="{{asset('engineer_company/assets/images/3.png')}}">
                                                     <p class="searchbar_text mt-3">
                                                         {{ __('translation.Quote Management') }}
                                                     </p>
                                                 </button>
-                                                <button onclick="window.location.href= '{{route('create_construction_completion',$customer->user_uid)}}'" class="searchbar_img_2 border-0 mt-2">
+                                                <button
+                                                    onclick="window.location.href= '{{route('create_construction_completion',$customer->user_uid)}}'"
+                                                    class="searchbar_img_2 border-0 mt-2">
                                                     <img
                                                         src="{{asset('engineer_company/assets/images/3.png')}}">
                                                     <p class="searchbar_text mt-3">

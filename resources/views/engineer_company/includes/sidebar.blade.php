@@ -33,15 +33,15 @@
                         </a>
                     </li>
                 @endif
-{{--                <li class="sidebr_button mt-2">--}}
-{{--                    <a href="{{ route('ASCompanyList') }}" class=" waves-effect dropdown_toggle">--}}
-{{--                        <!-- <i class="bx bx-calendar"></i> -->--}}
-{{--                        <img src="{{ asset('engineer_company/assets/images/Frame.png') }}"--}}
-{{--                             class="double_ring_img p-0" style="margin-left: -1px;">--}}
-{{--                        <span key="t-dashboards"--}}
-{{--                              class="dropdown_text">{{ __('translation.AS Company List') }}</span>--}}
-{{--                    </a>--}}
-{{--                </li>--}}
+                {{--                <li class="sidebr_button mt-2">--}}
+                {{--                    <a href="{{ route('ASCompanyList') }}" class=" waves-effect dropdown_toggle">--}}
+                {{--                        <!-- <i class="bx bx-calendar"></i> -->--}}
+                {{--                        <img src="{{ asset('engineer_company/assets/images/Frame.png') }}"--}}
+                {{--                             class="double_ring_img p-0" style="margin-left: -1px;">--}}
+                {{--                        <span key="t-dashboards"--}}
+                {{--                              class="dropdown_text">{{ __('translation.AS Company List') }}</span>--}}
+                {{--                    </a>--}}
+                {{--                </li>--}}
                 @if (activeGuard() != 'web')
                     <li class="sidebr_button mt-2">
                         <a href="{{ route('ec.GetCustomerInfoListing') }}" class=" waves-effect dropdown_toggle">
@@ -152,59 +152,61 @@
 
                 @endif
 
-                <li class="sidebr_button mt-2">
-                    <a href="{{ route('distpatch_confirmation_listing') }}" class=" waves-effect dropdown_toggle">
-                        <!-- <i class="bx bx-calendar"></i> -->
-                        <img src="{{ asset('engineer_company/assets/images/Group 427323401.png') }}"
-                             class="double_ring_img p-0" style="margin-left: -1px;">
-                        <span key="t-dashboards"
-                              class="dropdown_text">{{ __('translation.Dispatch Confirmation') }}</span>
-                    </a>
-                </li>
+                @if(activeGuard() != 'admin')
+                    <li class="sidebr_button mt-2">
+                        <a href="{{ route('distpatch_confirmation_listing') }}" class=" waves-effect dropdown_toggle">
+                            <!-- <i class="bx bx-calendar"></i> -->
+                            <img src="{{ asset('engineer_company/assets/images/Group 427323401.png') }}"
+                                 class="double_ring_img p-0" style="margin-left: -1px;">
+                            <span key="t-dashboards"
+                                  class="dropdown_text">{{ __('translation.Dispatch Confirmation') }}</span>
+                        </a>
+                    </li>
 
 
-                <li class="sidebr_button mt-2">
-                    <a href="{{ route('regular_inspection_logs') }}" class=" waves-effect dropdown_toggle">
-                        <!-- <i class="bx bx-calendar"></i> -->
-                        <img src="{{ asset('engineer_company/assets/images/Group 427323320.png') }}"
-                             class="double_ring_img p-0" style="margin-left: -1px;">
-                        <span key="t-dashboards"
-                              class="dropdown_text">{{ __('translation.Regular inspection log') }}</span>
-                    </a>
-                </li>
+                    <li class="sidebr_button mt-2">
+                        <a href="{{ route('regular_inspection_logs') }}" class=" waves-effect dropdown_toggle">
+                            <!-- <i class="bx bx-calendar"></i> -->
+                            <img src="{{ asset('engineer_company/assets/images/Group 427323320.png') }}"
+                                 class="double_ring_img p-0" style="margin-left: -1px;">
+                            <span key="t-dashboards"
+                                  class="dropdown_text">{{ __('translation.Regular inspection log') }}</span>
+                        </a>
+                    </li>
 
 
-                <li class="sidebr_button mt-2">
-                    <a href="{{ route('contract_management') }}" class=" waves-effect dropdown_toggle">
-                        <!-- <i class="bx bx-calendar"></i> -->
-                        <img src="{{ asset('engineer_company/assets/images/Group.png') }}"
-                             class="double_ring_img p-0" style="margin-left: -1px;">
-                        <span key="t-dashboards"
-                              class="dropdown_text">{{ __('translation.Contract Management') }}</span>
-                    </a>
-                </li>
+                    <li class="sidebr_button mt-2">
+                        <a href="{{ route('contract_management') }}" class=" waves-effect dropdown_toggle">
+                            <!-- <i class="bx bx-calendar"></i> -->
+                            <img src="{{ asset('engineer_company/assets/images/Group.png') }}"
+                                 class="double_ring_img p-0" style="margin-left: -1px;">
+                            <span key="t-dashboards"
+                                  class="dropdown_text">{{ __('translation.Contract Management') }}</span>
+                        </a>
+                    </li>
 
 
-                <li class="sidebr_button mt-2">
-                    <a href="{{ route('quotation_management') }}" class=" waves-effect dropdown_toggle">
-                        <!-- <i class="bx bx-calendar"></i> -->
-                        <img src="{{ asset('engineer_company/assets/images/Book_check.png') }}"
-                             class="double_ring_img p-0" style="margin-left: -1px;">
-                        <span key="t-dashboards"
-                              class="dropdown_text">{{ __('translation.Quote Management') }}</span>
-                    </a>
-                </li>
+                    <li class="sidebr_button mt-2">
+                        <a href="{{ route('quotation_management') }}" class=" waves-effect dropdown_toggle">
+                            <!-- <i class="bx bx-calendar"></i> -->
+                            <img src="{{ asset('engineer_company/assets/images/Book_check.png') }}"
+                                 class="double_ring_img p-0" style="margin-left: -1px;">
+                            <span key="t-dashboards"
+                                  class="dropdown_text">{{ __('translation.Quote Management') }}</span>
+                        </a>
+                    </li>
 
 
-                <li class="sidebr_button mt-2">
-                    <a href="{{ route('construction_completion') }}" class=" waves-effect dropdown_toggle">
-                        <!-- <i class="bx bx-calendar"></i> -->
-                        <img src="{{ asset('engineer_company/assets/images/Vector.png') }}"
-                             class="double_ring_img p-0" style="margin-left: -1px;">
-                        <span key="t-dashboards"
-                              class="dropdown_text">{{ __('translation.Construction completion report management') }} </span>
-                    </a>
-                </li>
+                    <li class="sidebr_button mt-2">
+                        <a href="{{ route('construction_completion') }}" class=" waves-effect dropdown_toggle">
+                            <!-- <i class="bx bx-calendar"></i> -->
+                            <img src="{{ asset('engineer_company/assets/images/Vector.png') }}"
+                                 class="double_ring_img p-0" style="margin-left: -1px;">
+                            <span key="t-dashboards"
+                                  class="dropdown_text">{{ __('translation.Construction completion report management') }} </span>
+                        </a>
+                    </li>
+                @endif
 
                 @if (activeGuard() != 'web' && activeGuard() != 'admin')
                     <li class="sidebr_button mt-2">

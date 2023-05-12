@@ -116,7 +116,7 @@
                                                 <div class="col-lg-11">
                                                     <div class="">
                                                         <h4 class="card_tittle_2">
-                                                           {{__('translation.Account information')}}
+                                                            {{__('translation.Account information')}}
                                                         </h4>
                                                     </div>
                                                 </div>
@@ -131,7 +131,7 @@
                                                         <div class="col-lg-11">
                                                             <h4 class="card-title border-bottom-0 mb-4 mt-3"><span
                                                                     class="bor_lef">&nbsp;</span>
-                                                               {{__('translation.Company Information')}}
+                                                                {{__('translation.Company Information')}}
                                                             </h4>
 
                                                         </div>
@@ -141,7 +141,7 @@
                                                                         onclick="printForm($('#createBuildingInformation'))"
                                                                         class="file_button">
                                                                     <img
-                                                                        src="http://127.0.0.1:8000/engineer_company/images/Vector.png">
+                                                                        src="{{asset('engineer_company/images/Vector.png')}}">
                                                                 </button>
                                                             </div>
                                                         </div>
@@ -151,7 +151,7 @@
                                                             <div class="col-lg-4 col-12">
                                                                 <label class="form-label custom_lab mb-0"> <span
                                                                         class="star_section">*</span>
-                                                                   {{__('translation.Customer Number')}}
+                                                                    {{__('translation.Customer Number')}}
                                                                 </label>
                                                             </div>
                                                             <div class="col-lg-8 col-12">
@@ -251,7 +251,7 @@
                                                                         <label
                                                                             class="form-label custom_lab mb-0"> <span
                                                                                 class="star_section">*</span>
-                                                                           {{__('translation.Maintenance business registration number')}}
+                                                                            {{__('translation.Maintenance business registration number')}}
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-5">
@@ -285,7 +285,7 @@
                                                             <div class="col-lg-4 col-12"><label
                                                                     class="form-label custom_lab mb-0"> <span
                                                                         class="star_section">*</span>
-                                                                {{__('translation.Business Email')}}
+                                                                    {{__('translation.Business Email')}}
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12">
                                                                 <div class="row">
@@ -359,29 +359,36 @@
                                                             </div>
                                                         </div>
 
-                                                        <div id="type_divivsion" class="row align-items-center mt-4">
-                                                            <div class="col-lg-4 col-12"><label
-                                                                    class="form-label custom_lab mb-0"> <span
-                                                                        class="star_section">&nbsp;</span>
-                                                                    {{__('translation.Division')}}
-                                                                </label></div>
-                                                            <div class="col-lg-8 col-12">
-                                                                <select class="form-select mt-4 valid"
-                                                                        name="division" autocomplete="off"
-                                                                        required="">
-                                                                    <option selected="" value="" disabled="">
-                                                                        {{__('translation.Select Division')}}
-                                                                    </option>
-                                                                    <option value="engineer company">
-                                                                        {{__('translation.Engineer Company')}}
-                                                                    </option>
-                                                                    <option value="building owner">
-                                                                        {{__('translation.Building Owner')}}
-                                                                    </option>
-                                                                </select>
+                                                        @if(activeGuard() == 'admin')
+                                                            <div id="type_divivsion"
+                                                                 class="row align-items-center mt-4">
+                                                                <div class="col-lg-4 col-12"><label
+                                                                        class="form-label custom_lab mb-0"> <span
+                                                                            class="star_section">&nbsp;</span>
+                                                                        {{__('translation.Division')}}
+                                                                    </label></div>
+
+                                                                <div class="col-lg-8 col-12">
+                                                                    <select class="form-select mt-4 valid"
+                                                                            name="division" autocomplete="off"
+                                                                            required="">
+                                                                        <option selected="" value="" disabled="">
+                                                                            {{__('translation.Select Division')}}
+                                                                        </option>
+                                                                        <option value="engineer company">
+                                                                            {{__('translation.Engineer Company')}}
+                                                                        </option>
+                                                                        <option value="building owner">
+                                                                            {{__('translation.Building Owner')}}
+                                                                        </option>
+                                                                    </select>
+                                                                </div>
+
                                                             </div>
-                                                        </div>
                                                     </div>
+                                                    @else
+                                                        <input name="division" value="building owner" hidden="">
+                                                    @endif
                                                 </div>
                                                 <!-- form row 1 end  -->
                                                 <!-- form row 2 start  -->
@@ -422,10 +429,18 @@
 @endsection
 @section('custom-script')
     <script>
+        @if(activeGuard() == 'admin')
         $('#CreateClientForm').validate({
             submitHandler: function () {
                 ajaxCall($('#CreateClientForm'), "{{ route('create_client') }}", $('.submit_btn'), "{{ route('clients_listing') }}", onRequestSuccess);
             }
         });
+        @else
+        $('#CreateClientForm').validate({
+            submitHandler: function () {
+                ajaxCall($('#CreateClientForm'), "{{ route('create_client') }}", $('.submit_btn'), "{{ route('ec.GetCustomerInfoListing') }}", onRequestSuccess);
+            }
+        });
+        @endif
     </script>
 @endsection

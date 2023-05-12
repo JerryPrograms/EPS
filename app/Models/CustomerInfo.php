@@ -123,6 +123,6 @@ class CustomerInfo extends Authenticatable
 
     public function EngineerCompany()
     {
-        return $this->hasOne(Engineer_company::class, 'id', 'engineer_company_id');
+        return $this->hasOne(Engineer_company::class, 'id', 'added_by_id');
     }
 }

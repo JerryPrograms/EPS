@@ -36,15 +36,15 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('/edit', [BuildingAddressController::class, 'EditAddress'])->name('admin.EditAddress');
     });
 
-    Route::group(['prefix' => 'client'], function () {
-        Route::get('/listing', [ClientController::class, 'get_client_listing'])->name('clients_listing');
-        Route::get('/add', [ClientController::class, 'add_client'])->name('add_client');
-        Route::post('/create', [ClientController::class, 'create_client'])->name('create_client');
-        Route::get('/view/{type}/{id}', [ClientController::class, 'view_client'])->name('view_client');
-        Route::get('/edit/{type}/{id}', [ClientController::class, 'edit_client'])->name('edit_client');
-        Route::post('/update', [ClientController::class, 'update_client'])->name('update_client');
-        Route::post('/delete', [ClientController::class, 'delete_client'])->name('delete_client');
-    });
 
+});
 
+Route::group(['prefix' => 'client'], function () {
+    Route::get('/listing', [ClientController::class, 'get_client_listing'])->name('clients_listing');
+    Route::get('/add', [ClientController::class, 'add_client'])->name('add_client');
+    Route::post('/create', [ClientController::class, 'create_client'])->name('create_client');
+    Route::get('/view/{type}/{id}', [ClientController::class, 'view_client'])->name('view_client');
+    Route::get('/edit/{type}/{id}', [ClientController::class, 'edit_client'])->name('edit_client');
+    Route::post('/update', [ClientController::class, 'update_client'])->name('update_client');
+    Route::post('/delete', [ClientController::class, 'delete_client'])->name('delete_client');
 });

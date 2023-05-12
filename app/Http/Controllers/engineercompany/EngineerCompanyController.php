@@ -44,7 +44,6 @@ class EngineerCompanyController extends Controller
 
 
             $customer = CustomerInfo::latest()->paginate($limit);
-//            dd($customer);
         } else if (activeGuard() == 'engineer') {
 
 
