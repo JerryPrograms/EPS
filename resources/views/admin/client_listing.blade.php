@@ -54,7 +54,7 @@
                                                 </th>
 
                                                 <th class="text-center">
-                                                    {{__('translation.Division')}}
+                                                    {{__('translation.department')}}
                                                 </th>
                                                 <th class="text-center">{{__('translation.Actions')}}</th>
                                             </tr>
@@ -80,9 +80,9 @@
                                                             {{$customer->address}}
                                                         </td>
                                                         <td>
-                                                            {{$customer->division}}
+                                                            {{$customer->division == 'engineer company' ? __('translation.Engineer Company') : __('translation.Building Owner')}}
                                                         </td>
-                                                        <td class="d-flex gap-1">
+                                                        <td class="d-flex gap-1 mx-auto" style="justify-content: center;">
                                                             <a href="{{route('edit_client',[$customer->division,$customer->id])}}"
                                                                class="btn back-green btn-outline btn-sm">
                                                                 <img

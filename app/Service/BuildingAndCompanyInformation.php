@@ -85,6 +85,7 @@ class BuildingAndCompanyInformation
             $as_data['invoice_issue_date'] = $request->invoice_issue_date;
             $as_data['payment_date'] = $request->payment_date;
             $as_data['payment_method'] = $request->payment_method;
+            $as_data['payment_information'] = $request->payment_information;
 
 
             $company_data = array();
@@ -94,6 +95,8 @@ class BuildingAndCompanyInformation
             $company_data['address'] = $request->address;
             $company_data['industry_category'] = $request->industry_category;
             $company_data['contacts'] = $request->contacts;
+            $company_data['mc_reg'] = $request->mc_reg;
+            $company_data['indus'] = $request->indus;
             if ($request->has('fax')) {
                 $company_data['fax'] = $request->fax;
             }

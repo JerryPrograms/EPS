@@ -12,15 +12,17 @@
                                     <div
                                         class="card-title d-flex align-items-center justify-content-between mobile-flex-column mb-0 py-2">
                                         <h4 class="">
-                                            {{__('translation.Construction Completion Management')}}
+                                            {{ __('translation.Building name registration management') }}
                                         </h4>
 
                                     </div>
                                     <div class="mt-3 left-content d-flex text-right">
-                                        <div class="custom_search w-100">
+                                        <div class="custom_search w-100" style="display: flex; justify-content: end;">
 
-                                            <a href="javascript:void(0)"
-                                               class="btn btn-primary">{{__('translation.search')}}</a>
+                                            <input id="search" class="form-control w-25 me-2 d-none">
+                                            <button type="button" onclick="$(this).prev().removeClass('d-none')"
+                                                    class="btn btn-primary me-2">{{__('translation.search')}}
+                                            </button>
                                             <button type="button" onclick="AddRow()"
                                                     class="btn btn-primary">{{__('translation.add')}}</button>
 
@@ -40,7 +42,7 @@
                                                 <th class="text-center">
                                                     {{__('translation.address')}}
                                                 </th>
-                                                <th class="text-center">Actions</th>
+                                                <th class="text-center">{{__('translation.actions')}}</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -98,7 +100,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="myModalLabel">{{__('translation.Delete Report')}}</h5>
+                    <h5 class="modal-title" id="myModalLabel">{{__('translation.Delete building')}}</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form id="customerDeleteForm">
@@ -128,7 +130,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="myModalLabel">{{__('translation.Delete Report')}}</h5>
+                    <h5 class="modal-title" id="myModalLabel">{{__('translation.Modify building name')}}</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form id="EditForm">
@@ -141,11 +143,11 @@
 
                         </div>
                         <div class="col-12">
-                            <label>Building Name</label>
+                            <label>{{__('translation.Building name')}}</label>
                             <input class="form-control" name="building_name" id="bn" type="text" maxlength="250">
                         </div>
-                        <div class="col-12">
-                            <label>Address</label>
+                        <div class="col-12 mt-2">
+                            <label>{{__('translation.address')}}</label>
                             <input class="form-control" name="address" id="ad" type="text" maxlength="250">
                         </div>
                     </div>
@@ -267,7 +269,7 @@
                                                 </td>
                                                 <td class="d-flex gap-1 justify-content-center">
 
-                                                    <button type="button" onclick="submitForm($(this).parent().prev().find('input'),$(this).parent().prev().prev().find('input'),$(this))"
+                                                    <button type="button" onclick="submitForm($(this).parent().prev().prev().find('input'),$(this).parent().prev().find('input'),$(this))"
                                                             class="btn btn-primary">
                                                             Add
                                                     </button>
@@ -349,5 +351,15 @@
             });
 
         }
+
+        var $rows = $('table tr');
+        $('#search').keyup(function () {
+            var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+
+            $rows.show().filter(function () {
+                var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+                return !~text.indexOf(val);
+            }).hide();
+        });
     </script>
 @endsection

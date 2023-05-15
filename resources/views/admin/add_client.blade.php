@@ -270,7 +270,7 @@
                                                         <div class="row align-items-center mt-4">
                                                             <div class="col-lg-4 col-12"><label
                                                                     class="form-label custom_lab mb-0"> <span
-                                                                        class=" star_section">&nbsp;</span>
+                                                                        class=" star_section">*</span>
                                                                     {{__('translation.Address')}}
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12"><input type="text"
@@ -309,7 +309,7 @@
                                                                                name="sectors"
                                                                                class="form-control w-100 custom_input"
                                                                                aria-describedby="emailHelp"
-                                                                               placeholder="{{__('translation.Enter Sectors')}}"
+                                                                               placeholder="{{__('translation.Please enter your industry')}}"
                                                                                required="">
                                                                     </div>
                                                                 </div>
@@ -320,7 +320,7 @@
                                                             <div class="col-lg-4 col-12"><label
                                                                     class="form-label custom_lab mb-0"> <span
                                                                         class="star_section">*</span>
-                                                                    {{__('Contact')}}
+                                                                    {{__('translation.Contact')}}
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12"><input type="text"
                                                                                                 name="contact"

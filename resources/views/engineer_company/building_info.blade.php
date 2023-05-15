@@ -136,7 +136,7 @@
                                                         <div class="col-lg-11">
                                                             <h4 class="card-title border-bottom-0 mb-4 mt-3"> <span
                                                                     class="bor_lef">&nbsp;</span>
-                                                                {{ __('translation.Building Info') }}
+                                                                1. {{ __('translation.Building Info') }}
                                                             </h4>
 
                                                         </div>
@@ -266,10 +266,11 @@
                                                         <div class="row align-items-center mt-4">
                                                             <div class="col-lg-4 col-12"><label
                                                                     class="form-label custom_lab mb-0"> <span
-                                                                        class=" star_section">&nbsp;</span>
+                                                                        class=" star_section">*</span>
                                                                     {{ __('translation.fax') }}
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12"><input type="text"
+                                                                                                required
                                                                                                 name="b_bi_tax"
                                                                                                 onkeypress="return ( (event.charCode >= 48 && event.charCode < 58))"
                                                                                                 maxlength="12"
@@ -284,10 +285,11 @@
                                                             <div class="col-lg-4 col-12">
                                                                 <label
                                                                     class="form-label custom_lab mb-0"> <span
-                                                                        class="star_section">&nbsp;</span>
+                                                                        class="star_section">*</span>
                                                                     {{ __('translation.e-mail') }}
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12"><input type="email"
+                                                                                                required
                                                                                                 name="b_bi_email"
                                                                                                 class="form-control w-100 custom_input"
                                                                                                 aria-describedby="emailHelp"
@@ -301,12 +303,12 @@
                                                 </div>
                                                 <!-- form row 1 end  -->
                                                 <!-- form row 2 start  -->
-                                                <div class="custom_padding_form">
+                                                <div class="custom_padding_form pt-3">
                                                     <div class="row mt-5">
                                                         <div class="col-lg-12">
                                                             <h4 class="card-title border-bottom-0 mb-4"> <span
                                                                     class="bor_lef">&nbsp;</span>
-                                                                {{ __('translation.Building management company information') }}
+                                                                2. {{ __('translation.Building management company information') }}
                                                             </h4>
                                                         </div>
                                                         <div class="row align-items-center">
@@ -388,7 +390,7 @@
                                                             <div class="col-lg-4 col-12"><label
                                                                     class="form-label custom_lab mb-0"> <span
                                                                         class="star_section">*</span>
-                                                                    {{ __('translation.Industry Category') }}
+                                                                    {{ __('translation.industry') }}
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12"><input type="text"
                                                                                                 name="b_industry_category"
@@ -421,10 +423,11 @@
                                                         <div class="row align-items-center mt-4">
                                                             <div class="col-lg-4 col-12"><label
                                                                     class="form-label custom_lab mb-0"> <span
-                                                                        class="star_section">&nbsp;</span>
+                                                                        class="star_section">*</span>
                                                                     {{ __('translation.fax') }}
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12"><input type="text"
+                                                                                                required
                                                                                                 name="b_ci_fax"
                                                                                                 maxlength="12"
                                                                                                 class="format-number form-control w-100   custom_input"
@@ -437,10 +440,11 @@
                                                         <div class="row align-items-center mt-4">
                                                             <div class="col-lg-4 col-12"><label
                                                                     class="form-label custom_lab mb-0"> <span
-                                                                        class="star_section">&nbsp;</span>
+                                                                        class="star_section">*</span>
                                                                     {{ __('translation.e-mail') }}
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12"><input type="email"
+                                                                                                required
                                                                                                 name="b_ci_email"
                                                                                                 class="form-control w-100   custom_input"
                                                                                                 aria-describedby="emailHelp"
@@ -460,7 +464,7 @@
                                                         <div class="col-lg-11">
                                                             <h4 class="card-title border-bottom-0 mb-4 mt-3"> <span
                                                                     class="bor_lef">&nbsp;</span>
-                                                                {{ __('translation.AS Information') }}
+                                                                3. {{ __('translation.AS Information') }}
                                                             </h4>
                                                         </div>
                                                         <div class="col-lg-1 no-print">
@@ -489,7 +493,7 @@
                                                                                 name="engineer_company_id"
                                                                                 autocomplete="off" required="">
                                                                             <option selected="" value="" disabled="">
-                                                                                Select Engineer Company
+                                                                                {{__('translation.Engineer Companies')}}
                                                                             </option>
                                                                             @foreach($company as $building)
                                                                                 <option
@@ -520,7 +524,7 @@
                                                             <div class="col-md-4 col-12">
                                                                 <label class="form-label custom_lab mb-0"> <span
                                                                         class="star_section">*</span>
-                                                                    {{ __('translation.Repair Company Name') }}
+                                                                    {{ __('translation.maintenance manager') }}
                                                                 </label>
                                                             </div>
                                                             <div class="col-md-8 col-12">
@@ -617,17 +621,34 @@
                                                             </div>
                                                         </div>
 
+                                                        <div class="row align-items-center mt-4">
+                                                            <div class="col-md-4 col-12"><label
+                                                                    class="form-label custom_lab mb-0"> <span
+                                                                        class="star_section">*</span>
+                                                                    {{ __('translation.payment account') }}
+                                                                </label></div>
+                                                            <div class="col-md-8 col-12">
+                                                                <input type="text" name="payment_information"
+                                                                       class="form-control w-100 custom_input"
+                                                                       aria-describedby="emailHelp"
+                                                                       placeholder="{{ __('translation.Please enter your payment account information') }}"
+                                                                       required
+                                                                       @if (!empty($customer->ASInformation)) value="{{ $customer->ASInformation->payment_information }}" @endif>
+
+                                                            </div>
+                                                        </div>
+
                                                     </div>
                                                 </div>
                                                 <!-- form row 1 end  -->
 
                                                 <!-- form row 2 start  -->
-                                                <div class="custom_padding_form">
+                                                <div class="custom_padding_form pt-3">
                                                     <div class="row mt-5">
                                                         <div class="col-lg-12">
                                                             <h4 class="card-title border-bottom-0 mb-4"> <span
                                                                     class="bor_lef">&nbsp;</span>
-                                                                {{ __('translation.Repair Company Information') }}
+                                                               4. {{ __('translation.Repair Company Information') }}
                                                             </h4>
                                                         </div>
                                                         <div class="row align-items-center">
@@ -685,7 +706,7 @@
                                                             <div class="col-md-4 col-12"><label
                                                                     class="form-label custom_lab mb-0"> <span
                                                                         class="star_section">*</span>
-                                                                    {{ __('translation.Industry Category') }}
+                                                                    {{ __('translation.industry') }}
                                                                 </label>
                                                             </div>
                                                             <div class="col-md-8 col-12"><input type="text"
@@ -718,10 +739,11 @@
                                                         <div class="row align-items-center mt-4">
                                                             <div class="col-md-4 col-12"><label
                                                                     class="form-label custom_lab mb-0"> <span
-                                                                        class="star_section">&nbsp;</span>
+                                                                        class="star_section">*</span>
                                                                     {{ __('translation.fax') }}
                                                                 </label></div>
                                                             <div class="col-md-8 col-12"><input type="text"
+                                                                                                required
                                                                                                 maxlength="12"
                                                                                                 onkeypress="return ( (event.charCode >= 48 && event.charCode < 58))"
                                                                                                 name="fax"
@@ -735,15 +757,46 @@
                                                         <div class="row align-items-center mt-4">
                                                             <div class="col-md-4 col-12"><label
                                                                     class="form-label custom_lab mb-0"> <span
-                                                                        class="star_section">&nbsp;</span>
+                                                                        class="star_section">*</span>
                                                                     {{ __('translation.e-mail') }}
                                                                 </label></div>
                                                             <div class="col-md-8 col-12"><input type="email"
+                                                                                                required
                                                                                                 name="email"
                                                                                                 class="form-control w-100 custom_input"
                                                                                                 aria-describedby="emailHelp"
                                                                                                 placeholder="{{ __('translation.Enter email') }}"
                                                                                                 @if (!empty($customer->RepairCompanyInformation)) value="{{ $customer->RepairCompanyInformation->email }}" @endif>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row align-items-center mt-4">
+                                                            <div class="col-md-4 col-12"><label
+                                                                    class="form-label custom_lab mb-0"> <span
+                                                                        class="star_section">*</span>
+                                                                    {{ __('translation.Maintenance company registration number') }}
+                                                                </label></div>
+                                                            <div class="col-md-8 col-12"><input type="text"
+                                                                                                required
+                                                                                                name="mc_reg"
+                                                                                                class="form-control w-100 custom_input"
+                                                                                                aria-describedby="emailHelp"
+                                                                                                placeholder="{{ __('translation.Please enter your maintenance company registration number') }}"
+                                                                                                @if (!empty($customer->RepairCompanyInformation)) value="{{ $customer->RepairCompanyInformation->mc_reg }}" @endif>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row align-items-center mt-4">
+                                                            <div class="col-md-4 col-12"><label
+                                                                    class="form-label custom_lab mb-0"> <span
+                                                                        class="star_section">*</span>
+                                                                    {{ __('translation.Sectors') }}
+                                                                </label></div>
+                                                            <div class="col-md-8 col-12"><input type="text"
+                                                                                                required
+                                                                                                name="indus"
+                                                                                                class="form-control w-100 custom_input"
+                                                                                                aria-describedby="emailHelp"
+                                                                                                placeholder="{{ __('translation.Please enter your industry') }}"
+                                                                                                @if (!empty($customer->RepairCompanyInformation)) value="{{ $customer->RepairCompanyInformation->indus }}" @endif>
                                                             </div>
                                                         </div>
 
