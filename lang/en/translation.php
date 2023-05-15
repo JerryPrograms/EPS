@@ -583,4 +583,5 @@ return [
     'Please enter your maintenance company registration number' => 'Please enter your maintenance company registration number',
     'Sectors' => 'Sectors',
     'Please enter your industry' => 'Please enter your industry',
+    'Registration of business partners' => 'Registration of business partners',
 ];

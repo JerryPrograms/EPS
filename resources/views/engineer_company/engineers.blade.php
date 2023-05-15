@@ -13,69 +13,71 @@
                 <div class="main_content_section">
                     <div class="row">
                         <div class="col-lg-12">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h4 class="card-title mb-4">
-                                        {{ __('translation.Customer Information') }}
-                                    </h4>
-                                    <div class="table-responsive mt-3">
-                                        <table class="table align-middle custom_mrg">
-                                            <thead class="table-light">
-                                            <tr>
-                                                <th>{{ __('translation.no') }}</th>
-                                                <th>{{ __('translation.Register Date') }}</th>
-                                                <th>{{ __('translation.Company Name') }}</th>
-                                                <th>{{ __('translation.Company Number') }}</th>
-                                                <th>{{ __('translation.Address') }}</th>
-                                                <th>{{ __('translation.Manager Name') }}</th>
-                                                <th>{{ __('translation.Contact') }}</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr class="custom_bor mt-5">
-                                                <td class="custom_br_theme_clr"><a
-                                                        href="javascript: void(0);"
-                                                        class="text-body  tble_text">1</a></td>
-                                                <td class="custom_br_theme_clr_2">
-                                                    <p class="tble_text">
-                                                        {{$company->created_at->format('Y.m.d')}}
-                                                    </p>
-                                                </td>
-                                                </td>
-                                                </td>
-                                                </td>
-                                                <td class="custom_br_theme_clr_2">
-                                                    <p class="tble_text">
-                                                        {{$company->company_name}}
-                                                    </p>
-                                                </td>
-                                                <td class="custom_br_theme_clr_2">
-                                                    <p class="tble_text">
-                                                        {{$company->company_registration_number}}
-                                                    </p>
-                                                </td>
-                                                <td class="custom_br_theme_clr_2">
-                                                    <p class="tble_text">
-                                                        {{$company->address}}
-                                                    </p>
-                                                </td>
+                            @if(activeGuard() == 'admin')
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title mb-4">
+                                            {{ __('translation.Customer Information') }}
+                                        </h4>
+                                        <div class="table-responsive mt-3">
+                                            <table class="table align-middle custom_mrg">
+                                                <thead class="table-light">
+                                                <tr>
+                                                    <th>{{ __('translation.no') }}</th>
+                                                    <th>{{ __('translation.Register Date') }}</th>
+                                                    <th>{{ __('translation.Company Name') }}</th>
+                                                    <th>{{ __('translation.Company Number') }}</th>
+                                                    <th>{{ __('translation.Address') }}</th>
+                                                    <th>{{ __('translation.Manager Name') }}</th>
+                                                    <th>{{ __('translation.Contact') }}</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr class="custom_bor mt-5">
+                                                    <td class="custom_br_theme_clr"><a
+                                                            href="javascript: void(0);"
+                                                            class="text-body  tble_text">1</a></td>
+                                                    <td class="custom_br_theme_clr_2">
+                                                        <p class="tble_text">
+                                                            {{$company->created_at->format('Y.m.d')}}
+                                                        </p>
+                                                    </td>
+                                                    </td>
+                                                    </td>
+                                                    </td>
+                                                    <td class="custom_br_theme_clr_2">
+                                                        <p class="tble_text">
+                                                            {{$company->company_name}}
+                                                        </p>
+                                                    </td>
+                                                    <td class="custom_br_theme_clr_2">
+                                                        <p class="tble_text">
+                                                            {{$company->company_registration_number}}
+                                                        </p>
+                                                    </td>
+                                                    <td class="custom_br_theme_clr_2">
+                                                        <p class="tble_text">
+                                                            {{$company->address}}
+                                                        </p>
+                                                    </td>
 
-                                                <td class="custom_br_theme_clr_2">
-                                                    <p class="tble_text">
-                                                        {{$company->company_registration_number}}
-                                                    </p>
-                                                </td>
-                                                <td class="custom_br_theme_clr_3">
-                                                    <p class="tble_text">
-                                                        {{$company->contact}}
-                                                    </p>
-                                                </td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
+                                                    <td class="custom_br_theme_clr_2">
+                                                        <p class="tble_text">
+                                                            {{$company->company_registration_number}}
+                                                        </p>
+                                                    </td>
+                                                    <td class="custom_br_theme_clr_3">
+                                                        <p class="tble_text">
+                                                            {{$company->contact}}
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            @endif
                             <div class="card">
                                 <div class="card-body">
                                     <div
@@ -151,14 +153,14 @@
                                                                     <img
                                                                         src="{{asset('engineer_company/images/edit_icon.png')}}">
                                                                 </a>
-                                                                <a @if(activeGuard() == 'admin')
-                                                                   @endif data-bs-toggle="modal"
-                                                                   data-del-id="{{ $engineer->id }}"
-                                                                   data-bs-target="#delModal"
-                                                                   class="btn btn-outline-danger btn-theme-danger-outline btn-outline btn-sm">
-                                                                    <img
-                                                                        src="{{asset('engineer_company/assets/images/red-search.png')}}">
-                                                                </a>
+{{--                                                                <a @if(activeGuard() == 'admin')--}}
+{{--                                                                   @endif data-bs-toggle="modal"--}}
+{{--                                                                   data-del-id="{{ $engineer->id }}"--}}
+{{--                                                                   data-bs-target="#delModal"--}}
+{{--                                                                   class="btn btn-outline-danger btn-theme-danger-outline btn-outline btn-sm">--}}
+{{--                                                                    <img--}}
+{{--                                                                        src="{{asset('engineer_company/assets/images/red-search.png')}}">--}}
+{{--                                                                </a>--}}
                                                             </div>
                                                         </td>
                                                     </tr>

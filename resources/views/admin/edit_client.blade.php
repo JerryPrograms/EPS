@@ -12,7 +12,7 @@
                             <div class="card">
                                 <div class="card-body mb-4">
                                     <div class="prompt w-100"></div>
-                                    <h4 class="card-title mb-4">Registration of business partners
+                                    <h4 class="card-title mb-4">{{__('translation.Registration of business partners')}}
                                     </h4>
                                     <div class="table-responsive mt-3">
                                         <table class="table" style="border-collapse: collapse;">
@@ -99,7 +99,6 @@
 
                     <div class="row">
                         <div class="col-lg-12">
-                            <div class="prompt w-100"></div>
                             <div class="card">
 
                                 <div class="card-body">
@@ -214,7 +213,7 @@
                                                                                value="{{$data->company_name}}"
                                                                                required="">
                                                                     </div>
-                                                                    <div class="col-3">
+                                                                    <div class="col-3 mt-3">
                                                                         <label
                                                                             class="form-label custom_lab mb-0"> <span
                                                                                 class="star_section">*</span>
@@ -238,7 +237,7 @@
                                                             <div class="col-lg-4 col-12"><label
                                                                     class="form-label custom_lab mb-0"> <span
                                                                         class="star_section">*</span>
-                                                                    Representative
+                                                                    {{__('translation.Representative')}}
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12">
                                                                 <div class="row">
@@ -251,7 +250,7 @@
                                                                                value="{{$data->representative}}"
                                                                                required="">
                                                                     </div>
-                                                                    <div class="col-3">
+                                                                    <div class="col-3 mt-3">
                                                                         <label
                                                                             class="form-label custom_lab mb-0"> <span
                                                                                 class="star_section">*</span>
@@ -276,7 +275,7 @@
                                                             <div class="col-lg-4 col-12"><label
                                                                     class="form-label custom_lab mb-0"> <span
                                                                         class=" star_section">&nbsp;</span>
-                                                                    Address
+                                                                    {{__('translation.Address')}}
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12"><input type="text"
                                                                                                 name="address"

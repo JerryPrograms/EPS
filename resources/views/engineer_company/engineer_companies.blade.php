@@ -11,7 +11,7 @@
                                     <div
                                         class="card-title mb-4 d-flex align-items-center justify-content-between mobile-flex-column">
                                         <h5 class="mb-0 font-15">{{ __('translation.Partner Management') }}
-                                            ({{count($engineer_companies)}})</h5>
+                                            </h5>
                                         <a href="{{ route('add_engineer_company') }}"
                                            class="btn btn-primary">{{ __('translation.Add Company') }}</a>
 
@@ -57,7 +57,7 @@
                                                 @foreach ($engineer_companies as $engineer_company)
                                                     <tr>
                                                         <td>{{ $loop->index + 1 }}</td>
-                                                        <td>{{ $engineer_company->created_at->format('d-m-Y') }}</td>
+                                                        <td>{{ $engineer_company->created_at->format('Y M D') }}</td>
                                                         <td>{{ $engineer_company->company_name }}</td>
                                                         <td>{{ $engineer_company->company_registration_number }}</td>
                                                         <td>{{ $engineer_company->address }}</td>
@@ -77,18 +77,21 @@
                                                                        data-del-id="{{ $engineer_company->id }}"
                                                                        data-bs-target="#delModal"
                                                                        class="btn btn-outline-danger btn-theme-danger-outline btn-outline btn-sm">
-                                                                        <i class="bx bx-trash-alt"></i>
+                                                                        <img
+                                                                            src="{{asset('engineer_company/assets/Trash.png')}}">
                                                                     </a>
                                                                 @else
                                                                     <a href="{{ route('ec.ecdashboard',$engineer_company->id) }}"
                                                                        class="btn btn-primary btn-custom-table btn-sm">
-                                                                        <i class="bx bxs-edit-alt"></i>
+                                                                        <img
+                                                                            src="{{asset('engineer_company/images/edit_icon.png')}}">
                                                                     </a>
                                                                     <a data-bs-toggle="modal"
                                                                        data-del-id="{{ $engineer_company->id }}"
                                                                        data-bs-target="#delModal"
                                                                        class="btn btn-danger btn-custom-table btn-sm delBtn">
-                                                                        <i class="bx bx-trash-alt"></i>
+                                                                        <img
+                                                                            src="{{asset('engineer_company/assets/Trash.png')}}">
                                                                     </a>
                                                                 @endif
 

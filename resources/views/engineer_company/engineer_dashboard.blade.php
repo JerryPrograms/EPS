@@ -23,7 +23,7 @@
                                                 <th>{{ __('translation.Company Name') }}</th>
                                                 <th>{{ __('translation.Company Number') }}</th>
                                                 <th>{{ __('translation.Address') }}</th>
-                                                <th>{{ __('translation.Manager Name') }}</th>
+{{--                                                <th>{{ __('translation.Manager Name') }}</th>--}}
                                                 <th>{{ __('translation.Contact') }}</th>
                                             </tr>
                                             </thead>
@@ -36,9 +36,6 @@
                                                     <p class="tble_text">
                                                         {{$company->created_at->format('Y.m.d')}}
                                                     </p>
-                                                </td>
-                                                </td>
-                                                </td>
                                                 </td>
                                                 <td class="custom_br_theme_clr_2">
                                                     <p class="tble_text">
@@ -55,12 +52,11 @@
                                                         {{$company->address}}
                                                     </p>
                                                 </td>
-
-                                                <td class="custom_br_theme_clr_2">
-                                                    <p class="tble_text">
-                                                        {{$company->company_registration_number}}
-                                                    </p>
-                                                </td>
+{{--                                                <td class="custom_br_theme_clr_2">--}}
+{{--                                                    <p class="tble_text">--}}
+{{--                                                        {{$company->company_registration_number}}--}}
+{{--                                                    </p>--}}
+{{--                                                </td>--}}
                                                 <td class="custom_br_theme_clr_3">
                                                     <p class="tble_text">
                                                         {{$company->contact}}
@@ -147,17 +143,17 @@
                                                         </p>
                                                     </button>
                                                 </div>
-                                                <div class="col-sm-12 col-md-4 col-lg-2 mt-3">
-                                                    <button onclick="window.location.href = '{{route('ec.GetCalenderCompany',$company->id)}}'"
+{{--                                                <div class="col-sm-12 col-md-4 col-lg-2 mt-3">--}}
+{{--                                                    <button onclick="window.location.href = '{{route('ec.GetCalenderCompany',$company->id)}}'"--}}
 
-                                                            class="searchbar_img border-0 w-100">
-                                                        <img style="width: 50px; height: 50px"
-                                                            src="{{asset('admin/images/company_7.png')}}">
-                                                        <p class="searchbar_text mt-3">
-                                                            {{ __('translation.calender') }}
-                                                        </p>
-                                                    </button>
-                                                </div>
+{{--                                                            class="searchbar_img border-0 w-100">--}}
+{{--                                                        <img style="width: 50px; height: 50px"--}}
+{{--                                                            src="{{asset('admin/images/company_7.png')}}">--}}
+{{--                                                        <p class="searchbar_text mt-3">--}}
+{{--                                                            {{ __('translation.calender') }}--}}
+{{--                                                        </p>--}}
+{{--                                                    </button>--}}
+{{--                                                </div>--}}
                                             </div>
                                         </div>
                                     </div>

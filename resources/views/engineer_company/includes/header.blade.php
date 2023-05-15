@@ -16,7 +16,7 @@
                             <p id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false"
                                class="mb-sm-0 font-size-18 user_test dropdown-toggle">{{auth(activeGuard())->user()->company_name}}</p>
                         @endif
-                        <div class="dropdown-menu" style="right: 0px !important;" aria-labelledby="dropdownMenuButton">
+                        <div class="dropdown-menu"  aria-labelledby="dropdownMenuButton">
                             <a class="dropdown-item" href="{{route('ec.EngineerCompanyLogout',activeGuard())}}"><i
                                     class="text-danger fa fa-power-off me-2"></i>{{ __('translation.logout') }}</a>
                         </div>

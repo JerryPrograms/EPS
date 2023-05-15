@@ -102,83 +102,67 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="form-group mb-4">
-                                            <div class="row align-items-center">
-                                                <div class="col-lg-3 col-md-6 col-12">
-                                                    <label for="phone_number"
-                                                           class="mb-0">{{ __('translation.Phone number') }}</label>
-                                                </div>
-                                                <div class="col-lg-9 col-md-6 col-12">
-                                                    <input type="text"
-                                                           class="form-control form-theme-input format-number"
-                                                           name="phone" id="phone_number"
-                                                           maxlength="12"
-                                                           value="{{$engineer->phone}}"
-                                                           onkeypress="return ( (event.charCode >= 48 && event.charCode < 58))"
-                                                           placeholder="{{ __('translation.Write phone number') }}"
-                                                           required>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group mb-4">
-                                            <div class="row align-items-center">
-                                                <div class="col-lg-3 col-md-6 col-12">
-                                                    <label for="phone_number"
-                                                           class="mb-0">{{ __('translation.Social Security') }}</label>
-                                                </div>
-                                                <div class="col-lg-9 col-md-6 col-12">
-                                                    <input type="text"
-                                                           class="form-control form-theme-input format-number"
-                                                           name="social_security" id="phone_number"
-                                                           maxlength="12"
-                                                           value="{{$engineer->social_security}}"
-                                                           onkeypress="return ( (event.charCode >= 48 && event.charCode < 58))"
-                                                           placeholder="{{ __('translation.Write Social Security') }}"
-                                                           required>
+                                        @if(activeGuard() == 'admin')
+                                            <div class="form-group mb-4">
+                                                <div class="row align-items-center">
+                                                    <div class="col-lg-3 col-md-6 col-12">
+                                                        <label for="phone_number"
+                                                               class="mb-0">{{ __('translation.Social Security') }}</label>
+                                                    </div>
+                                                    <div class="col-lg-9 col-md-6 col-12">
+                                                        <input type="text"
+                                                               class="form-control form-theme-input format-number"
+                                                               name="social_security" id="phone_number"
+                                                               maxlength="12"
+                                                               value="{{$engineer->social_security}}"
+                                                               onkeypress="return ( (event.charCode >= 48 && event.charCode < 58))"
+                                                               placeholder="{{ __('translation.Write Social Security') }}"
+                                                               required>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group mb-4">
-                                            <div class="row align-items-center">
-                                                <div class="col-lg-3 col-md-6 col-12">
-                                                    <label for="id"
-                                                           class="mb-0">{{ __('translation.Rank') }}</label>
-                                                </div>
-                                                <div class="col-lg-9 col-md-6 col-12">
-                                                    <input type="text" class="form-control form-theme-input"
-                                                           name="rank" id="id"
-                                                           value="{{$engineer->rank}}"
-                                                           placeholder="{{ __('translation.Rank') }}"
-                                                           required>
+                                            <div class="form-group mb-4">
+                                                <div class="row align-items-center">
+                                                    <div class="col-lg-3 col-md-6 col-12">
+                                                        <label for="id"
+                                                               class="mb-0">{{ __('translation.Rank') }}</label>
+                                                    </div>
+                                                    <div class="col-lg-9 col-md-6 col-12">
+                                                        <input type="text" class="form-control form-theme-input"
+                                                               name="rank" id="id"
+                                                               value="{{$engineer->rank}}"
+                                                               placeholder="{{ __('translation.Rank') }}"
+                                                               required>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group mb-4">
-                                            <div class="row align-items-center">
-                                                <div class="col-lg-3 col-md-6 col-12">
-                                                    <label for="id"
-                                                           class="mb-0">{{ __('translation.Approval Rights') }}</label>
-                                                </div>
-                                                <div class="col-lg-9 col-md-6 col-12">
-                                                    <select class="form-select valid" name="approval_rights"
-                                                            autocomplete="off"
-                                                            required="">
-                                                        <option value="" disabled="">
-                                                            --Select Approval Rights--
-                                                        </option>
+                                            <div class="form-group mb-4">
+                                                <div class="row align-items-center">
+                                                    <div class="col-lg-3 col-md-6 col-12">
+                                                        <label for="id"
+                                                               class="mb-0">{{ __('translation.Approval Rights') }}</label>
+                                                    </div>
+                                                    <div class="col-lg-9 col-md-6 col-12">
+                                                        <select class="form-select valid" name="approval_rights"
+                                                                autocomplete="off"
+                                                                required="">
+                                                            <option value="" disabled="">
+                                                                --Select Approval Rights--
+                                                            </option>
 
-                                                        <option
-                                                            {{$engineer->approval_rights == 'Manager' ? 'selected' : '' }} value="Manager">
-                                                            Manager
-                                                        </option>
-                                                        <option
-                                                            {{$engineer->approval_rights == 'Article' ? 'selected' : '' }}  value="Article">
-                                                            Article
-                                                        </option>
-                                                    </select>
+                                                            <option
+                                                                {{$engineer->approval_rights == 'Manager' ? 'selected' : '' }} value="Manager">
+                                                                Manager
+                                                            </option>
+                                                            <option
+                                                                {{$engineer->approval_rights == 'Article' ? 'selected' : '' }}  value="Article">
+                                                                Article
+                                                            </option>
+                                                        </select>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        @endif
                                         <div class="form-action mt-4 text-end">
                                             <button id="editEngineerBtn" type="submit"
                                                     class="btn btn-primary">{{ __('translation.correction') }}</button>
