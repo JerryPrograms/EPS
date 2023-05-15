@@ -559,7 +559,7 @@ return [
     'Sectors' => '업종',
     'Enter Sectors' => '구분명을 입력해주세요',
     'Business Email' => '업태',
-    'Enter Business Email' => '회사 이메일을 입력해주세요',
+    'Enter Business Email' => '업태를 입력해주세요',
     'Enter Contact' => '연락처를 입력해주세요',
     'Select Division' => '구분 선택',
     'Engineer Company' => 'AS업체',

@@ -333,7 +333,7 @@
                                                         <div class="row align-items-center mt-4">
                                                             <div class="col-lg-4 col-12"><label
                                                                     class="form-label custom_lab mb-0"> <span
-                                                                        class="star_section">&nbsp;</span>
+                                                                        class="star_section">*</span>
                                                                     {{__('translation.fax')}}
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12"><input type="text"
@@ -348,7 +348,7 @@
                                                         <div class="row align-items-center mt-4">
                                                             <div class="col-lg-4 col-12"><label
                                                                     class="form-label custom_lab mb-0"> <span
-                                                                        class="star_section">&nbsp;</span>
+                                                                        class="star_section">*</span>
                                                                     {{__('translation.Email')}}
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12"><input type="email"
@@ -364,7 +364,7 @@
                                                                  class="row align-items-center mt-4">
                                                                 <div class="col-lg-4 col-12"><label
                                                                         class="form-label custom_lab mb-0"> <span
-                                                                            class="star_section">&nbsp;</span>
+                                                                            class="star_section">*</span>
                                                                         {{__('translation.Division')}}
                                                                     </label></div>
 
