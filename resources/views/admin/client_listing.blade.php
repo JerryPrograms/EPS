@@ -68,7 +68,7 @@
                                                             {{$loop->index +1 }}
                                                         </td>
                                                         <td>
-                                                            {{$customer->created_at->format('Y M D')}}
+                                                            {{$customer->created_at->format('Y-m-d')}}
                                                         </td>
                                                         <td>
                                                             {{$customer->customer_number}}

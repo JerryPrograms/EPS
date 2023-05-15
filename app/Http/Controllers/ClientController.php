@@ -89,14 +89,14 @@ class ClientController extends Controller
                 CustomerInfo::where('id', $request->id)->update($data);
                 return json_encode([
                     'success' => true,
-                    'message' => 'Client updated successfully',
+                    'message' => __('translation.Client updated successfully'),
                 ]);
             } else {
                 unset($data['building_id']);
                 Engineer_company::where('id', $request->id)->update($data);
                 return json_encode([
                     'success' => true,
-                    'message' => 'Client updated successfully',
+                    'message' => __('translation.Client updated successfully'),
                 ]);
             }
 

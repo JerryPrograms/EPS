@@ -57,7 +57,7 @@
                                                 @foreach ($engineer_companies as $engineer_company)
                                                     <tr>
                                                         <td>{{ $loop->index + 1 }}</td>
-                                                        <td>{{ $engineer_company->created_at->format('Y M D') }}</td>
+                                                        <td>{{ $engineer_company->created_at->format('Y-m-d') }}</td>
                                                         <td>{{ $engineer_company->company_name }}</td>
                                                         <td>{{ $engineer_company->company_registration_number }}</td>
                                                         <td>{{ $engineer_company->address }}</td>

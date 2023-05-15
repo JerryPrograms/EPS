@@ -579,4 +579,6 @@ return [
     'Sectors' => '업종',
     'Please enter your industry' => '업종을 입력해주세요',
     'Registration of business partners' => '거래처등록',
+    'Engineer Company1' => '보수업체',
+    'Client updated successfully'=>'수정 완료'
 ];

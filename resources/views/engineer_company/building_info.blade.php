@@ -484,7 +484,7 @@
                                                                     <label
                                                                         class="form-label custom_lab mb-0"> <span
                                                                             class="star_section">*</span>
-                                                                        Engineer Company
+                                                                        {{__('translation.Engineer Company1')}}
                                                                     </label>
                                                                 </div>
                                                                 <div class="col-lg-8 col-12">

@@ -110,7 +110,7 @@
                             <div class="col-md-12">
                                 <div class="prompt w-100"></div>
                             </div>
-                            <p>{{__('Are you sure you want to delete this data?')}}</p>
+                            <p>{{__('translation.Are you sure you want to delete this data?')}}</p>
                             <input name="id" id="customerInfoID" hidden>
                         </div>
                     </div>
@@ -157,7 +157,7 @@
                                 data-bs-dismiss="modal">{{__('translation.close')}}
                         </button>
                         <button type="submit"
-                                class="btn btn-primary waves-effect waves-light submitbtn123">{{__('translation.Edit')}}</button>
+                                class="btn btn-primary waves-effect waves-light submitbtn123">{{__('translation.correction')}}</button>
                     </div>
                 </form>
             </div><!-- /.modal-content -->

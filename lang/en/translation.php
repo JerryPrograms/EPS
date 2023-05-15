@@ -584,4 +584,6 @@ return [
     'Sectors' => 'Sectors',
     'Please enter your industry' => 'Please enter your industry',
     'Registration of business partners' => 'Registration of business partners',
+    'Engineer Company1' => 'Engineer Company',
+    'Client updated successfully'=>'Client updated successfully',
 ];
