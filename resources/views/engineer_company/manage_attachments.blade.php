@@ -66,9 +66,8 @@
                                                 </thead>
                                                 <tbody>
                                                 <tr class="custom_bor mt-5">
-                                                    <td class="custom_br_theme_clr"><a
-                                                            href="javascript: void(0);"
-                                                            class="text-body  tble_text">1</a>
+                                                    <td class="custom_br_theme_clr"><a href="javascript: void(0);"
+                                                                                       class="text-body  tble_text">1</a>
                                                     </td>
                                                     <td class="custom_br_theme_clr_2">
                                                         <p class="tble_text">
@@ -82,24 +81,31 @@
                                                     </td>
                                                     <td class="custom_br_theme_clr_2">
                                                         <p class="tble_text">
-                                                            {{$customer->building_name}}
+                                                            @if(!empty($customer->GetBuildingInfo))
+                                                                {{$customer->GetBuildingInfo->building_name}}
+                                                            @endif
                                                         </p>
                                                     </td>
                                                     <td class="custom_br_theme_clr_2">
                                                         <p class="tble_text">
-                                                            {{$customer->address}}
+                                                            @if(!empty($customer->GetBuildingInfo))
+                                                                {{$customer->GetBuildingInfo->address}}
+                                                            @endif
                                                         </p>
                                                     </td>
 
                                                     <td class="custom_br_theme_clr_2">
                                                         <p class="tble_text">
-                                                            {{$customer->building_management_company}}
-
+                                                            @if(!empty($customer->CompanyInformation))
+                                                                {{$customer->CompanyInformation->company_name}}
+                                                            @endif
                                                         </p>
                                                     </td>
                                                     <td class="custom_br_theme_clr_3">
                                                         <p class="tble_text">
-                                                            {{$customer->maintenance_company}}
+                                                            @if(!empty($customer->CompanyInformation))
+                                                                {{$customer->CompanyInformation->company_name}}
+                                                            @endif
                                                         </p>
                                                     </td>
                                                 </tr>

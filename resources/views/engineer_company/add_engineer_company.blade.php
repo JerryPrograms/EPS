@@ -75,8 +75,8 @@
                                                     <input type="text"
                                                            class="form-control form-theme-input format-number"
                                                            name="phone" id="phone"
-                                                           maxlength="12"
-                                                           onkeypress="return ( (event.charCode >= 48 && event.charCode < 58))"
+                                                           maxlength="11"
+
                                                            placeholder="{{ __('translation.Write company number') }}"
                                                            required>
                                                 </div>
@@ -136,13 +136,13 @@
             }
         });
 
-        $('.format-number').keyup(function () {
-            var foo = $(this).val().split("-").join(""); // remove hyphens
-
-            foo = foo.match(new RegExp('.{1,4}$|.{1,3}', 'g')).join("-");
-
-            $(this).val(foo);
-
-        });
+        // $('.format-number').keyup(function () {
+        //     var foo = $(this).val().split("-").join(""); // remove hyphens
+        //
+        //     foo = foo.match(new RegExp('.{1,4}$|.{1,3}', 'g')).join("-");
+        //
+        //     $(this).val(foo);
+        //
+        // });
     </script>
 @endsection

@@ -58,13 +58,13 @@ class ClientController extends Controller
                 CustomerInfo::create($data);
                 return json_encode([
                     'success' => true,
-                    'message' => 'Client created successfully',
+                    'message' => __('translation.Client updated successfully'),
                 ]);
             } else {
                 Engineer_company::create($data);
                 return json_encode([
                     'success' => true,
-                    'message' => 'Client created successfully',
+                    'message' => __('translation.Client updated successfully'),
                 ]);
             }
 

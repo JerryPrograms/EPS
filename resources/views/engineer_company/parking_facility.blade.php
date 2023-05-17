@@ -24,18 +24,18 @@
                                             {{ __('translation.Fill in customer information') }}
 
                                         </h4>
-                                        <div class="row">
+{{--                                        <div class="row">--}}
 
 
-                                            <div class="col-12">
-                                                <div class="circle_main_section">
-                                                    <button type="button" class="circle_img_section">
-                                                        <img src="{{ asset('engineer_company/images/user2.png') }}">
-                                                        <p class="circle_img_text mt-3">홍길동 기사님</p>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
+{{--                                            <div class="col-12">--}}
+{{--                                                <div class="circle_main_section">--}}
+{{--                                                    <button type="button" class="circle_img_section">--}}
+{{--                                                        <img src="{{ asset('engineer_company/images/user2.png') }}">--}}
+{{--                                                        <p class="circle_img_text mt-3">홍길동 기사님</p>--}}
+{{--                                                    </button>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
                                         <div class="table-responsive mt-3">
                                             <table class="table align-middle custom_mrg">
                                                 <thead class="table-light">
@@ -67,43 +67,50 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr class="custom_bor mt-5">
-                                                        <td class="custom_br_theme_clr"><a href="javascript: void(0);"
-                                                                class="text-body  tble_text">1</a>
-                                                        </td>
-                                                        <td class="custom_br_theme_clr_2">
-                                                            <p class="tble_text">
-                                                                {{ $customer->created_at->format('Y.m.d') }}
-                                                            </p>
-                                                        </td>
-                                                        <td class="custom_br_theme_clr_2">
-                                                            <p class="tble_text">
-                                                                {{ $customer->customer_number }}
-                                                            </p>
-                                                        </td>
-                                                        <td class="custom_br_theme_clr_2">
-                                                            <p class="tble_text">
-                                                                {{ $customer->building_name }}
-                                                            </p>
-                                                        </td>
-                                                        <td class="custom_br_theme_clr_2">
-                                                            <p class="tble_text">
-                                                                {{ $customer->address }}
-                                                            </p>
-                                                        </td>
+                                                <tr class="custom_bor mt-5">
+                                                    <td class="custom_br_theme_clr"><a href="javascript: void(0);"
+                                                                                       class="text-body  tble_text">1</a>
+                                                    </td>
+                                                    <td class="custom_br_theme_clr_2">
+                                                        <p class="tble_text">
+                                                            {{$customer->created_at->format('Y.m.d')}}
+                                                        </p>
+                                                    </td>
+                                                    <td class="custom_br_theme_clr_2">
+                                                        <p class="tble_text">
+                                                            {{$customer->customer_number}}
+                                                        </p>
+                                                    </td>
+                                                    <td class="custom_br_theme_clr_2">
+                                                        <p class="tble_text">
+                                                            @if(!empty($customer->GetBuildingInfo))
+                                                                {{$customer->GetBuildingInfo->building_name}}
+                                                            @endif
+                                                        </p>
+                                                    </td>
+                                                    <td class="custom_br_theme_clr_2">
+                                                        <p class="tble_text">
+                                                            @if(!empty($customer->GetBuildingInfo))
+                                                                {{$customer->GetBuildingInfo->address}}
+                                                            @endif
+                                                        </p>
+                                                    </td>
 
-                                                        <td class="custom_br_theme_clr_2">
-                                                            <p class="tble_text">
-                                                                {{ $customer->building_management_company }}
-
-                                                            </p>
-                                                        </td>
-                                                        <td class="custom_br_theme_clr_3">
-                                                            <p class="tble_text">
-                                                                {{ $customer->maintenance_company }}
-                                                            </p>
-                                                        </td>
-                                                    </tr>
+                                                    <td class="custom_br_theme_clr_2">
+                                                        <p class="tble_text">
+                                                            @if(!empty($customer->CompanyInformation))
+                                                                {{$customer->CompanyInformation->company_name}}
+                                                            @endif
+                                                        </p>
+                                                    </td>
+                                                    <td class="custom_br_theme_clr_3">
+                                                        <p class="tble_text">
+                                                            @if(!empty($customer->CompanyInformation))
+                                                                {{$customer->CompanyInformation->company_name}}
+                                                            @endif
+                                                        </p>
+                                                    </td>
+                                                </tr>
                                                 </tbody>
                                             </table>
                                         </div>

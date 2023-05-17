@@ -81,8 +81,8 @@
                                                     <input type="text"
                                                            class="form-control form-theme-input format-number"
                                                            name="phone" id="phone_number"
-                                                           maxlength="12"
-                                                           onkeypress="return ( (event.charCode >= 48 && event.charCode < 58))"
+                                                           maxlength="11"
+
                                                            placeholder="{{ __('translation.Write phone number') }}"
                                                            required>
                                                 </div>
@@ -99,8 +99,7 @@
                                                         <input type="text"
                                                                class="form-control form-theme-input format-number"
                                                                name="social_security" id="phone_number"
-                                                               maxlength="12"
-                                                               onkeypress="return ( (event.charCode >= 48 && event.charCode < 58))"
+                                                               maxlength="11"
                                                                placeholder="{{ __('translation.Write Social Security') }}"
                                                                required>
                                                     </div>
@@ -115,7 +114,7 @@
                                                     <div class="col-lg-9 col-md-6 col-12">
                                                         <input type="text" class="form-control form-theme-input"
                                                                name="rank" id="id"
-                                                               placeholder="{{ __('translation.Rank') }}"
+                                                               placeholder="{{ __('translation.Please enter your rank') }}"
                                                                required>
                                                     </div>
                                                 </div>
@@ -131,12 +130,12 @@
                                                                 autocomplete="off"
                                                                 required="">
                                                             <option value="" disabled="">
-                                                                --Select Approval Rights--
+                                                                --{{__('translation.Please enter your industry')}}--
                                                             </option>
 
-                                                            <option value="Manager">Manager
+                                                            <option value="Manager">{{__('translation.manager')}}
                                                             </option>
-                                                            <option value="Article">Article
+                                                            <option value="Article">{{__('translation.Article')}}
                                                             </option>
                                                         </select>
                                                     </div>
@@ -180,13 +179,13 @@
         });
         @endif
 
-        $('.format-number').keyup(function () {
-            var foo = $(this).val().split("-").join(""); // remove hyphens
-
-            foo = foo.match(new RegExp('.{1,4}$|.{1,3}', 'g')).join("-");
-
-            $(this).val(foo);
-
-        });
+        // $('.format-number').keyup(function () {
+        //     var foo = $(this).val().split("-").join(""); // remove hyphens
+        //
+        //     foo = foo.match(new RegExp('.{1,4}$|.{1,3}', 'g')).join("-");
+        //
+        //     $(this).val(foo);
+        //
+        // });
     </script>
 @endsection

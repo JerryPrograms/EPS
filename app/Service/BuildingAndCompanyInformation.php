@@ -19,8 +19,7 @@ class BuildingAndCompanyInformation
 
     public static function CreateBuildingAndCompanyInformation(BuildingAndCompanyRequest $request)
     {
-
-//        dd($request->all());
+//dd($request->all());
 
         try {
 
@@ -47,10 +46,10 @@ class BuildingAndCompanyInformation
             $building_data['address'] = $request->b_address;
             $building_data['manager_contact'] = $request->b_manager_contact;
             $building_data['customer_id'] = $request->customer_id;
-            if ($request->has('bi_tax')) {
+            if ($request->has('b_bi_tax')) {
                 $building_data['fax'] = $request->b_bi_tax;
             }
-            if ($request->has('bi_email')) {
+            if ($request->has('b_bi_email')) {
                 $building_data['email'] = $request->b_bi_email;
             }
 
@@ -62,12 +61,14 @@ class BuildingAndCompanyInformation
             $company_data['industry_category'] = $request->b_industry_category;
             $company_data['contacts'] = $request->b_ci_contacts;
             $company_data['customer_id'] = $request->customer_id;
-            if ($request->has('ci_fax')) {
+            if ($request->has('b_ci_fax')) {
                 $company_data['fax'] = $request->b_ci_fax;
             }
-            if ($request->has('ci_email')) {
+            if ($request->has('b_ci_fax')) {
                 $company_data['email'] = $request->b_ci_email;
             }
+
+            $company_data['b_ci_sectors'] = $request->b_ci_sectors;
 
             if ($request->has('building_id')) {
                 $building_information = BuildingInformation::where('id', $request->building_id)->update($building_data);
@@ -96,7 +97,6 @@ class BuildingAndCompanyInformation
             $company_data['industry_category'] = $request->industry_category;
             $company_data['contacts'] = $request->contacts;
             $company_data['mc_reg'] = $request->mc_reg;
-            $company_data['indus'] = $request->indus;
             if ($request->has('fax')) {
                 $company_data['fax'] = $request->fax;
             }

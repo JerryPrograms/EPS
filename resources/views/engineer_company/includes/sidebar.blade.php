@@ -18,7 +18,7 @@
                             <img src="{{ asset('engineer_company/assets/images/Done_ring_round.png') }}"
                                  class="double_ring_img p-0" style="margin-left: -1px;">
                             <span key="t-dashboards"
-                                  class="dropdown_text">{{ __('translation.Clients List') }}</span>
+                                  class="dropdown_text">{{ __('translation.List of business partners') }}</span>
                         </a>
                     </li>
                 @endif

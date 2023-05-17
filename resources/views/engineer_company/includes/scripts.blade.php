@@ -41,6 +41,8 @@
 <!-- toastr init -->
 <script src="{{asset('engineer_company/assets/js/pages/toastr.init.js')}}"></script>
 <script src="{{asset('engineer_company/assets/js/jquery-time-picker.js')}}"></script>
+<script src="{{asset('engineer_company/assets/js/moment.min.js')}}"></script>
+<script src="{{asset('engineer_company/assets/js/daterangepicker.min.js')}}"></script>
 
 <script>
     function HideShow(element, current) {

@@ -12,7 +12,7 @@
                             <div class="card">
                                 <div class="card-body mb-4">
                                     <div class="prompt w-100"></div>
-                                    <h4 class="card-title mb-4">Registration of business partners
+                                    <h4 class="card-title mb-4">{{__('translation.Register a business partner')}}
                                     </h4>
                                     <div class="table-responsive mt-3">
                                         <table class="table" style="border-collapse: collapse;">
@@ -238,7 +238,7 @@
                                                             <div class="col-lg-4 col-12"><label
                                                                     class="form-label custom_lab mb-0"> <span
                                                                         class="star_section">*</span>
-                                                                    Representative
+                                                                    {{__('translation.Representative')}}
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12">
                                                                 <div class="row">
@@ -275,8 +275,8 @@
                                                         <div class="row align-items-center mt-4">
                                                             <div class="col-lg-4 col-12"><label
                                                                     class="form-label custom_lab mb-0"> <span
-                                                                        class=" star_section">&nbsp;</span>
-                                                                    Address
+                                                                        class=" star_section">*</span>
+                                                                    {{__('translation.Address')}}
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12"><input disabled type="text"
                                                                                                 name="address"
@@ -342,12 +342,12 @@
                                                         <div class="row align-items-center mt-4">
                                                             <div class="col-lg-4 col-12"><label
                                                                     class="form-label custom_lab mb-0"> <span
-                                                                        class="star_section">&nbsp;</span>
+                                                                        class="star_section">*</span>
                                                                     {{__('translation.fax')}}
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12"><input disabled type="text"
                                                                                                 name="fax"
-                                                                                                maxlength="12"
+                                                                                                maxlength="11"
                                                                                                 class="format-number form-control w-100   custom_input"
                                                                                                 aria-describedby="emailHelp"
                                                                                                 value="{{$data->fax}}"
@@ -358,7 +358,7 @@
                                                         <div class="row align-items-center mt-4">
                                                             <div class="col-lg-4 col-12"><label
                                                                     class="form-label custom_lab mb-0"> <span
-                                                                        class="star_section">&nbsp;</span>
+                                                                        class="star_section">*</span>
                                                                     {{__('translation.Email')}}
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12"><input disabled type="email"

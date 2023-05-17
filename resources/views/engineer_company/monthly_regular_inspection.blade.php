@@ -67,9 +67,8 @@
                                                 </thead>
                                                 <tbody>
                                                 <tr class="custom_bor mt-5">
-                                                    <td class="custom_br_theme_clr"><a
-                                                            href="javascript: void(0);"
-                                                            class="text-body  tble_text">1</a>
+                                                    <td class="custom_br_theme_clr"><a href="javascript: void(0);"
+                                                                                       class="text-body  tble_text">1</a>
                                                     </td>
                                                     <td class="custom_br_theme_clr_2">
                                                         <p class="tble_text">
@@ -83,24 +82,31 @@
                                                     </td>
                                                     <td class="custom_br_theme_clr_2">
                                                         <p class="tble_text">
-                                                            {{$customer->building_name}}
+                                                            @if(!empty($customer->GetBuildingInfo))
+                                                                {{$customer->GetBuildingInfo->building_name}}
+                                                            @endif
                                                         </p>
                                                     </td>
                                                     <td class="custom_br_theme_clr_2">
                                                         <p class="tble_text">
-                                                            {{$customer->address}}
+                                                            @if(!empty($customer->GetBuildingInfo))
+                                                                {{$customer->GetBuildingInfo->address}}
+                                                            @endif
                                                         </p>
                                                     </td>
 
                                                     <td class="custom_br_theme_clr_2">
                                                         <p class="tble_text">
-                                                            {{$customer->building_management_company}}
-
+                                                            @if(!empty($customer->CompanyInformation))
+                                                                {{$customer->CompanyInformation->company_name}}
+                                                            @endif
                                                         </p>
                                                     </td>
                                                     <td class="custom_br_theme_clr_3">
                                                         <p class="tble_text">
-                                                            {{$customer->maintenance_company}}
+                                                            @if(!empty($customer->CompanyInformation))
+                                                                {{$customer->CompanyInformation->company_name}}
+                                                            @endif
                                                         </p>
                                                     </td>
                                                 </tr>
@@ -128,7 +134,7 @@
                                                     <div class="">
                                                         <h4 class="card_tittle_2">
 
-                                                    {{ __('translation.Customer information creation page') }}
+                                                            {{ __('translation.Customer information creation page') }}
 
                                                         </h4>
                                                     </div>
@@ -146,14 +152,15 @@
                                                 <h4 class="card-title border-bottom-0 mb-0 pb-0"> <span
                                                         class="bor_lef">&nbsp;</span>
 
-                                                        {{ __('translation.Last monthly maintenance') }}
+                                                    {{ __('translation.Last monthly maintenance') }}
 
                                                 </h4>
                                             </div>
                                             <div class="col-lg-1">
 
                                                 <div class="file_main_section">
-                                                    <button onclick="printForm($('.monthly_regular_table'))" type="button" class="file_button">
+                                                    <button onclick="printForm($('.monthly_regular_table'))"
+                                                            type="button" class="file_button">
                                                         <img src="{{asset('engineer_company/images/Vector.png')}}">
                                                     </button>
                                                 </div>
@@ -211,7 +218,8 @@
                                     <div class="row justify-content-center">
                                         <div class="col-lg-11 p-0">
                                             <div class="table-responsive">
-                                                <table id="monthly_regular_table" class="table align-middle table-nowrap mb-0">
+                                                <table id="monthly_regular_table"
+                                                       class="table align-middle table-nowrap mb-0">
                                                     <thead class="table-light">
                                                     <tr>
                                                         <th class="align-middle border-0">
@@ -254,7 +262,7 @@
                                                         onclick="window.location.href='{{route("ec.CreatePartsReplacementHistory",$customer->user_uid)}}'"
                                                         class="form_button_2 mb-5 mt-5">
 
-                                                        {{ __('translation.Back page') }}
+                                                    {{ __('translation.Back page') }}
 
                                                 </button>
                                             </div>
@@ -312,12 +320,12 @@
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary waves-effect"
                                     data-bs-dismiss="modal">
-                                    {{ __('translation.close') }}
+                                {{ __('translation.close') }}
                             </button>
                             <button type="submit"
                                     class="btn btn-primary waves-effect waves-light submitbtn">
 
-                                    {{ __('translation.delete') }}
+                                {{ __('translation.delete') }}
                             </button>
                         </div>
 

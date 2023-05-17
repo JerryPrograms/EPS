@@ -60,7 +60,7 @@
                                                         <td>{{ $v->dispatcher }}</td>
                                                         <td title="{{ $v->submission_details }}">{{ Str::limit($v->submission_details, 10, '...') }}</td>
                                                         <td>{{ $v->GetCustomer->customer_number }}</td>
-                                                        <td title="{{ $v->GetCustomer->address }}">{{ Str::limit($v->GetCustomer->address, 10, '...') }}</td>
+                                                        <td title="{{ $v->GetCustomer->address }}">{{ $v->GetCustomer->address }}</td>
                                                         <td>
                                                             <div class="d-flex gap-1 justify-content-center">
                                                                 <a href="{{ route('ec.ViewDispatchInformation', $v->id) }}"

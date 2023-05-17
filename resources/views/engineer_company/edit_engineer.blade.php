@@ -79,8 +79,8 @@
                                                 <div class="col-lg-9 col-md-6 col-12">
                                                     <input type="text"
                                                            class="form-control form-theme-input format-number"
-                                                           maxlength="12"
-                                                           onkeypress="return ( (event.charCode >= 48 && event.charCode < 58))"
+                                                           maxlength="11"
+
                                                            name="phone" id="phone_number" value="{{ $engineer->phone }}"
                                                            placeholder="{{ __('translation.Write phone number') }}"
                                                            required>
@@ -113,9 +113,9 @@
                                                         <input type="text"
                                                                class="form-control form-theme-input format-number"
                                                                name="social_security" id="phone_number"
-                                                               maxlength="12"
+                                                               maxlength="11"
                                                                value="{{$engineer->social_security}}"
-                                                               onkeypress="return ( (event.charCode >= 48 && event.charCode < 58))"
+
                                                                placeholder="{{ __('translation.Write Social Security') }}"
                                                                required>
                                                     </div>
@@ -131,7 +131,7 @@
                                                         <input type="text" class="form-control form-theme-input"
                                                                name="rank" id="id"
                                                                value="{{$engineer->rank}}"
-                                                               placeholder="{{ __('translation.Rank') }}"
+                                                               placeholder="{{ __('translation.Please enter your rank') }}"
                                                                required>
                                                     </div>
                                                 </div>
@@ -147,16 +147,16 @@
                                                                 autocomplete="off"
                                                                 required="">
                                                             <option value="" disabled="">
-                                                                --Select Approval Rights--
+                                                                --{{__('translation.Select Approval Rights')}}--
                                                             </option>
 
                                                             <option
                                                                 {{$engineer->approval_rights == 'Manager' ? 'selected' : '' }} value="Manager">
-                                                                Manager
+                                                                {{__('translation.manager')}}
                                                             </option>
                                                             <option
                                                                 {{$engineer->approval_rights == 'Article' ? 'selected' : '' }}  value="Article">
-                                                                Article
+                                                                {{__('translation.Article')}}
                                                             </option>
                                                         </select>
                                                     </div>

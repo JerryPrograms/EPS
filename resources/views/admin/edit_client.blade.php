@@ -274,7 +274,7 @@
                                                         <div class="row align-items-center mt-4">
                                                             <div class="col-lg-4 col-12"><label
                                                                     class="form-label custom_lab mb-0"> <span
-                                                                        class=" star_section">&nbsp;</span>
+                                                                        class=" star_section">*</span>
                                                                     {{__('translation.Address')}}
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12"><input type="text"
@@ -295,7 +295,7 @@
                                                             <div class="col-lg-8 col-12">
                                                                 <div class="row">
                                                                     <div class="col-4">
-                                                                        <input type="email"
+                                                                        <input type="text"
                                                                                name="business_email"
                                                                                class="form-control w-100 custom_input"
                                                                                aria-describedby="emailHelp"
@@ -331,6 +331,8 @@
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12"><input type="text"
                                                                                                 name="contact"
+                                                                                                maxlength="11"
+
                                                                                                 class="form-control w-100   custom_input"
                                                                                                 aria-describedby="emailHelp"
                                                                                                 placeholder="{{__('translation.Enter Contact')}}"
@@ -346,11 +348,12 @@
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12"><input type="text"
                                                                                                 name="fax"
-                                                                                                maxlength="12"
+                                                                                                maxlength="11"
+
                                                                                                 class="format-number form-control w-100   custom_input"
                                                                                                 aria-describedby="emailHelp"
                                                                                                 value="{{$data->fax}}"
-                                                                                                placeholder="02-4347-4893">
+                                                                                                placeholder="{{__('translation.02-4347-4893')}}">
                                                             </div>
                                                         </div>
 

@@ -22,7 +22,8 @@
                                                     <h4 class="card_tittle_2 mb-0">
                                                         {{ __('translation.Dispatch Confirmation') }}
                                                     </h4>
-                                                    <a href="{{route('ec.CreateDispatchInformation',$customer->user_uid)}}" class="history_add_btn">
+                                                    <a href="{{route('ec.CreateDispatchInformation',$customer->user_uid)}}"
+                                                       class="history_add_btn">
                                                         {{ __('translation.add') }}
                                                     </a>
                                                 </div>
@@ -56,14 +57,18 @@
 
 
                                                 <br>
-                                                <div class="custom_info_text_2">{{$customer->building_name}}
+                                                <div class="custom_info_text_2"> @if(!empty($customer->GetBuildingInfo))
+                                                        {{$customer->GetBuildingInfo->building_name}}
+                                                    @endif
                                                 </div>
                                             </th>
                                             <th class="text-center max-width-20">
                                                 {{ __('translation.address') }}
 
                                                 <br>
-                                                <div class="custom_info_text_2">{{$customer->address}}
+                                                <div class="custom_info_text_2"> @if(!empty($customer->GetBuildingInfo))
+                                                        {{$customer->GetBuildingInfo->address}}
+                                                    @endif
                                                 </div>
                                             </th>
 
@@ -73,7 +78,10 @@
 
                                                 <br>
                                                 <div
-                                                    class="custom_info_text_2">{{$customer->building_management_company}}
+                                                    class="custom_info_text_2">
+                                                    @if(!empty($customer->CompanyInformation))
+                                                        {{$customer->CompanyInformation->company_name}}
+                                                    @endif
                                                 </div>
                                             </th>
                                             <th class="text-center">
@@ -82,7 +90,10 @@
 
 
                                                 <br>
-                                                <div class="custom_info_text_2">{{$customer->maintenance_company}}
+                                                <div class="custom_info_text_2">
+                                                    @if(!empty($customer->CompanyInformation))
+                                                        {{$customer->CompanyInformation->company_name}}
+                                                    @endif
                                                 </div>
                                             </th>
                                         </tr>
@@ -150,10 +161,11 @@
                                                                     <p class="date_button">{{date('h:i:s a', strtotime(explode(' ',$dispatch->reception_date_and_time)[1]))}}</p>
                                                                 </td>
                                                                 <td>
-                                                                    <p title="{{$dispatch->dispatcher}}" class="date_button_3">{{\Illuminate\Support\Str::limit($dispatch->dispatcher,15)}}
+                                                                    <p title="{{$dispatch->dispatcher}}"
+                                                                       class="date_button_3">{{\Illuminate\Support\Str::limit($dispatch->dispatcher,15)}}
                                                                     </p>
                                                                 </td>
-                                                               <td>
+                                                                <td>
                                                                     <p class="date_button_3">{{$dispatch->model_and_type}}
                                                                     </p>
                                                                 </td>
@@ -163,19 +175,23 @@
                                                                 </td>
                                                                 <td>
                                                                     <p class="date_button_2">
-                                                                       {{$customer->address}}</p>
+                                                                        {{$customer->address}}</p>
                                                                 </td>
 
                                                                 <td class="text-center border-end">
                                                                     <div class="aroow_main_section">
 
-                                                                        <button onclick="window.location.href='{{route("ec.EditDispatchInformation",$dispatch->id)}}'" class="green_edit_button">
+                                                                        <button
+                                                                            onclick="window.location.href='{{route("ec.EditDispatchInformation",$dispatch->id)}}'"
+                                                                            class="green_edit_button">
                                                                             <img
                                                                                 src="{{asset('engineer_company/assets/images/green-edit.png')}}">
                                                                         </button>
-                                                                        <button onclick="window.location.href='{{route("ec.ViewDispatchInformation",$dispatch->id)}}'" class="aroow_button_2">
+                                                                        <button
+                                                                            onclick="window.location.href='{{route("ec.ViewDispatchInformation",$dispatch->id)}}'"
+                                                                            class="aroow_button_2">
                                                                             <img style="width: 20px;"
-                                                                                src="{{asset('engineer_company/assets/images/red-search.png')}}">
+                                                                                 src="{{asset('engineer_company/assets/images/red-search.png')}}">
                                                                         </button>
 
                                                                         <div class="bluebar_img_section"></div>
