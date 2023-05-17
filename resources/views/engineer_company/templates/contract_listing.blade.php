@@ -38,14 +38,15 @@
                 {{ !empty($v->get_customer) ?  $v->get_customer->customer_number : 'N/A' }}
             </td>
             <td>
-                {{ !empty($v->get_customer) ? $v->get_customer->building_name : 'N/A' }}
+                {{ !empty($v->get_customer) ? $v->get_customer->GetBuildingInfo->building_name : 'N/A' }}
             </td>
             <td>
                 <p class="mb-0"
                    title="{{ !empty($v->get_customer) ? $v->get_customer->BuildingInformation->address : '' }}">{{ !empty($v->get_customer) ? Str::limit($v->get_customer->BuildingInformation->address, 50, '...') : '' }}</p>
             </td>
             <td>
-                {{ !empty($v->get_customer) ? $v->get_customer->building_management_company : '' }}
+                {{ !empty($v->get_customer) ? $v->get_customer->CompanyInformation->company_name : '' }}
+
             </td>
             <td class="d-flex gap-1">
                 <a  href="{{route('view_contract',$v->id)}}"
@@ -60,12 +61,12 @@
                     @endif
                 </a>
                 @if(activeGuard() != 'web' && activeGuard() != 'admin')
-                    <button class="btn btn-outline-primary btn-theme-primary-outline btn-outline btn-sm">
+                    <a href="{{asset($v->contract_file)}}" class="btn btn-outline-primary btn-theme-primary-outline btn-outline btn-sm">
                         <img src="{{ asset('engineer_company/assets/images/Arhive_fill.png') }}">
-                    </button>
-                    <button class="btn btn-outline-light btn-theme-light-outline btn-outline btn-sm">
-                        <img src="{{ asset('engineer_company/assets/images/archive_icon.png') }}">
-                    </button>
+                    </a>
+{{--                    <button class="btn btn-outline-light btn-theme-light-outline btn-outline btn-sm">--}}
+{{--                        <img src="{{ asset('engineer_company/assets/images/archive_icon.png') }}">--}}
+{{--                    </button>--}}
                 @endif
                 @if(activeGuard() == 'web')
                     <button @if($v->alarm == 1) data-bs-toggle="modal" data-bs-target="#customerTurnOffAlarm"

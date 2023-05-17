@@ -79,7 +79,7 @@
                                                 <div class="col-lg-9 col-md-6 col-12">
                                                     <input type="text"
                                                            class="form-control form-theme-input format-number"
-                                                           maxlength="11"
+
 
                                                            name="phone" id="phone_number" value="{{ $engineer->phone }}"
                                                            placeholder="{{ __('translation.Write phone number') }}"
@@ -113,7 +113,7 @@
                                                         <input type="text"
                                                                class="form-control form-theme-input format-number"
                                                                name="social_security" id="phone_number"
-                                                               maxlength="11"
+
                                                                value="{{$engineer->social_security}}"
 
                                                                placeholder="{{ __('translation.Write Social Security') }}"

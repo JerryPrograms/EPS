@@ -33,15 +33,6 @@
                         </a>
                     </li>
                 @endif
-                {{--                <li class="sidebr_button mt-2">--}}
-                {{--                    <a href="{{ route('ASCompanyList') }}" class=" waves-effect dropdown_toggle">--}}
-                {{--                        <!-- <i class="bx bx-calendar"></i> -->--}}
-                {{--                        <img src="{{ asset('engineer_company/assets/images/Frame.png') }}"--}}
-                {{--                             class="double_ring_img p-0" style="margin-left: -1px;">--}}
-                {{--                        <span key="t-dashboards"--}}
-                {{--                              class="dropdown_text">{{ __('translation.AS Company List') }}</span>--}}
-                {{--                    </a>--}}
-                {{--                </li>--}}
                 @if (activeGuard() != 'web')
                     <li class="sidebr_button mt-2">
                         <a href="{{ route('ec.GetCustomerInfoListing') }}" class=" waves-effect dropdown_toggle">
@@ -57,12 +48,6 @@
                                              title="Information & Building Management Company Information"><span
                                         class="custom_dot">.</span>{{ __('translation.Building Information1') }}
                                 </a></li>
-
-                            {{--                            <li class="b"><a key="t-saas" class="list_menubar_text"--}}
-                            {{--                                             title="AS Info & Engineer company Info"><span--}}
-                            {{--                                        class="custom_dot">.</span>--}}
-                            {{--                                    {{ __('translation.Info & Engineer') }}.</a></li>--}}
-
                             <li class="c"><a key="t-crypto" class="list_menubar_text"
                                              title="Parking facility certification information & inspection certificate
                                 "><span
@@ -100,42 +85,8 @@
                                                 <span
                                                     class="custom_dot">.</span>{{ __('translation.Manage attachments') }}
                                 </a></li>
-{{--                            <li class="b"><a key="t-blog" class="list_menubar_text"--}}
-{{--                                             title="Manage attachments">--}}
-{{--                                                <span--}}
-{{--                                                    class="custom_dot">.</span>{{ __('translation.Fill Regular Inspection Log') }}--}}
-{{--                                </a></li>--}}
-{{--                            <li class="i"><a key="t-blog" class="list_menubar_text"--}}
-{{--                                             title="Manage attachments">--}}
-{{--                                                <span--}}
-{{--                                                    class="custom_dot">.</span>{{ __('translation.Contract Management') }}--}}
-{{--                                </a></li>--}}
-{{--                            <li class="j"><a key="t-blog" class="list_menubar_text"--}}
-{{--                                             title="Manage attachments">--}}
-{{--                                                <span--}}
-{{--                                                    class="custom_dot">.</span>{{ __('translation.Quote Management') }}--}}
-{{--                                </a></li>--}}
                         </ul>
                     </li>
-                    {{--                    <li class="sidebr_button mt-2">--}}
-
-                    {{--                        <a href="javascript:void(0)"--}}
-                    {{--                           class=" waves-effect dropdown_toggle" aria-expanded="false">--}}
-                    {{--                            <!-- <i class="bx bx-calendar"></i> -->--}}
-                    {{--                            <!-- <i class="fa-solid fa-list list_icon"></i> -->--}}
-                    {{--                            <img src="{{ asset('engineer_company/assets/images/user.png') }}"--}}
-                    {{--                                 class="double_ring_img p-0"--}}
-                    {{--                                 style="margin-left: -1px;">--}}
-
-                    {{--                            <span class="dropdown_text">--}}
-                    {{--                                        {{ __('translation.Fill in customer information') }}--}}
-                    {{--                                    </span>--}}
-
-                    {{--                        </a>--}}
-
-
-                    {{--                    </li>--}}
-
                 @endif
 
 

@@ -94,7 +94,7 @@
                                                         <td>
                                                             ....
                                                         </td>
-                                                        <td class="d-flex gap-1">
+                                                        <td class="d-flex gap-1 justify-content-center align-items-center">
                                                             <a @if(activeGuard() == 'admin') style="background-color: #6281FE1A !important; border: 1px solid #6281FE"
                                                                @endif href="{{route('view_construction_completion',$c->id)}}"
                                                                class="btn btn-outline-danger btn-theme-danger-outline btn-outline btn-sm">

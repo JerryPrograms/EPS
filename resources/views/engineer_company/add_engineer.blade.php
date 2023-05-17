@@ -81,7 +81,7 @@
                                                     <input type="text"
                                                            class="form-control form-theme-input format-number"
                                                            name="phone" id="phone_number"
-                                                           maxlength="11"
+
 
                                                            placeholder="{{ __('translation.Write phone number') }}"
                                                            required>
@@ -99,7 +99,7 @@
                                                         <input type="text"
                                                                class="form-control form-theme-input format-number"
                                                                name="social_security" id="phone_number"
-                                                               maxlength="11"
+
                                                                placeholder="{{ __('translation.Write Social Security') }}"
                                                                required>
                                                     </div>

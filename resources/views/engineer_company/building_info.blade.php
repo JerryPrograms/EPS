@@ -223,7 +223,7 @@
                                                                     {{ __('translation.Building Manager Contact') }}
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12">
-                                                                <input type="text" maxlength="11"
+                                                                <input type="text"
 
                                                                        name="b_building_manager_contact"
                                                                        class="format-number form-control w-100 custom_input"
@@ -281,7 +281,7 @@
                                                                                                 required
                                                                                                 name="b_bi_tax"
 
-                                                                                                maxlength="11"
+
                                                                                                 class="format-number form-control w-100 custom_input"
                                                                                                 aria-describedby="emailHelp"
                                                                                                 placeholder="{{ __('translation.Enter fax') }}"
@@ -438,7 +438,7 @@
                                                             <div class="col-lg-8 col-12"><input type="text"
                                                                                                 required
                                                                                                 name="b_ci_fax"
-                                                                                                maxlength="11"
+
                                                                                                 class="format-number form-control w-100   custom_input"
                                                                                                 aria-describedby="emailHelp"
                                                                                                 placeholder="{{__('translation.02-4347-4893')}}"
@@ -454,7 +454,7 @@
                                                             <div class="col-lg-8 col-12"><input type="text"
                                                                                                 required
                                                                                                 name="b_ci_sectors"
-                                                                                                maxlength="11"
+
                                                                                                 class="format-number form-control w-100   custom_input"
                                                                                                 aria-describedby="emailHelp"
                                                                                                 placeholder="{{__('translation.Please enter your industry')}}"
@@ -755,7 +755,7 @@
                                                                 </label></div>
                                                             <div class="col-md-8 col-12"><input type="text"
                                                                                                 required
-                                                                                                maxlength="11"
+
 
                                                                                                 name="fax"
                                                                                                 class="format-number form-control w-100 custom_input"

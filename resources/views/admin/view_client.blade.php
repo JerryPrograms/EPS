@@ -347,7 +347,7 @@
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12"><input disabled type="text"
                                                                                                 name="fax"
-                                                                                                maxlength="11"
+
                                                                                                 class="format-number form-control w-100   custom_input"
                                                                                                 aria-describedby="emailHelp"
                                                                                                 value="{{$data->fax}}"

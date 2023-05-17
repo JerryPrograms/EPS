@@ -327,7 +327,7 @@
                                                                 class="star_section">&nbsp;</span>
                                                                 {{ __('translation.fax') }}
                                                             </label></div>
-                                                    <div class="col-md-8 col-12"><input type="text" maxlength="11"  name="fax"
+                                                    <div class="col-md-8 col-12"><input type="text"   name="fax"
                                                             class="format-number form-control w-100 custom_input"
                                                             aria-describedby="emailHelp"
                                                                                         placeholder="{{__('translation.02-4347-4893')}}"

@@ -765,7 +765,7 @@
         }
 
         $("#building_names").bsMultiSelect({
-            placeholder: 'Select Building Name',
+            placeholder: '{{__('translation.Select building name')}}',
         });
 
         $("#building_names123").bsMultiSelect({

@@ -37,7 +37,7 @@ return [
     'Enter registration number' => '사업자등록번호를 입력해주세요',
     'contact 1/contact 2' => '연락처1 / 연락처2',
     'Save and Next' => '저장',
-    'Weekend Duty' => '주말당직',
+    'Weekend Duty' => '평일당직',
     'Weekend Shift' => '주말당직',
     'Night Shift' => '야간당직',
     'Holiday Duty' => '연휴당직',
@@ -591,4 +591,8 @@ return [
     'Select Approval Rights' => '권한을 선택해주세요',
     'Article' => '점검기사',
     'Please enter your rank' => '직급을 입력해주세요',
+    'emphysema' => '기종',
+    'go back' => '뒤로가기',
+    'Select building name' => '현장명(건물)을 선택해주세요',
+    'AS company name' => 'AS업체명',
 ];

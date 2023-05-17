@@ -22,35 +22,55 @@
                                             <table class="bg-light table bg-light customer-info-table-view">
                                                 <thead>
                                                 <tr>
-                                                    <th>{{ __('translation.info') }}</th>
-                                                    <th style="min-width:180px;">{{ __('translation.Customer number') }}</th>
-                                                    <th style="min-width:180px;">{{ __('translation.Building name') }}</th>
-                                                    <th style="min-width:180px;">{{ __('translation.address') }}</th>
-                                                    <th style="min-width:250px;">{{ __('translation.Building management company') }}</th>
-                                                    <th style="min-width:180px;">{{ __('translation.Maintenance Company') }}</th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                <tr>
-                                                    <td>
 
-                                                    </td>
-                                                    <td class="text-dark">
-                                                        {{ $customer->customer_number }}
-                                                    </td>
-                                                    <td class="text-dark">
-                                                        {{ $customer->building_name }}
-                                                    </td>
-                                                    <td class="text-dark">
-                                                        {{ $customer->BuildingInformation->address }}
-                                                    </td>
-                                                    <td class="text-dark">
-                                                        {{ $customer->building_management_company }}
-                                                    </td>
-                                                    <td class="text-dark">
-                                                        {{ $customer->maintenance_company }}
-                                                    </td>
+                                                    <th class="text-center max-width-18">
+
+                                                        {{ __('translation.Building Name') }}
+
+
+                                                        <br>
+                                                        <div class="custom_info_text_2"> @if(!empty($customer->GetBuildingInfo))
+                                                                {{$customer->GetBuildingInfo->building_name}}
+                                                            @endif
+                                                        </div>
+                                                    </th>
+                                                    <th class="text-center max-width-20">
+                                                        {{ __('translation.address') }}
+
+                                                        <br>
+                                                        <div class="custom_info_text_2"> @if(!empty($customer->GetBuildingInfo))
+                                                                {{$customer->GetBuildingInfo->address}}
+                                                            @endif
+                                                        </div>
+                                                    </th>
+
+                                                    <th class="text-center">
+
+                                                        {{ __('translation.Building Management') }}
+
+                                                        <br>
+                                                        <div
+                                                            class="custom_info_text_2">
+                                                            @if(!empty($customer->CompanyInformation))
+                                                                {{$customer->CompanyInformation->company_name}}
+                                                            @endif
+                                                        </div>
+                                                    </th>
+                                                    <th class="text-center">
+
+                                                        {{ __('translation.Maintenance Company') }}
+
+
+                                                        <br>
+                                                        <div class="custom_info_text_2">
+                                                            @if(!empty($customer->CompanyInformation))
+                                                                {{$customer->CompanyInformation->company_name}}
+                                                            @endif
+                                                        </div>
+                                                    </th>
                                                 </tr>
+                                                <tbody>
+
                                                 </tbody>
                                             </table>
                                         </div>
@@ -62,7 +82,7 @@
                                                     <tr>
                                                         <th>{{ __('translation.no') }}.</th>
                                                         <th>{{ __('translation.Inspection date') }}</th>
-                                                        <th>{{ __('translation.Emphysema') }}</th>
+                                                        <th>{{ __('translation.emphysema') }}</th>
                                                         <th>{{ __('translation.site name') }}</th>
                                                         <th>{{ __('translation.Installation place') }}</th>
                                                         <th>{{ __('translation.View more') }}</th>
@@ -72,10 +92,10 @@
                                                     @foreach ($customer->MonthlyRegularInspection as $v)
                                                         <tr>
                                                             <td>{{ $loop->index + 1 }}</td>
-                                                            <td>{{ $v->inspection_date }}</td>
+                                                            <td>{{ $v->inspection_date->format('d-m-y') }}</td>
                                                             <td>{{ $v->arrival_time }}</td>
-                                                            <td>{{ $customer->building_name }}</td>
-                                                            <td>{{ $customer->building_name }}</td>
+                                                            <td>{{ $customer->GetBuildingInfo->building_name }}</td>
+                                                            <td>{{ $customer->GetBuildingInfo->address}}</td>
                                                             <td class="d-flex gap-1 justify-content-center">
                                                                 <a href="{{ route('edit_regular_inspection_log', $v->id) }}"
                                                                    class="btn btn-outline-success btn-theme-success-outline btn-outline btn-sm">

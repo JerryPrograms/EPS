@@ -60,15 +60,12 @@ class InspectionController extends Controller
 
 
         $validate = \Validator::make($request->all(), [
-            'inspection_date' => 'required',
-            'arrival_time' => 'required',
-            'completion_time' => 'required',
-            'inspection_manager' => 'required',
-            'inspection' => 'required',
-            'special_notes' => 'required',
-            'output' => 'required'
-        ], [
-                'special_notes.required' => __('translation.A special note is required'),
+                'inspection_date' => 'required',
+                'arrival_time' => 'required',
+                'completion_time' => 'required',
+                'inspection_manager' => 'required',
+                'inspection' => 'required',
+                'output' => 'required'
             ]
         );
         if ($validate->fails()) {

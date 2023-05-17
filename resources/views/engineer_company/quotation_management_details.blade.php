@@ -61,7 +61,7 @@
                                                                 id="exampleInputEmail1"
                                                                 aria-describedby="emailHelp"
                                                                 disabled
-                                                                value="{{$getQuote->GetCustomer->name}}"
+                                                                value="{{$getQuote->GetCustomer->company_name}}"
                                                                 placeholder="{{ __('translation.Enter contract date') }}">
                                                         </div>
                                                     </div>
@@ -72,6 +72,7 @@
                                                             <label
                                                                 for="exampleInputEmail1"
                                                                 class="form-label custom-lab-2 mb-0">
+                                                            
                                                 <span
                                                     class="star_section">*</span>{{ __('translation.Manager Name') }}..
                                                             </label>
@@ -83,7 +84,7 @@
                                                                 id="exampleInputEmail1"
                                                                 aria-describedby="emailHelp"
                                                                 disabled
-                                                                value="{{$getQuote->GetCustomer->building_management_company}}"
+                                                                value="{{$getQuote->GetCustomer->BuildingInformation->building_manager_name}}"
                                                                 placeholder="{{ __('translation.Enter building name') }}">
                                                         </div>
                                                     </div>

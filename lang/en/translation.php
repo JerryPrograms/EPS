@@ -596,4 +596,8 @@ return [
     'Select Approval Rights' => 'Select Approval Rights',
     'Article' => 'Article',
     'Please enter your rank' => 'Please enter your rank',
+    'emphysema' => 'emphysema',
+    'go back' => 'go back',
+    'Select building name' => 'Select building name',
+    'AS company name' => 'AS company name',
 ];

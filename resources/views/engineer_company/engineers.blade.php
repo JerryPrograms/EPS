@@ -118,7 +118,7 @@
                                             <tr>
                                                 <th>{{ __('translation.no') }}</th>
                                                 <th>{{ __('translation.Register Date') }}</th>
-                                                <th>{{ __('translation.Affiliate Company Name') }}</th>
+                                                <th>{{ __('translation.AS company name') }}</th>
                                                 <th>{{ __('translation.Name') }}</th>
                                                 <th>{{ __('translation.Phone number') }}</th>
                                                 @if(activeGuard() == 'admin')

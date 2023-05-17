@@ -65,7 +65,7 @@
                                                         class="form-label "> <span
                                                             class="star_section">*</span>
 
-                                                        {{ __('translation.site name') }}
+                                                        {{ __('translation.Building name') }}
                                                     </label>
 
                                                 </div>

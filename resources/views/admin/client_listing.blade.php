@@ -12,7 +12,7 @@
                                     <div
                                         class="card-title d-flex align-items-center justify-content-between mobile-flex-column mb-0 py-2">
                                         <h4 class="">
-                                            {{__('translation.Clients List')}}
+                                            {{__('translation.List of business partners')}}
                                         </h4>
 
                                     </div>

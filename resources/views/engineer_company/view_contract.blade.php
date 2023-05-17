@@ -107,7 +107,7 @@
                                             </div>
                                         </div>
                                         <div class="form-btn">
-                                            <a href="{{route('contracts_management_list',$contract->get_customer->user_uid)}}" id="addContractBtn" class="btn btn-primary">{{ __('translation.Back') }}</a>
+                                            <a href="{{route('contracts_management_list',$contract->get_customer->user_uid)}}" id="addContractBtn" class="btn btn-primary">{{ __('translation.go back') }}</a>
                                         </div>
                                     </form>
 

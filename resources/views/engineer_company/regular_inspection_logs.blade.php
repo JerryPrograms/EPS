@@ -117,8 +117,8 @@
                                                         <td>{{ $v->inspection_date }}</td>
                                                         <td>{{ $v->inspection_manager }}</td>
                                                         <td>{{ $v->special_notes }}</td>
-                                                        <td title="{{ $v->getCustomer->building_name }}">{{ $v->getCustomer->building_name }}</td>
-                                                        <td title="{{ $v->GetCustomer->address }}">{{ Str::limit($v->GetCustomer->address, 20, '...') }}</td>
+                                                        <td title="{{ $v->getCustomer->building_name }}">{{ $v->getCustomer->GetBuildingInfo->building_name }}</td>
+                                                        <td title="{{ $v->GetCustomer->GetBuildingInfo->address }}">{{ Str::limit($v->GetCustomer->GetBuildingInfo->address, 20, '...') }}</td>
                                                         <td>
                                                             <div class="d-flex gap-1 justify-content-center">
                                                                 <a @if(activeGuard() == 'admin') style="background-color: #4ADE80 !important; border: none"

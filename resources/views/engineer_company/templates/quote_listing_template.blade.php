@@ -27,35 +27,39 @@
                 {{$loop->index + 1}}
             </td>
             <td>
-                {{$q->contract_date}}
+                @php
+
+                    $date = \Carbon\Carbon::parse($q->contract_date);
+                    @endphp
+                {{$date->format('Y-d-m')}}
             </td>
             <td>
                 {{$q->GetCustomer->customer_number}}
             </td>
             <td>
+                {{$q->GetCustomer->GetBuildingInfo->building_name}}
+            </td>
+            <td>
+                {{$q->GetCustomer->GetBuildingInfo->address}}
+            </td>
+            <td>
+                {{ !empty($q->GetCustomer) ? $q->GetCustomer->CompanyInformation->company_name : '' }}
+            </td>
+            <td>
                 {{$q->GetCustomer->BuildingInformation->address}}
-            </td>
-            <td>
-                서울시 서초구 남부순환로 158
-            </td>
-            <td>
-                {{$q->GetCustomer->building_management_company}}
-            </td>
-            <td>
-                일반유지보수
             </td>
             <td class="d-flex gap-1">
                 <a href="{{route('GetQuoteDetails',$q->id)}}"
-                        class="btn btn-outline-danger btn-theme-danger-outline btn-outline btn-sm">
+                   class="btn btn-outline-danger btn-theme-danger-outline btn-outline btn-sm">
                     <img src="{{ asset('engineer_company/assets/images/red-search.png') }}">
                 </a>
-                <button class="btn btn-outline-primary btn-theme-primary-outline btn-outline btn-sm">
-                    <img src="{{ asset('engineer_company/assets/images/Arhive_fill.png') }}">
-                </button>
-                <button onclick="window.location.href = '{{route("ec.PDFQuote",$q->id)}}'"
-                        class="btn btn-outline-light btn-theme-light-outline btn-outline btn-sm">
-                    <img src="{{ asset('engineer_company/assets/images/archive_icon.png') }}">
-                </button>
+                {{--                <button class="btn btn-outline-primary btn-theme-primary-outline btn-outline btn-sm">--}}
+                {{--                    <img src="{{ asset('engineer_company/assets/images/Arhive_fill.png') }}">--}}
+                {{--                </button>--}}
+                {{--                <button onclick="window.location.href = '{{route("ec.PDFQuote",$q->id)}}'"--}}
+                {{--                        class="btn btn-outline-light btn-theme-light-outline btn-outline btn-sm">--}}
+                {{--                    <img src="{{ asset('engineer_company/assets/images/archive_icon.png') }}">--}}
+                {{--                </button>--}}
             </td>
         </tr>
     @endforeach

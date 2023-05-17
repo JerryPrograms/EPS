@@ -53,19 +53,19 @@
                                                         <td>{{ $loop->index + 1 }}</td>
                                                         <td>{{ $v->created_at->format('d-m-Y') }}</td>
                                                         <td>{{ $v->getCustomer->customer_number }}</td>
-                                                        <td>{{ $v->getCustomer->building_name }}</td>
+                                                        <td>{{ $v->getCustomer->GetBuildingInfo->building_name }}</td>
                                                         <td>{{ count($v->GetQuoteContent) }}</td>
                                                         <td>{{ $v->GetCustomer->customer_number }}</td>
                                                         <td>{{ $v->total_amount }}</td>
                                                         <td>
                                                             <div class="d-flex gap-1 justify-content-center">
                                                                 <a @if(activeGuard() == 'admin') style="background-color: #6281FE !important; border: none"
-                                                                   @endif href="{{ route('ec.ViewQuote', $v->id) }}"
+                                                                   @endif href="{{ route('GetQuoteDetails', $v->id) }}"
                                                                    class="btn btn-success btn-custom-table btn-sm">
                                                                     <i class="bx bx-search-alt-2"></i>
                                                                 </a>
                                                                 @if(activeGuard() != 'web')
-                                                                    <a href="{{ route('ec.ViewQuote', $v->id) }}"
+                                                                    <a href="{{ route('GetQuoteDetails', $v->id) }}"
                                                                        class="btn btn-primary btn-custom-table btn-sm">
                                                                         <i class="bx bxs-edit-alt"></i>
                                                                     </a>

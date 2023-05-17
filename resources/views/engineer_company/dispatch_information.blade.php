@@ -43,14 +43,6 @@
                                         <thead class="table-light">
                                         <tr>
 
-                                            <th class="align-middle custom_info_text">
-                                                {{ __('translation.info') }}
-                                            </th>
-                                            <th class="text-center max-width-18">
-                                                {{ __('translation.Customer Number') }}
-                                                <br>
-                                                <div class="custom_info_text_2">{{$customer->customer_number}}</div>
-                                            </th>
                                             <th class="text-center max-width-18">
 
                                                 {{ __('translation.Building Name') }}

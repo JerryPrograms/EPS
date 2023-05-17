@@ -75,7 +75,7 @@
                                                     <input type="text"
                                                            class="form-control form-theme-input format-number"
                                                            name="phone" id="phone"
-                                                           maxlength="11"
+
 
                                                            placeholder="{{ __('translation.Write company number') }}"
                                                            required>

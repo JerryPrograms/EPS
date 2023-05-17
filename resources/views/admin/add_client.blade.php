@@ -324,7 +324,7 @@
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12"><input type="text"
                                                                                                 name="contact"
-                                                                                                maxlength="11"
+
 
                                                                                                 class="form-control w-100   custom_input"
                                                                                                 aria-describedby="emailHelp"
@@ -341,7 +341,7 @@
                                                             <div class="col-lg-8 col-12"><input type="text"
 
                                                                                                 name="fax"
-                                                                                                maxlength="11"
+
                                                                                                 class="format-number form-control w-100   custom_input"
                                                                                                 aria-describedby="emailHelp"
                                                                                                 placeholder="{{__('translation.02-4347-4893')}}">
