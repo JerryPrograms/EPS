@@ -107,7 +107,7 @@
                                                 <div class="row align-items-center">
                                                     <div class="col-lg-3 col-md-6 col-12">
                                                         <label for="phone_number"
-                                                               class="mb-0">{{ __('translation.Social Security') }}</label>
+                                                               class="mb-0">{{ __('translation.resident registration number') }}</label>
                                                     </div>
                                                     <div class="col-lg-9 col-md-6 col-12">
                                                         <input type="text"

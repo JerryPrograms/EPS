@@ -51,7 +51,7 @@
                                                 @foreach ($quotations as $v)
                                                     <tr>
                                                         <td>{{ $loop->index + 1 }}</td>
-                                                        <td>{{ $v->created_at->format('d-m-Y') }}</td>
+                                                        <td>{{ $v->created_at->format('Y-m-d') }}</td>
                                                         <td>{{ $v->getCustomer->customer_number }}</td>
                                                         <td>{{ $v->getCustomer->GetBuildingInfo->building_name }}</td>
                                                         <td>{{ count($v->GetQuoteContent) }}</td>

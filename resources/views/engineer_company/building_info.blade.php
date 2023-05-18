@@ -79,8 +79,8 @@
                                                 </td>
                                                 <td class="custom_br_theme_clr_3">
                                                     <p class="tble_text">
-                                                        @if(!empty($customer->CompanyInformation))
-                                                            {{$customer->CompanyInformation->company_name}}
+                                                        @if(!empty($customer->RepairCompanyInformation))
+                                                            {{ $customer->RepairCompanyInformation->company_name }}
                                                         @endif
                                                     </p>
                                                 </td>
@@ -399,13 +399,13 @@
                                                             <div class="col-lg-4 col-12"><label
                                                                     class="form-label custom_lab mb-0"> <span
                                                                         class="star_section">*</span>
-                                                                    {{ __('translation.Please enter your business type') }}
+                                                                    {{ __('translation.business') }}
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12"><input type="text"
                                                                                                 name="b_industry_category"
                                                                                                 class="form-control w-100   custom_input"
                                                                                                 aria-describedby="emailHelp"
-                                                                                                placeholder="{{ __('translation.Industry Category') }}"
+                                                                                                placeholder="{{ __('translation.Please enter your business type') }}"
                                                                                                 required
                                                                                                 @if(!empty($customer->CompanyInformation))  value="{{$customer->CompanyInformation->industry_category}}"
                                                                     @endif></div>
@@ -421,7 +421,7 @@
                                                                                                 name="b_ci_contacts"
                                                                                                 class="form-control w-100   custom_input"
                                                                                                 aria-describedby="emailHelp"
-                                                                                                placeholder="{{ __('translation.contact 1/contact 2') }}"
+                                                                                                placeholder="{{ __('translation.Please enter your contact information') }}"
                                                                                                 @if(!empty($customer->CompanyInformation))  value="{{$customer->CompanyInformation->contacts}}"
                                                                                                 @endif
                                                                                                 required
@@ -739,7 +739,7 @@
                                                             <div class="col-md-8 col-12"><input type="text"
                                                                                                 name="contacts"
                                                                                                 class="form-control w-100 custom_input"
-                                                                                                placeholder="{{ __('translation.contact 1/contact 2') }}"
+                                                                                                placeholder="{{ __('translation.Please enter your contact information') }}"
                                                                                                 aria-describedby="emailHelp"
                                                                                                 required
                                                                                                 @if (!empty($customer->RepairCompanyInformation)) value="{{ $customer->RepairCompanyInformation->contacts }}" @endif>

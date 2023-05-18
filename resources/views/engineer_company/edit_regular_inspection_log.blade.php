@@ -233,15 +233,15 @@
                                                                                         <input type="radio"
                                                                                                class="inspection-grade"
                                                                                                name="inspection[{{ $main_category }}][{{ $sub_category_accordion }}][{{ $v3->input_name }}]"
-                                                                                               value="A" {{ $check_content[$main_category][$sub_category_accordion][$v3->input_name] == 'A' ? 'checked' : '' }}>
+                                                                                               value="양호" {{ $check_content[$main_category][$sub_category_accordion][$v3->input_name] == '양호' ? 'checked' : '' }}>
                                                                                         <input type="radio"
                                                                                                class="inspection-grade"
                                                                                                name="inspection[{{ $main_category }}][{{ $sub_category_accordion }}][{{ $v3->input_name }}]"
-                                                                                               value="B" {{ $check_content[$main_category][$sub_category_accordion][$v3->input_name] == 'B' ? 'checked' : '' }}>
+                                                                                               value="주의" {{ $check_content[$main_category][$sub_category_accordion][$v3->input_name] == '주의' ? 'checked' : '' }}>
                                                                                         <input type="radio"
                                                                                                class="inspection-grade"
                                                                                                name="inspection[{{ $main_category }}][{{ $sub_category_accordion }}][{{ $v3->input_name }}]"
-                                                                                               value="C" {{ $check_content[$main_category][$sub_category_accordion][$v3->input_name] == 'C' ? 'checked' : '' }}>
+                                                                                               value="불량" {{ $check_content[$main_category][$sub_category_accordion][$v3->input_name] == '불량' ? 'checked' : '' }}>
                                                                                     </div>
                                                                                 </td>
                                                                                 <td class="text-black">{{  $v3->inspection_duration }}</td>

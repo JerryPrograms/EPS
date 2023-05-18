@@ -132,7 +132,7 @@
                                                 @foreach ($engineers as $engineer)
                                                     <tr onclick="selectRow($(this),'{{$engineer->id}}')">
                                                         <td>{{ $loop->index + 1 }}</td>
-                                                        <td>{{ $engineer->created_at->format('d-m-Y') }}</td>
+                                                        <td>{{ $engineer->created_at->format('Y-m-d') }}</td>
                                                         <td>{{ $engineer->getEngineerCompany->company_name }}</td>
                                                         <td>{{ $engineer->name }}</td>
                                                         <td>{{ $engineer->phone }}</td>

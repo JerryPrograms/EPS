@@ -769,7 +769,7 @@
         });
 
         $("#building_names123").bsMultiSelect({
-            placeholder: 'Select Building Name',
+            placeholder: '{{__('translation.Select building name')}}',
         });
 
         var count = 1;

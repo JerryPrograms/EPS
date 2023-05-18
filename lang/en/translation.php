@@ -600,4 +600,9 @@ return [
     'go back' => 'go back',
     'Select building name' => 'Select building name',
     'AS company name' => 'AS company name',
+    'resident registration number' => 'resident registration number',
+    'customer number1' => 'customer number',
+    'business' => 'business',
+    'Please enter your contact information' => 'Please enter your contact information',
+
 ];

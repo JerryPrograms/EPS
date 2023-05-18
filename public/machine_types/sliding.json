@@ -5,55 +5,55 @@
                 "structure": [
                     {
                         "question_title": "각층별 LEVEL 상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "매월",
                         "input_name": "level_status_of_each_floor"
                     },
                     {
                         "question_title": "WIRE TENSION 상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "매월",
                         "input_name": "wire_tension_status"
                     },
                     {
                         "question_title": "각종 BOLT 조임상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "3,6,9,12",
                         "input_name": "various_BOLT_tightening_conditions"
                     },
                     {
                         "question_title": "벽체 ANCHOR 지지상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "3,6,9,12",
                         "input_name": "wall_ANCHOR_support_state"
                     },
                     {
                         "question_title": "BASE FLATE 고정상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "3,6,9,12",
                         "input_name": "BASE_FLATE_fixed_state"
                     },
                     {
                         "question_title": "철골의 뒤틀림 상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "3,6,9,12",
                         "input_name": "warped_condition_of_steel_frame"
                     },
                     {
                         "question_title": "철골의 간격상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "3,6,9,12",
                         "input_name": "gap_condition_of_steel_frame"
                     },
                     {
                         "question_title": "운행시 진동상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "매월",
                         "input_name": "vibration_while_driving"
                     },
                     {
                         "question_title": "각위의 도장 및 부착상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "3,6,9,12",
                         "input_name": "coating_and_attachment_status_of_each_position"
                     }
@@ -67,79 +67,79 @@
                 "lift": [
                     {
                         "question_title": "GUID RAIL의 고정상태 및 칫수",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "3,6,9,12",
                         "input_name": "fixed_state_and_dimensions_of_GUID_RAIL"
                     },
                     {
                         "question_title": "GUID ROLLER의 작동상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "3,6,9,12",
                         "input_name": "operation_status_of_GUID_ROLLER"
                     },
                     {
                         "question_title": "방진 PAD의 상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "3,6,9,12",
                         "input_name": "status_of_anti_vibration_PAD"
                     },
                     {
                         "question_title": "GUIDE ROLLER 회전상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "3,6,9,12",
                         "input_name": "GUIDE_ROLLER_rotation_state"
                     },
                     {
                         "question_title": "연결 COUPLING의 상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "3,6,9,12",
                         "input_name": "status_of_connection_COUPLING"
                     },
                     {
                         "question_title": "CHAIN 및 WIRE TENSION 상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "매월",
                         "input_name": "CHAIN_​and_WIRE_TENSION_status"
                     },
                     {
                         "question_title": "정위치 상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "매월",
                         "input_name": "in_place_state"
                     },
                     {
                         "question_title": "각 부위의 오일 및 그리스 주유상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "매월",
                         "input_name": "oil_and_grease_lubrication_status_of_each_part"
                     },
                     {
                         "question_title": "SENSOR의 고정상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "매월",
                         "input_name": "fixed_state_of_SENSOR"
                     },
                     {
                         "question_title": "반사 TAPE의 상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "매월",
                         "input_name": "state_of_reflective_TAPE"
                     },
                     {
                         "question_title": "MOTOR 회전, 소음상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "매월",
                         "input_name": "motor_rotation_noise_condition"
                     },
                     {
                         "question_title": "LIFT의 LEVEL 상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "매월",
                         "input_name": "LIFTs_LEVEL_status"
                     },
                     {
                         "question_title": "상, 하부 LIMT SWITCH 상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "매월",
                         "input_name": "upper_and_lower_LIMT_SWITCH_status"
                     }
@@ -153,73 +153,73 @@
                 "elevation": [
                     {
                         "question_title": "진입거울의 설치 및 청결상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "매월",
                         "input_name": "installation_and_cleanliness_of_entry_mirror"
                     },
                     {
                         "question_title": "HAND RAIL의 고정 및 설치상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "매월",
                         "input_name": "fixed_and_installed_condition_of_HAND_RAIL"
                     },
                     {
                         "question_title": "0~90(180º)의 회전상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "3, 9",
                         "input_name": "rotation_state_of_0_90_180"
                     },
                     {
                         "question_title": "LOCKING 상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "2, 5, 8, 11",
                         "input_name": "LOCKING_state"
                     },
                     {
                         "question_title": "TURNING 시 진동 및 소음상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "2, 5, 8, 11",
                         "input_name": "vibration_and_noise_condition_during_turning"
                     },
                     {
                         "question_title": "ROLLER 회전상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "3, 9",
                         "input_name": "ROLLER_rotation_state"
                     },
                     {
                         "question_title": "수동 조작반의 작동상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "2, 5, 8, 11",
                         "input_name": "operation_status_of_manual_control_panel"
                     },
                     {
                         "question_title": "OP BOARD 및 TOUCH SCREEN의 상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "3, 9",
                         "input_name": "status_of_OP_BOARD_and_TOUCH_SCREEN"
                     },
                     {
                         "question_title": "비상용 PUSH BOTTON의 작동상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "매월",
                         "input_name": "operation_status_of_emergency_push_button"
                     },
                     {
                         "question_title": "DOOR의 작동상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "3, 9",
                         "input_name": "door_operation_status"
                     },
                     {
                         "question_title": "안내표시등의 작동상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "3, 9",
                         "input_name": "operating_status_of_guide_indicator_light"
                     },
                     {
                         "question_title": "센서고정 및 동작상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "매월",
                         "input_name": "sensor_fixation_and_operation_status"
                     }
@@ -233,13 +233,13 @@
                 "hangar": [
                     {
                         "question_title": "ROBOT 이동로의 청결상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "매월",
                         "input_name": "the_cleanliness_of_the_ROBOT_path"
                     },
                     {
                         "question_title": "차량 STOPPER의 설치 및 고정상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "매월",
                         "input_name": "installation_and_fixation_of_vehicle_stopper"
                     }
@@ -253,109 +253,109 @@
                 "stacker": [
                     {
                         "question_title": "WIRE의 연결상태 및 TENSION 상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "매월",
                         "input_name": "wire_connection_status_and_tension_status"
                     },
                     {
                         "question_title": "MOTOR의 고정상태 및 회전상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "매월",
                         "input_name": "fixed_state_and_rotational_state_of_the_motor"
                     },
                     {
                         "question_title": "BRACKE의 작동상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "매월",
                         "input_name": "BRACKE_working_status"
                     },
                     {
                         "question_title": "REDUCER의 누유 여부상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "매월",
                         "input_name": "REDUCER_leakage_condition"
                     },
                     {
                         "question_title": "상하 GUIDE ROLLER의 작동상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "매월",
                         "input_name": "operation_status_of_up_and_down_GUIDE_ROLLER"
                     },
                     {
                         "question_title": "주행 GUIDE ROLLER의 작동상태 ",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "매월",
                         "input_name": "operating_status_of_driving_GUIDE_ROLLER"
                     },
                     {
                         "question_title": "ENCODER의 동작상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "매월",
                         "input_name": "operating_status_of_ENCODER"
                     },
                     {
                         "question_title": "이송부의 흔들림상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "매월",
                         "input_name": "vibration_state_of_conveying_part"
                     },
                     {
                         "question_title": "각종 센서의 설치 및 고정상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "매월",
                         "input_name": "installation_and_fixation_of_various_sensors"
                     },
                     {
                         "question_title": "횡행부와 LEVEL 상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "매월",
                         "input_name": "traverse_and_LEVEL_status"
                     },
                     {
                         "question_title": "수동조작반의 동작상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "매월",
                         "input_name": "operation_status_of_manual_operation_panel"
                     },
                     {
                         "question_title": "콤푸레샤의 동작상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "매월",
                         "input_name": "operation_status_of_compressor"
                     },
                     {
                         "question_title": "각종 에어배관의 상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "매월",
                         "input_name": "condition_of_various_air_piping"
                     },
                     {
                         "question_title": "ARM의 작동상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "매월",
                         "input_name": "ARM_operation_status"
                     },
                     {
                         "question_title": "볼 케스타의 동작상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "매월",
                         "input_name": "ball_Kestas_motion_status"
                     },
                     {
                         "question_title": "SHEVE의 마모상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "3,6,9,12",
                         "input_name": "wear_state_of_SHEVE"
                     },
                     {
                         "question_title": "상, 하부 RAIL의 상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "3,6,9,12",
                         "input_name": "status_of_upper_and_lower_rails"
                     },
                     {
                         "question_title": "GKQN LIMIT SWITCH 상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "매월",
                         "input_name": "GKQN_LIMIT_SWITCH_state"
                     }
@@ -369,49 +369,49 @@
                 "etc": [
                     {
                         "question_title": "각종 CABLE의 노후상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "매월",
                         "input_name": "deterioration_of_various_cables"
                     },
                     {
                         "question_title": "단자대 TERMINAL 접촉상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "매월",
                         "input_name": "terminal_block_TERMINAL_contact_state"
                     },
                     {
                         "question_title": "PANNEL의 정리 및 청결상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "3,6,9,12",
                         "input_name": "PANNEL_arrangement_and_cleanliness"
                     },
                     {
                         "question_title": "각종 전기부품의 상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "3,6,9,12",
                         "input_name": "condition_of_various_electrical_parts"
                     },
                     {
                         "question_title": "외부 TURN TABLE의 작동상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "3,6,9,12",
                         "input_name": "operation_status_of_external_TURN_TABLE"
                     },
                     {
                         "question_title": "외부 TURN TABLE의 배수상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "매월",
                         "input_name": "drainage_status_of_external_TURN_TABLE"
                     },
                     {
                         "question_title": "내장형 TURN TABLE의 작동상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "3,6,9,12",
                         "input_name": "operation_status_of_built_in_TURN_TABLE"
                     },
                     {
                         "question_title": "내장형 TURN TABLE의 배수상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "매월",
                         "input_name": "drainage_status_of_built_in_TURN_TABLE"
                     }
@@ -425,25 +425,25 @@
                 "computer": [
                     {
                         "question_title": "PLC-PC간 통신상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "매월",
                         "input_name": "communication_status_between_PLC_and_PC"
                     },
                     {
                         "question_title": "PRINTER 상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "매월",
                         "input_name": "PRINTER_status"
                     },
                     {
                         "question_title": "MONITOR 상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "3,6,9,12",
                         "input_name": "MONITOR_status"
                     },
                     {
                         "question_title": "PC 본체 및 KEY BOARD 상태",
-                        "situation": "B",
+                        "situation": "주의",
                         "inspection_duration": "3,6,9,12",
                         "input_name": "PC_body_and_KEY_BOARD_status"
                     }

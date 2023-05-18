@@ -224,15 +224,15 @@
                                                                                         <input type="radio"
                                                                                                class="inspection-grade"
                                                                                                name="inspection[{{ $main_category }}][{{ $sub_category_accordion }}][{{ $v3->input_name }}]"
-                                                                                               value="A" {{ $v3->situation == 'A' ? 'checked' : '' }}>
+                                                                                               value="양호" {{ $v3->situation == '양호' ? 'checked' : '' }}>
                                                                                         <input type="radio"
                                                                                                class="inspection-grade"
                                                                                                name="inspection[{{ $main_category }}][{{ $sub_category_accordion }}][{{ $v3->input_name }}]"
-                                                                                               value="B" {{ $v3->situation == 'B' ? 'checked' : '' }}>
+                                                                                               value="주의" {{ $v3->situation == '주의' ? 'checked' : '' }}>
                                                                                         <input type="radio"
                                                                                                class="inspection-grade"
                                                                                                name="inspection[{{ $main_category }}][{{ $sub_category_accordion }}][{{ $v3->input_name }}]"
-                                                                                               value="C" {{ $v3->situation == 'C' ? 'checked' : '' }}>
+                                                                                               value="불량" {{ $v3->situation == '불량' ? 'checked' : '' }}>
                                                                                     </div>
                                                                                 </td>
                                                                                 <td class="text-black">{{  $v3->inspection_duration }}</td>

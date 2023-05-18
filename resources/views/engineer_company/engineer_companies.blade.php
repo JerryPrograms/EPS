@@ -12,8 +12,8 @@
                                         class="card-title mb-4 d-flex align-items-center justify-content-between mobile-flex-column">
                                         <h5 class="mb-0 font-15">{{ __('translation.Engineer Companies') }}
                                             </h5>
-                                        <a href="{{ route('add_engineer_company') }}"
-                                           class="btn btn-primary">{{ __('translation.Add Company') }}</a>
+{{--                                        <a href="{{ route('add_engineer_company') }}"--}}
+{{--                                           class="btn btn-primary">{{ __('translation.Add Company') }}</a>--}}
 
 
                                     </div>

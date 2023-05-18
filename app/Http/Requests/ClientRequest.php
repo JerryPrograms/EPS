@@ -34,7 +34,7 @@ class ClientRequest extends FormRequest
             'representative' => 'required',
             'maintenance_business_registration_number' => 'required',
             'address' => 'required',
-            'business_email' => 'required|email',
+            'business_email' => 'required',
             'sectors' => 'required',
             'contact' => 'required',
             'fax' => 'required',

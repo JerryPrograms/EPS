@@ -116,7 +116,7 @@
                                                 <div class="col-lg-11">
                                                     <div class="">
                                                         <h4 class="card_tittle_2">
-                                                            {{__('translation.Account information')}}
+                                                            {{__('translation.Registration of business partners')}}
                                                         </h4>
                                                     </div>
                                                 </div>

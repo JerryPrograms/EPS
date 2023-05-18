@@ -114,7 +114,7 @@
 
                                                     <tr>
                                                         <td>{{ $loop->index + 1 }}</td>
-                                                        <td>{{ $v->inspection_date }}</td>
+                                                        <td>{{ $v->inspection_date->format('Y-d-m') }}</td>
                                                         <td>{{ $v->inspection_manager }}</td>
                                                         <td>{{ $v->special_notes }}</td>
                                                         <td title="{{ $v->getCustomer->building_name }}">{{ $v->getCustomer->GetBuildingInfo->building_name }}</td>

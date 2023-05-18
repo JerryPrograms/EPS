@@ -46,10 +46,13 @@
                                             </tr>
                                             </thead>
                                             <tbody>
+                                            @php
+                                                $count = count($data);
+                                            @endphp
                                             @foreach($data as $d)
                                                 <tr>
                                                     <td>
-                                                        {{$loop->index + 1}}
+                                                        {{$count}}
                                                     </td>
                                                     <td>
                                                         {{$d->building_name}}
@@ -58,7 +61,8 @@
                                                         {{$d->address}}
                                                     </td>
                                                     <td class="d-flex gap-1 justify-content-center">
-                                                        <button type="button" onclick="openEditModal('{{$d->id}}','{{$d->building_name}}','{{$d->address}}')"
+                                                        <button type="button"
+                                                                onclick="openEditModal('{{$d->id}}','{{$d->building_name}}','{{$d->address}}')"
                                                                 class="btn btn-outline-primary btn-theme-primary-outline btn-outline btn-sm">
 
 
@@ -71,6 +75,9 @@
                                                         </button>
                                                     </td>
                                                 </tr>
+                                                @php
+                                                    $count--;
+                                                @endphp
                                             @endforeach
                                             </tbody>
                                         </table>
@@ -167,6 +174,9 @@
 @endsection
 @section('custom-script')
     <script>
+
+        // $('#customer_list_table').();
+
         function openDeleteModal(id) {
             $('#customerDeleteModal').modal('show');
             $('#customerInfoID').val(id);

@@ -20,14 +20,7 @@
 
                                         </h4>
                                         <div class="row">
-                                            <div class="col-md-12 text-end">
-                                                <div class="circle_main_section">
-                                                    <button class="circle_img_section">
-                                                        <img src="{{asset('engineer_company/images/user2.png')}}">
-                                                        <p class="circle_img_text mt-3">홍길동 기사님</p>
-                                                    </button>
-                                                </div>
-                                            </div>
+
                                         </div>
 
 
@@ -102,8 +95,8 @@
                                                     </td>
                                                     <td class="custom_br_theme_clr_3">
                                                         <p class="tble_text">
-                                                            @if(!empty($customer->CompanyInformation))
-                                                                {{$customer->CompanyInformation->company_name}}
+                                                            @if(!empty($customer->RepairCompanyInformation))
+                                                                {{ $customer->RepairCompanyInformation->company_name }}
                                                             @endif
                                                         </p>
                                                     </td>

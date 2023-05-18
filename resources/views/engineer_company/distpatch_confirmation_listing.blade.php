@@ -43,7 +43,7 @@
                                                     <th>{{ __('translation.Reception Time') }}</th>
                                                     <th>{{ __('translation.Dispatcher Name') }}</th>
                                                     <th>{{ __('translation.Dispatch content') }}</th>
-                                                    <th>{{ __('translation.Customer Name') }}</th>
+                                                    <th>{{ __('translation.customer number1') }}</th>
                                                     <th>{{ __('translation.Address') }}</th>
                                                     <th>{{ __('translation.Action') }}</th>
                                                 </tr>
@@ -60,7 +60,7 @@
                                                         <td>{{ $v->dispatcher }}</td>
                                                         <td title="{{ $v->submission_details }}">{{ Str::limit($v->submission_details, 10, '...') }}</td>
                                                         <td>{{ $v->GetCustomer->customer_number }}</td>
-                                                        <td title="{{ $v->GetCustomer->address }}">{{ $v->GetCustomer->address }}</td>
+                                                        <td title="{{$v->site_name}}">{{$v->site_name}}</td>
                                                         <td>
                                                             <div class="d-flex gap-1 justify-content-center">
                                                                 <a href="{{ route('ec.ViewDispatchInformation', $v->id) }}"
