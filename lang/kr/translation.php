@@ -214,7 +214,7 @@ return [
     'facility certification information' => '주차설비 인증정보',
     'Initial installation date' => '초기 설치일자',
     'part' => '부속품',
-    'manager' => '담당자',
+    'manager' => '관리자',
     'AS content' => 'AS 내용',
     'Delete Parts history   Replacement' => '부품 교체 이력 삭제',
     'Part name' => '부속품명',
