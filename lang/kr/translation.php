@@ -600,4 +600,5 @@ return [
     'customer number1' => '고객번호',
     'business' => '업태',
     'Please enter your contact information' => '연락처를 입력해주세요',
+    'checker' => '점검자',
 ];

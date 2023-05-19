@@ -57,7 +57,7 @@
                                                 <div class="row align-items-center">
                                                     <div class="col-lg-2 col-md-6 col-12">
                                                         <label for="type_and_number"
-                                                               class="mb-0">{{ __('translation.Type and number') }}</label>
+                                                               class="mb-0">{{ __('translation.emphysema') }}</label>
                                                     </div>
                                                     <div class="col-lg-10 col-md-6 col-12">
                                                         <input type="text" class="form-control form-theme-input"

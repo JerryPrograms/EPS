@@ -74,20 +74,6 @@
                                                     {{ __('translation.Clear Filter') }}
                                                 </button>
                                             </div>
-{{--                                            <div class="col-md-4 col-12 text-end">--}}
-{{--                                                <button data-bs-toggle="modal"--}}
-{{--                                                        data-bs-target="#customerDeleteModal"--}}
-{{--                                                        type="button"--}}
-{{--                                                        class="btn btn-primary waves-effect waves-light w-sm mt-3">--}}
-{{--                                                    <i class="mdi mdi-trash-can d-block font-size-16"></i>--}}
-{{--                                                </button>--}}
-{{--                                                <button onclick="window.location.href = '{{route('add_client')}}'"--}}
-{{--                                                        type="button"--}}
-{{--                                                        class="btn btn-primary waves-effect waves-light w-sm mt-3">--}}
-{{--                                                    <i class="mdi mdi-plus d-block font-size-16"></i>--}}
-{{--                                                </button>--}}
-{{--                                            </div>--}}
-
                                         </div>
                                     </form>
 

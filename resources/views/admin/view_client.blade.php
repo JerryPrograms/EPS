@@ -68,7 +68,11 @@
 
                                                 <td class="">
                                                     <p class="">
-                                                        {{$data->division}}
+                                                        @if($data->division == 'building owner')
+                                                            {{__('translation.Building Owner')}}
+                                                        @else
+                                                            {{__('translation.Engineer Company')}}
+                                                        @endif
                                                     </p>
                                                 </td>
                                                 <td class=" d-flex gap-1">
@@ -369,7 +373,8 @@
                                                                                                 placeholder="{{__('translation.Enter email')}}">
                                                             </div>
                                                         </div>
-                                                        <input disabled name="division" value="{{$data->division}}" hidden="">
+                                                        <input disabled name="division" value="{{$data->division}}"
+                                                               hidden="">
                                                     </div>
                                                 </div>
                                                 <!-- form row 1 end  -->

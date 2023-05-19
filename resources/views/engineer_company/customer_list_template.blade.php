@@ -44,7 +44,7 @@
             </td>
             <td class="">
                 <button
-                    class="date_button border-0">{{$c->created_at->format('y.m.d')}}</button>
+                    class="date_button border-0">{{$c->created_at->format('Y-m-d')}}</button>
             </td>
             <td class="">
                 <button class="date_button border-0">{{$c->customer_number}}</button>

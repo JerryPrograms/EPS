@@ -604,5 +604,5 @@ return [
     'customer number1' => 'customer number',
     'business' => 'business',
     'Please enter your contact information' => 'Please enter your contact information',
-
+    'checker' => 'checker',
 ];

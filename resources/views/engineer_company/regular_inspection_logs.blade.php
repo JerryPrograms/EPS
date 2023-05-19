@@ -102,7 +102,7 @@
                                                 <tr>
                                                     <th>{{ __('translation.no') }}</th>
                                                     <th>{{ __('translation.Inspection date') }}</th>
-                                                    <th>{{ __('translation.Inspector') }}</th>
+                                                    <th>{{ __('translation.checker') }}</th>
                                                     <th>{{ __('translation.Inspection Content') }}</th>
                                                     <th>{{ __('translation.Building Name') }}</th>
                                                     <th>{{ __('translation.address') }}</th>
