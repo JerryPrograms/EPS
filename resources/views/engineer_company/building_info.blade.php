@@ -803,6 +803,23 @@
                                                         </div>
 
                                                         <div class="row align-items-center mt-4">
+                                                            <div class="col-lg-4 col-12"><label
+                                                                    class="form-label custom_lab mb-0"> <span
+                                                                        class="star_section">*</span>
+                                                                    {{ __('translation.Sector') }}
+                                                                </label></div>
+                                                            <div class="col-lg-8 col-12"><input type="text"
+                                                                                                required
+                                                                                                id="new-sectors"
+
+                                                                                                class="format-number form-control w-100   custom_input"
+                                                                                                aria-describedby="emailHelp"
+                                                                                                placeholder="{{__('translation.Please enter your industry')}}"
+                                                                                                @if(!empty($customer->CompanyInformation) && !empty($customer->CompanyInformation->b_ci_sectors))  value="{{$customer->CompanyInformation->b_ci_sectors}}"
+                                                                    @endif></div>
+                                                        </div>
+
+                                                        <div class="row align-items-center mt-4">
                                                             <div class="col-md-4 col-12"><label
                                                                     class="form-label custom_lab mb-0"> <span
                                                                         class="star_section">*</span>
@@ -945,8 +962,9 @@
                         $("input[name=b_ci_address]").val(res.Data.address);
                         $("input[name=b_industry_category]").val(res.Data.business_email);
                         $("input[name=b_ci_contacts]").val(res.Data.contact);
-                        $("input[name=b_ci_sectors]").val(res.Data.fax);
+                        $("input[name=b_ci_sectors]").val(res.Data.sectors);
                         $("#c_email").val(res.Data.email);
+                        $("input[name=b_ci_fax]").val(res.Data.fax);
 
 
                     }
@@ -989,7 +1007,8 @@
                         $("input[name=industry_category]").val(res.Data.business_email);
                         $("input[name=contacts]").val(res.Data.contact);
                         $("input[name=fax]").val(res.Data.fax);
-                        $("input[name=email]").val(res.Data.fax);
+                        $("input[name=email]").val(res.Data.email);
+                        $("#new-sectors").val(res.Data.sectors);
 
 
                     }
