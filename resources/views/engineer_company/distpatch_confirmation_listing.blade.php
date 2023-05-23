@@ -1,5 +1,6 @@
 @extends('engineer_company.includes.layout')
 @section('body')
+
     <div class="main-content">
         <div class="page-content">
             <div class="container-fluid">
@@ -52,6 +53,10 @@
                                                 <tbody id="myTable">
                                                 @foreach ($dispatch_information_data as $v)
                                                     @php
+                                                        $address = $v->GetCustomer->GetBuildingInfo()->pluck('address')->implode(',');
+                                                        $building_name = $v->GetCustomer->GetBuildingInfo()->pluck('building_name')->implode(',');
+                                                    @endphp
+                                                    @php
                                                         $reception_date_and_time = explode(' ',$v->reception_date_and_time);
                                                     @endphp
                                                     <tr>
@@ -61,7 +66,7 @@
                                                         <td>{{ $v->dispatcher }}</td>
                                                         <td title="{{ $v->submission_details }}">{{ Str::limit($v->submission_details, 10, '...') }}</td>
                                                         <td>{{ $v->GetCustomer->customer_number }}</td>
-                                                        <td>{{ $v->GetCustomer->GetBuildingInfo->building_name }}</td>
+                                                        <td>{{ $building_name }}</td>
                                                         <td title="{{$v->site_name}}">{{$v->site_name}}</td>
                                                         <td>
                                                             <div class="d-flex gap-1 justify-content-center">

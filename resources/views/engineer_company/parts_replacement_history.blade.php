@@ -1,5 +1,9 @@
 @extends('engineer_company.includes.layout')
 @section('body')
+    @php
+        $address = $customer->GetBuildingInfo()->pluck('address')->implode(',');
+        $building_name = $customer->GetBuildingInfo()->pluck('building_name')->implode(',');
+    @endphp
     <div class="main-content">
         <div class="page-content">
             <div class="container-fluid">
@@ -20,20 +24,6 @@
                                             {{ __('translation.Fill in customer information') }}
 
                                         </h4>
-{{--                                        <div class="row">--}}
-
-{{--                                            <div class="col-md-12 text-end">--}}
-{{--                                                <div class="circle_main_section">--}}
-{{--                                                    <button class="circle_img_section">--}}
-{{--                                                        <img src="{{asset('engineer_company/images/user2.png')}}">--}}
-{{--                                                        <p class="circle_img_text mt-3">기사 홍길동--}}
-{{--                                                        </p>--}}
-{{--                                                    </button>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-
-
                                         <div class="table-responsive mt-3">
                                             <table class="table align-middle custom_mrg">
                                                 <thead class="table-light">
@@ -81,15 +71,15 @@
                                                     </td>
                                                     <td class="custom_br_theme_clr_2">
                                                         <p class="tble_text">
-                                                            @if(!empty($customer->GetBuildingInfo))
-                                                                {{$customer->GetBuildingInfo->building_name}}
+                                                            @if(!empty($building_name))
+                                                                {{$building_name}}
                                                             @endif
                                                         </p>
                                                     </td>
                                                     <td class="custom_br_theme_clr_2">
                                                         <p class="tble_text">
-                                                            @if(!empty($customer->GetBuildingInfo))
-                                                                {{$customer->GetBuildingInfo->address}}
+                                                            @if(!empty($building_name))
+                                                                {{$address}}
                                                             @endif
                                                         </p>
                                                     </td>

@@ -118,8 +118,15 @@ class CustomerInfo extends Authenticatable
 
     public function GetBuildingInfo()
     {
-        return $this->hasOne(BuildingAddress::class, 'id', 'building_id');
+        if(!empty($this->building_id))
+        {
+            return BuildingAddress::query()->whereIn('id',json_decode($this->building_id))->get();
+        }
+        return BuildingAddress::query()->where('id',0)->get();
+
+//        return $this->hasOne(BuildingAddress::class, 'id', 'building_id');
     }
+
 
     public function EngineerCompany()
     {

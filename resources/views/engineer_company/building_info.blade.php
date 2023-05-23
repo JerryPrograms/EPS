@@ -1,4 +1,8 @@
 @extends('engineer_company.includes.layout')
+@php
+    $address = $customer->GetBuildingInfo()->pluck('address')->implode(',');
+    $building_name = $customer->GetBuildingInfo()->pluck('building_name')->implode(',');
+@endphp
 @section('body')
     <div class="main-content">
         <div class="page-content">
@@ -57,15 +61,15 @@
                                                 </td>
                                                 <td class="custom_br_theme_clr_2">
                                                     <p class="tble_text">
-                                                        @if(!empty($customer->GetBuildingInfo))
-                                                            {{$customer->GetBuildingInfo->building_name}}
+                                                        @if(!empty($building_name))
+                                                            {{$building_name}}
                                                         @endif
                                                     </p>
                                                 </td>
                                                 <td class="custom_br_theme_clr_2">
                                                     <p class="tble_text">
-                                                        @if(!empty($customer->GetBuildingInfo))
-                                                            {{$customer->GetBuildingInfo->address}}
+                                                        @if(!empty($building_name))
+                                                            {{$address}}
                                                         @endif
                                                     </p>
                                                 </td>
@@ -170,9 +174,10 @@
                                                             </div>
                                                             <div class="col-lg-8 col-12">
                                                                 @if(empty($customer->building_id))
-                                                                    <select onchange="SetAddress($(this))"
+                                                                    <select multiple="multiple" class="SlectBox"
+                                                                            onchange="SetAddress($(this))"
                                                                             class="form-select mt-4"
-                                                                            name="b_building_name"
+                                                                            name="b_building_name[]"
                                                                             autocomplete="off" required="">
                                                                         <option selected="" value="" disabled="">
                                                                             {{ __('translation.Enter building Name') }}
@@ -190,7 +195,7 @@
                                                                            class="form-control w-100 custom_input"
                                                                            aria-describedby="emailHelp"
                                                                            placeholder="{{ __('translation.Enter building manager name') }}"
-                                                                           value="{{$customer->GetBuildingInfo->building_name}}"
+                                                                           value="{{$building_name}}"
                                                                            disabled
                                                                            required>
                                                                 @endif
@@ -320,6 +325,52 @@
                                                                 2. {{ __('translation.Building management company information') }}
                                                             </h4>
                                                         </div>
+
+                                                        @if(activeGuard() == 'admin')
+                                                            <div class="row align-items-center mb-3">
+                                                                <div class="col-lg-4 col-12">
+                                                                    <label
+                                                                        class="form-label custom_lab mb-0"> <span
+                                                                            class="star_section">*</span>
+                                                                        {{__('translation.Engineer Company1')}}
+                                                                    </label>
+                                                                </div>
+                                                                <div class="col-lg-8 col-12">
+                                                                    @if(empty($customer->engineer_company_id))
+
+                                                                        <select class="form-select"
+                                                                                onchange="GetData($(this).val())"
+                                                                                name="engineer_company_id"
+                                                                                autocomplete="off" required="">
+                                                                            <option selected="" value="" disabled="">
+                                                                                {{__('translation.Engineer Companies')}}
+                                                                            </option>
+                                                                            @foreach($company as $building)
+                                                                                <option
+                                                                                    {{$customer->engineer_company_id == $building->id ? 'selected' : ''}}
+                                                                                    value="{{$building->id}}">
+                                                                                    {{$building->company_registration_number}}
+                                                                                </option>
+                                                                            @endforeach
+                                                                        </select>
+                                                                    @else
+                                                                        <input type="text"
+                                                                               class="form-control w-100 custom_input"
+                                                                               aria-describedby="emailHelp"
+                                                                               placeholder="{{ __('translation.Enter company name') }}"
+                                                                               required
+                                                                               disabled
+                                                                               value="{{$customer->EngineerCompany->company_name}}">
+
+                                                                    @endif
+                                                                </div>
+                                                            </div>
+                                                        @else
+                                                            <input name="engineer_company_id"
+                                                                   value="{{auth(activeGuard())->id()}}" hidden="">
+                                                        @endif
+
+
                                                         <div class="row align-items-center">
                                                             <div class="col-lg-4 col-12"><label
                                                                     class="form-label custom_lab mb-0"> <span
@@ -415,6 +466,23 @@
                                                             <div class="col-lg-4 col-12"><label
                                                                     class="form-label custom_lab mb-0"> <span
                                                                         class="star_section">*</span>
+                                                                    {{ __('translation.Sector') }}
+                                                                </label></div>
+                                                            <div class="col-lg-8 col-12"><input type="text"
+                                                                                                required
+                                                                                                name="b_ci_sectors"
+
+                                                                                                class="format-number form-control w-100   custom_input"
+                                                                                                aria-describedby="emailHelp"
+                                                                                                placeholder="{{__('translation.Please enter your industry')}}"
+                                                                                                @if(!empty($customer->CompanyInformation) && !empty($customer->CompanyInformation->b_ci_sectors))  value="{{$customer->CompanyInformation->b_ci_sectors}}"
+                                                                    @endif></div>
+                                                        </div>
+
+                                                        <div class="row align-items-center mt-4">
+                                                            <div class="col-lg-4 col-12"><label
+                                                                    class="form-label custom_lab mb-0"> <span
+                                                                        class="star_section">*</span>
                                                                     {{ __('translation.contact 1, 2') }}
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12"><input type="text"
@@ -445,21 +513,20 @@
                                                                                                 @if(!empty($customer->CompanyInformation) && !empty($customer->CompanyInformation->fax))  value="{{$customer->CompanyInformation->fax}}"
                                                                     @endif></div>
                                                         </div>
+
                                                         <div class="row align-items-center mt-4">
                                                             <div class="col-lg-4 col-12"><label
                                                                     class="form-label custom_lab mb-0"> <span
                                                                         class="star_section">*</span>
-                                                                    {{ __('translation.Sector') }}
+                                                                    {{ __('translation.Email') }}
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12"><input type="text"
                                                                                                 required
-                                                                                                name="b_ci_sectors"
-
+                                                                                                id="c_email"
                                                                                                 class="format-number form-control w-100   custom_input"
                                                                                                 aria-describedby="emailHelp"
-                                                                                                placeholder="{{__('translation.Please enter your industry')}}"
-                                                                                                @if(!empty($customer->CompanyInformation) && !empty($customer->CompanyInformation->b_ci_sectors))  value="{{$customer->CompanyInformation->b_ci_sectors}}"
-                                                                    @endif></div>
+                                                                                                placeholder="{{__('translation.02-4347-4893')}}"/>
+                                                            </div>
                                                         </div>
 
 
@@ -489,47 +556,6 @@
                                                             </div>
                                                         </div>
 
-                                                        @if(activeGuard() == 'admin')
-                                                            <div class="row align-items-center">
-                                                                <div class="col-lg-4 col-12">
-                                                                    <label
-                                                                        class="form-label custom_lab mb-0"> <span
-                                                                            class="star_section">*</span>
-                                                                        {{__('translation.Engineer Company1')}}
-                                                                    </label>
-                                                                </div>
-                                                                <div class="col-lg-8 col-12">
-                                                                    @if(empty($customer->engineer_company_id))
-                                                                        <select class="form-select mt-4"
-                                                                                name="engineer_company_id"
-                                                                                autocomplete="off" required="">
-                                                                            <option selected="" value="" disabled="">
-                                                                                {{__('translation.Engineer Companies')}}
-                                                                            </option>
-                                                                            @foreach($company as $building)
-                                                                                <option
-                                                                                    {{$customer->engineer_company_id == $building->id ? 'selected' : ''}}
-                                                                                    value="{{$building->id}}">
-                                                                                    {{$building->company_name}}
-                                                                                </option>
-                                                                            @endforeach
-                                                                        </select>
-                                                                    @else
-                                                                        <input type="text"
-                                                                               class="form-control w-100 custom_input"
-                                                                               aria-describedby="emailHelp"
-                                                                               placeholder="{{ __('translation.Enter company name') }}"
-                                                                               required
-                                                                               disabled
-                                                                               value="{{$customer->EngineerCompany->company_name}}">
-
-                                                                    @endif
-                                                                </div>
-                                                            </div>
-                                                        @else
-                                                            <input name="engineer_company_id"
-                                                                   value="{{auth(activeGuard())->id()}}" hidden="">
-                                                        @endif
 
                                                         <div class="row align-items-center mt-4">
                                                             <div class="col-md-4 col-12">
@@ -654,7 +680,7 @@
                                                 <!-- form row 1 end  -->
 
                                                 <!-- form row 2 start  -->
-                                                <div class="custom_padding_form pt-3">
+                                                <div class="custom_padding_form ">
                                                     <div class="row mt-5">
                                                         <div class="col-lg-12">
                                                             <h4 class="card-title border-bottom-0 mb-4"> <span
@@ -662,6 +688,52 @@
                                                                 4. {{ __('translation.Repair Company Information') }}
                                                             </h4>
                                                         </div>
+
+
+                                                        @if(activeGuard() == 'admin')
+                                                            <div class="row align-items-center mb-3">
+                                                                <div class="col-lg-4 col-12">
+                                                                    <label
+                                                                        class="form-label custom_lab mb-0"> <span
+                                                                            class="star_section">*</span>
+                                                                        {{__('translation.Engineer Company1')}}
+                                                                    </label>
+                                                                </div>
+                                                                <div class="col-lg-8 col-12">
+                                                                    @if(empty($customer->engineer_company_id))
+
+                                                                        <select class="form-select"
+                                                                                onchange="GetDataRepairCompany($(this).val())"
+                                                                                autocomplete="off" required="">
+                                                                            <option selected="" value="" disabled="">
+                                                                                {{__('translation.Engineer Companies')}}
+                                                                            </option>
+                                                                            @foreach($company as $building)
+                                                                                <option
+                                                                                    {{$customer->engineer_company_id == $building->id ? 'selected' : ''}}
+                                                                                    value="{{$building->id}}">
+                                                                                    {{$building->company_registration_number}}
+                                                                                </option>
+                                                                            @endforeach
+                                                                        </select>
+                                                                    @else
+                                                                        <input type="text"
+                                                                               class="form-control w-100 custom_input"
+                                                                               aria-describedby="emailHelp"
+                                                                               placeholder="{{ __('translation.Enter company name') }}"
+                                                                               required
+                                                                               disabled
+                                                                               value="{{$customer->EngineerCompany->company_name}}">
+
+                                                                    @endif
+                                                                </div>
+                                                            </div>
+                                                        @else
+                                                            <input name="engineer_company_id"
+                                                                   value="{{auth(activeGuard())->id()}}" hidden="">
+                                                        @endif
+
+
                                                         <div class="row align-items-center">
                                                             <div class="col-md-4 col-12"><label
                                                                     class="form-label custom_lab mb-0"> <span
@@ -844,19 +916,94 @@
             }
         });
 
+        function GetData(id) {
+            $.ajax({
+
+                type: "POST",
+                url: '{{route('GetEngineerCompanyData')}}',
+                dataType: 'json',
+                data: {
+                    'id': id,
+                    '_token': '{{csrf_token()}}',
+                },
+                beforeSend: function () {
+
+                },
+                success: function (res) {
+
+
+                    // window.location.reload();
+                    if (res.Error == true) {
+
+
+                    } else if (res.Error == false) {
+
+
+                        $("input[name=b_company_name]").val(res.Data.company_name);
+                        $("input[name=b_ceo_name]").val(res.Data.representative);
+                        $("input[name=b_company_reg_number]").val(res.Data.company_registration_number);
+                        $("input[name=b_ci_address]").val(res.Data.address);
+                        $("input[name=b_industry_category]").val(res.Data.business_email);
+                        $("input[name=b_ci_contacts]").val(res.Data.contact);
+                        $("input[name=b_ci_sectors]").val(res.Data.fax);
+                        $("#c_email").val(res.Data.email);
+
+
+                    }
+                },
+                error: function (e) {
+
+                }
+
+            });
+        }
+
+
+        function GetDataRepairCompany(id) {
+            $.ajax({
+
+                type: "POST",
+                url: '{{route('GetEngineerCompanyData')}}',
+                dataType: 'json',
+                data: {
+                    'id': id,
+                    '_token': '{{csrf_token()}}',
+                },
+                beforeSend: function () {
+
+                },
+                success: function (res) {
+
+
+                    // window.location.reload();
+                    if (res.Error == true) {
+
+
+                    } else if (res.Error == false) {
+
+
+                        $("input[name=company_name]").val(res.Data.company_name);
+                        $("input[name=ceo_name]").val(res.Data.representative);
+                        $("input[name=mc_reg]").val(res.Data.company_registration_number);
+                        $("input[name=address]").val(res.Data.address);
+                        $("input[name=industry_category]").val(res.Data.business_email);
+                        $("input[name=contacts]").val(res.Data.contact);
+                        $("input[name=fax]").val(res.Data.fax);
+                        $("input[name=email]").val(res.Data.fax);
+
+
+                    }
+                },
+                error: function (e) {
+
+                }
+
+            });
+        }
+
         function SetAddress(element) {
             $('#address').val(element.find(':selected').attr('address'))
         }
-
-        // $('.format-number').keyup(function () {
-        //     var foo = $(this).val().split("-").join(""); // remove hyphens
-        //
-        //     foo = foo.match(new RegExp('.{1,4}$|.{1,3}', 'g')).join("-");
-        //
-        //     $(this).val(foo);
-        //
-        // });
-
 
         $(document).ready(function () {
             $('.double-contact').on('input', function () {
@@ -902,6 +1049,9 @@
         });
 
         $('input[name="contract_date"]').daterangepicker();
+
+        $('.SlectBox').SumoSelect();
+
 
     </script>
 @endsection

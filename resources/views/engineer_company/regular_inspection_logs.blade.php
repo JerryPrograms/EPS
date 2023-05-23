@@ -112,13 +112,18 @@
                                                 <tbody id="myTable">
                                                 @foreach ($logs as $v)
 
+                                                    @php
+                                                        $address = $v->getCustomer->GetBuildingInfo()->pluck('address')->implode(',');
+                                                        $building_name = $v->getCustomer->GetBuildingInfo()->pluck('building_name')->implode(',');
+                                                    @endphp
+
                                                     <tr>
                                                         <td>{{ $loop->index + 1 }}</td>
                                                         <td>{{ $v->inspection_date->format('Y-d-m') }}</td>
                                                         <td>{{ $v->inspection_manager }}</td>
                                                         <td>{{ $v->special_notes }}</td>
-                                                        <td title="{{ $v->getCustomer->building_name }}">{{ $v->getCustomer->GetBuildingInfo->building_name }}</td>
-                                                        <td title="{{ $v->GetCustomer->GetBuildingInfo->address }}">{{ Str::limit($v->GetCustomer->GetBuildingInfo->address, 20, '...') }}</td>
+                                                        <td title="{{ $building_name }}">{{ $building_name }}</td>
+                                                        <td title="{{ $address }}">{{ Str::limit($address, 20, '...') }}</td>
                                                         <td>
                                                             <div class="d-flex gap-1 justify-content-center">
                                                                 <a @if(activeGuard() == 'admin') style="background-color: #4ADE80 !important; border: none"

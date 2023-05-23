@@ -48,3 +48,5 @@ Route::group(['prefix' => 'client'], function () {
     Route::post('/update', [ClientController::class, 'update_client'])->name('update_client');
     Route::post('/delete', [ClientController::class, 'delete_client'])->name('delete_client');
 });
+
+Route::post('get-engineer-company-data',[\App\Http\Controllers\EngineerCompanyController::class,'GetEngineerCompanyData'])->name('GetEngineerCompanyData');

@@ -26,6 +26,10 @@
     </thead>
     <tbody id="myTable">
     @foreach ($contracts as $v)
+        @php
+            $address = $v->get_customer->GetBuildingInfo()->pluck('address')->implode(',');
+            $building_name = $v->get_customer->GetBuildingInfo()->pluck('building_name')->implode(',');
+        @endphp
         <tr onclick="SelectRow($(this),'{{$v->id}}')">
 
             <td>
@@ -38,11 +42,11 @@
                 {{ !empty($v->get_customer) ?  $v->get_customer->customer_number : 'N/A' }}
             </td>
             <td>
-                {{ !empty($v->get_customer) ? $v->get_customer->GetBuildingInfo->building_name : 'N/A' }}
+                {{ !empty($v->get_customer) ? $building_name : 'N/A' }}
             </td>
             <td>
                 <p class="mb-0"
-                   title="{{ !empty($v->get_customer) ? $v->get_customer->BuildingInformation->address : '' }}">{{ !empty($v->get_customer) ? Str::limit($v->get_customer->BuildingInformation->address, 50, '...') : '' }}</p>
+                   title="{{ !empty($v->get_customer) ? $address : '' }}">{{ !empty($v->get_customer) ? Str::limit($address, 50, '...') : '' }}</p>
             </td>
             <td>
                 {{ !empty($v->get_customer) ? $v->get_customer->CompanyInformation->company_name : '' }}

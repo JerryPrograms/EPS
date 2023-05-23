@@ -14,7 +14,13 @@ class Authentication
         try {
 
             if (empty(activeGuard())) {
-                $attempLogin = \Auth::guard($guard)->attempt(['email' => $email, 'password' => $password]);
+
+
+                if ($guard == 'web') {
+                    $attempLogin = \Auth::guard($guard)->attempt(['master_id' => $email, 'password' => $password]);
+                } else {
+                    $attempLogin = \Auth::guard($guard)->attempt(['email' => $email, 'password' => $password]);
+                }
                 return $attempLogin;
             } else {
 

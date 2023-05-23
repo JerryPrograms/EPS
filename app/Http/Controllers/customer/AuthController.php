@@ -26,7 +26,10 @@ class AuthController extends Controller
         if ($validate->fails()) {
             return response()->json(["success" => false, 'message' => $validate->errors()->first()]);
         }
+
         $login_attempt = Authentication::login($request->email, $request->password);
+
+
         if ($login_attempt === 'x') {
             return json_encode([
                 'success' => false,

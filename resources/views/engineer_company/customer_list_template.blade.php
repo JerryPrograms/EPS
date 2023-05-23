@@ -38,6 +38,10 @@
         </tr>
     @endif
     @foreach($customer as $c)
+        @php
+            $address = $c->GetBuildingInfo()->pluck('address')->implode(',');
+            $building_name = $c->GetBuildingInfo()->pluck('building_name')->implode(',');
+        @endphp
         <tr onclick="selectRow($(this),'{{$c->id}}')">
             <td class=""><a href="javascript: void(0);"
                             class="text-body fw-bold">{{$counter}}</a>
@@ -51,7 +55,7 @@
             </td>
             <td class="">
                 <button
-                    class="date_button_2 border-0">{{!empty($c->GetBuildingInfo) ?  $c->GetBuildingInfo->building_name : 'Not Specified Yet'}}</button>
+                    class="date_button_2 border-0">{{!empty($building_name) ?  $building_name : __('translation.Not Specified Yet')}}</button>
             </td>
             <td class="">
                 <button title="{{$c->address}}"
@@ -61,12 +65,12 @@
             </td>
             <td class="">
                 <button
-                    class="date_button_2 border-0">{{!empty($c->EngineerCompany) ? $c->EngineerCompany->company_name : 'Not specified yet'}}</button>
+                    class="date_button_2 border-0">{{!empty($c->EngineerCompany) ? $c->EngineerCompany->company_name : __('translation.Not Specified Yet')}}</button>
             </td>
             <td class="">
                 <!-- Button trigger modal -->
                 <button
-                    class="date_button_2 border-0">{{!empty($c->EngineerCompany) ? $c->EngineerCompany->company_registration_number : 'Not specified yet'}}</button>
+                    class="date_button_2 border-0">{{!empty($c->EngineerCompany) ? $c->EngineerCompany->company_registration_number : __('translation.Not Specified Yet')}}</button>
             </td>
             <td class="d-flex">
                 <!-- Button trigger modal -->

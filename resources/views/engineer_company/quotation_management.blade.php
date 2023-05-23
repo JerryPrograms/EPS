@@ -49,11 +49,17 @@
                                                 </thead>
                                                 <tbody id="myTable">
                                                 @foreach ($quotations as $v)
+
+                                                    @php
+                                                        $address = $v->getCustomer->GetBuildingInfo()->pluck('address')->implode(',');
+                                                        $building_name = $v->getCustomer->GetBuildingInfo()->pluck('building_name')->implode(',');
+                                                    @endphp
+
                                                     <tr>
                                                         <td>{{ $loop->index + 1 }}</td>
                                                         <td>{{ $v->created_at->format('Y-m-d') }}</td>
                                                         <td>{{ $v->getCustomer->customer_number }}</td>
-                                                        <td>{{ $v->getCustomer->GetBuildingInfo->building_name }}</td>
+                                                        <td>{{ $building_name }}</td>
                                                         <td>{{ count($v->GetQuoteContent) }}</td>
                                                         <td>{{ $v->GetCustomer->customer_number }}</td>
                                                         <td>{{ $v->total_amount }}</td>

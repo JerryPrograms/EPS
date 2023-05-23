@@ -109,5 +109,17 @@ class EngineerCompanyController extends Controller
         return view('engineer_company.as_company_list', compact('as_information'));
     }
 
+    public function GetEngineerCompanyData(Request $request)
+    {
+        $company = Engineer_company::where('id', $request->id)->first();
+
+        return json_encode([
+            'Error' => false,
+            'Message' => 'Found',
+            'Data' => $company
+        ]);
+
+    }
+
 
 }

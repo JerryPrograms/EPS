@@ -103,7 +103,7 @@ class EngineerCompanyController extends Controller
     {
         $customer = CustomerInfo::where('user_uid', $uid)->first();
         if ($customer) {
-            $buildings = BuildingAddress::latest()->where('status', 0)->get();
+            $buildings = BuildingAddress::latest()->get();
             $company = Engineer_company::latest()->get();
             return view('engineer_company.building_info', compact('customer', 'buildings', 'company'));
         }

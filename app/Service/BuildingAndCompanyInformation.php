@@ -30,7 +30,7 @@ class BuildingAndCompanyInformation
                 BuildingAddress::where('id', $request->b_building_name)->update(
                     ['status' => 1]);
                 $customer = CustomerInfo::where('id', $request->customer_id)->update([
-                    'building_id' => $request->b_building_name,
+                    'building_id' => json_encode($request->b_building_name),
                 ]);
             }
             if ($request->has('engineer_company_id')) {

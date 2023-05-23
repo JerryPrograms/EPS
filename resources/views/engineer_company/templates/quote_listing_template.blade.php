@@ -22,6 +22,14 @@
     <tbody id="quote_tbody">
 
     @foreach($quote as $q)
+
+        @php
+            $address = $q->getCustomer->GetBuildingInfo()->pluck('address')->implode(',');
+            $building_name = $q->getCustomer->GetBuildingInfo()->pluck('building_name')->implode(',');
+
+        @endphp
+
+
         <tr onclick="SelectRow($(this),'{{$q->id}}')">
             <td>
                 {{$loop->index + 1}}
@@ -37,10 +45,10 @@
                 {{$q->GetCustomer->customer_number}}
             </td>
             <td>
-                {{$q->GetCustomer->GetBuildingInfo->building_name}}
+                {{$building_name}}
             </td>
             <td>
-                {{$q->GetCustomer->GetBuildingInfo->address}}
+                {{$address}}
             </td>
             <td>
                 {{ !empty($q->GetCustomer) ? $q->GetCustomer->CompanyInformation->company_name : '' }}

@@ -1,5 +1,9 @@
 @extends('engineer_company.includes.layout')
 @section('body')
+    @php
+        $address = $customer->GetBuildingInfo()->pluck('address')->implode(',');
+        $building_name = $customer->GetBuildingInfo()->pluck('building_name')->implode(',');
+    @endphp
     <div class="main-content">
         <div class="page-content">
             <div class="container-fluid">
@@ -73,15 +77,15 @@
                                                     </td>
                                                     <td class="custom_br_theme_clr_2">
                                                         <p class="tble_text">
-                                                            @if(!empty($customer->GetBuildingInfo))
-                                                                {{$customer->GetBuildingInfo->building_name}}
+                                                            @if(!empty($building_name))
+                                                                {{$building_name}}
                                                             @endif
                                                         </p>
                                                     </td>
                                                     <td class="custom_br_theme_clr_2">
                                                         <p class="tble_text">
-                                                            @if(!empty($customer->GetBuildingInfo))
-                                                                {{$customer->GetBuildingInfo->address}}
+                                                            @if(!empty($building_name))
+                                                                {{$address}}
                                                             @endif
                                                         </p>
                                                     </td>
