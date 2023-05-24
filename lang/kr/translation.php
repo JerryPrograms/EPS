@@ -602,4 +602,5 @@ return [
     'Please enter your contact information' => '연락처를 입력해주세요',
     'checker' => '점검자',
     'Not Specified Yet' => '아직 지정되지 않음',
+    'Dashboard' => '계기반',
 ];

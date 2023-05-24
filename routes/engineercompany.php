@@ -276,7 +276,7 @@ Route::group(['prefix' => 'eps-panel', 'middleware' => 'AdminCompanyAccess'], fu
     // Engineer Management End
 });
 
-
+Route::get('/customer-dashboard',[\App\Http\Controllers\CustomerInfoController::class,'GetCustomerDashboard'])->name('GetCustomerDashboard');
 
 
 

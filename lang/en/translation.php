@@ -605,5 +605,6 @@ return [
     'business' => 'business',
     'Please enter your contact information' => 'Please enter your contact information',
     'checker' => 'checker',
-    'Not Specified Yet'=>'Not Specified Yet',
+    'Not Specified Yet' => 'Not Specified Yet',
+    'Dashboard' => 'Dashboard',
 ];

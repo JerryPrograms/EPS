@@ -1,8 +1,8 @@
 <div class="vertical-menu">
+
     @php
         $routes = ['building-info','as-and-engineer-company','parking-facility','key-accessory-history','parts-replacement-history','monthly-regular-inspection','emergency-dispatch-checklist','manage-attachments'];
     @endphp
-
 
     <div data-simplebar class="h-100">
         <!--- Sidemenu -->
@@ -88,8 +88,6 @@
                         </ul>
                     </li>
                 @endif
-
-
                 @if (!empty(activeGuard()) && activeGuard() == 'admin')
                     <li class="sidebr_button mt-2">
                         <a href="{{ route('engineer_companies') }}" class="waves-effect dropdown_toggle">
@@ -102,8 +100,7 @@
                     </li>
 
                 @endif
-
-                @if(activeGuard() != 'admin')
+                @if(activeGuard() != 'admin' && activeGuard() !='web')
                     <li class="sidebr_button mt-2">
                         <a href="{{ route('distpatch_confirmation_listing') }}" class=" waves-effect dropdown_toggle">
                             <!-- <i class="bx bx-calendar"></i> -->
@@ -158,7 +155,6 @@
                         </a>
                     </li>
                 @endif
-
                 @if (activeGuard() != 'web' && activeGuard() != 'admin')
                     <li class="sidebr_button mt-2">
                         <a href="{{ route('ec.GetCalender') }}" class=" waves-effect dropdown_toggle">
@@ -180,7 +176,17 @@
                         </a>
                     </li>
                 @endif
-
+                @if(activeGuard() == 'web')
+                        <li class="sidebr_button mt-2">
+                            <a href="{{ route('GetCustomerDashboard') }}" class=" waves-effect dropdown_toggle">
+                                <!-- <i class="bx bx-calendar"></i> -->
+                                <img src="{{ asset('engineer_company/assets/images/Frame.png') }}"
+                                     class="double_ring_img p-0" style="margin-left: -1px;">
+                                <span key="t-dashboards"
+                                      class="dropdown_text">{{ __('translation.Dashboard') }}</span>
+                            </a>
+                        </li>
+                @endif
             </ul>
         </div>
         <!-- Sidebar -->
