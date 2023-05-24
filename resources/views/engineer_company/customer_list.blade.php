@@ -1,8 +1,6 @@
 @extends('engineer_company.includes.layout')
 @section('body')
 
-
-
     <div class="main-content">
         <div class="page-content">
             <div class="container-fluid">
@@ -23,39 +21,39 @@
                                     <form id="customerSearchForm">
                                         <div class="row">
                                             @csrf
-                                            <div class="col-md-2 col-6">
-                                                <select class="form-select mt-4" name="filter" autocomplete="off"
-                                                        required>
-                                                    <option selected value="" disabled>
-                                                        {{ __('translation.filter') }}
-                                                    </option>
-                                                    <option value="all">
-                                                        {{ __('translation.all') }}
-                                                    </option>
-                                                    <option value="created_at">
-                                                        {{ __('translation.Registration Date') }}
-                                                    </option>
-                                                    <option value="building_name">
-                                                        {{ __('translation.Building Name') }}
-                                                    </option>
-                                                    <option value="customer_number">
-                                                        {{ __('translation.Customer Number') }}
-                                                    </option>
-                                                    <option value="address">
-                                                        {{ __('translation.address') }}
-                                                    </option>
-                                                    <option value="building_management_company">
-                                                        {{ __('translation.Building Management Company') }}
-                                                    </option>
-                                                    <option value="building_management_company">
-                                                        {{ __('translation.Building Management Company') }}
-                                                    </option>
-                                                </select>
-                                            </div>
+{{--                                            <div class="col-md-2 col-6">--}}
+{{--                                                <select class="form-select mt-4" name="filter" autocomplete="off"--}}
+{{--                                                        required>--}}
+{{--                                                    <option selected value="" disabled>--}}
+{{--                                                        {{ __('translation.filter') }}--}}
+{{--                                                    </option>--}}
+{{--                                                    <option value="all">--}}
+{{--                                                        {{ __('translation.all') }}--}}
+{{--                                                    </option>--}}
+{{--                                                    <option value="created_at">--}}
+{{--                                                        {{ __('translation.Registration Date') }}--}}
+{{--                                                    </option>--}}
+{{--                                                    <option value="building_name">--}}
+{{--                                                        {{ __('translation.Building Name') }}--}}
+{{--                                                    </option>--}}
+{{--                                                    <option value="customer_number">--}}
+{{--                                                        {{ __('translation.Customer Number') }}--}}
+{{--                                                    </option>--}}
+{{--                                                    <option value="address">--}}
+{{--                                                        {{ __('translation.address') }}--}}
+{{--                                                    </option>--}}
+{{--                                                    <option value="building_management_company">--}}
+{{--                                                        {{ __('translation.Building Management Company') }}--}}
+{{--                                                    </option>--}}
+{{--                                                    <option value="building_management_company">--}}
+{{--                                                        {{ __('translation.Building Management Company') }}--}}
+{{--                                                    </option>--}}
+{{--                                                </select>--}}
+{{--                                            </div>--}}
                                             <div class="col-md-3 col-6">
                                                 <div class="custom_search">
                                                     <div class="search mt-4">
-                                                        <input type="text" class="form-control" name="keyword"
+                                                        <input id="myInput" type="text" class="form-control" name="keyword"
                                                                placeholder="{{__('translation.search')}}"
                                                                autocomplete="off" required>
 
@@ -398,5 +396,15 @@
                 }
             });
         }
+
+        var $rows = $('#myTable tr');
+        $('#myInput').keyup(function () {
+            var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+
+            $rows.show().filter(function () {
+                var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+                return !~text.indexOf(val);
+            }).hide();
+        });
     </script>
 @endsection
