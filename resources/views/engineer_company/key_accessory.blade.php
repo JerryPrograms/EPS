@@ -165,7 +165,7 @@
                                                                             type="button" id="dropdownMenuButton"
                                                                             data-bs-toggle="dropdown"
                                                                             aria-expanded="false">
-                                                                            Select Buildings
+                                                                            {{__('translation.Select Buildings')}}
                                                                         </button>
                                                                         <div class="dropdown-menu"
                                                                              aria-labelledby="dropdownMenuButton">

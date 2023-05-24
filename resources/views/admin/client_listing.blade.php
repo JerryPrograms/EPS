@@ -100,7 +100,7 @@
                                                 <tr>
                                                     <td colspan="7">
                                                         <div class="w-100 text-center">
-                                                            No Data Avaialble
+                                                            {{__('translation.No Data Available')}}
                                                         </div>
                                                     </td>
                                                 </tr>

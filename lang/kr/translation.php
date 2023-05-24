@@ -603,4 +603,6 @@ return [
     'checker' => '점검자',
     'Not Specified Yet' => '아직 지정되지 않음',
     'Dashboard' => '계기반',
+    'No Data Available' => '자료 없음',
+    'Select Buildings' => '건물 선택',
 ];

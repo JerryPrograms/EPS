@@ -607,4 +607,6 @@ return [
     'checker' => 'checker',
     'Not Specified Yet' => 'Not Specified Yet',
     'Dashboard' => 'Dashboard',
+    'No Data Available' => 'No Data Available',
+    'Select Buildings' => 'Select Buildings',
 ];
