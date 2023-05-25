@@ -34,9 +34,15 @@
                                                         <label for="building_name"
                                                                class="mb-0">{{ __('translation.Building Name') }}</label>
                                                     </div>
+                                                    @php
+
+                                                        $address = $customer->GetBuildingInfo()->pluck('address')->implode(',');
+                                                        $building_name = $customer->GetBuildingInfo()->pluck('building_name')->implode(',');
+
+                                                     @endphp
                                                     <div class="col-lg-10 col-md-6 col-12">
                                                         <input type="text" class="form-control form-theme-input"
-                                                               id="building_name" value="{{ $customer->GetBuildingInfo->building_name }}"
+                                                               id="building_name" value="{{ $building_name }}"
                                                                disabled>
                                                     </div>
                                                 </div>
