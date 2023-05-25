@@ -174,7 +174,7 @@
                                                                                 <input type="checkbox"
                                                                                        class="form-check-input"
                                                                                        name="buildings[]" value="{{$building->id}}">
-                                                                               {{$building->name}}
+                                                                               {{$building->address}}
                                                                             </div>
                                                                             @endforeach
                                                                         </div>

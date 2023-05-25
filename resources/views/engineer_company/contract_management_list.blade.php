@@ -238,7 +238,7 @@
 
 
             if ($('#customerInfoID').val() == '') {
-                Command: toastr["error"]("You need to select row first")
+                Command: toastr["error"]("{{__('translation.Please select a row first')}}")
 
                 toastr.options = {
                     "closeButton": false,

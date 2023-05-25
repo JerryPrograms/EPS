@@ -76,6 +76,10 @@
                                                                             </div>
                                                                         </div>
                                                                     </div>
+                                                                    @php
+                                                                        $address = $customer->GetBuildingInfo()->pluck('address')->implode(',');
+                                                                        $building_name = $customer->GetBuildingInfo()->pluck('building_name')->implode(',');
+                                                                    @endphp
                                                                     <div class="form-group mb-4">
                                                                         <div class="row align-items-center">
                                                                             <div class="col-lg-2 col-md-6 col-12">
@@ -88,10 +92,11 @@
                                                                                     id="building_name"
                                                                                     placeholder="{{ __('translation.Enter building name') }}"
                                                                                     disabled
-                                                                                    value="{{ $customer->GetBuildingInfo->building_name }}">
+                                                                                    value="{{ $building_name }}">
                                                                             </div>
                                                                         </div>
                                                                     </div>
+
                                                                     <div class="form-group mb-4">
                                                                         <div class="row align-items-center">
                                                                             <div class="col-lg-2 col-md-6 col-12">
@@ -103,7 +108,7 @@
                                                                                     class="form-control form-theme-input"
                                                                                     id="building_address"
                                                                                     placeholder="{{ __('translation.Enter building address') }}"
-                                                                                    value="{{ $customer->BuildingInformation->address }}"
+                                                                                    value="{{ $address }}"
                                                                                     disabled>
                                                                             </div>
                                                                         </div>
