@@ -59,6 +59,10 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        @php
+                                            $address = $contract->get_customer->GetBuildingInfo()->pluck('address')->implode(',');
+                                            $building_name = $contract->get_customer->GetBuildingInfo()->pluck('building_name')->implode(',');
+                                        @endphp
                                         <div class="form-group mb-4">
                                             <div class="row align-items-center">
                                                 <div class="col-lg-2 col-md-6 col-12">
@@ -69,7 +73,7 @@
                                                     <input disabeled type="text" class="form-control form-theme-input"
                                                            id="building_name"
                                                            placeholder="{{ __('translation.Enter building name') }}"
-                                                           value="{{ $contract->get_customer->GetBuildingInfo->building_name }}" disabled>
+                                                           value="{{ $building_name }}" disabled>
                                                 </div>
                                             </div>
                                         </div>
@@ -83,7 +87,7 @@
                                                     <input disabeled type="text" class="form-control form-theme-input"
                                                            id="building_address"
                                                            placeholder="{{ __('translation.Enter building address') }}"
-                                                           value="{{ $contract->get_customer->GetBuildingInfo->address }}"
+                                                           value="{{ $address }}"
                                                            disabled>
                                                 </div>
                                             </div>

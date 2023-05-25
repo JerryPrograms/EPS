@@ -63,13 +63,14 @@
                                                 <th class="text-center">
                                                     {{__('translation.Building Management Company')}}
                                                 </th>
-                                                <th class="text-center">
-                                                    {{__('translation.Note')}}
-                                                </th>
+{{--                                                <th class="text-center">--}}
+{{--                                                    {{__('translation.Note')}}--}}
+{{--                                                </th>--}}
                                                 <th class="text-center">{{__('translation.Actions')}}</th>
                                             </tr>
                                             </thead>
                                             <tbody>
+
                                             @if(count($completion_reports) > 0)
                                                 @foreach($completion_reports as $c)
                                                     <tr>
@@ -89,11 +90,11 @@
                                                             {{$c->joint_name}}
                                                         </td>
                                                         <td>
-                                                            ....
+                                                           {{$c->GetCustomer->company_name}}
                                                         </td>
-                                                        <td>
-                                                            ....
-                                                        </td>
+{{--                                                        <td>--}}
+{{--                                                            ....--}}
+{{--                                                        </td>--}}
                                                         <td class="d-flex gap-1 justify-content-center align-items-center">
                                                             <a @if(activeGuard() == 'admin') style="background-color: #6281FE1A !important; border: 1px solid #6281FE"
                                                                @endif href="{{route('view_construction_completion',$c->id)}}"
