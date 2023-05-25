@@ -26,10 +26,14 @@
                                         </div>
                                         <div class="table-responsive data-set-list">
                                             <table class="table mb-0 table-bordered table-striped table-inspection">
+                                                @php
+                                                    $address = $customer->getCustomer->GetBuildingInfo()->pluck('address')->implode(',');
+                                                    $building_name = $customer->getCustomer->GetBuildingInfo()->pluck('building_name')->implode(',');
+                                                @endphp
                                                 <tbody>
                                                 <tr>
                                                     <th class="text-left">{{ __('translation.Building Name') }}</th>
-                                                    <td class="text-left">{{ $customer->getCustomer->building_name }}</td>
+                                                    <td class="text-left">{{ $building_name }}</td>
                                                 </tr>
                                                 <tr>
                                                     <th class="text-left">{{ __('translation.Inspection date') }}</th>

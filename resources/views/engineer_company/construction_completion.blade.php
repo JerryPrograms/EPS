@@ -90,7 +90,7 @@
                                                             {{$c->joint_name}}
                                                         </td>
                                                         <td>
-                                                           {{$c->GetCustomer->company_name}}
+                                                           {{$c->GetCustomer->EngineerCompany->company_name}}
                                                         </td>
 {{--                                                        <td>--}}
 {{--                                                            ....--}}

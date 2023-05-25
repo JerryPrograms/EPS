@@ -29,6 +29,10 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            @php
+                                                $address = $customer->getCustomer->GetBuildingInfo()->pluck('address')->implode(',');
+                                                $building_name = $customer->getCustomer->GetBuildingInfo()->pluck('building_name')->implode(',');
+                                            @endphp
                                             <div class="prompt"></div>
                                             <div class="form-group mb-4">
                                                 <div class="row align-items-center">
@@ -39,7 +43,7 @@
                                                     <div class="col-lg-10 col-md-6 col-12">
                                                         <input type="text" class="form-control form-theme-input"
                                                                id="building_name"
-                                                               value="{{ $customer->getCustomer->building_name }}"
+                                                               value="{{ $building_name }}"
                                                                disabled>
                                                     </div>
                                                 </div>
