@@ -293,17 +293,17 @@
                                             </div>
 
 
-                                            <div class="row align-items-center mt-4">
-                                                <div class="col-md-4 col-12"><label class="form-label custom_lab mb-0 ">
-                                                        <span class="star_section">*</span>
-                                                        {{ __('translation.Inspection date') }}
-                                                    </label></div>
-                                                <div class="col-md-8 col-12"><input type="date" name="inspection_date"
-                                                                                    class="form-control w-100  custom_input"
-                                                                                    required
-                                                                                    @if (!empty($customer->ParkingFacilityCertificate)) value="{{ $customer->ParkingFacilityCertificate->inspection_date }}" @endif>
-                                                </div>
-                                            </div>
+                                            {{--                                            <div class="row align-items-center mt-4">--}}
+                                            {{--                                                <div class="col-md-4 col-12"><label class="form-label custom_lab mb-0 ">--}}
+                                            {{--                                                        <span class="star_section">*</span>--}}
+                                            {{--                                                        {{ __('translation.Inspection date') }}--}}
+                                            {{--                                                    </label></div>--}}
+                                            {{--                                                <div class="col-md-8 col-12"><input type="date" name="inspection_date"--}}
+                                            {{--                                                                                    class="form-control w-100  custom_input"--}}
+                                            {{--                                                                                    required--}}
+                                            {{--                                                                                    @if (!empty($customer->ParkingFacilityCertificate)) value="{{ $customer->ParkingFacilityCertificate->inspection_date }}" @endif>--}}
+                                            {{--                                                </div>--}}
+                                            {{--                                            </div>--}}
 
                                             <div class="row align-items-center mt-4">
                                                 <div class="col-md-4 col-12"><label class="form-label custom_lab mb-0 ">
@@ -354,11 +354,11 @@
                                                         {{ __('translation.Inspection Classification') }}
                                                     </th>
                                                     <th class="text-center align-middle custom_heading_2 custom_br_rd">
-                                                        {{ __('translation.Manager Name') }}
+                                                        {{ __('translation.Certification Number') }}
                                                     </th>
                                                     <th
                                                         class="text-center custom_heading_2 align-middle  custom_br_rd">
-                                                        {{ __('translation.Installation place') }}
+                                                        {{ __('translation.Inspection date') }}
                                                     </th>
                                                     <th class="text-center custom_br_rd">
                                                         {{ __('translation.Periodic inspection (validity period)') }}
@@ -394,7 +394,7 @@
                                                                @if (count($customer->InspectionCertificate) > 0) value="{{ $customer->InspectionCertificate[0]->manager_name }}" @endif>
                                                     </td>
                                                     <td class="custom_br_rd">
-                                                        <input id="d1d21" type="text"
+                                                        <input id="d1d21" type="date"
                                                                name="installation_place[]"
                                                                class="form-control col-lg-2 custom_input_tble_3"
                                                                placeholder="{{ __('translation.Enter Place') }}"
@@ -432,9 +432,9 @@
                                                                     src="{{ asset('engineer_company/assets/images/aroow.png') }}">
 
                                                             </button>
-                                                            <input type="file" hidden
+                                                            <input type="file" hidden onchange="setFileName($(this))"
                                                                    name="inspection_certificate[]"
-                                                                   @if (empty($customer->InspectionCertificate)) required @endif>
+                                                                   @if (empty($customer->InspectionCertificate))  @endif>
                                                             <button class="search_button"
                                                                     @if (count($customer->InspectionCertificate) > 0) onclick="setImage('{{ asset($customer->InspectionCertificate[0]->inspection_certificate) }}')"
                                                                     @endif
@@ -473,7 +473,7 @@
 
                                                     </td>
                                                     <td class="custom_br_rd">
-                                                        <input id="d11111cc" type="text"
+                                                        <input id="d11111cc" type="date"
                                                                name="installation_place[]"
                                                                class="form-control col-lg-2 custom_input_tble_3"
                                                                placeholder="{{ __('translation.Enter Place') }}"
@@ -513,7 +513,8 @@
                                                             </button>
                                                             <input type="file" hidden
                                                                    name="inspection_certificate[]"
-                                                                   @if (empty($customer->InspectionCertificate)) required @endif>
+                                                                   onchange="setFileName($(this))"
+                                                                   @if (empty($customer->InspectionCertificate))  @endif>
                                                             <button class="search_button"
                                                                     @if (count($customer->InspectionCertificate) > 0) onclick="setImage('{{ asset($customer->InspectionCertificate[1]->inspection_certificate) }}')"
                                                                     @endif
@@ -552,7 +553,7 @@
                                                                @if (count($customer->InspectionCertificate) > 0) value="{{ $customer->InspectionCertificate[2]->manager_name }}" @endif>
                                                     </td>
                                                     <td class="custom_br_rd">
-                                                        <input id="pppodi1k" type="text"
+                                                        <input id="pppodi1k" type="date"
                                                                name="installation_place[]"
                                                                class="form-control col-lg-2 custom_input_tble_3"
                                                                placeholder="{{ __('translation.Enter Place') }}"
@@ -593,7 +594,8 @@
                                                             </button>
                                                             <input type="file" hidden
                                                                    name="inspection_certificate[]"
-                                                                   @if (empty($customer->InspectionCertificate)) required @endif>
+                                                                   onchange="setFileName($(this))"
+                                                                   @if (empty($customer->InspectionCertificate))  @endif>
                                                             <button class="search_button"
                                                                     @if (count($customer->InspectionCertificate) > 0) onclick="setImage('{{ asset($customer->InspectionCertificate[2]->inspection_certificate) }}')"
                                                                     @endif
@@ -698,6 +700,46 @@
         function RestrictNextDate(element) {
             console.log(element.val());
             element.parent().next().children('input').attr('min', element.val());
+        }
+
+        function setFileName(element) {
+
+            var maxFileSize = 1 * 1024 * 1024;
+
+            var file = element[0].files[0];
+
+            if (file.size > maxFileSize) {
+
+
+                Command: toastr["error"]("{{__('translation.File size exceeds the limit of 5MB.')}}")
+
+                toastr.options = {
+                    "closeButton": false,
+                    "debug": false,
+                    "newestOnTop": false,
+                    "progressBar": true,
+                    "positionClass": "toast-top-right",
+                    "preventDuplicates": true,
+                    "onclick": null,
+                    "showDuration": 300,
+                    "hideDuration": 1000,
+                    "timeOut": 2000,
+                    "extendedTimeOut": 1000,
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                }
+                $(this).val(null); // Clear the file input
+            } else {
+                var fileName = element.val().split('\\').pop();
+
+                console.log(fileName.length);
+                if (fileName.length > 20) {
+                    fileName = fileName.substring(0, 20) + '...';
+                }
+                element.prev().html(`<img src="{{ asset('engineer_company/assets/images/aroow.png') }}"> ${fileName}`)
+            }
         }
     </script>
 @endsection

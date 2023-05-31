@@ -142,4 +142,79 @@ class KeyAccessoryInformation
         }
 
     }
+
+    public function UpdateKeyAccessoryMainPart(Request $request)
+    {
+
+        try {
+
+            MainPartModel::where('id', $request->id)->update([
+                'tag' => $request->tag,
+                'title' => $request->title,
+                'color' => $request->color,
+            ]);
+
+            return json_encode([
+                'success' => true,
+                'message' => __('translation.Parts Imported Successfully'),
+            ]);
+
+        } catch (\Exception $ex) {
+
+            return json_encode([
+                'success' => false,
+                'message' => $ex->getMessage(),
+            ]);
+        }
+    }
+
+
+    public function EditSubPartTitle(Request $request)
+    {
+        try {
+
+            KeyAccessoryModel::where('id', $request->id)->update([
+                'title' => $request->title,
+            ]);
+
+            return json_encode([
+                'success' => true,
+                'message' => __('translation.Title Updated'),
+            ]);
+
+        } catch (\Exception $ex) {
+            return json_encode([
+                'success' => false,
+                'message' => $ex->getMessage(),
+            ]);
+        }
+    }
+
+    public function DeletePart(Request $request)
+    {
+        try {
+
+
+            DB::beginTransaction();
+
+
+            KeyAccessoryModel::where('main_part_id', $request->id)->delete();
+
+            MainPartModel::where('id', $request->id)->delete();
+
+            DB::commit();
+
+            return json_encode([
+                'success' => true,
+                'message' => __('translation.Part deleted successfully'),
+            ]);
+
+
+        } catch (\Exception $ex) {
+            return json_encode([
+                'success' => false,
+                'message' => $ex->getMessage(),
+            ]);
+        }
+    }
 }

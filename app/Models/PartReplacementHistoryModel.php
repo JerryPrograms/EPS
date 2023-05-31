@@ -11,4 +11,13 @@ class PartReplacementHistoryModel extends Model
 
     protected $guarded = [];
 
+    public function GetMainPart()
+    {
+        return $this->hasOne(MainPartModel::class,'id','part');
+    }
+    public function GetSubPart()
+    {
+        return $this->hasOne(KeyAccessoryInformation::class,'id','manager');
+    }
+
 }

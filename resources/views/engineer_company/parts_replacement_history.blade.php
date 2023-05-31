@@ -241,7 +241,7 @@
                                                     {{ __('translation.part') }}
                                                 </th>
                                                 <th class="text-center custom_inp_widt_2 custom_wisth_input_2">
-                                                    {{ __('translation.manager') }}
+                                                    {{ __('translation.Worker') }}
                                                 </th>
                                                 <th class="text-center">
                                                     {{ __('translation.AS content') }}
@@ -254,7 +254,7 @@
                                             </thead>
                                             <tbody id="partReplacemnetTbody">
                                             @php
-                                                $MainPart = $customer->PartReplacementHistory()->paginate(10);
+                                                $MainPart = $customer->PartReplacementHistory()->latest()->paginate(10);
                                             @endphp
 
                                             @include('engineer_company.part_replacement_history_listing_template',compact('MainPart'))
@@ -353,6 +353,79 @@
             </div><!-- /.modal-dialog -->
         </div>
     </div>
+    <div id="EditReplacementHistory" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel1"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="myModalLabel">
+
+                        {{ __('translation.Edit Parts history Replacement') }}
+
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+
+                <form id="EditPartsReplacementHistory">
+                    @csrf
+                    <div class="modal-body">
+                        <div class="col-12">
+                            <div class="prompt w-100"></div>
+                            <div class="mb-3">
+
+                                <input name="id" id="edit_part_id" hidden>
+
+                                <div class="row">
+                                    <div class="col-12 mb-2">
+                                        <input id="edit_registration_date" type="date" name="registration_date"
+                                               class="form-control" required>
+                                    </div>
+                                    <div class="col-12 mb-2">
+                                        <input id="edit_as_content" name="as_content" class="form-control" required>
+                                    </div>
+                                    <div class="col-12 mb-2">
+                                        <select id="edit_part" onChange="GetSubParts($(this), ${counter})" required
+                                                class="form-select valid" name="part" autocomplete="off" required="">
+                                            <option value="" disabled="" selected>--{{__('translation.part')}}--
+                                            </option>
+                                            @foreach($main_parts as $main)
+                                                <option data-main-id="{{$main->id}}"
+                                                        value="{{$main->id}}">{{$main->title}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="col-12 mb-2">
+                                        <select id="edit_manager" required class="form-select valid" name="manager"
+                                                autocomplete="off" required="">
+                                            <option value="" disabled="">--{{ __('translation.Worker') }}--</option>
+                                            @foreach($sub_parts as $main)
+                                                <option data-main-id="{{$main->main_part_id}}"
+                                                        value="{{$main->id}}">{{$main->title}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary waves-effect"
+                                    data-bs-dismiss="modal">
+                                {{ __('translation.close') }}
+                            </button>
+                            <button type="submit"
+                                    class="btn btn-primary waves-effect waves-light submitbtn">
+                                {{ __('translation.Update') }}
+                            </button>
+                        </div>
+
+                    </div><!-- /.modal-content -->
+                </form>
+            </div><!-- /.modal-dialog -->
+        </div>
+    </div>
 @endsection
 @section('custom-script')
     <script>
@@ -364,43 +437,38 @@
             counter++;
             $('#partReplacemnetTbody').prepend(`
                                             <tr class="mt-5">
-                                            <td class="custom_br_theme_gray"><a href="javascript: void(0);"
-                                                    class="text-body fw-bold">#</a> </td>
-                                            <td class="custom_br_theme_gray_2">
-                                                <input type="date" name="registration_date[]"
-                                                    class="form-control col-lg-12 custom_input_tble"
-                                                     aria-describedby="emailHelp"
-                                                    placeholder="2022.11.01" required>
-                                            </td>
+                                                <td class="custom_br_theme_gray">
+                                                    <a href="javascript: void(0);" class="text-body fw-bold">#</a>
+                                                </td>
+                                                <td class="custom_br_theme_gray_2">
+                                                    <input type="date" name="registration_date[]" class="form-control col-lg-12 custom_input_tble" aria-describedby="emailHelp" placeholder="2022.11.01" required>
+                                                </td>
+                                                <td class="custom_br_theme_gray_2">
+                                                    <select onChange="GetSubParts($(this), ${counter})" required class="form-select valid" name="part[]" autocomplete="off" required="">
+                                                        <option value="" disabled="" selected>--{{__('translation.part')}}--</option>
+                                                        @foreach($main_parts as $main)
+            <option data-main-id="{{$main->id}}" value="{{$main->id}}">{{$main->title}}</option>
+                                                        @endforeach
+            </select>
+        </td>
+        <td class="custom_br_theme_gray_2">
+            <select id="${counter}Sub" required class="form-select valid" name="manager[]" autocomplete="off" required="">
+                                                        <option value="" disabled="">--{{ __('translation.Worker') }}--</option>
+                                                        @foreach($sub_parts as $main)
+            <option data-main-id="{{$main->main_part_id}}" value="{{$main->id}}">{{$main->title}}</option>
+                                                        @endforeach
+            </select>
+        </td>
+        <td class="custom_br_theme_gray_3">
+            <input type="text" name="as_content[]" class="form-control col-lg-2 custom_input_tble" aria-describedby="emailHelp" placeholder="{{ __('translation.AS content') }}" required>
+                                                </td>
+                                                <td class="custom_br_theme_gray_3">
+                                                    <button type="button" onclick="removeRow($(this).parent().parent())" class="transparent-btn">
+                                                        <i class="fa fa-trash-can"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
 
-
-                                            <td class="custom_br_theme_gray_2">
-                                                <input type="text" name="part[]"
-                                                    class="form-control col-lg-2 custom_input_tble"
-                                                     aria-describedby="emailHelp"
-                                                    placeholder="{{ __('translation.Part name') }}"
-                                                     required>
-                                            </td>
-
-                                            <td class="custom_br_theme_gray_2">
-                                                <input type="text" name="manager[]"
-                                                    class="form-control col-lg-12 custom_input_tble"
-                                                     aria-describedby="emailHelp"
-                                                    placeholder="{{ __('translation.Manager Name') }}
-            " required>
-    </td>
-
-    <td class="custom_br_theme_gray_3">
-        <input type="text" name="as_content[]"
-            class="form-control col-lg-2 custom_input_tble"
-             aria-describedby="emailHelp"
-            placeholder="{{ __('translation.AS content') }}" required>
-                                            </td>
-
-                                 <td class="custom_br_theme_gray_3">
-                            <button type="button" onclick="removeRow($(this).parent().parent())" class="transparent-btn"><i class=" fa fa-trash-can"></i></button>
-                                 </td>
-                                        </tr>
              `);
             $('tr td img').addClass('d-none');
         }
@@ -423,6 +491,10 @@
         $('#deletePartsReplacementHistory').on('submit', function (e) {
             e.preventDefault();
             ajaxCall($('#deletePartsReplacementHistory'), "{{ route('DeletePartReplacementHistory') }}", $('#deletePartsReplacementHistory').find('.submitbtn'), "{{ route('ec.CreatePartsReplacementHistory',request()->segment(3)) }}", onRequestSuccess);
+        });
+        $('#EditPartsReplacementHistory').on('submit', function (e) {
+            e.preventDefault();
+            ajaxCall($('#EditPartsReplacementHistory'), "{{ route('ec.EditPartsReplacement') }}", $('#EditPartsReplacementHistory').find('.submitbtn'), "{{ route('ec.CreatePartsReplacementHistory',request()->segment(3)) }}", onRequestSuccess);
         });
 
         function FilterData(date, id) {
@@ -501,6 +573,83 @@
 
                         }, 2000);
 
+                    }
+                },
+                error: function (e) {
+
+
+                    var first_error = '';
+                    $.each(e.responseJSON.errors, function (index, item) {
+
+                        first_error = item[0];
+
+                    });
+
+                    $('.parent-loader').addClass('d-none');
+                    $("div.prompt").fadeIn();
+                    {
+                        {
+                            $('.prompt').html('<div class="alert alert-danger">' + first_error + '</div>');
+                        }
+                    }
+                    setTimeout(function () {
+                        $("div.prompt").fadeOut();
+                        {
+                            {
+                                prompt.html('<div class="alert alert-danger">' + first_error + '</div>');
+                            }
+                        }
+
+                    }, 2000);
+
+
+                }
+
+            });
+        }
+
+
+        function GetSubParts(element, counter) {
+            var ids = element.find('option:selected').attr('data-main-id');
+            var id = '#' + counter + 'Sub';
+
+
+            $(id).find('option').each(function () {
+
+                if ($(this).attr('data-main-id') == ids) {
+                    $(this).attr('disabled', true);
+                } else {
+                    $(this).attr('disabled', false);
+                }
+            });
+        }
+
+
+        function GetDataParts(id) {
+            $.ajax({
+
+                type: "POST",
+                url: '{{route('ec.GetPartsData')}}',
+                dataType: 'json',
+                data: {
+                    '_token': '{{csrf_token()}}',
+                    'id': id,
+                },
+                beforeSend: function () {
+
+                },
+                success: function (res) {
+
+
+                    // window.location.reload();
+                    if (res.Error == true) {
+
+                    } else if (res.Error == false) {
+                        $(`#edit_part option[value='${res.rc.part}']`).prop('selected', true);
+                        $(`#edit_manager option[value='${res.rc.manager}']`).prop('selected', true);
+                        $('#edit_as_content').val(res.rc.as_content);
+                        $('#edit_registration_date').val(res.rc.registration_date);
+                        $('#edit_part_id').val(res.rc.id);
                     }
                 },
                 error: function (e) {

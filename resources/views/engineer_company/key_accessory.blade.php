@@ -4,6 +4,17 @@
         $address = $customer->GetBuildingInfo()->pluck('address')->implode(',');
         $building_name = $customer->GetBuildingInfo()->pluck('building_name')->implode(',');
     @endphp
+    <style>
+        .collapse_button1 {
+            background: rgba(42, 65, 87, 0.24);
+            border-radius: 4px;
+            padding: 6px 10px;
+            right: 60px;
+            position: absolute;
+            top: 10px;
+            border: none;
+        }
+    </style>
     <div class="main-content">
 
         <div class="page-content">
@@ -65,8 +76,9 @@
                                                         </thead>
                                                         <tbody>
                                                         <tr class="custom_bor mt-5">
-                                                            <td class="custom_br_theme_clr"><a href="javascript: void(0);"
-                                                                                               class="text-body  tble_text">1</a>
+                                                            <td class="custom_br_theme_clr"><a
+                                                                    href="javascript: void(0);"
+                                                                    class="text-body  tble_text">1</a>
                                                             </td>
                                                             <td class="custom_br_theme_clr_2">
                                                                 <p class="tble_text">
@@ -156,7 +168,8 @@
                                                     <div class="col-lg-4 col-6 no-print">
                                                         <div class="file_main_section d-flex">
                                                             <form class="w-100 d-flex" id="key_import">
-                                                                <input name="customer_id" value="{{$customer->id}}" hidden="">
+                                                                <input name="customer_id" value="{{$customer->id}}"
+                                                                       hidden="">
                                                                 @csrf
                                                                 <div class="mb-3">
                                                                     <div class="dropdown me-2">
@@ -170,12 +183,13 @@
                                                                         <div class="dropdown-menu"
                                                                              aria-labelledby="dropdownMenuButton">
                                                                             @foreach($buildings as $building)
-                                                                            <div class="w-100 p-2">
-                                                                                <input type="checkbox"
-                                                                                       class="form-check-input"
-                                                                                       name="buildings[]" value="{{$building->id}}">
-                                                                               {{$building->address}}
-                                                                            </div>
+                                                                                <div class="w-100 p-2">
+                                                                                    <input type="checkbox"
+                                                                                           class="form-check-input"
+                                                                                           name="buildings[]"
+                                                                                           value="{{$building->id}}">
+                                                                                    {{$building->address}}
+                                                                                </div>
                                                                             @endforeach
                                                                         </div>
                                                                     </div>
@@ -214,6 +228,13 @@
 
                                                                             <div class="colllap_section_4">
 
+                                                                                <button
+                                                                                    class="btn btn-primary btn-sm mb-2"
+                                                                                    onclick="SetPartData('{{$main_accessory->id}}','{{$main_accessory->tag}}','{{$main_accessory->title}}','{{$main_accessory->color}}')"
+                                                                                    data-bs-target="#EditPartModal"
+                                                                                    data-bs-toggle="modal"><i
+                                                                                        class="fa fa-edit"></i></button>
+
                                                                                 @if(!empty($main_accessory->tag))
                                                                                     <button
                                                                                         class="collap_yello_section"
@@ -239,6 +260,7 @@
                                                                                     class="collape_list_text"></ol>
                                                                                 @if(count($main_accessory->SubParts) > 0)
                                                                                     @foreach($main_accessory->SubParts as $SubParts)
+
                                                                                         <li onclick="HideShow($('#form_{{$SubParts->id}}'),$(this))"
                                                                                             class="d-flex parent-li">
                                                                                             <div
@@ -250,8 +272,13 @@
                                                                                             </div>
                                                                                             <span><i
                                                                                                     class="fa-solid fa-chevron-down"></i></span>
-                                                                                        </li>
 
+                                                                                        </li>
+                                                                                        <span data-bs-toggle="modal"
+                                                                                              data-bs-target="#EditSubPartModal"
+                                                                                              onclick="setSubPartData('{{$SubParts->id}}','{{$SubParts->title}}')"
+                                                                                              class="ms-2 mb-2"><i
+                                                                                                class="fa fa-edit"></i></span>
                                                                                         <div id="form_{{$SubParts->id}}"
                                                                                              class="d-flex d-none custom_border">
 
@@ -377,6 +404,15 @@
                                                                         </div>
 
                                                                         <div class="col-lg-1">
+
+                                                                            <button
+                                                                                data-bs-toggle="modal"
+                                                                                data-bs-target="#DeletePart"
+                                                                                onclick="DeleteCompletePart('{{$main_accessory->id}}')"
+                                                                                class="collapse_button1">
+                                                                                <i class="fa fa-trash"></i>
+
+                                                                            </button>
 
                                                                             <button
                                                                                 onclick="AppendList($('#ol{{$loop->index}}'),'{{$main_accessory->id}}')"
@@ -552,7 +588,6 @@
                 </div>
             </div>
 
-
             <div id="subPartModal" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel1"
                  aria-hidden="true">
                 <div class="modal-dialog">
@@ -616,6 +651,208 @@
                     </div><!-- /.modal-dialog -->
                 </div>
             </div>
+
+            <div id="EditPartModal" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel1"
+                 aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="myModalLabel">
+
+                                {{ __('translation.Add Part') }}
+
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+
+                        <form id="edit_main_part_form">
+                            @csrf
+                            <div class="modal-body">
+                                <div class="col-12">
+
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="no-value-prompt w-100">
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="prompt w-100"></div>
+                                                        <div class="mb-3">
+                                                            <label class="form-label">
+
+                                                                {{ __('translation.Enter Part Name') }}
+                                                            </label>
+                                                            <input id="edit_part" type="text" name="title"
+                                                                   class="form-control part_name"
+
+                                                                   placeholder="{{ __('translation.Enter Part Name') }}"
+                                                                   required>
+
+                                                        </div>
+                                                        <input name="id" id="edit_part_id" hidden>
+                                                        <div class="mb-3">
+                                                            <label class="form-label">
+
+                                                                {{ __('translation.Enter Tag Name') }}
+                                                            </label>
+                                                            <input id="edit_tag" type="text" maxlength="100"
+                                                                   class="form-control part_name"
+                                                                   name="tag"
+                                                                   placeholder="{{ __('translation.Enter tag name') }}">
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label class="form-label">
+                                                                {{ __('translation.Enter Tag Color') }}
+                                                            </label>
+                                                            <input id="edit_color" type="color" maxlength="100"
+                                                                   class="form-control part_name"
+                                                                   name="color"
+                                                                   placeholder="{{ __('translation.Enter tag name') }}">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- end card body -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary waves-effect"
+                                            data-bs-dismiss="modal">
+                                        {{ __('translation.close') }}
+                                    </button>
+                                    <button type="submit"
+                                            class="btn btn-primary waves-effect waves-light submitbtn">
+                                        {{ __('translation.Update') }}
+                                    </button>
+                                </div>
+
+                            </div><!-- /.modal-content -->
+                        </form>
+
+                    </div><!-- /.modal-dialog -->
+                </div>
+            </div>
+
+            <div id="EditSubPartModal" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel1"
+                 aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="myModalLabel">
+
+                                {{ __('translation.Add Part') }}
+
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+
+                        <form id="edit_sub_part_form">
+                            @csrf
+                            <div class="modal-body">
+                                <div class="col-12">
+
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="no-value-prompt w-100">
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="prompt w-100"></div>
+                                                        <div class="mb-3">
+                                                            <label class="form-label">
+
+                                                                {{ __('translation.Enter Part Name') }}
+                                                            </label>
+                                                            <input id="edit_sub_part" type="text" name="title"
+                                                                   class="form-control part_name"
+
+                                                                   placeholder="{{ __('translation.Enter Part Name') }}"
+                                                                   required>
+
+                                                        </div>
+                                                        <input name="id" id="edit_sub_part_id" hidden>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- end card body -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary waves-effect"
+                                            data-bs-dismiss="modal">
+                                        {{ __('translation.close') }}
+                                    </button>
+                                    <button type="submit"
+                                            class="btn btn-primary waves-effect waves-light submitbtn">
+                                        {{ __('translation.Update') }}
+                                    </button>
+                                </div>
+
+                            </div><!-- /.modal-content -->
+                        </form>
+
+                    </div><!-- /.modal-dialog -->
+                </div>
+            </div>
+
+            <div id="DeletePart" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel1"
+                 aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="myModalLabel">
+
+                                {{ __('translation.Delete Part') }}
+
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+
+                        <form id="delete_part_form">
+                            @csrf
+                            <div class="modal-body">
+                                <div class="col-12">
+
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="no-value-prompt w-100">
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="prompt w-100"></div>
+                                                        <p>{{__('translation.Are you sure you want to delete this part?')}}</p>
+                                                        <input name="id" id="delete_part_id" hidden>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- end card body -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary waves-effect"
+                                            data-bs-dismiss="modal">
+                                        {{ __('translation.close') }}
+                                    </button>
+                                    <button type="submit"
+                                            class="btn btn-primary waves-effect waves-light submitbtn">
+                                        {{ __('translation.Update') }}
+                                    </button>
+                                </div>
+
+                            </div><!-- /.modal-content -->
+                        </form>
+
+                    </div><!-- /.modal-dialog -->
+                </div>
+            </div>
+
         @endsection
         @section('custom-script')
             <script>
@@ -657,6 +894,27 @@
                     }
                 });
 
+                //edit main part request
+                $('#edit_main_part_form').validate({
+                    submitHandler: function () {
+                        ajaxCall($('#edit_main_part_form'), "{{ route('UpdateKeyAccessoryMainPart') }}", $('#edit_main_part_form').find('.submitbtn'), "{{ route('ec.CreateKeyAccessoryHistory',request()->segment(3)) }}", onRequestSuccess);
+                    }
+                });
+
+
+                $('#edit_sub_part_form').validate({
+                    submitHandler: function () {
+                        ajaxCall($('#edit_sub_part_form'), "{{ route('EditSubPartTitle') }}", $('#edit_sub_part_form').find('.submitbtn'), "{{ route('ec.CreateKeyAccessoryHistory',request()->segment(3)) }}", onRequestSuccess);
+                    }
+                });
+
+
+                $('#delete_part_form').validate({
+                    submitHandler: function () {
+                        ajaxCall($('#delete_part_form'), "{{ route('DeletePart') }}", $('#delete_part_form').find('.submitbtn'), "{{ route('ec.CreateKeyAccessoryHistory',request()->segment(3)) }}", onRequestSuccess);
+                    }
+                });
+
                 function submitFunction(element, btn) {
 
                     element.validate({
@@ -670,5 +928,22 @@
                 $(document).on("change", ".sub_part_image", function (e) {
                     $(this).next().text($(this).val().replace(/C:\\fakepath\\/i, ''));
                 })
+
+                function SetPartData(id, title, description, color) {
+                    $('#edit_part_id').val(id);
+                    $('#edit_part').val(description);
+                    $('#edit_tag').val(title);
+                    $('#edit_color').val(color);
+                }
+
+                function setSubPartData(id, title) {
+                    $('#edit_sub_part_id').val(id);
+                    $('#edit_sub_part').val(title);
+                }
+
+                function DeleteCompletePart(id) {
+                    $('#delete_part_id').val(id);
+                }
+
             </script>
 @endsection

@@ -609,4 +609,12 @@ return [
     'Dashboard' => 'Dashboard',
     'No Data Available' => 'No Data Available',
     'Select Buildings' => 'Select Buildings',
+    'File size exceeds the limit of 5MB.' => 'File size exceeds the limit of 5MB.',
+    'Title Updated' => 'Title Updated',
+    'Part deleted successfully' => 'Part deleted successfully',
+    'Delete Part' => 'Delete Part',
+    'Are you sure you want to delete this part?' => 'Are you sure you want to delete this part?',
+    'Worker' => 'Worker',
+    'Edit Parts history Replacement' => 'Edit Parts history Replacement',
+    'Data Updated' => 'Data Updated',
 ];

@@ -9,9 +9,12 @@ use App\Models\DispatchInformationData;
 use App\Models\Engineer;
 use App\Models\Engineer_company;
 use App\Models\Events;
+use App\Models\KeyAccessoryInformation;
 use App\Models\MainPartModel;
+use App\Models\PartReplacementHistoryModel;
 use App\Models\Quotation;
 use App\Models\Todo;
+use Illuminate\Http\Request;
 
 class EngineerCompanyController extends Controller
 {
@@ -144,7 +147,10 @@ class EngineerCompanyController extends Controller
     {
         $customer = CustomerInfo::where('user_uid', $uid)->first();
         if ($customer) {
-            return view('engineer_company.parts_replacement_history', compact('customer'));
+
+            $main_parts = MainPartModel::with('SubParts')->where('customer_id', $customer->id)->get();
+            $sub_parts = KeyAccessoryInformation::whereIn('main_part_id', $main_parts->pluck('id'))->latest()->get();
+            return view('engineer_company.parts_replacement_history', compact('sub_parts', 'customer', 'main_parts'));
         }
         abort(404);
     }
@@ -444,6 +450,36 @@ class EngineerCompanyController extends Controller
             return view('engineer_company.engineer_dashboard', compact('company'));
         } else {
             abort(404);
+        }
+    }
+
+    public function GetPartsData(Request $request)
+    {
+        $rc = PartReplacementHistoryModel::where('id', $request->id)->first();
+        $mp = MainPartModel::where('customer_id', $rc->customer_id)->get();
+        $sub_part = KeyAccessoryInformation::whereIn('main_part_id', $mp->pluck('id'))->get();
+        return json_encode([
+            'rc' => $rc,
+            'mp' => $mp,
+            'sp' => $sub_part,
+            'Error' => false,
+            'Message' => 'Data fetched',
+        ]);
+    }
+
+    public function EditPartsReplacement(Request $request)
+    {
+        try {
+            PartReplacementHistoryModel::where('id', $request->id)->update($request->except(['_token', 'id']));
+            return json_encode([
+                'success' => true,
+                'message' => __('translation.Data Updated'),
+            ]);
+        } catch (\Exception $ex) {
+            return json_encode([
+                'success' => false,
+                'message' => $ex->getMessage(),
+            ]);
         }
     }
 }

@@ -67,6 +67,9 @@ Route::group(['prefix' => 'eps-panel', 'middleware' => 'CommonRoutes'], function
     Route::get('/monthly-regular-inspection/{uid}', [EngineerCompanyController::class, 'CreateMonthlyRegularInspection'])->name('ec.CreateMonthlyRegularInspection');
     Route::get('/emergency-dispatch-checklist/{uid}', [EngineerCompanyController::class, 'CreateEmergencyDispatchChecklist'])->name('ec.CreateEmergencyDispatchChecklist');
     Route::get('/manage-attachments/{uid}', [EngineerCompanyController::class, 'CreateManageAttachments'])->name('ec.CreateManageAttachments');
+    Route::post('/get-sub-parts', [EngineerCompanyController::class, 'GetSubParts'])->name('ec.GetSubParts');
+    Route::post('/get-parts-data', [EngineerCompanyController::class, 'GetPartsData'])->name('ec.GetPartsData');
+    Route::post('/edit-parts-replacement', [EngineerCompanyController::class, 'EditPartsReplacement'])->name('ec.EditPartsReplacement');
 
 
     //Dispatch Information management
@@ -114,8 +117,14 @@ Route::group(['prefix' => 'eps-panel', 'middleware' => 'CommonRoutes'], function
     //Route to Create Main Key Accessory Sub Part by engineer company
     Route::post('/create-sub-part-title', [KeyAccessoryInformation::class, 'CreateSubPartTitle'])->name('CreateSubPartTitle');
 
+    Route::post('/edit-sub-part-title', [KeyAccessoryInformation::class, 'EditSubPartTitle'])->name('EditSubPartTitle');
+
+    Route::post('/delete-part', [KeyAccessoryInformation::class, 'DeletePart'])->name('DeletePart');
+
     //Route to Create Main Key Accessory Sub Part details by engineer company
     Route::post('/create-key-accessory-information', [KeyAccessoryInformation::class, 'CreateKeyAccessoryInformation'])->name('CreateKeyAccessoryInformation');
+
+    Route::post('/update-key-accessory',[KeyAccessoryInformation::class,'UpdateKeyAccessoryMainPart'])->name('UpdateKeyAccessoryMainPart');
 
     //Route to Create Part Replacement Information by engineer company
     Route::post('/create-part-replacement-information', [PartReplacement::class, 'CreatePartReplacementHistory'])->name('CreatePartReplacementHistory');

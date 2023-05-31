@@ -10,12 +10,12 @@
             </td>
 
             <td class="custom_br_theme_gray_2">
-                <button class="date_button_2 border-0">{{$rh->part}}
+                <button class="date_button_2 border-0">{{$rh->GetMainPart->title}}
                 </button>
             </td>
 
             <td class="custom_br_theme_gray_2">
-                <button class="date_button_2 border-0">{{$rh->manager}}
+                <button class="date_button_2 border-0">{{$rh->GetSubPart->title}}
                 </button>
             </td>
             <td class="custom_br_theme_gray_3">
@@ -25,6 +25,14 @@
             </td>
             <td class="custom_br_theme_gray_3">
                 <!-- Button trigger modal -->
+
+                <button onclick="GetDataParts('{{$rh->id}}')"
+                        type="button" data-bs-toggle="modal"
+                        data-bs-target="#EditReplacementHistory"
+                        class="date_button_2 border-0">
+                    <i class="fa fa-edit"></i>
+                </button>
+
                 <button onclick="$('#partReplacementID').val('{{$rh->id}}')"
                         type="button" data-bs-toggle="modal"
                         data-bs-target="#deleteReplacementHistory"

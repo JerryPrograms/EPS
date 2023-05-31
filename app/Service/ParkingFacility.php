@@ -27,7 +27,7 @@ class ParkingFacility
             $parking_facility['parking_space'] = $request->parking_space;
             $parking_facility['producer'] = $request->producer;
             $parking_facility['year_of_installation'] = $request->year_of_installation;
-            $parking_facility['inspection_date'] = $request->inspection_date;
+//            $parking_facility['inspection_date'] = $request->inspection_date;
             $parking_facility['addition_information'] = $request->addition_information;
 
 
@@ -57,7 +57,9 @@ class ParkingFacility
                     $parking_certificate['installation_place'] = $request->installation_place[$i];
                     $parking_certificate['inspection_period_from'] = $request->inspection_period_from[$i];
                     $parking_certificate['inspection_period_to'] = $request->inspection_period_to[$i];
-                    $parking_certificate['inspection_certificate'] = saveFiles('', 'engineer_company/parking/certificates', $request->inspection_certificate[$i]);
+                    if (isset($request->inspection_certificate[$i])) {
+                        $parking_certificate['inspection_certificate'] = saveFiles('', 'engineer_company/parking/certificates', $request->inspection_certificate[$i]);
+                    }
                     $company_information = InspectionCertificate::create($parking_certificate);
                 }
 

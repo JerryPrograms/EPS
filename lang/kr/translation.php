@@ -605,4 +605,12 @@ return [
     'Dashboard' => '계기반',
     'No Data Available' => '자료 없음',
     'Select Buildings' => '건물 선택',
+    'File size exceeds the limit of 5MB.' => '파일 크기가 5MB 한도를 초과합니다.',
+    'Title Updated' => '제목 업데이트됨',
+    'Part deleted successfully' => '부품이 성공적으로 삭제되었습니다.',
+    'Delete Part' => '부품 삭제',
+    'Are you sure you want to delete this part?' => '이 부분을 삭제하시겠습니까?',
+    'Worker' => '노동자',
+    'Edit Parts history Replacement' => '부품 이력 교체 편집',
+    'Data Updated' => '업데이트된 데이터',
 ];
