@@ -203,9 +203,6 @@
                                                             {{ __('translation.File') }}
 
                                                         </th>
-                                                        <th class="custom_inp_widt  border-0 ">
-                                                            {{ __('translation.Manager Name') }}
-                                                        </th>
                                                         <th class="text-center  border-0">
 
                                                             {{ __('translation.title') }}
@@ -229,14 +226,11 @@
                                                                     class="date_button border-0">{{$mr->date}}
                                                                 </button>
                                                             </td>
+
                                                             <td class="border-bottom-0">
-                                                                <img class="monthly-inspection-listing-img"
-                                                                     src="{{asset($mr->file)}}"
-                                                                     class="gallery_img">
-                                                            </td>
-                                                            <td class="border-bottom-0">
-                                                                <button class="date_button_2 border-0">{{$mr->name}}
-                                                                </button>
+                                                                <a class="monthly-inspection-listing-img" download=""
+                                                                     href="{{asset($mr->file)}}"
+                                                                   class="gallery_img">{{explode('/',$mr->file)[4]}}</a>
                                                             </td>
                                                             <td class="border-bottom-0">
                                                                 <button
@@ -399,11 +393,6 @@
 
                                                         <td>
                                                              <input type="file" name="file[]" required class="form-control col-lg-12 custom_input_tble_5"  aria-describedby="emailHelp" placeholder="2022.11.01">
-                                                        </td>
-
-
-                                                        <td>
-                                                            <input type="text" name="name[]" required class="form-control col-lg-12 custom_input_tble_6"  aria-describedby="emailHelp" placeholder="{{ __('translation.name') }}">
                                                         </td>
 
                                                         <td>

@@ -154,4 +154,35 @@ class ContractController extends Controller
             'message' => 'Deleted Successfully',
         ]);
     }
+
+
+    public function SignContract(Request $request)
+    {
+       try{
+
+            $base64_str = substr($request->output, strpos($request->output, ",") + 1);
+            $image = base64_decode($base64_str);
+            $safeName = \Str::random(10) . '.' . 'png';
+            \Storage::disk('public')->put('engineer_company/inspection/' . $safeName, $image);
+            $signature = 'storage/engineer_company/inspection/' . $safeName;
+
+
+            Contract::where('id',$request->id)->update([
+                'output'=>$signature
+            ]);
+
+           return json_encode([
+               'success'=>true,
+               'message'=>__('translation.Contract Signed'),
+           ]);
+
+
+        }catch(\Exception $exception)
+        {
+            return json_encode([
+               'success'=>false,
+               'message'=>$exception->getMessage(),
+            ]);
+        }
+    }
 }

@@ -17,7 +17,7 @@ class PartReplacementHistoryModel extends Model
     }
     public function GetSubPart()
     {
-        return $this->hasOne(KeyAccessoryInformation::class,'id','manager');
+        return $this->hasOne(KeyAccessoryInformation::class,'id','sub_part');
     }
 
 }

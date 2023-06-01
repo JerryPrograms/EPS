@@ -18,7 +18,6 @@ class PartReplacement
     {
 
 
-
         try {
 
             if (!$request->has('part')) {
@@ -30,6 +29,7 @@ class PartReplacement
                 for ($i = 0; $i < count($request->part); $i++) {
                     $part_replacement_history = PartReplacementHistoryModel::create([
                         'customer_id' => $request->customer_id,
+                        'sub_part' => $request->sub_part[$i],
                         'part' => $request->part[$i],
                         'manager' => $request->manager[$i],
                         'as_content' => $request->as_content[$i],

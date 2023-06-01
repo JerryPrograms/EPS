@@ -297,16 +297,16 @@
         $('#createDispatchConfirmation').validate({
 
             submitHandler: function () {
-                var imageData = signaturePad.toDataURL();
-                document.getElementsByName("output")[0].setAttribute("value", imageData);
-                if (signaturePad.isEmpty()) {
-                    $('#canvas_error').removeClass('d-none');
-                    setTimeout(function(){
-                        $('#canvas_error').addClass('d-none');
-                    },3000);
-                } else {
+                // var imageData = signaturePad.toDataURL();
+                // document.getElementsByName("output")[0].setAttribute("value", imageData);
+                // if (signaturePad.isEmpty()) {
+                //     $('#canvas_error').removeClass('d-none');
+                //     setTimeout(function(){
+                //         $('#canvas_error').addClass('d-none');
+                //     },3000);
+                // } else {
                     ajaxCall($('#createDispatchConfirmation'), "{{ route('CreateDispatchInformation') }}", $('#createDispatchConfirmation').find('.submitbtn'), "{{ route('ec.ListDispatchInformation',request()->segment(3)) }}", onRequestSuccess);
-                }
+                // }
             }
         });
     </script>

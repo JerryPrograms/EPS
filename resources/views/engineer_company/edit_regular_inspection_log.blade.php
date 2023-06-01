@@ -295,6 +295,21 @@
                                                     </div>
                                                 </div>
                                                 {{-- accordion item end --}}
+                                                <div class="form-group mt-3"
+                                                     style="padding: 12px 20px;border: 1px solid #E1E3EC;">
+                                                    <div class="d-flex align-items-center justify-content-between pb-2">
+                                                        <h4 class="mb-0" style="font-size: 14px;">
+                                                            . {{ __('translation.Customer side verifier') }}</h4>
+                                                        <button class="btn btn-danger btn-sm" type="button"
+                                                                id="clear">{{ __('translation.clear') }}</button>
+                                                    </div>
+                                                    <canvas id="signature-pad" name="signature"
+                                                            class="signature-pad w-100"
+                                                            style="touch-action: none;height: 180px;padding: 10px;border: 1px solid #E1E3EC;"></canvas>
+                                                    <input type="hidden" name="output" class="output">
+                                                    <small id="canvas_error"
+                                                           class="text-danger d-none">{{ __('translation.Signature is required') }}</small>
+                                                </div>
                                             </div>
                                             {{-- accordion end --}}
                                             <div class="form-action mt-3 text-right">
@@ -372,6 +387,19 @@
         });
         $('#inspectionForm').validate({
             submitHandler: function () {
+
+                var imageData = '';
+
+
+                if(signaturePad.isEmpty())
+                {
+                    imageData = ''
+                    document.getElementsByName("output")[0].setAttribute("value", imageData);
+                }else{
+                    imageData = signaturePad.toDataURL();
+                    document.getElementsByName("output")[0].setAttribute("value", imageData);
+                }
+
                 ajaxCall($('#inspectionForm'), "{{ route('edit_inspection_action') }}", $('#formBtn'),
                     "{{ route('regular_inspection_log',$customer->getCustomer->user_uid) }}", onRequestSuccess);
             }

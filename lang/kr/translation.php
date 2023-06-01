@@ -202,7 +202,7 @@ return [
     'Periodic inspection (validity period)' => '정기검사 (유효기간)',
     'Enter additional details' => '추가정보 입력',
     'Additional Information' => '추가정보',
-    'Inspection date' => '검사일자',
+    'Inspection date' => '검사일',
     'year of installation' => '설치년도',
     'Enter producer name' => '제작사 입력',
     'producer' => '제작사',
@@ -613,4 +613,5 @@ return [
     'Worker' => '노동자',
     'Edit Parts history Replacement' => '부품 이력 교체 편집',
     'Data Updated' => '업데이트된 데이터',
+    'Sub Part'=>'하위 부품',
 ];

@@ -40,7 +40,8 @@
                                                     <input disabeled type="text" class="form-control form-theme-input"
                                                            id="customer_number"
                                                            placeholder="{{ __('translation.Enter customer number') }}"
-                                                           value="{{ $contract->get_customer->customer_number }}" disabled>
+                                                           value="{{ $contract->get_customer->customer_number }}"
+                                                           disabled>
                                                 </div>
                                             </div>
                                         </div>
@@ -51,7 +52,7 @@
                                                            class="mb-0">{{ __('translation.Contract Date') }}</label>
                                                 </div>
                                                 <div class="col-lg-10 col-md-6 col-12">
-                                                    <input disabeled  class="form-control form-theme-input"
+                                                    <input disabeled class="form-control form-theme-input"
                                                            name="contract_date" id="contract_date"
                                                            placeholder="{{ __('translation.Enter contract date') }}"
                                                            value="{{$contract->contract_date}}"
@@ -106,13 +107,55 @@
                                         <div class="form-group mb-4">
                                             <div class="row align-items-center">
                                                 <div class="col-12">
-                                                       {!! $contract->contract_description !!}
+                                                    {!! $contract->contract_description !!}
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="form-btn">
-                                            <a href="{{route('contracts_management_list',$contract->get_customer->user_uid)}}" id="addContractBtn" class="btn btn-primary">{{ __('translation.go back') }}</a>
+                                        <input name="id" value="{{$contract->id}}" hidden="">
+
+                                        @if(empty($contract->output))
+
+                                            <div class="form-group mb-3"
+                                                 style="padding: 12px 20px;border: 1px solid #E1E3EC;">
+                                                <div class="d-flex align-items-center justify-content-between pb-2">
+                                                    <h4 class="mb-0" style="font-size: 14px;">
+                                                        {{ __('translation.Customer side verifier') }}</h4>
+                                                    <button class="btn btn-danger btn-sm" type="button"
+                                                            id="clear">{{ __('translation.clear') }}</button>
+                                                </div>
+                                                <canvas id="signature-pad" name="signature"
+                                                        class="signature-pad w-100"
+                                                        style="touch-action: none;height: 180px;padding: 10px;border: 1px solid #E1E3EC;"></canvas>
+                                                <input type="hidden" name="output" class="output">
+                                                <small id="canvas_error"
+                                                       class="text-danger d-none">{{ __('translation.Signature is required') }}</small>
+
+
+                                            </div>
+
+
+                                        @else
+                                            <div class="form-group mb-3"
+                                                 style="padding: 12px 20px;border: 1px solid #E1E3EC;">
+                                            <img src="{{asset($contract->output)}}" class="img-fluid">
+                                            </div>
+                                        @endif
+
+
+                                        <div class="d-flex">
+                                            <div class="form-btn me-2">
+                                                <a href="{{route('contracts_management_list',$contract->get_customer->user_uid)}}"
+                                                   id="addContractBtn"
+                                                   class="btn btn-primary">{{ __('translation.go back') }}</a>
+                                            </div>
+                                            @if(empty($contract->output))
+                                                <div class="form-btn">
+                                                    <button class="btn btn-primary"
+                                                            type="submit">{{__('translation.Sign')}}</button>
+                                                </div>
+                                            @endif
                                         </div>
+
                                     </form>
 
                                 </div>
@@ -128,25 +171,70 @@
     </div>
 @endsection
 @section('custom-script')
-{{--    <script>--}}
-{{--        // Intializing summer note--}}
-{{--        $(document).ready(function () {--}}
-{{--            $('#contract_description').summernote({--}}
-{{--                height: 150--}}
-{{--            });--}}
-{{--        });--}}
 
-{{--        // For custom file input--}}
-{{--        $('#contract_file').change(function () {--}}
-{{--            var file = $('#contract_file')[0].files[0].name;--}}
-{{--            $(this).prev('.position-absolute').find('.contract-file-name').text(file);--}}
-{{--        });--}}
+    <script>
+        var canvas = document.getElementById('signature-pad');
 
-{{--        $('#addContractForm').validate({--}}
-{{--            submitHandler: function () {--}}
-{{--                ajaxCall($('#addContractForm'), "{{ route('add_contract_action') }}", $('#addContractBtn'),--}}
-{{--                    "{{ route('contract_management_list',$contract->id) }}", onRequestSuccess);--}}
-{{--            }--}}
-{{--        });--}}
-{{--    </script>--}}
+        // Adjust canvas coordinate space taking into account pixel ratio,
+        // to make it look crisp on mobile devices.
+        // This also causes canvas to be cleared.
+        function resizeCanvas() {
+            // When zoomed out to less than 100%, for some very strange reason,
+            // some browsers report devicePixelRatio as less than 1
+            // and only part of the canvas is cleared then.
+            var ratio = Math.max(window.devicePixelRatio || 1, 1);
+            canvas.width = canvas.offsetWidth * ratio;
+            canvas.height = canvas.offsetHeight * ratio;
+            canvas.getContext("2d").scale(ratio, ratio);
+        }
+
+        window.onresize = resizeCanvas();
+        resizeCanvas();
+
+        var signaturePad = new SignaturePad(canvas, {
+            backgroundColor: 'rgb(255, 255, 255)' // necessary for saving image as JPEG; can be removed is only saving as PNG or SVG
+        });
+
+        document.getElementById('clear').addEventListener('click', function () {
+            signaturePad.clear();
+        });
+
+
+        $('#addContractForm').validate({
+            submitHandler: function () {
+                var imageData = signaturePad.toDataURL();
+                document.getElementsByName("output")[0].setAttribute("value", imageData);
+                if (signaturePad.isEmpty()) {
+                    $('#canvas_error').removeClass('d-none');
+                } else {
+                    ajaxCall($('#addContractForm'), "{{ route('SignContract') }}", $('#addContractForm'),
+                        "{{ route('contract_management_list',$contract->get_customer->user_uid) }}", onRequestSuccess);
+                }
+            }
+        });
+
+    </script>
+
+
+    {{--    <script>--}}
+    {{--        // Intializing summer note--}}
+    {{--        $(document).ready(function () {--}}
+    {{--            $('#contract_description').summernote({--}}
+    {{--                height: 150--}}
+    {{--            });--}}
+    {{--        });--}}
+
+    {{--        // For custom file input--}}
+    {{--        $('#contract_file').change(function () {--}}
+    {{--            var file = $('#contract_file')[0].files[0].name;--}}
+    {{--            $(this).prev('.position-absolute').find('.contract-file-name').text(file);--}}
+    {{--        });--}}
+
+    {{--        $('#addContractForm').validate({--}}
+    {{--            submitHandler: function () {--}}
+    {{--                ajaxCall($('#addContractForm'), "{{ route('add_contract_action') }}", $('#addContractBtn'),--}}
+    {{--                    "{{ route('contract_management_list',$contract->id) }}", onRequestSuccess);--}}
+    {{--            }--}}
+    {{--        });--}}
+    {{--    </script>--}}
 @endsection

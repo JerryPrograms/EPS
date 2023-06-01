@@ -6,7 +6,7 @@
             </td>
             <td class="custom_br_theme_gray_2">
                 <button type="button"
-                        class="date_button border-0">{{\Carbon\Carbon::parse($rh->registration_date)->format('Y.d.m')}}</button>
+                        class="date_button border-0">{{\Carbon\Carbon::parse($rh->registration_date)->format('Y-m-d')}}</button>
             </td>
 
             <td class="custom_br_theme_gray_2">
@@ -16,6 +16,11 @@
 
             <td class="custom_br_theme_gray_2">
                 <button class="date_button_2 border-0">{{$rh->GetSubPart->title}}
+                </button>
+            </td>
+            <td class="custom_br_theme_gray_3">
+                <!-- Button trigger modal -->
+                <button class="date_button_2 border-0">{{$rh->manager}}
                 </button>
             </td>
             <td class="custom_br_theme_gray_3">

@@ -106,7 +106,7 @@ class EngineerCompanyController extends Controller
     {
         $customer = CustomerInfo::where('user_uid', $uid)->first();
         if ($customer) {
-            $buildings = BuildingAddress::latest()->get();
+            $buildings = BuildingAddress::where('status',0)->latest()->get();
             $company = Engineer_company::latest()->get();
             return view('engineer_company.building_info', compact('customer', 'buildings', 'company'));
         }
@@ -193,6 +193,8 @@ class EngineerCompanyController extends Controller
 
     public function CreateDispatchInformation($uid)
     {
+
+
         $customer = CustomerInfo::where('user_uid', $uid)->first();
         if ($customer) {
             return view('engineer_company.create_dispatch_information', compact('customer'));

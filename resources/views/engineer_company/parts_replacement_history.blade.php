@@ -159,16 +159,16 @@
 
                                         <!-- row 2 start  -->
                                         <div class="row">
-                                            <div class="col-lg-3">
-                                                <p class="circle_img_text mt-3">
+{{--                                            <div class="col-lg-3">--}}
+{{--                                                <p class="circle_img_text mt-3">--}}
 
-                                                    {{ __('translation.Initial installation date') }}
+{{--                                                    {{ __('translation.Initial installation date') }}--}}
 
-                                                </p>
-                                            </div>
+{{--                                                </p>--}}
+{{--                                            </div>--}}
                                             <div class="col-lg-3 mt-2" style="flex-direction: column">
                                                 <div class="input-group" id="datepicker1">
-                                                    <input id="initial_date"
+                                                    <input id="initial_date" hidden=""
                                                            type="date"
                                                            onchange="UpdateInitialDate($(this).val(),'{{request()->segment(3)}}')"
                                                            class="form-control frm_section_inp w-100"
@@ -239,6 +239,9 @@
                                                 </th>
                                                 <th class="text-center custom_inp_widt_2">
                                                     {{ __('translation.part') }}
+                                                </th>
+                                                <th class="text-center custom_inp_widt_2">
+                                                    {{ __('translation.Sub Part') }}
                                                 </th>
                                                 <th class="text-center custom_inp_widt_2 custom_wisth_input_2">
                                                     {{ __('translation.Worker') }}
@@ -396,7 +399,7 @@
                                         </select>
                                     </div>
                                     <div class="col-12 mb-2">
-                                        <select id="edit_manager" required class="form-select valid" name="manager"
+                                        <select id="edit_manager" required class="form-select valid" name="sub_part"
                                                 autocomplete="off" required="">
                                             <option value="" disabled="">--{{ __('translation.Worker') }}--</option>
                                             @foreach($sub_parts as $main)
@@ -404,6 +407,9 @@
                                                         value="{{$main->id}}">{{$main->title}}</option>
                                             @endforeach
                                         </select>
+                                    </div>
+                                    <div class="col-12 mb-2">
+                                        <input id="edit_manager1" name="manager" class="form-control" required>
                                     </div>
 
                                 </div>
@@ -452,12 +458,16 @@
             </select>
         </td>
         <td class="custom_br_theme_gray_2">
-            <select id="${counter}Sub" required class="form-select valid" name="manager[]" autocomplete="off" required="">
+            <select id="${counter}Sub" required class="form-select valid" name="sub_part[]" autocomplete="off" required="">
                                                         <option value="" disabled="">--{{ __('translation.Worker') }}--</option>
                                                         @foreach($sub_parts as $main)
             <option data-main-id="{{$main->main_part_id}}" value="{{$main->id}}">{{$main->title}}</option>
                                                         @endforeach
             </select>
+        </td>
+         <td class="custom_br_theme_gray_2">
+           <input type="text" name="manager[]" class="form-control col-lg-12 custom_input_tble" aria-describedby="emailHelp" placeholder="2022.11.01" required>
+
         </td>
         <td class="custom_br_theme_gray_3">
             <input type="text" name="as_content[]" class="form-control col-lg-2 custom_input_tble" aria-describedby="emailHelp" placeholder="{{ __('translation.AS content') }}" required>
@@ -645,11 +655,16 @@
                     if (res.Error == true) {
 
                     } else if (res.Error == false) {
+
+
+                        console.log(res.rc);
+
                         $(`#edit_part option[value='${res.rc.part}']`).prop('selected', true);
-                        $(`#edit_manager option[value='${res.rc.manager}']`).prop('selected', true);
+                        $(`#edit_manager option[value='${res.rc.sub_part}']`).prop('selected', true);
                         $('#edit_as_content').val(res.rc.as_content);
                         $('#edit_registration_date').val(res.rc.registration_date);
                         $('#edit_part_id').val(res.rc.id);
+                        $('#edit_manager1').val(res.rc.manager);
                     }
                 },
                 error: function (e) {

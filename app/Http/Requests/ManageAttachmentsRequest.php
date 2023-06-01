@@ -27,7 +27,6 @@ class ManageAttachmentsRequest extends FormRequest
         return [
             'date' => 'required',
             'file' => 'required',
-            'name' => 'required',
             'title' => 'required',
         ];
     }
@@ -37,7 +36,6 @@ class ManageAttachmentsRequest extends FormRequest
         return [
             'date.required' => 'date field is required',
             'file.required' => 'file field is required',
-            'name.required' => 'name field is required',
             'title.required' => 'title field is required',
         ];
     }

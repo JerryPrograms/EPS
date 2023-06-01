@@ -4,31 +4,49 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\BuildingAddress;
+use App\Models\CustomerInfo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class BuildingAddressController extends Controller
 {
     public function GetCreateAddress()
     {
         $data = BuildingAddress::latest()->get();
-        return view('admin.building_and_address.listing', compact('data'));
+        $customers = CustomerInfo::whereNull('building_id')->latest()->get();
+        return view('admin.building_and_address.listing', compact('data', 'customers'));
     }
 
     public function PostCreateAddress(Request $request)
     {
-        $data = BuildingAddress::create([
-            'building_name' => $request->building_name,
-            'address' => $request->address,
-            'added_by' => activeGuard(),
-            'added_by_id' => auth(activeGuard())->id()
-        ]);
-        $count = BuildingAddress::count();
-        return json_encode([
-            'success' => true,
-            'message' => 'added successfully',
-            'count' => $count,
-            'id' => $data->id
-        ]);
+      try{
+
+          DB::beginTransaction();
+          $data = BuildingAddress::create([
+              'building_name' => $request->building_name,
+              'address' => $request->address,
+              'added_by' => activeGuard(),
+              'added_by_id' => auth(activeGuard())->id()
+          ]);
+
+          $count = BuildingAddress::count();
+
+          DB::commit();
+          return json_encode([
+              'success' => true,
+              'message' => 'added successfully',
+              'count' => $count,
+              'id' => $data->id
+          ]);
+      }
+      catch(\Exception $ex)
+      {
+          DB::rollback();
+          return json_encode([
+              'success' => false,
+              'message' => $ex->getMessage(),
+          ]);
+      }
     }
 
     public function DeleteAddress(Request $request)

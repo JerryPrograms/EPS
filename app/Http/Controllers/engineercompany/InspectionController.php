@@ -65,18 +65,21 @@ class InspectionController extends Controller
                 'completion_time' => 'required',
                 'inspection_manager' => 'required',
                 'inspection' => 'required',
-                'output' => 'required'
             ]
         );
         if ($validate->fails()) {
             return response()->json(["success" => false, 'message' => $validate->errors()->first()]);
         }
 
-        $base64_str = substr($request->output, strpos($request->output, ",") + 1);
-        $image = base64_decode($base64_str);
-        $safeName = \Str::random(10) . '.' . 'png';
-        \Storage::disk('public')->put('engineer_company/inspection/' . $safeName, $image);
-        $signature = 'storage/engineer_company/inspection/' . $safeName;
+
+        if (!empty($request->output)) {
+            $base64_str = substr($request->output, strpos($request->output, ",") + 1);
+            $image = base64_decode($base64_str);
+            $safeName = \Str::random(10) . '.' . 'png';
+            \Storage::disk('public')->put('engineer_company/inspection/' . $safeName, $image);
+            $signature = 'storage/engineer_company/inspection/' . $safeName;
+        }
+
         $inspectionSave = MonthlyRegularInspection::create([
             'customer_id' => $request->user_uid,
             'inspection_date' => $request->inspection_date,
@@ -85,7 +88,7 @@ class InspectionController extends Controller
             'inspection_manager' => $request->inspection_manager,
             'check_contents' => json_encode($request->inspection),
             'special_notes' => $request->special_notes,
-            'signature' => $signature,
+            'signature' => !empty($request->output) ? $signature : '',
             'type' => $request->machine_type
         ]);
 
@@ -151,6 +154,16 @@ class InspectionController extends Controller
         if ($validate->fails()) {
             return response()->json(["success" => false, 'message' => $validate->errors()->first()]);
         }
+
+
+        if (!empty($request->output)) {
+            $base64_str = substr($request->output, strpos($request->output, ",") + 1);
+            $image = base64_decode($base64_str);
+            $safeName = \Str::random(10) . '.' . 'png';
+            \Storage::disk('public')->put('engineer_company/inspection/' . $safeName, $image);
+            $signature = 'storage/engineer_company/inspection/' . $safeName;
+        }
+
         $inspectionEdit = MonthlyRegularInspection::where('id', $request->inspection_id)->update([
             'inspection_date' => $request->inspection_date,
             'arrival_time' => $request->arrival_time,
@@ -158,6 +171,7 @@ class InspectionController extends Controller
             'inspection_manager' => $request->inspection_manager,
             'check_contents' => json_encode($request->inspection),
             'special_notes' => $request->special_notes,
+            'signature' => !empty($request->output) ? $signature : '',
         ]);
 
         if ($inspectionEdit) {

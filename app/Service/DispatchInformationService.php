@@ -12,6 +12,8 @@ class DispatchInformationService
 {
     public static function CreateDispatchInformation(DispatchInformationRequest $request)
     {
+
+
         try {
 
             $data['customer_id'] = $request->customer_id;
@@ -23,7 +25,7 @@ class DispatchInformationService
             $data['measures'] = $request->measures;
             $data['undecided'] = $request->undecided;
             $data['dispatcher'] = $request->dispatcher;
-            if ($request->output != '1') {
+            if ($request->output != '1' && !empty($request->output)) {
                 $base64_str = substr($request->output, strpos($request->output, ",") + 1);
                 $image = base64_decode($base64_str);
                 $safeName = Str::random(10) . '.' . 'png';

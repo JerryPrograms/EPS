@@ -156,6 +156,8 @@ Route::group(['prefix' => 'eps-panel', 'middleware' => 'CommonRoutes'], function
     //Route to Create Manage Attachments Information by engineer company
     Route::post('/create-manage-attachments', [ManageAttachmentsService::class, 'CreateManageAttachments'])->name('CreateManageAttachments');
 
+    Route::post('/sign-contract', [ContractController::class, 'SignContract'])->name('SignContract');
+
     //Route to Delete Manage Attachments Information by engineer company
     Route::post('/delete-manage-attachments', [ManageAttachmentsService::class, 'DeleteAttachments'])->name('DeleteAttachments');
 

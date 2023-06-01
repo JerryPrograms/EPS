@@ -174,7 +174,7 @@
                                                             </div>
                                                             <div class="col-lg-8 col-12">
                                                                 @if(empty($customer->building_id))
-                                                                    <select multiple="multiple" class="SlectBox"
+                                                                    <select  class="SlectBox"
                                                                             onchange="SetAddress($(this))"
                                                                             class="form-select mt-4"
                                                                             name="b_building_name[]"

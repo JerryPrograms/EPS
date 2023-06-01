@@ -173,104 +173,105 @@
 
 @endsection
 @section('custom-script')
-    <script>
+@endsection
+<script>
 
-        // $('#customer_list_table').();
+    // $('#customer_list_table').();
 
-        function openDeleteModal(id) {
-            $('#customerDeleteModal').modal('show');
-            $('#customerInfoID').val(id);
+    function openDeleteModal(id) {
+        $('#customerDeleteModal').modal('show');
+        $('#customerInfoID').val(id);
+    }
+
+    function openEditModal(id, buidling_name, address) {
+        $('#EditeModal').modal('show');
+        $('#editid').val(id);
+        $('#bn').val(buidling_name);
+        $('#ad').val(address);
+    }
+
+    $('#customerDeleteForm').validate({
+        submitHandler: function () {
+            ajaxCall($('#customerDeleteForm'), "{{ route('admin.DeleteAddress') }}", $('.submitbtn'), "{{ route('admin.GetCreateAddress') }}", onRequestSuccess);
         }
+    });
 
-        function openEditModal(id, buidling_name, address) {
-            $('#EditeModal').modal('show');
-            $('#editid').val(id);
-            $('#bn').val(buidling_name);
-            $('#ad').val(address);
+
+    $('#EditForm').validate({
+        submitHandler: function () {
+            ajaxCall($('#EditForm'), "{{ route('admin.EditAddress') }}", $('.submitbtn123'), "{{ route('admin.GetCreateAddress') }}", onRequestSuccess);
         }
+    });
 
-        $('#customerDeleteForm').validate({
-            submitHandler: function () {
-                ajaxCall($('#customerDeleteForm'), "{{ route('admin.DeleteAddress') }}", $('.submitbtn'), "{{ route('admin.GetCreateAddress') }}", onRequestSuccess);
+    function print(id) {
+        $.ajax({
+            type: "POST",
+            url: '{{ route("print_construction_completion") }}',
+            dataType: 'json',
+            data: {'id': id, '_token': '{{ csrf_token() }}'},
+            beforeSend: function () {
+
+            },
+            success: function (response) {
+                $('#print_form').html('');
+                $('#print_form').html(response.html);
+                $('#print_form').print({
+                    globalStyles: true,
+                    mediaPrint: false,
+                    stylesheet: null,
+                    noPrintSelector: ".no-print",
+                    iframe: true,
+                    append: null,
+                    prepend: null,
+                    manuallyCopyFormValues: true,
+                    deferred: $.Deferred(),
+                    timeout: 750,
+                    title: null,
+                    doctype: '<!doctype html>'
+                });
+                $('#print_form').addClass('d-none');
+
+            },
+            error: function () {
             }
         });
+    }
 
+    let hiddenCount = 0;
 
-        $('#EditForm').validate({
-            submitHandler: function () {
-                ajaxCall($('#EditForm'), "{{ route('admin.EditAddress') }}", $('.submitbtn123'), "{{ route('admin.GetCreateAddress') }}", onRequestSuccess);
-            }
-        });
-
-        function print(id) {
-            $.ajax({
-                type: "POST",
-                url: '{{ route("print_construction_completion") }}',
-                dataType: 'json',
-                data: {'id': id, '_token': '{{ csrf_token() }}'},
-                beforeSend: function () {
-
-                },
-                success: function (response) {
-                    $('#print_form').html('');
-                    $('#print_form').html(response.html);
-                    $('#print_form').print({
-                        globalStyles: true,
-                        mediaPrint: false,
-                        stylesheet: null,
-                        noPrintSelector: ".no-print",
-                        iframe: true,
-                        append: null,
-                        prepend: null,
-                        manuallyCopyFormValues: true,
-                        deferred: $.Deferred(),
-                        timeout: 750,
-                        title: null,
-                        doctype: '<!doctype html>'
-                    });
-                    $('#print_form').addClass('d-none');
-
-                },
-                error: function () {
+    function myFunction() {
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("search");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("customer_list_table");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[2];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].classList.remove('d-none');
+                } else {
+                    tr[i].classList.add('d-none');
                 }
-            });
-        }
-
-        let hiddenCount = 0;
-
-        function myFunction() {
-            var input, filter, table, tr, td, i, txtValue;
-            input = document.getElementById("search");
-            filter = input.value.toUpperCase();
-            table = document.getElementById("customer_list_table");
-            tr = table.getElementsByTagName("tr");
-            for (i = 0; i < tr.length; i++) {
-                td = tr[i].getElementsByTagName("td")[2];
-                if (td) {
-                    txtValue = td.textContent || td.innerText;
-                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                        tr[i].classList.remove('d-none');
-                    } else {
-                        tr[i].classList.add('d-none');
-                    }
-                }
-            }
-
-            if ($("#customer_list_table tbody tr.main-tr").length == $("#customer_list_table tbody tr.d-none.main-tr").length) {
-                $('#no_record').removeClass('d-none');
-            } else {
-                $("#no_record").addClass('d-none')
             }
         }
 
-        function AddRow() {
-            let html = `   <tr>
+        if ($("#customer_list_table tbody tr.main-tr").length == $("#customer_list_table tbody tr.d-none.main-tr").length) {
+            $('#no_record').removeClass('d-none');
+        } else {
+            $("#no_record").addClass('d-none')
+        }
+    }
+
+    function AddRow() {
+        let html = `   <tr>
             @csrf
-            <td>
-                #
-            </td>
-            <td>
-                <input class="form-control" name="building_name" placeholder="{{__('translation.Enter building Name')}}" type="text" maxlength="100" required>
+        <td>
+            #
+        </td>
+        <td>
+            <input class="form-control" name="building_name" placeholder="{{__('translation.Enter building Name')}}" type="text" maxlength="100" required>
                 <span class="mt-3 text-danger d-none">This field is required</span>
                                                 </td>
                                                 <td>
@@ -285,44 +286,45 @@
                                                     </button>
                                                 </td>
 
+
                                             </tr>`;
-            $('tbody').append(html);
+        $('tbody').append(html);
+    }
+
+    function submitForm(building_name, address, btn) {
+        if (building_name.val() == '') {
+            building_name.next().removeClass('d-none');
+            setTimeout(function () {
+                building_name.next().addClass('d-none');
+            }, 3000);
+            return false;
         }
+        if (address.val() == '') {
+            address.next().removeClass('d-none');
+            setTimeout(function () {
+                address.next().addClass('d-none');
+            }, 3000);
+            return false;
+        }
+        $.ajax({
 
-        function submitForm(building_name, address, btn) {
-            if (building_name.val() == '') {
-                building_name.next().removeClass('d-none');
-                setTimeout(function () {
-                    building_name.next().addClass('d-none');
-                }, 3000);
-                return false;
-            }
-            if (address.val() == '') {
-                address.next().removeClass('d-none');
-                setTimeout(function () {
-                    address.next().addClass('d-none');
-                }, 3000);
-                return false;
-            }
-            $.ajax({
+            type: "POST",
+            url: '{{route('admin.PostCreateAddress')}}',
+            dataType: 'json',
+            data: {
+                '_token': '{{csrf_token()}}',
+                'building_name': building_name.val(),
+                'address': address.val(),
+            },
 
-                type: "POST",
-                url: '{{route('admin.PostCreateAddress')}}',
-                dataType: 'json',
-                data: {
-                    '_token': '{{csrf_token()}}',
-                    'building_name': building_name.val(),
-                    'address': address.val(),
-                },
-
-                beforeSend: function () {
-                    btn.prop('disabled', true);
-                    btn.html('<i class="fa fa-spinner fa-spin me-1"></i> 처리');
-                },
-                success: function (res) {
+            beforeSend: function () {
+                btn.prop('disabled', true);
+                btn.html('<i class="fa fa-spinner fa-spin me-1"></i> 처리');
+            },
+            success: function (res) {
 
 
-                    let html = ` <tr>
+                let html = ` <tr>
                                                 <td>
                                                     ${res.count}
                                                 </td>
@@ -349,27 +351,26 @@
                                                 </td>
                                             </tr>`;
 
-                    $('tbody').append(html);
-                    btn.parent().parent().remove();
+                $('tbody').append(html);
+                btn.parent().parent().remove();
 
-                },
-                error: function (e) {
+            },
+            error: function (e) {
 
 
-                }
+            }
 
-            });
-
-        }
-
-        var $rows = $('table tr');
-        $('#search').keyup(function () {
-            var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
-
-            $rows.show().filter(function () {
-                var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
-                return !~text.indexOf(val);
-            }).hide();
         });
-    </script>
-@endsection
+
+    }
+
+    var $rows = $('table tr');
+    $('#search').keyup(function () {
+        var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+
+        $rows.show().filter(function () {
+            var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+            return !~text.indexOf(val);
+        }).hide();
+    });
+</script>

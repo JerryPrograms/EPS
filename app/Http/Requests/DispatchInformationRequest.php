@@ -32,7 +32,7 @@ class DispatchInformationRequest extends FormRequest
             'measures'=>'required',
             'undecided'=>'required',
             'dispatcher'=>'required',
-            'output'=>'required',
+//            'output'=>'required',
         ];
     }
     function messages()
@@ -46,7 +46,7 @@ class DispatchInformationRequest extends FormRequest
             'measures.required'=>'Measure is required',
             'undecided.required'=>'Undecided is required',
             'dispatcher.required'=>'Dispatcher is required',
-            'output.required'=>'Signature is required',
+//            'output.required'=>'Signature is required',
         ];
     }
 }
