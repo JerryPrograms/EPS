@@ -42,6 +42,9 @@
                                                 <th class="text-center">
                                                     {{__('translation.address')}}
                                                 </th>
+                                                <th class="text-center">
+                                                    {{__('translation.customer info')}}
+                                                </th>
                                                 <th class="text-center">{{__('translation.actions')}}</th>
                                             </tr>
                                             </thead>
@@ -59,6 +62,18 @@
                                                     </td>
                                                     <td>
                                                         {{$d->address}}
+                                                    </td>
+                                                    <td>
+                                                        @php
+                                                        $customer = '--';
+
+                                                        $customer_info = \App\Models\CustomerInfo::where('building_id','['.$d->id.']')->first();
+                                                        if($customer_info)
+                                                            {
+                                                                $customer = $customer_info->company_name;
+                                                            }
+                                                            @endphp
+                                                        {{$customer}}
                                                     </td>
                                                     <td class="d-flex gap-1 justify-content-center">
                                                         <button type="button"

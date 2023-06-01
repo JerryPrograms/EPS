@@ -459,14 +459,14 @@
         </td>
         <td class="custom_br_theme_gray_2">
             <select id="${counter}Sub" required class="form-select valid" name="sub_part[]" autocomplete="off" required="">
-                                                        <option value="" disabled="">--{{ __('translation.Worker') }}--</option>
+                                                        <option value="" disabled="">--{{ __('translation.Sub Part') }}--</option>
                                                         @foreach($sub_parts as $main)
             <option data-main-id="{{$main->main_part_id}}" value="{{$main->id}}">{{$main->title}}</option>
                                                         @endforeach
             </select>
         </td>
          <td class="custom_br_theme_gray_2">
-           <input type="text" name="manager[]" class="form-control col-lg-12 custom_input_tble" aria-describedby="emailHelp" placeholder="2022.11.01" required>
+           <input type="text" name="manager[]" class="form-control col-lg-12 custom_input_tble" aria-describedby="emailHelp" placeholder="{{__('translation.Worker')}}" required>
 
         </td>
         <td class="custom_br_theme_gray_3">
