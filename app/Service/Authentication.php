@@ -17,7 +17,7 @@ class Authentication
 
 
                 if ($guard == 'web') {
-                    $attempLogin = \Auth::guard($guard)->attempt(['master_id' => $email, 'password' => $password]);
+                    $attempLogin = \Auth::guard($guard)->attempt(['email' => $email, 'password' => $password]);
                 } else {
                     $attempLogin = \Auth::guard($guard)->attempt(['email' => $email, 'password' => $password]);
                 }
