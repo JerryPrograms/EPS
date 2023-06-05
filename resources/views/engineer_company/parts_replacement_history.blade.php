@@ -436,6 +436,8 @@
 @section('custom-script')
     <script>
 
+        $('input[name="dates"]').daterangepicker();
+
 
         var counter = 0;
 

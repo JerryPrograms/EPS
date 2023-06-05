@@ -33,6 +33,7 @@
     <link rel="stylesheet" href="{{asset('engineer_company/assets/BsMultiSelect.css')}}">
     <link rel="stylesheet" href="{{asset('engineer_company/assets/css/daterangepicker.css')}}">
     <link rel="stylesheet" href="{{asset('engineer_company/assets/css/sumoselect.css')}}">
+    <link rel="stylesheet" href="{{asset('engineer_company/assets/css/daterangepicker.css')}}">
 
 
 </head>
