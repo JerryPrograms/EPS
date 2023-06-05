@@ -69,6 +69,7 @@ class ContractController extends Controller
             return json_encode(['success' => true, 'message' => __('translation.Contract saved successfully')]);
 
         } catch (\Throwable $th) {
+            dd($th->getMessage());
             return json_encode(['success' => false, 'message' => __('translation.Error : please try again')]);
         }
 

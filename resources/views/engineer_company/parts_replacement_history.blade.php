@@ -166,22 +166,22 @@
 
 {{--                                                </p>--}}
 {{--                                            </div>--}}
-                                            <div class="col-lg-3 mt-2" style="flex-direction: column">
-                                                <div class="input-group" id="datepicker1">
-                                                    <input id="initial_date" hidden=""
-                                                           type="date"
-                                                           onchange="UpdateInitialDate($(this).val(),'{{request()->segment(3)}}')"
-                                                           class="form-control frm_section_inp w-100"
-                                                           placeholder="2022-12-06" data-date-format="dd M, yyyy"
-                                                           data-date-container='#datepicker1'
-                                                           data-provide="datepicker"
-                                                           autocomplete="off"
-                                                           @if(!empty($customer->getInitialDate))
-                                                               value="{{$customer->getInitialDate->initial_date}}"
-                                                        @endif
-                                                    >
-                                                </div><!-- input-group -->
-                                            </div>
+{{--                                            <div class="col-lg-3 mt-2" style="flex-direction: column">--}}
+{{--                                                <div class="input-group" id="datepicker1">--}}
+{{--                                                    <input id="initial_date" hidden=""--}}
+{{--                                                           type="text"--}}
+{{--                                                           onchange="UpdateInitialDate($(this).val(),'{{request()->segment(3)}}')"--}}
+{{--                                                           class="form-control frm_section_inp w-100"--}}
+{{--                                                           placeholder="2022-12-06" data-date-format="dd M, yyyy"--}}
+{{--                                                           data-date-container='#datepicker1'--}}
+{{--                                                           data-provide="datepicker"--}}
+{{--                                                           autocomplete="off"--}}
+{{--                                                           @if(!empty($customer->getInitialDate))--}}
+{{--                                                               value="{{$customer->getInitialDate->initial_date}}"--}}
+{{--                                                        @endif--}}
+{{--                                                    >--}}
+{{--                                                </div><!-- input-group -->--}}
+{{--                                            </div>--}}
 
                                         </div>
                                         <!-- row 2 end  -->
@@ -201,10 +201,11 @@
                                             <div class="col-lg-3">
                                                 <div class="dropdown align-self-start mt-sm-0 mb-2">
                                                     <input type="date"
-                                                           onchange="FilterData($(this).val(),'{{$customer->id}}')"
+                                                           id="range_picker"
                                                            class="form-control frm_section_inp"
                                                            data-date-container='#datepicker1'
                                                            data-provide="datepicker">
+                                                    <button type="button" onclick="FilterData($(this).prev().val(),'{{$customer->id}}')" class="btn btn-primary mt-2">Filter</button>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 text-end">
@@ -436,8 +437,12 @@
 @section('custom-script')
     <script>
 
-        $('input[name="dates"]').daterangepicker();
-
+        $("#range_picker").flatpickr({
+            altInput: true,
+            altFormat: "F j, y",
+            dateFormat: "y-m-d",
+            mode: "range"
+        });
 
         var counter = 0;
 
@@ -504,6 +509,7 @@
             e.preventDefault();
             ajaxCall($('#deletePartsReplacementHistory'), "{{ route('DeletePartReplacementHistory') }}", $('#deletePartsReplacementHistory').find('.submitbtn'), "{{ route('ec.CreatePartsReplacementHistory',request()->segment(3)) }}", onRequestSuccess);
         });
+
         $('#EditPartsReplacementHistory').on('submit', function (e) {
             e.preventDefault();
             ajaxCall($('#EditPartsReplacementHistory'), "{{ route('ec.EditPartsReplacement') }}", $('#EditPartsReplacementHistory').find('.submitbtn'), "{{ route('ec.CreatePartsReplacementHistory',request()->segment(3)) }}", onRequestSuccess);

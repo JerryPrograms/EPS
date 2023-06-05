@@ -57,9 +57,20 @@ class PartReplacement
     {
 
 
+
+
+        preg_match_all('/(\w+ \d{1,2}, \d{2})/', $request->date, $matches);
+        $fromDate = $matches[0][0];
+        $toDate = $matches[0][1];
+        $carbonFromDate = \Carbon\Carbon::createFromFormat('F j, y', $fromDate);
+        $carbonToDate = \Carbon\Carbon::createFromFormat('F j, y', $toDate);
+
         try {
 
-            $MainPart = PartReplacementHistoryModel::where('registration_date', $request->date)->where('customer_id', $request->id)->get();
+            $MainPart = $partReplacements = PartReplacementHistoryModel::whereBetween('registration_date', [
+                $carbonFromDate->startOfDay(),
+                $carbonToDate->endOfDay()
+            ])->where('customer_id', $request->id)->get();
             $html = view('engineer_company.part_replacement_history_listing_template', compact('MainPart'))->render();
 
 

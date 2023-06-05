@@ -44,7 +44,7 @@
 <script src="{{asset('engineer_company/assets/js/moment.min.js')}}"></script>
 <script src="{{asset('engineer_company/assets/js/daterangepicker.min.js')}}"></script>
 <script src="{{asset('engineer_company/assets/js/jquery.sumoselect.js')}}"></script>
-<script src="{{asset('engineer_company/assets/js/daterangepicker.min.js')}}"></script>
+<script src="{{asset('engineer_company/assets/css/flatpickr.js')}}"></script>
 
 <script>
     function HideShow(element, current) {

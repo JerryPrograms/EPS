@@ -112,6 +112,9 @@ class BuildingAndCompanyInformation
                 $company_information = RepairCompanyInformation::where('id', $request->repair_id)->create($company_data);
             }
 
+            CustomerInfo::where('id',$request->customer_id)->update([
+                'added_by_id'=> $request->engineer_company_id
+            ]);
 
             DB::commit();
             return json_encode([
