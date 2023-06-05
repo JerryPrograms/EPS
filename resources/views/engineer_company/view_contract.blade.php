@@ -208,7 +208,7 @@
                     $('#canvas_error').removeClass('d-none');
                 } else {
                     ajaxCall($('#addContractForm'), "{{ route('SignContract') }}", $('#addContractForm'),
-                        "{{ route('contract_management_list',$contract->get_customer->user_uid) }}", onRequestSuccess);
+                        "{{ route('contract_management_list',$contract->get_customer->id) }}", onRequestSuccess);
                 }
             }
         });

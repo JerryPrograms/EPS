@@ -618,4 +618,5 @@ return [
     'Edit Parts history Replacement' => 'Edit Parts history Replacement',
     'Data Updated' => 'Data Updated',
     'Sub Part' => 'Sub Part',
+    'Sign' => 'Sign',
 ];

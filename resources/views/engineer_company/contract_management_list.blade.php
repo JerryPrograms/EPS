@@ -55,6 +55,7 @@
 
                                             </div>
                                         </div>
+
                                         <button type="button" onclick="openDeleteModal()"
                                                 class="btn btn-primary">
                                             {{__('translation.delete')}}

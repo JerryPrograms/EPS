@@ -614,4 +614,5 @@ return [
     'Edit Parts history Replacement' => '부품 이력 교체 편집',
     'Data Updated' => '업데이트된 데이터',
     'Sub Part'=>'하위 부품',
+    'Sign'=>'징후',
 ];

@@ -635,9 +635,9 @@
             $(id).find('option').each(function () {
 
                 if ($(this).attr('data-main-id') == ids) {
-                    $(this).attr('disabled', true);
-                } else {
                     $(this).attr('disabled', false);
+                } else {
+                    $(this).attr('disabled', true);
                 }
             });
         }
