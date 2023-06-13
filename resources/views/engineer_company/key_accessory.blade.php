@@ -842,7 +842,7 @@
                                     </button>
                                     <button type="submit"
                                             class="btn btn-primary waves-effect waves-light submitbtn">
-                                        {{ __('translation.Update') }}
+                                        {{ __('translation.delete') }}
                                     </button>
                                 </div>
 

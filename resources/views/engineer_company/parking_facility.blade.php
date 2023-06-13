@@ -424,7 +424,7 @@
                                                         </div>
                                                     </td>
                                                     <td class="text-center custom_br_rd">
-                                                        <div class="aroow_main_section">
+                                                        <div class="aroow_main_section mt-4">
                                                             <button type="button"
                                                                     onclick="$(this).next().trigger('click')"
                                                                     class="aroow_button">
@@ -442,7 +442,7 @@
                                                                 <img
                                                                     src="{{ asset('engineer_company/assets/images/bluebar.png') }}">
                                                             </button>
-
+                                                            <p>Max file size is 5mb</p>
                                                             <div class="bluebar_img_section">
                                                             </div>
                                                         </div>
@@ -503,7 +503,7 @@
                                                         </div>
                                                     </td>
                                                     <td class="text-center custom_br_rd">
-                                                        <div class="aroow_main_section">
+                                                        <div class="aroow_main_section mt-4">
                                                             <button type="button"
                                                                     onclick="$(this).next().trigger('click')"
                                                                     class="aroow_button">
@@ -522,7 +522,7 @@
                                                                 <img
                                                                     src="{{ asset('engineer_company/assets/images/bluebar.png') }}">
                                                             </button>
-
+                                                            <p>Max file size is 5mb</p>
                                                             <div class="bluebar_img_section">
                                                             </div>
                                                         </div>
@@ -584,7 +584,7 @@
                                                         </div>
                                                     </td>
                                                     <td class="text-center custom_br_rd">
-                                                        <div class="aroow_main_section">
+                                                        <div class="aroow_main_section mt-4">
                                                             <button type="button"
                                                                     onclick="$(this).next().trigger('click')"
                                                                     class="aroow_button">
@@ -603,7 +603,7 @@
                                                                 <img
                                                                     src="{{ asset('engineer_company/assets/images/bluebar.png') }}">
                                                             </button>
-
+                                                            <p>Max File size is 5mb</p>
                                                             <div class="bluebar_img_section">
                                                             </div>
                                                         </div>
