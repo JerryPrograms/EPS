@@ -336,7 +336,7 @@
                                                                     </label>
                                                                 </div>
                                                                 <div class="col-lg-8 col-12">
-                                                                    @if(empty($customer->engineer_company_id))
+                                                                    @if(empty($customer->engineer_company_id) && empty($customer->EngineerCompany))
 
                                                                         <select class="form-select"
                                                                                 onchange="GetData($(this).val())"
