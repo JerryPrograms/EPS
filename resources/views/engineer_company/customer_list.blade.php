@@ -50,27 +50,30 @@
 {{--                                                    </option>--}}
 {{--                                                </select>--}}
 {{--                                            </div>--}}
-                                            <div class="col-md-3 col-6">
-                                                <div class="custom_search">
-                                                    <div class="search mt-4">
-                                                        <input id="myInput" type="text" class="form-control" name="keyword"
-                                                               placeholder="{{__('translation.search')}}"
-                                                               autocomplete="off" required>
+                                            <div class="col-md-12">
+                                                <div class="d-flex justify-content-between">
+                                                    <div class="custom_search">
+                                                        <div class="search mt-4">
+                                                            <input id="myInput" type="text" class="form-control" name="keyword"
+                                                                   placeholder="{{__('translation.search')}}"
+                                                                   autocomplete="off" required>
 
-                                                        <button type="submit" class="btn btn-primary searchbar_button">
-                                                            <div class="search_img">
-                                                                <img
-                                                                    src="{{asset('engineer_company/assets/images/search.png')}}"/>
-                                                            </div>
-                                                        </button>
+                                                            <button type="submit" class="btn btn-primary searchbar_button">
+                                                                <div class="search_img">
+                                                                    <img
+                                                                        src="{{asset('engineer_company/assets/images/search.png')}}"/>
+                                                                </div>
+                                                            </button>
+                                                        </div>
                                                     </div>
+                                                    <a  href="{{route('add_client')}}" class=" btn btn-primary waves-effect waves-light w-sm mt-4">
+                                                        {{ __('translation.Add') }}
+                                                    </a>
                                                 </div>
                                             </div>
 
                                             <div class="col-md-3 col-6">
-                                                <a  href="{{route('add_client')}}" class=" btn btn-primary waves-effect waves-light w-sm mt-4">
-                                                    {{ __('translation.Add') }}
-                                                </a>
+
                                             </div>
                                         </div>
                                     </form>
