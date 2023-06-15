@@ -19,7 +19,7 @@ class BuildingAndCompanyInformation
 
     public static function CreateBuildingAndCompanyInformation(BuildingAndCompanyRequest $request)
     {
-//dd($request->all());
+
 
         try {
 
@@ -61,10 +61,11 @@ class BuildingAndCompanyInformation
             $company_data['industry_category'] = $request->b_industry_category;
             $company_data['contacts'] = $request->b_ci_contacts;
             $company_data['customer_id'] = $request->customer_id;
+            $company_data['email'] = $request->c_email;
             if ($request->has('b_ci_fax')) {
                 $company_data['fax'] = $request->b_ci_fax;
             }
-            if ($request->has('b_ci_fax')) {
+            if ($request->has('b_ci_email')) {
                 $company_data['email'] = $request->b_ci_email;
             }
 

@@ -508,10 +508,11 @@
 
                                                                                                 class="format-number form-control w-100   custom_input"
                                                                                                 aria-describedby="emailHelp"
-                                                                                                placeholder="{{__('translation.02-4347-4893')}}"
+                                                                                                placeholder="이메일주소를 입력해주세요"
                                                                                                 @if(!empty($customer->CompanyInformation) && !empty($customer->CompanyInformation->fax))  value="{{$customer->CompanyInformation->fax}}"
                                                                     @endif></div>
                                                         </div>
+
 
                                                         <div class="row align-items-center mt-4">
                                                             <div class="col-lg-4 col-12"><label
@@ -522,8 +523,11 @@
                                                             <div class="col-lg-8 col-12"><input type="text"
                                                                                                 required
                                                                                                 id="c_email"
+                                                                                                name="c_email"
                                                                                                 class="format-number form-control w-100   custom_input"
                                                                                                 aria-describedby="emailHelp"
+                                                                                                @if(!empty($customer->CompanyInformation) && !empty($customer->CompanyInformation->email))  value="{{$customer->CompanyInformation->email}}"
+                                                                                                @endif
                                                                                                 placeholder="{{__('translation.02-4347-4893')}}"/>
                                                             </div>
                                                         </div>
