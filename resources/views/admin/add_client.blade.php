@@ -155,9 +155,11 @@
                                                                 </label>
                                                             </div>
                                                             <div class="col-lg-8 col-12">
-                                                                <input type="number" min="1" name="customer_number"
+                                                                <input type="text" min="1" name="customer_number"
                                                                        class="form-control w-100 custom_input"
                                                                        aria-describedby="emailHelp"
+                                                                       value="{{$client_number}}"
+                                                                       readonly
                                                                        placeholder="{{__('translation.Enter customer number')}}"
                                                                        required="">
                                                             </div>
@@ -245,7 +247,7 @@
                                                                                class="form-control w-100 custom_input"
                                                                                aria-describedby="emailHelp"
                                                                                placeholder="{{__('translation.Enter Representative')}}"
-                                                                               required="">
+                                                                               >
                                                                     </div>
                                                                     <div class="col-3">
                                                                         <label
@@ -260,7 +262,7 @@
                                                                                class="form-control w-100 custom_input"
                                                                                aria-describedby="emailHelp"
                                                                                placeholder="{{__('translation.Maintenance business registration number')}}"
-                                                                               required="">
+                                                                               >
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -273,7 +275,8 @@
                                                                         class=" star_section">*</span>
                                                                     {{__('translation.Address')}}
                                                                 </label></div>
-                                                            <div class="col-lg-8 col-12"><input type="text"
+                                                            <div class="col-lg-8 col-12">
+                                                                <input type="text"
                                                                                                 name="address"
                                                                                                 class="format-number form-control w-100 custom_input"
                                                                                                 aria-describedby="emailHelp"
@@ -295,7 +298,7 @@
                                                                                class="form-control w-100 custom_input"
                                                                                aria-describedby="emailHelp"
                                                                                placeholder="{{__('translation.Enter Business Email')}}"
-                                                                               required="">
+                                                                               >
                                                                     </div>
                                                                     <div class="col-3">
                                                                         <label
@@ -310,7 +313,7 @@
                                                                                class="form-control w-100 custom_input"
                                                                                aria-describedby="emailHelp"
                                                                                placeholder="{{__('translation.Please enter your industry')}}"
-                                                                               required="">
+                                                                               >
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -329,7 +332,7 @@
                                                                                                 class="form-control w-100   custom_input"
                                                                                                 aria-describedby="emailHelp"
                                                                                                 placeholder="{{__('translation.Enter Contact')}}"
-                                                                                                required=""></div>
+                                                                                                ></div>
                                                         </div>
 
                                                         <div class="row align-items-center mt-4">
@@ -356,6 +359,7 @@
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12"><input type="email"
                                                                                                 name="email"
+                                                                                                required
                                                                                                 class="form-control w-100   custom_input"
                                                                                                 aria-describedby="emailHelp"
                                                                                                 placeholder="{{__('translation.Enter email')}}">

@@ -534,7 +534,7 @@ return [
     'You have to select one building to import parts' => '부품 구성을 추가하기 위해서는 건물을 반드시 선택해야 합니다',
     'Please select a row first' => '행을 먼저 선택하세요',
     'Clients List' => 'AS업체 리스트',
-    'Division' => '부서',
+    'Division' => '거래처 유형',
     'Client Information' => '고객정보',
     'Social Security' => '번호',
     'Write Social Security' => '번호를 입력해주세요',

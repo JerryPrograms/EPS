@@ -66,14 +66,11 @@
                                                     </div>
                                                 </div>
                                             </div>
+
                                             <div class="col-md-3 col-6">
-                                                <button id="clearFilter"
-                                                        onclick="ClearFilter()"
-                                                        type="button"
-                                                        class="d-none btn btn-primary waves-effect waves-light w-sm mt-4"
-                                                >
-                                                    {{ __('translation.Clear Filter') }}
-                                                </button>
+                                                <a  href="{{route('add_client')}}" class=" btn btn-primary waves-effect waves-light w-sm mt-4">
+                                                    {{ __('translation.Add') }}
+                                                </a>
                                             </div>
                                         </div>
                                     </form>

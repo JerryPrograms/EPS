@@ -289,5 +289,5 @@ Route::group(['prefix' => 'eps-panel', 'middleware' => 'AdminCompanyAccess'], fu
 
 Route::get('/customer-dashboard',[\App\Http\Controllers\CustomerInfoController::class,'GetCustomerDashboard'])->name('GetCustomerDashboard');
 
-
+Route::post('delete-sub-part',[\App\Http\Controllers\CustomerInfoController::class,'delete_sub_part_form'])->name('delete_sub_part_form');
 

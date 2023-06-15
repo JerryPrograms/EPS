@@ -40,11 +40,17 @@ class ClientController extends Controller
     public function add_client()
     {
         $companies = Engineer_company::latest()->get();
-        return view('admin.add_client', compact('companies'));
+        $client_number = CustomerInfo::count() + $companies->count() + 1;
+        $client_number = str_pad($client_number, 5, '0', STR_PAD_LEFT);
+        $client_number = 'EPS-' . $client_number;
+
+
+        return view('admin.add_client', compact('companies','client_number'));
     }
 
     public function create_client(ClientRequest $request)
     {
+
         try {
 
             $data = $request->all();

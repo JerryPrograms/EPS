@@ -188,7 +188,7 @@
                                                                                            class="form-check-input"
                                                                                            name="buildings[]"
                                                                                            value="{{$building->id}}">
-                                                                                    {{$building->address}}
+                                                                                    {{$building->BuildingInformation->building_name}}
                                                                                 </div>
                                                                             @endforeach
                                                                         </div>
@@ -279,6 +279,9 @@
                                                                                               onclick="setSubPartData('{{$SubParts->id}}','{{$SubParts->title}}')"
                                                                                               class="ms-2 mb-2"><i
                                                                                                 class="fa fa-edit"></i></span>
+                                                                                         <button data-bs-toggle="modal" data-bs-target="#DeleteSubPartModal" onclick="setsubPartID('{{$SubParts->id}}')" style="background: transparent; border: none">
+                                                                                             <i class="fa fa-trash"></i>
+                                                                                         </button>
                                                                                         <div id="form_{{$SubParts->id}}"
                                                                                              class="d-flex d-none custom_border">
 
@@ -853,6 +856,59 @@
                 </div>
             </div>
 
+            <div id="DeleteSubPartModal" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel1"
+                 aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="myModalLabel">
+
+                                {{ __('translation.Delete Part') }}
+
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+
+                        <form id="delete_sub_part_form">
+                            @csrf
+                            <div class="modal-body">
+                                <div class="col-12">
+
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="no-value-prompt w-100">
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="prompt w-100"></div>
+                                                        <p>{{__('translation.Are you sure you want to delete this part?')}}</p>
+                                                        <input name="id" id="delete_sub_part_id" hidden>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- end card body -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary waves-effect"
+                                            data-bs-dismiss="modal">
+                                        {{ __('translation.close') }}
+                                    </button>
+                                    <button type="submit"
+                                            class="btn btn-primary waves-effect waves-light submitbtn">
+                                        {{ __('translation.delete') }}
+                                    </button>
+                                </div>
+
+                            </div><!-- /.modal-content -->
+                        </form>
+
+                    </div><!-- /.modal-dialog -->
+                </div>
+            </div>
+
         @endsection
         @section('custom-script')
             <script>
@@ -915,6 +971,12 @@
                     }
                 });
 
+                $('#delete_sub_part_form').validate({
+                    submitHandler: function () {
+                        ajaxCall($('#delete_sub_part_form'), "{{ route('delete_sub_part_form') }}", $('#delete_part_form').find('.submitbtn'), "{{ route('ec.CreateKeyAccessoryHistory',request()->segment(3)) }}", onRequestSuccess);
+                    }
+                });
+
                 function submitFunction(element, btn) {
 
                     element.validate({
@@ -943,6 +1005,10 @@
 
                 function DeleteCompletePart(id) {
                     $('#delete_part_id').val(id);
+                }
+
+                function setsubPartID(id){
+                    $('#delete_sub_part_id').val(id);
                 }
 
             </script>

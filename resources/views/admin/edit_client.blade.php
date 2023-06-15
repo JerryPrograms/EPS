@@ -155,8 +155,9 @@
                                                                 </label>
                                                             </div>
                                                             <div class="col-lg-8 col-12">
-                                                                <input type="number" min="1"
+                                                                <input type="text" min="1"
                                                                        name="customer_number"
+                                                                       readonly
                                                                        class="form-control w-100 custom_input"
                                                                        aria-describedby="emailHelp"
                                                                        placeholder="{{__('translation.Enter customer number')}}"

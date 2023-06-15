@@ -174,7 +174,7 @@
                                                             </div>
                                                             <div class="col-lg-8 col-12">
                                                                 @if(empty($customer->building_id))
-                                                                    <select  class="SlectBox"
+                                                                    <select class="SlectBox"
                                                                             onchange="SetAddress($(this))"
                                                                             class="form-select mt-4"
                                                                             name="b_building_name[]"
@@ -332,18 +332,17 @@
                                                                     <label
                                                                         class="form-label custom_lab mb-0"> <span
                                                                             class="star_section">*</span>
-                                                                        {{__('translation.Engineer Company1')}}
+                                                                        {{__('translation.Building Management Company')}}
                                                                     </label>
                                                                 </div>
                                                                 <div class="col-lg-8 col-12">
-                                                                    @if(empty($customer->engineer_company_id) && empty($customer->EngineerCompany))
-
+                                                                    @if(empty($customer->engineer_company_id) || empty($customer->EngineerCompany))
                                                                         <select class="form-select"
                                                                                 onchange="GetData($(this).val())"
                                                                                 name="engineer_company_id"
                                                                                 autocomplete="off" required="">
                                                                             <option selected="" value="" disabled="">
-                                                                                {{__('translation.Engineer Companies')}}
+                                                                                {{__('translation.Building Management Company')}}
                                                                             </option>
                                                                             @foreach($company as $building)
                                                                                 <option
@@ -700,7 +699,7 @@
                                                                     </label>
                                                                 </div>
                                                                 <div class="col-lg-8 col-12">
-                                                                    @if(empty($customer->engineer_company_id))
+                                                                    @if(empty($customer->engineer_company_id) ||  empty($customer->EngineerCompany))
 
                                                                         <select class="form-select"
                                                                                 onchange="GetDataRepairCompany($(this).val())"

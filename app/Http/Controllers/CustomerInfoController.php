@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CustomerInfoRequest;
 use App\Models\CustomerInfo;
+use App\Models\KeyAccessoryInformation;
 use App\Service\Customer_Info;
 use Illuminate\Http\Request;
 
@@ -31,5 +32,19 @@ class CustomerInfoController extends Controller
             return view('customer.dashboard', compact('customer'));
         }
         abort(404);
+    }
+
+    public function delete_sub_part_form(Request $request)
+    {
+
+
+        $delete = KeyAccessoryInformation::where('id',$request->id)->delete();
+        if($delete)
+        {
+            return json_encode([
+                'success'=>true,
+                'message'=>__('translation.Part deleted successfully'),
+            ]);
+        }
     }
 }

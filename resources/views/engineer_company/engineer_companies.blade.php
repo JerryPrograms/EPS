@@ -76,7 +76,7 @@
                                                                        data-bs-toggle="modal"
                                                                        data-del-id="{{ $engineer_company->id }}"
                                                                        data-bs-target="#delModal"
-                                                                       class="btn btn-outline-danger btn-theme-danger-outline btn-outline btn-sm">
+                                                                       class="btn btn-outline-danger btn-theme-danger-outline btn-outline btn-sm delBtn">
                                                                         <img
                                                                             src="{{asset('engineer_company/assets/Trash.png')}}">
                                                                     </a>

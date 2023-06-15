@@ -95,6 +95,7 @@ class EngineerCompanyController extends Controller
     public function del_engineer_company_action(Request $request)
     {
         $delEngineerCompanyAction = Engineer_company::where('id', $request->del_id)->delete();
+
         if ($delEngineerCompanyAction) {
             return json_encode(['success' => true, 'message' => __('translation.Record deleted successfully')]);
         } else {

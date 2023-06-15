@@ -402,9 +402,9 @@
                                     <div class="col-12 mb-2">
                                         <select id="edit_manager" required class="form-select valid" name="sub_part"
                                                 autocomplete="off" required="">
-                                            <option value="" disabled="">--{{ __('translation.Worker') }}--</option>
+                                            <option value="" disabled="" selected>--{{ __('translation.Worker') }}--</option>
                                             @foreach($sub_parts as $main)
-                                                <option data-main-id="{{$main->main_part_id}}"
+                                                <option data-as-content="{{$main->work_history}}" data-main-id="{{$main->main_part_id}}"
                                                         value="{{$main->id}}">{{$main->title}}</option>
                                             @endforeach
                                         </select>
@@ -465,10 +465,10 @@
             </select>
         </td>
         <td class="custom_br_theme_gray_2">
-            <select id="${counter}Sub" required class="form-select valid" name="sub_part[]" autocomplete="off" required="">
-                                                        <option value="" disabled="">--{{ __('translation.Sub Part') }}--</option>
+            <select id="${counter}Sub" onchange="setASContent($(this),$('#${counter}as'))" required class="form-select valid" name="sub_part[]" autocomplete="off" required="">
+                                                        <option value="" disabled="" selected>--{{ __('translation.Sub Part') }}--</option>
                                                         @foreach($sub_parts as $main)
-            <option data-main-id="{{$main->main_part_id}}" value="{{$main->id}}">{{$main->title}}</option>
+            <option data-as-content="{{$main->work_history}}"  data-main-id="{{$main->main_part_id}}" value="{{$main->id}}">{{$main->title}}</option>
                                                         @endforeach
             </select>
         </td>
@@ -476,8 +476,8 @@
            <input type="text" name="manager[]" class="form-control col-lg-12 custom_input_tble" aria-describedby="emailHelp" placeholder="{{__('translation.Worker')}}" required>
 
         </td>
-        <td class="custom_br_theme_gray_3">
-            <input type="text" name="as_content[]" class="form-control col-lg-2 custom_input_tble" aria-describedby="emailHelp" placeholder="{{ __('translation.AS content') }}" required>
+        <td  class="custom_br_theme_gray_3">
+            <input id="${counter}as" type="text" name="as_content[]" class="form-control col-lg-2 custom_input_tble" aria-describedby="emailHelp" placeholder="{{ __('translation.AS content') }}" required>
                                                 </td>
                                                 <td class="custom_br_theme_gray_3">
                                                     <button type="button" onclick="removeRow($(this).parent().parent())" class="transparent-btn">
@@ -540,7 +540,6 @@
                 }
             });
         }
-
 
         function UpdateInitialDate(date, customer_id) {
             $.ajax({
@@ -626,7 +625,6 @@
             });
         }
 
-
         function GetSubParts(element, counter) {
             var ids = element.find('option:selected').attr('data-main-id');
             var id = '#' + counter + 'Sub';
@@ -641,7 +639,6 @@
                 }
             });
         }
-
 
         function GetDataParts(id) {
             $.ajax({
@@ -706,6 +703,11 @@
                 }
 
             });
+        }
+
+        function setASContent(element,element2)
+        {
+            element2.val(element.find('option:selected').attr('data-as-content'));
         }
 
     </script>
