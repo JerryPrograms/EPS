@@ -156,7 +156,7 @@
                                                                 </label>
                                                             </div>
                                                             <div class="col-lg-8 col-12">
-                                                                <input disabled type="number" min="1"
+                                                                <input disabled type="text" min="1"
                                                                        name="customer_number"
                                                                        class="form-control w-100 custom_input"
                                                                        aria-describedby="emailHelp"
