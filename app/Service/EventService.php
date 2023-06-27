@@ -13,7 +13,7 @@ class EventService
     public static function CreateEvent(CalenderRequest $request)
     {
 
-
+        // dd($request->all());
         $color = '';
         $text_color = '';
         if ($request->type == 'weekend duty') {
@@ -45,8 +45,8 @@ class EventService
                 $date['text_color'] = $text_color;
                 $date['user_id'] = auth(activeGuard())->user()->id;
                 $date['added_by'] = activeGuard();
-                $date['title'] = json_encode($request->building_names[$key]);
-                $date['memo'] = json_encode($request->memo[$key]);
+                $date['title'] = json_encode($request->building_names[$key],JSON_UNESCAPED_UNICODE);
+                $date['memo'] = json_encode($request->memo[$key],JSON_UNESCAPED_UNICODE);
                 $date['start_date'] = $request->start_date;
                 $date['type'] = $request->type;
 

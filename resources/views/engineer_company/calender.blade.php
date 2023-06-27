@@ -413,7 +413,6 @@
                 </div>
                 <form id="EditEventForm">
                     <div class="modal-body">
-
                         @csrf
                         <div class="prompt w-100"></div>
                         <div class="mb-3">
