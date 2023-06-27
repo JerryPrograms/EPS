@@ -156,13 +156,13 @@
                                                                 </label>
                                                             </div>
                                                             <div class="col-lg-8 col-12">
-                                                                <input disabled type="text" min="1"
+                                                                <input type="text" min="1"
                                                                        name="customer_number"
                                                                        class="form-control w-100 custom_input"
                                                                        aria-describedby="emailHelp"
                                                                        placeholder="{{__('translation.Enter customer number')}}"
                                                                        value="{{$data->customer_number}}"
-                                                                       required="">
+                                                                       required="" readonly>
                                                             </div>
                                                         </div>
 
@@ -174,12 +174,12 @@
                                                                 </label>
                                                             </div>
                                                             <div class="col-lg-8 col-12">
-                                                                <input disabled type="text" name="master_id"
+                                                                <input type="text" name="master_id"
                                                                        class="form-control w-100 custom_input"
                                                                        aria-describedby="emailHelp"
                                                                        value="{{$data->master_id}}"
                                                                        placeholder="{{__('translation.Enter Master ID')}}"
-                                                                       required="">
+                                                                       required="" readonly>
                                                             </div>
                                                         </div>
 
@@ -191,13 +191,13 @@
                                                                     {{__('translation.Master PW')}}
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12">
-                                                                <input disabled type="text"
+                                                                <input type="text"
                                                                        name="password"
                                                                        class="format-number form-control w-100 custom_input"
                                                                        aria-describedby="emailHelp"
                                                                        value="{{$data->show_password}}"
                                                                        placeholder="{{__('translation.Enter Password')}}"
-                                                                       required="">
+                                                                       required="" readonly>
                                                             </div>
                                                         </div>
 
@@ -210,13 +210,13 @@
                                                             <div class="col-lg-8 col-12">
                                                                 <div class="row">
                                                                     <div class="col-4">
-                                                                        <input disabled type="text"
+                                                                        <input type="text"
                                                                                name="company_name"
                                                                                class="form-control w-100 custom_input"
                                                                                aria-describedby="emailHelp"
                                                                                placeholder="{{__('translation.Enter Company Name')}}"
                                                                                value="{{$data->company_name}}"
-                                                                               required="">
+                                                                               required="" readonly>
                                                                     </div>
                                                                     <div class="col-3">
                                                                         <label
@@ -226,13 +226,13 @@
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-5">
-                                                                        <input disabled type="text"
+                                                                        <input type="text"
                                                                                name="company_registration_number"
                                                                                class="form-control w-100 custom_input"
                                                                                aria-describedby="emailHelp"
                                                                                placeholder="{{__('translation.Enter Company Registration Number')}}"
                                                                                value="{{$data->company_registration_number}}"
-                                                                               required="">
+                                                                               required="" readonly>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -247,13 +247,13 @@
                                                             <div class="col-lg-8 col-12">
                                                                 <div class="row">
                                                                     <div class="col-4">
-                                                                        <input disabled type="text"
+                                                                        <input type="text"
                                                                                name="representative"
                                                                                class="form-control w-100 custom_input"
                                                                                aria-describedby="emailHelp"
                                                                                placeholder="Enter Representative"
                                                                                value="{{$data->representative}}"
-                                                                               required="">
+                                                                               required="" readonly>
                                                                     </div>
                                                                     <div class="col-3">
                                                                         <label
@@ -263,13 +263,13 @@
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-5">
-                                                                        <input disabled type="text"
+                                                                        <input type="text"
                                                                                name="maintenance_business_registration_number"
                                                                                class="form-control w-100 custom_input"
                                                                                aria-describedby="emailHelp"
                                                                                placeholder="{{__('translation.Enter Maintenance business registration number')}}"
                                                                                value="{{$data->maintenance_business_registration_number}}"
-                                                                               required="">
+                                                                               required="" readonly>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -282,12 +282,12 @@
                                                                         class=" star_section">*</span>
                                                                     {{__('translation.Address')}}
                                                                 </label></div>
-                                                            <div class="col-lg-8 col-12"><input disabled type="text"
+                                                            <div class="col-lg-8 col-12"><input type="text"
                                                                                                 name="address"
                                                                                                 class="format-number form-control w-100 custom_input"
                                                                                                 aria-describedby="emailHelp"
                                                                                                 value="{{$data->address}}"
-                                                                                                placeholder="{{__('translation.Enter address')}}">
+                                                                                                placeholder="{{__('translation.Enter address')}}" readonly>
                                                             </div>
                                                         </div>
 
@@ -300,13 +300,13 @@
                                                             <div class="col-lg-8 col-12">
                                                                 <div class="row">
                                                                     <div class="col-4">
-                                                                        <input disabled type="email"
+                                                                        <input type="email"
                                                                                name="business_email"
                                                                                class="form-control w-100 custom_input"
                                                                                aria-describedby="emailHelp"
                                                                                placeholder="{{__('translation.Enter Business Email')}}"
                                                                                value="{{$data->business_email}}"
-                                                                               required="">
+                                                                               required="" readonly>
                                                                     </div>
                                                                     <div class="col-3">
                                                                         <label
@@ -316,13 +316,13 @@
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-5">
-                                                                        <input disabled type="text"
+                                                                        <input type="text"
                                                                                name="sectors"
                                                                                class="form-control w-100 custom_input"
                                                                                aria-describedby="emailHelp"
                                                                                placeholder="{{__('translation.Enter Sectors')}}"
                                                                                value="{{$data->sectors}}"
-                                                                               required="">
+                                                                               required="" readonly>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -334,13 +334,13 @@
                                                                         class="star_section">*</span>
                                                                     {{__('translation.Contact')}}
                                                                 </label></div>
-                                                            <div class="col-lg-8 col-12"><input disabled type="text"
+                                                            <div class="col-lg-8 col-12"><input type="text"
                                                                                                 name="contact"
                                                                                                 class="form-control w-100   custom_input"
                                                                                                 aria-describedby="emailHelp"
                                                                                                 placeholder="{{__('translation.Enter Contact')}}"
                                                                                                 value="{{$data->contact}}"
-                                                                                                required=""></div>
+                                                                                                required="" readonly></div>
                                                         </div>
 
                                                         <div class="row align-items-center mt-4">
@@ -349,13 +349,13 @@
                                                                         class="star_section">*</span>
                                                                     {{__('translation.fax')}}
                                                                 </label></div>
-                                                            <div class="col-lg-8 col-12"><input disabled type="text"
+                                                            <div class="col-lg-8 col-12"><input type="text"
                                                                                                 name="fax"
 
                                                                                                 class="format-number form-control w-100   custom_input"
                                                                                                 aria-describedby="emailHelp"
                                                                                                 value="{{$data->fax}}"
-                                                                                                placeholder="02-4347-4893">
+                                                                                                placeholder="02-4347-4893" readonly>
                                                             </div>
                                                         </div>
 
@@ -365,16 +365,16 @@
                                                                         class="star_section">*</span>
                                                                     {{__('translation.Email')}}
                                                                 </label></div>
-                                                            <div class="col-lg-8 col-12"><input disabled type="email"
+                                                            <div class="col-lg-8 col-12"><input type="email"
                                                                                                 name="email"
                                                                                                 class="form-control w-100   custom_input"
                                                                                                 aria-describedby="emailHelp"
                                                                                                 value="{{$data->email}}"
-                                                                                                placeholder="{{__('translation.Enter email')}}">
+                                                                                                placeholder="{{__('translation.Enter email')}}" readonly>
                                                             </div>
                                                         </div>
-                                                        <input disabled name="division" value="{{$data->division}}"
-                                                               hidden="">
+                                                        <input name="division" value="{{$data->division}}"
+                                                               hidden="" readonly>
                                                     </div>
                                                 </div>
                                                 <!-- form row 1 end  -->

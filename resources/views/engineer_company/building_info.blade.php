@@ -508,7 +508,7 @@
 
                                                                                                 class="format-number form-control w-100   custom_input"
                                                                                                 aria-describedby="emailHelp"
-                                                                                                placeholder="이메일주소를 입력해주세요"
+                                                                                                placeholder="02-4347-4893"
                                                                                                 @if(!empty($customer->CompanyInformation) && !empty($customer->CompanyInformation->fax))  value="{{$customer->CompanyInformation->fax}}"
                                                                     @endif></div>
                                                         </div>
@@ -528,7 +528,7 @@
                                                                                                 aria-describedby="emailHelp"
                                                                                                 @if(!empty($customer->CompanyInformation) && !empty($customer->CompanyInformation->email))  value="{{$customer->CompanyInformation->email}}"
                                                                                                 @endif
-                                                                                                placeholder="{{__('translation.02-4347-4893')}}"/>
+                                                                                                placeholder="이메일주소를 입력해주세요"/>
                                                             </div>
                                                         </div>
 
