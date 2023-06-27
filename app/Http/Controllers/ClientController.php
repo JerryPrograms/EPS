@@ -61,12 +61,61 @@ class ClientController extends Controller
                 $data['user_uid'] = Str::uuid();
                 $data['added_by'] = 'engineer_company';
                 $data['added_by_id'] = auth(activeGuard())->id();
+
+                $check_customer_number = CustomerInfo::where('customer_number', $request->customer_number)->first();
+                if($check_customer_number){
+                    return json_encode([
+                        'success' => false,
+                        'message' => __('translation.Customer number is duplicated'),
+                    ]);
+                }
+
+                $check_master_id = CustomerInfo::where('master_id', $request->master_id)->first();
+                if($check_master_id){
+                    return json_encode([
+                        'success' => false,
+                        'message' => __('translation.Master Id is duplicated'),
+                    ]);
+                }
+
+                $check_company_reg_no = CustomerInfo::where('company_registration_number', $request->company_registration_number)->first();
+                if($check_company_reg_no){
+                    return json_encode([
+                        'success' => false,
+                        'message' => __('translation.Company registration number is duplicated'),
+                    ]);
+                }
+
                 CustomerInfo::create($data);
                 return json_encode([
                     'success' => true,
                     'message' => __('translation.Client updated successfully'),
                 ]);
             } else {
+                $check_customer_number = Engineer_company::where('customer_number', $request->customer_number)->first();
+                if($check_customer_number){
+                    return json_encode([
+                        'success' => false,
+                        'message' => __('translation.Customer number is duplicated'),
+                    ]);
+                }
+
+                $check_master_id = Engineer_company::where('master_id', $request->master_id)->first();
+                if($check_master_id){
+                    return json_encode([
+                        'success' => false,
+                        'message' => __('translation.Master Id is duplicated'),
+                    ]);
+                }
+
+                $check_company_reg_no = Engineer_company::where('company_registration_number', $request->company_registration_number)->first();
+                if($check_company_reg_no){
+                    return json_encode([
+                        'success' => false,
+                        'message' => __('translation.Company registration number is duplicated'),
+                    ]);
+                }
+
                 Engineer_company::create($data);
                 return json_encode([
                     'success' => true,

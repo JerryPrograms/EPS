@@ -12,7 +12,7 @@
             {{ __('translation.Customer Number') }}
         </th>
         <th class="text-center">
-            {{ __('translation.Building Name') }}
+            {{ __('translation.Company name') }}
         </th>
         <th class="text-center">
             {{ __('translation.address') }}

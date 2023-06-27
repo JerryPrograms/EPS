@@ -40,6 +40,9 @@
                                                     {{__('translation.Building name')}}
                                                 </th>
                                                 <th class="text-center">
+                                                    {{ __('translation.Building code') }}
+                                                </th>
+                                                <th class="text-center">
                                                     {{__('translation.address')}}
                                                 </th>
                                                 <th class="text-center">
@@ -61,6 +64,9 @@
                                                         {{$d->building_name}}
                                                     </td>
                                                     <td>
+                                                        {{ $d->building_number }}
+                                                    </td>
+                                                    <td>
                                                         {{$d->address}}
                                                     </td>
                                                     <td>
@@ -77,11 +83,11 @@
                                                     </td>
                                                     <td class="d-flex gap-1 justify-content-center">
                                                         <button type="button"
-                                                                onclick="openEditModal('{{$d->id}}','{{$d->building_name}}','{{$d->address}}')"
+                                                                onclick="openEditModal('{{$d->id}}','{{$d->building_name}}','{{ $d->building_number }}','{{$d->address}}')"
                                                                 class="btn btn-outline-primary btn-theme-primary-outline btn-outline btn-sm">
 
 
-                                                            <i class="fa fa-edit"></i>
+                                                                <img src="{{ asset('engineer_company/images/edit_icon.png') }}">
                                                         </button>
                                                         <button onclick="openDeleteModal('{{$d->id}}')"
                                                                 class="btn btn-outline-light btn-theme-light-outline btn-outline btn-sm">
@@ -169,6 +175,10 @@
                             <input class="form-control" name="building_name" id="bn" type="text" maxlength="250">
                         </div>
                         <div class="col-12 mt-2">
+                            <label>{{ __('translation.Building code') }}</label>
+                            <input id="building_code" class="form-control" type="text" name="building_number">
+                        </div>
+                        <div class="col-12 mt-2">
                             <label>{{__('translation.address')}}</label>
                             <input class="form-control" name="address" id="ad" type="text" maxlength="250">
                         </div>
@@ -198,10 +208,11 @@
         $('#customerInfoID').val(id);
     }
 
-    function openEditModal(id, buidling_name, address) {
+    function openEditModal(id, buidling_name, building_code, address) {
         $('#EditeModal').modal('show');
         $('#editid').val(id);
         $('#bn').val(buidling_name);
+        $('#building_code').val(building_code);
         $('#ad').val(address);
     }
 
@@ -290,12 +301,16 @@
                 <span class="mt-3 text-danger d-none">This field is required</span>
                                                 </td>
                                                 <td>
+                                                    <input class="form-control"  name="building_number" placeholder="{{__('translation.Enter building code')}}" type="text" maxlength="100" required>
+                                                   <span class="mt-3 text-danger d-none">This field is required</span>
+                                                </td>
+                                                <td>
                                                     <input class="form-control"  name="address" placeholder="{{__('translation.address')}}" type="text" maxlength="100" required>
                                                    <span class="mt-3 text-danger d-none">This field is required</span>
                                                 </td>
                                                 <td class="d-flex gap-1 justify-content-center">
 
-                                                    <button type="button" onclick="submitForm($(this).parent().prev().prev().find('input'),$(this).parent().prev().find('input'),$(this))"
+                                                    <button type="button" onclick="submitForm($(this).parent().prev().prev().prev().find('input'),$(this).parent().prev().prev().find('input'),$(this).parent().prev().find('input'),$(this))"
                                                             class="btn btn-primary">
                                                             Add
                                                     </button>
@@ -306,11 +321,18 @@
         $('tbody').append(html);
     }
 
-    function submitForm(building_name, address, btn) {
+    function submitForm(building_name, building_number, address, btn) {
         if (building_name.val() == '') {
             building_name.next().removeClass('d-none');
             setTimeout(function () {
                 building_name.next().addClass('d-none');
+            }, 3000);
+            return false;
+        }
+        if (building_number.val() == '') {
+            building_number.next().removeClass('d-none');
+            setTimeout(function () {
+                building_number.next().addClass('d-none');
             }, 3000);
             return false;
         }
@@ -329,6 +351,7 @@
             data: {
                 '_token': '{{csrf_token()}}',
                 'building_name': building_name.val(),
+                'building_number': building_number.val(),
                 'address': address.val(),
             },
 
@@ -345,6 +368,9 @@
                                                 </td>
                                                 <td>
                                                     ${building_name.val()}
+                                                </td>
+                                                <td>
+                                                    ${building_number.val()}
                                                 </td>
                                                 <td>
                                                     ${address.val()}

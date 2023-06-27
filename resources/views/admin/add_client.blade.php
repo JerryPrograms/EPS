@@ -226,7 +226,7 @@
                                                                                name="company_registration_number"
                                                                                class="form-control w-100 custom_input"
                                                                                aria-describedby="emailHelp"
-                                                                               placeholder="{{__('translation.Enter Company Registration Number')}}"
+                                                                               placeholder="111-22-33333"
                                                                                required="">
                                                                     </div>
                                                                 </div>

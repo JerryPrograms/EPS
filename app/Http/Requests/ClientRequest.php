@@ -30,7 +30,7 @@ class ClientRequest extends FormRequest
             'master_id' => 'required',
             'password' => 'required',
             'company_name' => 'required',
-            'company_registration_number' => 'required',
+            'company_registration_number' => 'required|regex:/^\d{3}-\d{2}-\d{5}$/',
 //            'representative' => 'required',
 //            'maintenance_business_registration_number' => 'required',
 //            'address' => 'required',
@@ -60,6 +60,7 @@ class ClientRequest extends FormRequest
             'fax.required' => 'Fax field is required',
             'email.required' => 'Email field is required',
             'division.required' => 'Division field is required',
+            'company_registration_number.regex' => 'The number must be in the format 111-22-33333'
         ];
     }
 }

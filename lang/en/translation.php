@@ -619,4 +619,9 @@ return [
     'Data Updated' => 'Data Updated',
     'Sub Part' => 'Sub Part',
     'Sign' => 'Sign',
+    'Customer number is duplicated' => 'Customer number is duplicated',
+    'Master Id is duplicated' => 'Master Id is duplicated',
+    'Company registration number is duplicated' => 'Company registration number is duplicated',
+    'Enter building code' => 'Enter building code',
+    'Building code' => 'Building code'
 ];

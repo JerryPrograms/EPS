@@ -25,6 +25,7 @@ class BuildingAddressController extends Controller
           $data = BuildingAddress::create([
               'building_name' => $request->building_name,
               'address' => $request->address,
+              'building_number' => $request->building_number,
               'added_by' => activeGuard(),
               'added_by_id' => auth(activeGuard())->id()
           ]);
@@ -65,6 +66,7 @@ class BuildingAddressController extends Controller
         BuildingAddress::where('id', $request->id)->update([
             'building_name' => $request->building_name,
             'address' => $request->address,
+            'building_number' => $request->building_number
         ]);
 
         return json_encode([
