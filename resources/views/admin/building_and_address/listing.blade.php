@@ -36,18 +36,18 @@
                                                 <th class="">
                                                     No.
                                                 </th>
-                                                <th class="text-center">
+                                                <th class="text-left" style="min-width:180px;">
                                                     {{__('translation.Building name')}}
                                                 </th>
-                                                <th class="text-center">
+                                                <th class="text-left" style="min-width:180px;">
                                                     {{ __('translation.Building code') }}
                                                 </th>
-                                                <th class="text-center">
+                                                <th class="text-left">
                                                     {{__('translation.address')}}
                                                 </th>
-                                                <th class="text-center">
+                                                {{-- <th class="text-center">
                                                     {{__('translation.customer info')}}
-                                                </th>
+                                                </th> --}}
                                                 <th class="text-center">{{__('translation.actions')}}</th>
                                             </tr>
                                             </thead>
@@ -60,16 +60,16 @@
                                                     <td>
                                                         {{$count}}
                                                     </td>
-                                                    <td>
+                                                    <td class="text-left">
                                                         {{$d->building_name}}
                                                     </td>
-                                                    <td>
+                                                    <td class="text-left">
                                                         {{ $d->building_number }}
                                                     </td>
-                                                    <td>
+                                                    <td class="text-left">
                                                         {{$d->address}}
                                                     </td>
-                                                    <td>
+                                                    {{-- <td>
                                                         @php
                                                         $customer = '--';
 
@@ -80,17 +80,17 @@
                                                             }
                                                             @endphp
                                                         {{$customer}}
-                                                    </td>
+                                                    </td> --}}
                                                     <td class="d-flex gap-1 justify-content-center">
                                                         <button type="button"
                                                                 onclick="openEditModal('{{$d->id}}','{{$d->building_name}}','{{ $d->building_number }}','{{$d->address}}')"
-                                                                class="btn btn-outline-primary btn-theme-primary-outline btn-outline btn-sm">
+                                                                class="btn back-green btn-outline btn-sm">
 
 
                                                                 <img src="{{ asset('engineer_company/images/edit_icon.png') }}">
                                                         </button>
                                                         <button onclick="openDeleteModal('{{$d->id}}')"
-                                                                class="btn btn-outline-light btn-theme-light-outline btn-outline btn-sm">
+                                                                class="btn btn-outline-danger btn-theme-danger-outline btn-outline btn-sm">
                                                             <img
                                                                 src="{{asset('engineer_company/assets/images/delete.png')}}">
                                                         </button>
@@ -198,7 +198,6 @@
 
 @endsection
 @section('custom-script')
-@endsection
 <script>
 
     // $('#customer_list_table').();
@@ -366,33 +365,33 @@
                                                 <td>
                                                     ${res.count}
                                                 </td>
-                                                <td>
+                                                <td class="text-left">
                                                     ${building_name.val()}
                                                 </td>
-                                                <td>
+                                                <td class="text-left">
                                                     ${building_number.val()}
                                                 </td>
-                                                <td>
+                                                <td class="text-left">
                                                     ${address.val()}
                                                 </td>
                                                 <td class="d-flex gap-1 justify-content-center">
 
-                                                   <button
-                                                       class="btn btn-outline-primary btn-theme-primary-outline btn-outline btn-sm">
+                                                   <button onclick="openEditModal('${res.id}','${building_name.val()}','${building_number.val()}','${address.val()}')"
+                                                       class="btn back-green btn-outline btn-sm">
 
 
-                                                        <i class="fa fa-edit"></i>
+                                                       <img src="https://eps.beckapps.co/eps/public/engineer_company/images/edit_icon.png">
                                                     </button>
 
                                                     <button onclick="openDeleteModal('${res.id}')"
-                                                            class="btn btn-outline-light btn-theme-light-outline btn-outline btn-sm">
+                                                            class="btn btn-outline-danger btn-theme-danger-outline btn-outline btn-sm">
                                                         <img
                                                             src="{{asset('engineer_company/assets/images/delete.png')}}">
                                                     </button>
                                                 </td>
                                             </tr>`;
 
-                $('tbody').append(html);
+                $('tbody').prepend(html);
                 btn.parent().parent().remove();
 
             },
@@ -415,3 +414,4 @@
         }).hide();
     });
 </script>
+@endsection

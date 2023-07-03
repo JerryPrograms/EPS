@@ -83,16 +83,16 @@
                                                             {{$customer->division == 'engineer company' ? __('translation.Engineer Company') : __('translation.Building Owner')}}
                                                         </td>
                                                         <td class="d-flex gap-1 mx-auto" style="justify-content: center;">
-                                                            <a href="{{route('edit_client',[$customer->division,$customer->id])}}"
-                                                               class="btn back-green btn-outline btn-sm">
-                                                                <img
-                                                                    src="{{asset('engineer_company/images/edit_icon.png')}}">
-                                                            </a>
                                                             <a href="{{route('view_client',[$customer->division,$customer->id])}}"
                                                                class="btn btn-outline-danger btn-theme-danger-outline btn-outline btn-sm">
                                                                 <img
                                                                     src="{{asset('engineer_company/assets/images/red-search.png')}}">
                                                             </a>
+                                                            <a href="{{route('edit_client',[$customer->division,$customer->id])}}"
+                                                                class="btn back-green btn-outline btn-sm">
+                                                                 <img
+                                                                     src="{{asset('engineer_company/images/edit_icon.png')}}">
+                                                             </a>
                                                         </td>
                                                     </tr>
                                                 @endforeach
