@@ -623,5 +623,7 @@ return [
     'Master Id is duplicated' => 'Master Id is duplicated',
     'Company registration number is duplicated' => 'Company registration number is duplicated',
     'Enter building code' => 'Enter building code',
-    'Building code' => 'Building code'
+    'Building code' => 'Building code',
+    'Company Manager Name' => 'Company Manager Name',
+    'Enter company manager name' => 'Enter company manager name'
 ];

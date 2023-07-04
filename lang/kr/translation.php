@@ -20,7 +20,7 @@ return [
     'fax' => '팩스번호',
     'e-mail' => '이메일주소',
     'Building management company information' => '건물관리회사 정보',
-    'Company Name' => '업체명',
+    'Company Name' => '보수업체',
     'Ceo Name' => '대표자명',
     'Company Registration Number' => '사업자등록번호',
     'Industry Category' => '업종',
@@ -32,7 +32,7 @@ return [
     'Enter manager contact number' => '담당자 연락처를 입력해주세요',
     'Enter fax' => '팩스번호를 입력해주세요',
     'Enter email' => '이메일주소를 입력해주세요',
-    'Enter company name' => '업체명을 입력해주세요',
+    'Enter company name' => '보수업체를 입력해주세요',
     'Enter ceo name' => '대표자명을 입력해주세요',
     'Enter registration number' => '사업자등록번호를 입력해주세요',
     'contact 1/contact 2' => '연락처1 / 연락처2',
@@ -619,5 +619,7 @@ return [
     'Master Id is duplicated' => 'ID가 중복되었습니다',
     'Company registration number is duplicated' => '사업자등록번호가 중복되었습니다',
     'Enter building code' => '건물코드를 입력해주세요',
-    'Building code' => '건물코드'
+    'Building code' => '건물코드',
+    'Company Manager Name' => '보수업체 담당자',
+    'Enter company manager name' => '보수업체 담당자를 입력해주세요'
 ];

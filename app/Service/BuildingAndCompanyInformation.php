@@ -82,6 +82,7 @@ class BuildingAndCompanyInformation
             $as_data = array();
             $as_data['customer_id'] = $request->customer_id;
             $as_data['repair_company_name'] = $request->repair_company_name;
+            $as_data['repair_company_manager_name'] = $request->repair_company_manager_name;
             $as_data['contract_date'] = $request->contract_date;
             $as_data['fee'] = $request->fee;
             $as_data['invoice_issue_date'] = $request->invoice_issue_date;

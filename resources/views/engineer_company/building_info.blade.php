@@ -564,7 +564,7 @@
                                                             <div class="col-md-4 col-12">
                                                                 <label class="form-label custom_lab mb-0"> <span
                                                                         class="star_section">*</span>
-                                                                    {{ __('translation.Maintenance Company') }}
+                                                                    {{ __('translation.Company Name') }}
                                                                 </label>
                                                             </div>
                                                             <div class="col-md-8 col-12">
@@ -574,6 +574,23 @@
                                                                        placeholder="{{ __('translation.Enter company name') }}"
                                                                        required
                                                                        @if (!empty($customer->ASInformation)) value="{{ $customer->ASInformation->repair_company_name }}" @endif>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row align-items-center mt-4">
+                                                            <div class="col-md-4 col-12">
+                                                                <label class="form-label custom_lab mb-0"> <span
+                                                                        class="star_section">*</span>
+                                                                    {{ __('translation.Company Manager Name') }}
+                                                                </label>
+                                                            </div>
+                                                            <div class="col-md-8 col-12">
+                                                                <input type="text" name="repair_company_manager_name"
+                                                                       class="form-control w-100 custom_input"
+                                                                       aria-describedby="emailHelp"
+                                                                       placeholder="{{ __('translation.Enter company manager name') }}"
+                                                                       required
+                                                                       @if (!empty($customer->ASInformation)) value="{{ $customer->ASInformation->repair_company_manager_name }}" @endif>
                                                             </div>
                                                         </div>
 
