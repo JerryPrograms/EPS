@@ -621,5 +621,6 @@ return [
     'Enter building code' => '건물코드를 입력해주세요',
     'Building code' => '건물코드',
     'Company Manager Name' => '보수업체 담당자',
-    'Enter company manager name' => '보수업체 담당자를 입력해주세요'
+    'Enter company manager name' => '보수업체 담당자를 입력해주세요',
+    'Menu' => '메뉴'
 ];

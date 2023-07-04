@@ -73,11 +73,13 @@
                     class="date_button_2 border-0">{{!empty($c->EngineerCompany) ? $c->EngineerCompany->company_registration_number : __('translation.Not Specified Yet')}}</button>
             </td>
             <td class="d-flex justify-content-center align-items-center">
+                @if(activeGuard() == 'admin')
                 <a href="{{route('view_client',[$c->division,$c->id])}}"
                    class="btn btn-outline-danger btn-theme-danger-outline btn-outline btn-sm me-2">
                     <img
                         src="{{asset('engineer_company/assets/images/red-search.png')}}">
                 </a>
+                @endif
                 <!-- Button trigger modal -->
                 {{--                                <a href="{{route('add_contract',$c->user_uid)}}" class="date_button_2 border-0"><i class="fa fas fa-file-contract  custom-trash-padding"></i></a>--}}
                 {{--                                <a href="{{route('regular_inspection_log',$c->user_uid)}}" class="date_button_2 border-0"><i class="fa fa-magnifying-glass-plus custom-trash-padding"></i></a>--}}

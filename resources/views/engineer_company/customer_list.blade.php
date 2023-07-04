@@ -66,9 +66,11 @@
                                                             </button>
                                                         </div>
                                                     </div>
+                                                    @if(activeGuard() == 'admin')
                                                     <a  href="{{route('add_client')}}" class=" btn btn-primary waves-effect waves-light w-sm mt-4">
                                                         {{ __('translation.Add') }}
                                                     </a>
+                                                    @endif
                                                 </div>
                                             </div>
 

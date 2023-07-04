@@ -104,7 +104,7 @@
                                             </div>
                                             <div class="button_section">
                                                 <div class="row">
-                                                    <div class="col-lg-2 col-md-4 col-sm-6 mt-2">
+                                                    {{-- <div class="col-lg-2 col-md-4 col-sm-6 mt-2">
                                                         <button
                                                             onclick="window.location.href= '{{route('ec.CreateBuildingInfo',$customer->user_uid)}}'"
                                                             class="searchbar_img border-0 w-100">
@@ -114,8 +114,8 @@
                                                                 {{ __('translation.Create Customer Info') }}
                                                             </p>
                                                         </button>
-                                                    </div>
-                                                    <div class="col-lg-2 col-md-4 col-sm-6 mt-2">
+                                                    </div> --}}
+                                                    <div class="col-lg-3 col-md-4 col-sm-6 mt-2">
                                                         @if(count($customer->DispatchInformation) > 0)
                                                             <button
                                                                 onclick="window.location.href= '{{route('ec.ListDispatchInformation',$customer->user_uid)}}'"
@@ -138,7 +138,7 @@
                                                             </button>
                                                         @endif
                                                     </div>
-                                                    <div class="col-lg-2 col-md-4 col-sm-6 mt-2">
+                                                    <div class="col-lg-3 col-md-4 col-sm-6 mt-2">
                                                         <button
                                                             onclick="window.location.href= '{{route('regular_inspection_log',$customer->user_uid)}}'"
                                                             class="searchbar_img border-0 w-100">
@@ -149,7 +149,7 @@
                                                             </p>
                                                         </button>
                                                     </div>
-                                                    <div class="col-lg-2 col-md-4 col-sm-6 mt-2">
+                                                    <div class="col-lg-3 col-md-4 col-sm-6 mt-2">
                                                         <button
                                                             onclick="window.location.href= '{{route('contract_management_list',$customer->id)}}'"
                                                             class="searchbar_img border-0 w-100">
@@ -160,7 +160,7 @@
                                                             </p>
                                                         </button>
                                                     </div>
-                                                    <div class="col-lg-2 col-md-4 col-sm-6 mt-2">
+                                                    <div class="col-lg-3 col-md-4 col-sm-6 mt-2">
                                                         <button
                                                             onclick="window.location.href= '{{route('ec.GetQuoteManagement',$customer->user_uid)}}'"
                                                             class="searchbar_img border-0 w-100">
@@ -171,10 +171,10 @@
                                                             </p>
                                                         </button>
                                                     </div>
-                                                    <div class="col-lg-2 col-md-4 col-sm-6 mt-2">
+                                                    <div class="col-lg-3 col-md-4 col-sm-6 mt-2">
                                                         <button
                                                             onclick="window.location.href= '{{route('create_construction_completion',$customer->user_uid)}}'"
-                                                            class="searchbar_img border-0  w-100">
+                                                            class="searchbar_img border-0  w-100 px-3">
                                                             <img style="height: 50px;width: 50px;"
                                                                 src="{{asset('engineer_company/assets/images/3.png')}}">
                                                             <p class="searchbar_text mt-3">

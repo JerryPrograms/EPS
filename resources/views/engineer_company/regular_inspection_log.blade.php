@@ -15,10 +15,14 @@
                                     <div
                                         class="card-title mb-4 d-flex align-items-center justify-content-between mobile-flex-column">
                                         <h5 class="mb-0">{{ __('translation.Regular inspection logs') }}</h5>
-                                        @if (!empty($customer->BuildingInformation))
-                                            <a href="{{ route('write_regular_inspection_log', $customer->user_uid) }}"
-                                               class="btn btn-primary">{{ __('translation.Add Inspection') }}</a>
-                                        @endif
+                                        <div class="d-flex align-items-center gap-2">
+                                            <a href="{{ route('ec.GetCustomerInfoDashboard',request()->segment(3)) }}"
+                                                class="btn btn-dark">{{ __('translation.Menu') }}</a>
+                                            @if (!empty($customer->BuildingInformation))
+                                                <a href="{{ route('write_regular_inspection_log', $customer->user_uid) }}"
+                                                class="btn btn-primary">{{ __('translation.Add Inspection') }}</a>
+                                            @endif
+                                        </div>
                                     </div>
                                     @if (!empty($customer->BuildingInformation))
                                         <div class="table-responsive data-set-list">
