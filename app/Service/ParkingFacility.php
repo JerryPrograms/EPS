@@ -18,8 +18,6 @@ class ParkingFacility
 
         try {
 
-            dd($request->all());
-
             DB::beginTransaction();
 
             $parking_facility = array();
