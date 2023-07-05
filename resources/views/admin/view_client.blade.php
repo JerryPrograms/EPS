@@ -355,7 +355,7 @@
                                                                                                 class="format-number form-control w-100   custom_input"
                                                                                                 aria-describedby="emailHelp"
                                                                                                 value="{{$data->fax}}"
-                                                                                                placeholder="02-4347-4893" readonly>
+                                                                                                placeholder="{{ __('translation.02-4347-4893') }}" readonly>
                                                             </div>
                                                         </div>
 

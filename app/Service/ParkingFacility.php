@@ -18,6 +18,8 @@ class ParkingFacility
 
         try {
 
+            dd($request->all());
+
             DB::beginTransaction();
 
             $parking_facility = array();
@@ -33,36 +35,39 @@ class ParkingFacility
 
             if ($request->has('p_id')) {
                 $as_information = ParkingFacilityCertificate::where('id', $request->p_id)->update($parking_facility);
-                for ($i = 0; $i < 3; $i++) {
-                    $parking_certificate = array();
-                    $parking_certificate['customer_id'] = $request->customer_id;
-                    $parking_certificate['inspection_type'] = $request->inspection_type[$i];
-                    $parking_certificate['manager_name'] = $request->manager_name[$i];
-                    $parking_certificate['installation_place'] = $request->installation_place[$i];
-                    $parking_certificate['inspection_period_from'] = $request->inspection_period_from[$i];
-                    $parking_certificate['inspection_period_to'] = $request->inspection_period_to[$i];
-                    if (isset($request->inspection_certificate[$i])) {
-                        $parking_certificate['inspection_certificate'] = saveFiles('', 'engineer_company/parking/certificates', $request->inspection_certificate[$i]);
+                if(!empty($request->inspection_type[0]) && !empty($request->manager_name[0]) && !empty($request->installation_place[0]) && !empty($request->inspection_period_from[0]) && !empty($request->inspection_period_to[0])){
+                    for ($i = 0; $i < 3; $i++) {
+                        $parking_certificate = array();
+                        $parking_certificate['customer_id'] = $request->customer_id;
+                        $parking_certificate['inspection_type'] = $request->inspection_type[$i];
+                        $parking_certificate['manager_name'] = $request->manager_name[$i];
+                        $parking_certificate['installation_place'] = $request->installation_place[$i];
+                        $parking_certificate['inspection_period_from'] = $request->inspection_period_from[$i];
+                        $parking_certificate['inspection_period_to'] = $request->inspection_period_to[$i];
+                        if (isset($request->inspection_certificate[$i])) {
+                            $parking_certificate['inspection_certificate'] = saveFiles('', 'engineer_company/parking/certificates', $request->inspection_certificate[$i]);
+                        }
+                        $company_information = InspectionCertificate::where('id', $request->pc_id[$i])->update($parking_certificate);
                     }
-                    $company_information = InspectionCertificate::where('id', $request->pc_id[$i])->update($parking_certificate);
-                }
+                }      
             } else {
 
                 $as_information = ParkingFacilityCertificate::create($parking_facility);
-                for ($i = 0; $i < 3; $i++) {
-                    $parking_certificate = array();
-                    $parking_certificate['customer_id'] = $request->customer_id;
-                    $parking_certificate['inspection_type'] = $request->inspection_type[$i];
-                    $parking_certificate['manager_name'] = $request->manager_name[$i];
-                    $parking_certificate['installation_place'] = $request->installation_place[$i];
-                    $parking_certificate['inspection_period_from'] = $request->inspection_period_from[$i];
-                    $parking_certificate['inspection_period_to'] = $request->inspection_period_to[$i];
-                    if (isset($request->inspection_certificate[$i])) {
-                        $parking_certificate['inspection_certificate'] = saveFiles('', 'engineer_company/parking/certificates', $request->inspection_certificate[$i]);
+                if(!empty($request->inspection_type[0]) && !empty($request->manager_name[0]) && !empty($request->installation_place[0]) && !empty($request->inspection_period_from[0]) && !empty($request->inspection_period_to[0])){
+                    for ($i = 0; $i < 3; $i++) {
+                        $parking_certificate = array();
+                        $parking_certificate['customer_id'] = $request->customer_id;
+                        $parking_certificate['inspection_type'] = $request->inspection_type[$i];
+                        $parking_certificate['manager_name'] = $request->manager_name[$i];
+                        $parking_certificate['installation_place'] = $request->installation_place[$i];
+                        $parking_certificate['inspection_period_from'] = $request->inspection_period_from[$i];
+                        $parking_certificate['inspection_period_to'] = $request->inspection_period_to[$i];
+                        if (isset($request->inspection_certificate[$i])) {
+                            $parking_certificate['inspection_certificate'] = saveFiles('', 'engineer_company/parking/certificates', $request->inspection_certificate[$i]);
+                        }
+                        $company_information = InspectionCertificate::create($parking_certificate);
                     }
-                    $company_information = InspectionCertificate::create($parking_certificate);
                 }
-
             }
             DB::commit();
             return json_encode([

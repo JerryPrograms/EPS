@@ -390,7 +390,6 @@
                                                         <input id="2adsdas" type="text" name="manager_name[]"
                                                                class="form-control col-lg-2 custom_input_tble_4"
                                                                placeholder="{{ __('translation.Manager Name') }}"
-                                                               required
                                                                @if (count($customer->InspectionCertificate) > 0) value="{{ $customer->InspectionCertificate[0]->manager_name }}" @endif>
                                                     </td>
                                                     <td class="custom_br_rd">
@@ -398,7 +397,6 @@
                                                                name="installation_place[]"
                                                                class="form-control col-lg-2 custom_input_tble_3"
                                                                placeholder="{{ __('translation.Enter Place') }}"
-                                                               required
                                                                @if (count($customer->InspectionCertificate) > 0) value="{{ $customer->InspectionCertificate[0]->installation_place }}" @endif>
                                                     </td>
                                                     <td class="custom_br_rd">
@@ -409,7 +407,7 @@
                                                                        style="width: 147px !important;"
                                                                        class="form-control col-lg-2 custom_input_tble_2 w-50"
                                                                        placeholder="{{ __('translation.From December 5, 2020 to August') }}"
-                                                                       onchange="RestrictNextDate($(this))" required
+                                                                       onchange="RestrictNextDate($(this))"
                                                                        @if (count($customer->InspectionCertificate) > 0) value="{{ $customer->InspectionCertificate[0]->inspection_period_from }}" @endif>
                                                             </div>
                                                             <div>
@@ -418,7 +416,6 @@
                                                                        style="width: 147px !important;"
                                                                        class="form-control col-lg-2 custom_input_tble_2 w-50"
                                                                        placeholder="{{ __('translation.Regular Inspection inspection') }}"
-                                                                       required
                                                                        @if (count($customer->InspectionCertificate) > 0) value="{{ $customer->InspectionCertificate[0]->inspection_period_to }}" @endif>
                                                             </div>
                                                         </div>
@@ -468,7 +465,6 @@
                                                         <input id="asdqwqwc" type="text" name="manager_name[]"
                                                                class="form-control col-lg-2 custom_input_tble_4"
                                                                placeholder="{{ __('translation.Manager Name') }}"
-                                                               required
                                                                @if (count($customer->InspectionCertificate) > 0) value="{{ $customer->InspectionCertificate[1]->manager_name }}" @endif>
 
                                                     </td>
@@ -477,7 +473,6 @@
                                                                name="installation_place[]"
                                                                class="form-control col-lg-2 custom_input_tble_3"
                                                                placeholder="{{ __('translation.Enter Place') }}"
-                                                               required
                                                                @if (count($customer->InspectionCertificate) > 0) value="{{ $customer->InspectionCertificate[1]->installation_place }}" @endif>
                                                     </td>
                                                     <td class="custom_br_rd">
@@ -488,7 +483,7 @@
                                                                        style="width: 147px !important;"
                                                                        class="form-control col-lg-2 custom_input_tble_2 w-50"
                                                                        placeholder="{{ __('translation.From December 5, 2020 to August') }}"
-                                                                       required onchange="RestrictNextDate($(this))"
+                                                                        onchange="RestrictNextDate($(this))"
                                                                        @if (count($customer->InspectionCertificate) > 0) value="{{ $customer->InspectionCertificate[1]->inspection_period_from }}" @endif>
                                                             </div>
                                                             <div>
@@ -497,7 +492,7 @@
                                                                        style="width: 147px !important;"
                                                                        class="form-control col-lg-2 custom_input_tble_2 w-50"
                                                                        placeholder="{{ __('translation.From December 5, 2020 to August') }}"
-                                                                       required
+                                                                       
                                                                        @if (count($customer->InspectionCertificate) > 0) value="{{ $customer->InspectionCertificate[1]->inspection_period_to }}" @endif>
                                                             </div>
                                                         </div>
@@ -549,7 +544,7 @@
                                                         <input id="ffrtyhjh" type="text" name="manager_name[]"
                                                                class="form-control col-lg-2 custom_input_tble_4"
                                                                placeholder="{{ __('translation.Manager Name') }}"
-                                                               required
+                                                               
                                                                @if (count($customer->InspectionCertificate) > 0) value="{{ $customer->InspectionCertificate[2]->manager_name }}" @endif>
                                                     </td>
                                                     <td class="custom_br_rd">
@@ -557,7 +552,7 @@
                                                                name="installation_place[]"
                                                                class="form-control col-lg-2 custom_input_tble_3"
                                                                placeholder="{{ __('translation.Enter Place') }}"
-                                                               required
+                                                               
                                                                @if (count($customer->InspectionCertificate) > 0) value="{{ $customer->InspectionCertificate[2]->installation_place }}" @endif>
                                                     </td>
                                                     <td class="custom_br_rd">
@@ -569,7 +564,7 @@
                                                                        style="width: 147px !important;"
                                                                        class="form-control col-lg-2 custom_input_tble_2 w-50"
                                                                        placeholder="{{ __('translation.From December 5, 2020 to August') }}"
-                                                                       required onchange="RestrictNextDate($(this))"
+                                                                        onchange="RestrictNextDate($(this))"
                                                                        @if (count($customer->InspectionCertificate) > 0) value="{{ $customer->InspectionCertificate[2]->inspection_period_from }}" @endif>
                                                             </div>
                                                             <div class="">
@@ -578,7 +573,7 @@
                                                                        style="width: 147px !important;"
                                                                        class="form-control col-lg-2 custom_input_tble_2 w-50"
                                                                        placeholder="{{ __('translation.From December 5, 2020 to August') }}"
-                                                                       required
+                                                                       
                                                                        @if (count($customer->InspectionCertificate) > 0) value="{{ $customer->InspectionCertificate[2]->inspection_period_to }}" @endif>
                                                             </div>
                                                         </div>

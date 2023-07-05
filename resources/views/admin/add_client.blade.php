@@ -223,6 +223,7 @@
                                                                     </div>
                                                                     <div class="col-5">
                                                                         <input type="text"
+                                                                            id="ssn"
                                                                                name="company_registration_number"
                                                                                class="form-control w-100 custom_input"
                                                                                aria-describedby="emailHelp"
@@ -449,5 +450,43 @@
             }
         });
         @endif
+
+        const ssnInput = document.getElementById('ssn');
+
+        ssnInput.addEventListener('input', formatSSN);
+
+        function formatSSN() {
+        let value = ssnInput.value.replace(/[^0-9]/g, '');
+        let formattedValue = '';
+
+        if (value.length > 9) {
+            value = value.slice(0, 9);
+        }
+
+        if (value.length > 5) {
+            formattedValue += value.substr(0, 3) + '-';
+            formattedValue += value.substr(3, 2) + '-';
+            formattedValue += value.substr(5);
+        } else if (value.length > 3) {
+            formattedValue += value.substr(0, 3) + '-';
+            formattedValue += value.substr(3);
+        } else {
+            formattedValue += value;
+        }
+
+        ssnInput.value = formattedValue;
+        }
+
+        ssnInput.addEventListener('keydown', function(event) {
+        if (event.key === 'Backspace') {
+            const formattedValue = ssnInput.value.replace(/[^0-9]/g, '');
+
+            if (formattedValue.length <= 1) {
+            ssnInput.value = '';
+            } else {
+            ssnInput.value = formattedValue.substr(0, formattedValue.length - 1);
+            }
+        }
+        });
     </script>
 @endsection
