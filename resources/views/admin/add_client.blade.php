@@ -459,8 +459,8 @@
         let value = ssnInput.value.replace(/[^0-9]/g, '');
         let formattedValue = '';
 
-        if (value.length > 9) {
-            value = value.slice(0, 9);
+        if (value.length > 10) {
+            value = value.slice(0, 10);
         }
 
         if (value.length > 5) {
