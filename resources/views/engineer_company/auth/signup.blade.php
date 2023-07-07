@@ -38,7 +38,7 @@
                     <div class="col-lg-3">
                         <div class="p-2">
                             <img src="{{ asset('engineer_company/images/logo.png') }}" alt="image"
-                                height="40">
+                                height="50">
                         </div>
                     </div>
                 </div>
