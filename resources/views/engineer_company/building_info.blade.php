@@ -316,227 +316,6 @@
                                                     </div>
                                                 </div>
                                                 <!-- form row 1 end  -->
-                                                <!-- form row 2 start  -->
-                                                <div class="custom_padding_form pt-3">
-                                                    <div class="row mt-5">
-                                                        <div class="col-lg-12">
-                                                            <h4 class="card-title border-bottom-0 mb-4"> <span
-                                                                    class="bor_lef">&nbsp;</span>
-                                                                2. {{ __('translation.Building management company information') }}
-                                                            </h4>
-                                                        </div>
-
-                                                        @if(activeGuard() == 'admin')
-                                                            <div class="row align-items-center mb-3">
-                                                                <div class="col-lg-4 col-12">
-                                                                    <label
-                                                                        class="form-label custom_lab mb-0"> <span
-                                                                            class="star_section">*</span>
-                                                                        {{__('translation.Building Management Company')}}
-                                                                    </label>
-                                                                </div>
-                                                                <div class="col-lg-8 col-12">
-                                                                    @if(empty($customer->engineer_company_id) || empty($customer->EngineerCompany))
-                                                                        <select class="form-select"
-                                                                                onchange="GetData($(this).val())"
-                                                                                name="engineer_company_id"
-                                                                                autocomplete="off" required="">
-                                                                            <option selected="" value="" disabled="">
-                                                                                {{__('translation.Building Management Company')}}
-                                                                            </option>
-                                                                            @foreach($company as $building)
-                                                                                <option
-                                                                                    {{$customer->engineer_company_id == $building->id ? 'selected' : ''}}
-                                                                                    value="{{$building->id}}">
-                                                                                    {{$building->company_registration_number}}
-                                                                                </option>
-                                                                            @endforeach
-                                                                        </select>
-                                                                    @else
-                                                                        <input type="text"
-                                                                               class="form-control w-100 custom_input"
-                                                                               aria-describedby="emailHelp"
-                                                                               placeholder="{{ __('translation.Enter company name') }}"
-                                                                               required
-                                                                               disabled
-                                                                               value="{{$customer->EngineerCompany->company_name}}">
-
-                                                                    @endif
-                                                                </div>
-                                                            </div>
-                                                        @else
-                                                            <input name="engineer_company_id"
-                                                                   value="{{auth(activeGuard())->id()}}" hidden="">
-                                                        @endif
-
-
-                                                        <div class="row align-items-center">
-                                                            <div class="col-lg-4 col-12"><label
-                                                                    class="form-label custom_lab mb-0"> <span
-                                                                        class="star_section">*</span>
-                                                                    {{ __('translation.Company Name') }}
-                                                                </label></div>
-                                                            <div class="col-lg-8 col-12"><input type="text"
-                                                                                                name="b_company_name"
-                                                                                                class="form-control w-100 custom_input"
-                                                                                                aria-describedby="emailHelp"
-                                                                                                placeholder="{{ __('translation.Enter company name') }}"
-                                                                                                required
-                                                                                                @if(!empty($customer->CompanyInformation))  value="{{$customer->CompanyInformation->company_name}}"
-                                                                    @endif
-                                                                ></div>
-                                                        </div>
-
-                                                        <div class="row align-items-center mt-4">
-                                                            <div class="col-lg-4 col-12"><label
-                                                                    class="form-label custom_lab mb-0"> <span
-                                                                        class="star_section">*</span>
-                                                                    {{ __('translation.Ceo Name') }}
-                                                                </label>
-                                                            </div>
-                                                            <div class="col-lg-8 col-12">
-                                                                <input type="text" name="b_ceo_name"
-                                                                       class="form-control w-100 custom_input"
-                                                                       aria-describedby="emailHelp"
-                                                                       placeholder="{{ __('translation.Enter ceo name') }}"
-                                                                       required
-                                                                       @if(!empty($customer->CompanyInformation))  value="{{$customer->CompanyInformation->ceo_name}}"
-                                                                    @endif>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="row align-items-center mt-4">
-                                                            <div class="col-lg-4 col-12">
-                                                                <label
-                                                                    class="form-label custom_lab mb-0"> <span
-                                                                        class="star_section">*</span>
-                                                                    {{ __('translation.Company Registration Number') }}
-                                                                </label></div>
-
-                                                            <div class="col-lg-8 col-12">
-                                                                <input type="text" name="b_company_reg_number"
-                                                                       class="form-control w-100 custom_input_2"
-                                                                       aria-describedby="emailHelp"
-                                                                       placeholder="{{ __('translation.Enter registration number') }}"
-                                                                       required
-                                                                       @if(!empty($customer->CompanyInformation))  value="{{$customer->CompanyInformation->company_reg_number}}"
-                                                                    @endif>
-                                                            </div>
-
-
-                                                        </div>
-
-
-                                                        <div class="row align-items-center mt-4">
-                                                            <div class="col-lg-4 col-12"><label
-                                                                    class="form-label custom_lab mb-0"> <span
-                                                                        class="star_section">*</span>
-                                                                    {{ __('translation.address') }}
-                                                                </label></div>
-                                                            <div class="col-lg-8 col-12">
-                                                                <input type="text" name="b_ci_address"
-                                                                       class="form-control w-100 custom_input"
-                                                                       aria-describedby="emailHelp"
-                                                                       placeholder="{{ __('translation.Enter address') }}"
-                                                                       required
-                                                                       @if(!empty($customer->CompanyInformation))  value="{{$customer->CompanyInformation->address}}"
-                                                                    @endif>
-                                                            </div>
-                                                        </div>
-
-
-                                                        <div class="row align-items-center mt-4">
-                                                            <div class="col-lg-4 col-12"><label
-                                                                    class="form-label custom_lab mb-0"> <span
-                                                                        class="star_section">*</span>
-                                                                    {{ __('translation.business') }}
-                                                                </label></div>
-                                                            <div class="col-lg-8 col-12"><input type="text"
-                                                                                                name="b_industry_category"
-                                                                                                class="form-control w-100   custom_input"
-                                                                                                aria-describedby="emailHelp"
-                                                                                                placeholder="{{ __('translation.Please enter your business type') }}"
-                                                                                                required
-                                                                                                @if(!empty($customer->CompanyInformation))  value="{{$customer->CompanyInformation->industry_category}}"
-                                                                    @endif></div>
-                                                        </div>
-
-                                                        <div class="row align-items-center mt-4">
-                                                            <div class="col-lg-4 col-12"><label
-                                                                    class="form-label custom_lab mb-0"> <span
-                                                                        class="star_section">*</span>
-                                                                    {{ __('translation.Sector') }}
-                                                                </label></div>
-                                                            <div class="col-lg-8 col-12"><input type="text"
-                                                                                                required
-                                                                                                name="b_ci_sectors"
-
-                                                                                                class="format-number form-control w-100   custom_input"
-                                                                                                aria-describedby="emailHelp"
-                                                                                                placeholder="{{__('translation.Please enter your industry')}}"
-                                                                                                @if(!empty($customer->CompanyInformation) && !empty($customer->CompanyInformation->b_ci_sectors))  value="{{$customer->CompanyInformation->b_ci_sectors}}"
-                                                                    @endif></div>
-                                                        </div>
-
-                                                        <div class="row align-items-center mt-4">
-                                                            <div class="col-lg-4 col-12"><label
-                                                                    class="form-label custom_lab mb-0"> <span
-                                                                        class="star_section">*</span>
-                                                                    {{ __('translation.contact 1, 2') }}
-                                                                </label></div>
-                                                            <div class="col-lg-8 col-12"><input type="text"
-                                                                                                name="b_ci_contacts"
-                                                                                                class="form-control w-100   custom_input"
-                                                                                                aria-describedby="emailHelp"
-                                                                                                placeholder="{{ __('translation.Please enter your contact information') }}"
-                                                                                                @if(!empty($customer->CompanyInformation))  value="{{$customer->CompanyInformation->contacts}}"
-                                                                                                @endif
-                                                                                                required
-                                                                ></div>
-                                                        </div>
-
-
-                                                        <div class="row align-items-center mt-4">
-                                                            <div class="col-lg-4 col-12"><label
-                                                                    class="form-label custom_lab mb-0"> <span
-                                                                        class="star_section">*</span>
-                                                                    {{ __('translation.fax') }}
-                                                                </label></div>
-                                                            <div class="col-lg-8 col-12"><input type="text"
-                                                                                                required
-                                                                                                name="b_ci_fax"
-
-                                                                                                class="format-number form-control w-100   custom_input"
-                                                                                                aria-describedby="emailHelp"
-                                                                                                placeholder="02-4347-4893"
-                                                                                                @if(!empty($customer->CompanyInformation) && !empty($customer->CompanyInformation->fax))  value="{{$customer->CompanyInformation->fax}}"
-                                                                    @endif></div>
-                                                        </div>
-
-
-                                                        <div class="row align-items-center mt-4">
-                                                            <div class="col-lg-4 col-12"><label
-                                                                    class="form-label custom_lab mb-0"> <span
-                                                                        class="star_section">*</span>
-                                                                    {{ __('translation.Email') }}
-                                                                </label></div>
-                                                            <div class="col-lg-8 col-12"><input type="text"
-                                                                                                required
-                                                                                                id="c_email"
-                                                                                                name="c_email"
-                                                                                                class="format-number form-control w-100   custom_input"
-                                                                                                aria-describedby="emailHelp"
-                                                                                                @if(!empty($customer->CompanyInformation) && !empty($customer->CompanyInformation->email))  value="{{$customer->CompanyInformation->email}}"
-                                                                                                @endif
-                                                                                                placeholder="이메일주소를 입력해주세요"/>
-                                                            </div>
-                                                        </div>
-
-
-                                                    </div>
-
-
-                                                </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <!-- form row 1 start  -->
@@ -698,7 +477,233 @@
                                                     </div>
                                                 </div>
                                                 <!-- form row 1 end  -->
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <!-- form row 2 start  -->
+                                                <div class="custom_padding_form">
+                                                    <div class="row mt-5">
+                                                        <div class="col-lg-12">
+                                                            <h4 class="card-title border-bottom-0 mb-4"> <span
+                                                                    class="bor_lef">&nbsp;</span>
+                                                                2. {{ __('translation.Building management company information') }}
+                                                            </h4>
+                                                        </div>
 
+                                                        @if(activeGuard() == 'admin')
+                                                            <div class="row align-items-center mb-3">
+                                                                <div class="col-lg-4 col-12">
+                                                                    <label
+                                                                        class="form-label custom_lab mb-0"> <span
+                                                                            class="star_section">*</span>
+                                                                        {{__('translation.Building Management Company')}}
+                                                                    </label>
+                                                                </div>
+                                                                <div class="col-lg-8 col-12">
+                                                                    @if(empty($customer->engineer_company_id) || empty($customer->EngineerCompany))
+                                                                        <select class="form-select"
+                                                                                onchange="GetData($(this).val())"
+                                                                                name="engineer_company_id"
+                                                                                autocomplete="off" required="">
+                                                                            <option selected="" value="" disabled="">
+                                                                                {{__('translation.Building Management Company')}}
+                                                                            </option>
+                                                                            @foreach($company as $building)
+                                                                                <option
+                                                                                    {{$customer->engineer_company_id == $building->id ? 'selected' : ''}}
+                                                                                    value="{{$building->id}}">
+                                                                                    {{$building->company_registration_number}}
+                                                                                </option>
+                                                                            @endforeach
+                                                                        </select>
+                                                                    @else
+                                                                        <input type="text"
+                                                                               class="form-control w-100 custom_input"
+                                                                               aria-describedby="emailHelp"
+                                                                               placeholder="{{ __('translation.Enter company name') }}"
+                                                                               required
+                                                                               disabled
+                                                                               value="{{$customer->EngineerCompany->company_name}}">
+
+                                                                    @endif
+                                                                </div>
+                                                            </div>
+                                                        @else
+                                                            <input name="engineer_company_id"
+                                                                   value="{{auth(activeGuard())->id()}}" hidden="">
+                                                        @endif
+
+
+                                                        <div class="row align-items-center">
+                                                            <div class="col-lg-4 col-12"><label
+                                                                    class="form-label custom_lab mb-0"> <span
+                                                                        class="star_section">*</span>
+                                                                    {{ __('translation.Company') }}
+                                                                </label></div>
+                                                            <div class="col-lg-8 col-12"><input type="text"
+                                                                                                name="b_company_name"
+                                                                                                class="form-control w-100 custom_input"
+                                                                                                aria-describedby="emailHelp"
+                                                                                                placeholder="{{ __('translation.Please enter your company name') }}"
+                                                                                                required
+                                                                                                @if(!empty($customer->CompanyInformation))  value="{{$customer->CompanyInformation->company_name}}"
+                                                                    @endif
+                                                                ></div>
+                                                        </div>
+
+                                                        <div class="row align-items-center mt-4">
+                                                            <div class="col-lg-4 col-12"><label
+                                                                    class="form-label custom_lab mb-0"> <span
+                                                                        class="star_section">*</span>
+                                                                    {{ __('translation.Ceo Name') }}
+                                                                </label>
+                                                            </div>
+                                                            <div class="col-lg-8 col-12">
+                                                                <input type="text" name="b_ceo_name"
+                                                                       class="form-control w-100 custom_input"
+                                                                       aria-describedby="emailHelp"
+                                                                       placeholder="{{ __('translation.Enter ceo name') }}"
+                                                                       required
+                                                                       @if(!empty($customer->CompanyInformation))  value="{{$customer->CompanyInformation->ceo_name}}"
+                                                                    @endif>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row align-items-center mt-4">
+                                                            <div class="col-lg-4 col-12">
+                                                                <label
+                                                                    class="form-label custom_lab mb-0"> <span
+                                                                        class="star_section">*</span>
+                                                                    {{ __('translation.Company Registration Number') }}
+                                                                </label></div>
+
+                                                            <div class="col-lg-8 col-12">
+                                                                <input type="text" name="b_company_reg_number"
+                                                                       class="form-control w-100 custom_input_2"
+                                                                       aria-describedby="emailHelp"
+                                                                       placeholder="{{ __('translation.Enter registration number') }}"
+                                                                       required
+                                                                       @if(!empty($customer->CompanyInformation))  value="{{$customer->CompanyInformation->company_reg_number}}"
+                                                                    @endif>
+                                                            </div>
+
+
+                                                        </div>
+
+
+                                                        <div class="row align-items-center mt-4">
+                                                            <div class="col-lg-4 col-12"><label
+                                                                    class="form-label custom_lab mb-0"> <span
+                                                                        class="star_section">*</span>
+                                                                    {{ __('translation.address') }}
+                                                                </label></div>
+                                                            <div class="col-lg-8 col-12">
+                                                                <input type="text" name="b_ci_address"
+                                                                       class="form-control w-100 custom_input"
+                                                                       aria-describedby="emailHelp"
+                                                                       placeholder="{{ __('translation.Enter address') }}"
+                                                                       required
+                                                                       @if(!empty($customer->CompanyInformation))  value="{{$customer->CompanyInformation->address}}"
+                                                                    @endif>
+                                                            </div>
+                                                        </div>
+
+
+                                                        <div class="row align-items-center mt-4">
+                                                            <div class="col-lg-4 col-12"><label
+                                                                    class="form-label custom_lab mb-0"> <span
+                                                                        class="star_section">*</span>
+                                                                    {{ __('translation.business') }}
+                                                                </label></div>
+                                                            <div class="col-lg-8 col-12"><input type="text"
+                                                                                                name="b_industry_category"
+                                                                                                class="form-control w-100   custom_input"
+                                                                                                aria-describedby="emailHelp"
+                                                                                                placeholder="{{ __('translation.Please enter your business type') }}"
+                                                                                                required
+                                                                                                @if(!empty($customer->CompanyInformation))  value="{{$customer->CompanyInformation->industry_category}}"
+                                                                    @endif></div>
+                                                        </div>
+
+                                                        <div class="row align-items-center mt-4">
+                                                            <div class="col-lg-4 col-12"><label
+                                                                    class="form-label custom_lab mb-0"> <span
+                                                                        class="star_section">*</span>
+                                                                    {{ __('translation.Sector') }}
+                                                                </label></div>
+                                                            <div class="col-lg-8 col-12"><input type="text"
+                                                                                                required
+                                                                                                name="b_ci_sectors"
+
+                                                                                                class="format-number form-control w-100   custom_input"
+                                                                                                aria-describedby="emailHelp"
+                                                                                                placeholder="{{__('translation.Please enter your industry')}}"
+                                                                                                @if(!empty($customer->CompanyInformation) && !empty($customer->CompanyInformation->b_ci_sectors))  value="{{$customer->CompanyInformation->b_ci_sectors}}"
+                                                                    @endif></div>
+                                                        </div>
+
+                                                        <div class="row align-items-center mt-4">
+                                                            <div class="col-lg-4 col-12"><label
+                                                                    class="form-label custom_lab mb-0"> <span
+                                                                        class="star_section">*</span>
+                                                                    {{ __('translation.contact 1, 2') }}
+                                                                </label></div>
+                                                            <div class="col-lg-8 col-12"><input type="text"
+                                                                                                name="b_ci_contacts"
+                                                                                                class="form-control w-100   custom_input"
+                                                                                                aria-describedby="emailHelp"
+                                                                                                placeholder="{{ __('translation.Please enter your contact information') }}"
+                                                                                                @if(!empty($customer->CompanyInformation))  value="{{$customer->CompanyInformation->contacts}}"
+                                                                                                @endif
+                                                                                                required
+                                                                ></div>
+                                                        </div>
+
+
+                                                        <div class="row align-items-center mt-4">
+                                                            <div class="col-lg-4 col-12"><label
+                                                                    class="form-label custom_lab mb-0"> <span
+                                                                        class="star_section">*</span>
+                                                                    {{ __('translation.fax') }}
+                                                                </label></div>
+                                                            <div class="col-lg-8 col-12"><input type="text"
+                                                                                                required
+                                                                                                name="b_ci_fax"
+
+                                                                                                class="format-number form-control w-100   custom_input"
+                                                                                                aria-describedby="emailHelp"
+                                                                                                placeholder="02-4347-4893"
+                                                                                                @if(!empty($customer->CompanyInformation) && !empty($customer->CompanyInformation->fax))  value="{{$customer->CompanyInformation->fax}}"
+                                                                    @endif></div>
+                                                        </div>
+
+
+                                                        <div class="row align-items-center mt-4">
+                                                            <div class="col-lg-4 col-12"><label
+                                                                    class="form-label custom_lab mb-0"> <span
+                                                                        class="star_section">*</span>
+                                                                    {{ __('translation.Email') }}
+                                                                </label></div>
+                                                            <div class="col-lg-8 col-12"><input type="text"
+                                                                                                required
+                                                                                                id="c_email"
+                                                                                                name="c_email"
+                                                                                                class="format-number form-control w-100   custom_input"
+                                                                                                aria-describedby="emailHelp"
+                                                                                                @if(!empty($customer->CompanyInformation) && !empty($customer->CompanyInformation->email))  value="{{$customer->CompanyInformation->email}}"
+                                                                                                @endif
+                                                                                                placeholder="이메일주소를 입력해주세요"/>
+                                                            </div>
+                                                        </div>
+
+
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
                                                 <!-- form row 2 start  -->
                                                 <div class="custom_padding_form ">
                                                     <div class="row mt-5">
@@ -908,7 +913,6 @@
                                                 </div>
                                                 <!-- form row 2 end  -->
                                             </div>
-
                                         </div>
 
                                         <!-- form row 2 end  -->

@@ -20,7 +20,7 @@ return [
     'fax' => '팩스번호',
     'e-mail' => '이메일주소',
     'Building management company information' => '건물관리회사 정보',
-    'Company Name' => '보수업체',
+    'Company Name' => '업체명',
     'Ceo Name' => '대표자명',
     'Company Registration Number' => '사업자등록번호',
     'Industry Category' => '업종',
@@ -621,5 +621,7 @@ return [
     'Building code' => '건물코드',
     'Company Manager Name' => '보수업체 담당자',
     'Enter company manager name' => '보수업체 담당자를 입력해주세요',
-    'Menu' => '메뉴'
+    'Menu' => '메뉴',
+    'Deleted Successfully' => '성공적으로 삭제되었습니다',
+    'Please enter your company name' => '회사명을 입력해주세요'
 ];

@@ -57,7 +57,7 @@ class BuildingAddressController extends Controller
 
         return json_encode([
             'success' => true,
-            'message' => 'Deleted Successfully',
+            'message' => __('translation.Deleted Successfully'),
         ]);
     }
 

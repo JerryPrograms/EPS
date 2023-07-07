@@ -625,5 +625,7 @@ return [
     'Building code' => 'Building code',
     'Company Manager Name' => 'Company Manager Name',
     'Enter company manager name' => 'Enter company manager name',
-    'Menu' => 'Menu'
+    'Menu' => 'Menu',
+    'Deleted Successfully' => 'Deleted Successfully',
+    'Please enter your company name' => 'Please enter your company name'
 ];
