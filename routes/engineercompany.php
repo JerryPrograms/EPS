@@ -110,6 +110,7 @@ Route::group(['prefix' => 'eps-panel', 'middleware' => 'CommonRoutes'], function
 
     //Route to Create Parking Facility and Parking Facility Certificate Information by engineer company
     Route::post('/create-parking-information-and-parking-certificate-information', [ParkingFacility::class, 'CreateParkingFacilityAndCertificate'])->name('CreateParkingFacilityAndCertificate');
+    Route::post('/create-inspection-confirmation-certificate', [ParkingFacility::class, 'CreateInspectionConfirmationCertificate'])->name('CreateInspectionConfirmationCertificate');
 
     //Route to Create Main Key Accessory Main Part by engineer company
     Route::post('/create-main-key-accessory-information', [KeyAccessoryInformation::class, 'CreateMainKeyAccessoryInformation'])->name('CreateMainKeyAccessoryInformation');

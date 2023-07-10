@@ -3,9 +3,11 @@
 namespace App\Service;
 
 use App\Http\Requests\ParkingAndParkingCertificateRequest;
+use App\Http\Requests\InspectionConfirmationCertificateRequest;
 use App\Models\InspectionCertificate;
 use App\Models\ParkingFacilityCertificate;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 
 
 class ParkingFacility
@@ -32,7 +34,32 @@ class ParkingFacility
 
 
             if ($request->has('p_id')) {
-                $as_information = ParkingFacilityCertificate::where('id', $request->p_id)->update($parking_facility);
+                $as_information = ParkingFacilityCertificate::where('id', $request->p_id)->update($parking_facility);   
+            } else {
+                $as_information = ParkingFacilityCertificate::create($parking_facility);
+            }
+            DB::commit();
+            return json_encode([
+                'success' => true,
+                'message' => __('translation.Information Uploaded Successfully'),
+            ]);
+
+        } catch (\Exception $ex) {
+
+            DB::rollBack();
+
+            return json_encode([
+                'success' => false,
+                'message' => $ex->getMessage(),
+            ]);
+        }
+    }
+    public static function CreateInspectionConfirmationCertificate(InspectionConfirmationCertificateRequest $request){
+        try {
+
+            DB::beginTransaction();
+
+            if ($request->has('pc_id')) {
                 if(!empty($request->inspection_type[0]) && !empty($request->manager_name[0]) && !empty($request->installation_place[0]) && !empty($request->inspection_period_from[0]) && !empty($request->inspection_period_to[0])){
                     for ($i = 0; $i < 3; $i++) {
                         $parking_certificate = array();
@@ -49,8 +76,6 @@ class ParkingFacility
                     }
                 }      
             } else {
-
-                $as_information = ParkingFacilityCertificate::create($parking_facility);
                 if(!empty($request->inspection_type[0]) && !empty($request->manager_name[0]) && !empty($request->installation_place[0]) && !empty($request->inspection_period_from[0]) && !empty($request->inspection_period_to[0])){
                     for ($i = 0; $i < 3; $i++) {
                         $parking_certificate = array();
