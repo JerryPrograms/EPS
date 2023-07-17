@@ -628,5 +628,6 @@ return [
     'Menu' => 'Menu',
     'Deleted Successfully' => 'Deleted Successfully',
     'Please enter your company name' => 'Please enter your company name',
-    'Part history cannot be edited after 3 days' => 'Part history cannot be edited after 3 days'
+    'Part history cannot be edited after 3 days' => 'Part history cannot be edited after 3 days',
+    'Error, Please try again later' => 'Error, Please try again later'
 ];

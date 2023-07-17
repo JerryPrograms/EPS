@@ -491,4 +491,19 @@ class EngineerCompanyController extends Controller
             ]);
         }
     }
+
+    public function DeleteDispatchInformation(Request $request){
+        try {
+            $delRecord = DispatchInformationData::where('id',$request->id)->delete();
+            return json_encode([
+                'success' => true,
+                'message' => __('translation.Record deleted successfully')
+            ]);
+        } catch (\Throwable $th) {
+            return json_encode([
+                'success' => true,
+                'message' => __('translation.Error, Please try again later')
+            ]);
+        }
+    }
 }

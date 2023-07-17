@@ -190,6 +190,11 @@
                                                                                  src="{{asset('engineer_company/assets/images/red-search.png')}}">
                                                                         </button>
 
+                                                                        <button id="delDispatchInfoBtn" data-bs-target="#deleteDispatchInformation" data-id="{{ $dispatch->id }}" data-bs-toggle="modal" class="aroow_button_2">
+                                                                            <img style="width: 20px;"
+                                                                                 src="{{asset('engineer_company/assets/images/del-icon.png')}}">
+                                                                        </button>
+
                                                                         <div class="bluebar_img_section"></div>
                                                                     </div>
                                                                 </td>
@@ -223,4 +228,64 @@
             <!-- End Page-content -->
         </div>
     </div>
+@endsection
+
+@section('modal')
+<div id="deleteDispatchInformation" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel1"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="myModalLabel">
+
+                        {{ __('translation.Delete Parts history Replacement') }}
+
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+
+                <form id="deleteDispatchInformationForm">
+                    @csrf
+                    <div class="modal-body">
+                        <div class="col-12">
+                            <div class="prompt w-100"></div>
+                            <p>
+
+                                {{ __('translation.Are you sure you want to delete this data?') }}
+
+                            </p>
+                            <div class="mb-3">
+
+                                <input name="id" id="dispatchInfoID" hidden>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary waves-effect"
+                                    data-bs-dismiss="modal">
+                                {{ __('translation.close') }}
+                            </button>
+                            <button type="submit"
+                                    class="btn btn-primary waves-effect waves-light submitbtn">
+                                {{ __('translation.delete') }}
+                            </button>
+                        </div>
+
+                    </div><!-- /.modal-content -->
+                </form>
+            </div><!-- /.modal-dialog -->
+        </div>
+    </div>
+@endsection
+
+@section('custom-script')
+<script>
+    $('#delDispatchInfoBtn').on('click',function(){
+        $('#dispatchInfoID').val($(this).attr('data-id'));
+    });
+    $('#deleteDispatchInformationForm').on('submit',function(e) {
+        e.preventDefault();
+        ajaxCall($('#deleteDispatchInformationForm'), "{{ route('DeleteDispatchInformation') }}", $('#deleteDispatchInformationForm').find('.submitbtn'), "{{ route('ec.ListDispatchInformation',request()->segment(3)) }}", onRequestSuccess);
+    });
+</script>
 @endsection
