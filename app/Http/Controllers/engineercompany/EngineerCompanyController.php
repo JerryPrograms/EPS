@@ -472,6 +472,13 @@ class EngineerCompanyController extends Controller
     public function EditPartsReplacement(Request $request)
     {
         try {
+            $get_data = PartReplacementHistoryModel::where('id', $request->id)->first();
+            if($get_data->age > 3){
+                return json_encode([
+                    'success' => false,
+                    'message' => __('translation.Part history cannot be edited after 3 days'),
+                ]);
+            }
             PartReplacementHistoryModel::where('id', $request->id)->update($request->except(['_token', 'id']));
             return json_encode([
                 'success' => true,

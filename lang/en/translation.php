@@ -627,5 +627,6 @@ return [
     'Enter company manager name' => 'Enter company manager name',
     'Menu' => 'Menu',
     'Deleted Successfully' => 'Deleted Successfully',
-    'Please enter your company name' => 'Please enter your company name'
+    'Please enter your company name' => 'Please enter your company name',
+    'Part history cannot be edited after 3 days' => 'Part history cannot be edited after 3 days'
 ];

@@ -19,5 +19,9 @@ class PartReplacementHistoryModel extends Model
     {
         return $this->hasOne(KeyAccessoryInformation::class,'id','sub_part');
     }
+    public function getAgeAttribute()
+    {
+        return $this->created_at->diffInDays(now());
+    }
 
 }

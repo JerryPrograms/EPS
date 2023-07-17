@@ -623,5 +623,6 @@ return [
     'Enter company manager name' => '보수업체 담당자를 입력해주세요',
     'Menu' => '메뉴',
     'Deleted Successfully' => '성공적으로 삭제되었습니다',
-    'Please enter your company name' => '회사명을 입력해주세요'
+    'Please enter your company name' => '회사명을 입력해주세요',
+    'Part history cannot be edited after 3 days' => '부품 이력은 3일이 지나면 편집할 수 없습니다'
 ];
