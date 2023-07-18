@@ -625,5 +625,6 @@ return [
     'Deleted Successfully' => '성공적으로 삭제되었습니다',
     'Please enter your company name' => '회사명을 입력해주세요',
     'Part history cannot be edited after 3 days' => '부품 이력은 3일이 지나면 편집할 수 없습니다',
-    'Error, Please try again later' => '오류입니다. 나중에 다시 시도해 주세요.'
+    'Error, Please try again later' => '오류입니다. 나중에 다시 시도해 주세요.',
+    'Max file size is 5mb' => '최대 파일 크기는 5MB입니다'
 ];

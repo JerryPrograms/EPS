@@ -1602,3 +1602,7 @@ table.table-inspection .inspection-grade {
 .dropdown-menu.show {
     left: -64px !important;
 }
+
+.daterangepicker .calendar-table th{
+    color: #ffffff !important;
+}

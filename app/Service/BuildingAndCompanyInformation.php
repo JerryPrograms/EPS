@@ -83,12 +83,14 @@ class BuildingAndCompanyInformation
             $as_data['customer_id'] = $request->customer_id;
             $as_data['repair_company_name'] = $request->repair_company_name;
             $as_data['repair_company_manager_name'] = $request->repair_company_manager_name;
-            $as_data['contract_date'] = $request->contract_date;
+            $as_data['contract_date'] = $request->contract_date_from.'to'.$request->contract_date_to;
             $as_data['fee'] = $request->fee;
             $as_data['invoice_issue_date'] = $request->invoice_issue_date;
             $as_data['payment_date'] = $request->payment_date;
             $as_data['payment_method'] = $request->payment_method;
             $as_data['payment_information'] = $request->payment_information;
+
+            dd($as_data);
 
 
             $company_data = array();

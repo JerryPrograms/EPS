@@ -32,7 +32,8 @@ class BuildingAndCompanyRequest extends FormRequest
             'b_industry_category' => 'required',
             'b_ci_contacts' => 'required',
             'repair_company_name' => 'required',
-            'contract_date' => 'required',
+            'contract_date_from' => 'required',
+            'contract_date_to' => 'required',
             'fee' => 'required',
             'invoice_issue_date' => 'required',
             'payment_date' => 'required',
@@ -49,7 +50,8 @@ class BuildingAndCompanyRequest extends FormRequest
     {
         return [
             'repair_company_name' => 'repair company name field is required',
-            'contract_date' => 'contract date field is required',
+            'contract_date_from' => 'contract date field is required',
+            'contract_date_to' => 'contract date field is required',
             'fee' => 'fee field is required',
             'invoice_issue_date' => 'invoice issue date field is required',
             'payment_date' => 'payment date field is required',

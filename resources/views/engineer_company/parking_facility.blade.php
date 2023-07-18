@@ -440,7 +440,7 @@
                                                                     <img
                                                                         src="{{ asset('engineer_company/assets/images/bluebar.png') }}">
                                                                 </button>
-                                                                <p>Max file size is 5mb</p>
+                                                                <p>{{ __('translation.Max file size is 5mb') }}</p>
                                                                 <div class="bluebar_img_section">
                                                                 </div>
                                                             </div>
@@ -516,7 +516,7 @@
                                                                     <img
                                                                         src="{{ asset('engineer_company/assets/images/bluebar.png') }}">
                                                                 </button>
-                                                                <p>Max file size is 5mb</p>
+                                                                <p>{{ __('translation.Max file size is 5mb') }}</p>
                                                                 <div class="bluebar_img_section">
                                                                 </div>
                                                             </div>
@@ -593,7 +593,7 @@
                                                                     <img
                                                                         src="{{ asset('engineer_company/assets/images/bluebar.png') }}">
                                                                 </button>
-                                                                <p>Max File size is 5mb</p>
+                                                                <p>{{ __('translation.Max file size is 5mb') }}</p>
                                                                 <div class="bluebar_img_section">
                                                                 </div>
                                                             </div>
