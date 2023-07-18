@@ -673,7 +673,7 @@
 
                                                                                                 class="format-number form-control w-100   custom_input"
                                                                                                 aria-describedby="emailHelp"
-                                                                                                placeholder="02-4347-4893"
+                                                                                                placeholder="{{__('translation.02-4347-4893')}}"
                                                                                                 @if(!empty($customer->CompanyInformation) && !empty($customer->CompanyInformation->fax))  value="{{$customer->CompanyInformation->fax}}"
                                                                     @endif></div>
                                                         </div>
