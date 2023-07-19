@@ -90,8 +90,6 @@ class BuildingAndCompanyInformation
             $as_data['payment_method'] = $request->payment_method;
             $as_data['payment_information'] = $request->payment_information;
 
-            dd($as_data);
-
 
             $company_data = array();
             $company_data['customer_id'] = $request->customer_id;
