@@ -354,7 +354,7 @@
                                                         <th class="align-middle custom_heading custom_br_rd">
                                                             {{ __('translation.Inspection Classification') }}
                                                         </th>
-                                                        <th class="text-center align-middle custom_heading_2 custom_br_rd">
+                                                        <th class="text-center align-middle custom_heading_2 custom_br_rd" style="min-width:170px;">
                                                             {{ __('translation.Certification Number') }}
                                                         </th>
                                                         <th
@@ -389,7 +389,7 @@
                                                         </td>
                                                         <td class="custom_br_rd">
                                                             <input id="2adsdas" type="text" name="manager_name[]"
-                                                                class="form-control col-lg-2 custom_input_tble_4"
+                                                                class="form-control custom_input_tble_4" style="width: 100% !important;"
                                                                 placeholder="{{ __('translation.Manager Name') }}" required
                                                                 @if (count($customer->InspectionCertificate) > 0) value="{{ $customer->InspectionCertificate[0]->manager_name }}" @endif>
                                                         </td>
@@ -464,7 +464,7 @@
                                                         </td>
                                                         <td class="custom_br_rd">
                                                             <input id="asdqwqwc" type="text" name="manager_name[]"
-                                                                class="form-control col-lg-2 custom_input_tble_4"
+                                                                class="form-control custom_input_tble_4" style="width: 100% !important;"
                                                                 placeholder="{{ __('translation.Manager Name') }}" required
                                                                 @if (count($customer->InspectionCertificate) > 0) value="{{ $customer->InspectionCertificate[1]->manager_name }}" @endif>
 
@@ -541,7 +541,7 @@
                                                         </td>
                                                         <td class="custom_br_rd">
                                                             <input id="ffrtyhjh" type="text" name="manager_name[]"
-                                                                class="form-control col-lg-2 custom_input_tble_4"
+                                                                class="form-control custom_input_tble_4" style="width: 100% !important;"
                                                                 placeholder="{{ __('translation.Manager Name') }}" required
                                                                 @if (count($customer->InspectionCertificate) > 0) value="{{ $customer->InspectionCertificate[2]->manager_name }}" @endif>
                                                         </td>

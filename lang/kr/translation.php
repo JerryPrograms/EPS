@@ -210,7 +210,7 @@ return [
     'Number of parking spaces' => '주차대수',
     'type' => '타입',
     'Enter certification number' => '인증번호 입력',
-    'Certification Number' => '인증번호',
+    'Certification Number' => '관리자명',
     'facility certification information' => '주차설비 인증정보',
     'Initial installation date' => '초기 설치일자',
     'part' => '부속품',
