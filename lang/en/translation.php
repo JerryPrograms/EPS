@@ -630,5 +630,6 @@ return [
     'Please enter your company name' => 'Please enter your company name',
     'Part history cannot be edited after 3 days' => 'Part history cannot be edited after 3 days',
     'Error, Please try again later' => 'Error, Please try again later',
-    'Max file size is 5mb' => 'Max file size is 5mb'
+    'Max file size is 5mb' => 'Max file size is 5mb',
+    'Client Deleted Successfully' => 'Client Deleted Successfully'
 ];

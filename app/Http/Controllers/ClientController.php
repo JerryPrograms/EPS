@@ -206,7 +206,7 @@ class ClientController extends Controller
 
         return json_encode([
             'success' => true,
-            'message' => 'Client Deleted Successfully',
+            'message' => __('translation.Client Deleted Successfully'),
         ]);
     }
 }
