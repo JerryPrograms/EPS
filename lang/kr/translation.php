@@ -58,7 +58,7 @@ return [
     'memo' => '메모',
     'Select Type' => '타입 선택',
     'select' => '선택',
-    'weekend duty' => '주말당직',
+    'weekend duty' => '평일당직',
     'weekend shift' => '평일당직',
     'night shift' => '야간당직',
     'holiday duty' => '연휴당직',
