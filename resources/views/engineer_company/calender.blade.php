@@ -635,11 +635,15 @@
                             'id': event.event.id,
                         },
                         beforeSend: function () {
-
+                            $('#building_names123 option').attr('selected', false);
                         },
                         success: function (res) {
                             $('#EditAndDeleteEventCompleteModal').modal('show');
-                            $('#building_names123').val($.parseJSON(res.data.title));
+                            let  buildingNames  = ($.parseJSON(res.data.title));
+                            buildingNames.forEach(function(value){
+                                $('#building_names123 option[value='+value+']').attr('selected', true);
+                            });
+                            $("#building_names123").bsMultiSelect("Update");
                             $('#a_start_date').val(res.data.start_date);
                             $('#a_end_date').val(res.data.start_date);
                             $('#a_assigned_to_id').val(res.data.assigned_to_id);

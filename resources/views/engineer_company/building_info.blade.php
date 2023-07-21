@@ -66,10 +66,13 @@
                                                         </p>
                                                     </td>
                                                     <td class="custom_br_theme_clr_2">
-                                                        <p class="tble_text">
+                                                        {{-- <p class="tble_text">
                                                             @if (!empty($building_name))
                                                                 {{ $building_name }}
                                                             @endif
+                                                        </p> --}}
+                                                        <p class="tble_text">
+                                                            {{ $customer->company_name }}
                                                         </p>
                                                     </td>
                                                     <td class="custom_br_theme_clr_2">
@@ -81,18 +84,24 @@
                                                     </td>
 
                                                     <td class="custom_br_theme_clr_2">
-                                                        <p class="tble_text">
+                                                        {{-- <p class="tble_text">
                                                             @if (!empty($customer->CompanyInformation))
                                                                 {{ $customer->CompanyInformation->company_name }}
                                                             @endif
+                                                        </p> --}}
+                                                        <p class="tble_text">
+                                                            {{ $customer->company_registration_number }}
                                                         </p>
                                                     </td>
                                                     <td class="custom_br_theme_clr_3">
-                                                        <p class="tble_text">
+                                                        {{-- <p class="tble_text">
                                                             @if (!empty($customer->RepairCompanyInformation))
                                                                 {{ $customer->RepairCompanyInformation->company_name }}
                                                             @endif
-                                                        </p>
+                                                        </p> --}}
+                                                        <p class="tble_text">
+                                                            {{ $customer->representative }}
+                                                        </p>      
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -1002,7 +1011,7 @@
 
                         $("input[name=company_name]").val(res.Data.company_name);
                         $("input[name=ceo_name]").val(res.Data.representative);
-                        $("input[name=mc_reg]").val(res.Data.company_registration_number);
+                        $("input[name=mc_reg]").val(res.Data.maintenance_business_registration_number);
                         $("input[name=address]").val(res.Data.address);
                         $("input[name=industry_category]").val(res.Data.business_email);
                         $("input[name=contacts]").val(res.Data.contact);

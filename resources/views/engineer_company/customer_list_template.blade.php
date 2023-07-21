@@ -54,8 +54,10 @@
                 <button class="date_button border-0">{{$c->customer_number}}</button>
             </td>
             <td class="">
-                <button
-                    class="date_button_2 border-0">{{!empty($building_name) ?  $building_name : __('translation.Not Specified Yet')}}</button>
+                {{-- <button
+                    class="date_button_2 border-0">{{!empty($building_name) ?  $building_name : __('translation.Not Specified Yet')}}</button> --}}
+                    <button
+                    class="date_button_2 border-0">{{ $c->company_name }}</button>
             </td>
             <td class="">
                 <button title="{{$c->address}}"
@@ -64,13 +66,17 @@
                 </button>
             </td>
             <td class="">
-                <button
-                    class="date_button_2 border-0">{{!empty($c->EngineerCompany) ? $c->EngineerCompany->company_name : __('translation.Not Specified Yet')}}</button>
+                {{-- <button
+                    class="date_button_2 border-0">{{!empty($c->EngineerCompany) ? $c->EngineerCompany->company_name : __('translation.Not Specified Yet')}}</button> --}}
+                    <button
+                    class="date_button_2 border-0">{{ $c->company_registration_number }}</button>
             </td>
             <td class="">
                 <!-- Button trigger modal -->
-                <button
-                    class="date_button_2 border-0">{{!empty($c->EngineerCompany) ? $c->EngineerCompany->company_registration_number : __('translation.Not Specified Yet')}}</button>
+                {{-- <button
+                    class="date_button_2 border-0">{{!empty($c->EngineerCompany) ? $c->EngineerCompany->company_registration_number : __('translation.Not Specified Yet')}}</button> --}}
+                    <button
+                    class="date_button_2 border-0">{{ $c->representative }}</button>
             </td>
             <td>
                 <div class="d-flex align-items-center">
