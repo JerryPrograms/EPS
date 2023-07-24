@@ -91,7 +91,7 @@
                     {{--                                <a href="{{route('add_contract',$c->user_uid)}}" class="date_button_2 border-0"><i class="fa fas fa-file-contract  custom-trash-padding"></i></a>--}}
                     {{--                                <a href="{{route('regular_inspection_log',$c->user_uid)}}" class="date_button_2 border-0"><i class="fa fa-magnifying-glass-plus custom-trash-padding"></i></a>--}}
                     @if(activeGuard() == 'admin')
-                        <a href="{{route('ec.CreateBuildingInfo',$c->user_uid)}}" class="btn back-green btn-outline btn-sm"> <img
+                        <a href="{{route('ec.GetCustomerInfoDashboard',$c->user_uid)}}" class="btn back-green btn-outline btn-sm"> <img
                                 src="{{asset('engineer_company/images/edit_icon.png')}}"></a>
                     @else
                         <a href="{{route('ec.GetCustomerInfoDashboard',$c->user_uid)}}" class="btn back-green btn-outline btn-sm"> <img

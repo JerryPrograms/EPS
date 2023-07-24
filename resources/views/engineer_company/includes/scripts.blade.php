@@ -75,7 +75,7 @@
     }
 
     @php
-        $routes = ['building-info','as-and-engineer-company','parking-facility','key-accessory-history','parts-replacement-history','monthly-regular-inspection','emergency-dispatch-checklist','manage-attachments'];
+        $routes = ['building-info','as-and-engineer-company','parking-facility','key-accessory-history','parts-replacement-history','monthly-regular-inspection','emergency-dispatch-checklist','manage-attachments','customer-info-dashboard'];
     @endphp
 
     @if(in_array(request()->segment(2),$routes))
@@ -172,6 +172,18 @@
             $('.i a').attr('href', '{{route('contracts_management_list',request()->segment(3))}}');
             $('.j a').attr('href', '{{route('ec.GetQuoteManagement',request()->segment(3))}}');
         } else if ('{{request()->segment(2)}}' == 'manage-attachments') {
+            $('.h a').get(0).style.cssText = 'color:blue !important';
+            $('.a a').attr('href', '{{route('ec.CreateBuildingInfo',request()->segment(3))}}');
+            $('.b a').attr('href', '{{route('write_regular_inspection_log',request()->segment(3))}}');
+            $('.c a').attr('href', '{{route('ec.CreateParkingFacility',request()->segment(3))}}');
+            $('.d a').attr('href', '{{route('ec.CreateKeyAccessoryHistory',request()->segment(3))}}');
+            $('.e a').attr('href', '{{route('ec.CreatePartsReplacementHistory',request()->segment(3))}}');
+            $('.f a').attr('href', '{{route('ec.CreateMonthlyRegularInspection',request()->segment(3))}}');
+            $('.g a').attr('href', '{{route('ec.CreateEmergencyDispatchChecklist',request()->segment(3))}}');
+            $('.h a').attr('href', '{{route('ec.CreateManageAttachments',request()->segment(3))}}');
+            $('.i a').attr('href', '{{route('contracts_management_list',request()->segment(3))}}');
+            $('.j a').attr('href', '{{route('ec.GetQuoteManagement',request()->segment(3))}}');
+        }else if ('{{request()->segment(2)}}' == 'customer-info-dashboard') {
             $('.h a').get(0).style.cssText = 'color:blue !important';
             $('.a a').attr('href', '{{route('ec.CreateBuildingInfo',request()->segment(3))}}');
             $('.b a').attr('href', '{{route('write_regular_inspection_log',request()->segment(3))}}');
