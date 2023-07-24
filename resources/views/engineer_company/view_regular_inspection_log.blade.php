@@ -216,8 +216,12 @@
                                                             <tbody>
                                                             <tr>
                                                                 <td>
+                                                                    @if(!empty($customer->signature))
                                                                     <img src="{{ asset($customer->signature) }}"
                                                                          alt="signature" class="img-fluid">
+                                                                    @else
+                                                                    <span class="badge bg-danger text-white">Not Signed</span>
+                                                                    @endif
                                                                 </td>
                                                             </tr>
                                                             </tbody>
