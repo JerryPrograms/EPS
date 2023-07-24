@@ -230,8 +230,7 @@
 
                                                         <div class="row align-items-center mt-4">
                                                             <div class="col-lg-4 col-12"><label
-                                                                    class="form-label custom_lab mb-0"> <span
-                                                                        class="star_section">*</span>
+                                                                    class="form-label custom_lab mb-0">
                                                                     {{ __('translation.Representative') }}
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12">
@@ -240,11 +239,10 @@
                                                                         <input type="text" name="representative"
                                                                             class="form-control w-100 custom_input"
                                                                             aria-describedby="emailHelp"
-                                                                            placeholder="{{ __('translation.Enter Representative') }}" required>
+                                                                            placeholder="{{ __('translation.Enter Representative') }}">
                                                                     </div>
                                                                     <div class="col-3">
-                                                                        <label class="form-label custom_lab mb-0"> <span
-                                                                                class="star_section">*</span>
+                                                                        <label class="form-label custom_lab mb-0">
                                                                             {{ __('translation.Maintenance business registration number') }}
                                                                         </label>
                                                                     </div>
@@ -253,7 +251,7 @@
                                                                             name="maintenance_business_registration_number"
                                                                             class="form-control w-100 custom_input"
                                                                             aria-describedby="emailHelp"
-                                                                            placeholder="{{ __('translation.Maintenance business registration number') }}" required>
+                                                                            placeholder="{{ __('translation.Maintenance business registration number') }}">
                                                                     </div>
                                                                 </div>
                                                             </div>
