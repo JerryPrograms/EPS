@@ -75,7 +75,7 @@
                                                         @endif
                                                     </p>
                                                 </td>
-                                                <td class=" d-flex gap-1">
+                                                <td class=" d-flex gap-1 justify-content-center">
                                                     <a href="javascript:void(0)"
                                                        class="btn back-green btn-outline btn-sm">
                                                         <img

@@ -37,23 +37,23 @@
                                             <thead class="table-light">
                                             <tr>
 
-                                                <th class="">
+                                                <th class="" style="width: 50px;">
                                                     {{__('translation.no')}}
                                                 </th>
-                                                <th class="text-center">
+                                                <th class="text-center" style="width: 120px;">
                                                     {{__('translation.Registration Date')}}
                                                 </th>
-                                                <th class="text-center">
+                                                <th class="text-center" style="width: 130px;">
                                                     {{__('translation.Customer No')}}
                                                 </th>
-                                                <th class="text-center">
+                                                <th class="text-center" style="width: 130px;">
                                                     {{__('translation.Company Name')}}
                                                 </th>
                                                 <th class="text-center">
                                                     {{__('translation.Address')}}
                                                 </th>
 
-                                                <th class="text-center">
+                                                <th class="text-center" style="width: 100px;">
                                                     {{__('translation.department')}}
                                                 </th>
                                                 <th class="text-center">{{__('translation.Actions')}}</th>

@@ -326,7 +326,7 @@
                         <div class="row justify-content-end no-print">
                             <div class="col-lg-2 col-6">
                                 <button id="form_button" class="form_button mb-5 mt-5">
-                                    Save and Next
+                                    {{ __('translation.Save and Next') }}
                                 </button>
                             </div>
                         </div>

@@ -2,28 +2,28 @@
     <thead class="table-light">
     <tr>
 
-        <th class="">
+        <th class="" style="width: 50px;">
             {{ __('translation.no.') }}
         </th>
-        <th class="text-center">
+        <th class="text-center" style="width: 150px;">
             {{ __('translation.Registration Date') }}
         </th>
-        <th class="text-center">
+        <th class="text-center" style="width: 200px;">
             {{ __('translation.Customer Number') }}
         </th>
-        <th class="text-center">
+        <th class="text-center" style="width: 150px;">
             {{ __('translation.Company name') }}
         </th>
-        <th class="text-center">
+        <th class="text-center" style="width: 150px;">
             {{ __('translation.address') }}
         </th>
-        <th class="text-center">
+        <th class="text-center" style="width: 200px;">
             {{ __('translation.Building Management Company') }}
         </th>
-        <th class="text-center">
+        <th class="text-center" style="width: 150px;">
             {{ __('translation.Maintenance Company') }}
         </th>
-        <th class="text-center">
+        <th class="text-center" style="width: 100px;">
             {{ __('translation.action') }}
         </th>
     </tr>
@@ -48,20 +48,20 @@
             </td>
             <td class="">
                 <button
-                    class="date_button border-0">{{$c->created_at->format('Y-m-d')}}</button>
+                    class="date_button border-0 p-0">{{$c->created_at->format('Y-m-d')}}</button>
             </td>
             <td class="">
-                <button class="date_button border-0">{{$c->customer_number}}</button>
+                <button class="date_button border-0 p-0">{{$c->customer_number}}</button>
             </td>
             <td class="">
                 {{-- <button
                     class="date_button_2 border-0">{{!empty($building_name) ?  $building_name : __('translation.Not Specified Yet')}}</button> --}}
                     <button
-                    class="date_button_2 border-0">{{ $c->company_name }}</button>
+                    class="date_button_2 border-0 p-0">{{ $c->company_name }}</button>
             </td>
             <td class="">
                 <button title="{{$c->address}}"
-                        class="date_button_2 border-0">{{substr($c->address,0,10)}}
+                        class="date_button_2 border-0 p-0">{{substr($c->address,0,10)}}
                     ....
                 </button>
             </td>
@@ -69,14 +69,14 @@
                 {{-- <button
                     class="date_button_2 border-0">{{!empty($c->EngineerCompany) ? $c->EngineerCompany->company_name : __('translation.Not Specified Yet')}}</button> --}}
                     <button
-                    class="date_button_2 border-0">{{ $c->company_registration_number }}</button>
+                    class="date_button_2 border-0 p-0">{{ $c->company_registration_number }}</button>
             </td>
             <td class="">
                 <!-- Button trigger modal -->
                 {{-- <button
                     class="date_button_2 border-0">{{!empty($c->EngineerCompany) ? $c->EngineerCompany->company_registration_number : __('translation.Not Specified Yet')}}</button> --}}
                     <button
-                    class="date_button_2 border-0">{{ $c->representative }}</button>
+                    class="date_button_2 border-0 p-0">{{ $c->representative }}</button>
             </td>
             <td>
                 <div class="d-flex align-items-center">

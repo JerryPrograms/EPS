@@ -14,6 +14,12 @@
             top: 10px;
             border: none;
         }
+        .colllap_section_5{
+            padding-top: 40px;
+        }
+        .collapse-icon-section{
+            width: 70%;
+        }
     </style>
     <div class="main-content">
 
@@ -182,7 +188,7 @@
                                                                         </button>
                                                                         <div class="dropdown-menu"
                                                                              aria-labelledby="dropdownMenuButton">
-                                                                            @foreach($buildings as $building)
+                                                                            {{-- @foreach($buildings as $building)
                                                                                 <div class="w-100 p-2">
                                                                                     <input type="checkbox"
                                                                                            class="form-check-input"
@@ -190,7 +196,7 @@
                                                                                            value="{{$building->id}}">
                                                                                     {{$building->BuildingInformation->building_name}}
                                                                                 </div>
-                                                                            @endforeach
+                                                                            @endforeach --}}
                                                                         </div>
                                                                     </div>
 
@@ -272,16 +278,15 @@
                                                                                             </div>
                                                                                             <span><i
                                                                                                     class="fa-solid fa-chevron-down"></i></span>
-
+                                                                                                    <span data-bs-toggle="modal"
+                                                                                                    data-bs-target="#EditSubPartModal"
+                                                                                                    onclick="setSubPartData('{{$SubParts->id}}','{{$SubParts->title}}')"
+                                                                                                    class="ms-2 mb-2"><i
+                                                                                                      class="fa fa-edit"></i></span>
+                                                                                               <button data-bs-toggle="modal" data-bs-target="#DeleteSubPartModal" onclick="setsubPartID('{{$SubParts->id}}')" style="background: transparent; border: none;margin-top: -15px;">
+                                                                                                   <i class="fa fa-trash"></i>
+                                                                                               </button>
                                                                                         </li>
-                                                                                        <span data-bs-toggle="modal"
-                                                                                              data-bs-target="#EditSubPartModal"
-                                                                                              onclick="setSubPartData('{{$SubParts->id}}','{{$SubParts->title}}')"
-                                                                                              class="ms-2 mb-2"><i
-                                                                                                class="fa fa-edit"></i></span>
-                                                                                         <button data-bs-toggle="modal" data-bs-target="#DeleteSubPartModal" onclick="setsubPartID('{{$SubParts->id}}')" style="background: transparent; border: none">
-                                                                                             <i class="fa fa-trash"></i>
-                                                                                         </button>
                                                                                         <div id="form_{{$SubParts->id}}"
                                                                                              class="d-flex d-none custom_border">
 

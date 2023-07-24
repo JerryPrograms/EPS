@@ -42,14 +42,14 @@
                                             class="table {{ (count($engineer_companies) != 0) ? 'table-striped' : '' }} align-middle mb-0 table-theme">
                                             <thead class="table-light">
                                             <tr>
-                                                <th>{{ __('translation.no') }}</th>
-                                                <th>{{ __('translation.Register Date') }}</th>
-                                                <th>{{ __('translation.Company Name') }}</th>
-                                                <th>{{ __('translation.Company Number') }}</th>
+                                                <th style="min-width: 50px;">{{ __('translation.no') }}</th>
+                                                <th style="min-width: 120px;">{{ __('translation.Register Date') }}</th>
+                                                <th style="min-width: 180px;">{{ __('translation.Company Name') }}</th>
+                                                <th style="min-width: 120px;">{{ __('translation.Company Number') }}</th>
                                                 <th>{{ __('translation.Address') }}</th>
-                                                <th>{{ __('translation.Manager Name') }}</th>
-                                                <th>{{ __('translation.Contact') }}</th>
-                                                <th>{{ __('translation.Actions') }}</th>
+                                                <th style="min-width: 150px;">{{ __('translation.Manager Name') }}</th>
+                                                <th style="min-width: 150px">{{ __('translation.Contact') }}</th>
+                                                <th style="min-width: 100px;">{{ __('translation.Actions') }}</th>
                                             </tr>
                                             </thead>
                                             <tbody id="myTable">
