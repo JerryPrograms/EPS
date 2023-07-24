@@ -261,8 +261,13 @@
 
                                                             class="form-label ">
                                                             {{ __('translation.Contact Person / Signature') }}</label>
-
-                                                        <img class="w-100" src="{{asset($dispatch->output)}}">
+                                                        @if(!empty($dispatch->output))
+                                                            <img class="w-100" src="{{asset($dispatch->output)}}">
+                                                        @else
+                                                            <div>
+                                                                <span class="badge bg-danger text-white">Not signed</span>
+                                                            </div>
+                                                        @endif
                                                     </div>
                                                 </div>
                                             </div>

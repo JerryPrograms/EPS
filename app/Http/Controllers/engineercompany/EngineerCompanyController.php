@@ -193,8 +193,6 @@ class EngineerCompanyController extends Controller
 
     public function CreateDispatchInformation($uid)
     {
-
-
         $customer = CustomerInfo::where('user_uid', $uid)->first();
         if ($customer) {
             return view('engineer_company.create_dispatch_information', compact('customer'));

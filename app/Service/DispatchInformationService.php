@@ -15,7 +15,6 @@ class DispatchInformationService
 
 
         try {
-
             $data['customer_id'] = $request->customer_id;
             $data['site_name'] = $request->site_name;
             $data['reception_date_and_time'] = $request->reception_date_and_time;
@@ -25,7 +24,7 @@ class DispatchInformationService
             $data['measures'] = $request->measures;
             $data['undecided'] = $request->undecided;
             $data['dispatcher'] = $request->dispatcher;
-            if ($request->output != '1' && !empty($request->output)) {
+            if ($request->output != '1' && !empty($request->output) && $request->output !== null) {
                 $base64_str = substr($request->output, strpos($request->output, ",") + 1);
                 $image = base64_decode($base64_str);
                 $safeName = Str::random(10) . '.' . 'png';
