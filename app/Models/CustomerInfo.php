@@ -48,9 +48,13 @@ class CustomerInfo extends Authenticatable
     }
 
     public static function GetBuildingInformation($building_id){
-        $building_id = json_decode($building_id);
-        $buildingAddress = BuildingAddress::where('id', $building_id[0])->first();
-        return $buildingAddress;
+        if(!empty($building_id)){
+            $building_id = json_decode($building_id);
+            $buildingAddress = BuildingAddress::where('id', $building_id[0])->first();
+            return $buildingAddress;
+        }else{
+            return null;
+        }
     }
 
     public function CompanyInformation()
