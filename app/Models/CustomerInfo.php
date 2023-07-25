@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\BuildingAddress;
 
 class CustomerInfo extends Authenticatable
 {
@@ -44,6 +45,12 @@ class CustomerInfo extends Authenticatable
     public function BuildingInformation()
     {
         return $this->hasOne(BuildingInformation::class, 'customer_id', 'id');
+    }
+
+    public static function GetBuildingInformation($building_id){
+        $building_id = json_decode($building_id);
+        $buildingAddress = BuildingAddress::where('id', $building_id[0])->first();
+        return $buildingAddress;
     }
 
     public function CompanyInformation()

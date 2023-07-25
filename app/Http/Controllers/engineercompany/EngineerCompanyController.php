@@ -135,8 +135,16 @@ class EngineerCompanyController extends Controller
     {
         $customer = CustomerInfo::where('user_uid', $uid)->first();
         if ($customer) {
-            $main_part = MainPartModel::pluck('customer_id');
-            $buildings = CustomerInfo::where('id', '!=', $customer->id)->whereIn('id', $main_part)->latest()->get();
+            $main_part = MainPartModel::pluck('customer_id')->toArray();
+
+            $main_part = array_unique($main_part);
+
+            $buildings = CustomerInfo::where('id', '!=', $customer->id)->whereIn('id', $main_part)->with(['BuildingInformation'])->latest()->get();
+
+            foreach ($buildings as $building) {
+                $building->building_information = CustomerInfo::GetBuildingInformation($building->building_id);
+            }
+
             return view('engineer_company.key_accessory', compact('customer', 'buildings'));
         }
         abort(404);

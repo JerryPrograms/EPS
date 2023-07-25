@@ -188,15 +188,19 @@
                                                                         </button>
                                                                         <div class="dropdown-menu"
                                                                              aria-labelledby="dropdownMenuButton">
-                                                                            {{-- @foreach($buildings as $building)
-                                                                                <div class="w-100 p-2">
-                                                                                    <input type="checkbox"
-                                                                                           class="form-check-input"
-                                                                                           name="buildings[]"
-                                                                                           value="{{$building->id}}">
-                                                                                    {{$building->BuildingInformation->building_name}}
-                                                                                </div>
-                                                                            @endforeach --}}
+                                                                            @if($buildings->count() > 0)
+                                                                                @foreach($buildings as $building)
+                                                                                    <div class="w-100 p-2">
+                                                                                        <input type="checkbox"
+                                                                                            class="form-check-input"
+                                                                                            name="buildings[]"
+                                                                                            value="{{$building->id}}">
+                                                                                        {{$building->building_information->building_name}}
+                                                                                    </div>
+                                                                                @endforeach
+                                                                            @else
+                                                                                <a href="javascript:void(0)" class="dropdown-item w-100">No Building Found</a>
+                                                                            @endif
                                                                         </div>
                                                                     </div>
 
