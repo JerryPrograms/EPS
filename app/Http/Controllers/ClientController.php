@@ -59,7 +59,7 @@ class ClientController extends Controller
             $data['password'] = Hash::make($data['password']);
             if ($request->division == 'building owner') {
                 $data['user_uid'] = Str::uuid();
-                $data['added_by'] = 'admin';
+                $data['added_by'] = 'engineer_company';
                 $data['added_by_id'] = NULL;
 
                 $check_customer_number = CustomerInfo::where('customer_number', $request->customer_number)->first();
