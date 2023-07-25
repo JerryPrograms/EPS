@@ -140,7 +140,7 @@ class EngineerCompanyController extends Controller
             $main_part = array_unique($main_part);
 
             $buildings = CustomerInfo::where('id', '!=', $customer->id)->whereIn('id', $main_part)->with(['BuildingInformation'])->latest()->get();
-
+            dd($buildings);
             foreach ($buildings as $building) {
                 $building->building_information = CustomerInfo::GetBuildingInformation($building->building_id);
             }
