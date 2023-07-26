@@ -534,7 +534,6 @@
                                                                     class="form-control w-100 custom_input"
                                                                     aria-describedby="emailHelp"
                                                                     placeholder="{{ __('translation.Please enter your company name') }}"
-                                                                    required
                                                                     @if (!empty($customer->CompanyInformation)) value="{{ $customer->CompanyInformation->company_name }}" @endif>
                                                             </div>
                                                         </div>
@@ -550,7 +549,6 @@
                                                                     class="form-control w-100 custom_input"
                                                                     aria-describedby="emailHelp"
                                                                     placeholder="{{ __('translation.Enter ceo name') }}"
-                                                                    required
                                                                     @if (!empty($customer->CompanyInformation)) value="{{ $customer->CompanyInformation->ceo_name }}" @endif>
                                                             </div>
                                                         </div>
@@ -567,7 +565,6 @@
                                                                     class="form-control w-100 custom_input_2"
                                                                     aria-describedby="emailHelp"
                                                                     placeholder="{{ __('translation.Enter registration number') }}"
-                                                                    required
                                                                     @if (!empty($customer->CompanyInformation)) value="{{ $customer->CompanyInformation->company_reg_number }}" @endif>
                                                             </div>
 
@@ -585,7 +582,6 @@
                                                                     class="form-control w-100 custom_input"
                                                                     aria-describedby="emailHelp"
                                                                     placeholder="{{ __('translation.Enter address') }}"
-                                                                    required
                                                                     @if (!empty($customer->CompanyInformation)) value="{{ $customer->CompanyInformation->address }}" @endif>
                                                             </div>
                                                         </div>
@@ -601,7 +597,6 @@
                                                                     class="form-control w-100   custom_input"
                                                                     aria-describedby="emailHelp"
                                                                     placeholder="{{ __('translation.Please enter your business type') }}"
-                                                                    required
                                                                     @if (!empty($customer->CompanyInformation)) value="{{ $customer->CompanyInformation->industry_category }}" @endif>
                                                             </div>
                                                         </div>
@@ -611,7 +606,7 @@
                                                                     class="form-label custom_lab mb-0">
                                                                     {{ __('translation.Sector') }}
                                                                 </label></div>
-                                                            <div class="col-lg-8 col-12"><input type="text" required
+                                                            <div class="col-lg-8 col-12"><input type="text"
                                                                     name="b_ci_sectors"
                                                                     class="format-number form-control w-100   custom_input"
                                                                     aria-describedby="emailHelp"
@@ -630,8 +625,7 @@
                                                                     class="form-control w-100   custom_input"
                                                                     aria-describedby="emailHelp"
                                                                     placeholder="{{ __('translation.Please enter your contact information') }}"
-                                                                    @if (!empty($customer->CompanyInformation)) value="{{ $customer->CompanyInformation->contacts }}" @endif
-                                                                    required></div>
+                                                                    @if (!empty($customer->CompanyInformation)) value="{{ $customer->CompanyInformation->contacts }}" @endif></div>
                                                         </div>
 
 
@@ -640,7 +634,7 @@
                                                                     class="form-label custom_lab mb-0">
                                                                     {{ __('translation.fax') }}
                                                                 </label></div>
-                                                            <div class="col-lg-8 col-12"><input type="text" required
+                                                            <div class="col-lg-8 col-12"><input type="text"
                                                                     name="b_ci_fax"
                                                                     class="format-number form-control w-100   custom_input"
                                                                     aria-describedby="emailHelp"
@@ -655,7 +649,7 @@
                                                                     class="form-label custom_lab mb-0">
                                                                     {{ __('translation.Email') }}
                                                                 </label></div>
-                                                            <div class="col-lg-8 col-12"><input type="text" required
+                                                            <div class="col-lg-8 col-12"><input type="text"
                                                                     id="c_email" name="c_email"
                                                                     class="format-number form-control w-100   custom_input"
                                                                     aria-describedby="emailHelp"
@@ -733,7 +727,6 @@
                                                                     class="form-control w-100 custom_input"
                                                                     aria-describedby="emailHelp"
                                                                     placeholder="{{ __('translation.Enter company name') }}"
-                                                                    required
                                                                     @if (!empty($customer->RepairCompanyInformation)) value="{{ $customer->RepairCompanyInformation->company_name }}" @endif>
                                                             </div>
                                                         </div>
@@ -749,7 +742,6 @@
                                                                     class="form-control col-lg-3 custom_input_2  w-100"
                                                                     aria-describedby="emailHelp"
                                                                     placeholder="{{ __('translation.Enter ceo name') }}"
-                                                                    required
                                                                     @if (!empty($customer->RepairCompanyInformation)) value="{{ $customer->RepairCompanyInformation->ceo_name }}" @endif>
                                                             </div>
                                                         </div>
@@ -764,7 +756,6 @@
                                                                     name="address" class="form-control w-100 custom_input"
                                                                     aria-describedby="emailHelp"
                                                                     placeholder="{{ __('translation.Enter address') }}"
-                                                                    required
                                                                     @if (!empty($customer->RepairCompanyInformation)) value="{{ $customer->RepairCompanyInformation->address }}" @endif>
                                                             </div>
                                                         </div>
@@ -781,7 +772,6 @@
                                                                     class="form-control w-100 custom_input"
                                                                     aria-describedby="emailHelp"
                                                                     placeholder="{{ __('translation.Enter industry category') }}"
-                                                                    required
                                                                     @if (!empty($customer->RepairCompanyInformation)) value="{{ $customer->RepairCompanyInformation->industry_category }}" @endif>
                                                             </div>
                                                         </div>
@@ -791,7 +781,7 @@
                                                                     class="form-label custom_lab mb-0">
                                                                     {{ __('translation.Sector') }}
                                                                 </label></div>
-                                                            <div class="col-lg-8 col-12"><input type="text" required
+                                                            <div class="col-lg-8 col-12"><input type="text"
                                                                     id="new-sectors"
                                                                     class="format-number form-control w-100   custom_input"
                                                                     aria-describedby="emailHelp"
@@ -809,7 +799,7 @@
                                                                     name="contacts"
                                                                     class="form-control w-100 custom_input"
                                                                     placeholder="{{ __('translation.Please enter your contact information') }}"
-                                                                    aria-describedby="emailHelp" required
+                                                                    aria-describedby="emailHelp"
                                                                     @if (!empty($customer->RepairCompanyInformation)) value="{{ $customer->RepairCompanyInformation->contacts }}" @endif>
                                                             </div>
                                                         </div>
@@ -820,7 +810,7 @@
                                                                     class="form-label custom_lab mb-0">
                                                                     {{ __('translation.fax') }}
                                                                 </label></div>
-                                                            <div class="col-md-8 col-12"><input type="text" required
+                                                            <div class="col-md-8 col-12"><input type="text"
                                                                     name="fax"
                                                                     class="format-number form-control w-100 custom_input"
                                                                     aria-describedby="emailHelp"
@@ -834,7 +824,7 @@
                                                                     class="form-label custom_lab mb-0">
                                                                     {{ __('translation.e-mail') }}
                                                                 </label></div>
-                                                            <div class="col-md-8 col-12"><input type="email" required
+                                                            <div class="col-md-8 col-12"><input type="email"
                                                                     name="email" class="form-control w-100 custom_input"
                                                                     aria-describedby="emailHelp"
                                                                     placeholder="{{ __('translation.Enter email') }}"
@@ -846,7 +836,7 @@
                                                                     class="form-label custom_lab mb-0">
                                                                     {{ __('translation.Maintenance company registration number') }}
                                                                 </label></div>
-                                                            <div class="col-md-8 col-12"><input type="text" required
+                                                            <div class="col-md-8 col-12"><input type="text"
                                                                     name="mc_reg" class="form-control w-100 custom_input"
                                                                     aria-describedby="emailHelp"
                                                                     placeholder="{{ __('translation.Please enter your maintenance company registration number') }}"
