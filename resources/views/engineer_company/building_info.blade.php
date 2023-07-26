@@ -216,8 +216,7 @@
 
                                                         <div class="row align-items-center mt-4">
                                                             <div class="col-lg-4 col-12">
-                                                                <label class="form-label custom_lab mb-0"> <span
-                                                                        class="star_section">*</span>
+                                                                <label class="form-label custom_lab mb-0">
                                                                     {{ __('translation.Building Manager Name') }}
                                                                 </label>
                                                             </div>
@@ -234,8 +233,7 @@
 
                                                         <div class="row align-items-center mt-4">
                                                             <div class="col-lg-4 col-12"><label
-                                                                    class="form-label custom_lab mb-0"> <span
-                                                                        class="star_section">*</span>
+                                                                    class="form-label custom_lab mb-0">
                                                                     {{ __('translation.Building Manager Contact') }}
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12">
@@ -251,8 +249,7 @@
 
                                                         <div class="row align-items-center mt-4">
                                                             <div class="col-lg-4 col-12"><label
-                                                                    class="form-label custom_lab mb-0"> <span
-                                                                        class="star_section">*</span>
+                                                                    class="form-label custom_lab mb-0">
                                                                     {{ __('translation.address') }}
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12"><input id="address"
@@ -267,8 +264,7 @@
 
                                                         <div class="row align-items-center mt-4">
                                                             <div class="col-lg-4 col-12"><label
-                                                                    class="form-label custom_lab mb-0"> <span
-                                                                        class="star_section">*</span>
+                                                                    class="form-label custom_lab mb-0">
                                                                     {{ __('translation.Contract Manager /contact') }}
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12"><input type="text"
@@ -283,8 +279,7 @@
 
                                                         <div class="row align-items-center mt-4">
                                                             <div class="col-lg-4 col-12"><label
-                                                                    class="form-label custom_lab mb-0"> <span
-                                                                        class=" star_section">*</span>
+                                                                    class="form-label custom_lab mb-0">
                                                                     {{ __('translation.fax') }}
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12"><input type="text"
@@ -298,8 +293,7 @@
 
                                                         <div class="row align-items-center mt-4">
                                                             <div class="col-lg-4 col-12">
-                                                                <label class="form-label custom_lab mb-0"> <span
-                                                                        class="star_section">*</span>
+                                                                <label class="form-label custom_lab mb-0">
                                                                     {{ __('translation.e-mail') }}
                                                                 </label>
                                                             </div>
@@ -341,8 +335,7 @@
 
                                                         <div class="row align-items-center">
                                                             <div class="col-md-4 col-12">
-                                                                <label class="form-label custom_lab mb-0"> <span
-                                                                        class="star_section">*</span>
+                                                                <label class="form-label custom_lab mb-0">
                                                                     {{ __('translation.Company Name') }}
                                                                 </label>
                                                             </div>
@@ -357,8 +350,7 @@
 
                                                         <div class="row align-items-center mt-4">
                                                             <div class="col-md-4 col-12">
-                                                                <label class="form-label custom_lab mb-0"> <span
-                                                                        class="star_section">*</span>
+                                                                <label class="form-label custom_lab mb-0">
                                                                     {{ __('translation.Company Manager Name') }}
                                                                 </label>
                                                             </div>
@@ -375,8 +367,7 @@
                                                         <div class="row align-items-center mt-4">
                                                             <div class="col-md-4 col-12"><label
                                                                     class="form-label custom_lab mb-0">
-                                                                    <span
-                                                                        class="star_section">*</span>{{ __('translation.Term') }}
+                                                                    {{ __('translation.Term') }}
                                                                 </label></div>
                                                             <div class="col-md-8 col-12 d-flex align-items-center gap-1">
                                                                 @php 
@@ -404,7 +395,6 @@
                                                         <div class="row align-items-center mt-4">
                                                             <div class="col-md-4 col-12"><label
                                                                     class="form-label custom_lab mb-0">
-                                                                    <span class="star_section">*</span>
                                                                     {{ __('translation.fee') }}
                                                                 </label></div>
                                                             <div class="col-md-8 col-12"><input type="text"
@@ -419,7 +409,6 @@
                                                         <div class="row align-items-center mt-4">
                                                             <div class="col-md-4 col-12"><label
                                                                     class="form-label custom_lab mb-0">
-                                                                    <span class="star_section">*</span>
                                                                     {{ __('translation.Tax invoice issue date') }}
                                                                 </label></div>
                                                             <div class="col-md-8 col-12"><input type="text"
@@ -433,7 +422,6 @@
                                                         <div class="row align-items-center mt-4">
                                                             <div class="col-md-4 col-12"><label
                                                                     class="form-label custom_lab mb-0">
-                                                                    <span class="star_section">*</span>
                                                                     {{ __('translation.Payment Date') }}
                                                                 </label>
                                                             </div>
@@ -448,8 +436,7 @@
 
                                                         <div class="row align-items-center mt-4">
                                                             <div class="col-md-4 col-12"><label
-                                                                    class="form-label custom_lab mb-0"> <span
-                                                                        class="star_section">*</span>
+                                                                    class="form-label custom_lab mb-0">
                                                                     {{ __('translation.Payment method') }}
                                                                 </label></div>
                                                             <div class="col-md-8 col-12">
@@ -464,8 +451,7 @@
 
                                                         <div class="row align-items-center mt-4">
                                                             <div class="col-md-4 col-12"><label
-                                                                    class="form-label custom_lab mb-0"> <span
-                                                                        class="star_section">*</span>
+                                                                    class="form-label custom_lab mb-0">
                                                                     {{ __('translation.payment account') }}
                                                                 </label></div>
                                                             <div class="col-md-8 col-12">
@@ -540,8 +526,7 @@
 
                                                         <div class="row align-items-center">
                                                             <div class="col-lg-4 col-12"><label
-                                                                    class="form-label custom_lab mb-0"> <span
-                                                                        class="star_section">*</span>
+                                                                    class="form-label custom_lab mb-0">
                                                                     {{ __('translation.Company') }}
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12"><input type="text"
@@ -556,8 +541,7 @@
 
                                                         <div class="row align-items-center mt-4">
                                                             <div class="col-lg-4 col-12"><label
-                                                                    class="form-label custom_lab mb-0"> <span
-                                                                        class="star_section">*</span>
+                                                                    class="form-label custom_lab mb-0">
                                                                     {{ __('translation.Ceo Name') }}
                                                                 </label>
                                                             </div>
@@ -573,8 +557,7 @@
 
                                                         <div class="row align-items-center mt-4">
                                                             <div class="col-lg-4 col-12">
-                                                                <label class="form-label custom_lab mb-0"> <span
-                                                                        class="star_section">*</span>
+                                                                <label class="form-label custom_lab mb-0">
                                                                     {{ __('translation.Company Registration Number') }}
                                                                 </label>
                                                             </div>
@@ -594,8 +577,7 @@
 
                                                         <div class="row align-items-center mt-4">
                                                             <div class="col-lg-4 col-12"><label
-                                                                    class="form-label custom_lab mb-0"> <span
-                                                                        class="star_section">*</span>
+                                                                    class="form-label custom_lab mb-0">
                                                                     {{ __('translation.address') }}
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12">
@@ -611,8 +593,7 @@
 
                                                         <div class="row align-items-center mt-4">
                                                             <div class="col-lg-4 col-12"><label
-                                                                    class="form-label custom_lab mb-0"> <span
-                                                                        class="star_section">*</span>
+                                                                    class="form-label custom_lab mb-0">
                                                                     {{ __('translation.business') }}
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12"><input type="text"
@@ -627,8 +608,7 @@
 
                                                         <div class="row align-items-center mt-4">
                                                             <div class="col-lg-4 col-12"><label
-                                                                    class="form-label custom_lab mb-0"> <span
-                                                                        class="star_section">*</span>
+                                                                    class="form-label custom_lab mb-0">
                                                                     {{ __('translation.Sector') }}
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12"><input type="text" required
@@ -642,8 +622,7 @@
 
                                                         <div class="row align-items-center mt-4">
                                                             <div class="col-lg-4 col-12"><label
-                                                                    class="form-label custom_lab mb-0"> <span
-                                                                        class="star_section">*</span>
+                                                                    class="form-label custom_lab mb-0">
                                                                     {{ __('translation.contact 1, 2') }}
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12"><input type="text"
@@ -658,8 +637,7 @@
 
                                                         <div class="row align-items-center mt-4">
                                                             <div class="col-lg-4 col-12"><label
-                                                                    class="form-label custom_lab mb-0"> <span
-                                                                        class="star_section">*</span>
+                                                                    class="form-label custom_lab mb-0">
                                                                     {{ __('translation.fax') }}
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12"><input type="text" required
@@ -674,8 +652,7 @@
 
                                                         <div class="row align-items-center mt-4">
                                                             <div class="col-lg-4 col-12"><label
-                                                                    class="form-label custom_lab mb-0"> <span
-                                                                        class="star_section">*</span>
+                                                                    class="form-label custom_lab mb-0">
                                                                     {{ __('translation.Email') }}
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12"><input type="text" required
@@ -748,8 +725,7 @@
 
                                                         <div class="row align-items-center">
                                                             <div class="col-md-4 col-12"><label
-                                                                    class="form-label custom_lab mb-0"> <span
-                                                                        class="star_section">*</span>
+                                                                    class="form-label custom_lab mb-0">
                                                                     {{ __('translation.Company Name') }}
                                                                 </label></div>
                                                             <div class="col-md-8 col-12"><input type="text"
@@ -764,8 +740,7 @@
 
                                                         <div class="row align-items-center mt-4">
                                                             <div class="col-md-4 col-12"><label
-                                                                    class="form-label custom_lab mb-0"> <span
-                                                                        class="star_section">*</span>
+                                                                    class="form-label custom_lab mb-0">
                                                                     {{ __('translation.Ceo Name') }}
                                                                 </label>
                                                             </div>
@@ -782,8 +757,7 @@
 
                                                         <div class="row align-items-center mt-4">
                                                             <div class="col-md-4 col-12"><label
-                                                                    class="form-label custom_lab mb-0"> <span
-                                                                        class="star_section">*</span>
+                                                                    class="form-label custom_lab mb-0">
                                                                     {{ __('translation.address') }}
                                                                 </label></div>
                                                             <div class="col-md-8 col-12"><input type="text"
@@ -798,8 +772,7 @@
 
                                                         <div class="row align-items-center mt-4">
                                                             <div class="col-md-4 col-12"><label
-                                                                    class="form-label custom_lab mb-0"> <span
-                                                                        class="star_section">*</span>
+                                                                    class="form-label custom_lab mb-0">
                                                                     {{ __('translation.industry') }}
                                                                 </label>
                                                             </div>
@@ -815,8 +788,7 @@
 
                                                         <div class="row align-items-center mt-4">
                                                             <div class="col-lg-4 col-12"><label
-                                                                    class="form-label custom_lab mb-0"> <span
-                                                                        class="star_section">*</span>
+                                                                    class="form-label custom_lab mb-0">
                                                                     {{ __('translation.Sector') }}
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12"><input type="text" required
@@ -830,8 +802,7 @@
 
                                                         <div class="row align-items-center mt-4">
                                                             <div class="col-md-4 col-12"><label
-                                                                    class="form-label custom_lab mb-0"> <span
-                                                                        class="star_section">*</span>
+                                                                    class="form-label custom_lab mb-0">
                                                                     {{ __('translation.contact 1, 2') }}
                                                                 </label></div>
                                                             <div class="col-md-8 col-12"><input type="text"
@@ -846,8 +817,7 @@
 
                                                         <div class="row align-items-center mt-4">
                                                             <div class="col-md-4 col-12"><label
-                                                                    class="form-label custom_lab mb-0"> <span
-                                                                        class="star_section">*</span>
+                                                                    class="form-label custom_lab mb-0">
                                                                     {{ __('translation.fax') }}
                                                                 </label></div>
                                                             <div class="col-md-8 col-12"><input type="text" required
@@ -861,8 +831,7 @@
 
                                                         <div class="row align-items-center mt-4">
                                                             <div class="col-md-4 col-12"><label
-                                                                    class="form-label custom_lab mb-0"> <span
-                                                                        class="star_section">*</span>
+                                                                    class="form-label custom_lab mb-0">
                                                                     {{ __('translation.e-mail') }}
                                                                 </label></div>
                                                             <div class="col-md-8 col-12"><input type="email" required
@@ -874,8 +843,7 @@
                                                         </div>
                                                         <div class="row align-items-center mt-4">
                                                             <div class="col-md-4 col-12"><label
-                                                                    class="form-label custom_lab mb-0"> <span
-                                                                        class="star_section">*</span>
+                                                                    class="form-label custom_lab mb-0">
                                                                     {{ __('translation.Maintenance company registration number') }}
                                                                 </label></div>
                                                             <div class="col-md-8 col-12"><input type="text" required
