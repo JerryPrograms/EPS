@@ -227,7 +227,7 @@
                                                                     aria-describedby="emailHelp"
                                                                     placeholder="{{ __('translation.Enter building manager name') }}"
                                                                     @if (!empty($customer->BuildingInformation)) value="{{ $customer->BuildingInformation->building_manager_name }}" @endif
-                                                                    required>
+                                                                    >
                                                             </div>
                                                         </div>
 
@@ -244,7 +244,7 @@
                                                                     aria-describedby="emailHelp"
                                                                     placeholder="{{ __('translation.Enter contact (010-8021-5235)') }}"
                                                                     @if (!empty($customer->BuildingInformation)) value="{{ $customer->BuildingInformation->building_manager_contact }}" @endif
-                                                                    required>
+                                                                    >
                                                             </div>
                                                         </div>
 
@@ -277,7 +277,7 @@
                                                                     aria-describedby="emailHelp"
                                                                     placeholder="{{ __('translation.Enter manager contact number') }}"
                                                                     @if (!empty($customer->BuildingInformation)) value="{{ $customer->BuildingInformation->manager_contact }}" @endif
-                                                                    required></div>
+                                                                    ></div>
                                                         </div>
 
 
@@ -287,7 +287,7 @@
                                                                         class=" star_section">*</span>
                                                                     {{ __('translation.fax') }}
                                                                 </label></div>
-                                                            <div class="col-lg-8 col-12"><input type="text" required
+                                                            <div class="col-lg-8 col-12"><input type="text"
                                                                     name="b_bi_tax"
                                                                     class="format-number form-control w-100 custom_input"
                                                                     aria-describedby="emailHelp"
@@ -303,7 +303,7 @@
                                                                     {{ __('translation.e-mail') }}
                                                                 </label>
                                                             </div>
-                                                            <div class="col-lg-8 col-12"><input type="email" required
+                                                            <div class="col-lg-8 col-12"><input type="email"
                                                                     name="b_bi_email"
                                                                     class="form-control w-100 custom_input"
                                                                     aria-describedby="emailHelp"
@@ -351,7 +351,6 @@
                                                                     class="form-control w-100 custom_input"
                                                                     aria-describedby="emailHelp"
                                                                     placeholder="{{ __('translation.Enter company name') }}"
-                                                                    required
                                                                     @if (!empty($customer->ASInformation)) value="{{ $customer->ASInformation->repair_company_name }}" @endif>
                                                             </div>
                                                         </div>
@@ -368,7 +367,6 @@
                                                                     class="form-control w-100 custom_input"
                                                                     aria-describedby="emailHelp"
                                                                     placeholder="{{ __('translation.Enter company manager name') }}"
-                                                                    required
                                                                     @if (!empty($customer->ASInformation)) value="{{ $customer->ASInformation->repair_company_manager_name }}" @endif>
                                                             </div>
                                                         </div>
@@ -382,7 +380,7 @@
                                                                 </label></div>
                                                             <div class="col-md-8 col-12 d-flex align-items-center gap-1">
                                                                 @php 
-                                                                    if(!empty($customer->ASInformation)){
+                                                                    if(!empty($customer->ASInformation) && !empty($customer->ASInformation->contract_date)){
                                                                         $contract_date = explode('to',$customer->ASInformation->contract_date);
                                                                         $contract_date_from = $contract_date[0];
                                                                         $contract_date_to = $contract_date[1];
@@ -392,14 +390,12 @@
                                                                     class="form-control w-100 custom_input"
                                                                     aria-describedby="emailHelp"
                                                                     placeholder="{{ __('translation.Jewon Lee') }}"
-                                                                    required
                                                                     @if (isset($contract_date_from)) value="{{ $contract_date_from }}" @endif>
                                                                     <span class="small">-</span>
                                                                 <input type="date" name="contract_date_to"
                                                                     class="form-control w-100 custom_input"
                                                                     aria-describedby="emailHelp"
                                                                     placeholder="{{ __('translation.Jewon Lee') }}"
-                                                                    required
                                                                     @if (isset($contract_date_to)) value="{{ $contract_date_to }}" @endif>
                                                             </div>
                                                         </div>
@@ -415,7 +411,6 @@
                                                                     min="1" name="fee"
                                                                     class="form-control w-100 custom_input"
                                                                     aria-describedby="emailHelp" placeholder="₩ 100"
-                                                                    required
                                                                     @if (!empty($customer->ASInformation)) value="{{ $customer->ASInformation->fee }}" @endif>
                                                             </div>
                                                         </div>
@@ -430,7 +425,7 @@
                                                             <div class="col-md-8 col-12"><input type="text"
                                                                     name="invoice_issue_date"
                                                                     class="form-control w-100 custom_input"
-                                                                    aria-describedby="emailHelp" required
+                                                                    aria-describedby="emailHelp"
                                                                     @if (!empty($customer->ASInformation)) value="{{ $customer->ASInformation->invoice_issue_date }}" @endif>
                                                             </div>
                                                         </div>
@@ -445,7 +440,7 @@
                                                             <div class="col-md-8 col-12"><input type="text"
                                                                     name="payment_date"
                                                                     class="form-control w-100 custom_input"
-                                                                    aria-describedby="emailHelp" required
+                                                                    aria-describedby="emailHelp"
                                                                     @if (!empty($customer->ASInformation)) value="{{ $customer->ASInformation->payment_date }}" @endif>
                                                             </div>
                                                         </div>
@@ -462,7 +457,6 @@
                                                                     class="form-control w-100 custom_input"
                                                                     aria-describedby="emailHelp"
                                                                     placeholder="{{ __('translation.Payment method') }}"
-                                                                    required
                                                                     @if (!empty($customer->ASInformation)) value="{{ $customer->ASInformation->payment_method }}" @endif>
 
                                                             </div>
@@ -479,7 +473,6 @@
                                                                     class="form-control w-100 custom_input"
                                                                     aria-describedby="emailHelp"
                                                                     placeholder="{{ __('translation.Please enter your payment account information') }}"
-                                                                    required
                                                                     @if (!empty($customer->ASInformation)) value="{{ $customer->ASInformation->payment_information }}" @endif>
 
                                                             </div>

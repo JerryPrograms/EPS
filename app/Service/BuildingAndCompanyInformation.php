@@ -22,8 +22,6 @@ class BuildingAndCompanyInformation
 
 
         try {
-
-
             DB::beginTransaction();
 
             if ($request->has('b_building_name')) {
@@ -43,15 +41,18 @@ class BuildingAndCompanyInformation
             $building_data = array();
             $building_data['building_manager_name'] = $request->b_building_manager_name;
             $building_data['building_manager_contact'] = $request->b_building_manager_contact;
-            $building_data['address'] = $request->b_address;
             $building_data['manager_contact'] = $request->b_manager_contact;
-            $building_data['customer_id'] = $request->customer_id;
             if ($request->has('b_bi_tax')) {
                 $building_data['fax'] = $request->b_bi_tax;
             }
             if ($request->has('b_bi_email')) {
                 $building_data['email'] = $request->b_bi_email;
             }
+
+            $building_data['address'] = $request->b_address;
+            $building_data['customer_id'] = $request->customer_id;
+
+
 
             $company_data = array();
             $company_data['company_name'] = $request->b_company_name;
@@ -83,12 +84,16 @@ class BuildingAndCompanyInformation
             $as_data['customer_id'] = $request->customer_id;
             $as_data['repair_company_name'] = $request->repair_company_name;
             $as_data['repair_company_manager_name'] = $request->repair_company_manager_name;
-            $as_data['contract_date'] = $request->contract_date_from.'to'.$request->contract_date_to;
+            if(!empty($request->contract_date_from) && !empty($request->contract_date_to)){
+                $as_data['contract_date'] = $request->contract_date_from.'to'.$request->contract_date_to;
+            }
             $as_data['fee'] = $request->fee;
             $as_data['invoice_issue_date'] = $request->invoice_issue_date;
             $as_data['payment_date'] = $request->payment_date;
             $as_data['payment_method'] = $request->payment_method;
-            $as_data['payment_information'] = $request->payment_information;
+            if($request->payment_information !== null){
+                $as_data['payment_information'] = $request->payment_information;
+            }
 
 
             $company_data = array();
