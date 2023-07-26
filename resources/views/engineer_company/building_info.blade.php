@@ -259,7 +259,7 @@
                                                                     @if (!empty($customer->BuildingInformation)) readonly @endif
                                                                     placeholder="{{ __('translation.Enter address') }}"
                                                                     @if (!empty($customer->BuildingInformation)) value="{{ $customer->BuildingInformation->address }}" @endif
-                                                                    required></div>
+                                                                    ></div>
                                                         </div>
 
                                                         <div class="row align-items-center mt-4">
