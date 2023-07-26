@@ -137,7 +137,7 @@
                                     <!-- end row -->
                                 </div>
                                 <!-- container-fluid -->
-
+                                @if(!empty($customer->building_id))
                                 <!-- section 2 start  -->
                                 <div class="row">
                                     <div class="col-lg-12">
@@ -495,9 +495,16 @@
                                     </div>
                                     <!-- end row -->
                                 </div>
-
-
                                 <!-- section 2 end  -->
+                                @else
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="alert alert-danger">
+                                            Please enter the building information
+                                        </div>
+                                    </div>
+                                </div>
+                                @endif
 
                                 <!---------------------------- tabel 2 start----------------  -->
 

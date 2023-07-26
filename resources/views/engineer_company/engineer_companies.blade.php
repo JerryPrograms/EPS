@@ -46,7 +46,7 @@
                                                 <th style="min-width: 120px;">{{ __('translation.Register Date') }}</th>
                                                 <th style="min-width: 180px;">{{ __('translation.Company Name') }}</th>
                                                 <th style="min-width: 120px;">{{ __('translation.Company Number') }}</th>
-                                                <th>{{ __('translation.Address') }}</th>
+                                                <th style="min-width: 250px;">{{ __('translation.Address') }}</th>
                                                 <th style="min-width: 150px;">{{ __('translation.Manager Name') }}</th>
                                                 <th style="min-width: 150px">{{ __('translation.Contact') }}</th>
                                                 <th style="min-width: 100px;">{{ __('translation.Actions') }}</th>
