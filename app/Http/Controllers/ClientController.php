@@ -46,27 +46,37 @@ class ClientController extends Controller
         $e_companies = Engineer_company::pluck('customer_number');
         $e_companies_numbers = [];
 
-        foreach($customer_infos_number as $customer_info_number){
-            $c_number = explode('-',$customer_info_number);
-            array_push($customer_infos_numbers,$c_number[1]);
+        if($customer_infos_number->count() > 0){
+            foreach($customer_infos_number as $customer_info_number){
+                $c_number = explode('-',$customer_info_number);
+                array_push($customer_infos_numbers,$c_number[1]);
+            }
+            // finding max customer info number
+            $collection_c_i_numbers = collect($customer_infos_numbers);
+            $greatest_c_i_number = $collection_c_i_numbers->max();
+            $greatest_customer_info_number = (int)$greatest_c_i_number;
+        }else{
+            $greatest_customer_info_number = 0;
         }
-        // finding max customer info number
-        $collection_c_i_numbers = collect($customer_infos_numbers);
-        $greatest_c_i_number = $collection_c_i_numbers->max();
-        $greatest_customer_info_number = (int)$greatest_c_i_number;
 
-        foreach($e_companies as $e_company){
-            $e_c_number = explode('-',$e_company);
-            array_push($e_companies_numbers,$e_c_number[1]);
+        if($e_companies->count() > 0){
+            foreach($e_companies as $e_company){
+                $e_c_number = explode('-',$e_company);
+                array_push($e_companies_numbers,$e_c_number[1]);
+            }
+            // finding max engineer company numbers
+            $collection_e_c_numbers = collect($e_companies_numbers);
+            $greatest_e_c_number = $collection_e_c_numbers->max();
+            $greatest_engineer_company_number = (int)$greatest_e_c_number;
+        }else{
+            $greatest_engineer_company_number = 0;
         }
-        // finding max engineer company numbers
-        $collection_e_c_numbers = collect($e_companies_numbers);
-        $greatest_e_c_number = $collection_e_c_numbers->max();
-        $greatest_engineer_company_number = (int)$greatest_e_c_number;
         
         if($greatest_engineer_company_number > $greatest_customer_info_number){
             $client_number = $greatest_engineer_company_number + 1;
         }elseif($greatest_customer_info_number > $greatest_engineer_company_number){
+            $client_number = $greatest_customer_info_number + 1;
+        }else{
             $client_number = $greatest_customer_info_number + 1;
         }
 
