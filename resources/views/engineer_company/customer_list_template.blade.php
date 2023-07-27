@@ -5,19 +5,19 @@
         <th class="" style="width: 50px;">
             {{ __('translation.no.') }}
         </th>
-        <th class="text-center" style="width: 150px;">
+        <th class="text-center" style="width: 130px;">
             {{ __('translation.Registration Date') }}
         </th>
-        <th class="text-center" style="width: 200px;">
+        <th class="text-center" style="width: 130px;">
             {{ __('translation.Customer Number') }}
         </th>
         <th class="text-center" style="width: 150px;">
             {{ __('translation.Company name') }}
         </th>
-        <th class="text-center" style="width: 150px;">
+        <th class="text-center" style="width: 250px;">
             {{ __('translation.address') }}
         </th>
-        <th class="text-center" style="width: 200px;">
+        <th class="text-center" style="width: 160px;">
             {{ __('translation.Building Management Company') }}
         </th>
         <th class="text-center" style="width: 150px;">
@@ -61,7 +61,7 @@
             </td>
             <td class="">
                 <button title="{{$c->address}}"
-                        class="date_button_2 border-0 p-0">{{substr($c->address,0,10)}}
+                        class="date_button_2 m-0 border-0 p-0">{{substr($c->address,0,50)}}
                     ....
                 </button>
             </td>

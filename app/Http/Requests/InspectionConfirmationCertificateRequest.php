@@ -58,7 +58,7 @@ class InspectionConfirmationCertificateRequest extends FormRequest
             'year_of_installation.required' => 'year of installation field is required',
             'inspection_date.required' => 'inspection date field is required',
             'addition_information.required' => 'addition information field is required',
-            'inspection_certificate.required' => 'Inspection certificate required',
+            'inspection_certificate.required' => __('translation.Inspection certificate required'),
             'inspection_certificate.min' => 'All 3 Inspection certificate required',
             'inspection_certificate.max' => 'All 3 Inspection certificate required',
             'manager_name.required' => 'Manager Name required',
