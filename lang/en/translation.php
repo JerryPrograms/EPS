@@ -632,5 +632,6 @@ return [
     'Error, Please try again later' => 'Error, Please try again later',
     'Max file size is 5mb' => 'Max file size is 5mb',
     'Client Deleted Successfully' => 'Client Deleted Successfully',
-    'Inspection certificate required' => 'Inspection certificate required'
+    'Inspection certificate required' => 'Inspection certificate required',
+    'The number must be in the format 111-22-33333' => 'The number must be in the format 111-22-33333'
 ];

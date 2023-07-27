@@ -628,5 +628,6 @@ return [
     'Error, Please try again later' => '오류입니다. 나중에 다시 시도해 주세요.',
     'Max file size is 5mb' => '최대 파일 크기는 5MB입니다',
     'Client Deleted Successfully' => '성공적으로 삭제되었습니다.',
-    'Inspection certificate required' => '검사증을 업로드해주세요.'
+    'Inspection certificate required' => '검사증을 업로드해주세요.',
+    'The number must be in the format 111-22-33333' => '사업자등록번호 형식은 다음과 같아야 합니다. ex)111-22-33333'
 ];
