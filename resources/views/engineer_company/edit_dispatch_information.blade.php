@@ -19,7 +19,6 @@
                 <div class="main_content_section">
 
                     <!-- container-fluid -->
-
                     <!-- section 2 start  -->
                     <div class="row">
                         <div class="col-lg-12">
@@ -74,7 +73,7 @@
                                                            class=" custom_input w-100 custom_color_gray"
                                                            aria-describedby="emailHelp"
                                                            placeholder="site name"
-                                                           value="{{$dispatch->site_name}}"
+                                                           value="{{$dispatch->site_name}}" @if(activeGuard() == 'web') readonly @endif
                                                     >
                                                 </div>
                                             </div>
@@ -94,7 +93,7 @@
                                                            class=" custom_input w-100"
                                                            aria-describedby="emailHelp"
                                                            placeholder="2022-05-30 5 PM "
-                                                           value="{{$dispatch->reception_date_and_time}}"
+                                                           value="{{$dispatch->reception_date_and_time}}" @if(activeGuard() == 'web') readonly @endif
                                                     >
                                                 </div>
                                             </div>
@@ -116,7 +115,7 @@
                                                            class=" custom_input w-100 custom_color_gray"
                                                            aria-describedby="emailHelp"
                                                            placeholder="type and number"
-                                                           value="{{$dispatch->model_and_type}}"
+                                                           value="{{$dispatch->model_and_type}}" @if(activeGuard() == 'web') readonly @endif
                                                     >
                                                 </div>
                                             </div>
@@ -137,7 +136,7 @@
                                                     <textarea required name="submission_details"
                                                               class="form-control custom_color_gray_2"
                                                               placeholder="Receipt details: Receipt received.."
-                                                              rows="10">{{$dispatch->submission_details}}</textarea>
+                                                              rows="10" @if(activeGuard() == 'web') readonly @endif>{{$dispatch->submission_details}}</textarea>
                                                 </div>
                                             </div>
 
@@ -180,7 +179,7 @@
                                                     <textarea required name="failure_cause"
                                                               class="form-control custom_color_gray_2"
                                                               placeholder="Write the cause of failure"
-                                                              rows="7">{{$dispatch->failure_cause}}</textarea>
+                                                              rows="7" @if(activeGuard() == 'web') readonly @endif>{{$dispatch->failure_cause}}</textarea>
                                                 </div>
                                             </div>
                                             <div class="row mt-4">
@@ -195,7 +194,7 @@
                                                     <textarea required name="measures"
                                                               class="form-control custom_color_gray_2"
                                                               placeholder="Write action details"
-                                                              rows="7">{{$dispatch->measures}}</textarea>
+                                                              rows="7" @if(activeGuard() == 'web') readonly @endif>{{$dispatch->measures}}</textarea>
                                                 </div>
                                             </div>
                                             <div class="row mt-4">
@@ -211,7 +210,7 @@
                                                     <textarea required name="undecided"
                                                               class="form-control custom_color_gray_2"
                                                               placeholder="undecided"
-                                                              rows="7">{{$dispatch->undecided}}</textarea>
+                                                              rows="7" @if(activeGuard() == 'web') readonly @endif>{{$dispatch->undecided}}</textarea>
                                                 </div>
                                             </div>
                                             <div class="row mt-4">
@@ -227,7 +226,7 @@
                                                            class=" custom_input w-100 custom_color_gray"
                                                            aria-describedby="emailHelp"
                                                            placeholder="{{ __('translation.Fill in pending issues') }}"
-                                                           value="{{$dispatch->dispatcher}}"
+                                                           value="{{$dispatch->dispatcher}}" @if(activeGuard() == 'web') readonly @endif
                                                     >
                                                 </div>
                                             </div>

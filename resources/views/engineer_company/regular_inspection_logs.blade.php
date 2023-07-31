@@ -128,15 +128,17 @@
                                                             <div class="d-flex gap-1 justify-content-center">
                                                                 <a @if(activeGuard() == 'admin') style="background-color: #4ADE80 !important; border: none"
                                                                    @endif href="{{ route('view_regular_inspection_log', $v->id) }}"
-                                                                   class="btn btn-success btn-custom-table btn-sm">
-                                                                    <i class="bx bx-search-alt-2"></i>
+                                                                   class="btn btn-outline-danger btn-theme-danger-outline btn-outline btn-sm">
+                                                                   <img
+                                                                   src="{{ asset('engineer_company/assets/images/red-search.png') }}">
                                                                 </a>
-                                                                @if(activeGuard() != 'web')
-                                                                    <a @if(activeGuard() == 'admin') style="background-color: #696CFF !important; border: none !important;"
+                                                                <a @if(activeGuard() == 'admin') style="background-color: #696CFF !important; border: none !important;"
                                                                        @endif href="{{ route('edit_regular_inspection_log', $v->id) }}"
-                                                                       class="btn btn-primary btn-custom-table btn-sm">
-                                                                        <i class="bx bxs-edit-alt"></i>
+                                                                       class="btn btn-outline-success btn-theme-success-outline btn-outline btn-sm">
+                                                                       <img
+                                                                       src="{{ asset('engineer_company/images/edit_icon.png') }}">
                                                                     </a>
+                                                                @if(activeGuard() != 'web')
                                                                     <a @if(activeGuard() == 'admin') style="background-color: #FF3E1D !important; border: none !important;"
                                                                        @endif data-bs-toggle="modal"
                                                                        data-del-id="{{ $v->id }}"

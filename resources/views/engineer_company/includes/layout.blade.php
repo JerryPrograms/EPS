@@ -35,7 +35,10 @@
         background: rgba(22, 163, 74, 0.05) !important;
         border: 1px solid #16A34A;
     }
-
+    .non-editable-radio {
+        pointer-events: none;
+        opacity: 0.6;
+    }
 </style>
 <body data-sidebar="dark" data-layout-mode="light"
       class="{{ (!empty(activeGuard()) && activeGuard() == 'admin') ? 'admin-layout' : '' }}">

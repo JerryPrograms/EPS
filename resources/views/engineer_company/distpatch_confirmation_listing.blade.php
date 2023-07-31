@@ -72,14 +72,14 @@
                                                             <div class="d-flex gap-1 justify-content-center">
                                                                 <a href="{{ route('ec.ViewDispatchInformation', $v->id) }}"
                                                                    class="btn btn-success btn-custom-table btn-sm">
-                                                                    <i class="bx bx-search-alt-2"></i>
+                                                                    <i class="bx bxs-search-alt-2"></i>
                                                                 </a>
-                                                                @if(activeGuard() != 'web')
-                                                                    <a @if(activeGuard() == 'admin') style="background-color: #696CFF !important; border: none !important;"
+                                                                <a @if(activeGuard() == 'admin') style="background-color: #696CFF !important; border: none !important;"
                                                                        @endif href="{{ route('ec.EditDispatchInformation', $v->id) }}"
                                                                        class="btn btn-primary btn-custom-table btn-sm">
                                                                         <i class="bx bxs-edit-alt"></i>
                                                                     </a>
+                                                                @if(activeGuard() != 'web')
                                                                     <a data-bs-toggle="modal" data-del-id="{{ $v->id }}"
                                                                        data-bs-target="#delModal"
                                                                        class="btn btn-danger btn-custom-table btn-sm delBtn">

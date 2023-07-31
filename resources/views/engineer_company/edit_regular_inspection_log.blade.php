@@ -58,7 +58,7 @@
                                                         <input type="date" class="form-control form-theme-input"
                                                                name="inspection_date"
                                                                value="{{ $customer->inspection_date->format('Y-m-d') }}"
-                                                               id="inspection_date" required>
+                                                               id="inspection_date" required @if(activeGuard() == 'web') readonly @endif>
                                                     </div>
                                                 </div>
                                             </div>
@@ -83,12 +83,13 @@
                                                                class="mb-0">{{ __('translation.Arrival time') }}</label>
                                                     </div>
                                                     <div class="col-lg-10 col-md-6 col-12">
-                                                        <input type="text" class="form-control form-theme-input" hidden
+                                                        <input type="text" class="form-control form-theme-input" @if(activeGuard() != 'web') hidden @endif
                                                                id="arrival_time"
                                                                value="{{ $customer->arrival_time }}"
-                                                               name="arrival_time" required>
-
+                                                               name="arrival_time" required @if(activeGuard() == 'web') readonly @endif>
+                                                        @if(activeGuard() != 'web')
                                                         <div class="w-50" id="arrival_time_picker"></div>
+                                                        @endif
                                                     </div>
                                                 </div>
                                             </div>
@@ -99,11 +100,13 @@
                                                                class="mb-0">{{ __('translation.Completion time') }}</label>
                                                     </div>
                                                     <div class="col-lg-10 col-md-6 col-12">
-                                                        <input hidden type="text" class="form-control form-theme-input"
+                                                        <input @if(activeGuard() != 'web') hidden @endif type="text" class="form-control form-theme-input"
                                                                id="completion_time"
                                                                value="{{ $customer->completion_time }}"
-                                                               name="completion_time" required>
+                                                               name="completion_time" required @if(activeGuard() == 'web') readonly @endif>
+                                                        @if(activeGuard() != 'web')
                                                         <div class="w-50" id="completion_time_picker"></div>
+                                                        @endif
                                                     </div>
                                                 </div>
                                             </div>
@@ -117,7 +120,7 @@
                                                         <input type="text" class="form-control form-theme-input"
                                                                id="checker" name="inspection_manager"
                                                                value="{{ $customer->getCustomer->ParkingFacilityCertificate->producer }}"
-                                                               required>
+                                                               required @if(activeGuard() == 'web') readonly @endif>
                                                     </div>
                                                 </div>
                                             </div>
@@ -235,15 +238,15 @@
                                                                                     <div
                                                                                         class="d-flex align-items-center justify-content-center gap-4">
                                                                                         <input type="radio"
-                                                                                               class="inspection-grade"
+                                                                                               class="inspection-grade @if(activeGuard() == 'web') non-editable-radio @endif"
                                                                                                name="inspection[{{ $main_category }}][{{ $sub_category_accordion }}][{{ $v3->input_name }}]"
                                                                                                value="양호" {{ $check_content[$main_category][$sub_category_accordion][$v3->input_name] == '양호' ? 'checked' : '' }}>
                                                                                         <input type="radio"
-                                                                                               class="inspection-grade"
+                                                                                               class="inspection-grade @if(activeGuard() == 'web') non-editable-radio @endif"
                                                                                                name="inspection[{{ $main_category }}][{{ $sub_category_accordion }}][{{ $v3->input_name }}]"
                                                                                                value="주의" {{ $check_content[$main_category][$sub_category_accordion][$v3->input_name] == '주의' ? 'checked' : '' }}>
                                                                                         <input type="radio"
-                                                                                               class="inspection-grade"
+                                                                                               class="inspection-grade @if(activeGuard() == 'web') non-editable-radio @endif"
                                                                                                name="inspection[{{ $main_category }}][{{ $sub_category_accordion }}][{{ $v3->input_name }}]"
                                                                                                value="불량" {{ $check_content[$main_category][$sub_category_accordion][$v3->input_name] == '불량' ? 'checked' : '' }}>
                                                                                     </div>
@@ -286,7 +289,7 @@
                                                                         <textarea name="special_notes"
                                                                                   id="special_notes" rows="5"
                                                                                   class="form-control"
-                                                                                  style="border-radius: 0;">{{ $customer->special_notes }}</textarea>
+                                                                                  style="border-radius: 0;" @if(activeGuard() == 'web') readonly @endif>{{ $customer->special_notes }}</textarea>
                                                                     </td>
                                                                 </tr>
                                                                 </tbody>
@@ -399,9 +402,13 @@
                     imageData = signaturePad.toDataURL();
                     document.getElementsByName("output")[0].setAttribute("value", imageData);
                 }
-
-                ajaxCall($('#inspectionForm'), "{{ route('edit_inspection_action') }}", $('#formBtn'),
+                if("{{ activeGuard() }}" != 'web'){
+                    ajaxCall($('#inspectionForm'), "{{ route('edit_inspection_action') }}", $('#formBtn'),
                     "{{ route('regular_inspection_log',$customer->getCustomer->user_uid) }}", onRequestSuccess);
+                }else{
+                    ajaxCall($('#inspectionForm'), "{{ route('edit_inspection_action') }}", $('#formBtn'),
+                    "{{ route('regular_inspection_logs') }}", onRequestSuccess);
+                }
             }
         });
 
