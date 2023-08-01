@@ -116,7 +116,7 @@
                                                             </td>
                                                             <td class="custom_br_theme_clr_3">
                                                                 <p class="tble_text">
-                                                                    {{ $customer->company_registration_number }}
+                                                                    {{ $customer->representative }}
                                                                 </p>
                                                             </td>
                                                         </tr>
