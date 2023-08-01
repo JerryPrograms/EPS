@@ -28,7 +28,7 @@ class Authentication
             }
 
         } catch (\Throwable $th) {
-            return false;
+            return $th->getMessage();
         }
     }
 
