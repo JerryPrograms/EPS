@@ -65,7 +65,6 @@ class AuthController extends Controller
             return response()->json(["success" => false, 'message' => $validate->errors()->first()]);
         }
         $login_attempt = Authentication::login($request->email, $request->password, 'engineer_company');
-        dd($login_attempt);
         if ($login_attempt === 'x') {
             return json_encode([
                 'success' => false,
