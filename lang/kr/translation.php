@@ -292,7 +292,7 @@ return [
     'Special notes' => '특기사항',
     'Edit Inspection' => '수정',
     'Please enter Building information & Parking facility certification information' => '건물정보 및 주차설비 인증 정보를 먼저 입력해주세요.',
-    'Back' => '뒤쪽에',
+    'Back' => '뒤로가기',
     'Last monthly maintenance' => '월 정기점검 리스트',
     'Details' => '상세내용',
     'Parking' => '주차',
