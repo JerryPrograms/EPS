@@ -91,8 +91,6 @@ class KeyAccessoryInformation
 
     public static function ImportKey(Request $request)
     {
-
-
         if (!$request->has('buildings')) {
             return json_encode([
                 'success' => false,
@@ -101,30 +99,32 @@ class KeyAccessoryInformation
         } else {
             DB::beginTransaction();
             try {
-                foreach ($request->buildings as $building) {
-                    $MainPart = MainPartModel::where('customer_id', $building)->first();
+                
+                    $MainParts = MainPartModel::whereIn('customer_id', $request->buildings)->get();
+                        foreach ($MainParts as $MainPart) {
+                            $MainPartCreate = MainPartModel::create([
+                                'customer_id' => $request->customer_id,
+                                'title' => $MainPart->title,
+                                'tag' => $MainPart->tag,
+                                'color' => $MainPart->color,
+                            ]);
+                            $SubParts = \App\Models\KeyAccessoryInformation::where('main_part_id', $MainPart->id)->get();
 
-                    $SubParts = \App\Models\KeyAccessoryInformation::where('main_part_id', $MainPart->id)->get();
-
-                    $MainPartCreate = MainPartModel::create([
-                        'customer_id' => $request->customer_id,
-                        'title' => $MainPart->title,
-                        'tag' => $MainPart->tag,
-                        'color' => $MainPart->color,
-                    ]);
-
-                    foreach ($SubParts as $part) {
-                        \App\Models\KeyAccessoryInformation::create([
-                            'main_part_id' => $MainPartCreate->id,
-                            'title' => $part->title,
-                            'standard' => $part->standard,
-                            'quantity' => $part->quantity,
-                            'work_history' => $part->work_history,
-                            'picture' => $part->picture,
-                        ]);
+                            foreach ($SubParts as $part) {
+                                \App\Models\KeyAccessoryInformation::create([
+                                    'main_part_id' => $MainPartCreate->id,
+                                    'title' => $part->title,
+                                    'standard' => $part->standard,
+                                    'quantity' => $part->quantity,
+                                    'work_history' => $part->work_history,
+                                    'picture' => $part->picture,
+                                ]);
+                            }
                     }
 
-                }
+                    
+
+                
                 DB::commit();
                 return json_encode([
                     'success' => true,

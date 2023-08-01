@@ -77,9 +77,7 @@
                                                     </td>
                                                     <td class="custom_br_theme_clr_2">
                                                         <p class="tble_text">
-                                                            @if(!empty($building_name))
-                                                                {{$building_name}}
-                                                            @endif
+                                                            {{ $customer->company_name }}
                                                         </p>
                                                     </td>
                                                     <td class="custom_br_theme_clr_2">
@@ -92,16 +90,12 @@
 
                                                     <td class="custom_br_theme_clr_2">
                                                         <p class="tble_text">
-                                                            @if(!empty($customer->CompanyInformation))
-                                                                {{$customer->CompanyInformation->company_name}}
-                                                            @endif
+                                                            {{ $customer->company_registration_number }}
                                                         </p>
                                                     </td>
                                                     <td class="custom_br_theme_clr_3">
                                                         <p class="tble_text">
-                                                            @if(!empty($customer->RepairCompanyInformation))
-                                                                {{ $customer->RepairCompanyInformation->company_name }}
-                                                            @endif
+                                                            {{ $customer->representative }}
                                                         </p>
                                                     </td>
                                                 </tr>

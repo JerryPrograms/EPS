@@ -629,5 +629,6 @@ return [
     'Max file size is 5mb' => '최대 파일 크기는 5MB입니다',
     'Client Deleted Successfully' => '성공적으로 삭제되었습니다.',
     'Inspection certificate required' => '검사증을 업로드해주세요.',
-    'The number must be in the format 111-22-33333' => '사업자등록번호 형식은 다음과 같아야 합니다. ex)111-22-33333'
+    'The number must be in the format 111-22-33333' => '사업자등록번호 형식은 다음과 같아야 합니다. ex)111-22-33333',
+    'No Building Found' => '아직 등록된 건물이 없습니다'
 ];
