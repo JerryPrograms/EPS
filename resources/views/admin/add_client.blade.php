@@ -243,8 +243,8 @@
                                                                     </div>
                                                                     <div class="col-3">
                                                                         <label class="form-label custom_lab mb-0">
-                                                                            {{ __('translation.Maintenance business registration number') }} <span
-                                                                            class="star_section">*</span>
+                                                                            <span
+                                                                            class="star_section">*</span> {{ __('translation.Maintenance business registration number') }} 
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-5">
