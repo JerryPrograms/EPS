@@ -243,7 +243,8 @@
                                                                     </div>
                                                                     <div class="col-3">
                                                                         <label class="form-label custom_lab mb-0">
-                                                                            {{ __('translation.Maintenance business registration number') }}
+                                                                            {{ __('translation.Maintenance business registration number') }} <span
+                                                                            class="star_section">*</span>
                                                                         </label>
                                                                     </div>
                                                                     <div class="col-5">
@@ -251,7 +252,7 @@
                                                                             name="maintenance_business_registration_number"
                                                                             class="form-control w-100 custom_input"
                                                                             aria-describedby="emailHelp"
-                                                                            placeholder="{{ __('translation.Maintenance business registration number') }}">
+                                                                            placeholder="{{ __('translation.Maintenance business registration number') }}" required>
                                                                     </div>
                                                                 </div>
                                                             </div>
