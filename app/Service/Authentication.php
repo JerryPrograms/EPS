@@ -16,10 +16,11 @@ class Authentication
             if (empty(activeGuard())) {
 
                 $check_info = "Email => ".$email." Password => ".$password." guard => ".$guard;
-                return $check_info;
                 if ($guard == 'web') {
-                    $attempLogin = \Auth::guard($guard)->attempt(['email' => $email, 'password' => $password]);
-                } else {
+                    $attempLogin = \Auth::guard($guard)->attempt(['master_id' => $email, 'password' => $password]);
+                }elseif ($guard == 'engineer_company') {
+                    $attempLogin = \Auth::guard($guard)->attempt(['master_id' => $email, 'password' => $password]);
+                }else{
                     $attempLogin = \Auth::guard($guard)->attempt(['email' => $email, 'password' => $password]);
                 }
                 return $attempLogin;
@@ -29,7 +30,7 @@ class Authentication
             }
 
         } catch (\Throwable $th) {
-            return $th->getMessage();
+            return false;
         }
     }
 
