@@ -15,7 +15,8 @@ class Authentication
 
             if (empty(activeGuard())) {
 
-
+                $check_info = "Email => ".$email." Password => ".$password." guard => ".$guard;
+                return $check_info;
                 if ($guard == 'web') {
                     $attempLogin = \Auth::guard($guard)->attempt(['email' => $email, 'password' => $password]);
                 } else {
