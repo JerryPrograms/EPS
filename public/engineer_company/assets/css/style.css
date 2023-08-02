@@ -1610,3 +1610,6 @@ table.table-inspection .inspection-grade {
     margin-left: 25px;
     height: 50px;
 }
+.fc-event-main p{
+    white-space: normal;
+}

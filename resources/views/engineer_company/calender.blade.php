@@ -475,7 +475,7 @@
                                         <option value="construction">
                                             {{ __('translation.construction') }}
                                         </option>
-                                        <option value="Periodic inspection">
+                                        <option value="periodic inspection">
                                             {{ __('translation.Periodic inspection') }}
                                         </option>
                                     </select>
@@ -565,7 +565,7 @@
                             $('#addEventModal').modal('show');
                             $('#type_btn').addClass('fc-construction-button');
                             $('#type_btn').text('{{ __('translation.construction') }}')
-                            $('#add_event_type').val('construction button')
+                            $('#add_event_type').val('construction')
                         }
                     },
                     periodicInspection: {
