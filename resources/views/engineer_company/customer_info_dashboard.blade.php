@@ -171,6 +171,7 @@
                                                             </p>
                                                         </button>
                                                     </div>
+                                                    @if(activeGuard() !== 'admin')
                                                     <div class="col-lg-3 col-md-4 col-sm-6 mt-2">
                                                         <button
                                                             onclick="window.location.href= '{{route('create_construction_completion',$customer->user_uid)}}'"
@@ -184,6 +185,7 @@
                                                             </p>
                                                         </button>
                                                     </div>
+                                                    @endif
                                                 </div>
 
 
