@@ -183,13 +183,13 @@
                                                                         <div class="dropdown-menu"
                                                                              aria-labelledby="dropdownMenuButton">
                                                                             @if($buildings->count() > 0)
+                                                                            @dd($buildings)
                                                                                 @foreach($buildings as $building)
                                                                                     <div class="w-100 p-2">
                                                                                         <input type="checkbox"
                                                                                             class="form-check-input"
                                                                                             name="buildings[]"
                                                                                             value="{{$building->id}}">
-                                                                                            {{ dd($building->building_information->building_name , $building) }}
                                                                                         {{$building->building_information->building_name}}
                                                                                     </div>
                                                                                 @endforeach
