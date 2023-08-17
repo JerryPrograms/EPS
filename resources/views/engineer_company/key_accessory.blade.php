@@ -170,7 +170,7 @@
                                                             <form class="w-100 d-flex" id="key_import">
                                                                 <input name="customer_id" value="{{$customer->id}}"
                                                                        hidden="">
-                                                                @csrf
+                                                                @csrfs
                                                                 <div class="mb-3">
                                                                     <div class="dropdown me-2">
                                                                         <button
@@ -183,7 +183,6 @@
                                                                         <div class="dropdown-menu"
                                                                              aria-labelledby="dropdownMenuButton">
                                                                             @if($buildings->count() > 0)
-                                                                            @dd($buildings)
                                                                                 @foreach($buildings as $building)
                                                                                     <div class="w-100 p-2">
                                                                                         <input type="checkbox"

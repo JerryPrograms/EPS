@@ -458,7 +458,7 @@
                 if (formattedValue.length <= 1) {
                     ssnInput.value = '';
                 } else {
-                    ssnInput.value = formattedValue.substr(0, formattedValue.length - 1);
+                    ssnInput.value = formattedValue.substr(0, formattedValue.length);
                 }
             }
         });
