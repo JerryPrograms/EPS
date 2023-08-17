@@ -145,6 +145,8 @@ class EngineerCompanyController extends Controller
                 $building->building_information = CustomerInfo::GetBuildingInformation($building->building_id);
             }
 
+            dd($buildings);
+
             return view('engineer_company.key_accessory', compact('customer', 'buildings'));
         }
         abort(404);
