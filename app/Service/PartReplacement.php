@@ -67,10 +67,10 @@ class PartReplacement
 
         try {
 
-            $MainPart = $partReplacements = PartReplacementHistoryModel::whereBetween('registration_date', [
-                $carbonFromDate->startOfDay(),
-                $carbonToDate->endOfDay()
-            ])->where('customer_id', $request->id)->get();
+            $MainPart = $partReplacements = PartReplacementHistoryModel::
+            whereDate('registration_date','>=',$carbonFromDate->startOfDay())->
+            whereDate('registration_date','<=',$carbonToDate->endOfDay())
+            ->where('customer_id', $request->id)->get();
             $html = view('engineer_company.part_replacement_history_listing_template', compact('MainPart'))->render();
 
 

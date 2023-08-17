@@ -193,7 +193,7 @@
                                                         <th class="text-center custom_inp_widt  border-0">
                                                             {{ __('translation.upload date') }}
                                                         </th>
-                                                        <th class="custom_inp_widt  border-0">
+                                                        <th class="custom_inp_widt  border-0" style="min-width:280px;">
                                                             {{ __('translation.File') }}
 
                                                         </th>
@@ -224,7 +224,7 @@
                                                             <td class="border-bottom-0">
                                                                 <a class="monthly-inspection-listing-img" download=""
                                                                      href="{{asset($mr->file)}}"
-                                                                   class="gallery_img">{{explode('/',$mr->file)[4]}}</a>
+                                                                   class="gallery_img">{{explode('/',$mr->file)[3]}}</a>
                                                             </td>
                                                             <td class="border-bottom-0">
                                                                 <button

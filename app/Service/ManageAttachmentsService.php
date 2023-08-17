@@ -17,7 +17,7 @@ class ManageAttachmentsService
             for ($i = 0; $i < count($request->date); $i++) {
                 $data = array();
                 $data['date'] = $request->date[$i];
-                $data['file'] = saveFiles('', 'engineer_company/manage_attachments/', $request->file[$i]);
+                $data['file'] = saveFiles('', 'engineer_company/manage_attachments', $request->file[$i]);
                 $data['title'] = $request->title[$i];
                 $data['customer_id'] = $request->customer_id;
                 $MonthlyInspection = ManageAttachment::create($data);

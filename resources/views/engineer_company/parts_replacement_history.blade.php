@@ -513,7 +513,7 @@
 
             $.ajax({
                 type: "POST",
-                url: '{{route('FilterPartReplacementHistory')}}',
+                url: "{{route('FilterPartReplacementHistory')}}",
                 dataType: 'json',
                 cache: false,
                 data: {

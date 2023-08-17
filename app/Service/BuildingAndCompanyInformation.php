@@ -56,13 +56,17 @@ class BuildingAndCompanyInformation
 
             $company_data = array();
             $company_data['company_name'] = $request->b_company_name;
-            $company_data['ceo_name'] = $request->b_ceo_name;
             $company_data['company_reg_number'] = $request->b_company_reg_number;
+
+            $company_data['ceo_name'] = $request->b_ceo_name;
             $company_data['address'] = $request->b_ci_address;
             $company_data['industry_category'] = $request->b_industry_category;
+            $company_data['b_ci_sectors'] = $request->b_ci_sectors;
             $company_data['contacts'] = $request->b_ci_contacts;
+
             $company_data['customer_id'] = $request->customer_id;
             $company_data['email'] = $request->c_email;
+
             if ($request->has('b_ci_fax')) {
                 $company_data['fax'] = $request->b_ci_fax;
             }
@@ -70,7 +74,6 @@ class BuildingAndCompanyInformation
                 $company_data['email'] = $request->b_ci_email;
             }
 
-            $company_data['b_ci_sectors'] = $request->b_ci_sectors;
 
             if ($request->has('building_id')) {
                 $building_information = BuildingInformation::where('id', $request->building_id)->update($building_data);
@@ -99,10 +102,12 @@ class BuildingAndCompanyInformation
             $company_data = array();
             $company_data['customer_id'] = $request->customer_id;
             $company_data['company_name'] = $request->company_name;
+
             $company_data['ceo_name'] = $request->ceo_name;
             $company_data['address'] = $request->address;
             $company_data['industry_category'] = $request->industry_category;
             $company_data['contacts'] = $request->contacts;
+            
             $company_data['mc_reg'] = $request->mc_reg;
             if ($request->has('fax')) {
                 $company_data['fax'] = $request->fax;

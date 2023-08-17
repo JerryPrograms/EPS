@@ -19,6 +19,15 @@ class BuildingAddressController extends Controller
 
     public function PostCreateAddress(Request $request)
     {
+        $validate = \Validator::make($request->all(), [
+            'building_name' => 'required',
+            'address' => 'required',
+            'building_number' => 'required|unique:building_addresses,building_number,' . $request->id
+        ]);
+
+        if ($validate->fails()) {
+            return response()->json(['success' => false, 'message' => $validate->errors()->first()]);
+        }
       try{
 
           DB::beginTransaction();
@@ -45,7 +54,7 @@ class BuildingAddressController extends Controller
           DB::rollback();
           return json_encode([
               'success' => false,
-              'message' => $ex->getMessage(),
+              'message' => __('translation.Error, Please try again later'),
           ]);
       }
     }
@@ -63,6 +72,16 @@ class BuildingAddressController extends Controller
 
     public function EditAddress(Request $request)
     {
+        $validate = \Validator::make($request->all(), [
+            'building_name' => 'required',
+            'address' => 'required',
+            'building_number' => 'required|unique:building_addresses,building_number,' . $request->id
+        ]);
+
+        if ($validate->fails()) {
+            return response()->json(['success' => false, 'message' => $validate->errors()->first()]);
+        }
+
         BuildingAddress::where('id', $request->id)->update([
             'building_name' => $request->building_name,
             'address' => $request->address,

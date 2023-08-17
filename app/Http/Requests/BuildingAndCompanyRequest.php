@@ -28,9 +28,9 @@ class BuildingAndCompanyRequest extends FormRequest
             // 'b_building_manager_contact' => 'required',
             // 'b_manager_contact' => 'required',
             'b_company_reg_number' => 'required',
-            'b_ci_address' => 'required',
-            'b_industry_category' => 'required',
-            'b_ci_contacts' => 'required',
+            // 'b_ci_address' => 'required',
+            // 'b_industry_category' => 'required',
+            // 'b_ci_contacts' => 'required',
             // 'repair_company_name' => 'required',
             // 'contract_date_from' => 'required',
             // 'contract_date_to' => 'required',
@@ -38,11 +38,11 @@ class BuildingAndCompanyRequest extends FormRequest
             // 'invoice_issue_date' => 'required',
             // 'payment_date' => 'required',
             // 'payment_method' => 'required',
-            'company_name' => 'required',
-            'ceo_name' => 'required',
-            'address' => 'required',
-            'industry_category' => 'required',
-            'contacts' => 'required',
+            // 'company_name' => 'required',
+            // 'ceo_name' => 'required',
+            // 'address' => 'required',
+            // 'industry_category' => 'required',
+            // 'contacts' => 'required',
         ];
     }
 
@@ -56,11 +56,11 @@ class BuildingAndCompanyRequest extends FormRequest
             // 'invoice_issue_date' => 'invoice issue date field is required',
             // 'payment_date' => 'payment date field is required',
             // 'payment_method' => 'payment method field is required',
-            'company_name' => 'company name field is required',
-            'ceo_name' => 'ceo name field is required',
-            'address' => 'address field is required',
-            'industry_category' => 'industry category field is required',
-            'contacts' => 'contacts field is required',
+            // 'company_name' => 'company name field is required',
+            // 'ceo_name' => 'ceo name field is required',
+            // 'address' => 'address field is required',
+            // 'industry_category' => 'industry category field is required',
+            // 'contacts' => 'contacts field is required',
         ];
     }
 }
