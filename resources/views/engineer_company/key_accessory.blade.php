@@ -189,6 +189,7 @@
                                                                                             class="form-check-input"
                                                                                             name="buildings[]"
                                                                                             value="{{$building->id}}">
+                                                                                            {{ dd($building->building_information->building_name , $building) }}
                                                                                         {{$building->building_information->building_name}}
                                                                                     </div>
                                                                                 @endforeach
