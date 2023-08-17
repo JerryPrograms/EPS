@@ -634,5 +634,6 @@ return [
     'Client Deleted Successfully' => 'Client Deleted Successfully',
     'Inspection certificate required' => 'Inspection certificate required',
     'The number must be in the format 111-22-33333' => 'The number must be in the format 111-22-33333',
-    'No Building Found' => 'No Building Found'
+    'No Building Found' => 'No Building Found',
+    'Building is assingned to a customer' => 'Building is assingned to a customer'
 ];

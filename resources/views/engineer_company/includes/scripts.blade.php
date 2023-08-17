@@ -184,7 +184,7 @@
             $('.i a').attr('href', '{{route('contracts_management_list',request()->segment(3))}}');
             $('.j a').attr('href', '{{route('ec.GetQuoteManagement',request()->segment(3))}}');
         }else if ('{{request()->segment(2)}}' == 'customer-info-dashboard') {
-            $('.h a').get(0).style.cssText = 'color:blue !important';
+            // $('.h a').get(0).style.cssText = 'color:blue !important';
             $('.a a').attr('href', '{{route('ec.CreateBuildingInfo',request()->segment(3))}}');
             $('.b a').attr('href', '{{route('write_regular_inspection_log',request()->segment(3))}}');
             $('.c a').attr('href', '{{route('ec.CreateParkingFacility',request()->segment(3))}}');

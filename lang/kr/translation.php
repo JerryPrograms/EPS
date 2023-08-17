@@ -630,5 +630,6 @@ return [
     'Client Deleted Successfully' => '성공적으로 삭제되었습니다.',
     'Inspection certificate required' => '검사증을 업로드해주세요.',
     'The number must be in the format 111-22-33333' => '사업자등록번호 형식은 다음과 같아야 합니다. ex)111-22-33333',
-    'No Building Found' => '아직 등록된 건물이 없습니다'
+    'No Building Found' => '아직 등록된 건물이 없습니다',
+    'Building is assingned to a customer' => '건물이 고객에게 할당됨'
 ];

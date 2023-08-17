@@ -98,7 +98,9 @@
                                                             </td>
                                                             <td class="custom_br_theme_clr_2">
                                                                 <p class="tble_text">
-                                                                    {{ $customer->company_name }}
+                                                                    @if (!empty($building_name))
+                                                                        {{ $building_name }}
+                                                                    @endif
                                                                 </p>
                                                             </td>
                                                             <td class="custom_br_theme_clr_2">
@@ -170,7 +172,7 @@
                                                             <form class="w-100 d-flex" id="key_import">
                                                                 <input name="customer_id" value="{{$customer->id}}"
                                                                        hidden="">
-                                                                @csrfs
+                                                                @csrf
                                                                 <div class="mb-3">
                                                                     <div class="dropdown me-2">
                                                                         <button

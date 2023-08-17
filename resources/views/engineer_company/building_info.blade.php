@@ -66,14 +66,14 @@
                                                         </p>
                                                     </td>
                                                     <td class="custom_br_theme_clr_2">
-                                                        {{-- <p class="tble_text">
+                                                        <p class="tble_text">
                                                             @if (!empty($building_name))
                                                                 {{ $building_name }}
                                                             @endif
-                                                        </p> --}}
-                                                        <p class="tble_text">
-                                                            {{ $customer->company_name }}
                                                         </p>
+                                                        {{-- <p class="tble_text">
+                                                            {{ $customer->company_name }}
+                                                        </p> --}}
                                                     </td>
                                                     <td class="custom_br_theme_clr_2">
                                                         <p class="tble_text">

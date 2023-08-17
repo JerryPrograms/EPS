@@ -61,6 +61,14 @@ class BuildingAddressController extends Controller
 
     public function DeleteAddress(Request $request)
     {
+        $customer = CustomerInfo::where('building_id','like','%"'.$request->id.'"%')->first();
+
+        if($customer){
+            return json_encode([
+                'success' => false,
+                'message' => __('translation.Building is assingned to a customer'),
+            ]);
+        }
 
         BuildingAddress::where('id', $request->id)->delete();
 
