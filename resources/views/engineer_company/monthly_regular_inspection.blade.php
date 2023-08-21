@@ -140,7 +140,7 @@
 
                                         <!-- form row 1 start  -->
                                         <div class="row mt-4">
-                                            <div class="col-lg-11">
+                                            <div class="col-lg-9">
                                                 <h4 class="card-title border-bottom-0 mb-0 pb-0"> <span
                                                         class="bor_lef">&nbsp;</span>
 
@@ -148,9 +148,10 @@
 
                                                 </h4>
                                             </div>
-                                            <div class="col-lg-1">
+                                            <div class="col-lg-3">
 
-                                                <div class="file_main_section">
+                                                <div class="file_main_section d-flex align-items-center justify-content-end gap-2">
+                                                    <a href="{{ route('write_regular_inspection_log', $customer->user_uid) }}" class="btn btn-dark">{{  __('translation.Add Inspection') }}</a>
                                                     <button onclick="printForm($('.monthly_regular_table'))"
                                                             type="button" class="file_button">
                                                         <img src="{{asset('engineer_company/images/Vector.png')}}">
