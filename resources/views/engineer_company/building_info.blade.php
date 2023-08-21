@@ -8,6 +8,10 @@
         ->GetBuildingInfo()
         ->pluck('building_name')
         ->implode(',');
+    $buidling_code_name =$customer
+        ->GetBuildingInfo()
+        ->pluck('building_number')
+        ->implode(',');
 @endphp
 @section('body')
     <div class="main-content">
@@ -209,7 +213,7 @@
                                                                         class="form-control w-100 custom_input"
                                                                         aria-describedby="emailHelp"
                                                                         placeholder="{{ __('translation.Enter building manager name') }}"
-                                                                        value="{{ $building_name }}" disabled required>
+                                                                        value="{{ $buidling_code_name }}" disabled required>
                                                                 @endif
                                                             </div>
                                                         </div>

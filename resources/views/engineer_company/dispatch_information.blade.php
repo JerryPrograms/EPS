@@ -26,10 +26,14 @@
                                                     <h4 class="card_tittle_2 mb-0">
                                                         {{ __('translation.Dispatch Confirmation') }}
                                                     </h4>
-                                                    <a href="{{route('ec.CreateDispatchInformation',$customer->user_uid)}}"
-                                                       class="history_add_btn">
-                                                        {{ __('translation.add') }}
-                                                    </a>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <a href="{{ route('ec.GetCustomerInfoDashboard',request()->segment(3)) }}"
+                                                            class="btn btn-dark">{{ __('translation.Menu') }}</a>
+                                                        <a href="{{route('ec.CreateDispatchInformation',$customer->user_uid)}}"
+                                                            class="history_add_btn">
+                                                             {{ __('translation.add') }}
+                                                         </a>
+                                                    </div>
                                                 </div>
 
 
