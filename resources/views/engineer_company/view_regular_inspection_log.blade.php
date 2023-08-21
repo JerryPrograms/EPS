@@ -53,7 +53,7 @@
                                                 </tr>
                                                 <tr>
                                                     <th class="text-left">{{ __('translation.Checker') }}</th>
-                                                    <td class="text-left">{{ $customer->getCustomer->ParkingFacilityCertificate->producer }}</td>
+                                                    <td class="text-left">{{ $customer->inspection_manager }}</td>
                                                 </tr>
                                                 </tbody>
                                             </table>

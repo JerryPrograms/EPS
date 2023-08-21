@@ -119,7 +119,7 @@
                                                     <div class="col-lg-10 col-md-6 col-12">
                                                         <input type="text" class="form-control form-theme-input"
                                                                id="checker" name="inspection_manager"
-                                                               value="{{ $customer->getCustomer->ParkingFacilityCertificate->producer }}"
+                                                               value="{{ $customer->inspection_manager }}"
                                                                required @if(activeGuard() == 'web') readonly @endif>
                                                     </div>
                                                 </div>
