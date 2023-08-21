@@ -63,12 +63,15 @@
                                                             {{ __('translation.site name') }}
                                                         </label>
                                                 </div>
+                                                @php
+                                                    $building_name = $customer->GetBuildingInfo()->pluck('building_name')->implode(',');
+                                                @endphp
                                                 <div class="col-lg-8 col-12">
                                                     <input type="text"
                                                            required name="site_name"
                                                            class=" custom_input w-100 custom_color_gray"
                                                            aria-describedby="emailHelp"
-                                                           placeholder="{{ __('translation.site name') }}">
+                                                           placeholder="{{ __('translation.site name') }}" value="{{ $building_name }}" readonly>
                                                 </div>
                                             </div>
 
@@ -102,7 +105,7 @@
                                                            required name="model_and_type"
                                                            class=" custom_input w-100 custom_color_gray"
                                                            aria-describedby="emailHelp"
-                                                           placeholder="{{ __('translation.type and number') }}">
+                                                           placeholder="{{ __('translation.type and number') }}" value="{{ __('translation.'.str_replace('_', ' ', $customer->ParkingFacilityCertificate->type)) }}" readonly>
                                                 </div>
                                             </div>
 

@@ -73,7 +73,7 @@
                                                            class=" custom_input w-100 custom_color_gray"
                                                            aria-describedby="emailHelp"
                                                            placeholder="site name"
-                                                           value="{{$dispatch->site_name}}" @if(activeGuard() == 'web') readonly @endif
+                                                           value="{{$dispatch->site_name}}" readonly
                                                     >
                                                 </div>
                                             </div>
@@ -115,7 +115,7 @@
                                                            class=" custom_input w-100 custom_color_gray"
                                                            aria-describedby="emailHelp"
                                                            placeholder="type and number"
-                                                           value="{{$dispatch->model_and_type}}" @if(activeGuard() == 'web') readonly @endif
+                                                           value="{{$dispatch->model_and_type}}" readonly
                                                     >
                                                 </div>
                                             </div>
