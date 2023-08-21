@@ -436,7 +436,7 @@
                                                                     <img
                                                                         src="{{ asset('engineer_company/assets/images/bluebar.png') }}">
                                                                 </button>
-                                                                <p>{{ __('translation.Max file size is 5mb') }}</p>
+                                                                <p>{{ __('translation.Max file size is 2mb') }}</p>
                                                                 <div class="bluebar_img_section">
                                                                 </div>
                                                             </div>
@@ -698,14 +698,14 @@
 
         function setFileName(element) {
 
-            var maxFileSize = 1 * 1024 * 1024;
+            var maxFileSize = 1 * 1024 * 1024 * 2;
 
             var file = element[0].files[0];
 
             if (file.size > maxFileSize) {
 
 
-                Command: toastr["error"]("{{ __('translation.File size exceeds the limit of 5MB.') }}")
+                Command: toastr["error"]("{{ __('translation.File size exceeds the limit of 2MB.') }}")
 
                 toastr.options = {
                     "closeButton": false,
