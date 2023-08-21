@@ -183,7 +183,7 @@
                                                             <div class="col-lg-4 col-12">
                                                                 <label class="form-label custom_lab mb-0"> <span
                                                                         class="star_section">*</span>
-                                                                    {{ __('translation.Building Name') }}
+                                                                    {{ __('translation.Building Code Name') }}
                                                                 </label>
                                                             </div>
                                                             <div class="col-lg-8 col-12">
@@ -193,14 +193,14 @@
                                                                         autocomplete="off" required="">
                                                                         <option selected="" value=""
                                                                             disabled="">
-                                                                            {{ __('translation.Enter building Name') }}
+                                                                            {{ __('translation.Enter building code Name') }}
                                                                         </option>
                                                                         @foreach ($buildings as $building)
                                                                             <option
                                                                                 {{ $customer->building_name == $building->id ? 'selected' : '' }}
                                                                                 address="{{ $building->address }}"
                                                                                 value="{{ $building->id }}">
-                                                                                {{ $building->building_name }}
+                                                                                {{ $building->building_number }}
                                                                             </option>
                                                                         @endforeach
                                                                     </select>

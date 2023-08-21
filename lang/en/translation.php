@@ -25,6 +25,7 @@ return [
     'Industry Category' => 'Industry Category',
     'contact 1, 2' => 'Contact 1, 2',
     'Enter building Name' => 'Enter building Name',
+    'Enter building code Name' => 'Enter building code name',
     'Enter building manager name' => 'Enter building manager name',
     'Enter contact (010-8021-5235)' => 'Enter contact (010-8021-5235)',
     'Enter address' => 'Enter address',
@@ -638,5 +639,6 @@ return [
     'Inspection certificate required' => 'Inspection certificate required',
     'The number must be in the format 111-22-33333' => 'The number must be in the format 111-22-33333',
     'No Building Found' => 'No Building Found',
-    'Building is assingned to a customer' => 'Building is assingned to a customer'
+    'Building is assingned to a customer' => 'Building is assingned to a customer',
+    'Building Code Name' => 'Building Code Name'
 ];

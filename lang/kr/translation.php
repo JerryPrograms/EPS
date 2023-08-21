@@ -26,6 +26,7 @@ return [
     'Industry Category' => '업종',
     'contact 1, 2' => '연락처',
     'Enter building Name' => '건물명을 입력해주세요',
+    'Enter building code Name' => '건물 코드 이름 입력',
     'Enter building manager name' => '건물관리자명을 입력해주세요',
     'Enter contact (010-8021-5235)' => '연락처를 입력해주세요',
     'Enter address' => '주소를 입력해주세요',
@@ -634,5 +635,6 @@ return [
     'Inspection certificate required' => '검사증을 업로드해주세요.',
     'The number must be in the format 111-22-33333' => '사업자등록번호 형식은 다음과 같아야 합니다. ex)111-22-33333',
     'No Building Found' => '아직 등록된 건물이 없습니다',
-    'Building is assingned to a customer' => '건물이 고객에게 할당됨'
+    'Building is assingned to a customer' => '건물이 고객에게 할당됨',
+    'Building Code Name' => '건물 코드 이름'
 ];
