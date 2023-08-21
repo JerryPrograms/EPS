@@ -22,7 +22,7 @@ class BuildingAddressController extends Controller
         $validate = \Validator::make($request->all(), [
             'building_name' => 'required',
             'address' => 'required',
-            'building_number' => 'required|min:3|unique:building_addresses,building_number,' . $request->id
+            'building_number' => 'required|min:3|unique:building_addresses'
         ]);
 
         if ($validate->fails()) {
