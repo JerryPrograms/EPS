@@ -610,6 +610,7 @@ return [
     'Select Buildings' => 'Select Buildings',
     'File size exceeds the limit of 5MB.' => 'File size exceeds the limit of 5MB.',
     'File size exceeds the limit of 2MB.' => 'File size exceeds the limit of 2MB.',
+    'File size exceeds the limit of 20MB.' => 'File size exceeds the limit of 20MB.',
     'Title Updated' => 'Title Updated',
     'Part deleted successfully' => 'Part deleted successfully',
     'Delete Part' => 'Delete Part',

@@ -606,6 +606,7 @@ return [
     'Select Buildings' => '건물 선택',
     'File size exceeds the limit of 5MB.' => '파일 크기가 5MB 한도를 초과합니다.',
     'File size exceeds the limit of 2MB.' => '파일 크기가 2MB 한도를 초과합니다.',
+    'File size exceeds the limit of 20MB.' => '파일 크기가 20MB 한도를 초과합니다.',
     'Title Updated' => '제목 업데이트됨',
     'Part deleted successfully' => '부품이 성공적으로 삭제되었습니다.',
     'Delete Part' => '부품 삭제',

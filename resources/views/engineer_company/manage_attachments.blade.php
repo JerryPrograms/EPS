@@ -388,7 +388,7 @@
                                                         </td>
 
                                                         <td>
-                                                             <input type="file" name="file[]" required class="form-control col-lg-12 custom_input_tble_5"  aria-describedby="emailHelp" placeholder="2022.11.01">
+                                                             <input type="file" name="file[]" onchange="setFileName($(this))" required class="form-control col-lg-12 custom_input_tble_5"  aria-describedby="emailHelp" placeholder="2022.11.01">
                                                         </td>
 
                                                         <td>
@@ -424,6 +424,38 @@
             e.preventDefault();
             ajaxCall($('#deleteMonthlyInspectionModal'), "{{ route('DeleteAttachments') }}", $('#deleteMonthlyInspectionModal').find('button.submitbtn'), "{{ route('ec.CreateManageAttachments',request()->segment(3)) }}", onRequestSuccess);
         });
+
+        function setFileName(element) {
+
+            var maxFileSize = 1 * 1024 * 1024 * 20;
+
+            var file = element[0].files[0];
+
+            if (file.size > maxFileSize) {
+
+
+                Command: toastr["error"]("{{ __('translation.File size exceeds the limit of 20MB.') }}")
+
+                toastr.options = {
+                    "closeButton": false,
+                    "debug": false,
+                    "newestOnTop": false,
+                    "progressBar": true,
+                    "positionClass": "toast-top-right",
+                    "preventDuplicates": true,
+                    "onclick": null,
+                    "showDuration": 300,
+                    "hideDuration": 1000,
+                    "timeOut": 2000,
+                    "extendedTimeOut": 1000,
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                }
+                element.val(null); // Clear the file input
+            }
+        }
 
     </script>
 @endsection
