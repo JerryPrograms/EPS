@@ -73,7 +73,6 @@
 
                                             @if(count($completion_reports) > 0)
                                                 @foreach($completion_reports as $c)
-                                                    @dd($c->GetCustomer)
                                                     <tr>
                                                         <td>
                                                             {{$loop->index + 1}}
