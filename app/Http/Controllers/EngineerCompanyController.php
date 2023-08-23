@@ -96,7 +96,7 @@ class EngineerCompanyController extends Controller
     {
         $checkIfAssigned = CustomerInfo::where('engineer_company_id',$request->del_id)->orWhere('added_by_id',$request->del_id)->first();
         if($checkIfAssigned){
-            return json_encode(['success' => true, 'message' => __('translation.Engineer company is assigned to a customer')]);
+            return json_encode(['success' => false, 'message' => __('translation.Engineer company is assigned to a customer')]);
         }
         $delEngineerCompanyAction = Engineer_company::where('id', $request->del_id)->delete();
 
