@@ -537,7 +537,7 @@
                                                                     name="b_company_name"
                                                                     class="form-control w-100 custom_input"
                                                                     aria-describedby="emailHelp"
-                                                                    placeholder="{{ __('translation.Please enter your company name') }}" readonly
+                                                                    placeholder="{{ __('translation.Please enter your company name') }}" required
                                                                     @if (!empty($customer->CompanyInformation)) value="{{ $customer->CompanyInformation->company_name }}" @endif>
                                                             </div>
                                                         </div>
@@ -552,7 +552,7 @@
                                                                 <input type="text" name="b_ceo_name"
                                                                     class="form-control w-100 custom_input"
                                                                     aria-describedby="emailHelp"
-                                                                    placeholder="{{ __('translation.Enter ceo name') }}" readonly
+                                                                    placeholder="{{ __('translation.Enter ceo name') }}" required
                                                                     @if (!empty($customer->CompanyInformation)) value="{{ $customer->CompanyInformation->ceo_name }}" @endif>
                                                             </div>
                                                         </div>
@@ -568,7 +568,7 @@
                                                                 <input type="text" name="b_company_reg_number"
                                                                     class="form-control w-100 custom_input_2"
                                                                     aria-describedby="emailHelp"
-                                                                    placeholder="{{ __('translation.Enter registration number') }}" readonly
+                                                                    placeholder="{{ __('translation.Enter registration number') }}" required
                                                                     @if (!empty($customer->CompanyInformation)) value="{{ $customer->CompanyInformation->company_reg_number }}" @endif>
                                                             </div>
 
@@ -585,7 +585,7 @@
                                                                 <input type="text" name="b_ci_address"
                                                                     class="form-control w-100 custom_input"
                                                                     aria-describedby="emailHelp"
-                                                                    placeholder="{{ __('translation.Enter address') }}" readonly
+                                                                    placeholder="{{ __('translation.Enter address') }}" required
                                                                     @if (!empty($customer->CompanyInformation)) value="{{ $customer->CompanyInformation->address }}" @endif>
                                                             </div>
                                                         </div>
@@ -600,7 +600,7 @@
                                                                     name="b_industry_category"
                                                                     class="form-control w-100   custom_input"
                                                                     aria-describedby="emailHelp"
-                                                                    placeholder="{{ __('translation.Please enter your business type') }}" readonly
+                                                                    placeholder="{{ __('translation.Please enter your business type') }}" required
                                                                     @if (!empty($customer->CompanyInformation)) value="{{ $customer->CompanyInformation->industry_category }}" @endif>
                                                             </div>
                                                         </div>
@@ -614,7 +614,7 @@
                                                                     name="b_ci_sectors"
                                                                     class="format-number form-control w-100   custom_input"
                                                                     aria-describedby="emailHelp"
-                                                                    placeholder="{{ __('translation.Please enter your industry') }}" readonly
+                                                                    placeholder="{{ __('translation.Please enter your industry') }}" required
                                                                     @if (!empty($customer->CompanyInformation) && !empty($customer->CompanyInformation->b_ci_sectors)) value="{{ $customer->CompanyInformation->b_ci_sectors }}" @endif>
                                                             </div>
                                                         </div>
@@ -628,7 +628,7 @@
                                                                     name="b_ci_contacts"
                                                                     class="form-control w-100   custom_input"
                                                                     aria-describedby="emailHelp"
-                                                                    placeholder="{{ __('translation.Please enter your contact information') }}" readonly
+                                                                    placeholder="{{ __('translation.Please enter your contact information') }}" required
                                                                     @if (!empty($customer->CompanyInformation)) value="{{ $customer->CompanyInformation->contacts }}" @endif></div>
                                                         </div>
 
@@ -642,7 +642,7 @@
                                                                     name="b_ci_fax"
                                                                     class="format-number form-control w-100   custom_input"
                                                                     aria-describedby="emailHelp"
-                                                                    placeholder="{{ __('translation.02-4347-4893') }}" readonly
+                                                                    placeholder="{{ __('translation.02-4347-4893') }}" required
                                                                     @if (!empty($customer->CompanyInformation) && !empty($customer->CompanyInformation->fax)) value="{{ $customer->CompanyInformation->fax }}" @endif>
                                                             </div>
                                                         </div>
@@ -656,7 +656,7 @@
                                                             <div class="col-lg-8 col-12"><input type="text"
                                                                     id="c_email" name="c_email"
                                                                     class="format-number form-control w-100   custom_input"
-                                                                    aria-describedby="emailHelp" readonly
+                                                                    aria-describedby="emailHelp" required
                                                                     @if (!empty($customer->CompanyInformation) && !empty($customer->CompanyInformation->email)) value="{{ $customer->CompanyInformation->email }}" @endif
                                                                     placeholder="이메일주소를 입력해주세요" />
                                                             </div>
@@ -730,7 +730,7 @@
                                                                     name="company_name"
                                                                     class="form-control w-100 custom_input"
                                                                     aria-describedby="emailHelp"
-                                                                    placeholder="{{ __('translation.Enter company name') }}" readonly
+                                                                    placeholder="{{ __('translation.Enter company name') }}" required
                                                                     @if (!empty($customer->RepairCompanyInformation)) value="{{ $customer->RepairCompanyInformation->company_name }}" @endif>
                                                             </div>
                                                         </div>
@@ -745,7 +745,7 @@
                                                                 <input type="text" name="ceo_name"
                                                                     class="form-control col-lg-3 custom_input_2  w-100"
                                                                     aria-describedby="emailHelp"
-                                                                    placeholder="{{ __('translation.Enter ceo name') }}" readonly
+                                                                    placeholder="{{ __('translation.Enter ceo name') }}" required
                                                                     @if (!empty($customer->RepairCompanyInformation)) value="{{ $customer->RepairCompanyInformation->ceo_name }}" @endif>
                                                             </div>
                                                         </div>
@@ -759,7 +759,7 @@
                                                             <div class="col-md-8 col-12"><input type="text"
                                                                     name="address" class="form-control w-100 custom_input"
                                                                     aria-describedby="emailHelp"
-                                                                    placeholder="{{ __('translation.Enter address') }}" readonly
+                                                                    placeholder="{{ __('translation.Enter address') }}" required
                                                                     @if (!empty($customer->RepairCompanyInformation)) value="{{ $customer->RepairCompanyInformation->address }}" @endif>
                                                             </div>
                                                         </div>
@@ -775,7 +775,7 @@
                                                                     name="industry_category"
                                                                     class="form-control w-100 custom_input"
                                                                     aria-describedby="emailHelp"
-                                                                    placeholder="{{ __('translation.Enter industry category') }}" readonly
+                                                                    placeholder="{{ __('translation.Enter industry category') }}" required
                                                                     @if (!empty($customer->RepairCompanyInformation)) value="{{ $customer->RepairCompanyInformation->industry_category }}" @endif>
                                                             </div>
                                                         </div>
@@ -789,7 +789,7 @@
                                                                     id="new-sectors"
                                                                     class="format-number form-control w-100   custom_input"
                                                                     aria-describedby="emailHelp"
-                                                                    placeholder="{{ __('translation.Please enter your industry') }}" readonly
+                                                                    placeholder="{{ __('translation.Please enter your industry') }}" required
                                                                     @if (!empty($customer->CompanyInformation) && !empty($customer->CompanyInformation->b_ci_sectors)) value="{{ $customer->CompanyInformation->b_ci_sectors }}" @endif>
                                                             </div>
                                                         </div>
@@ -803,7 +803,7 @@
                                                                     name="contacts"
                                                                     class="form-control w-100 custom_input"
                                                                     placeholder="{{ __('translation.Please enter your contact information') }}"
-                                                                    aria-describedby="emailHelp" readonly
+                                                                    aria-describedby="emailHelp" required
                                                                     @if (!empty($customer->RepairCompanyInformation)) value="{{ $customer->RepairCompanyInformation->contacts }}" @endif>
                                                             </div>
                                                         </div>
@@ -818,7 +818,7 @@
                                                                     name="fax"
                                                                     class="format-number form-control w-100 custom_input"
                                                                     aria-describedby="emailHelp"
-                                                                    placeholder="{{ __('translation.02-4347-4893') }}" readonly
+                                                                    placeholder="{{ __('translation.02-4347-4893') }}" required
                                                                     @if (!empty($customer->RepairCompanyInformation)) value="{{ $customer->RepairCompanyInformation->fax }}" @endif>
                                                             </div>
                                                         </div>
@@ -831,7 +831,7 @@
                                                             <div class="col-md-8 col-12"><input type="email"
                                                                     name="email" class="form-control w-100 custom_input"
                                                                     aria-describedby="emailHelp"
-                                                                    placeholder="{{ __('translation.Enter email') }}" readonly
+                                                                    placeholder="{{ __('translation.Enter email') }}" required
                                                                     @if (!empty($customer->RepairCompanyInformation)) value="{{ $customer->RepairCompanyInformation->email }}" @endif>
                                                             </div>
                                                         </div>
@@ -842,7 +842,7 @@
                                                                 </label></div>
                                                             <div class="col-md-8 col-12"><input type="text"
                                                                     name="mc_reg" class="form-control w-100 custom_input"
-                                                                    aria-describedby="emailHelp" readonly
+                                                                    aria-describedby="emailHelp" required
                                                                     placeholder="{{ __('translation.Please enter your maintenance company registration number') }}"
                                                                     @if (!empty($customer->RepairCompanyInformation)) value="{{ $customer->RepairCompanyInformation->mc_reg }}" @endif>
                                                             </div>
