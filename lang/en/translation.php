@@ -640,5 +640,6 @@ return [
     'The number must be in the format 111-22-33333' => 'The number must be in the format 111-22-33333',
     'No Building Found' => 'No Building Found',
     'Building is assingned to a customer' => 'Building is assingned to a customer',
-    'Building Code Name' => 'Building Code Name'
+    'Building Code Name' => 'Building Code Name',
+    'Engineer company is assigned to a customer' => 'Engineer company is assigned to a customer'
 ];
