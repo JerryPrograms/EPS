@@ -637,5 +637,8 @@ return [
     'No Building Found' => '아직 등록된 건물이 없습니다',
     'Building is assingned to a customer' => '건물이 고객에게 할당됨',
     'Building Code Name' => '건물 코드 이름',
-    'Engineer company is assigned to a customer' => '엔지니어 회사가 고객에게 지정됩니다'
+    'Engineer company is assigned to a customer' => '엔지니어 회사가 고객에게 지정됩니다',
+    'Building' => '건물',
+    'Created' => '만들어진',
+    'Todo Information' => '할일정보'
 ];

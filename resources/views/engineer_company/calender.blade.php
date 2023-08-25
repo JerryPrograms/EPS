@@ -218,9 +218,12 @@
                                                             }else{
                                                                 $color = '#00DF67';
                                                             }
+
+                                                            $building_ev_ids = json_decode($ev->building_names,true);
+
+                                                            $buidling_ev_names = \DB::table('building_addresses')->whereIn('id',$building_ev_ids)->pluck('building_name');
                                                     @endphp
-                                                    <div class="card border-black-1px" style="cursor: pointer" data-start-date="{{$ev->start_date}}" data-memo="{{$ev->memo}}" data-memo-title="{{$ev->title}}"  data-bs-toggle="modal"
-                                                        data-bs-target="#showMemoModal" onclick=showPopup($(this))>
+                                                    <div class="card border-black-1px">
                                                         <div class="card-body"
                                                              style="border-left: 10px solid {{$color}};padding: 6px 13px;">
                                                             <div class="information">
@@ -236,6 +239,10 @@
                                                                     class="calender_add_btn">
                                                                     {{ __('translation.done') }}
                                                                 </button>
+                                                            </div>
+                                                            <div class="text-left">
+                                                                <a href="javascript:void(0)" data-start-date="{{$ev->start_date}}" data-memo="{{$ev->memo}}" data-memo-title="{{$ev->title}}" data-memo-building-name="{{ $buidling_ev_names[0] }}"  data-bs-toggle="modal"
+                                                                    data-bs-target="#showMemoModal" onclick=showPopup($(this))>View More</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -506,15 +513,21 @@
 
     <div class="modal fade" id="showMemoModal" tabindex="-1" aria-labelledby="showMemoModalLabel"
          aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5>Todo Information</h5>
+                    <h1 class="modal-title fs-5">
+                        {{ __('translation.Todo Information') }}
+                    </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <h3 id="todo-title"></h3>
+                <div class="modal-body pb-4">
+                    <h5 id="todo-title"></h5>
                     <p id="todo-description"></p>
-                    <p class="small text-dark" id="todo-date"></p>
+                    <div class="d-flex align-items-center gap-2">
+                        <p class="mb-0"><b>{{ __('translation.Building') }}</b> : <span class="text-dark mb-0" id="todo-buidling"></span>  | </p>
+                        <p class="mb-0"><b>{{ __('translation.Created') }}</b> : <span class="text-dark mb-0" id="todo-date"></span></p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -614,7 +627,6 @@
                 events:@json($data),
                 editable: true,
                 eventDrop: function (event) {
-
 
                     $.ajax({
                         type: "POST",
@@ -831,6 +843,7 @@
             $('#todo-title').text(memo.attr('data-memo-title'));
             $('#todo-description').text(memo.attr('data-memo'));
             $('#todo-date').text(memo.attr('data-start-date'));
+            $('#todo-buidling').text(memo.attr('data-memo-building-name'));
         }
 
     </script>

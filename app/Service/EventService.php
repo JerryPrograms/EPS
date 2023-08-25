@@ -140,6 +140,8 @@ class EventService
             $date['memo'] = ($request->memo);
             $date['start_date'] = $request->start_date;
             $date['type'] = $request->type;
+            $date['color'] = $color;
+            $date['text_color'] = $text_color;
 
             $event = Events::where('id', $request->id)->update($date);
 

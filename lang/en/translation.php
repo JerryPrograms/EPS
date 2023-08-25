@@ -641,5 +641,8 @@ return [
     'No Building Found' => 'No Building Found',
     'Building is assingned to a customer' => 'Building is assingned to a customer',
     'Building Code Name' => 'Building Code Name',
-    'Engineer company is assigned to a customer' => 'Engineer company is assigned to a customer'
+    'Engineer company is assigned to a customer' => 'Engineer company is assigned to a customer',
+    'Building' => 'Building',
+    'Created' => 'Created',
+    'Todo Information' => 'Todo Information'
 ];
