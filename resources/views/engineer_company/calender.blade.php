@@ -499,7 +499,7 @@
                         <button type="button" onclick="DeleteEventid()" class="btn btn-danger">
                             {{ __('translation.delete') }}
                         </button>
-                        <button type="submit" class="btn btn-primary submitbtn">
+                        <button type="submit" class="btn btn-primary Editbtn">
                             {{ __('translation.Save changes') }}
                         </button>
                         <button type="button" onclick="MarkAsCompleted()" class="mark btn btn-info submitbtn">
@@ -729,7 +729,7 @@
 
         $('#EditEventForm').validate({
             submitHandler: function () {
-                ajaxCall($('#EditEventForm'), "{{ route('EditEventDate') }}", $('#EditEventForm').find('.submitbtn'), "{{ route('ec.GetCalender')}}", onRequestSuccess);
+                ajaxCall($('#EditEventForm'), "{{ route('EditEventDate') }}", $('#EditEventForm').find('.Editbtn'), "{{ route('ec.GetCalender')}}", onRequestSuccess);
             }
         });
 

@@ -404,6 +404,7 @@ return [
     'Emergency Dispatch Checklist added successfully' => '추가 완료',
     'Data deleted successfully' => '삭제 완료',
     'Event Created' => '일정 추가 완료',
+    'Event Edited' => '이벤트가 수정되었습니다',
     'TODO created successfully' => '할일 추가 완료',
     'Part added successfully' => '추가 완료',
     'Something went wrong' => '무언가 잘못되었습니다. 다시 시도해주세요',
@@ -640,5 +641,6 @@ return [
     'Engineer company is assigned to a customer' => '엔지니어 회사가 고객에게 지정됩니다',
     'Building' => '건물',
     'Created' => '만들어진',
-    'Todo Information' => '할일정보'
+    'Todo Information' => 'TODO 리스트 상세내역',
+    'Please input building name' => '건물명을 클릭해주세요.'
 ];

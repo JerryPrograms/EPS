@@ -407,6 +407,7 @@ return [
     'Emergency Dispatch Checklist added successfully' => 'Emergency Dispatch Checklist added successfully',
     'Data deleted successfully' => 'Data deleted successfully',
     'Event Created' => 'Event Created',
+    'Event Edited' => 'Event Edited',
     'TODO created successfully' => 'TODO created successfully',
     'Part added successfully' => 'Part added successfully',
     'Something went wrong' => 'Something went wrong',
@@ -644,5 +645,6 @@ return [
     'Engineer company is assigned to a customer' => 'Engineer company is assigned to a customer',
     'Building' => 'Building',
     'Created' => 'Created',
-    'Todo Information' => 'Todo Information'
+    'Todo Information' => 'Todo Information',
+    'Please input building name' => 'Please input building name'
 ];
