@@ -219,7 +219,8 @@
                                                                 $color = '#00DF67';
                                                             }
                                                     @endphp
-                                                    <div class="card border-black-1px">
+                                                    <div class="card border-black-1px" style="cursor: pointer" data-start-date="{{$ev->start_date}}" data-memo="{{$ev->memo}}" data-memo-title="{{$ev->title}}"  data-bs-toggle="modal"
+                                                        data-bs-target="#showMemoModal" onclick=showPopup($(this))>
                                                         <div class="card-body"
                                                              style="border-left: 10px solid {{$color}};padding: 6px 13px;">
                                                             <div class="information">
@@ -499,6 +500,22 @@
                         </button>
                     </div>
                 </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="showMemoModal" tabindex="-1" aria-labelledby="showMemoModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>Todo Information</h5>
+                </div>
+                <div class="modal-body">
+                    <h3 id="todo-title"></h3>
+                    <p id="todo-description"></p>
+                    <p class="small text-dark" id="todo-date"></p>
+                </div>
             </div>
         </div>
     </div>
@@ -808,6 +825,12 @@
                 placeholder: 'Select Building Name',
             });
             count++;
+        }
+
+        function showPopup(memo){
+            $('#todo-title').text(memo.attr('data-memo-title'));
+            $('#todo-description').text(memo.attr('data-memo'));
+            $('#todo-date').text(memo.attr('data-start-date'));
         }
 
     </script>
