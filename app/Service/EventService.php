@@ -13,7 +13,6 @@ class EventService
 {
     public static function CreateEvent(CalenderRequest $request)
     {
-
         $color = '';
 
         $text_color = '';
