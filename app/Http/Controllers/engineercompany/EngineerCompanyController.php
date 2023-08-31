@@ -245,7 +245,7 @@ class EngineerCompanyController extends Controller
             $company = Engineer_company::where('id', auth(activeGuard())->user()->affiliated_company)->first();
 
 
-            $events = Events::orWhere(function ($query) {
+            $events = Events::orWhere(function ($query) use ($company) {
 
                 $query->where('added_by', activeGuard())->where('user_id', $company->id);
 
