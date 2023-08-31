@@ -5,6 +5,7 @@ namespace App\Service;
 use App\Http\Requests\CalenderRequest;
 use App\Models\Events;
 use App\Models\Todo;
+use App\Models\Engineer;
 use Illuminate\Http\Request;
 
 
@@ -13,9 +14,8 @@ class EventService
     public static function CreateEvent(CalenderRequest $request)
     {
 
-        dd($request->all() , auth(activeGuard()));
         $color = '';
-        
+
         $text_color = '';
         if ($request->type == 'weekend duty') {
             $color = '#DBA15D';
@@ -40,11 +40,17 @@ class EventService
 
         try {
 
+            if(activeGuard() == 'engineer'){
+                $engineer = Engineer::where('id',auth(activeGuard())->id())->first();
+                $engineer_company_id = $engineer->affiliated_company;
+            }else{
+                $engineer_company_id = auth(activeGuard())->id();
+            }
 
             foreach ($request->building_names as $key => $bn) {
                 $date['color'] = $color;
                 $date['text_color'] = $text_color;
-                $date['user_id'] = auth(activeGuard())->user()->id;
+                $date['user_id'] = $engineer_company_id;
                 $date['added_by'] = activeGuard();
                 $date['title'] = json_encode($request->building_names[$key],JSON_UNESCAPED_UNICODE);
                 $date['memo'] = json_encode($request->memo[$key],JSON_UNESCAPED_UNICODE);
