@@ -242,7 +242,7 @@
                                                             </div>
                                                             <div class="text-left">
                                                                 <a href="javascript:void(0)" data-start-date="{{$ev->start_date}}" data-memo="{{$ev->memo}}" data-memo-title="{{$ev->title}}" data-memo-building-name="{{ $buidling_ev_names[0] }}"  data-bs-toggle="modal"
-                                                                    data-bs-target="#showMemoModal" onclick=showPopup($(this))>{{ __('transalation.View More') }}</a>
+                                                                    data-bs-target="#showMemoModal" onclick=showPopup($(this))>{{ __('translation.View More') }}</a>
                                                             </div>
                                                         </div>
                                                     </div>
