@@ -640,7 +640,8 @@ return [
     'Building Code Name' => '건물 코드 이름',
     'Engineer company is assigned to a customer' => '엔지니어 회사가 고객에게 지정됩니다',
     'Building' => '건물',
-    'Created' => '만들어진',
+    'Created' => '작성일자',
     'Todo Information' => 'TODO 리스트 상세내역',
-    'Please input building name' => '건물명을 클릭해주세요.'
+    'Please input building name' => '건물명을 클릭해주세요.',
+    'View More' => '자세히 보기'
 ];

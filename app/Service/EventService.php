@@ -199,6 +199,14 @@ class EventService
         $data = $request->except('_token');
 
         $data['building_names'] = json_encode($data['building_names']);
+
+        if(activeGuard() == 'engineer'){
+            $engineer = Engineer::where('id',auth(activeGuard())->id())->first();
+            $data['user_id'] = $engineer->affiliated_company;
+        }else{
+            $data['user_id'] = auth(activeGuard())->id();
+        }
+
         try {
             $createTodo = Todo::create($data);
             return json_encode([

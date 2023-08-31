@@ -256,8 +256,8 @@ class EngineerCompanyController extends Controller
             })->where('status', 0)->latest()->get();
 
 
-            $todos_pending = Todo::where('status', 0)->where('user_id', auth(activeGuard())->user()->id)->where('added_by', activeGuard())->latest()->get();
-            $todos_completed = Todo::where('status', 1)->where('user_id', auth(activeGuard())->user()->id)->where('added_by', activeGuard())->latest()->get();
+            $todos_pending = Todo::where('status', 0)->where('user_id', $company->id)->where('added_by', activeGuard())->latest()->get();
+            $todos_completed = Todo::where('status', 1)->where('user_id', $company->id)->where('added_by', activeGuard())->latest()->get();
         } else {
 
 
@@ -270,7 +270,7 @@ class EngineerCompanyController extends Controller
 
             })->orWhere(function ($query) use ($engineers) {
 
-                $query->where('added_by', 'engineer')->whereIn('user_id', $engineers);
+                $query->where('added_by', 'engineer')->where('user_id', auth(activeGuard())->user()->id);
 
             })->where('status', 0)->latest()->get();
 
