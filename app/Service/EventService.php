@@ -15,6 +15,7 @@ class EventService
 
         dd($request->all() , auth(activeGuard()));
         $color = '';
+        
         $text_color = '';
         if ($request->type == 'weekend duty') {
             $color = '#DBA15D';
