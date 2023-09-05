@@ -68,7 +68,7 @@
                                                     </td>
                                                     <td class="custom_br_theme_clr_2">
                                                         <p class="tble_text">
-                                                            {{$customer->created_at->format('Y.m.d')}}
+                                                            {{$customer->created_at->format('Y-m-d')}}
                                                         </p>
                                                     </td>
                                                     <td class="custom_br_theme_clr_2">

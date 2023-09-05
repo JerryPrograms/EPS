@@ -647,5 +647,6 @@ return [
     'Created' => 'Created',
     'Todo Information' => 'Todo Information',
     'Please input building name' => 'Please input building name',
-    'View More' => 'View More'
+    'View More' => 'View More',
+    'Building Management Company' => 'Building Management Company'
 ];

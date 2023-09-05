@@ -3,7 +3,7 @@
         <tr class="custom_bor_clr">
             <td class="border-bottom-0">{{ $loop->index + 1 }}</td>
             <td class="border-bottom-0">
-                {{ $mr->inspection_date->format('d-m-Y') }}
+                {{ $mr->inspection_date->format('Y-m-d') }}
             </td>
             <td class="border-bottom-0">
                 {{ $mr->completion_time }}

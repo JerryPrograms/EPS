@@ -65,7 +65,7 @@
                                                     </th>
                                                     <th class="text-center">
 
-                                                        {{ __('translation.Maintenance Company') }}
+                                                        {{ __('translation.Building Management Company') }}
 
 
                                                         <br>

@@ -77,15 +77,15 @@
 
                                                 <td class="custom_br_theme_clr_2">
                                                     <p class="tble_text">
-                                                        @if(!empty($customer->CompanyInformation))
-                                                            {{$customer->CompanyInformation->company_name}}
+                                                        @if(!empty($customer->company_registration_number))
+                                                            {{$customer->company_registration_number}}
                                                         @endif
                                                     </p>
                                                 </td>
                                                 <td class="custom_br_theme_clr_3">
                                                     <p class="tble_text">
-                                                        @if(!empty($customer->RepairCompanyInformation))
-                                                            {{ $customer->RepairCompanyInformation->company_name }}
+                                                        @if(!empty($customer->representative))
+                                                            {{ $customer->representative }}
                                                         @endif
                                                     </p>
                                                 </td>

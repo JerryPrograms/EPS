@@ -63,7 +63,7 @@
 
                                                     <td class="custom_br_theme_clr_2">
                                                         <p class="tble_text">
-                                                            {{$company->company_registration_number}}
+                                                            {{$company->representative}}
                                                         </p>
                                                     </td>
                                                     <td class="custom_br_theme_clr_3">

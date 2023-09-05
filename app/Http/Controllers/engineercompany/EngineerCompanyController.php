@@ -258,6 +258,16 @@ class EngineerCompanyController extends Controller
 
             $todos_pending = Todo::where('status', 0)->where('user_id', $company->id)->where('added_by', activeGuard())->latest()->get();
             $todos_completed = Todo::where('status', 1)->where('user_id', $company->id)->where('added_by', activeGuard())->latest()->get();
+
+
+            $building_ids = [];
+            $customers = CustomerInfo::where('engineer_company_id',auth('engineer')->user()->affiliated_company)->get();
+            foreach ($customers as $value) {
+                $building_id = json_decode($value->building_id,true)[0];
+                array_push($building_ids, $building_id);
+            }
+            $building_names = BuildingAddress::whereIn('id',$building_ids)->get();
+
         } else {
 
 
@@ -278,6 +288,14 @@ class EngineerCompanyController extends Controller
             $todos_pending = Todo::where('status', 0)->where('user_id', auth(activeGuard())->user()->id)->where('added_by', activeGuard())->latest()->get();
             $todos_completed = Todo::where('status', 1)->where('user_id', auth(activeGuard())->user()->id)->where('added_by', activeGuard())->latest()->get();
 
+            $building_ids = [];
+            $customers = CustomerInfo::where('engineer_company_id',auth('engineer_company')->id())->get();
+            foreach ($customers as $value) {
+                $building_id = json_decode($value->building_id,true)[0];
+                array_push($building_ids, $building_id);
+            }
+            $building_names = BuildingAddress::whereIn('id',$building_ids)->get();
+
 
         }
 
@@ -286,13 +304,12 @@ class EngineerCompanyController extends Controller
         if (count($events) > 0) {
             foreach ($events as $ev) {
 
-                $building_names = BuildingAddress::whereIn('id', json_decode($ev->title))->pluck('building_name')->toArray();
-
+                $building_names_title = BuildingAddress::whereIn('id', json_decode($ev->title))->pluck('building_name')->toArray();
 
                 if (!empty($ev->end_date)) {
                     $data[] = [
                         'id' => $ev->id,
-                        'title' => implode(',', $building_names),
+                        'title' => \Str::limit($ev->memo, 35),
                         'start' => $ev->start_date,
                         'end' => $ev->end_date,
                         'color' => $ev->color,
@@ -302,7 +319,7 @@ class EngineerCompanyController extends Controller
                 } else {
                     $data[] = [
                         'id' => $ev->id,
-                        'title' => implode(',', $building_names),
+                        'title' => \Str::limit($ev->memo, 35),
                         'start' => $ev->start_date,
                         'end' => $ev->start_date,
                         'color' => $ev->color,
@@ -313,8 +330,7 @@ class EngineerCompanyController extends Controller
 
             }
         }
-
-        $building_names = BuildingAddress::latest()->get();
+        
 
         return view('engineer_company.calender', compact('building_names', 'data', 'events', 'todos_pending', 'todos_completed'));
     }

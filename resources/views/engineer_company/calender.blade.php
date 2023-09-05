@@ -218,10 +218,6 @@
                                                             }else{
                                                                 $color = '#00DF67';
                                                             }
-
-                                                            $building_ev_ids = json_decode($ev->building_names,true);
-
-                                                            $buidling_ev_names = \DB::table('building_addresses')->whereIn('id',$building_ev_ids)->pluck('building_name');
                                                     @endphp
                                                     <div class="card border-black-1px">
                                                         <div class="card-body"
@@ -241,7 +237,7 @@
                                                                 </button>
                                                             </div>
                                                             <div class="text-left">
-                                                                <a href="javascript:void(0)" data-start-date="{{$ev->start_date}}" data-memo="{{$ev->memo}}" data-memo-title="{{$ev->title}}" data-memo-building-name="{{ $buidling_ev_names[0] }}"  data-bs-toggle="modal"
+                                                                <a href="javascript:void(0)" data-start-date="{{$ev->start_date}}" data-memo="{{$ev->memo}}" data-memo-title="{{$ev->title}}"  data-bs-toggle="modal"
                                                                     data-bs-target="#showMemoModal" onclick=showPopup($(this))>{{ __('translation.View More') }}</a>
                                                             </div>
                                                         </div>
@@ -386,14 +382,6 @@
                                 <input type="text" class="form-control border-blue-2px" name="memo"
                                        placeholder="{{ __('translation.Enter Content') }}" required>
                             </div>
-                            <div class="col-12 mt-2">
-                                <select multiple name="building_names[]" id="building_names"
-                                        class="filter-multi-select">
-                                    @foreach($building_names as $bn)
-                                        <option value="{{$bn->id}}">{{$bn->building_name}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
                             <div class="col-12 mt-3 text-center">
                                 <button type="submit" class="btn btn-primary submitbtn">
                                     {{ __('translation.Save changes') }}
@@ -524,7 +512,6 @@
                     <h5 id="todo-title"></h5>
                     <p id="todo-description"></p>
                     <div class="d-flex align-items-center gap-2">
-                        <p class="mb-0"><b>{{ __('translation.Building') }}</b> : <span class="text-dark mb-0" id="todo-buidling"></span>  | </p>
                         <p class="mb-0"><b>{{ __('translation.Created') }}</b> : <span class="text-dark mb-0" id="todo-date"></span></p>
                     </div>
                 </div>
@@ -842,7 +829,6 @@
             $('#todo-title').text(memo.attr('data-memo-title'));
             $('#todo-description').text(memo.attr('data-memo'));
             $('#todo-date').text(memo.attr('data-start-date'));
-            $('#todo-buidling').text(memo.attr('data-memo-building-name'));
         }
 
     </script>

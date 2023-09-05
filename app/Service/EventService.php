@@ -189,16 +189,10 @@ class EventService
 
     public static function CreateTodo(Request $request)
     {
-        if(!$request->has('building_names')){
-            return json_encode([
-                'success' => false,
-                'message' => __('translation.Please input building name')
-            ]);
-        }
 
         $data = $request->except('_token');
 
-        $data['building_names'] = json_encode($data['building_names']);
+        $data['building_names'] = 'not selected';
 
         if(activeGuard() == 'engineer'){
             $engineer = Engineer::where('id',auth(activeGuard())->id())->first();

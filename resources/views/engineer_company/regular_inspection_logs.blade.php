@@ -103,7 +103,6 @@
                                                     <th>{{ __('translation.no') }}</th>
                                                     <th>{{ __('translation.Inspection date') }}</th>
                                                     <th>{{ __('translation.checker') }}</th>
-                                                    <th>{{ __('translation.Inspection Content') }}</th>
                                                     <th>{{ __('translation.Building Name') }}</th>
                                                     <th>{{ __('translation.address') }}</th>
                                                     <th>{{ __('translation.action') }}</th>
@@ -121,7 +120,6 @@
                                                         <td>{{ $loop->index + 1 }}</td>
                                                         <td>{{ $v->inspection_date->format('Y-d-m') }}</td>
                                                         <td>{{ $v->inspection_manager }}</td>
-                                                        <td>{{ $v->special_notes }}</td>
                                                         <td title="{{ $building_name }}">{{ $building_name }}</td>
                                                         <td title="{{ $address }}">{{ Str::limit($address, 20, '...') }}</td>
                                                         <td>
