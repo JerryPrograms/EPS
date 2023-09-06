@@ -46,7 +46,7 @@
         }
 
         .fc-weekendDuty-button {
-            background-color: #DBA15D;
+            background-color: #f39c12;
             color: #000000 !important;
             border: none;
             font-size: 10px;
@@ -56,7 +56,7 @@
 
         .fc-weekendShift-button {
             background-color: #FEE2E2;
-            color: #DC2626 !important;
+            color: #000000 !important;
             border: none;
             font-size: 10px;
             padding: 10px;
@@ -64,8 +64,8 @@
 
 
         .fc-nightShift-button {
-            background-color: #FEF9C3;
-            color: #CA8A04 !important;
+            background-color: #686de0;
+            color: #000000 !important;
             border: none;
             font-size: 10px;
             padding: 10px;
@@ -73,8 +73,8 @@
 
 
         .fc-holidayDuty-button {
-            background-color: #FF60DC;
-            color: #ffffff !important;
+            background-color: #feca57;
+            color: #000000 !important;
             border: none;
             font-size: 10px;
             padding: 10px;
@@ -92,7 +92,7 @@
 
         .fc-periodicInspection-button {
             background-color: #DBEAFE;
-            color: #2563EB !important;
+            color: #000000 !important;
             border: none;
             font-size: 10px;
             padding: 10px;
@@ -543,7 +543,7 @@
                         text: '{{ __('translation.Weekend Duty') }}',
                         click: function () {
                             $('#addEventModal').modal('show');
-                            $('#type_btn').addClass('fc-weekendDuty-button');
+                            $('#type_btn').attr('class','fc-weekendDuty-button');
                             $('#type_btn').text('{{ __('translation.Weekend Duty') }}')
                             $('#add_event_type').val('weekend duty')
                         }
@@ -552,7 +552,7 @@
                         text: '{{ __('translation.Weekend Shift') }}',
                         click: function () {
                             $('#addEventModal').modal('show');
-                            $('#type_btn').addClass('fc-weekendShift-button');
+                            $('#type_btn').attr('class','fc-weekendShift-button');
                             $('#type_btn').text('{{ __('translation.Weekend Shift') }}')
                             $('#add_event_type').val('weekend shift')
                         }
@@ -561,7 +561,7 @@
                         text: '{{ __('translation.Night Shift') }}',
                         click: function () {
                             $('#addEventModal').modal('show');
-                            $('#type_btn').addClass('fc-nightShift-button');
+                            $('#type_btn').attr('class','fc-nightShift-button');
                             $('#type_btn').text('{{ __('translation.Night Shift') }}')
                             $('#add_event_type').val('night shift')
                         }
@@ -570,7 +570,7 @@
                         text: '{{ __('translation.Holiday Duty') }}',
                         click: function () {
                             $('#addEventModal').modal('show');
-                            $('#type_btn').addClass('fc-holidayDuty-button');
+                            $('#type_btn').attr('class','fc-holidayDuty-button');
                             $('#type_btn').text('{{ __('translation.Holiday Duty') }}')
                             $('#add_event_type').val('holiday duty')
                         }
@@ -579,7 +579,7 @@
                         text: '{{ __('translation.construction') }}',
                         click: function () {
                             $('#addEventModal').modal('show');
-                            $('#type_btn').addClass('fc-construction-button');
+                            $('#type_btn').attr('class','fc-construction-button');
                             $('#type_btn').text('{{ __('translation.construction') }}')
                             $('#add_event_type').val('construction')
                         }
@@ -588,7 +588,7 @@
                         text: '{{ __('translation.Periodic Inspection') }}',
                         click: function () {
                             $('#addEventModal').modal('show');
-                            $('#type_btn').addClass('fc-periodicInspection-button');
+                            $('#type_btn').attr('class','fc-periodicInspection-button');
                             $('#type_btn').text('{{ __('translation.Periodic Inspection') }}')
                             $('#add_event_type').val('periodic inspection')
                         }
@@ -602,7 +602,7 @@
                 },
                 @if(activeGuard() != 'admin')
                 headerToolbar: {
-                    start: 'weekendDuty,weekendShift,nightShift,holidayDuty,construction,periodicInspection', // will normally be on the left. if RTL, will be on the right
+                    start: 'weekendDuty,weekendShift,holidayDuty,construction,periodicInspection,nightShift', // will normally be on the left. if RTL, will be on the right
                     center: 'title',
                     right: 'prev,next',// will normally be on the right. if RTL, will be on the left
                 },

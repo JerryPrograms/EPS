@@ -17,23 +17,23 @@ class EventService
 
         $text_color = '';
         if ($request->type == 'weekend duty') {
-            $color = '#DBA15D';
+            $color = '#f39c12';
             $text_color = '#000000';
         } elseif ($request->type == 'weekend shift') {
             $color = '#FEE2E2';
-            $text_color = '#DC2626';
+            $text_color = '#000000';
         } elseif ($request->type == 'night shift') {
-            $color = '#FEF9C3';
-            $text_color = '#CA8A04';
+            $color = '#686de0';
+            $text_color = '#000000';
         } elseif ($request->type == 'holiday duty') {
-            $color = '#FF60DC';
-            $text_color = '#ffffff';
+            $color = '#feca57';
+            $text_color = '#000000';
         } elseif ($request->type == 'construction') {
             $color = '#00DF67';
             $text_color = '#000000';
         } else {
             $color = '#DBEAFE';
-            $text_color = '#2563EB';
+            $text_color = '#000000';
         }
 
 
@@ -120,23 +120,23 @@ class EventService
         $color = '';
         $text_color = '';
         if ($request->type == 'weekend duty') {
-            $color = '#DBA15D';
+            $color = '#f39c12';
             $text_color = '#000000';
         } elseif ($request->type == 'weekend shift') {
             $color = '#FEE2E2';
-            $text_color = '#DC2626';
+            $text_color = '#000000';
         } elseif ($request->type == 'night shift') {
-            $color = '#FEF9C3';
-            $text_color = '#CA8A04';
+            $color = '#686de0';
+            $text_color = '#000000';
         } elseif ($request->type == 'holiday duty') {
-            $color = '#FF60DC';
-            $text_color = '#ffffff';
+            $color = '#feca57';
+            $text_color = '#000000';
         } elseif ($request->type == 'construction') {
             $color = '#00DF67';
             $text_color = '#000000';
         } else {
             $color = '#DBEAFE';
-            $text_color = '#2563EB';
+            $text_color = '#000000';
         }
 
 
