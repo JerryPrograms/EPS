@@ -73,7 +73,7 @@
 
 
         .fc-holidayDuty-button {
-            background-color: #feca57;
+            background-color: #fed330;
             color: #000000 !important;
             border: none;
             font-size: 10px;

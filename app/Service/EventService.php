@@ -26,7 +26,7 @@ class EventService
             $color = '#686de0';
             $text_color = '#000000';
         } elseif ($request->type == 'holiday duty') {
-            $color = '#feca57';
+            $color = '#fed330';
             $text_color = '#000000';
         } elseif ($request->type == 'construction') {
             $color = '#00DF67';
@@ -129,7 +129,7 @@ class EventService
             $color = '#686de0';
             $text_color = '#000000';
         } elseif ($request->type == 'holiday duty') {
-            $color = '#feca57';
+            $color = '#fed330';
             $text_color = '#000000';
         } elseif ($request->type == 'construction') {
             $color = '#00DF67';

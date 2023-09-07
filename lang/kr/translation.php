@@ -238,7 +238,7 @@ return [
     'Monthly Inspection list' => '월정기점검 리스트',
     'Emergency dispatch' => '긴급출동 확인 리스트',
     'Manage attachments' => '첨부파일 관리',
-    'Dispatch Confirmation' => '출동확인서 관리',
+    'Dispatch Confirmation' => '출동확인서',
     'Regular inspection log' => '정기점검일지 관리',
     'Contract Management' => '계약서 관리',
     'Quote Management' => '견적서',
@@ -644,5 +644,11 @@ return [
     'Todo Information' => 'TODO 리스트 상세내역',
     'Please input building name' => '건물명을 클릭해주세요.',
     'View More' => '자세히 보기',
-    'Building Management Company' => '건물관리업체'
+    'Building Management Company' => '건물관리업체',
+    'Parking Facility Management' => '주차설비 관리',
+    'Site' => '현장',
+    'AS company' => 'AS업체',
+    'regular_inspection_log' => '정기점검일지',
+    'construction_completion_report' => '공사완료보고서',
+    'building_management_company' => '사업자번호'
 ];

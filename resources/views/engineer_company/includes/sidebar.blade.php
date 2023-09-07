@@ -183,7 +183,7 @@
                                 <img src="{{ asset('engineer_company/assets/images/Frame.png') }}"
                                      class="double_ring_img p-0" style="margin-left: -1px;">
                                 <span key="t-dashboards"
-                                      class="dropdown_text">{{ __('translation.Dashboard') }}</span>
+                                      class="dropdown_text">{{ __('translation.Parking Facility Management') }}</span>
                             </a>
                         </li>
                 @endif

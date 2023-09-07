@@ -648,5 +648,11 @@ return [
     'Todo Information' => 'Todo Information',
     'Please input building name' => 'Please input building name',
     'View More' => 'View More',
-    'Building Management Company' => 'Building Management Company'
+    'Building Management Company' => 'Building Management Company',
+    'Parking Facility Management' => 'Parking Facility Management',
+    'Site' => 'Site',
+    'AS company' => 'AS company',
+    'regular_inspection_log' => 'Regular Inspection Log',
+    'construction_completion_report' => 'Construction Completion Report',
+    'building_management_company' => 'Building Management Company'
 ];

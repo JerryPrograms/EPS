@@ -32,16 +32,16 @@
                                                     {{ __('translation.Customer Number') }}
                                                 </th>
                                                 <th class="text-center">
-                                                    {{ __('translation.Building Name') }}
+                                                    {{ __('translation.Site') }}
                                                 </th>
                                                 <th class="text-center">
                                                     {{ __('translation.address') }}
                                                 </th>
                                                 <th class="text-center">
-                                                    {{ __('translation.Building Management Company') }}
+                                                    {{ __('translation.AS company') }}
                                                 </th>
                                                 <th class="text-center">
-                                                    {{ __('translation.Engineer company') }}
+                                                    {{ __('translation.Building Management Company') }}
                                                 </th>
                                             </tr>
                                             </thead>
@@ -104,7 +104,7 @@
                                             </div>
                                             <div class="button_section">
                                                 <div class="row">
-                                                    <div class="col-lg-2 col-md-4 col-sm-6 mt-2">
+                                                    {{-- <div class="col-lg-2 col-md-4 col-sm-6 mt-2">
                                                         <button
                                                             onclick="window.location.href= '{{route('ec.CreateBuildingInfo',auth(activeGuard())->user()->user_uid)}}'"
                                                             class="searchbar_img border-0 w-100">
@@ -114,8 +114,8 @@
                                                                 {{ __('translation.Create Customer Info') }}
                                                             </p>
                                                         </button>
-                                                    </div>
-                                                    <div class="col-lg-2 col-md-4 col-sm-6 mt-2">
+                                                    </div> --}}
+                                                    <div class="col-lg-3 col-md-4 col-sm-6 mt-2">
 
                                                             <button
                                                                 onclick="window.location.href= '{{route('distpatch_confirmation_listing')}}'"
@@ -123,22 +123,22 @@
                                                                 <img style="height: 50px;width: 50px;"
                                                                      src="{{asset('engineer_company/assets/images/3.png')}}">
                                                                 <p class="searchbar_text mt-3">
-                                                                    {{ __('translation.Fill Dispatch Confirmation') }}
+                                                                    {{ __('translation.Dispatch Confirmation') }}
                                                                 </p>
                                                             </button>
                                                     </div>
-                                                    <div class="col-lg-2 col-md-4 col-sm-6 mt-2">
+                                                    <div class="col-lg-3 col-md-4 col-sm-6 mt-2">
                                                         <button
                                                             onclick="window.location.href= '{{route('regular_inspection_logs')}}'"
                                                             class="searchbar_img border-0 w-100">
                                                             <img style="height: 50px;width: 50px;"
                                                                  src="{{asset('engineer_company/assets/images/1.png')}}">
                                                             <p class="searchbar_text mt-3">
-                                                                {{ __('translation.Fill Regular Inspection Log') }}
+                                                                {{ __('translation.regular_inspection_log') }}
                                                             </p>
                                                         </button>
                                                     </div>
-                                                    <div class="col-lg-2 col-md-4 col-sm-6 mt-2">
+                                                    <div class="col-lg-3 col-md-4 col-sm-6 mt-2">
                                                         <button
                                                             onclick="window.location.href= '{{route('contract_management')}}'"
                                                             class="searchbar_img border-0 w-100">
@@ -149,7 +149,7 @@
                                                             </p>
                                                         </button>
                                                     </div>
-                                                    <div class="col-lg-2 col-md-4 col-sm-6 mt-2">
+                                                    <div class="col-lg-3 col-md-4 col-sm-6 mt-2">
                                                         <button
                                                             onclick="window.location.href= '{{route('quotation_management')}}'"
                                                             class="searchbar_img border-0 w-100">
@@ -160,16 +160,14 @@
                                                             </p>
                                                         </button>
                                                     </div>
-                                                    <div class="col-lg-2 col-md-4 col-sm-6 mt-2">
+                                                    <div class="col-lg-3 col-md-4 col-sm-6 mt-2">
                                                         <button
                                                             onclick="window.location.href= '{{route('construction_completion')}}'"
                                                             class="searchbar_img border-0  w-100">
                                                             <img style="height: 50px;width: 50px;"
                                                                  src="{{asset('engineer_company/assets/images/3.png')}}">
                                                             <p class="searchbar_text mt-3">
-                                                                {{ __('translation.construction') }}
-
-                                                                {{ __('translation.Completion Report') }}
+                                                                {{ __('translation.construction_completion_report') }}
                                                             </p>
                                                         </button>
                                                     </div>
