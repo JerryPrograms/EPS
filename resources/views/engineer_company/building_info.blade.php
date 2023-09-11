@@ -495,7 +495,7 @@
                                                                     </label>
                                                                 </div>
                                                                 <div class="col-lg-8 col-12">
-                                                                    @if (empty($customer->engineer_company_id) || empty($customer->EngineerCompany))
+                                                                    {{-- @if (empty($customer->engineer_company_id) || empty($customer->EngineerCompany)) --}}
                                                                         <select class="form-select"
                                                                             onchange="GetData($(this).val())"
                                                                             name="engineer_company_id" autocomplete="off"
@@ -512,14 +512,14 @@
                                                                                 </option>
                                                                             @endforeach
                                                                         </select>
-                                                                    @else
+                                                                    {{-- @else
                                                                         <input type="text"
                                                                             class="form-control w-100 custom_input"
                                                                             aria-describedby="emailHelp"
                                                                             placeholder="{{ __('translation.Enter company name') }}"
                                                                             required disabled
                                                                             value="{{ $customer->EngineerCompany->company_name }}">
-                                                                    @endif
+                                                                    @endif --}}
                                                                 </div>
                                                             </div>
                                                         @else
@@ -679,7 +679,6 @@
                                                             </h4>
                                                         </div>
 
-
                                                         @if (activeGuard() == 'admin')
                                                             <div class="row align-items-center mb-3">
                                                                 <div class="col-lg-4 col-12">
@@ -689,30 +688,30 @@
                                                                     </label>
                                                                 </div>
                                                                 <div class="col-lg-8 col-12">
-                                                                    @if (empty($customer->engineer_company_id) || empty($customer->EngineerCompany))
+                                                                    {{-- @if (empty($customer->engineer_company_id) || empty($customer->EngineerCompany)) --}}
                                                                         <select class="form-select"
                                                                             onchange="GetDataRepairCompany($(this).val())"
-                                                                            autocomplete="off" required="">
+                                                                            autocomplete="off" required="" name="repair_company_id">
                                                                             <option selected="" value=""
                                                                                 disabled="">
                                                                                 {{ __('translation.Engineer Companies') }}
                                                                             </option>
                                                                             @foreach ($company as $building)
                                                                                 <option
-                                                                                    {{ $customer->engineer_company_id == $building->id ? 'selected' : '' }}
+                                                                                    {{ $customer->repair_company_id == $building->id ? 'selected' : '' }}
                                                                                     value="{{ $building->id }}">
                                                                                     {{ $building->company_registration_number }}
                                                                                 </option>
                                                                             @endforeach
                                                                         </select>
-                                                                    @else
+                                                                    {{-- @else
                                                                         <input type="text"
                                                                             class="form-control w-100 custom_input"
                                                                             aria-describedby="emailHelp"
                                                                             placeholder="{{ __('translation.Enter company name') }}"
                                                                             required disabled
                                                                             value="{{ $customer->EngineerCompany->company_name }}">
-                                                                    @endif
+                                                                    @endif --}}
                                                                 </div>
                                                             </div>
                                                         @else

@@ -37,6 +37,11 @@ class BuildingAndCompanyInformation
                 ]);
             }
 
+            if ($request->has('repair_company_id')){
+                $customer = CustomerInfo::where('id', $request->customer_id)->update([
+                    'repair_company_id' => $request->repair_company_id,
+                ]);
+            }
 
             $building_data = array();
             $building_data['building_manager_name'] = $request->b_building_manager_name;
