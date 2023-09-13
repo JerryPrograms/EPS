@@ -25,21 +25,15 @@ class QuoteRequest extends FormRequest
     {
         return [
             'contract_date' => 'required',
-            'quote_item' => 'required|array',
-            'quantity' => 'required|array',
-            'price' => 'required|array',
-            'total_amount' => 'required',
+            'quote_description' => 'required',
+            'quote_file' => ['required', 'mimes:pdf']
         ];
     }
 
     function messages()
     {
         return [
-            'contract_date.required' => 'Contract Date field is required',
-            'quote_item.required' => 'Quote item field is required',
-            'quantity.required' => 'Quantity field is required',
-            'price.required' => 'Price field is required',
-            'total_amount.required' => 'Total Amount field is required',
+            'contract_date.required' => 'Contract Date field is required'
         ];
     }
 }

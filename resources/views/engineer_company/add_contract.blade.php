@@ -29,14 +29,6 @@
                                             <div class="prompt"></div>
                                             <input type="hidden" value="{{ $customer->id }}" name="customer_id">
                                             <div class="form-group mb-4">
-                                                <select name="contract_type" class="form-control" required>
-                                                    <option value="">{{ __('translation.Contract Type') }}</option>
-                                                    <option value="daily">{{ __('translation.daily') }}</option>
-                                                    <option value="monthly">{{ __('translation.monthly') }}</option>
-                                                    <option value="yearly">{{ __('translation.yearly') }}</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group mb-4">
                                                 <div class="row align-items-center">
                                                     <div class="col-lg-2 col-md-6 col-12">
                                                         <label for="customer_number" class="mb-0">{{ __('translation.Customer Number') }}</label>

@@ -46,7 +46,6 @@ class ContractController extends Controller
     public function add_contract_action(Request $request)
     {
         $validate = \Validator::make($request->all(), [
-            'contract_type' => 'required',
             'contract_date' => 'required',
             'contract_description' => 'required',
             'contract_file' => ['required', 'mimes:pdf']

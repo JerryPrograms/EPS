@@ -654,5 +654,9 @@ return [
     'AS company' => 'AS company',
     'regular_inspection_log' => 'Regular Inspection Log',
     'construction_completion_report' => 'Construction Completion Report',
-    'building_management_company' => 'Building Management Company'
+    'building_management_company' => 'Building Management Company',
+    'Upload Quote' => 'Upload Quote',
+    'Enter quote description' => 'Enter quote description',
+    'Quote File' => 'Quote File',
+    'Quote Description' => 'Quote Description'
 ];

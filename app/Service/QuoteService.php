@@ -21,19 +21,11 @@ class QuoteService
             $quote = array();
             $quote['contract_date'] = $request->contract_date;
             $quote['customer_id'] = $request->customer_id;
-            $quote['total_amount'] = $request->total_amount;
+            $quote['quote_description'] = $request->quote_description;
+
+            $quote['quote_file'] = saveFiles(time() . mt_rand(300, 9000), 'quotations', $request->quote_file);
 
             $add_quote = Quotation::create($quote);
-
-
-            for ($i = 0; $i < count($request->quote_item); $i++) {
-                $quote_content = QuotationContent::create([
-                    'content' => $request->quote_item[$i],
-                    'quantity' => $request->quantity[$i],
-                    'price' => $request->price[$i],
-                    'quotation_id' => $add_quote->id,
-                ]);
-            }
 
             DB::commit();
             return json_encode([
@@ -46,7 +38,7 @@ class QuoteService
 
             return json_encode([
                 'success' => false,
-                'message' => $ex->getMessage(),
+                'message' => "Error: please try again",
             ]);
         }
     }

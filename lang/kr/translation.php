@@ -650,5 +650,9 @@ return [
     'AS company' => 'AS업체',
     'regular_inspection_log' => '정기점검일지',
     'construction_completion_report' => '공사완료보고서',
-    'building_management_company' => '사업자번호'
+    'building_management_company' => '사업자번호',
+    'Upload Quote' => '견적서 업로드',
+    'Enter quote description' => '견적 설명 입력',
+    'Quote File' => '견적 파일',
+    'Quote Description' => '견적 설명'
 ];

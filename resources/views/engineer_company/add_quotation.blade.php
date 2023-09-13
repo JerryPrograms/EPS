@@ -43,6 +43,7 @@
                                                             <!-- form row 1 start  -->
                                                             <div class="row mt-3">
                                                                 <form id="createQuote">
+                                                                    <div class="prompt"></div>
                                                                     @csrf
                                                                     <input name="customer_id" value="{{ $customer->id }}"
                                                                         hidden>
@@ -113,118 +114,39 @@
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="form-group mb-4">
-                                                                        <div class="row">
-                                                                            <div class="col-lg-2">
-                                                                                <label for="exampleInputEmail1"
-                                                                                    class="mb-0">{{ __('translation.Quotation Contents') }}
-                                                                                </label>
-                                                                            </div>
-                                                                            <div id="quotation_contents" class="col-lg-10">
-                                                                                <div class="content-form-section">
-                                                                                    <div class="form-group mb-3">
-                                                                                        <div
-                                                                                            class="row align-items-center ">
-                                                                                            <div class="col-lg-2">
-                                                                                                <label
-                                                                                                    for="exampleInputEmail1"
-                                                                                                    class="form-label custom_lab_2">{{ __('translation.Quote Item') }}
-                                                                                                </label>
-                                                                                            </div>
-                                                                                            <div class="col-lg-10">
-                                                                                                <input type="text"
-                                                                                                    class="form-control qitem  custom_input"
-                                                                                                    aria-describedby="emailHelp"
-                                                                                                    name="quote_item[]"
-                                                                                                    placeholder="{{ __('translation.Enter quote item') }}"
-                                                                                                    required>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="form-group mb-3">
-                                                                                        <div
-                                                                                            class="row align-items-center ">
-                                                                                            <div class="col-lg-2">
-                                                                                                <label
-                                                                                                    for="exampleInputEmail1"
-                                                                                                    class="form-label custom_lab_2">{{ __('translation.Quantity') }}
-                                                                                                </label>
-                                                                                            </div>
-                                                                                            <div class="col-lg-10">
-                                                                                                <input onkeyup="calculateSum()" type="number"
-                                                                                                    min="1"
-                                                                                                    class="form-control  custom_input"
-                                                                                                    name="quantity[]"
-                                                                                                    aria-describedby="emailHelp"
-                                                                                                    placeholder="{{ __('translation.Enter quantity') }}"
-                                                                                                    required>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="form-group mb-3">
-                                                                                        <div
-                                                                                            class="row align-items-center ">
-                                                                                            <div class="col-lg-2">
-                                                                                                <label
-                                                                                                    for="exampleInputEmail1"
-                                                                                                    class="form-label custom_lab_2">
-                                                                                                    {{ __('translation.Unit Price') }}
-                                                                                                </label>
-                                                                                            </div>
-                                                                                            <div class="col-lg-10">
-                                                                                                <input type="number"
-                                                                                                    class="form-control price  custom_input"
-                                                                                                    name="price[]"
-                                                                                                    min="1"
-                                                                                                    onkeyup="calculateSum()"
-                                                                                                    aria-describedby="emailHelp"
-                                                                                                    placeholder="{{ __('translation.Enter price') }}"
-                                                                                                    required>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="form-group mb-4" style="cursor: pointer"
-                                                                        onclick="appendQuoteContent()">
-                                                                        <div class="row mt-3">
-                                                                            <div class="col-lg-2">
-                                                                                <label for="exampleInputEmail1"
-                                                                                    class="form-label custom_lab col-5">&nbsp;
-                                                                                </label>
-                                                                            </div>
-                                                                            <div class="col-lg-10">
-                                                                                <div class="d-flex align-items-baseline ">
 
-                                                                                    <div
-                                                                                        class="collap_section_lst_7 col-lg-8">
-                                                                                        <p class="collap_section_lst_text">
-                                                                                            + {{ __('translation.Add') }}
-                                                                                        </p>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
                                                                     <div class="form-group mb-4">
                                                                         <div class="row align-items-center">
                                                                             <div class="col-lg-2 col-md-6 col-12">
-                                                                                <label for="building_address"
-                                                                                    class="mb-0">
-                                                                                    {{ __('translation.Total Amount') }}</label>
+                                                                                <label for="quote_file" class="mb-0">{{ __('translation.Upload Quote') }}</label>
                                                                             </div>
                                                                             <div class="col-lg-10 col-md-6 col-12">
-                                                                                <input type="text"
-                                                                                    class="form-control form-theme-input"
-                                                                                    placeholder="{{ __('translation.Total amount') }}"
-                                                                                    id="total_amount" required disabled>
-                                                                                <input name="total_amount"
-                                                                                    id="hidden_total_amount" hidden>
+                                                                                <div class="position-relative">
+                                                                                    <div class="position-absolute">
+                                                                                        <label for="quote_file"
+                                                                                            class="btn btn-sm btn-outline-success btn-theme-success-outline mb-0">
+                                                                                            <img src="{{ asset('engineer_company/assets/images/aroow.png') }}"alt="Upload"
+                                                                                                height="15">
+                                                                                        </label>
+                                                                                        <small class="quote-file-name"></small>
+                                                                                    </div>
+                                                                                    <input type="file" class="form-control form-theme-input"
+                                                                                        name="quote_file" id="quote_file" required
+                                                                                        style="visibility: hidden" accept=".pdf">
+                                                                                </div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
+
+                                                                    <div class="form-group mb-4">
+                                                                        <div class="row align-items-center">
+                                                                            <div class="col-12">
+                                                                                <textarea class="form-control" id="quote_description" rows="10" placeholder="{{ __('translation.Enter quote description') }}"
+                                                                                    name="quote_description" required></textarea>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
                                                                     <div class="col-12 mt-5">
                                                                         <button
                                                                             class="btn btn-primary submitbtn">{{ __('translation.Save changes') }}</button>
@@ -323,6 +245,20 @@
 @endsection
 @section('custom-script')
     <script>
+
+        // Intializing summer note
+        $(document).ready(function() {
+            $('#quote_description').summernote({
+                height: 150
+            });
+        });
+
+        // For custom file input
+        $('#quote_file').change(function() {
+            var file = $('#quote_file')[0].files[0].name;
+            $(this).prev('.position-absolute').find('.quote-file-name').text(file);
+        });
+
         $('#createQuote').validate({
 
             submitHandler: function() {
