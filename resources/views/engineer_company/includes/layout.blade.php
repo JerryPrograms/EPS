@@ -40,6 +40,7 @@
         opacity: 0.6;
     }
 </style>
+@yield('custom-styles')
 <body data-sidebar="dark" data-layout-mode="light"
       class="{{ (!empty(activeGuard()) && activeGuard() == 'admin') ? 'admin-layout' : '' }}">
 

@@ -8,11 +8,16 @@
         ->GetBuildingInfo()
         ->pluck('building_name')
         ->implode(',');
-    $buidling_code_name =$customer
+    $buidling_code_name = $customer
         ->GetBuildingInfo()
         ->pluck('building_number')
         ->implode(',');
 @endphp
+
+@section('custom-styles')
+    <link rel="stylesheet" type="text/css" href="{{asset('engineer_company/assets/css/print.css')}}" media="print">
+@endsection
+
 @section('body')
     <div class="main-content">
         <div class="page-content">
@@ -105,7 +110,7 @@
                                                         </p> --}}
                                                         <p class="tble_text">
                                                             {{ $customer->representative }}
-                                                        </p>      
+                                                        </p>
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -160,7 +165,7 @@
                                         </div>
 
                                         <!-- form row 1 start  -->
-                                        <div class="row">
+                                        <div class="row print-row">
                                             <div class="col-lg-6">
                                                 <div class="custom_padding_form">
                                                     <div class="row mt-3">
@@ -174,7 +179,7 @@
                                                         <div class="col-lg-1 no-print">
                                                             <div class="file_main_section">
                                                                 <button type="button"
-                                                                    onclick="printForm($('#createBuildingInformation'))"
+                                                                    onclick="printBuildingInfoForm($('#createBuildingInformation'))"
                                                                     class="file_button">
                                                                     <img
                                                                         src="{{ asset('engineer_company/images/Vector.png') }}">
@@ -213,7 +218,8 @@
                                                                         class="form-control w-100 custom_input"
                                                                         aria-describedby="emailHelp"
                                                                         placeholder="{{ __('translation.Enter building manager name') }}"
-                                                                        value="{{ $buidling_code_name }}" disabled required>
+                                                                        value="{{ $buidling_code_name }}" disabled
+                                                                        required>
                                                                 @endif
                                                             </div>
                                                         </div>
@@ -229,8 +235,7 @@
                                                                     class="form-control w-100 custom_input"
                                                                     aria-describedby="emailHelp"
                                                                     placeholder="{{ __('translation.Enter building manager name') }}"
-                                                                    @if (!empty($customer->BuildingInformation)) value="{{ $customer->BuildingInformation->building_manager_name }}" @endif
-                                                                    >
+                                                                    @if (!empty($customer->BuildingInformation)) value="{{ $customer->BuildingInformation->building_manager_name }}" @endif>
                                                             </div>
                                                         </div>
 
@@ -245,8 +250,7 @@
                                                                     class="format-number form-control w-100 custom_input"
                                                                     aria-describedby="emailHelp"
                                                                     placeholder="{{ __('translation.Enter contact (010-8021-5235)') }}"
-                                                                    @if (!empty($customer->BuildingInformation)) value="{{ $customer->BuildingInformation->building_manager_contact }}" @endif
-                                                                    >
+                                                                    @if (!empty($customer->BuildingInformation)) value="{{ $customer->BuildingInformation->building_manager_contact }}" @endif>
                                                             </div>
                                                         </div>
 
@@ -262,8 +266,8 @@
                                                                     aria-describedby="emailHelp"
                                                                     @if (!empty($customer->BuildingInformation)) readonly @endif
                                                                     placeholder="{{ __('translation.Enter address') }}"
-                                                                    @if (!empty($customer->BuildingInformation)) value="{{ $customer->BuildingInformation->address }}" @endif
-                                                                    ></div>
+                                                                    @if (!empty($customer->BuildingInformation)) value="{{ $customer->BuildingInformation->address }}" @endif>
+                                                            </div>
                                                         </div>
 
                                                         <div class="row align-items-center mt-4">
@@ -276,8 +280,8 @@
                                                                     class="form-control w-100 custom_input"
                                                                     aria-describedby="emailHelp"
                                                                     placeholder="{{ __('translation.Enter manager contact number') }}"
-                                                                    @if (!empty($customer->BuildingInformation)) value="{{ $customer->BuildingInformation->manager_contact }}" @endif
-                                                                    ></div>
+                                                                    @if (!empty($customer->BuildingInformation)) value="{{ $customer->BuildingInformation->manager_contact }}" @endif>
+                                                            </div>
                                                         </div>
 
 
@@ -374,9 +378,9 @@
                                                                     {{ __('translation.Term') }}
                                                                 </label></div>
                                                             <div class="col-md-8 col-12 d-flex align-items-center gap-1">
-                                                                @php 
-                                                                    if(!empty($customer->ASInformation) && !empty($customer->ASInformation->contract_date)){
-                                                                        $contract_date = explode('to',$customer->ASInformation->contract_date);
+                                                                @php
+                                                                    if (!empty($customer->ASInformation) && !empty($customer->ASInformation->contract_date)) {
+                                                                        $contract_date = explode('to', $customer->ASInformation->contract_date);
                                                                         $contract_date_from = $contract_date[0];
                                                                         $contract_date_to = $contract_date[1];
                                                                     }
@@ -386,7 +390,7 @@
                                                                     aria-describedby="emailHelp"
                                                                     placeholder="{{ __('translation.Jewon Lee') }}"
                                                                     @if (isset($contract_date_from)) value="{{ $contract_date_from }}" @endif>
-                                                                    <span class="small">-</span>
+                                                                <span class="small">-</span>
                                                                 <input type="date" name="contract_date_to"
                                                                     class="form-control w-100 custom_input"
                                                                     aria-describedby="emailHelp"
@@ -473,7 +477,7 @@
                                                 <!-- form row 1 end  -->
                                             </div>
                                         </div>
-                                        <div class="row">
+                                        <div class="row print-row">
                                             <div class="col-lg-6">
                                                 <!-- form row 2 start  -->
                                                 <div class="custom_padding_form">
@@ -496,22 +500,22 @@
                                                                 </div>
                                                                 <div class="col-lg-8 col-12">
                                                                     {{-- @if (empty($customer->engineer_company_id) || empty($customer->EngineerCompany)) --}}
-                                                                        <select class="form-select"
-                                                                            onchange="GetData($(this).val())"
-                                                                            name="engineer_company_id" autocomplete="off"
-                                                                            required="">
-                                                                            <option selected="" value=""
-                                                                                disabled="">
-                                                                                {{ __('translation.Building Management Company') }}
+                                                                    <select class="form-select"
+                                                                        onchange="GetData($(this).val())"
+                                                                        name="engineer_company_id" autocomplete="off"
+                                                                        required="">
+                                                                        <option selected="" value=""
+                                                                            disabled="">
+                                                                            {{ __('translation.Building Management Company') }}
+                                                                        </option>
+                                                                        @foreach ($company as $building)
+                                                                            <option
+                                                                                {{ $customer->engineer_company_id == $building->id ? 'selected' : '' }}
+                                                                                value="{{ $building->id }}">
+                                                                                {{ $building->company_registration_number }}
                                                                             </option>
-                                                                            @foreach ($company as $building)
-                                                                                <option
-                                                                                    {{ $customer->engineer_company_id == $building->id ? 'selected' : '' }}
-                                                                                    value="{{ $building->id }}">
-                                                                                    {{ $building->company_registration_number }}
-                                                                                </option>
-                                                                            @endforeach
-                                                                        </select>
+                                                                        @endforeach
+                                                                    </select>
                                                                     {{-- @else
                                                                         <input type="text"
                                                                             class="form-control w-100 custom_input"
@@ -537,7 +541,8 @@
                                                                     name="b_company_name"
                                                                     class="form-control w-100 custom_input"
                                                                     aria-describedby="emailHelp"
-                                                                    placeholder="{{ __('translation.Please enter your company name') }}" required
+                                                                    placeholder="{{ __('translation.Please enter your company name') }}"
+                                                                    required
                                                                     @if (!empty($customer->CompanyInformation)) value="{{ $customer->CompanyInformation->company_name }}" @endif>
                                                             </div>
                                                         </div>
@@ -552,7 +557,8 @@
                                                                 <input type="text" name="b_ceo_name"
                                                                     class="form-control w-100 custom_input"
                                                                     aria-describedby="emailHelp"
-                                                                    placeholder="{{ __('translation.Enter ceo name') }}" required
+                                                                    placeholder="{{ __('translation.Enter ceo name') }}"
+                                                                    required
                                                                     @if (!empty($customer->CompanyInformation)) value="{{ $customer->CompanyInformation->ceo_name }}" @endif>
                                                             </div>
                                                         </div>
@@ -568,7 +574,8 @@
                                                                 <input type="text" name="b_company_reg_number"
                                                                     class="form-control w-100 custom_input_2"
                                                                     aria-describedby="emailHelp"
-                                                                    placeholder="{{ __('translation.Enter registration number') }}" required
+                                                                    placeholder="{{ __('translation.Enter registration number') }}"
+                                                                    required
                                                                     @if (!empty($customer->CompanyInformation)) value="{{ $customer->CompanyInformation->company_reg_number }}" @endif>
                                                             </div>
 
@@ -585,7 +592,8 @@
                                                                 <input type="text" name="b_ci_address"
                                                                     class="form-control w-100 custom_input"
                                                                     aria-describedby="emailHelp"
-                                                                    placeholder="{{ __('translation.Enter address') }}" required
+                                                                    placeholder="{{ __('translation.Enter address') }}"
+                                                                    required
                                                                     @if (!empty($customer->CompanyInformation)) value="{{ $customer->CompanyInformation->address }}" @endif>
                                                             </div>
                                                         </div>
@@ -600,7 +608,8 @@
                                                                     name="b_industry_category"
                                                                     class="form-control w-100   custom_input"
                                                                     aria-describedby="emailHelp"
-                                                                    placeholder="{{ __('translation.Please enter your business type') }}" required
+                                                                    placeholder="{{ __('translation.Please enter your business type') }}"
+                                                                    required
                                                                     @if (!empty($customer->CompanyInformation)) value="{{ $customer->CompanyInformation->industry_category }}" @endif>
                                                             </div>
                                                         </div>
@@ -614,7 +623,8 @@
                                                                     name="b_ci_sectors"
                                                                     class="format-number form-control w-100   custom_input"
                                                                     aria-describedby="emailHelp"
-                                                                    placeholder="{{ __('translation.Please enter your industry') }}" required
+                                                                    placeholder="{{ __('translation.Please enter your industry') }}"
+                                                                    required
                                                                     @if (!empty($customer->CompanyInformation) && !empty($customer->CompanyInformation->b_ci_sectors)) value="{{ $customer->CompanyInformation->b_ci_sectors }}" @endif>
                                                             </div>
                                                         </div>
@@ -628,8 +638,10 @@
                                                                     name="b_ci_contacts"
                                                                     class="form-control w-100   custom_input"
                                                                     aria-describedby="emailHelp"
-                                                                    placeholder="{{ __('translation.Please enter your contact information') }}" required
-                                                                    @if (!empty($customer->CompanyInformation)) value="{{ $customer->CompanyInformation->contacts }}" @endif></div>
+                                                                    placeholder="{{ __('translation.Please enter your contact information') }}"
+                                                                    required
+                                                                    @if (!empty($customer->CompanyInformation)) value="{{ $customer->CompanyInformation->contacts }}" @endif>
+                                                            </div>
                                                         </div>
 
 
@@ -642,7 +654,8 @@
                                                                     name="b_ci_fax"
                                                                     class="format-number form-control w-100   custom_input"
                                                                     aria-describedby="emailHelp"
-                                                                    placeholder="{{ __('translation.02-4347-4893') }}" required
+                                                                    placeholder="{{ __('translation.02-4347-4893') }}"
+                                                                    required
                                                                     @if (!empty($customer->CompanyInformation) && !empty($customer->CompanyInformation->fax)) value="{{ $customer->CompanyInformation->fax }}" @endif>
                                                             </div>
                                                         </div>
@@ -689,21 +702,22 @@
                                                                 </div>
                                                                 <div class="col-lg-8 col-12">
                                                                     {{-- @if (empty($customer->engineer_company_id) || empty($customer->EngineerCompany)) --}}
-                                                                        <select class="form-select"
-                                                                            onchange="GetDataRepairCompany($(this).val())"
-                                                                            autocomplete="off" required="" name="repair_company_id">
-                                                                            <option selected="" value=""
-                                                                                disabled="">
-                                                                                {{ __('translation.Engineer Companies') }}
+                                                                    <select class="form-select"
+                                                                        onchange="GetDataRepairCompany($(this).val())"
+                                                                        autocomplete="off" required=""
+                                                                        name="repair_company_id">
+                                                                        <option selected="" value=""
+                                                                            disabled="">
+                                                                            {{ __('translation.Engineer Companies') }}
+                                                                        </option>
+                                                                        @foreach ($company as $building)
+                                                                            <option
+                                                                                {{ $customer->repair_company_id == $building->id ? 'selected' : '' }}
+                                                                                value="{{ $building->id }}">
+                                                                                {{ $building->company_registration_number }}
                                                                             </option>
-                                                                            @foreach ($company as $building)
-                                                                                <option
-                                                                                    {{ $customer->repair_company_id == $building->id ? 'selected' : '' }}
-                                                                                    value="{{ $building->id }}">
-                                                                                    {{ $building->company_registration_number }}
-                                                                                </option>
-                                                                            @endforeach
-                                                                        </select>
+                                                                        @endforeach
+                                                                    </select>
                                                                     {{-- @else
                                                                         <input type="text"
                                                                             class="form-control w-100 custom_input"
@@ -729,7 +743,8 @@
                                                                     name="company_name"
                                                                     class="form-control w-100 custom_input"
                                                                     aria-describedby="emailHelp"
-                                                                    placeholder="{{ __('translation.Enter company name') }}" required
+                                                                    placeholder="{{ __('translation.Enter company name') }}"
+                                                                    required
                                                                     @if (!empty($customer->RepairCompanyInformation)) value="{{ $customer->RepairCompanyInformation->company_name }}" @endif>
                                                             </div>
                                                         </div>
@@ -744,7 +759,8 @@
                                                                 <input type="text" name="ceo_name"
                                                                     class="form-control col-lg-3 custom_input_2  w-100"
                                                                     aria-describedby="emailHelp"
-                                                                    placeholder="{{ __('translation.Enter ceo name') }}" required
+                                                                    placeholder="{{ __('translation.Enter ceo name') }}"
+                                                                    required
                                                                     @if (!empty($customer->RepairCompanyInformation)) value="{{ $customer->RepairCompanyInformation->ceo_name }}" @endif>
                                                             </div>
                                                         </div>
@@ -758,7 +774,8 @@
                                                             <div class="col-md-8 col-12"><input type="text"
                                                                     name="address" class="form-control w-100 custom_input"
                                                                     aria-describedby="emailHelp"
-                                                                    placeholder="{{ __('translation.Enter address') }}" required
+                                                                    placeholder="{{ __('translation.Enter address') }}"
+                                                                    required
                                                                     @if (!empty($customer->RepairCompanyInformation)) value="{{ $customer->RepairCompanyInformation->address }}" @endif>
                                                             </div>
                                                         </div>
@@ -774,7 +791,8 @@
                                                                     name="industry_category"
                                                                     class="form-control w-100 custom_input"
                                                                     aria-describedby="emailHelp"
-                                                                    placeholder="{{ __('translation.Enter industry category') }}" required
+                                                                    placeholder="{{ __('translation.Enter industry category') }}"
+                                                                    required
                                                                     @if (!empty($customer->RepairCompanyInformation)) value="{{ $customer->RepairCompanyInformation->industry_category }}" @endif>
                                                             </div>
                                                         </div>
@@ -788,7 +806,8 @@
                                                                     id="new-sectors"
                                                                     class="format-number form-control w-100   custom_input"
                                                                     aria-describedby="emailHelp"
-                                                                    placeholder="{{ __('translation.Please enter your industry') }}" required
+                                                                    placeholder="{{ __('translation.Please enter your industry') }}"
+                                                                    required
                                                                     @if (!empty($customer->CompanyInformation) && !empty($customer->CompanyInformation->b_ci_sectors)) value="{{ $customer->CompanyInformation->b_ci_sectors }}" @endif>
                                                             </div>
                                                         </div>
@@ -817,7 +836,8 @@
                                                                     name="fax"
                                                                     class="format-number form-control w-100 custom_input"
                                                                     aria-describedby="emailHelp"
-                                                                    placeholder="{{ __('translation.02-4347-4893') }}" required
+                                                                    placeholder="{{ __('translation.02-4347-4893') }}"
+                                                                    required
                                                                     @if (!empty($customer->RepairCompanyInformation)) value="{{ $customer->RepairCompanyInformation->fax }}" @endif>
                                                             </div>
                                                         </div>
@@ -830,7 +850,8 @@
                                                             <div class="col-md-8 col-12"><input type="email"
                                                                     name="email" class="form-control w-100 custom_input"
                                                                     aria-describedby="emailHelp"
-                                                                    placeholder="{{ __('translation.Enter email') }}" required
+                                                                    placeholder="{{ __('translation.Enter email') }}"
+                                                                    required
                                                                     @if (!empty($customer->RepairCompanyInformation)) value="{{ $customer->RepairCompanyInformation->email }}" @endif>
                                                             </div>
                                                         </div>
@@ -1033,5 +1054,23 @@
         $('input[name="contract_date"]').daterangepicker();
 
         $('.SlectBox').SumoSelect();
+
+        function printBuildingInfoForm(form){
+            form.find('.page-break').css('page-break-before', 'always');
+            form.print({
+                globalStyles: true,
+                mediaPrint: false,
+                stylesheet: null,
+                noPrintSelector: ".no-print",
+                iframe: true,
+                append: null,
+                prepend: null,
+                manuallyCopyFormValues: true,
+                deferred: $.Deferred(),
+                timeout: 750,
+                title: null,
+                doctype: '<!doctype html>'
+            });
+        }
     </script>
 @endsection
