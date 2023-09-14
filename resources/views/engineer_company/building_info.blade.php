@@ -15,7 +15,34 @@
 @endphp
 
 @section('custom-styles')
-    <link rel="stylesheet" type="text/css" href="{{asset('engineer_company/assets/css/print.css')}}" media="print">
+    <style>
+        @media print{
+            .print-row {
+                display: block;
+                page-break-after: always;
+            }
+            .print-row .col-lg-6 {
+                display: inline-block !important;
+                width: 49% !important;
+                margin-right: 1% !important;
+                float: left !important;
+            }
+            .print-row::after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+            .main_content_section button{
+                display: none !important;
+            }
+            .main_content_section .card-body{
+                margin-bottom: 0 !important;
+            }
+            .card_section_2{
+                padding: 0 !important;
+            }
+        }
+    </style>
 @endsection
 
 @section('body')
@@ -179,7 +206,7 @@
                                                         <div class="col-lg-1 no-print">
                                                             <div class="file_main_section">
                                                                 <button type="button"
-                                                                    onclick="printBuildingInfoForm($('#createBuildingInformation'))"
+                                                                    onclick="printBuildingInfoForm($('.main_content_section'))"
                                                                     class="file_button">
                                                                     <img
                                                                         src="{{ asset('engineer_company/images/Vector.png') }}">
@@ -332,7 +359,7 @@
                                                         <div class="col-lg-1 no-print">
                                                             <div class="file_main_section">
                                                                 <button type="button"
-                                                                    onclick="printForm($('#createASAndRepairCompanyInformationForm'))"
+                                                                    onclick="printBuildingInfoForm($('.main_content_section'))"
                                                                     class="file_button">
                                                                     <img
                                                                         src="{{ asset('engineer_company/images/Vector.png') }}">
