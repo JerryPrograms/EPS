@@ -82,200 +82,120 @@
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <div>
-                                        <div class="contract-details border-0">
-
-                                            <div class="contract-details-section">
-                                                <h4>{{__('translation.Construction Completion Report')}} </h4>
-                                                <div class="d-flex">
-                                                    <p class="construction-text_2 custom_pr_2">
-                                                        ▶ {{__('translation.Project Number')}}:
-                                                    </p>
-
-                                                    <p class="construction-text custom-padding-left">
-                                                        {{$completion_report->project_number}}
-                                                    </p>
-                                                </div>
-
-                                                <div class="d-flex mt-3">
-                                                    <p class="construction-text_2 custom_pr_2">
-                                                        {{__('translation.Site Name')}}:
-                                                    </p>
-
-                                                    <p class="construction-text custom-padding-left">
-                                                        {{$completion_report->site_name}}
-                                                    </p>
-                                                </div>
-
-                                                <div class="d-flex">
-                                                    <p class="construction-text_2 custom_pr_2">
-                                                        {{__('translation.Species name')}}:
-                                                    </p>
-
-                                                    <p class="construction-text custom-padding-left">
-                                                        {{$completion_report->joint_name}}
-                                                    </p>
-                                                </div>
-
-
-                                                <div class="d-flex">
-                                                    <p class="construction-text_2 custom_pr_2">
-                                                        {{__('translation.Contract amount')}}
-                                                    </p>
-
-                                                    <p class="construction-text custom-padding-left">
-                                                        {{$completion_report->contract_amount}} {{__('translation.won per day')}}
-                                                    </p>
-                                                </div>
-
-
-                                                <div class="d-flex">
-                                                    <p class="construction-text_2 custom_pr_2">
-                                                        {{__('translation.Company name')}} :
-                                                    </p>
-
-                                                    <p class="construction-text custom-padding-left">
-                                                        {{$completion_report->joint_name}}</p>
-                                                </div>
-
-
-                                                <div class="date-contract-margin">
-
-                                                    <div class="d-flex mt-4 ">
-                                                        <p class="construction-text_2 custom_pr_2">
-                                                            {{__('translation.Date of contract')}}:
-                                                        </p>
-
-                                                        <p class="construction-text custom-padding-left">
-                                                            {{\Carbon\Carbon::parse($completion_report->contract_date)->format('M d,Y')}}</p>
+                                    <form id="add_contract_completion_form">
+                                        @csrf
+                    
+                                        <div class="main_content_section">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="card">
+                    
+                                                        <div class="card-body">
+                                                            <!-- end table-responsive -->
+                    
+                    
+                                                            <div class="card_section_2">
+                                                                <div class="row align-items-baseline">
+                                                                    <div class="col-lg-11">
+                                                                        <div class="">
+                                                                            <h4 class="card_tittle_2">
+                                                                                {{ __('translation.Construction Completion Report') }}
+                                                                            </h4>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                    
+                                                            @csrf
+                                                            <div class="prompt"></div>
+                    
+                                                            <div class="form-group my-4">
+                                                                <div class="row align-items-center">
+                                                                    <div class="col-lg-2 col-md-6 col-12">
+                                                                        <label for="customer_number" class="mb-0">{{ __('translation.Customer Number') }}</label>
+                                                                    </div>
+                                                                    <div class="col-lg-10 col-md-6 col-12">
+                                                                        <input type="text" class="form-control form-theme-input" id="customer_number"
+                                                                            placeholder="{{ __('translation.Enter customer number') }}"
+                                                                            value="{{ $completion_report->GetCustomer->customer_number }}" disabled>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                    
+                                                            <div class="form-group mb-4">
+                                                                <div class="row align-items-center">
+                                                                    <div class="col-lg-2 col-md-6 col-12">
+                                                                        <label for="contract_date" class="mb-0">{{ __('translation.Contract Date') }}</label>
+                                                                    </div>
+                                                                    <div class="col-lg-10 col-md-6 col-12">
+                                                                        <input type="date" class="form-control form-theme-input"
+                                                                            name="contract_date" id="contract_date"
+                                                                            placeholder="{{ __('translation.Enter contract date') }}" value="{{ $completion_report->contract_date }}" disabled>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                    
+                                                            <div class="form-group mb-4">
+                                                                <div class="row align-items-center">
+                                                                    <div class="col-lg-2 col-md-6 col-12">
+                                                                        <label for="building_name" class="mb-0">{{ __('translation.Building Name') }}</label>
+                                                                    </div>
+                                                                    <div class="col-lg-10 col-md-6 col-12">
+                                                                        @php
+                                                                            $address = $completion_report->GetCustomer->GetBuildingInfo()->pluck('address')->implode(',');
+                                                                            $building_name = $completion_report->GetCustomer->GetBuildingInfo()->pluck('building_name')->implode(',');
+                                                                        @endphp
+                                                                        <input type="text" class="form-control form-theme-input" id="building_name"
+                                                                            placeholder="{{ __('translation.Enter building name') }}"
+                                                                            value="{{ $building_name }}" disabled>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                    
+                                                            <div class="form-group mb-4">
+                                                                <div class="row align-items-center">
+                                                                    <div class="col-lg-2 col-md-6 col-12">
+                                                                        <label for="building_address" class="mb-0">{{ __('translation.Building Address') }}</label>
+                                                                    </div>
+                                                                    <div class="col-lg-10 col-md-6 col-12">
+                                                                        <input type="text" class="form-control form-theme-input"
+                                                                            id="building_address"
+                                                                            placeholder="{{ __('translation.Enter building address') }}"
+                                                                            value="{{ $completion_report->GetCustomer->BuildingInformation->address }}" disabled>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                    
+                                                            <div class="form-group mb-4">
+                                                                <div class="row align-items-center">
+                                                                    <div class="col-lg-2 col-md-6 col-12">
+                                                                        <label for="construction_completion_file" class="mb-0">{{ __('translation.Upload Contract') }}</label>
+                                                                    </div>
+                                                                    <div class="col-lg-10 col-md-6 col-12">
+                                                                        <div class="col-lg-10 col-md-6 col-12">
+                                                                            <a href="{{asset($completion_report->construction_completion_file)}}" class="btn btn-sm btn-primary">{{ __('translation.View') }}</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group mb-4">
+                                                                <div class="row align-items-center">
+                                                                    <div class="col-12">
+                                                                        <div style="border: 1px solid #c8c8c8;" class="px-3 py-2">
+                                                                            {!! $completion_report->construction_description !!}
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                    
+                                                        </div>
                                                     </div>
-
-
-                                                    <div class="d-flex">
-                                                        <p class="construction-text_2 custom_pr_2">
-                                                            {{__('translation.Date of work')}}:
-                                                        </p>
-
-                                                        <p class="construction-text custom-padding-left">
-                                                            {{\Carbon\Carbon::parse($completion_report->production_date)->format('M d,Y')}}</p>
-                                                    </div>
-
-
-                                                    <div class="d-flex">
-                                                        <p class="construction-text_2 custom_pr_2">
-                                                            {{__('translation.Date of Completion')}}:
-                                                        </p>
-
-                                                        <p class="construction-text custom-padding-left">
-                                                            {{\Carbon\Carbon::parse($completion_report->completion_date)->format('M d,Y')}}</p>
-                                                    </div>
-
-
-                                                    <div class="d-flex">
-                                                        <p class="construction-text_2 custom_pr_2">
-                                                            {{__('translation.Date of confirmation')}}:
-                                                        </p>
-
-                                                        <p class="construction-text custom-padding-left">
-                                                            {{\Carbon\Carbon::parse($completion_report->confirmation_date)->format('M d,Y')}}</p>
-                                                    </div>
-
-
                                                 </div>
-
-                                                <div class="d-flex mt-4">
-                                                    <p class="construction-text custom_pr_2">
-                                                        ▶ {{__('translation.Construction claim details')}}
-                                                    </p>
-
-                                                    <p class="construction-text custom-padding-left">
-                                                        &nbsp;
-                                                    </p>
-                                                </div>
+                                                <!-- end row -->
                                             </div>
-
-
-                                            <div class="customer-info-2">
-                                                <div class="table-responsive">
-                                                    <table class="table  mb-0">
-
-                                                        <thead>
-                                                        <tr>
-                                                            <th>{{__('translation.Contract Amount')}}</th>
-                                                            <th>{{__('translation.Advance Payment')}}</th>
-                                                            <th>%</th>
-                                                            <th>{{__('translation.Completion Fund')}}</th>
-                                                            <th>%</th>
-                                                            <th>{{__('translation.Other Settlement Amount')}}</th>
-                                                            <th>{{__('translation.Microbial Balance')}}</th>
-                                                            <th>%</th>
-                                                        </tr>
-                                                        </thead>
-                                                        <tbody>
-
-                                                        <tr>
-                                                            <th scope="row">{{$completion_report->contract_amount}}</th>
-                                                            <th></th>
-                                                            <th>1</th>
-                                                            <th>{{$completion_report->completion_fund}}</th>
-                                                            <th>2</th>
-                                                            <th>{{$completion_report->other_settlement_fund}}</th>
-                                                            <th>{{$completion_report->microbial_fund}}</th>
-                                                            <th>97</th>
-                                                        </tr>
-
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-
-
-                                            <p class="construction-text pb-5 mt-2">
-                                                {{__('translation.When the work for the above construction is completed, a construction completion report is prepared by attaching work photos.')}}
-                                            </p>
-
-
-                                            {{--                                            <h4 class="text-center mt-5">October 24, 2022</h4>--}}
-
-                                            {{--                                            <div class="d-flex mt-4">--}}
-                                            {{--                                                <p class="construction-text custom_pr_2">--}}
-                                            {{--                                                    Type :--}}
-                                            {{--                                                </p>--}}
-
-                                            {{--                                                <p class="construction-text custom-padding-left">--}}
-                                            {{--                                                    &nbsp;--}}
-                                            {{--                                                </p>--}}
-                                            {{--                                            </div>--}}
-
-
-                                            {{--                                            <div class="d-flex">--}}
-                                            {{--                                                <p class="construction-text custom_pr_2">--}}
-                                            {{--                                                    . Working photo: &nbsp;&nbsp;&nbsp;&nbsp;--}}
-                                            {{--                                                </p>--}}
-
-                                            {{--                                                <p class="construction-text custom-padding-left">--}}
-                                            {{--                                                    Part 1--}}
-                                            {{--                                                </p>--}}
-                                            {{--                                            </div>--}}
-
-
-                                            {{--                                            <div class="d-flex">--}}
-                                            {{--                                                <p class="construction-text custom_pr_2">--}}
-                                            {{--                                                    . Copy of bankbook:--}}
-                                            {{--                                                </p>--}}
-
-                                            {{--                                                <p class="construction-text custom-padding-left">--}}
-                                            {{--                                                    1 copy--}}
-                                            {{--                                                </p>--}}
-                                            {{--                                            </div>--}}
-
-                                            {{--                                            <div class="text-center mt-3">--}}
-                                            {{--                                                <img src="{{asset('engineer_company/images/company_logo.png')}}"--}}
-                                            {{--                                                     height="60">--}}
-                                            {{--                                            </div>--}}
                                         </div>
-                                    </div>
-
+                                        <input name="added_by_user" value="{{ activeGuard() }}" hidden>
+                                    </form>
                                     <!-- end table-responsive -->
 
                                 </div>
@@ -283,7 +203,7 @@
 
                         </div>
                     </div>
-                    <div class="row">
+                    {{-- <div class="row">
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-body">
@@ -292,7 +212,6 @@
 
                                             @for($i = 0 ; $i < count(json_decode($completion_report->title)); $i++)
                                                 <div class="contract-details-section">
-{{--                                                    <h4>{{__('translation.Process Photo')}}</h4>--}}
                                                     <p class="construction-heading">{{json_decode($completion_report->title)[$i]}}
                                                     </p>
 
@@ -333,7 +252,7 @@
 
 
                         <!-- row end  -->
-                    </div>
+                    </div> --}}
                 </div>
                 <!-- end row -->
 

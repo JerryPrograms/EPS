@@ -56,9 +56,9 @@
                                                 <th class="text-center">
                                                     {{__('translation.site name')}}
                                                 </th>
-                                                <th class="text-center">
+                                                {{-- <th class="text-center">
                                                     {{__('translation.Construction Name')}}
-                                                </th>
+                                                </th> --}}
 
                                                 <th class="text-center">
                                                     {{__('translation.Building Management Company')}}
@@ -73,6 +73,11 @@
 
                                             @if(count($completion_reports) > 0)
                                                 @foreach($completion_reports as $c)
+                                                
+                                                @php
+                                                    $address = $c->GetCustomer->GetBuildingInfo()->pluck('address')->implode(',');
+                                                    $building_name = $c->GetCustomer->GetBuildingInfo()->pluck('building_name')->implode(',');
+                                                @endphp
                                                     <tr>
                                                         <td>
                                                             {{$loop->index + 1}}
@@ -84,11 +89,11 @@
                                                             {{$c->GetCustomer->customer_number}}
                                                         </td>
                                                         <td>
-                                                            {{$c->site_name}}
+                                                            {{$building_name}}
                                                         </td>
-                                                        <td>
+                                                        {{-- <td>
                                                             {{$c->joint_name}}
-                                                        </td>
+                                                        </td> --}}
                                                         <td>
                                                            {{$c->GetCustomer->EngineerCompany->company_name}}
                                                         </td>

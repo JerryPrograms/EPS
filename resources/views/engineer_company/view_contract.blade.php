@@ -94,7 +94,7 @@
                                                            class="mb-0">{{ __('translation.Upload Contract') }}</label>
                                                 </div>
                                                 <div class="col-lg-10 col-md-6 col-12">
-                                                    <a href="{{asset($contract->contract_file)}}">View</a>
+                                                    <a href="{{asset($contract->contract_file)}}">{{ __('translation.View') }}</a>
                                                 </div>
                                             </div>
                                         </div>

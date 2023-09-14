@@ -25,22 +25,9 @@ class ConstructionCompletionRequest extends FormRequest
     {
 
         return [
-            'project_number' => 'required',
-            'site_name' => 'required',
-            'joint_name' => 'required',
-            'down_payment' => 'required',
-            'contract_amount' => 'required',
-            'completion_fund' => 'required',
-            'other_settlement_fund' => 'required',
-            'microbial_fund' => 'required',
             'contract_date' => 'required',
-            'production_date' => 'required',
-            'completion_date' => 'required',
-            'confirmation_date' => 'required',
-            'title' => 'required|array',
-            'site' => 'required|array',
-            'date' => 'required|array',
-            'photo' => 'required|array',
+            'construction_description' => 'required',
+            'construction_completion_file' => 'required|mimes:pdf'
         ];
     }
 }

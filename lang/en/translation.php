@@ -658,5 +658,8 @@ return [
     'Upload Quote' => 'Upload Quote',
     'Enter quote description' => 'Enter quote description',
     'Quote File' => 'Quote File',
-    'Quote Description' => 'Quote Description'
+    'Quote Description' => 'Quote Description',
+    'Enter construction completion description' => 'Enter construction completion description',
+    'View' => 'View',
+    'Your existing file will replaced' => 'Your existing file will replaced'
 ];

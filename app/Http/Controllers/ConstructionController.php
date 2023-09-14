@@ -55,6 +55,7 @@ class ConstructionController extends Controller
 
     public function create_construction_completion($id = null)
     {
+        $customer = [];
         if (empty($id)) {
 
             if (activeGuard() == 'engineer') {
@@ -81,9 +82,10 @@ class ConstructionController extends Controller
 
         } else {
             $customers = [];
+            $customer = CustomerInfo::with('BuildingInformation')->where('user_uid', $id)->first();
         }
 
-        return view('engineer_company.create_completion_report', compact('customers'));
+        return view('engineer_company.create_completion_report', compact('customers','customer'));
     }
 
     public function view_construction_completion($id)
@@ -101,34 +103,17 @@ class ConstructionController extends Controller
     public function add_construction_completion(ConstructionCompletionRequest $request)
     {
 
-
-        $photos = array();
-        foreach ($request->photo as $photo) {
-            $photos[] = saveFiles('', 'engineer_company/completion_report', $photo);
-        }
-
         try {
+
+            $construction_completion_file = saveFiles(time() . mt_rand(300, 9000), 'engineer_company/completion_report', $request->construction_completion_file);
 
             CompletionRequestModel::create([
                 'customer_id' => $request->customer_id,
                 'added_by' => auth(activeGuard())->id(),
-                'project_number' => $request->project_number,
-                'site_name' => $request->site_name,
-                'joint_name' => $request->joint_name,
-                'down_payment' => $request->down_payment,
-                'contract_amount' => $request->contract_amount,
-                'completion_fund' => $request->completion_fund,
-                'other_settlement_fund' => $request->other_settlement_fund,
-                'microbial_fund' => $request->microbial_fund,
                 'contract_date' => $request->contract_date,
-                'production_date' => $request->production_date,
-                'completion_date' => $request->completion_date,
-                'confirmation_date' => $request->confirmation_date,
-                'title' => json_encode($request->title),
-                'site' => json_encode($request->site),
-                'date' => json_encode($request->date),
-                'photo' => json_encode($photos),
                 'added_by_user' => activeGuard(),
+                'construction_description' => $request->construction_description,
+                'construction_completion_file' => $construction_completion_file
             ]);
             return json_encode([
                 'success' => true,
@@ -162,62 +147,20 @@ class ConstructionController extends Controller
     public function update_construction_completion(Request $request)
     {
 
-
         try {
-            if ($request->has('photo')) {
-
-                $data = CompletionRequestModel::where('id', $request->id)->first();
-                $previous_photos = json_decode($data->photo);
-                $photos = array();
-
-                foreach ($request->photo as $key => $photo) {
-                    if ($key > count($previous_photos)) {
-                        $previous_photos[] = saveFiles('', 'engineer_company/completion_report', $photo);
-                    } else {
-                        $previous_photos[$key] = saveFiles('', 'engineer_company/completion_report', $photo);
-                    }
-                }
-
+            if ($request->has('construction_completion_file')) {
+                
+                $construction_completion_file = saveFiles(time() . mt_rand(300, 9000), 'engineer_company/completion_report', $request->construction_completion_file);
 
                 CompletionRequestModel::where('id', $request->id)->update([
-                    'customer_id' => $request->customer_id,
-                    'added_by' => auth(activeGuard())->id(),
-                    'project_number' => $request->project_number,
-                    'site_name' => $request->site_name,
-                    'joint_name' => $request->joint_name,
-                    'down_payment' => $request->down_payment,
-                    'contract_amount' => $request->contract_amount,
-                    'completion_fund' => $request->completion_fund,
-                    'other_settlement_fund' => $request->other_settlement_fund,
-                    'microbial_fund' => $request->microbial_fund,
                     'contract_date' => $request->contract_date,
-                    'production_date' => $request->production_date,
-                    'completion_date' => $request->completion_date,
-                    'confirmation_date' => $request->confirmation_date,
-                    'title' => json_encode($request->title),
-                    'site' => json_encode($request->site),
-                    'date' => json_encode($request->date),
-                    'photo' => json_encode($previous_photos),
+                    'construction_description' => $request->construction_description,
+                    'construction_completion_file' => $construction_completion_file
                 ]);
             } else {
                 CompletionRequestModel::where('id', $request->id)->update([
-                    'customer_id' => $request->customer_id,
-                    'added_by' => auth(activeGuard())->id(),
-                    'project_number' => $request->project_number,
-                    'site_name' => $request->site_name,
-                    'joint_name' => $request->joint_name,
-                    'down_payment' => $request->down_payment,
-                    'contract_amount' => $request->contract_amount,
-                    'completion_fund' => $request->completion_fund,
-                    'other_settlement_fund' => $request->other_settlement_fund,
-                    'microbial_fund' => $request->microbial_fund,
                     'contract_date' => $request->contract_date,
-                    'production_date' => $request->production_date,
-                    'completion_date' => $request->completion_date,
-                    'confirmation_date' => $request->confirmation_date,
-                    'title' => json_encode($request->title),
-                    'site' => json_encode($request->site),
-                    'date' => json_encode($request->date),
+                    'construction_description' => $request->construction_description
                 ]);
             }
 

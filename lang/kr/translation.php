@@ -654,5 +654,8 @@ return [
     'Upload Quote' => '견적서 업로드',
     'Enter quote description' => '견적 설명 입력',
     'Quote File' => '견적 파일',
-    'Quote Description' => '견적 설명'
+    'Quote Description' => '견적 설명',
+    'Enter construction completion description' => '공사완료 설명을 입력하세요',
+    'View' => '보다',
+    'Your existing file will replaced' => '기존 파일이 대체됩니다.'
 ];
