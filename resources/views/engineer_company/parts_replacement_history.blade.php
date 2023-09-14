@@ -1,4 +1,43 @@
 @extends('engineer_company.includes.layout')
+@section('custom-styles')
+<style>
+    @media print{
+        .custom_br_theme_clr_2{
+            padding: 0;
+        }
+        .card-body{
+            margin-bottom: 0;
+        }
+        .custom_br_theme_gray_2{
+            padding: 0 !important;
+        }
+        .custom_br_theme_gray_2 button{
+            padding: 0;
+        }
+        .card_section_2{
+            padding: 0 !important;
+        }
+        .mt-4{
+            margin-top: 5px !important;
+        }
+        .print-margin-0{
+           display: none !important;
+        }
+        .main-content td{
+            font-size: 80% !important;
+        }
+        .main-content{
+            padding: 20px !important;
+        }
+        .tr{
+            page-break-inside: avoid;
+        }
+        .table>:not(caption)>*>*{
+            padding: 5px;
+        }
+    }
+</style>
+@endsection
 @section('body')
     @php
         $address = $customer->GetBuildingInfo()->pluck('address')->implode(',');
@@ -153,38 +192,9 @@
                                         </div>
                                         <!-- form row 1 end  -->
 
-                                        <!-- row 2 start  -->
-                                        <div class="row">
-{{--                                            <div class="col-lg-3">--}}
-{{--                                                <p class="circle_img_text mt-3">--}}
-
-{{--                                                    {{ __('translation.Initial installation date') }}--}}
-
-{{--                                                </p>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="col-lg-3 mt-2" style="flex-direction: column">--}}
-{{--                                                <div class="input-group" id="datepicker1">--}}
-{{--                                                    <input id="initial_date" hidden=""--}}
-{{--                                                           type="text"--}}
-{{--                                                           onchange="UpdateInitialDate($(this).val(),'{{request()->segment(3)}}')"--}}
-{{--                                                           class="form-control frm_section_inp w-100"--}}
-{{--                                                           placeholder="2022-12-06" data-date-format="dd M, yyyy"--}}
-{{--                                                           data-date-container='#datepicker1'--}}
-{{--                                                           data-provide="datepicker"--}}
-{{--                                                           autocomplete="off"--}}
-{{--                                                           @if(!empty($customer->getInitialDate))--}}
-{{--                                                               value="{{$customer->getInitialDate->initial_date}}"--}}
-{{--                                                        @endif--}}
-{{--                                                    >--}}
-{{--                                                </div><!-- input-group -->--}}
-{{--                                            </div>--}}
-
-                                        </div>
-                                        <!-- row 2 end  -->
-
 
                                         <!-- row 2 start  -->
-                                        <div class="row mt-4">
+                                        <div class="row mt-4 print-margin-0">
                                             <div class="col-lg-3">
                                                 <p class="circle_img_text mt-3">
                                                     <b>
