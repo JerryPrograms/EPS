@@ -1,4 +1,13 @@
 @extends('engineer_company.includes.layout')
+@section('custom-styles')
+    <style>
+        @media print{
+            #parkingFacilityInformationForm .card-body{
+                padding: 20px 35px !important;
+            }
+        }
+    </style>
+@endsection
 @section('body')
     @php
         $address = $customer
