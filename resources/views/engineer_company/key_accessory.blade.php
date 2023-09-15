@@ -20,6 +20,53 @@
         .collapse-icon-section{
             width: 70%;
         }
+        .colllap_section_4{
+            padding: 60px 5px;
+            border-right: none;
+        }
+        .form_box{
+            width: 95%;
+        }
+        @media print{
+            .row .col-lg-6 {
+                display: inline-block !important;
+                width: 49% !important;
+                margin-right: 1% !important;
+                float: left !important;
+                page-break-inside: avoid;
+            }
+            .row .part_name_area {
+                display: inline-block !important;
+                width: 33% !important;
+                margin-right: 1% !important;
+                float: left !important;
+            }
+            .row .part_data_area {
+                display: inline-block !important;
+                width: 65% !important;
+                margin-right: 1% !important;
+                float: left !important;
+            }
+            .row::after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+            .part-add-box{
+                display: none;
+            }
+            .card-info{
+                padding-bottom: 200px;
+                overflow: visible !important;
+                height: auto !important;
+            }
+            .part-actions{
+                display: none !important;
+            }
+            .colllap_section_5{
+                padding-top: 20px !important;
+            }
+        }
     </style>
     <div class="main-content">
 
@@ -138,7 +185,7 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="card">
-                                            <div class="card-body">
+                                            <div class="card-body card-info">
                                                 <!-- end table-responsive -->
 
                                                 <div class="card_section_2">
@@ -229,26 +276,27 @@
 
                                                                     <div class="row">
 
-                                                                        <div class="col-lg-3"
+                                                                        <div class="col-lg-4 part_name_area"
                                                                              style="border-right: 1px solid rgba(225, 227, 236, 1);">
 
                                                                             <div class="colllap_section_4">
-
-                                                                                <button
-                                                                                    class="btn btn-primary btn-sm mb-2"
-                                                                                    onclick="SetPartData('{{$main_accessory->id}}','{{$main_accessory->tag}}','{{$main_accessory->title}}','{{$main_accessory->color}}')"
-                                                                                    data-bs-target="#EditPartModal"
-                                                                                    data-bs-toggle="modal"><i
-                                                                                        class="fa fa-edit"></i></button>
-
-                                                                                @if(!empty($main_accessory->tag))
+                                                                                <div class="d-flex align-items-center justify-content-center flex-column">
                                                                                     <button
-                                                                                        class="collap_yello_section"
-                                                                                        style="background: {{!empty($main_accessory->color) ? $main_accessory->color : ''}}">
-                                                                                        <p id="part_tag_name">
-                                                                                            {{ $main_accessory->tag}}</p>
-                                                                                    </button>
-                                                                                @endif
+                                                                                        class="btn btn-primary btn-sm mb-2"
+                                                                                        onclick="SetPartData('{{$main_accessory->id}}','{{$main_accessory->tag}}','{{$main_accessory->title}}','{{$main_accessory->color}}')"
+                                                                                        data-bs-target="#EditPartModal"
+                                                                                        data-bs-toggle="modal"><i
+                                                                                            class="fa fa-edit"></i></button>
+
+                                                                                    @if(!empty($main_accessory->tag))
+                                                                                        <button
+                                                                                            class="collap_yello_section"
+                                                                                            style="background: {{!empty($main_accessory->color) ? $main_accessory->color : ''}}">
+                                                                                            <p id="part_tag_name">
+                                                                                                {{ $main_accessory->tag}}</p>
+                                                                                        </button>
+                                                                                    @endif
+                                                                                </div>
                                                                                 <p class="colllap_section_text mt-2">
                                                                                     {{$main_accessory->title}}
                                                                                 </p>
@@ -258,7 +306,25 @@
                                                                         </div>
 
 
-                                                                        <div class="col-lg-8">
+                                                                        <div class="col-lg-8 part_data_area">
+
+                                                                            <div class="d-flex align-items-center justify-content-right part-actions">
+                                                                                <button
+                                                                                    data-bs-toggle="modal"
+                                                                                    data-bs-target="#DeletePart"
+                                                                                    onclick="DeleteCompletePart('{{$main_accessory->id}}')"
+                                                                                    class="collapse_button1">
+                                                                                    <i class="fa fa-trash"></i>
+
+                                                                                </button>
+
+                                                                                <button
+                                                                                    onclick="AppendList($('#ol{{$loop->index}}'),'{{$main_accessory->id}}')"
+                                                                                    class="collapse_button">
+                                                                                    <i class="fa-regular fa-plus"></i>
+
+                                                                                </button>
+                                                                            </div>
 
                                                                             <div class="colllap_section_5">
 
@@ -268,7 +334,7 @@
                                                                                     @foreach($main_accessory->SubParts as $SubParts)
 
                                                                                         <li onclick="HideShow($('#form_{{$SubParts->id}}'),$(this))"
-                                                                                            class="d-flex parent-li">
+                                                                                            class="d-flex align-items-start justify-content-between parent-li">
                                                                                             <div
                                                                                                 class="collapse-icon-section">
                                                                                                 <p class="collape_list_text">
@@ -276,78 +342,54 @@
                                                                                                     {{$SubParts->title}}
                                                                                                 </p>
                                                                                             </div>
-                                                                                            <span><i
-                                                                                                    class="fa-solid fa-chevron-down"></i></span>
-                                                                                                    <span data-bs-toggle="modal"
+                                                                                            <div class="d-flex align-items-center justify-content-right px-2">
+                                                                                                <span class="mb-3"><i class="fa-solid fa-chevron-down"></i></span>
+                                                                                                <span data-bs-toggle="modal"
                                                                                                     data-bs-target="#EditSubPartModal"
                                                                                                     onclick="setSubPartData('{{$SubParts->id}}','{{$SubParts->title}}')"
-                                                                                                    class="ms-2 mb-2"><i
+                                                                                                    class="ms-1 mb-3 edit-part-btn"><i
                                                                                                       class="fa fa-edit"></i></span>
                                                                                                <button data-bs-toggle="modal" data-bs-target="#DeleteSubPartModal" onclick="setsubPartID('{{$SubParts->id}}')" style="background: transparent; border: none;margin-top: -15px;">
                                                                                                    <i class="fa fa-trash"></i>
                                                                                                </button>
+                                                                                            </div>
                                                                                         </li>
                                                                                         <div id="form_{{$SubParts->id}}"
                                                                                              class="d-flex d-none custom_border">
-
-                                                                                            <div class="col-lg-2">
-                                                                                                <div
-                                                                                                    class="colllap_section_11">
-                                                                                                    <ol class="collape_list_text">
-                                                                                                        <li>
-                                                                                                            <p class="collape_list_text">
-                                                                                                                {{ __('translation.Standard') }}
-                                                                                                            </p>
-                                                                                                        </li>
-
-                                                                                                        <li>
-                                                                                                            <p class="collape_list_text pt-2">
-                                                                                                                {{ __('translation.quantity') }}
-                                                                                                            </p>
-                                                                                                        </li>
-
-                                                                                                        <li>
-                                                                                                            <p class="collape_list_text mt-4">
-                                                                                                                {{ __('translation.work history') }}
-                                                                                                            </p>
-                                                                                                        </li>
-
-                                                                                                        <li>
-                                                                                                            <p class="collape_list_text mt-4 pt-3">
-                                                                                                                {{ __('translation.picture') }}
-                                                                                                            </p>
-                                                                                                        </li>
-
-
-                                                                                                    </ol>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <div class="col-lg-9">
+                                                                                            <div class="form_box">
                                                                                                 <form
                                                                                                     id="parts_form_{{$SubParts->id}}">
                                                                                                     @csrf
-                                                                                                    <input type="text"
+
+                                                                                                    <div class="form-group mb-3">
+                                                                                                        <label>{{ __('translation.Standard') }}</label>
+                                                                                                        <input type="text"
                                                                                                            name="standard"
                                                                                                            required
-                                                                                                           class="form-control col-lg-12 custom_input_tble mt-3"
+                                                                                                           class="form-control custom_input_tble"
 
                                                                                                            aria-describedby="emailHelp"
                                                                                                            placeholder=""
                                                                                                            @if(!empty($SubParts->standard))  value="{{$SubParts->standard}}" @endif>
+                                                                                                    </div>
 
-                                                                                                    <input type="number"
+                                                                                                    <div class="form-group mb-3">
+                                                                                                        <label>{{ __('translation.quantity') }}</label>
+                                                                                                        <input type="number"
                                                                                                            name="quantity"
                                                                                                            required
-                                                                                                           class="form-control col-lg-12 custom_input_tble mt-3"
+                                                                                                           class="form-control custom_input_tble"
 
                                                                                                            aria-describedby="emailHelp"
                                                                                                            placeholder=""
-                                                                                                           @if(!empty($SubParts->quantity))  value="{{$SubParts->quantity}}" @endif
-                                                                                                    >
+                                                                                                           @if(!empty($SubParts->quantity))  value="{{$SubParts->quantity}}" @endif>
+                                                                                                    </div>
 
-                                                                                                    <textarea
+                                                                                                    <div class="form-group mb-3">
+                                                                                                        <label>{{ __('translation.work history') }}</label>
+                                                                                                        <textarea
                                                                                                         type="text"
-                                                                                                        class="form-control col-lg-12 custom_input_tble mt-2"
+                                                                                                        class="form-control custom_input_tble"
                                                                                                         required
                                                                                                         aria-describedby="emailHelp"
                                                                                                         placeholder=""
@@ -355,6 +397,7 @@
                                                                                                     >@if(!empty($SubParts->work_history))
                                                                                                             {{$SubParts->work_history}}
                                                                                                         @endif</textarea>
+                                                                                                    </div>
 
 
                                                                                                     <input
@@ -363,13 +406,12 @@
                                                                                                         hidden>
 
                                                                                                     <div
-                                                                                                        class="row mt-3">
-                                                                                                        <div
-                                                                                                            class="col-lg-6">
+                                                                                                        class="d-flex align-items-start gap-1">
+                                                                                                        <div>
                                                                                                             <button
                                                                                                                 type="button"
                                                                                                                 onclick="$(this).next().trigger('click')"
-                                                                                                                class="collape_button mb-3">
+                                                                                                                class="collape_button">
                                                                                                                 {{ __('translation.Attachments upload') }}
                                                                                                             </button>
 
@@ -389,7 +431,6 @@
 
 
                                                                                                         <div
-                                                                                                            class="col-lg-6"
                                                                                                             style="text-align: end;">
                                                                                                             <button
                                                                                                                 onclick="submitFunction($('#parts_form_{{$SubParts->id}}'),$(this))"
@@ -411,25 +452,6 @@
 
                                                                         </div>
 
-                                                                        <div class="col-lg-1">
-
-                                                                            <button
-                                                                                data-bs-toggle="modal"
-                                                                                data-bs-target="#DeletePart"
-                                                                                onclick="DeleteCompletePart('{{$main_accessory->id}}')"
-                                                                                class="collapse_button1">
-                                                                                <i class="fa fa-trash"></i>
-
-                                                                            </button>
-
-                                                                            <button
-                                                                                onclick="AppendList($('#ol{{$loop->index}}'),'{{$main_accessory->id}}')"
-                                                                                class="collapse_button">
-                                                                                <i class="fa-regular fa-plus"></i>
-
-                                                                            </button>
-
-                                                                        </div>
 
                                                                     </div>
 
@@ -451,7 +473,7 @@
                                                 @if(activeGuard() == 'admin')
                                                     <!-- form row  start  -->
                                                     <div style="cursor: pointer" onclick="showPartAddModal()"
-                                                         class="row mt-3">
+                                                         class="row mt-3 part-add-box">
                                                         <div class="col-lg-8">
                                                             <div class="collap_section_lst">
                                                                 <p class="collap_section_lst_text">
