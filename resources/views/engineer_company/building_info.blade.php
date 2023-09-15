@@ -41,6 +41,12 @@
             .card_section_2{
                 padding: 0 !important;
             }
+            .show-in-print{
+                display: block !important;
+            }
+            .hide-in-print{
+                display: none !important;
+            }
         }
     </style>
 @endsection
@@ -289,11 +295,14 @@
                                                                 </label></div>
                                                             <div class="col-lg-8 col-12"><input id="address"
                                                                     type="text" name="b_address"
-                                                                    class="form-control w-100 custom_input"
+                                                                    class="form-control w-100 custom_input hide-in-print"
                                                                     aria-describedby="emailHelp"
                                                                     @if (!empty($customer->BuildingInformation)) readonly @endif
                                                                     placeholder="{{ __('translation.Enter address') }}"
                                                                     @if (!empty($customer->BuildingInformation)) value="{{ $customer->BuildingInformation->address }}" @endif>
+                                                                    <div style="border-bottom: 1px solid rgba(225, 227, 236, 1);padding: 0.47rem 0.75rem;display:none;" class="show-in-print">
+                                                                        @if (!empty($customer->BuildingInformation)) {{ $customer->BuildingInformation->address }} @endif
+                                                                    </div>
                                                             </div>
                                                         </div>
 
@@ -799,11 +808,14 @@
                                                                     {{ __('translation.address') }}
                                                                 </label></div>
                                                             <div class="col-md-8 col-12"><input type="text"
-                                                                    name="address" class="form-control w-100 custom_input"
+                                                                    name="address" class="form-control w-100 custom_input hide-in-print"
                                                                     aria-describedby="emailHelp"
                                                                     placeholder="{{ __('translation.Enter address') }}"
                                                                     required
                                                                     @if (!empty($customer->RepairCompanyInformation)) value="{{ $customer->RepairCompanyInformation->address }}" @endif>
+                                                                    <div style="border-bottom: 1px solid rgba(225, 227, 236, 1);padding: 0.47rem 0.75rem;display:none;" class="show-in-print">
+                                                                        @if (!empty($customer->RepairCompanyInformation)) {{ $customer->RepairCompanyInformation->address }} @endif
+                                                                    </div>
                                                             </div>
                                                         </div>
 

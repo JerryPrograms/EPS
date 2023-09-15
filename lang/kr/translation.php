@@ -657,5 +657,6 @@ return [
     'Quote Description' => '견적 설명',
     'Enter construction completion description' => '공사완료 설명을 입력하세요',
     'View' => '보다',
-    'Your existing file will replaced' => '기존 파일이 대체됩니다.'
+    'Your existing file will replaced' => '기존 파일이 대체됩니다.',
+    'company_name' => '업체명'
 ];

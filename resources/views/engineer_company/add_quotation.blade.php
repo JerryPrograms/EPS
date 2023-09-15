@@ -66,7 +66,7 @@
                                                                         <div class="row align-items-center">
                                                                             <div class="col-lg-2 col-md-6 col-12">
                                                                                 <label for="contract_date"
-                                                                                    class="mb-0">{{ __('translation.Contract Date') }}</label>
+                                                                                    class="mb-0">{{ __('translation.Quote Date') }}</label>
                                                                             </div>
                                                                             <div class="col-lg-10 col-md-6 col-12">
                                                                                 <input type="date"
@@ -85,7 +85,7 @@
                                                                         <div class="row align-items-center">
                                                                             <div class="col-lg-2 col-md-6 col-12">
                                                                                 <label for="building_name"
-                                                                                    class="mb-0">{{ __('translation.Building Name') }}</label>
+                                                                                    class="mb-0">{{ __('translation.company_name') }}</label>
                                                                             </div>
                                                                             <div class="col-lg-10 col-md-6 col-12">
                                                                                 <input type="text"

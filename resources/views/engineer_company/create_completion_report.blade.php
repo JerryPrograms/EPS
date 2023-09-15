@@ -34,25 +34,27 @@
                                         <div class="prompt"></div>
 
                                         @if (count($customers) > 0)
-                                            <div class="row align-items-center mt-4">
-                                                <div class="col-lg-4 col-12"><label class="form-label custom_lab mb-0">
-                                                        <span class="star_section">*</span>
-                                                        {{ __('translation.customer') }}
-                                                    </label></div>
-                                                <div class="col-lg-8 col-12">
-
-                                                    <select class="form-select w-100 custom_input" name="customer_id"
-                                                        autocomplete="off" required="">
-                                                        <option selected="" value="" disabled="">
-                                                            {{ __('translation.Select Customer') }}
-                                                        </option>
-                                                        @foreach ($customers as $c)
-                                                            <option value="{{ $c->id }}">
-                                                                {{ $c->representative }}
+                                            <div class="form-group my-4">
+                                                <div class="row align-items-center">
+                                                    <div class="col-lg-2 col-md-6 col-12">
+                                                        <label class="text-capatilize">
+                                                            {{ __('translation.customer') }}
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-lg-10 col-md-6 col-12">
+                                                        <select class="form-select w-100 custom_input" name="customer_id"
+                                                            autocomplete="off" required="">
+                                                            <option selected="" value="" disabled="">
+                                                                {{ __('translation.Select Customer') }}
                                                             </option>
-                                                        @endforeach
-                                                    </select>
-
+                                                            @foreach ($customers as $c)
+                                                                <option value="{{ $c->id }}">
+                                                                    {{ $c->representative }}
+                                                                </option>
+                                                            @endforeach
+                                                        </select>
+    
+                                                    </div>
                                                 </div>
                                             </div>
                                         @else
@@ -63,6 +65,7 @@
                                             <input name="customer_id" value="{{ $customer->id }}" hidden>
                                         @endif
 
+                                        @if(!empty($customer))
                                         <div class="form-group my-4">
                                             <div class="row align-items-center">
                                                 <div class="col-lg-2 col-md-6 col-12">
@@ -75,6 +78,7 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        @endif
 
                                         <div class="form-group mb-4">
                                             <div class="row align-items-center">
@@ -89,6 +93,7 @@
                                             </div>
                                         </div>
 
+                                        @if(!empty($customer))
                                         <div class="form-group mb-4">
                                             <div class="row align-items-center">
                                                 <div class="col-lg-2 col-md-6 col-12">
@@ -105,6 +110,9 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        @endif
+
+                                        @if(!empty($customer))
 
                                         <div class="form-group mb-4">
                                             <div class="row align-items-center">
@@ -119,6 +127,8 @@
                                                 </div>
                                             </div>
                                         </div>
+
+                                        @endif
 
                                         <div class="form-group mb-4">
                                             <div class="row align-items-center">

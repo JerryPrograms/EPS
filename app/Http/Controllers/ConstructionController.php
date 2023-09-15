@@ -55,8 +55,8 @@ class ConstructionController extends Controller
 
     public function create_construction_completion($id = null)
     {
-        $customer = [];
-        if (empty($id)) {
+        $customer = null;
+        if (empty($id)) {   
 
             if (activeGuard() == 'engineer') {
                 $companies = Engineer_company::where('id', auth(activeGuard())->user()->affiliated_company)->first();
@@ -67,15 +67,16 @@ class ConstructionController extends Controller
                     $query->where('added_by', activeGuard())
                         ->where('added_by_id', auth(activeGuard())->id());
                 })->latest()->get();
-            } else if (activeGuard() == 'engineer-company') {
+            } else if (activeGuard() == 'engineer_company') {
                 $engineers = Engineer::where('affiliated_company', auth(activeGuard())->id())->pluck('id');
-                $customers = CustomerInfo::orWhere(function ($query) use ($engineers) {
-                    $query->where('added_by', 'engineer')
-                        ->whereIn('added_by_id', $engineers);
-                })->orWhere(function ($query) {
-                    $query->where('added_by', activeGuard())
-                        ->where('added_by_id', auth(activeGuard())->id());
-                })->latest()->get();
+                // $customers = CustomerInfo::orWhere(function ($query) use ($engineers) {
+                //     $query->where('added_by', 'engineer')
+                //         ->whereIn('added_by_id', $engineers);
+                // })->orWhere(function ($query) {
+                //     $query->where('added_by', activeGuard())
+                //         ->where('added_by_id', auth(activeGuard())->id());
+                // })->latest()->get();
+                $customers = CustomerInfo::where('engineer_company_id', auth(activeGuard())->id())->get();
             } else {
                 $customers = CustomerInfo::latest()->get();
             }

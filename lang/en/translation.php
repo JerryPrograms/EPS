@@ -661,5 +661,6 @@ return [
     'Quote Description' => 'Quote Description',
     'Enter construction completion description' => 'Enter construction completion description',
     'View' => 'View',
-    'Your existing file will replaced' => 'Your existing file will replaced'
+    'Your existing file will replaced' => 'Your existing file will replaced',
+    'company_name' => 'Company Name'
 ];
