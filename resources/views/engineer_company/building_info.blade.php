@@ -773,7 +773,7 @@
                                                         <div class="row align-items-center">
                                                             <div class="col-md-4 col-12"><label
                                                                     class="form-label custom_lab mb-0">
-                                                                    {{ __('translation.Company Name') }}
+                                                                    {{ __('translation.company_name') }}
                                                                 </label></div>
                                                             <div class="col-md-8 col-12"><input type="text"
                                                                     name="company_name"

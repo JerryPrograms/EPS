@@ -39,7 +39,7 @@
 
                     $date = \Carbon\Carbon::parse($q->contract_date);
                     @endphp
-                {{$date->format('Y-d-m')}}
+                {{$date->format('Y-m-d')}}
             </td>
             <td>
                 {{$q->GetCustomer->customer_number}}

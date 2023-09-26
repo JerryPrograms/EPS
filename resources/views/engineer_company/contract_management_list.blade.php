@@ -99,7 +99,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="myModalLabel">{{__('translation.Delete Report')}}</h5>
+                    <h5 class="modal-title" id="myModalLabel">{{__('translation.delete')}}</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form id="customerDeleteForm">
@@ -109,7 +109,7 @@
                             <div class="col-md-12">
                                 <div class="prompt w-100"></div>
                             </div>
-                            <p>{{__('translation.Are you sure you want to delete this completion report?')}}</p>
+                            <p>{{__('translation.Are you sure you want to delete this data?')}}</p>
                             <input name="id" id="customerInfoID" hidden>
                         </div>
                     </div>

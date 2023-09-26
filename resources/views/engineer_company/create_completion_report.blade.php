@@ -1,5 +1,12 @@
 @extends('engineer_company.includes.layout')
 @section('body')
+    @php
+        $customerId = 0;
+        if(!empty($customer)){
+            $customerId = $customer->id;
+        }
+    @endphp
+    <input type="hidden" id="checkCustomerId" value="{{ $customerId }}">
     <div class="main-content">
         <div class="page-content">
             <div class="container-fluid">
@@ -259,14 +266,17 @@
     right: -16px;" class="btn btn-danger position-absolute"><i class="fa fa-times"></i></button>
                                                     </div>`).insertBefore('#button_div');
         }
-
-
-        $('#add_contract_completion_form').validate({
-            submitHandler: function() {
-                ajaxCall($('#add_contract_completion_form'), "{{ route('add_construction_completion') }}", $(
-                        '#add_contract_completion_form').find('button.form_button'),
-                    "{{ route('construction_completion') }}", onRequestSuccess);
-            }
+        $(document).ready(function(){
+            var customerId = $('#checkCustomerId').val();
+            alert(customerId);
+            $('#add_contract_completion_form').validate({
+                submitHandler: function() {
+                    ajaxCall($('#add_contract_completion_form'), (customerId == '0') ? "{{ route('add_construction_completion') }}" : "{{ route('add_construction_completion',$customerId) }}", $(
+                            '#add_contract_completion_form').find('button.form_button'),
+                        "{{ route('construction_completion') }}", onRequestSuccess);
+                }
+            });
         });
+        
     </script>
 @endsection

@@ -20,8 +20,8 @@
                                         <div class="custom_search" style="display: flex;
                                         width: 100%;
                                         justify-items: flex-start;
-                                        justify-content: space-between;">
-                                            <div class="search">
+                                        justify-content: right;">
+                                            <div class="search me-1">
                                                 <input id="search" onkeyup="myFunction()" type="text"
                                                        class="form-control" name="keyword"
                                                        placeholder="{{__('translation.search')}}" autocomplete="off"
@@ -34,8 +34,14 @@
                                                 </button>
                                             </div>
                                             @if(activeGuard() != 'admin')
-                                            <a href="{{route('create_construction_completion')}}"
+                                            <div>
+                                                @if(!empty($customer))
+                                            <a href="{{ route('ec.GetCustomerInfoDashboard',$customer->user_uid) }}"
+                                                class="btn btn-dark">{{ __('translation.Menu') }}</a>
+                                            @endif
+                                            <a href="{{(empty($customer)) ? route('create_construction_completion') :  route('create_construction_completion', $customer->user_uid)}}"
                                                class="btn btn-primary">{{__('translation.add')}}</a>
+                                            </div>
                                             @endif
                                         </div>
                                     </div>

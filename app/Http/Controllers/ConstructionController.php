@@ -11,8 +11,9 @@ use Illuminate\Http\Request;
 
 class ConstructionController extends Controller
 {
-    public function construction_completion()
+    public function construction_completion($id = null)
     {
+        $customer = null;
         if (activeGuard() == 'web') {
             $completion_reports = CompletionRequestModel::where('customer_id', auth(activeGuard())->id())->latest()->get();
         } else if (activeGuard() == 'admin') {
@@ -26,6 +27,10 @@ class ConstructionController extends Controller
                 $query->where('added_by', auth(activeGuard())->id())
                     ->where('added_by_user', activeGuard());
             })->latest()->get();
+            if(!empty($id)){
+                $completion_reports = $completion_reports->where('customer_id', $id);
+                $customer = CustomerInfo::where('id', $id)->first();
+            }
         } else {
             $engineers = Engineer::where('affiliated_company', auth(activeGuard())->id())->pluck('id');
             $completion_reports = CompletionRequestModel::where(function ($query) use ($engineers) {
@@ -35,8 +40,12 @@ class ConstructionController extends Controller
                 $query->where('added_by', auth(activeGuard())->id())
                     ->where('added_by_user', activeGuard());
             })->latest()->get();
+            if(!empty($id)){
+                $completion_reports = $completion_reports->where('customer_id', $id);
+                $customer = CustomerInfo::where('id', $id)->first();
+            }
         }
-        return view('engineer_company.construction_completion', compact('completion_reports'));
+        return view('engineer_company.construction_completion', compact('completion_reports','customer'));
     }
 
     public function construction_completion_company($id)

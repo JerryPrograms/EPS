@@ -520,7 +520,7 @@ return [
     'Attachments added successfully' => '첨부파일이 성공적으로 추가되었습니다',
     'dispatch details' => '출동내역',
     'Write a dispatcher' => '출동자 작성',
-    'A special note is required' => '특별한 메모가 필요합니다',
+    'A special note is required' => '특기사항을 입력해주세요.',
     'Building name registration management' => '건물명등록관리',
     'AS Company List' => 'AS 회사 목록',
     'Are you sure you want to delete this' => '삭제하시겠습니까?',
@@ -658,5 +658,6 @@ return [
     'Enter construction completion description' => '공사완료 설명을 입력하세요',
     'View' => '보다',
     'Your existing file will replaced' => '기존 파일이 대체됩니다.',
-    'company_name' => '업체명'
+    'company_name' => '업체명',
+    'First add parking facility information' => '먼저 주차시설 정보를 추가하세요.'
 ];

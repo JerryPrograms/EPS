@@ -662,5 +662,6 @@ return [
     'Enter construction completion description' => 'Enter construction completion description',
     'View' => 'View',
     'Your existing file will replaced' => 'Your existing file will replaced',
-    'company_name' => 'Company Name'
+    'company_name' => 'Company Name',
+    'First add parking facility information' => 'First add parking facility information'
 ];

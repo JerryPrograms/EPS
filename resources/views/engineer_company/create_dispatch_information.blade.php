@@ -14,7 +14,7 @@
             <div class="container-fluid">
 
                 <!-- start page title -->
-
+                @if(!empty($customer->ParkingFacilityCertificate))
                 <!-- end page title -->
                 <div class="main_content_section">
 
@@ -105,7 +105,7 @@
                                                            required name="model_and_type"
                                                            class=" custom_input w-100 custom_color_gray"
                                                            aria-describedby="emailHelp"
-                                                           placeholder="{{ __('translation.type and number') }}" value="{{ __('translation.'.str_replace('_', ' ', $customer->ParkingFacilityCertificate->type)) }}" readonly>
+                                                           placeholder="{{ __('translation.type and number') }}" value="{{ (!empty($customer->ParkingFacilityCertificate)) ? __('translation.'.str_replace('_', ' ', $customer->ParkingFacilityCertificate->type)) : '' }}" readonly>
                                                 </div>
                                             </div>
 
@@ -259,6 +259,11 @@
                     </div>
                 </div>
                 <!-- section 2 end  -->
+                @else
+                <div class="alert alert-danger">
+                    {{ __('translation.First add parking facility information') }} <a href="{{ route('ec.ListDispatchInformation',request()->segment(3)) }}">{{ __('translation.Back') }}</a>
+                </div>
+                @endif
             </div>
             <!-- End Page-content -->
 

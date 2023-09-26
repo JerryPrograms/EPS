@@ -86,13 +86,13 @@
                                             </th>
                                             <th class="text-center">
 
-                                                {{ __('translation.Maintenance Company') }}
+                                                {{ __('translation.Building management company') }}
 
 
                                                 <br>
                                                 <div class="custom_info_text_2">
-                                                    @if(!empty($customer->CompanyInformation))
-                                                        {{$customer->CompanyInformation->company_name}}
+                                                    @if(!empty($customer->RepairCompanyInformation))
+                                                        {{$customer->RepairCompanyInformation->company_name}}
                                                     @endif
                                                 </div>
                                             </th>
@@ -180,25 +180,26 @@
 
                                                                 <td class="text-center border-end">
                                                                     <div class="aroow_main_section">
-
+                                                                        @if(empty($dispatch->output))
                                                                         <button
                                                                             onclick="window.location.href='{{route("ec.EditDispatchInformation",$dispatch->id)}}'"
                                                                             class="green_edit_button">
                                                                             <img
                                                                                 src="{{asset('engineer_company/assets/images/green-edit.png')}}">
                                                                         </button>
+                                                                        @endif
                                                                         <button
                                                                             onclick="window.location.href='{{route("ec.ViewDispatchInformation",$dispatch->id)}}'"
                                                                             class="aroow_button_2">
                                                                             <img style="width: 20px;"
                                                                                  src="{{asset('engineer_company/assets/images/red-search.png')}}">
                                                                         </button>
-
+                                                                        @if(empty($dispatch->output))
                                                                         <button id="delDispatchInfoBtn" data-bs-target="#deleteDispatchInformation" data-id="{{ $dispatch->id }}" data-bs-toggle="modal" class="aroow_button_2">
                                                                             <img style="width: 20px;"
                                                                                  src="{{asset('engineer_company/assets/images/del-icon.png')}}">
                                                                         </button>
-
+                                                                        @endif
                                                                         <div class="bluebar_img_section"></div>
                                                                     </div>
                                                                 </td>

@@ -205,7 +205,7 @@ Route::group(['prefix' => 'eps-panel', 'middleware' => 'CommonRoutes'], function
 
 
     //Construction Completion Report
-    Route::get('/construction-completion-reports', [ConstructionController::class, 'construction_completion'])->name('construction_completion');
+    Route::get('/construction-completion-reports/{id?}', [ConstructionController::class, 'construction_completion'])->name('construction_completion');
     Route::get('/construction-completion-reports-company/{id}', [ConstructionController::class, 'construction_completion_company'])->name('construction_completion_company');
     Route::get('/create-completion-reports/{id?}', [ConstructionController::class, 'create_construction_completion'])->name('create_construction_completion');
     Route::get('/edit-completion-reports/{id}', [ConstructionController::class, 'edit_construction_completion'])->name('edit_construction_completion');

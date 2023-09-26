@@ -70,8 +70,8 @@
 
                                                         <br>
                                                         <div class="custom_info_text_2">
-                                                            @if(!empty($customer->CompanyInformation))
-                                                                {{$customer->CompanyInformation->company_name}}
+                                                            @if(!empty($customer->RepairCompanyInformation))
+                                                                {{$customer->RepairCompanyInformation->company_name}}
                                                             @endif
                                                         </div>
                                                     </th>
@@ -104,11 +104,13 @@
                                                             <td>{{ $building_name }}</td>
                                                             <td>{{ $address}}</td>
                                                             <td class="d-flex gap-1 justify-content-center">
+                                                                @if(empty($v->signature))
                                                                 <a href="{{ route('edit_regular_inspection_log', $v->id) }}"
                                                                    class="btn btn-outline-success btn-theme-success-outline btn-outline btn-sm">
                                                                     <img
                                                                         src="{{ asset('engineer_company/images/edit_icon.png') }}">
                                                                 </a>
+                                                                @endif
                                                                 <a href="{{ route('view_regular_inspection_log', $v->id) }}"
                                                                    class="btn btn-outline-danger btn-theme-danger-outline btn-outline btn-sm">
                                                                     <img

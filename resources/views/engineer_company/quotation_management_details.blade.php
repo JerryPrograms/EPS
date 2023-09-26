@@ -98,7 +98,7 @@
                                                             </label>
                                                         </div>
                                                         <div class="col-lg-9 col-md-12">
-                                                            <a href="{{ $getQuote->quote_file }}" class="btn btn-success" target="_blank">View</a>
+                                                            <a href="{{ asset($getQuote->quote_file) }}" class="btn btn-success" target="_blank">View</a>
                                                         </div>
                                                     </div>
 

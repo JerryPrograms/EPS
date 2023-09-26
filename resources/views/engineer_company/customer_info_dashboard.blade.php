@@ -174,7 +174,7 @@
                                                     @if(activeGuard() !== 'admin')
                                                     <div class="col-lg-3 col-md-4 col-sm-6 mt-2">
                                                         <button
-                                                            onclick="window.location.href= '{{route('create_construction_completion',$customer->user_uid)}}'"
+                                                            onclick="window.location.href= '{{route('construction_completion',$customer->id)}}'"
                                                             class="searchbar_img border-0  w-100 px-3">
                                                             <img style="height: 50px;width: 50px;"
                                                                 src="{{asset('engineer_company/assets/images/3.png')}}">

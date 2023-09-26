@@ -18,7 +18,7 @@
             {{ __('translation.address') }}
         </th>
         <th class="text-center" style="width: 160px;">
-            {{ __('translation.Building Management Company') }}
+            {{ __('translation.Company Registration Number') }}
         </th>
         <th class="text-center" style="width: 150px;">
             {{ __('translation.Maintenance Company') }}
