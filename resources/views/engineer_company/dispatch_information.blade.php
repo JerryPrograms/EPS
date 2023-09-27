@@ -20,8 +20,8 @@
                                     <!-- end table-responsive -->
 
                                     <div class="row justify-content-center align-items-baseline">
-                                        <div class="col-lg-12 p-0">
-                                            <div class="card_section_3 ms-0">
+                                        <div class="col-lg-12">
+                                            <div class="card_section_3 ms-0 pt-0">
                                                 <div class="d-flex justify-content-between align-items-center my-2">
                                                     <h4 class="card_tittle_2 mb-0">
                                                         {{ __('translation.Dispatch Confirmation') }}
@@ -30,7 +30,7 @@
                                                         <a href="{{ route('ec.GetCustomerInfoDashboard',request()->segment(3)) }}"
                                                             class="btn btn-dark">{{ __('translation.Menu') }}</a>
                                                         <a href="{{route('ec.CreateDispatchInformation',$customer->user_uid)}}"
-                                                            class="history_add_btn">
+                                                            class="btn btn-primary">
                                                              {{ __('translation.add') }}
                                                          </a>
                                                     </div>

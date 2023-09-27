@@ -1,6 +1,6 @@
 @extends('engineer_company.includes.layout')
 @section('body')
-    <div class="main-content">
+    <div class="main-content" id="print_div">
         <div class="page-content">
             <div class="container-fluid">
                 <div class="main_content_section">
@@ -11,11 +11,16 @@
                                     <div class="card_section_2 mb-4 pt-0">
                                         <div class="row align-items-baseline">
                                             <div class="col-lg-12">
-                                                <div class="d-flex align-items-center gap-2">
-                                                    <span class="fw-bold mb-2 ms-1">.</span>
-                                                    <h4 class="card_tittle_2 d-flex align-items-center mb-0">
-                                                        {{ __('translation.Add Contract') }}
-                                                    </h4>
+                                                <div class="d-flex align-items-center justify-content-between">
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <span class="fw-bold mb-2 ms-1">.</span>
+                                                        <h4 class="card_tittle_2 d-flex align-items-center mb-0">
+                                                            {{ __('translation.Contract Details') }}
+                                                        </h4>
+                                                    </div>
+                                                    <button onclick="printForm($('#print_div'))" type="button" class="file_button mb-2">
+                                                        <img src="{{asset('engineer_company/images/Vector.png')}}">
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -94,7 +99,7 @@
                                                            class="mb-0">{{ __('translation.Upload Contract') }}</label>
                                                 </div>
                                                 <div class="col-lg-10 col-md-6 col-12">
-                                                    <a href="{{asset($contract->contract_file)}}">{{ __('translation.View') }}</a>
+                                                    <a href="{{asset($contract->contract_file)}}">View</a>
                                                 </div>
                                             </div>
                                         </div>

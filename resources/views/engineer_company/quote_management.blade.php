@@ -27,14 +27,19 @@
                                     <h4 class="card-title mb-4">{{ __('translation.Quote Managemnet List') }}</h4>
                                     <div class="d-flex align-items-center table-top-actions gap-1">
                                         <div class="buttons d-flex align-items-center justify-content-between gap-1">
-                                            <div class="d-flex">
-                                                <input id="search" onkeyup="myFunction()" class="form-control me-2" name="keyword"
-                                                       placeholder="{{ __('translation.Search here') }}" required
-                                                       type="text"
-                                                       autocomplete="off">
-
+                                            <div class="custom_search">
+                                                <div class="search">
+                                                    <input type="text" id="search" onkeyup="myFunction()" class="form-control" name="keyword" placeholder="search" autocomplete="off" required="">
+                                                    <button type="submit" class="btn btn-primary searchbar_button">
+                                                        <div class="search_img">
+                                                            <img src="https://eps.beckapps.co/eps/public/engineer_company/assets/images/search.png">
+                                                        </div>
+                                                    </button>
+    
+                                                </div>
                                             </div>
-
+                                            <a href="{{ route('ec.GetCustomerInfoDashboard',$customer->user_uid) }}"
+                                                class="btn btn-dark">{{ __('translation.Menu') }}</a>
                                             <a href="{{route('ec.AddQuote',$customer->user_uid)}}"
                                                class="btn btn-primary">{{__('translation.Add')}}</a>
                                             <a onclick="OpenModal()" href="javascript:void(0)"
@@ -426,7 +431,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="myModalLabel112">
-                        {{ __('translation.Delete Parts history Replacement') }}
+                        {{ __('translation.delete') }}
                     </h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                             aria-label="Close"></button>

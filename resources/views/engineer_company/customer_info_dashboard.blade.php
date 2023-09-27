@@ -149,6 +149,7 @@
                                                             </p>
                                                         </button>
                                                     </div>
+                                                    @if(activeGuard() !== 'engineer')
                                                     <div class="col-lg-3 col-md-4 col-sm-6 mt-2">
                                                         <button
                                                             onclick="window.location.href= '{{route('contract_management_list',$customer->id)}}'"
@@ -171,6 +172,7 @@
                                                             </p>
                                                         </button>
                                                     </div>
+                                                    @endif
                                                     @if(activeGuard() !== 'admin')
                                                     <div class="col-lg-3 col-md-4 col-sm-6 mt-2">
                                                         <button
@@ -179,9 +181,7 @@
                                                             <img style="height: 50px;width: 50px;"
                                                                 src="{{asset('engineer_company/assets/images/3.png')}}">
                                                             <p class="searchbar_text mt-3">
-                                                                {{ __('translation.construction') }}
-
-                                                                {{ __('translation.Completion Report') }}
+                                                                {{ __('translation.construction_completion_report') }}
                                                             </p>
                                                         </button>
                                                     </div>

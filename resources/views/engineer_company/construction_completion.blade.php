@@ -1,4 +1,11 @@
 @extends('engineer_company.includes.layout')
+@section('custom-styles')
+<style>
+    .search button:hover{
+        height: 37px;
+    }
+</style>
+@endsection
 @section('body')
     <div class="main-content">
         <div class="page-content">
@@ -21,7 +28,7 @@
                                         width: 100%;
                                         justify-items: flex-start;
                                         justify-content: right;">
-                                            <div class="search me-1">
+                                            <div class="search me-1 w-25">
                                                 <input id="search" onkeyup="myFunction()" type="text"
                                                        class="form-control" name="keyword"
                                                        placeholder="{{__('translation.search')}}" autocomplete="off"
@@ -120,10 +127,10 @@
                                                             </a>
                                                             @if(activeGuard() != 'web' && activeGuard() != 'admin')
                                                                 <a href="{{route('edit_construction_completion',$c->id)}}"
-                                                                   class="btn btn-outline-primary btn-theme-primary-outline btn-outline btn-sm">
+                                                                   class="btn back-green btn-outline btn-sm">
                                                                     {{--                                                                <img--}}
                                                                     {{--                                                                    src="{{asset('engineer_company/assets/images/Arhive_fill.png')}}">--}}
-                                                                    <i class="fa fa-edit"></i>
+                                                                    <img src="https://eps.beckapps.co/eps/public/engineer_company/images/edit_icon.png">
                                                                 </a>
                                                             @endif
                                                             @if(activeGuard() != 'admin')

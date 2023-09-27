@@ -1,151 +1,125 @@
 @extends('engineer_company.includes.layout')
 @section('body')
-    <div class="main-content">
-        <div class="page-content">
-            <div class="container-fluid">
-                <div class="main_content_section">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class=" mb-0">
-                                        <div>
-                                            <!-- end table-responsive -->
-                                            <div class="row p-3">
-                                                <div class="col-lg-12 col-3" style="text-align: end;">
-                                                    <div class="file_main_section">
-                                                        <button type="button" onclick="printForm($('.dsadasda'))"
-                                                            class="file_button">
-                                                            <img src="{{ asset('engineer_company/images/Vector.png') }}">
-                                                        </button>
-                                                    </div>
+<div class="main-content" id="print_div">
+    <div class="page-content">
+        <div class="container-fluid">
+            <div class="main_content_section">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card_section_2 mb-4 pt-0">
+                                    <div class="row align-items-baseline">
+                                        <div class="col-lg-12">
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <span class="fw-bold mb-2 ms-1">.</span>
+                                                    <h4 class="card_tittle_2 d-flex align-items-center">
+                                                        {{ __('translation.Quotation') }}
+                                                    </h4>
                                                 </div>
+                                                <button onclick="printForm($('#print_div'))" type="button" class="file_button mb-2">
+                                                    <img src="{{asset('engineer_company/images/Vector.png')}}">
+                                                </button>
                                             </div>
-                                            <!-- form row 1 start  -->
-                                            <div class="row p-3">
-                                                <form>
-
-
-                                                    <div class="row mt-4">
-                                                        <div class="col-lg-5 col-9 p-0">
-                                                            <h4
-                                                                class="card-title mt-2 border-bottom-0 mb-3 custom_margin_2">
-                                                                <span class="bor_lef">&nbsp;</span>
-                                                                {{ __('translation.customer information') }}
-                                                            </h4>
-                                                        </div>
-                                                    </div>
-
-
-                                                    <div class="row align-items-center mt-2 quoatation-info-form">
-                                                        <div class="col-lg-3 col-md-12">
-                                                            <label for="exampleInputEmail1"
-                                                                class="form-label custom-lab-2 mb-0">
-                                                                <span class="star_section">*</span>
-                                                                {{ __('translation.customer') }} ..
-                                                            </label>
-                                                        </div>
-                                                        <div class="col-lg-9 col-md-12">
-                                                            <input type="email" class="form-control custom_input"
-                                                                id="exampleInputEmail1" aria-describedby="emailHelp"
-                                                                disabled value="{{ $getQuote->GetCustomer->company_name }}"
-                                                                placeholder="{{ __('translation.Enter contract date') }}">
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="row align-items-center mt-4 quoatation-info-form">
-                                                        <div class="col-lg-3 col-md-12">
-                                                            <label for="exampleInputEmail1"
-                                                                class="form-label custom-lab-2 mb-0">
-
-                                                                <span
-                                                                    class="star_section">*</span>{{ __('translation.Manager Name') }}..
-                                                            </label>
-                                                        </div>
-                                                        <div class="col-lg-9 col-md-12">
-                                                            <input type="email" class="form-control custom_input"
-                                                                id="exampleInputEmail1" aria-describedby="emailHelp"
-                                                                disabled
-                                                                value="{{ $getQuote->GetCustomer->BuildingInformation->building_manager_name }}"
-                                                                placeholder="{{ __('translation.Enter building name') }}">
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="row align-items-center mt-4 quoatation-info-form">
-                                                        <div class="col-lg-3 col-md-12">
-                                                            <label for="exampleInputEmail1"
-                                                                class="form-label custom-lab-2 mb-0">
-                                                                <span
-                                                                    class="star_section">*</span>{{ __('translation.Manager Contact') }}
-                                                                ..
-                                                            </label>
-                                                        </div>
-                                                        <div class="col-lg-9 col-md-12">
-                                                            <input type="email" class="form-control col-lg-8 custom_input"
-                                                                id="exampleInputEmail1" aria-describedby="emailHelp"
-                                                                disabled value="{{ $getQuote->contract_date }}"
-                                                                placeholder="{{ __('translation.Enter contract date') }}">
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="row align-items-center mt-4 quoatation-info-form">
-                                                        <div class="col-lg-3 col-md-12">
-                                                            <label for="exampleInputEmail1"
-                                                                class="form-label custom-lab-2 mb-0">
-                                                                <span
-                                                                    class="star_section">*</span>{{ __('translation.Quote File') }}
-                                                                ..
-                                                            </label>
-                                                        </div>
-                                                        <div class="col-lg-9 col-md-12">
-                                                            <a href="{{ asset($getQuote->quote_file) }}" class="btn btn-success" target="_blank">View</a>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="row align-items-center mt-4 quoatation-info-form">
-                                                        <div class="col-lg-3 col-md-12">
-                                                            <label for="exampleInputEmail1"
-                                                                class="form-label custom-lab-2 mb-0">
-                                                                <span
-                                                                    class="star_section">*</span>{{ __('translation.Quote Description') }}
-                                                                ..
-                                                            </label>
-                                                        </div>
-                                                        <div class="col-lg-9 col-md-12">
-                                                            <div style="border: 1px solid #f2f2f2;padding: 10px;">{!! $getQuote->quote_description !!}</div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="mt-5 mb-5">
-                                                        <div class="row justify-content-center">
-                                                            <div class="col-lg-3">
-                                                                <p class="modal-footer-text m-0 p-0">
-                                                                    {{ now()->format('D M Y ') }}</p>
-                                                            </div>
-                                                            <div class="col-lg-3">
-                                                                <p class="modal-footer-text m-0 p-0">
-                                                                    {{ __('translation.EPS Co Ltd') }}
-                                                                    .</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-
-                                                </form>
-                                            </div>
-                                            <!-- form row 1 end  -->
                                         </div>
                                     </div>
                                 </div>
+
+                                <form>
+                                    <div class="form-group mb-4">
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-2 col-md-6 col-12">
+                                                <label for="customer_number"
+                                                       class="mb-0">{{ __('translation.Customer Number') }}</label>
+                                            </div>
+                                            <div class="col-lg-10 col-md-6 col-12">
+                                                <input disabeled type="text" class="form-control form-theme-input"
+                                                       id="customer_number"
+                                                       placeholder="{{ __('translation.Enter customer number') }}"
+                                                       value="{{ $getQuote->GetCustomer->customer_number }}"
+                                                       disabled>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-2 col-md-6 col-12">
+                                                <label for="contract_date"
+                                                       class="mb-0">{{ __('translation.Contract Date') }}</label>
+                                            </div>
+                                            <div class="col-lg-10 col-md-6 col-12">
+                                                <input disabled type="text" class="form-control form-theme-input"
+                                                       name="contract_date" id="contract_date"
+                                                       placeholder="{{ __('translation.Enter contract date') }}"
+                                                       value="{{\Carbon\Carbon::parse($getQuote->contract_date)->format('Y-m-d');}}"
+                                                       required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @php
+                                        $address = $getQuote->GetCustomer->GetBuildingInfo()->pluck('address')->implode(',');
+                                        $building_name = $getQuote->GetCustomer->GetBuildingInfo()->pluck('building_name')->implode(',');
+                                    @endphp
+                                    <div class="form-group mb-4">
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-2 col-md-6 col-12">
+                                                <label for="building_name"
+                                                       class="mb-0">{{ __('translation.Building Name') }}</label>
+                                            </div>
+                                            <div class="col-lg-10 col-md-6 col-12">
+                                                <input disabeled type="text" class="form-control form-theme-input"
+                                                       id="building_name"
+                                                       placeholder="{{ __('translation.Enter building name') }}"
+                                                       value="{{ $building_name }}" disabled>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-2 col-md-6 col-12">
+                                                <label for="building_address"
+                                                       class="mb-0">{{ __('translation.Building Address') }}</label>
+                                            </div>
+                                            <div class="col-lg-10 col-md-6 col-12">
+                                                <input disabeled type="text" class="form-control form-theme-input"
+                                                       id="building_address"
+                                                       placeholder="{{ __('translation.Enter building address') }}"
+                                                       value="{{ $address }}"
+                                                       disabled>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-2 col-md-6 col-12">
+                                                <label for="contract_file"
+                                                       class="mb-0">{{ __('translation.Upload Contract') }}</label>
+                                            </div>
+                                            <div class="col-lg-10 col-md-6 col-12">
+                                                <a href="{{asset($getQuote->quote_file)}}">View</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row align-items-center">
+                                            <div class="col-12">
+                                                {!! $getQuote->quote_description !!}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </form>
+
                             </div>
                         </div>
-                        <!-- end row -->
                     </div>
+                    <!-- end row -->
                 </div>
-                <!-- end row -->
             </div>
-            <!-- container-fluid -->
+            <!-- section 2 end  -->
         </div>
         <!-- End Page-content -->
     </div>
+</div>
 @endsection

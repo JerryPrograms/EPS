@@ -68,13 +68,6 @@
 
                 <!-- end row -->
 
-                <div class="row">
-                    <div class="col-lg-12 text-end mb-3">
-                        <button onclick="printForm($('#print_form'))" type="button" class="file_button">
-                            <img src="{{asset('engineer_company/images/Vector.png')}}">
-                        </button>
-                    </div>
-                </div>
                 <!-- end page title -->
                 <div id="print_form" class="main_content_section">
                     <div class="row">
@@ -85,22 +78,25 @@
                                     <form id="add_contract_completion_form">
                                         @csrf
                     
-                                        <div class="main_content_section">
+                                        <div class="main_content_section m-0">
                                             <div class="row">
                                                 <div class="col-lg-12">
                                                     <div class="card">
                     
-                                                        <div class="card-body">
+                                                        <div class="card-body p-0">
                                                             <!-- end table-responsive -->
                     
                     
-                                                            <div class="card_section_2">
+                                                            <div class="card_section_2 p-0">
                                                                 <div class="row align-items-baseline">
-                                                                    <div class="col-lg-11">
-                                                                        <div class="">
+                                                                    <div class="col-lg-12">
+                                                                        <div class="d-flex align-items-center justify-content-between">
                                                                             <h4 class="card_tittle_2">
                                                                                 {{ __('translation.Construction Completion Report') }}
                                                                             </h4>
+                                                                            <button onclick="printForm($('#print_form'))" type="button" class="file_button mb-2">
+                                                                                <img src="{{asset('engineer_company/images/Vector.png')}}">
+                                                                            </button>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -173,7 +169,7 @@
                                                                     </div>
                                                                     <div class="col-lg-10 col-md-6 col-12">
                                                                         <div class="col-lg-10 col-md-6 col-12">
-                                                                            <a href="{{asset($completion_report->construction_completion_file)}}" class="btn btn-sm btn-primary">{{ __('translation.View') }}</a>
+                                                                            <a href="{{asset($completion_report->construction_completion_file)}}">View</a>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -181,7 +177,7 @@
                                                             <div class="form-group mb-4">
                                                                 <div class="row align-items-center">
                                                                     <div class="col-12">
-                                                                        <div style="border: 1px solid #c8c8c8;" class="px-3 py-2">
+                                                                        <div>
                                                                             {!! $completion_report->construction_description !!}
                                                                         </div>
                                                                     </div>

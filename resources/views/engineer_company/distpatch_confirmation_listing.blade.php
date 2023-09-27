@@ -1,6 +1,5 @@
 @extends('engineer_company.includes.layout')
 @section('body')
-
     <div class="main-content">
         <div class="page-content">
             <div class="container-fluid">
@@ -71,19 +70,19 @@
                                                         <td>
                                                             <div class="d-flex gap-1 justify-content-center">
                                                                 <a href="{{ route('ec.ViewDispatchInformation', $v->id) }}"
-                                                                   class="btn btn-success btn-custom-table btn-sm">
-                                                                    <i class="bx bxs-search-alt-2"></i>
+                                                                   class="btn btn-outline-danger btn-theme-danger-outline btn-outline btn-sm">
+                                                                   <img src="https://eps.beckapps.co/eps/public/engineer_company/assets/images/red-search.png">
                                                                 </a>
                                                                 <a @if(activeGuard() == 'admin') style="background-color: #696CFF !important; border: none !important;"
                                                                        @endif href="{{ route('ec.EditDispatchInformation', $v->id) }}"
-                                                                       class="btn btn-primary btn-custom-table btn-sm">
-                                                                        <i class="bx bxs-edit-alt"></i>
+                                                                       class="btn back-green btn-outline btn-sm">
+                                                                       <img src="https://eps.beckapps.co/eps/public/engineer_company/images/edit_icon.png">
                                                                     </a>
                                                                 @if(activeGuard() != 'web')
                                                                     <a data-bs-toggle="modal" data-del-id="{{ $v->id }}"
                                                                        data-bs-target="#delModal"
-                                                                       class="btn btn-danger btn-custom-table btn-sm delBtn">
-                                                                        <i class="bx bx-trash-alt"></i>
+                                                                       class="btn btn-outline-light btn-theme-light-outline btn-outline btn-sm delBtn">
+                                                                       <img src="https://eps.beckapps.co/eps/public/engineer_company/assets/images/delete.png">
                                                                     </a>
                                                                 @endif
                                                             </div>

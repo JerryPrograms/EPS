@@ -16,6 +16,21 @@
                                         class="card-title mb-4 d-flex align-items-center justify-content-between mobile-flex-column">
                                         <h5 class="mb-0">{{ __('translation.Regular inspection logs') }}</h5>
                                         <div class="d-flex align-items-center gap-2">
+                                            <div class="custom_search">
+                                                <div class="search">
+                                                    <input type="text" id="search" onkeyup="myFunction()"
+                                                           class="form-control" name="keyword"
+                                                           placeholder="{{ __('translation.search') }}" autocomplete="off"
+                                                           required="">
+                                                    <button type="submit" class="btn btn-primary searchbar_button">
+                                                        <div class="search_img">
+                                                            <img
+                                                                src="{{asset('engineer_company/assets/images/search.png')}}">
+                                                        </div>
+                                                    </button>
+    
+                                                </div>
+                                            </div>
                                             <a href="{{ route('ec.GetCustomerInfoDashboard',request()->segment(3)) }}"
                                                 class="btn btn-dark">{{ __('translation.Menu') }}</a>
                                             @if (!empty($customer->BuildingInformation))
@@ -84,7 +99,7 @@
 
                                         @if (count($customer->MonthlyRegularInspection) > 0)
                                             <div class="table-responsive data-set-list mt-3">
-                                                <table class="table align-middle mb-0 table-theme">
+                                                <table class="table align-middle mb-0 table-theme" id="myTable">
                                                     <thead class="table-light">
                                                     <tr>
                                                         <th>{{ __('translation.no') }}.</th>
@@ -147,4 +162,30 @@
     </div>
 @endsection
 @section('custom-script')
+<script>
+    function myFunction() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("search");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[1];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].classList.remove('d-none');
+                    } else {
+                        tr[i].classList.add('d-none');
+                    }
+                }
+            }
+
+            if ($("#myTable tbody tr.main-tr").length == $("#myTable tbody tr.d-none.main-tr").length) {
+                $('#no_record').removeClass('d-none');
+            } else {
+                $("#no_record").addClass('d-none')
+            }
+        }
+</script>
 @endsection

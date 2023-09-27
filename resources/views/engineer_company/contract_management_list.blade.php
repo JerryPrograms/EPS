@@ -55,7 +55,8 @@
 
                                             </div>
                                         </div>
-
+                                        <a href="{{ route('ec.GetCustomerInfoDashboard',$customer->user_uid) }}"
+                                            class="btn btn-dark">{{ __('translation.Menu') }}</a>
                                         <button type="button" onclick="openDeleteModal()"
                                                 class="btn btn-primary">
                                             {{__('translation.delete')}}

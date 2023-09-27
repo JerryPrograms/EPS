@@ -1,7 +1,7 @@
 @extends('engineer_company.includes.layout')
 @section('body')
     @php
-        $customerId = 0;
+        $customerId = '';
         if(!empty($customer)){
             $customerId = $customer->id;
         }
@@ -271,9 +271,9 @@
             alert(customerId);
             $('#add_contract_completion_form').validate({
                 submitHandler: function() {
-                    ajaxCall($('#add_contract_completion_form'), (customerId == '0') ? "{{ route('add_construction_completion') }}" : "{{ route('add_construction_completion',$customerId) }}", $(
+                    ajaxCall($('#add_contract_completion_form'), "{{ route('add_construction_completion') }}", $(
                             '#add_contract_completion_form').find('button.form_button'),
-                        "{{ route('construction_completion') }}", onRequestSuccess);
+                        "{{ route('construction_completion',$customerId) }}", onRequestSuccess);
                 }
             });
         });

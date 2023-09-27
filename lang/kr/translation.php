@@ -659,5 +659,6 @@ return [
     'View' => '보다',
     'Your existing file will replaced' => '기존 파일이 대체됩니다.',
     'company_name' => '업체명',
-    'First add parking facility information' => '먼저 주차시설 정보를 추가하세요.'
+    'First add parking facility information' => '먼저 주차시설 정보를 추가하세요.',
+    'quote_management' => '견적서 관리'
 ];

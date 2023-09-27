@@ -118,7 +118,7 @@
 
                                                     <tr>
                                                         <td>{{ $loop->index + 1 }}</td>
-                                                        <td>{{ $v->inspection_date->format('Y-d-m') }}</td>
+                                                        <td>{{ $v->inspection_date->format('Y-m-d') }}</td>
                                                         <td>{{ $v->inspection_manager }}</td>
                                                         <td title="{{ $building_name }}">{{ $building_name }}</td>
                                                         <td title="{{ $address }}">{{ Str::limit($address, 20, '...') }}</td>
@@ -141,8 +141,8 @@
                                                                        @endif data-bs-toggle="modal"
                                                                        data-del-id="{{ $v->id }}"
                                                                        data-bs-target="#delModal"
-                                                                       class="btn btn-danger btn-custom-table btn-sm delBtn">
-                                                                        <i class="bx bx-trash-alt"></i>
+                                                                       class="btn btn-outline-light btn-theme-light-outline btn-outline btn-sm delBtn">
+                                                                       <img src="https://eps.beckapps.co/eps/public/engineer_company/assets/images/delete.png">
                                                                     </a>
                                                                 @endif
                                                             </div>

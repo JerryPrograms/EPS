@@ -67,18 +67,18 @@
                                                             <div class="d-flex gap-1 justify-content-center">
                                                                 <a @if(activeGuard() == 'admin') style="background-color: #6281FE !important; border: none"
                                                                    @endif href="{{ route('GetQuoteDetails', $v->id) }}"
-                                                                   class="btn btn-success btn-custom-table btn-sm">
-                                                                    <i class="bx bx-search-alt-2"></i>
+                                                                   class="btn btn-outline-danger btn-theme-danger-outline btn-outline btn-sm">
+                                                                   <img src="https://eps.beckapps.co/eps/public/engineer_company/assets/images/red-search.png">
                                                                 </a>
                                                                 @if(activeGuard() != 'web')
                                                                     <a href="{{ route('GetQuoteDetails', $v->id) }}"
-                                                                       class="btn btn-primary btn-custom-table btn-sm">
-                                                                        <i class="bx bxs-edit-alt"></i>
+                                                                       class="btn back-green btn-outline btn-sm">
+                                                                       <img src="https://eps.beckapps.co/eps/public/engineer_company/images/edit_icon.png">
                                                                     </a>
                                                                     <a data-bs-toggle="modal" data-del-id="{{ $v->id }}"
                                                                        data-bs-target="#delModal"
-                                                                       class="btn btn-danger btn-custom-table btn-sm delBtn">
-                                                                        <i class="bx bx-trash-alt"></i>
+                                                                       class="btn btn-outline-light btn-theme-light-outline btn-outline btn-sm delBtn">
+                                                                       <img src="https://eps.beckapps.co/eps/public/engineer_company/assets/images/delete.png">
                                                                     </a>
                                                                 @endif
                                                                 @if(activeGuard() == 'web')

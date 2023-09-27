@@ -44,10 +44,12 @@
                                   class="dropdown_text">{{ __('translation.Customer List') }}</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
+                            @if(activeGuard() !== 'engineer')
                             <li class="a"><a key="t-default" class="list_menubar_text"
                                              title="Information & Building Management Company Information"><span
                                         class="custom_dot">.</span>{{ __('translation.Building Information1') }}
                                 </a></li>
+                            @endif
                             <li class="c"><a key="t-crypto" class="list_menubar_text"
                                              title="Parking facility certification information & inspection certificate
                                 "><span
@@ -79,12 +81,13 @@
                                                 <span
                                                     class="custom_dot">.</span>{{ __('translation.Emergency dispatch') }}
                                 </a></li>
-
+                            @if(activeGuard() !== 'engineer')
                             <li class="h"><a key="t-blog" class="list_menubar_text"
                                              title="Manage attachments">
                                                 <span
                                                     class="custom_dot">.</span>{{ __('translation.Manage attachments') }}
                                 </a></li>
+                            @endif
                         </ul>
                     </li>
                 @endif
@@ -111,7 +114,6 @@
                         </a>
                     </li>
 
-
                     <li class="sidebr_button mt-2">
                         <a href="{{ route('regular_inspection_logs') }}" class=" waves-effect dropdown_toggle">
                             <!-- <i class="bx bx-calendar"></i> -->
@@ -122,7 +124,7 @@
                         </a>
                     </li>
 
-
+                    @if(activeGuard() != 'engineer')
                     <li class="sidebr_button mt-2">
                         <a href="{{ route('contract_management') }}" class=" waves-effect dropdown_toggle">
                             <!-- <i class="bx bx-calendar"></i> -->
@@ -133,16 +135,16 @@
                         </a>
                     </li>
 
-
                     <li class="sidebr_button mt-2">
                         <a href="{{ route('quotation_management') }}" class=" waves-effect dropdown_toggle">
                             <!-- <i class="bx bx-calendar"></i> -->
                             <img src="{{ asset('engineer_company/assets/images/Book_check.png') }}"
                                  class="double_ring_img p-0" style="margin-left: -1px;">
                             <span key="t-dashboards"
-                                  class="dropdown_text">{{ __('translation.Quote Management') }}</span>
+                                  class="dropdown_text">{{ __('translation.quote_management') }}</span>
                         </a>
                     </li>
+                    @endif
 
 
                     <li class="sidebr_button mt-2">
