@@ -268,7 +268,6 @@
         }
         $(document).ready(function(){
             var customerId = $('#checkCustomerId').val();
-            alert(customerId);
             $('#add_contract_completion_form').validate({
                 submitHandler: function() {
                     ajaxCall($('#add_contract_completion_form'), "{{ route('add_construction_completion') }}", $(
