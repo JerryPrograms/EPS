@@ -664,5 +664,6 @@ return [
     'Your existing file will replaced' => 'Your existing file will replaced',
     'company_name' => 'Company Name',
     'First add parking facility information' => 'First add parking facility information',
-    'quote_management' => 'Quote Management'
+    'quote_management' => 'Quote Management',
+    'You need to select row first' => 'You need to select row first'
 ];

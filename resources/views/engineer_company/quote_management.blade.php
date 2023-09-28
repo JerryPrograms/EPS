@@ -29,7 +29,7 @@
                                         <div class="buttons d-flex align-items-center justify-content-between gap-1">
                                             <div class="custom_search">
                                                 <div class="search">
-                                                    <input type="text" id="search" onkeyup="myFunction()" class="form-control" name="keyword" placeholder="search" autocomplete="off" required="">
+                                                    <input type="text" id="search" onkeyup="myFunction()" class="form-control" name="keyword" placeholder="{{ __('translation.search') }}" autocomplete="off" required="">
                                                     <button type="submit" class="btn btn-primary searchbar_button">
                                                         <div class="search_img">
                                                             <img src="https://eps.beckapps.co/eps/public/engineer_company/assets/images/search.png">
@@ -481,8 +481,7 @@
 
         function OpenModal() {
             if ($('#quoteId').val() == '') {
-                console.log('asd');
-                Command: toastr["error"]("You need to select row first")
+                Command: toastr["error"]("{{ __('translation.You need to select row first') }}")
 
                 toastr.options = {
                     "closeButton": false,

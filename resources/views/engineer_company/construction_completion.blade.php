@@ -284,8 +284,10 @@
 
                 },
                 success: function (response) {
+                    $('#print_form').removeClass('d-none');
                     $('#print_form').html('');
                     $('#print_form').html(response.html);
+                    console.log($('#print_form').html());
                     $('#print_form').print({
                         globalStyles: true,
                         mediaPrint: false,

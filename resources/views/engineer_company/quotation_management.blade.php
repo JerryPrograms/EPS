@@ -41,9 +41,7 @@
                                                     <th style="min-width: 150px;">{{ __('translation.Quote Date') }}</th>
                                                     <th style="min-width: 150px;">{{ __('translation.Customer Number') }}</th>
                                                     <th style="min-width: 150px;">{{ __('translation.Building Name') }}</th>
-                                                    <th>{{ __('translation.Number') }}</th>
                                                     <th style="min-width: 150px;">{{ __('translation.Customer Number') }}</th>
-                                                    <th>{{ __('translation.Amount') }}</th>
                                                     <th style="min-width: 150px;">{{ __('translation.Action') }}</th>
                                                 </tr>
                                                 </thead>
@@ -60,9 +58,7 @@
                                                         <td>{{ $v->created_at->format('Y-m-d') }}</td>
                                                         <td>{{ $v->getCustomer->customer_number }}</td>
                                                         <td>{{ $building_name }}</td>
-                                                        <td>{{ count($v->GetQuoteContent) }}</td>
                                                         <td>{{ $v->GetCustomer->customer_number }}</td>
-                                                        <td>{{ $v->total_amount }}</td>
                                                         <td>
                                                             <div class="d-flex gap-1 justify-content-center">
                                                                 <a @if(activeGuard() == 'admin') style="background-color: #6281FE !important; border: none"

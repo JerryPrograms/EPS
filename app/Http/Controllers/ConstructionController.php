@@ -189,8 +189,6 @@ class ConstructionController extends Controller
 
     public function print_construction_completion(Request $request)
     {
-
-
         $completion_report = CompletionRequestModel::where('id', $request->id)->first();
 
         $html = view('engineer_company.construction_report_template', compact('completion_report'))->render();

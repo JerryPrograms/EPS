@@ -150,7 +150,7 @@
                                             @if(empty($contract->output))
                                                 <div class="form-btn">
                                                     <button class="btn btn-primary"
-                                                            type="submit">{{__('translation.Sign')}}</button>
+                                                            type="submit">{{__('translation.save')}}</button>
                                                 </div>
                                             @endif
                                         </div>

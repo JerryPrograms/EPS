@@ -527,8 +527,8 @@ return [
     'Mark as completed' => "완료'로 변경",
     'Are you sure you want to delete' => '삭제하시겠습니까?',
     'Are you sure you want to turn off alarm?' => '알림을 끄시겠습니까?',
-    'Turn Off Alarm' => '알림끄기',
-    'Turn Off' => '끄기',
+    'Turn Off Alarm' => '알림 끄기',
+    'Turn Off' => '알림끄기',
     'Alarm set off successfully' => '알림이 성공적으로 설정됨',
     "Something went wrong. Please try again" => '에러가 발생했으니 다시 시도해주세요.',
     'Quotation Content' => '견적서 내용',
@@ -660,5 +660,6 @@ return [
     'Your existing file will replaced' => '기존 파일이 대체됩니다.',
     'company_name' => '업체명',
     'First add parking facility information' => '먼저 주차시설 정보를 추가하세요.',
-    'quote_management' => '견적서 관리'
+    'quote_management' => '견적서 관리',
+    'You need to select row first' => '먼저 선택해주세요'
 ];
