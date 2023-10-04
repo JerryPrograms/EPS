@@ -95,7 +95,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="myModalLabel">{{__('Turn Off Alarm')}}</h5>
+                    <h5 class="modal-title" id="myModalLabel">{{__('translation.Turn Off Alarm')}}</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form id="contract_turn_off">
@@ -105,7 +105,7 @@
                             <div class="col-md-12">
                                 <div class="prompt w-100"></div>
                             </div>
-                            <p>{{__('Are you sure you want to turn off alarm?')}}</p>
+                            <p>{{__('translation.Are you sure you want to turn off alarm?')}}</p>
                             <input name="id" id="contract_id" hidden>
                         </div>
                     </div>
@@ -114,7 +114,7 @@
                                 data-bs-dismiss="modal">{{__('translation.close')}}
                         </button>
                         <button type="submit"
-                                class="btn btn-primary waves-effect waves-light submitbtn">{{__('Turn Off')}}</button>
+                                class="btn btn-primary waves-effect waves-light submitbtn">{{__('translation.Turn Off')}}</button>
                     </div>
                 </form>
             </div><!-- /.modal-content -->
