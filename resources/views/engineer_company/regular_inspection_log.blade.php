@@ -114,7 +114,7 @@
                                                     @foreach ($customer->MonthlyRegularInspection as $v)
                                                         <tr>
                                                             <td>{{ $loop->index + 1 }}</td>
-                                                            <td>{{ $v->inspection_date->format('d-m-y') }}</td>
+                                                            <td>{{ $v->inspection_date->format('Y-m-d') }}</td>
                                                             <td>{{ $v->arrival_time }}</td>
                                                             <td>{{ $building_name }}</td>
                                                             <td>{{ $address}}</td>
@@ -125,6 +125,15 @@
                                                                     <img
                                                                         src="{{ asset('engineer_company/images/edit_icon.png') }}">
                                                                 </a>
+                                                                @if(activeGuard() != 'web')
+                                                                <a @if(activeGuard() == 'admin') style="background-color: #FF3E1D !important; border: none !important;"
+                                                                       @endif data-bs-toggle="modal"
+                                                                       data-del-id="{{ $v->id }}"
+                                                                       data-bs-target="#delModal"
+                                                                       class="btn btn-outline-light btn-theme-light-outline btn-outline btn-sm delBtn">
+                                                                       <img src="https://eps.beckapps.co/eps/public/engineer_company/assets/images/delete.png">
+                                                                </a>
+                                                                @endif
                                                                 @endif
                                                                 <a href="{{ route('view_regular_inspection_log', $v->id) }}"
                                                                    class="btn btn-outline-danger btn-theme-danger-outline btn-outline btn-sm">
@@ -161,8 +170,34 @@
         <!-- End Page-content -->
     </div>
 @endsection
+@section('modal')
+    <div id="delModal" class="modal fade" tabindex="-1" aria-labelledby="delModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="delModalLabel">{{ __('translation.Confirm Delete') }}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" id="delinput">
+                    <div class="del-prompt"></div>
+                    <p>{{ __('translation.Are you sure you want to delete') }}?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary waves-effect"
+                            data-bs-dismiss="modal">{{ __('translation.close') }}</button>
+                    <button type="button" id="delBtnAction"
+                            class="btn btn-primary waves-effect waves-light">{{ __('translation.Save changes') }}</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+@endsection
 @section('custom-script')
 <script>
+    $('.delBtn').on('click', function () {
+            $('#delinput').val($(this).attr('data-del-id'));
+        });
     function myFunction() {
             var input, filter, table, tr, td, i, txtValue;
             input = document.getElementById("search");
@@ -187,5 +222,33 @@
                 $("#no_record").addClass('d-none')
             }
         }
+        $('#delBtnAction').on('click', function () {
+            var btn = $(this);
+            $.ajax({
+                type: "POST",
+                url: '{{ route("del_regular_inspection_log") }}',
+                dataType: 'json',
+                data: {'del_id': $('#delinput').val(), '_token': '{{ csrf_token() }}'},
+                beforeSend: function () {
+                    btn.prop('disabled', true);
+                    btn.html('<i class="fa fa-spinner fa-spin me-1"></i> Processing');
+                },
+                success: function (response) {
+                    if (response.success == true) {
+                        $('.del-prompt').html('<div class="alert alert-success mb-3">' + response.message + '</div>');
+                        setTimeout(() => {
+                            window.location.reload();
+                        }, 2000);
+                    } else {
+                        $('.del-prompt').html('<div class="alert alert-danger mb-3">' + response.message + '</div>');
+                        setTimeout(() => {
+                            window.location.reload();
+                        }, 2000);
+                    }
+                },
+                error: function () {
+                }
+            });
+        });
 </script>
 @endsection

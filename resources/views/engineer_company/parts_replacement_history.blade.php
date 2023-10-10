@@ -214,12 +214,14 @@
                                                     <button type="button" onclick="FilterData($(this).prev().val(),'{{$customer->id}}')" class="btn btn-primary mt-2">Filter</button>
                                                 </div>
                                             </div>
+                                            @if((activeGuard() !== 'engineer_company') && (activeGuard() !== 'engineer'))
                                             <div class="col-lg-6 text-end">
                                                 <button type="button" onclick="addReplacementHistoryRow()"
                                                         class="history_add_btn">
                                                     {{ __('translation.add') }}
                                                 </button>
                                             </div>
+                                            @endif
                                         </div>
                                         <!-- row 2 end----------------------------------------------------------------------------------------------------------------  -->
 
@@ -256,10 +258,12 @@
                                                 <th class="text-center">
                                                     {{ __('translation.AS content') }}
                                                 </th>
+                                                @if((activeGuard() !== 'engineer_company') && (activeGuard() !== 'engineer'))
                                                 <th class="text-center">
 
                                                     {{ __('translation.action') }}
                                                 </th>
+                                                @endif
                                             </tr>
                                             </thead>
                                             <tbody id="partReplacemnetTbody">
@@ -295,6 +299,7 @@
 
                                                 </button>
                                             </div>
+                                            @if((activeGuard() !== 'engineer_company') && (activeGuard() !== 'engineer'))
                                             <div class="col-lg-2 col-6">
                                                 <button class="form_button mb-5 mt-5 submitbtn">
 
@@ -302,6 +307,7 @@
 
                                                 </button>
                                             </div>
+                                            @endif
                                         </div>
                                     </div>
                                     <!-- form row 4 end  -->

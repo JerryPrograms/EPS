@@ -379,14 +379,16 @@
         });
         $('#inspectionForm').validate({
             submitHandler: function () {
-                var imageData = signaturePad.toDataURL();
-                document.getElementsByName("output")[0].setAttribute("value", imageData);
-                {{--if (signaturePad.isEmpty()) {--}}
-                {{--    $('#canvas_error').removeClass('d-none');--}}
-                {{--} else {--}}
+                if (signaturePad.isEmpty()) {
+                    // $('#canvas_error').removeClass('d-none');
                     ajaxCall($('#inspectionForm'), "{{ route('save_inspection_action') }}", $('#formBtn'),
                         "{{ route('regular_inspection_log',$customer->user_uid) }}", onRequestSuccess);
-                // }
+                } else {
+                    var imageData = signaturePad.toDataURL();
+                    document.getElementsByName("output")[0].setAttribute("value", imageData);
+                    ajaxCall($('#inspectionForm'), "{{ route('save_inspection_action') }}", $('#formBtn'),
+                        "{{ route('regular_inspection_log',$customer->user_uid) }}", onRequestSuccess);
+                }
             }
         });
         $("#arrival_time_picker").timepicker({

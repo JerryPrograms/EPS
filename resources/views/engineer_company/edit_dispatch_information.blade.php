@@ -360,7 +360,7 @@
                     document.getElementsByName("output")[0].setAttribute("value", '1');
                 }
 
-                ajaxCall($('#createDispatchConfirmation'), "{{ route('CreateDispatchInformation') }}", $('#createDispatchConfirmation').find('.submitbtn'), "{{ route('ec.EditDispatchInformation',request()->segment(3)) }}", onRequestSuccess);
+                ajaxCall($('#createDispatchConfirmation'), "{{ route('CreateDispatchInformation') }}", $('#createDispatchConfirmation').find('.submitbtn'), "{{ route('ec.ListDispatchInformation',$dispatch->GetCustomer->user_uid) }}", onRequestSuccess);
 
             }
         });

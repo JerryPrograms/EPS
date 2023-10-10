@@ -183,21 +183,20 @@
                                                                         @if(empty($dispatch->output))
                                                                         <button
                                                                             onclick="window.location.href='{{route("ec.EditDispatchInformation",$dispatch->id)}}'"
-                                                                            class="green_edit_button">
+                                                                            class="btn btn-outline-success btn-theme-success-outline btn-outline btn-sm">
                                                                             <img
-                                                                                src="{{asset('engineer_company/assets/images/green-edit.png')}}">
+                                                                                src="{{ asset('engineer_company/images/edit_icon.png') }}">
                                                                         </button>
                                                                         @endif
                                                                         <button
                                                                             onclick="window.location.href='{{route("ec.ViewDispatchInformation",$dispatch->id)}}'"
-                                                                            class="aroow_button_2">
-                                                                            <img style="width: 20px;"
-                                                                                 src="{{asset('engineer_company/assets/images/red-search.png')}}">
+                                                                            class="btn btn-outline-danger btn-theme-danger-outline btn-outline btn-sm">
+                                                                            <img
+                                                                                src="{{ asset('engineer_company/assets/images/red-search.png') }}">
                                                                         </button>
                                                                         @if(empty($dispatch->output))
-                                                                        <button id="delDispatchInfoBtn" data-bs-target="#deleteDispatchInformation" data-id="{{ $dispatch->id }}" data-bs-toggle="modal" class="aroow_button_2">
-                                                                            <img style="width: 20px;"
-                                                                                 src="{{asset('engineer_company/assets/images/del-icon.png')}}">
+                                                                        <button id="delDispatchInfoBtn" class="btn btn-outline-light btn-theme-light-outline btn-outline btn-sm" data-bs-target="#deleteDispatchInformation" data-id="{{ $dispatch->id }}" data-bs-toggle="modal" class="aroow_button_2">
+                                                                            <img src="https://eps.beckapps.co/eps/public/engineer_company/assets/images/delete.png">
                                                                         </button>
                                                                         @endif
                                                                         <div class="bluebar_img_section"></div>

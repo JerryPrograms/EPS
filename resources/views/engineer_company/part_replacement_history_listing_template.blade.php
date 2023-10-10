@@ -28,6 +28,7 @@
                 <button class="date_button_2 border-0">{{$rh->as_content}}
                 </button>
             </td>
+            @if((activeGuard() !== 'engineer_company') && (activeGuard() !== 'engineer'))
             <td class="custom_br_theme_gray_3">
                 <!-- Button trigger modal -->
 
@@ -45,6 +46,7 @@
                     <i class="fa fa-trash-can"></i>
                 </button>
             </td>
+            @endif
         </tr>
     @endforeach
 @else

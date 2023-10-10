@@ -166,8 +166,9 @@
 
                                 <div class="card-body">
                                     <!-- end table-responsive -->
-
+                                    @if((activeGuard() !== 'engineer_company'))
                                     <form id="createBuildingInformation">
+                                        @endif
 
                                         @if (!empty($customer->BuildingInformation))
                                             <input name="building_id" value="{{ $customer->BuildingInformation->id }}"
@@ -914,7 +915,7 @@
 
                                         <!-- form row 2 end  -->
 
-
+                                        @if((activeGuard() !== 'engineer_company'))
                                         <!-- form row 4 start  -->
                                         <div class="row justify-content-end no-print">
                                             <div class="col-lg-2">
@@ -926,7 +927,10 @@
 
                                             </div>
                                         </div>
+                                        @endif
+                                    @if((activeGuard() !== 'engineer_company'))
                                     </form>
+                                    @endif
                                     <!-- form row 4 end  -->
 
                                 </div>

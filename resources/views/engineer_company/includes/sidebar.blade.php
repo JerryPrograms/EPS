@@ -67,7 +67,7 @@
                                             <span
                                                 class="custom_dot">.</span>{{ __('translation.Component replacement') }}
                                 </a></li>
-
+                            @if((activeGuard() !== 'engineer_company') && (activeGuard() !== 'engineer'))   
                             <li class="f"><a key="t-blog" class="list_menubar_text"
                                              title="Monthly Inspection list
                                 ">
@@ -81,7 +81,8 @@
                                                 <span
                                                     class="custom_dot">.</span>{{ __('translation.Emergency dispatch') }}
                                 </a></li>
-                            @if(activeGuard() !== 'engineer')
+                                @endif
+                            @if((activeGuard() !== 'engineer') && (activeGuard() !== 'engineer_company'))
                             <li class="h"><a key="t-blog" class="list_menubar_text"
                                              title="Manage attachments">
                                                 <span

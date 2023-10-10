@@ -215,11 +215,14 @@
                                                             &nbsp;</h4>
                                                     </div>
                                                     <div class="col-lg-4 col-6 no-print">
-                                                        <div class="file_main_section d-flex">
+                                                        <div class="file_main_section d-flex justify-content-end">
+                                                            @if((activeGuard() !== 'engineer_company') && (activeGuard() !== 'engineer'))
                                                             <form class="w-100 d-flex" id="key_import">
+                                                            @endif
                                                                 <input name="customer_id" value="{{$customer->id}}"
                                                                        hidden="">
                                                                 @csrf
+                                                                @if((activeGuard() !== 'engineer_company') && (activeGuard() !== 'engineer'))
                                                                 <div class="mb-3">
                                                                     <div class="dropdown me-2">
                                                                         <button
@@ -248,11 +251,14 @@
                                                                     </div>
 
                                                                 </div>
+                                                                @endif
+                                                                @if((activeGuard() !== 'engineer_company') && (activeGuard() !== 'engineer'))
                                                                 <button type="submit"
                                                                         class="file_button me-2">
                                                                     <img
                                                                         src="{{asset('engineer_company/images/Vector(2).png')}}">
                                                                 </button>
+                                                                @endif
 
                                                                 <button type="button"
                                                                         onclick="printForm($('#parkingFacilityInformationForm'))"
@@ -260,7 +266,9 @@
                                                                     <img
                                                                         src="{{asset('engineer_company/images/Vector.png')}}">
                                                                 </button>
+                                                                @if((activeGuard() !== 'engineer_company') && (activeGuard() !== 'engineer'))
                                                             </form>
+                                                            @endif
                                                         </div>
                                                     </div>
 
@@ -281,12 +289,14 @@
 
                                                                             <div class="colllap_section_4">
                                                                                 <div class="d-flex align-items-center justify-content-center flex-column">
+                                                                                    @if((activeGuard() !== 'engineer_company') && (activeGuard() !== 'engineer'))
                                                                                     <button
                                                                                         class="btn btn-primary btn-sm mb-2"
                                                                                         onclick="SetPartData('{{$main_accessory->id}}','{{$main_accessory->tag}}','{{$main_accessory->title}}','{{$main_accessory->color}}')"
                                                                                         data-bs-target="#EditPartModal"
                                                                                         data-bs-toggle="modal"><i
                                                                                             class="fa fa-edit"></i></button>
+                                                                                            @endif
 
                                                                                     @if(!empty($main_accessory->tag))
                                                                                         <button
@@ -307,7 +317,7 @@
 
 
                                                                         <div class="col-lg-8 part_data_area">
-
+                                                                            @if((activeGuard() !== 'engineer_company') && (activeGuard() !== 'engineer'))
                                                                             <div class="d-flex align-items-center justify-content-right part-actions">
                                                                                 <button
                                                                                     data-bs-toggle="modal"
@@ -325,8 +335,9 @@
 
                                                                                 </button>
                                                                             </div>
+                                                                            @endif
 
-                                                                            <div class="colllap_section_5">
+                                                                            <div class="@if((activeGuard() !== 'engineer_company') && (activeGuard() !== 'engineer')) colllap_section_5 @endif">
 
                                                                                 <ol id="ol{{$loop->index}}"
                                                                                     class="collape_list_text"></ol>
@@ -344,6 +355,7 @@
                                                                                             </div>
                                                                                             <div class="d-flex align-items-center justify-content-right px-2">
                                                                                                 <span class="mb-3"><i class="fa-solid fa-chevron-down"></i></span>
+                                                                                                @if((activeGuard() !== 'engineer_company') && (activeGuard() !== 'engineer'))
                                                                                                 <span data-bs-toggle="modal"
                                                                                                     data-bs-target="#EditSubPartModal"
                                                                                                     onclick="setSubPartData('{{$SubParts->id}}','{{$SubParts->title}}')"
@@ -352,14 +364,17 @@
                                                                                                <button data-bs-toggle="modal" data-bs-target="#DeleteSubPartModal" onclick="setsubPartID('{{$SubParts->id}}')" style="background: transparent; border: none;margin-top: -15px;">
                                                                                                    <i class="fa fa-trash"></i>
                                                                                                </button>
+                                                                                               @endif
                                                                                             </div>
                                                                                         </li>
                                                                                         <div id="form_{{$SubParts->id}}"
                                                                                              class="d-flex d-none custom_border">
                                                                                             <div class="form_box">
+                                                                                                @if((activeGuard() !== 'engineer_company') && (activeGuard() !== 'engineer'))
                                                                                                 <form
                                                                                                     id="parts_form_{{$SubParts->id}}">
                                                                                                     @csrf
+                                                                                                    @endif
 
                                                                                                     <div class="form-group mb-3">
                                                                                                         <label>{{ __('translation.Standard') }}</label>
@@ -408,12 +423,14 @@
                                                                                                     <div
                                                                                                         class="d-flex align-items-start gap-1">
                                                                                                         <div>
+                                                                                                            @if((activeGuard() !== 'engineer_company') && (activeGuard() !== 'engineer'))
                                                                                                             <button
                                                                                                                 type="button"
                                                                                                                 onclick="$(this).next().trigger('click')"
                                                                                                                 class="collape_button">
                                                                                                                 {{ __('translation.Attachments upload') }}
                                                                                                             </button>
+                                                                                                            @endif
 
                                                                                                             <input
                                                                                                                 class="sub_part_image"
@@ -429,7 +446,7 @@
                                                                                                             </p>
                                                                                                         </div>
 
-
+                                                                                                        @if((activeGuard() !== 'engineer_company') && (activeGuard() !== 'engineer'))
                                                                                                         <div
                                                                                                             style="text-align: end;">
                                                                                                             <button
@@ -439,9 +456,12 @@
                                                                                                             </button>
 
                                                                                                         </div>
+                                                                                                        @endif
 
                                                                                                     </div>
+                                                                                                    @if((activeGuard() !== 'engineer_company') && (activeGuard() !== 'engineer'))
                                                                                                 </form>
+                                                                                                @endif
                                                                                             </div>
                                                                                         </div>
 
@@ -494,6 +514,7 @@
                                                             </button>
                                                         </a>
                                                     </div>
+                                                    @if((activeGuard() !== 'engineer_company') && (activeGuard() !== 'engineer'))
                                                     <div class="col-lg-2 col-6">
                                                         <button
                                                             onclick="window.location.href = '{{route("ec.CreatePartsReplacementHistory",$customer->user_uid)}}'"
@@ -503,6 +524,7 @@
 
                                                         </button>
                                                     </div>
+                                                    @endif
                                                 </div>
                                                 <!-- form row 4 end  -->
 

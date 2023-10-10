@@ -12,8 +12,6 @@ class DispatchInformationService
 {
     public static function CreateDispatchInformation(DispatchInformationRequest $request)
     {
-
-
         try {
             $data['customer_id'] = $request->customer_id;
             $data['site_name'] = $request->site_name;

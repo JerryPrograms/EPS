@@ -73,11 +73,13 @@
                                                                    class="btn btn-outline-danger btn-theme-danger-outline btn-outline btn-sm">
                                                                    <img src="https://eps.beckapps.co/eps/public/engineer_company/assets/images/red-search.png">
                                                                 </a>
+                                                                @if(empty($v->output))
                                                                 <a @if(activeGuard() == 'admin') style="background-color: #696CFF !important; border: none !important;"
                                                                        @endif href="{{ route('ec.EditDispatchInformation', $v->id) }}"
                                                                        class="btn back-green btn-outline btn-sm">
                                                                        <img src="https://eps.beckapps.co/eps/public/engineer_company/images/edit_icon.png">
                                                                     </a>
+                                                                @endif
                                                                 @if(activeGuard() != 'web')
                                                                     <a data-bs-toggle="modal" data-del-id="{{ $v->id }}"
                                                                        data-bs-target="#delModal"

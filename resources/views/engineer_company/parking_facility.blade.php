@@ -23,8 +23,10 @@
         <div class="page-content">
             <div class="container-fluid">
                 <div class="main_content_section">
+                    @if((activeGuard() !== 'engineer_company') && (activeGuard() !== 'engineer'))
                     <form id="parkingFacilityInformationForm">
                         @csrf
+                    @endif
                         <input name="customer_id" value="{{ $customer->id }}" hidden="">
 
                         @if (!empty($customer->ParkingFacilityCertificate))
@@ -328,6 +330,7 @@
                         </div>
                         <!-- section 2 end  -->
                         <!-- end page title -->
+                        @if((activeGuard() !== 'engineer_company') && (activeGuard() !== 'engineer'))
                         <div class="row justify-content-end no-print">
                             <div class="col-lg-2 col-6">
                                 <button id="form_button" class="form_button mb-5 mt-5">
@@ -335,10 +338,15 @@
                                 </button>
                             </div>
                         </div>
+                        @endif
+                    @if((activeGuard() !== 'engineer_company') && (activeGuard() !== 'engineer'))
                     </form>
+                    @endif
                     <!---------------------------- tabel 2 start----------------  -->
+                    @if((activeGuard() !== 'engineer_company') && (activeGuard() !== 'engineer'))
                     <form id="insConfCertForm">
                         @csrf
+                        @endif
                         <input name="customer_id" value="{{ $customer->id }}" hidden="">
                         <div class="row">
                             <div class="col-lg-12">
@@ -427,7 +435,8 @@
                                                             </div>
                                                         </td>
                                                         <td class="text-center custom_br_rd">
-                                                            <div class="aroow_main_section mt-4">
+                                                            <div class="aroow_main_section @if((activeGuard() !== 'engineer_company') && (activeGuard() !== 'engineer')) mt-4 @endif">
+                                                                @if((activeGuard() !== 'engineer_company') && (activeGuard() !== 'engineer'))
                                                                 <button type="button"
                                                                     onclick="$(this).next().trigger('click')"
                                                                     class="aroow_button">
@@ -439,13 +448,16 @@
                                                                     onchange="setFileName($(this))"
                                                                     name="inspection_certificate[]" required
                                                                     @if (empty($customer->InspectionCertificate))  @endif>
+                                                                @endif
                                                                 <button class="search_button"
                                                                     @if (count($customer->InspectionCertificate) > 0) onclick="setImage('{{ asset($customer->InspectionCertificate[0]->inspection_certificate) }}')" @endif
                                                                     type="button">
                                                                     <img
                                                                         src="{{ asset('engineer_company/assets/images/bluebar.png') }}">
                                                                 </button>
+                                                                @if((activeGuard() !== 'engineer_company') && (activeGuard() !== 'engineer'))
                                                                 <p>{{ __('translation.Max file size is 2mb') }}</p>
+                                                                @endif
                                                                 <div class="bluebar_img_section">
                                                                 </div>
                                                             </div>
@@ -503,7 +515,8 @@
                                                             </div>
                                                         </td>
                                                         <td class="text-center custom_br_rd">
-                                                            <div class="aroow_main_section mt-4">
+                                                            <div class="aroow_main_section @if((activeGuard() !== 'engineer_company') && (activeGuard() !== 'engineer')) mt-4 @endif">
+                                                                @if((activeGuard() !== 'engineer_company') && (activeGuard() !== 'engineer'))
                                                                 <button type="button"
                                                                     onclick="$(this).next().trigger('click')"
                                                                     class="aroow_button">
@@ -515,13 +528,16 @@
                                                                     name="inspection_certificate[]"
                                                                     onchange="setFileName($(this))" required
                                                                     @if (empty($customer->InspectionCertificate))  @endif>
+                                                                @endif
                                                                 <button class="search_button"
                                                                     @if (count($customer->InspectionCertificate) > 0) onclick="setImage('{{ asset($customer->InspectionCertificate[1]->inspection_certificate) }}')" @endif
                                                                     type="button">
                                                                     <img
                                                                         src="{{ asset('engineer_company/assets/images/bluebar.png') }}">
                                                                 </button>
+                                                                @if((activeGuard() !== 'engineer_company') && (activeGuard() !== 'engineer'))
                                                                 <p>{{ __('translation.Max file size is 2mb') }}</p>
+                                                                @endif
                                                                 <div class="bluebar_img_section">
                                                                 </div>
                                                             </div>
@@ -580,7 +596,8 @@
                                                             </div>
                                                         </td>
                                                         <td class="text-center custom_br_rd">
-                                                            <div class="aroow_main_section mt-4">
+                                                            <div class="aroow_main_section @if((activeGuard() !== 'engineer_company') && (activeGuard() !== 'engineer')) mt-4 @endif">
+                                                                @if((activeGuard() !== 'engineer_company') && (activeGuard() !== 'engineer'))
                                                                 <button type="button"
                                                                     onclick="$(this).next().trigger('click')"
                                                                     class="aroow_button">
@@ -592,13 +609,16 @@
                                                                     name="inspection_certificate[]"
                                                                     onchange="setFileName($(this))" required
                                                                     @if (empty($customer->InspectionCertificate))  @endif>
+                                                                @endif
                                                                 <button class="search_button"
                                                                     @if (count($customer->InspectionCertificate) > 0) onclick="setImage('{{ asset($customer->InspectionCertificate[2]->inspection_certificate) }}')" @endif
                                                                     type="button">
                                                                     <img
                                                                         src="{{ asset('engineer_company/assets/images/bluebar.png') }}">
                                                                 </button>
+                                                                @if((activeGuard() !== 'engineer_company') && (activeGuard() !== 'engineer'))
                                                                 <p>{{ __('translation.Max file size is 2mb') }}</p>
+                                                                @endif
                                                                 <div class="bluebar_img_section">
                                                                 </div>
                                                             </div>
@@ -620,12 +640,14 @@
                                                     {{ __('translation.Back page') }}
                                                 </button>
                                             </div>
+                                            @if((activeGuard() !== 'engineer_company') && (activeGuard() !== 'engineer'))
                                             <div class="col-lg-2 col-6">
                                                 <button id="form_2_btn" class="form_button mb-5 mt-5">
                                                     {{ __('translation.Save and Next') }}
 
                                                 </button>
                                             </div>
+                                            @endif
                                         </div>
                                         <!-- form row 4 end  -->
 
@@ -634,8 +656,9 @@
                             </div>
                             <!-- end row -->
                         </div>
-
+                    @if((activeGuard() !== 'engineer_company') && (activeGuard() !== 'engineer'))
                     </form>
+                    @endif
                 </div>
                 <!-- container-fluid -->
                 <!-------------------------------- table 2 end---------------  -->
