@@ -272,8 +272,7 @@
                                                     <div class="ca-action gap-2">
                                                         <div class="ca-action-left-content gap-2">
                                                             <div class="heading-text">
-                                                                <h4 class="mb-0">{{ $loopContent + 1 }}
-                                                                    . {{ __('translation.Special notes') }}</h4>
+                                                                <h4 class="mb-0">{{ $loopContent + 1 }}. {{ __('translation.Special notes') }}</h4>
                                                             </div>
                                                         </div>
                                                         <div class="ca-action-right-content">
@@ -302,7 +301,7 @@
                                                      style="padding: 12px 20px;border: 1px solid #E1E3EC;">
                                                     <div class="d-flex align-items-center justify-content-between pb-2">
                                                         <h4 class="mb-0" style="font-size: 14px;">
-                                                            7. {{ __('translation.Customer side verifier') }}</h4>
+                                                            {{ $loopContent + 2 }}. {{ __('translation.Customer side verifier') }}</h4>
                                                         <button class="btn btn-danger btn-sm" type="button"
                                                                 id="clear">{{ __('translation.clear') }}</button>
                                                     </div>
