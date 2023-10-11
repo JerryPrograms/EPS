@@ -234,20 +234,22 @@
                                                             <td>
                                                                 <div class="d-flex gap-1 justify-content-center">
                                                                     <a href="{{ route('ec.ViewDispatchInformation', $v->id) }}"
-                                                                       class="btn btn-success btn-custom-table btn-sm">
-                                                                        <i class="bx bx-search-alt-2"></i>
+                                                                       class="btn btn-outline-danger btn-theme-danger-outline btn-outline btn-sm">
+                                                                       <img
+                                                                       src="{{ asset('engineer_company/assets/images/red-search.png') }}">
                                                                     </a>
                                                                     @if(activeGuard() != 'web')
                                                                         <a @if(activeGuard() == 'admin') style="background-color: #696CFF !important; border: none !important;"
                                                                            @endif href="{{ route('ec.EditDispatchInformation', $v->id) }}"
-                                                                           class="btn btn-primary btn-custom-table btn-sm">
-                                                                            <i class="bx bxs-edit-alt"></i>
+                                                                           class="btn btn-outline-success btn-theme-success-outline btn-outline btn-sm">
+                                                                            <img
+                                                                                src="{{ asset('engineer_company/images/edit_icon.png') }}">
                                                                         </a>
                                                                         <a data-bs-toggle="modal"
                                                                            data-del-id="{{ $v->id }}"
-                                                                           data-bs-target="#delModal"
-                                                                           class="btn btn-danger btn-custom-table btn-sm delBtn">
-                                                                            <i class="bx bx-trash-alt"></i>
+                                                                           data-bs-target="#deleteReplacementHistory"
+                                                                           class="btn btn-outline-light btn-theme-light-outline btn-outline btn-sm delBtn">
+                                                                           <img src="https://eps.beckapps.co/eps/public/engineer_company/assets/images/delete.png">
                                                                         </a>
                                                                     @endif
                                                                 </div>
@@ -312,7 +314,7 @@
                 <div class="modal-header">
 
                     <h5 class="modal-title"
-                        id="myModalLabel">{{ __('translation.Delete_Emergency Dispatch Check List') }}</h5>
+                        id="myModalLabel">{{ __('translation.Delete Emergency Dispatch Check List') }}</h5>
 
                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                             aria-label="Close"></button>
@@ -428,5 +430,8 @@
                 }
             });
         }
+        $('.delBtn').on('click',function(){
+            $('#partReplacementID').val($(this).attr('data-del-id'));
+        });
     </script>
 @endsection
