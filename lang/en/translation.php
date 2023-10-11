@@ -665,5 +665,6 @@ return [
     'company_name' => 'Company Name',
     'First add parking facility information' => 'First add parking facility information',
     'quote_management' => 'Quote Management',
-    'You need to select row first' => 'You need to select row first'
+    'You need to select row first' => 'You need to select row first',
+    'Please enter Building information & Parking facility certification information' => 'Please enter Building information & Parking facility certification information'
 ];

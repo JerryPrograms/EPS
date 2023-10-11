@@ -319,11 +319,9 @@
                             <div class="col-lg-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <div class="alert alert-danger mb-0">Please enter Building information & Parking
-                                            facility
-                                            certification information. <a
+                                        <div class="alert alert-danger mb-0">{{ __('translation.Please enter Building information & Parking facility certification information') }}. <a
                                                 href="{{ route('regular_inspection_log', $customer->user_uid) }}"
-                                                class="text-primary mx-2 text-decoration-underline">Back</a></div>
+                                                class="text-primary mx-2 text-decoration-underline">{{ __('translation.Back') }}</a></div>
                                     </div>
                                 </div>
                             </div>

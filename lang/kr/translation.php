@@ -661,5 +661,6 @@ return [
     'company_name' => '업체명',
     'First add parking facility information' => '먼저 주차시설 정보를 추가하세요.',
     'quote_management' => '견적서 관리',
-    'You need to select row first' => '먼저 선택해주세요'
+    'You need to select row first' => '먼저 선택해주세요',
+    'Please enter Building information & Parking facility certification information' => '먼저 주차시설 정보를 추가하세요'
 ];
