@@ -1613,3 +1613,18 @@ table.table-inspection .inspection-grade {
 .fc-event-main p{
     white-space: normal;
 }
+
+/* #vertical-menu-btn{
+    display: none;
+}
+
+@media only screen and (max-width: 992px){
+    #vertical-menu-btn{
+        display: block !important;
+    }
+} */
+
+.vertical-collpsed .vertical-menu #sidebar-menu > ul > li:hover > ul{
+    width: 240px;
+    background-color: #eeeeee !important;
+}
