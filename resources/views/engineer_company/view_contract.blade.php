@@ -31,11 +31,11 @@
                                         <div class="prompt"></div>
                                         <div class="form-group mb-4">
                                             <div class="row align-items-center">
-                                                <div class="col-lg-2 col-md-6 col-12">
+                                                <div class="col-lg-2 col-md-3 col-12">
                                                     <label for="customer_number"
                                                            class="mb-0">{{ __('translation.Customer Number') }}</label>
                                                 </div>
-                                                <div class="col-lg-10 col-md-6 col-12">
+                                                <div class="col-lg-10 col-md-9 col-12">
                                                     <input disabeled type="text" class="form-control form-theme-input"
                                                            id="customer_number"
                                                            placeholder="{{ __('translation.Enter customer number') }}"
@@ -46,11 +46,11 @@
                                         </div>
                                         <div class="form-group mb-4">
                                             <div class="row align-items-center">
-                                                <div class="col-lg-2 col-md-6 col-12">
+                                                <div class="col-lg-2 col-md-3 col-12">
                                                     <label for="contract_date"
                                                            class="mb-0">{{ __('translation.Contract Date') }}</label>
                                                 </div>
-                                                <div class="col-lg-10 col-md-6 col-12">
+                                                <div class="col-lg-10 col-md-9 col-12">
                                                     <input disabeled class="form-control form-theme-input"
                                                            name="contract_date" id="contract_date"
                                                            placeholder="{{ __('translation.Enter contract date') }}"
@@ -65,11 +65,11 @@
                                         @endphp
                                         <div class="form-group mb-4">
                                             <div class="row align-items-center">
-                                                <div class="col-lg-2 col-md-6 col-12">
+                                                <div class="col-lg-2 col-md-3 col-12">
                                                     <label for="building_name"
                                                            class="mb-0">{{ __('translation.Building Name') }}</label>
                                                 </div>
-                                                <div class="col-lg-10 col-md-6 col-12">
+                                                <div class="col-lg-10 col-md-9 col-12">
                                                     <input disabeled type="text" class="form-control form-theme-input"
                                                            id="building_name"
                                                            placeholder="{{ __('translation.Enter building name') }}"
@@ -79,11 +79,11 @@
                                         </div>
                                         <div class="form-group mb-4">
                                             <div class="row align-items-center">
-                                                <div class="col-lg-2 col-md-6 col-12">
+                                                <div class="col-lg-2 col-md-3 col-12">
                                                     <label for="building_address"
                                                            class="mb-0">{{ __('translation.Building Address') }}</label>
                                                 </div>
-                                                <div class="col-lg-10 col-md-6 col-12">
+                                                <div class="col-lg-10 col-md-9 col-12">
                                                     <input disabeled type="text" class="form-control form-theme-input"
                                                            id="building_address"
                                                            placeholder="{{ __('translation.Enter building address') }}"
@@ -94,11 +94,11 @@
                                         </div>
                                         <div class="form-group mb-4">
                                             <div class="row align-items-center">
-                                                <div class="col-lg-2 col-md-6 col-12">
+                                                <div class="col-lg-2 col-md-3 col-12">
                                                     <label for="contract_file"
                                                            class="mb-0">{{ __('translation.Upload Contract') }}</label>
                                                 </div>
-                                                <div class="col-lg-10 col-md-6 col-12">
+                                                <div class="col-lg-10 col-md-9 col-12">
                                                     <a href="{{asset($contract->contract_file)}}">View</a>
                                                 </div>
                                             </div>
