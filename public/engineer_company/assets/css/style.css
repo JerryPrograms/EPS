@@ -1628,3 +1628,12 @@ table.table-inspection .inspection-grade {
     width: 240px;
     background-color: #eeeeee !important;
 }
+
+@media only screen and (max-width: 992px){
+    .md-min-width-60{
+        min-width: 60px !important;
+    }
+    .md-min-width-100{
+        min-width: 100px !important;
+    }
+}

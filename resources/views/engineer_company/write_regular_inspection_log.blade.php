@@ -180,10 +180,10 @@
                                                                         <th
                                                                             class="text-center text-theme-dark min-width-600">
                                                                             {{ __('translation.Check contents') }}</th>
-                                                                        <th class="text-center text-theme-dark">
+                                                                        <th class="text-center text-theme-dark md-min-width-60">
                                                                             {{ __('translation.Situation') }}
                                                                         </th>
-                                                                        <th class="text-center text-theme-dark">
+                                                                        <th class="text-center text-theme-dark md-min-width-100">
                                                                             {{ __('translation.Inspection month') }}
                                                                         </th>
                                                                     </tr>
