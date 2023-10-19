@@ -37,10 +37,10 @@
                                                     <th class="">
                                                         No.
                                                     </th>
-                                                    <th class="text-left" style="min-width:180px;">
+                                                    <th class="text-left" style="min-width:140px;">
                                                         {{ __('translation.Building name') }}
                                                     </th>
-                                                    <th class="text-left" style="min-width:180px;">
+                                                    <th class="text-left" style="min-width:130px;">
                                                         {{ __('translation.Building code') }}
                                                     </th>
                                                     <th class="text-left">

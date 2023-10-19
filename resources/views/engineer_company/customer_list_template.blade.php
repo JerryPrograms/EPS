@@ -5,25 +5,25 @@
         <th class="" style="width: 50px;">
             {{ __('translation.no.') }}
         </th>
-        <th class="text-center" style="width: 130px;">
+        <th class="text-center" style="min-width: 130px;">
             {{ __('translation.Registration Date') }}
         </th>
-        <th class="text-center" style="width: 130px;">
+        <th class="text-center" style="min-width: 130px;">
             {{ __('translation.Customer Number') }}
         </th>
-        <th class="text-center" style="width: 150px;">
+        <th class="text-center" style="min-width: 150px;">
             {{ __('translation.Company name') }}
         </th>
-        <th class="text-center" style="width: 250px;">
+        <th class="text-center" style="min-width: 250px;">
             {{ __('translation.address') }}
         </th>
-        <th class="text-center" style="width: 160px;">
+        <th class="text-center" style="min-width: 160px;">
             {{ __('translation.Company Registration Number') }}
         </th>
-        <th class="text-center" style="width: 150px;">
+        <th class="text-center" style="min-width: 150px;">
             {{ __('translation.Maintenance Company') }}
         </th>
-        <th class="text-center" style="width: 100px;">
+        <th class="text-center" style="min-width: 100px;">
             {{ __('translation.action') }}
         </th>
     </tr>

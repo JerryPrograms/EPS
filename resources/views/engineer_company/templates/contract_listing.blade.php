@@ -11,14 +11,14 @@
         <th class="text-center">
             {{ __('translation.Customer No') }}
         </th>
-        <th class="text-center">
+        <th class="text-center" style="min-width: 120px;">
             {{ __('translation.Building Name') }}
         </th>
-        <th class="text-center">
+        <th class="text-center" style="min-width: 220px;">
             {{ __('translation.address') }}
         </th>
 
-        <th class="text-center">
+        <th class="text-center" style="min-width: 200px;">
             {{ __('translation.Building Management Company') }}
         </th>
         <th class="text-center">{{__('translation.action')}}</th>

@@ -9,11 +9,11 @@
         </th>
         <th class="text-center">{{__('translation.Building Name')}}
         </th>
-        <th class="text-center">{{__('translation.Address')}}</th>
+        <th class="text-center" style="min-width: 220px;">{{__('translation.Address')}}</th>
 
         <th class="text-center">{{__('translation.Building Management Company')}}
         </th>
-        <th class="text-center">{{__('translation.contents')}}
+        <th class="text-center" style="min-width: 220px;">{{__('translation.contents')}}
         </th>
         <th class="text-center">{{__('translation.actions')}}
         </th>

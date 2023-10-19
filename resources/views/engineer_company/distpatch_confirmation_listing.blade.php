@@ -40,12 +40,12 @@
                                                 <tr>
                                                     <th>{{ __('translation.no') }}</th>
                                                     <th>{{ __('translation.Reception date') }}</th>
-                                                    <th>{{ __('translation.Reception Time') }}</th>
-                                                    <th>{{ __('translation.Dispatcher Name') }}</th>
-                                                    <th>{{ __('translation.Dispatch content') }}</th>
-                                                    <th>{{ __('translation.customer number1') }}</th>
-                                                    <th>{{ __('translation.Building name') }}</th>
-                                                    <th>{{ __('translation.Address') }}</th>
+                                                    <th style="min-width: 100px;">{{ __('translation.Reception Time') }}</th>
+                                                    <th style="min-width: 100px;">{{ __('translation.Dispatcher Name') }}</th>
+                                                    <th style="min-width: 100px;">{{ __('translation.Dispatch content') }}</th>
+                                                    <th style="min-width: 120px;">{{ __('translation.customer number1') }}</th>
+                                                    <th style="min-width: 120px;">{{ __('translation.Building name') }}</th>
+                                                    <th style="min-width: 220px;">{{ __('translation.Address') }}</th>
                                                     <th>{{ __('translation.Action') }}</th>
                                                 </tr>
                                                 </thead>
