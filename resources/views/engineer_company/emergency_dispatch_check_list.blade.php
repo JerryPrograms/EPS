@@ -201,66 +201,68 @@
                                     @php
                                         $MonthlyRegularInspections = $customer->DispatchInformation()->paginate(10);
                                     @endphp
-                                    <div class="row justify-content-center">
-                                        <div class="col-lg-11 p-0">
-                                            <div class="table-responsive data-set-list mt-3">
-                                                <table class="table table-striped align-middle mb-0 table-theme">
-                                                    <thead class="table-light">
-                                                    <tr>
-                                                        <th>{{ __('translation.no') }}</th>
-                                                        <th>{{ __('translation.Reception date') }}</th>
-                                                        <th>{{ __('translation.Reception Time') }}</th>
-                                                        <th>{{ __('translation.Dispatcher Name') }}</th>
-                                                        <th>{{ __('translation.Dispatch content') }}</th>
-                                                        <th>{{ __('translation.Customer Name') }}</th>
-                                                        <th>{{ __('translation.Address') }}</th>
-                                                        <th>{{ __('translation.Action') }}</th>
-                                                    </tr>
-                                                    </thead>
-                                                    <tbody id="myTable">
-                                                    @foreach ($MonthlyRegularInspections as $v)
-                                                        @php
-                                                            $reception_date_and_time = explode(' ',$v->reception_date_and_time);
-
-                                                        @endphp
+                                    <div class="card-body py-0">
+                                        <div class="row justify-content-center">
+                                            <div class="col-lg-11 p-0">
+                                                <div class="table-responsive data-set-list mt-3">
+                                                    <table class="table table-striped align-middle mb-0 table-theme">
+                                                        <thead class="table-light">
                                                         <tr>
-                                                            <td>{{ $loop->index + 1 }}</td>
-                                                            <td>{{ $reception_date_and_time[0] }}</td>
-                                                            <td>{{ \Carbon\Carbon::parse($reception_date_and_time[1])->format('g:i A') }}</td>
-                                                            <td>{{ $v->dispatcher }}</td>
-                                                            <td title="{{ $v->submission_details }}">{{ Str::limit($v->submission_details, 10, '...') }}</td>
-                                                            <td>{{ $v->GetCustomer->customer_number }}</td>
-                                                            <td title="{{ $v->GetCustomer->address }}">{{ Str::limit($v->GetCustomer->address, 10, '...') }}</td>
-                                                            <td>
-                                                                <div class="d-flex gap-1 justify-content-center">
-                                                                    <a href="{{ route('ec.ViewDispatchInformation', $v->id) }}"
-                                                                       class="btn btn-outline-danger btn-theme-danger-outline btn-outline btn-sm">
-                                                                       <img
-                                                                       src="{{ asset('engineer_company/assets/images/red-search.png') }}">
-                                                                    </a>
-                                                                    @if(activeGuard() != 'web')
-                                                                        <a @if(activeGuard() == 'admin') style="background-color: #696CFF !important; border: none !important;"
-                                                                           @endif href="{{ route('ec.EditDispatchInformation', $v->id) }}"
-                                                                           class="btn btn-outline-success btn-theme-success-outline btn-outline btn-sm">
-                                                                            <img
-                                                                                src="{{ asset('engineer_company/images/edit_icon.png') }}">
-                                                                        </a>
-                                                                        <a data-bs-toggle="modal"
-                                                                           data-del-id="{{ $v->id }}"
-                                                                           data-bs-target="#deleteReplacementHistory"
-                                                                           class="btn btn-outline-light btn-theme-light-outline btn-outline btn-sm delBtn">
-                                                                           <img src="https://eps.beckapps.co/eps/public/engineer_company/assets/images/delete.png">
-                                                                        </a>
-                                                                    @endif
-                                                                </div>
-                                                            </td>
+                                                            <th>{{ __('translation.no') }}</th>
+                                                            <th>{{ __('translation.Reception date') }}</th>
+                                                            <th style="min-width: 120px;">{{ __('translation.Reception Time') }}</th>
+                                                            <th style="min-width: 120px;">{{ __('translation.Dispatcher Name') }}</th>
+                                                            <th style="min-width: 150px;">{{ __('translation.Dispatch content') }}</th>
+                                                            <th style="min-width: 120px;">{{ __('translation.Customer Name') }}</th>
+                                                            <th style="min-width: 150px;">{{ __('translation.Address') }}</th>
+                                                            <th>{{ __('translation.Action') }}</th>
                                                         </tr>
-                                                    @endforeach
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                            <div class="text-center mt-3">
-                                                {!! $MonthlyRegularInspections->links('common_files.paginate') !!}
+                                                        </thead>
+                                                        <tbody id="myTable">
+                                                        @foreach ($MonthlyRegularInspections as $v)
+                                                            @php
+                                                                $reception_date_and_time = explode(' ',$v->reception_date_and_time);
+    
+                                                            @endphp
+                                                            <tr>
+                                                                <td>{{ $loop->index + 1 }}</td>
+                                                                <td>{{ $reception_date_and_time[0] }}</td>
+                                                                <td>{{ \Carbon\Carbon::parse($reception_date_and_time[1])->format('g:i A') }}</td>
+                                                                <td>{{ $v->dispatcher }}</td>
+                                                                <td title="{{ $v->submission_details }}">{{ Str::limit($v->submission_details, 10, '...') }}</td>
+                                                                <td>{{ $v->GetCustomer->customer_number }}</td>
+                                                                <td title="{{ $v->GetCustomer->address }}">{{ Str::limit($v->GetCustomer->address, 10, '...') }}</td>
+                                                                <td>
+                                                                    <div class="d-flex gap-1 justify-content-center">
+                                                                        <a href="{{ route('ec.ViewDispatchInformation', $v->id) }}"
+                                                                           class="btn btn-outline-danger btn-theme-danger-outline btn-outline btn-sm">
+                                                                           <img
+                                                                           src="{{ asset('engineer_company/assets/images/red-search.png') }}">
+                                                                        </a>
+                                                                        @if(activeGuard() != 'web')
+                                                                            <a @if(activeGuard() == 'admin') style="background-color: #696CFF !important; border: none !important;"
+                                                                               @endif href="{{ route('ec.EditDispatchInformation', $v->id) }}"
+                                                                               class="btn btn-outline-success btn-theme-success-outline btn-outline btn-sm">
+                                                                                <img
+                                                                                    src="{{ asset('engineer_company/images/edit_icon.png') }}">
+                                                                            </a>
+                                                                            <a data-bs-toggle="modal"
+                                                                               data-del-id="{{ $v->id }}"
+                                                                               data-bs-target="#deleteReplacementHistory"
+                                                                               class="btn btn-outline-light btn-theme-light-outline btn-outline btn-sm delBtn">
+                                                                               <img src="https://eps.beckapps.co/eps/public/engineer_company/assets/images/delete.png">
+                                                                            </a>
+                                                                        @endif
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        @endforeach
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="text-center mt-3">
+                                                    {!! $MonthlyRegularInspections->links('common_files.paginate') !!}
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

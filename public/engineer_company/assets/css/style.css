@@ -1645,4 +1645,11 @@ table.table-inspection .inspection-grade {
     .calender-container .todo-view{
         width: 50% !important;
     }
+    .colllap_section_5{
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+    .main_section_buttn{
+        padding-left: 50px;
+    }
 }

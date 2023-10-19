@@ -284,7 +284,7 @@
 
                                                                     <div class="row">
 
-                                                                        <div class="col-lg-4 part_name_area"
+                                                                        <div class="col-lg-4 col-3 part_name_area"
                                                                              style="border-right: 1px solid rgba(225, 227, 236, 1);">
 
                                                                             <div class="colllap_section_4">
@@ -316,7 +316,7 @@
                                                                         </div>
 
 
-                                                                        <div class="col-lg-8 part_data_area">
+                                                                        <div class="col-lg-8 col-9 part_data_area">
                                                                             @if((activeGuard() !== 'engineer_company') && (activeGuard() !== 'engineer'))
                                                                             <div class="d-flex align-items-center justify-content-right part-actions">
                                                                                 <button

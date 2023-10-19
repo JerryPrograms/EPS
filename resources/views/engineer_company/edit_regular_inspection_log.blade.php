@@ -36,11 +36,11 @@
                                             <div class="prompt"></div>
                                             <div class="form-group mb-4">
                                                 <div class="row align-items-center">
-                                                    <div class="col-lg-2 col-md-6 col-12">
+                                                    <div class="col-lg-2 col-md-3 col-12">
                                                         <label for="building_name"
                                                                class="mb-0">{{ __('translation.Building Name') }}</label>
                                                     </div>
-                                                    <div class="col-lg-10 col-md-6 col-12">
+                                                    <div class="col-lg-10 col-md-9 col-12">
                                                         <input type="text" class="form-control form-theme-input"
                                                                id="building_name"
                                                                value="{{ $building_name }}"
@@ -50,11 +50,11 @@
                                             </div>
                                             <div class="form-group mb-4">
                                                 <div class="row align-items-center">
-                                                    <div class="col-lg-2 col-md-6 col-12">
+                                                    <div class="col-lg-2 col-md-3 col-12">
                                                         <label for="inspection_date"
                                                                class="mb-0">{{ __('translation.Inspection date') }}</label>
                                                     </div>
-                                                    <div class="col-lg-10 col-md-6 col-12">
+                                                    <div class="col-lg-10 col-md-9 col-12">
                                                         <input type="date" class="form-control form-theme-input"
                                                                name="inspection_date"
                                                                value="{{ $customer->inspection_date->format('Y-m-d') }}"
@@ -64,11 +64,11 @@
                                             </div>
                                             <div class="form-group mb-4">
                                                 <div class="row align-items-center">
-                                                    <div class="col-lg-2 col-md-6 col-12">
+                                                    <div class="col-lg-2 col-md-3 col-12">
                                                         <label for="type_and_number"
                                                                class="mb-0">{{ __('translation.Type and number') }}</label>
                                                     </div>
-                                                    <div class="col-lg-10 col-md-6 col-12">
+                                                    <div class="col-lg-10 col-md-9 col-12">
                                                         <input type="text" class="form-control form-theme-input"
                                                                id="type_and_number"
                                                                value="{{ __('translation.'.str_replace('_', ' ', $customer->type)) }}"
@@ -78,11 +78,11 @@
                                             </div>
                                             <div class="form-group mb-4">
                                                 <div class="row align-items-center">
-                                                    <div class="col-lg-2 col-md-6 col-12">
+                                                    <div class="col-lg-2 col-md-3 col-12">
                                                         <label for="arrival_time"
                                                                class="mb-0">{{ __('translation.Arrival time') }}</label>
                                                     </div>
-                                                    <div class="col-lg-10 col-md-6 col-12">
+                                                    <div class="col-lg-10 col-md-9 col-12">
                                                         <input type="text" class="form-control form-theme-input" @if(activeGuard() != 'web') hidden @endif
                                                                id="arrival_time"
                                                                value="{{ $customer->arrival_time }}"
@@ -95,11 +95,11 @@
                                             </div>
                                             <div class="form-group mb-4">
                                                 <div class="row align-items-center">
-                                                    <div class="col-lg-2 col-md-6 col-12">
+                                                    <div class="col-lg-2 col-md-3 col-12">
                                                         <label for="completion_time"
                                                                class="mb-0">{{ __('translation.Completion time') }}</label>
                                                     </div>
-                                                    <div class="col-lg-10 col-md-6 col-12">
+                                                    <div class="col-lg-10 col-md-9 col-12">
                                                         <input @if(activeGuard() != 'web') hidden @endif type="text" class="form-control form-theme-input"
                                                                id="completion_time"
                                                                value="{{ $customer->completion_time }}"
@@ -112,11 +112,11 @@
                                             </div>
                                             <div class="form-group">
                                                 <div class="row align-items-center">
-                                                    <div class="col-lg-2 col-md-6 col-12">
+                                                    <div class="col-lg-2 col-md-3 col-12">
                                                         <label for="checker"
                                                                class="mb-0">{{ __('translation.Checker') }}</label>
                                                     </div>
-                                                    <div class="col-lg-10 col-md-6 col-12">
+                                                    <div class="col-lg-10 col-md-9 col-12">
                                                         <input type="text" class="form-control form-theme-input"
                                                                id="checker" name="inspection_manager"
                                                                value="{{ $customer->inspection_manager }}"

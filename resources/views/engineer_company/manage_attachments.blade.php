@@ -181,80 +181,82 @@
                                     @php
                                         $MonthlyRegularInspections = $customer->ManageAttachments()->paginate(10);
                                     @endphp
-                                    <div class="row justify-content-center">
-                                        <div class="col-lg-11 p-0">
-                                            <div class="table-responsive">
-                                                <table class="table align-middle table-nowrap mb-0">
-                                                    <thead class="table-light">
-                                                    <tr>
-
-                                                        <th class="align-middle border-0">
-
-                                                            {{ __('translation.no.') }}
-                                                        </th>
-                                                        <th class="text-center custom_inp_widt  border-0">
-                                                            {{ __('translation.upload date') }}
-                                                        </th>
-                                                        <th class="custom_inp_widt  border-0" style="min-width:280px;">
-                                                            {{ __('translation.File') }}
-
-                                                        </th>
-                                                        <th class="text-center  border-0">
-
-                                                            {{ __('translation.title') }}
-                                                        </th>
-                                                        <th class="text-center border-0">
-                                                            {{ __('translation.action') }}
-
-                                                        </th>
-                                                    </tr>
-                                                    </thead>
-                                                    <tbody id="monthly_regular_inspection_tbody">
-
-                                                    @foreach($MonthlyRegularInspections as $mr)
-                                                        <tr class="custom_bor_clr">
-                                                            <td class="border-bottom-0"><a
-                                                                    href="javascript: void(0);"
-                                                                    class="text-body fw-bold">{{$loop->index + 1}}</a>
-                                                            </td>
-                                                            <td class="border-bottom-0">
-                                                                <button
-                                                                    class="date_button border-0">{{$mr->date}}
-                                                                </button>
-                                                            </td>
-
-                                                            <td class="border-bottom-0">
-                                                                <a class="monthly-inspection-listing-img" download=""
-                                                                     href="{{asset($mr->file)}}"
-                                                                   class="gallery_img">{{explode('/',$mr->file)[3]}}</a>
-                                                            </td>
-                                                            <td class="border-bottom-0">
-                                                                <button
-                                                                    class="date_button_2 border-0">{{$mr->title}}
-                                                                </button>
-                                                            </td>
-
-                                                            <td class="border-bottom-0 text-center">
-                                                                <button type="button" data-bs-toggle="modal"
-                                                                        data-bs-target="#manageFileView"
-                                                                        onclick="$('#attachment_id').attr('src','{{asset($mr->file)}}')"
-                                                                        class="search_btn_attachments">
-                                                                    <img
-                                                                        src="{{asset('engineer_company/assets/images/bluebar.png')}}">
-                                                                </button>
-                                                                <button
-                                                                    onclick="$('#partReplacementID').val('{{$mr->id}}')"
-                                                                    type="button" data-bs-toggle="modal"
-                                                                    data-bs-target="#deleteReplacementHistory"
-                                                                    class="delete_btn_attachments">
-                                                                    <img
-                                                                        src="{{asset('engineer_company/assets/images/delete.png')}}">
-                                                                </button>
-                                                            </td>
+                                    <div class="card-body py-0">
+                                        <div class="row justify-content-center">
+                                            <div class="col-lg-11 p-0">
+                                                <div class="table-responsive">
+                                                    <table class="table align-middle table-nowrap mb-0">
+                                                        <thead class="table-light">
+                                                        <tr>
+    
+                                                            <th class="align-middle border-0">
+    
+                                                                {{ __('translation.no.') }}
+                                                            </th>
+                                                            <th class="text-center custom_inp_widt  border-0">
+                                                                {{ __('translation.upload date') }}
+                                                            </th>
+                                                            <th class="custom_inp_widt  border-0" style="min-width:280px;">
+                                                                {{ __('translation.File') }}
+    
+                                                            </th>
+                                                            <th class="text-center  border-0">
+    
+                                                                {{ __('translation.title') }}
+                                                            </th>
+                                                            <th class="text-center border-0">
+                                                                {{ __('translation.action') }}
+    
+                                                            </th>
                                                         </tr>
-                                                    @endforeach
-                                                    </tbody>
-                                                </table>
+                                                        </thead>
+                                                        <tbody id="monthly_regular_inspection_tbody">
+    
+                                                        @foreach($MonthlyRegularInspections as $mr)
+                                                            <tr class="custom_bor_clr">
+                                                                <td class="border-bottom-0"><a
+                                                                        href="javascript: void(0);"
+                                                                        class="text-body fw-bold">{{$loop->index + 1}}</a>
+                                                                </td>
+                                                                <td class="border-bottom-0">
+                                                                    <button
+                                                                        class="date_button border-0">{{$mr->date}}
+                                                                    </button>
+                                                                </td>
+    
+                                                                <td class="border-bottom-0">
+                                                                    <a class="monthly-inspection-listing-img" download=""
+                                                                         href="{{asset($mr->file)}}"
+                                                                       class="gallery_img">{{explode('/',$mr->file)[3]}}</a>
+                                                                </td>
+                                                                <td class="border-bottom-0">
+                                                                    <button
+                                                                        class="date_button_2 border-0">{{$mr->title}}
+                                                                    </button>
+                                                                </td>
+    
+                                                                <td class="border-bottom-0 text-center">
+                                                                    <button type="button" data-bs-toggle="modal"
+                                                                            data-bs-target="#manageFileView"
+                                                                            onclick="$('#attachment_id').attr('src','{{asset($mr->file)}}')"
+                                                                            class="search_btn_attachments">
+                                                                        <img
+                                                                            src="{{asset('engineer_company/assets/images/bluebar.png')}}">
+                                                                    </button>
+                                                                    <button
+                                                                        onclick="$('#partReplacementID').val('{{$mr->id}}')"
+                                                                        type="button" data-bs-toggle="modal"
+                                                                        data-bs-target="#deleteReplacementHistory"
+                                                                        class="delete_btn_attachments">
+                                                                        <img
+                                                                            src="{{asset('engineer_company/assets/images/delete.png')}}">
+                                                                    </button>
+                                                                </td>
+                                                            </tr>
+                                                        @endforeach
+                                                        </tbody>
+                                                    </table>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

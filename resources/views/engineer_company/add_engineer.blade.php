@@ -31,11 +31,11 @@
                                         </div>
                                         <div class="form-group mb-4">
                                             <div class="row align-items-center">
-                                                <div class="col-lg-3 col-md-6 col-12">
+                                                <div class="col-lg-3 col-md-3 col-12">
                                                     <label
                                                         class="mb-0">{{ __('translation.Name') }}</label>
                                                 </div>
-                                                <div class="col-lg-9 col-md-6 col-12">
+                                                <div class="col-lg-9 col-md-9 col-12">
                                                     <input type="text" class="form-control form-theme-input"
                                                            name="name"
                                                            value=""
@@ -46,11 +46,11 @@
                                         </div>
                                         <div class="form-group mb-4">
                                             <div class="row align-items-center">
-                                                <div class="col-lg-3 col-md-6 col-12">
+                                                <div class="col-lg-3 col-md-3 col-12">
                                                     <label
                                                         class="mb-0">{{ __('translation.Email') }}</label>
                                                 </div>
-                                                <div class="col-lg-9 col-md-6 col-12">
+                                                <div class="col-lg-9 col-md-9 col-12">
                                                     <input type="email" class="form-control form-theme-input"
                                                            name="email"
                                                            placeholder="{{ __('translation.Write email') }}" required>
@@ -59,11 +59,11 @@
                                         </div>
                                         <div class="form-group mb-4">
                                             <div class="row align-items-center">
-                                                <div class="col-lg-3 col-md-6 col-12">
+                                                <div class="col-lg-3 col-md-3 col-12">
                                                     <label for="password"
                                                            class="mb-0">{{ __('translation.Password') }}</label>
                                                 </div>
-                                                <div class="col-lg-9 col-md-6 col-12">
+                                                <div class="col-lg-9 col-md-9 col-12">
                                                     <input type="password" class="form-control form-theme-input"
                                                            name="password" id="password"
                                                            placeholder="{{ __('translation.Write password') }}"
@@ -73,11 +73,11 @@
                                         </div>
                                         <div class="form-group mb-4">
                                             <div class="row align-items-center">
-                                                <div class="col-lg-3 col-md-6 col-12">
+                                                <div class="col-lg-3 col-md-3 col-12">
                                                     <label for="phone_number"
                                                            class="mb-0">{{ __('translation.Phone number') }}</label>
                                                 </div>
-                                                <div class="col-lg-9 col-md-6 col-12">
+                                                <div class="col-lg-9 col-md-9 col-12">
                                                     <input type="text"
                                                            class="form-control form-theme-input format-number"
                                                            name="phone" id="phone_number"
@@ -91,11 +91,11 @@
                                         @if(activeGuard() == 'admin')
                                             <div class="form-group mb-4">
                                                 <div class="row align-items-center">
-                                                    <div class="col-lg-3 col-md-6 col-12">
+                                                    <div class="col-lg-3 col-md-3 col-12">
                                                         <label for="phone_number"
                                                                class="mb-0">{{ __('translation.resident registration number') }}</label>
                                                     </div>
-                                                    <div class="col-lg-9 col-md-6 col-12">
+                                                    <div class="col-lg-9 col-md-9 col-12">
                                                         <input type="text"
                                                                class="form-control form-theme-input format-number"
                                                                name="social_security" id="phone_number"
@@ -107,11 +107,11 @@
                                             </div>
                                             <div class="form-group mb-4">
                                                 <div class="row align-items-center">
-                                                    <div class="col-lg-3 col-md-6 col-12">
+                                                    <div class="col-lg-3 col-md-3 col-12">
                                                         <label for="id"
                                                                class="mb-0">{{ __('translation.Rank') }}</label>
                                                     </div>
-                                                    <div class="col-lg-9 col-md-6 col-12">
+                                                    <div class="col-lg-9 col-md-9 col-12">
                                                         <input type="text" class="form-control form-theme-input"
                                                                name="rank" id="id"
                                                                placeholder="{{ __('translation.Please enter your rank') }}"
@@ -121,11 +121,11 @@
                                             </div>
                                             <div class="form-group mb-4">
                                                 <div class="row align-items-center">
-                                                    <div class="col-lg-3 col-md-6 col-12">
+                                                    <div class="col-lg-3 col-md-3 col-12">
                                                         <label for="id"
                                                                class="mb-0">{{ __('translation.Approval Rights') }}</label>
                                                     </div>
-                                                    <div class="col-lg-9 col-md-6 col-12">
+                                                    <div class="col-lg-9 col-md-9 col-12">
                                                         <select class="form-select valid" name="approval_rights"
                                                                 autocomplete="off"
                                                                 required="">
