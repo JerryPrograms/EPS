@@ -13,6 +13,21 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/storage-link',function(){
+    \Artisan::call('storage:link');
+});
+
+Route::get('/config-cache',function(){
+    \Artisan::call('config:cache');
+});
+
+Route::get('/optimize-clear',function(){
+    \Artisan::call('optimize:clear');
+});
+
+Route::get('/migrate',function(){
+    \Artisan::call('migrate');
+});
 
 Route::group(['prefix' => 'customer'], function () {
     Route::get('/login', [AuthController::class, 'login'])->name('customer-login');
