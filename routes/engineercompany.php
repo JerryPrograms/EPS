@@ -21,6 +21,7 @@ use App\Service\ParkingFacility;
 use App\Service\PartReplacement;
 use App\Service\QuoteService;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\admin\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -273,6 +274,8 @@ Route::group(['prefix' => 'eps-panel', 'middleware' => 'AdminAccess'], function 
     Route::post('/del-engineer-company-action', [CompanyController::class, 'del_engineer_company_action'])->name('del_engineer_company_action');
     // Engineer Company Management End
 
+    Route::get('/change-password', [AdminController::class, 'change_password'])->name('admin.change_password');
+    Route::post('/change-password-action', [AdminController::class, 'change_password_action'])->name('admin.change_password_action');
 
 });
 

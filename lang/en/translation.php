@@ -666,5 +666,15 @@ return [
     'First add parking facility information' => 'First add parking facility information',
     'quote_management' => 'Quote Management',
     'You need to select row first' => 'You need to select row first',
-    'Please enter Building information & Parking facility certification information' => 'Please enter Building information & Parking facility certification information'
+    'Please enter Building information & Parking facility certification information' => 'Please enter Building information & Parking facility certification information',
+    'Change Password' => 'Change Password',
+    'Your current password is incorrect' => 'Your current password is incorrect',
+    'Password changed successfully' => 'Password changed successfully',
+    'Current Password' => 'Current Password',
+    'Enter your current password' => 'Enter your current password',
+    'New Password' => 'New Password',
+    'Enter your new password' => 'Enter your new password',
+    'Confirm Password' => 'Confirm Password',
+    'Enter your new password again' => 'Enter your new password again',
+    'Submit' => 'Submit'
 ];

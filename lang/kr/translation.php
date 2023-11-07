@@ -662,5 +662,15 @@ return [
     'First add parking facility information' => '먼저 주차시설 정보를 추가하세요.',
     'quote_management' => '견적서 관리',
     'You need to select row first' => '먼저 선택해주세요',
-    'Please enter Building information & Parking facility certification information' => '먼저 주차시설 정보를 추가하세요'
+    'Please enter Building information & Parking facility certification information' => '먼저 주차시설 정보를 추가하세요',
+    'Change Password' => '비밀번호 변경',
+    'Your current password is incorrect' => '현재 비밀번호가 올바르지 않습니다.',
+    'Password changed successfully' => '비밀번호가 성공적으로 변경되었습니다.',
+    'Current Password' => '현재 비밀번호',
+    'Enter your current password' => '현재 비밀번호를 입력하세요',
+    'New Password' => '새 비밀번호',
+    'Enter your new password' => '새 비밀번호를 입력하세요',
+    'Confirm Password' => '비밀번호 확인',
+    'Enter your new password again' => '새 비밀번호를 다시 입력하세요.',
+    'Submit' => '제출하다'
 ];
